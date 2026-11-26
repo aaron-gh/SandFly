@@ -173,6 +173,7 @@ class VoiceCommandEngine(
         run = array(R.array.voice_commands_run),
         open = array(R.array.voice_commands_open),
         tap = array(R.array.voice_commands_tap),
+        text = VoiceTargets.textPhrases(service),
       )
     phrases = locale to loaded
     return loaded

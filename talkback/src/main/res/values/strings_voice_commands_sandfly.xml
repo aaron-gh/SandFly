@@ -67,6 +67,8 @@
     <string name="voice_commands_send_button">Send</string>
     <!-- Spoken when a description for a voice command didn't arrive. [CHAR LIMIT=NONE] -->
     <string name="voice_commands_no_description">No description received</string>
+    <!-- Spoken when a text editing voice command, such as "delete next word", is said in a password field. Nothing of the field's text is said. [CHAR LIMIT=NONE] -->
+    <string name="voice_commands_text_password">Not available in password fields</string>
     <!-- Spoken after a voice command copied a description. [CHAR LIMIT=NONE] -->
     <string name="voice_commands_copied">Copied</string>
 
@@ -226,6 +228,115 @@
         <item>new line</item>
         <item>new paragraph</item>
         <item>press enter</item>
+    </string-array>
+    <!-- Text editing in the text field with input focus. {target} is one of the patterns of voice_commands_text_next, voice_commands_text_previous, voice_commands_text_start or voice_commands_text_end, such as "next 3 words"; for select, copy, cut and delete, it can also be a text in the field, such as "select crocodile". -->
+    <!-- Move the cursor to {target} and say the text passed over. The last pattern is the target on its own, such as "end of line". -->
+    <string-array name="voice_commands_text_move">
+        <item>move [the] [cursor] {target}</item>
+        <item>go {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <!-- Select the text of {target}. -->
+    <string-array name="voice_commands_text_select">
+        <item>select {target}</item>
+        <item>highlight {target}</item>
+    </string-array>
+    <!-- Copy the text of {target}. -->
+    <string-array name="voice_commands_text_copy">
+        <item>copy {target}</item>
+    </string-array>
+    <!-- Cut the text of {target}. -->
+    <string-array name="voice_commands_text_cut">
+        <item>cut {target}</item>
+    </string-array>
+    <!-- Delete the text of {target}. -->
+    <string-array name="voice_commands_text_delete">
+        <item>delete {target}</item>
+        <item>remove {target}</item>
+        <item>erase {target}</item>
+    </string-array>
+    <!-- From the cursor forward over {units}: a number and a unit, such as "3 words" or "five words", or a unit alone, such as "word". -->
+    <string-array name="voice_commands_text_next">
+        <item>[to] [the] next {units}</item>
+        <item>right [by] {units}</item>
+        <item>forward [by] {units}</item>
+    </string-array>
+    <!-- From the cursor back over {units}: a number and a unit, such as "3 words", or a unit alone. -->
+    <string-array name="voice_commands_text_previous">
+        <item>[to] [the] previous {units}</item>
+        <item>[the] last {units}</item>
+        <item>left [by] {units}</item>
+        <item>back [by] {units}</item>
+        <item>backward [by] {units}</item>
+    </string-array>
+    <!-- From the cursor to the start of the {unit} it is in, such as "start of sentence". A pattern without {unit} is the start of the whole text. -->
+    <string-array name="voice_commands_text_start">
+        <item>[to] [the] start of [the] {unit}</item>
+        <item>[to] [the] beginning of [the] {unit}</item>
+        <item>to [the] start</item>
+        <item>to [the] beginning</item>
+    </string-array>
+    <!-- From the cursor to the end of the {unit} it is in, such as "end of line". A pattern without {unit} is the end of the whole text. -->
+    <string-array name="voice_commands_text_end">
+        <item>[to] [the] end of [the] {unit}</item>
+        <item>to [the] end</item>
+    </string-array>
+    <!-- Words for characters in the text editing patterns, singular and plural. -->
+    <string-array name="voice_commands_text_characters">
+        <item>character</item>
+        <item>characters</item>
+        <item>letter</item>
+        <item>letters</item>
+    </string-array>
+    <!-- Words for words in the text editing patterns, singular and plural. -->
+    <string-array name="voice_commands_text_words">
+        <item>word</item>
+        <item>words</item>
+    </string-array>
+    <!-- Words for sentences in the text editing patterns, singular and plural. -->
+    <string-array name="voice_commands_text_sentences">
+        <item>sentence</item>
+        <item>sentences</item>
+    </string-array>
+    <!-- Words for lines in the text editing patterns, singular and plural. -->
+    <string-array name="voice_commands_text_lines">
+        <item>line</item>
+        <item>lines</item>
+    </string-array>
+    <!-- Words for paragraphs in the text editing patterns, singular and plural. -->
+    <string-array name="voice_commands_text_paragraphs">
+        <item>paragraph</item>
+        <item>paragraphs</item>
+    </string-array>
+    <!-- Words for the whole text of the field, as in "end of text". -->
+    <string-array name="voice_commands_text_whole">
+        <item>text</item>
+        <item>field</item>
+        <item>text field</item>
+        <item>document</item>
+    </string-array>
+    <!-- The numbers 1 to 20 in words, one item each, in order, with the words for a number separated by |, such as "one|a|an". Include words that speech recognition writes for a number, such as "to" for two. Digits are read without these. -->
+    <string-array name="voice_commands_text_numbers">
+        <item>one|a|an</item>
+        <item>two|to|too</item>
+        <item>three</item>
+        <item>four|for</item>
+        <item>five</item>
+        <item>six</item>
+        <item>seven</item>
+        <item>eight</item>
+        <item>nine</item>
+        <item>ten</item>
+        <item>eleven</item>
+        <item>twelve</item>
+        <item>thirteen</item>
+        <item>fourteen</item>
+        <item>fifteen</item>
+        <item>sixteen</item>
+        <item>seventeen</item>
+        <item>eighteen</item>
+        <item>nineteen</item>
+        <item>twenty</item>
     </string-array>
     <!-- Run the command, macro or script command named {command}. -->
     <string-array name="voice_commands_run">

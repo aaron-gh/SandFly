@@ -44,8 +44,8 @@ import java.util.Locale
  * Start voice editing: records voice commands for the focused text field one after another, with
  * SandFly's dictation, until the command runs again, a stop phrase is said, the Voice editing time
  * limit passes or focus leaves the field. Only text editing and Navigate by text commands, custom
- * voice commands for them or for macros, typing and the text editing voice commands of TalkBack
- * run. Speech is silenced while recording, as for voice commands; after a command, recording
+ * voice commands for them or for macros, typing, the text editing phrases, such as "delete next 3
+ * words", and the text editing voice commands of TalkBack run. Speech is silenced while recording, as for voice commands; after a command, recording
  * starts again once SandFly's speech ends. Main thread.
  */
 class VoiceEditing(private val service: TalkBackService, private val processor: VoiceCommandProcessor) {
@@ -193,6 +193,7 @@ class VoiceEditing(private val service: TalkBackService, private val processor: 
         cancel = cancel,
         type = array(R.array.voice_commands_type_text),
         run = array(R.array.voice_commands_run),
+        text = VoiceTargets.textPhrases(service),
       )
     // The command's own name ends it too, as running the command again does.
     stopPhrases =

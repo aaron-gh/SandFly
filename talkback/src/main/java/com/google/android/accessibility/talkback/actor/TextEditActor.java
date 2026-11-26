@@ -737,6 +737,137 @@ public class TextEditActor {
     return moved;
   }
 
+  /**
+   * Moves the cursor of edit-text to {@code cursorIndex}, without the move being read as a cursor
+   * move, and says {@code passed}, the text the cursor passed over. Not in password fields.
+   */
+  public boolean moveCursorOverText(
+      @Nullable AccessibilityNodeInfoCompat node,
+      int cursorIndex,
+      @Nullable CharSequence passed,
+      EventId eventId) {
+    if (node == null || !AccessibilityNodeInfoUtils.isEditField(node) || node.isPassword()) {
+      return false;
+    }
+    editTextActionHistory.beforeSetText();
+    boolean moved = moveCursor(node, cursorIndex, eventId);
+    editTextActionHistory.afterSetText();
+    if (!moved) {
+      return false;
+    }
+    CharSequence spoken = CompositorUtils.refineInputText(service, passed);
+    if (!TextUtils.isEmpty(spoken)) {
+      pipeline.returnFeedback(
+          eventId,
+          Feedback.speech(
+              SpeechCleanupUtils.shortenLongTextFeedback(service, spoken), SPEAK_OPTIONS));
+    }
+    return true;
+  }
+
+  /**
+   * Selects {@code start} to {@code end} in edit-text, without the selection change being read,
+   * and says the selected text. Not in password fields.
+   */
+  public boolean selectRange(
+      @Nullable AccessibilityNodeInfoCompat node, int start, int end, EventId eventId) {
+    @Nullable CharSequence range = rangeText(node, start, end);
+    if (range == null || !setSelectionQuietly(node, start, end, eventId)) {
+      return false;
+    }
+    pipeline.returnFeedback(
+        eventId,
+        Feedback.speech(
+            SpannableUtils.getSpannedFormattedString(
+                service.getString(R.string.template_announce_selected_text),
+                SpeechCleanupUtils.shortenLongTextFeedback(
+                    service, CompositorUtils.refineInputText(service, range))),
+            SPEAK_OPTIONS));
+    return true;
+  }
+
+  /**
+   * Copies {@code start} to {@code end} of edit-text, leaving the cursor and selection as they
+   * are, and says the copied text, as Copy does. Not in password fields.
+   */
+  public boolean copyRange(
+      @Nullable AccessibilityNodeInfoCompat node, int start, int end, EventId eventId) {
+    @Nullable CharSequence range = rangeText(node, start, end);
+    if (range == null || !ClipboardHistory.copy(service, range.toString())) {
+      return false;
+    }
+    pipeline.returnFeedback(
+        eventId,
+        Feedback.speech(
+            SpannableUtils.getSpannedFormattedString(
+                service.getString(R.string.template_text_copied),
+                CompositorUtils.refineInputText(service, range)),
+            SPEAK_OPTIONS));
+    return true;
+  }
+
+  /**
+   * Selects {@code start} to {@code end} of edit-text without the selection change being read, and
+   * cuts it as Cut does. Not in password fields.
+   */
+  public boolean cutRange(
+      @Nullable AccessibilityNodeInfoCompat node, int start, int end, EventId eventId) {
+    if (rangeText(node, start, end) == null || !setSelectionQuietly(node, start, end, eventId)) {
+      return false;
+    }
+    node.refresh();
+    return cut(node, eventId);
+  }
+
+  /**
+   * Selects {@code start} to {@code end} of edit-text without the selection change being read, and
+   * deletes it as Delete does. Not in password fields.
+   */
+  public boolean deleteRange(
+      @Nullable AccessibilityNodeInfoCompat node, int start, int end, EventId eventId) {
+    if (rangeText(node, start, end) == null || !setSelectionQuietly(node, start, end, eventId)) {
+      return false;
+    }
+    node.refresh();
+    return delete(node, eventId);
+  }
+
+  /**
+   * The text from {@code start} to {@code end} of edit-text, or null when the range isn't in its
+   * text, is empty, or the field is a password field.
+   */
+  private static @Nullable CharSequence rangeText(
+      @Nullable AccessibilityNodeInfoCompat node, int start, int end) {
+    if (node == null || !AccessibilityNodeInfoUtils.isEditField(node) || node.isPassword()) {
+      return null;
+    }
+    @Nullable CharSequence text = AccessibilityNodeInfoUtils.getText(node);
+    if (text == null || start < 0 || end > text.length() || start >= end) {
+      return null;
+    }
+    return text.subSequence(start, end);
+  }
+
+  /**
+   * Sets the selection of {@code node} to {@code start} to {@code end}. The selection change is
+   * part of the action, as setting text is, so it isn't read.
+   */
+  private boolean setSelectionQuietly(
+      AccessibilityNodeInfoCompat node, int start, int end, EventId eventId) {
+    Bundle args = new Bundle();
+    args.putInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_START_INT, start);
+    args.putInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_END_INT, end);
+    editTextActionHistory.beforeSetText();
+    boolean result =
+        PerformActionUtils.performAction(
+            node, AccessibilityNodeInfoCompat.ACTION_SET_SELECTION, args, eventId);
+    editTextActionHistory.afterSetText();
+    if (!result) {
+      LogUtils.d(TAG, "setSelectionQuietly: setting the selection failed");
+    }
+    return result;
+  }
+
   /** Executes and announces paste text in edit-text. Modifies edit history. */
   public boolean paste(AccessibilityNodeInfoCompat node, EventId eventId) {
     if (node == null || !AccessibilityNodeInfoUtils.isEditField(node)) {

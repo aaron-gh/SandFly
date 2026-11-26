@@ -168,8 +168,12 @@ object VoiceEditingRules {
     }
   }
 
-  /** The phrases of voice editing: joining words, fillers and typing, without the other patterns. */
+  /**
+   * The phrases of voice editing: joining words, fillers, typing and text editing, without the other
+   * patterns. Text editing phrases act on the text only, without activating items.
+   */
   @JvmStatic
+  @JvmOverloads
   fun phrases(
     chain: List<String>,
     and: List<String>,
@@ -178,6 +182,7 @@ object VoiceEditingRules {
     cancel: List<String>,
     type: List<String>,
     run: List<String>,
+    text: VoiceGrammar.TextPhrases = VoiceGrammar.TextPhrases(),
   ): VoiceGrammar.Phrases =
     VoiceGrammar.Phrases(
       chain = chain,
@@ -198,6 +203,8 @@ object VoiceEditingRules {
       run = run,
       open = emptyList(),
       tap = emptyList(),
+      text = text,
+      textFallback = false,
     )
 
   /**

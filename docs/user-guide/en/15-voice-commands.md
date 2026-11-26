@@ -36,10 +36,25 @@ When SandFly doesn't understand a command, it says "Can't recognize this command
 #### Apps, items and text {#voice-commands-sandfly}
 
 - **Open an app**: "open", "launch", "start" or "switch to", and the name of the app. SandFly picks the app with that whole name, else one whose name starts with it, else one with a word of it in its name. When no app matches, or several match equally, SandFly runs the command with that name, such as "open notifications"; without one, the voice command isn't understood.
-- **Activate an item on the screen**: "tap", "double tap", "click", "press", "activate" or "select", and the text of the item. SandFly activates the first item whose whole text is that text, else the first item whose text contains it. When there is none, SandFly says "Not found" and the text. "Press enter" runs **New line** instead.
+- **Activate an item on the screen**: "tap", "double tap", "click", "press", "activate" or "select", and the text of the item. SandFly activates the first item whose whole text is that text, else the first item whose text contains it. When there is none, SandFly says "Not found" and the text. "Press enter" runs **New line** instead. "Select" and a text that the focused text field has selects that text instead. See [](#voice-commands-text).
 - **Type text**: "type", "write" or "enter", and the text. SandFly types it in the focused edit field and says the typed text.
 - **Run a command**: "run" or "do" and the name of a command, or "run the" and the name of a macro and "macro", such as "run the morning macro".
 - **Wait**: "wait", "wait a second", or "wait" and a number of seconds, up to 60. Use it between commands in a chain.
+
+#### Text in a text field {#voice-commands-text}
+
+These phrases act on the text of the text field with input focus.
+
+- **Move the cursor**: "next", "previous", "right", "left", "forward" or "back", a number, and "characters", "words", "sentences", "lines" or "paragraphs", such as "next 3 words", "move left five words" or "go back two lines". "Move", "move cursor" or "go" can come before. SandFly moves the cursor and says the text that it passed over.
+- **Start and end**: "start of", "beginning of" or "end of", and "word", "sentence", "line", "paragraph" or "text", such as "end of line" or "go to the start of the sentence". "To start" and "to end" are the start and end of the text. SandFly moves the cursor there and says the text that it passed over. When the cursor is at the start or end already, it moves to the start of the one before or the end of the one after.
+- **Select, copy, cut or delete**: "select", "copy", "cut" or "delete", and one of the phrases above, such as "delete next five words", "copy previous 2 sentences", "select the next line", "delete last word" or "delete to end of line". SandFly says "Selected text" and the selected text, "copied" and the copied text, "cut" and the cut text, or the deleted text and "deleted". Copying leaves the cursor where it is.
+- **Select, copy, cut or delete a text**: "select", "copy", "cut" or "delete", and a text in the field, such as "select crocodile". SandFly finds the text nearest to the cursor, ignoring case and the punctuation between its words, and acts on it. When the field doesn't have the text, SandFly says "Not found" and the text.
+
+The number is 1 to 20 in words, or digits; without one, the phrase acts on one, as in "select previous word". The word, sentence, line or paragraph that the cursor is in counts as the first one, from the cursor. Words are counted without punctuation. A line ends at a line break. Deleting whole words, sentences, lines or paragraphs also deletes the space or line break that they leave. With nothing left to move over, SandFly says "Beginning of field" or "End of field".
+
+The names of commands come first: "Next word" and "Previous character" run those commands. See [](#voice-commands-phrases).
+
+When no text field has input focus, "select" and a text activates the item with that text, and the other phrases are read as the original voice commands. "Select" and a text also activates the item when the focused text field is a password field or doesn't have the text. For the other phrases, in a password field, SandFly says "Not available in password fields".
 
 #### Calls and messages {#voice-commands-calls}
 
@@ -80,6 +95,7 @@ Voice editing runs only these commands:
 - The commands of the **Text editing** and **Navigate by text** categories, by name, such as "Select all", "Copy", "Paste", "Clear text", "Move cursor to end", "Next word" or "Previous character". **Dictate** and **Start voice editing** don't run. See [](#typing-editing-commands).
 - "Type", "write" or "enter", and a text, which SandFly types at the cursor and says.
 - "New line", "new paragraph" or "press enter", which run **New line**.
+- The phrases for text in a text field, such as "delete next five words", "end of line" or "select crocodile". Here, "select" and a text always acts on the text of the field. See [](#voice-commands-text).
 - The text editing phrases of the original voice commands, such as "Select", "Finish selection", "Delete", "Cut" or "Spell TEXT". Here they are matched as the whole command. See [](#appendix-voice-commands-text-editing).
 - Custom voice commands that run one of these commands or a macro. See [](#voice-commands-custom).
 - Chains of these commands, such as "select all then cut". See [](#voice-commands-chains).

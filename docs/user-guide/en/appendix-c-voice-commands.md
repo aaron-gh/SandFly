@@ -54,10 +54,32 @@ These phrases act on the focused edit field.
 | "Select all" | Selects all the text. |
 | "Select", or "start select", "start selection" or "start selection mode" | Starts selection mode. |
 | "Finish select", or "finish selection", "finish selection mode" or "end select" | Ends selection mode. |
-| A phrase with "copy" | Copies the selected text. |
-| A phrase with "cut" | Cuts the selected text. |
+| A phrase with "copy" | Copies the selected text. With a text field focused, see [](#appendix-voice-commands-text). |
+| A phrase with "cut" | Cuts the selected text. With a text field focused, see [](#appendix-voice-commands-text). |
 | A phrase with "paste" | Pastes the clipboard. |
-| A phrase with "delete" | Deletes the selected text. |
+| A phrase with "delete" | Deletes the selected text. With a text field focused, see [](#appendix-voice-commands-text). |
+
+### Text in a text field {#appendix-voice-commands-text}
+
+These phrases act on the text of the text field with input focus. UNITS is a number and "characters", "words", "sentences", "lines" or "paragraphs", such as "3 words" or "five words", or one of them alone, such as "word". The number is 1 to 20 in words, or digits. "Character", "letter" and "letters" work too. UNIT is "word", "sentence", "line", "paragraph" or "text"; "field", "text field" and "document" are the text too. For how the phrases count and what SandFly says, see [](#voice-commands-text).
+
+| Say | What happens |
+| --- | --- |
+| "Next UNITS", or "to (the) next UNITS", "right (by) UNITS" or "forward (by) UNITS" | Moves the cursor forward over the units. |
+| "Previous UNITS", or "to (the) previous UNITS", "last UNITS", "left (by) UNITS", "back (by) UNITS" or "backward (by) UNITS" | Moves the cursor back over the units. |
+| "(To) (the) start of (the) UNIT", or "(to) (the) beginning of (the) UNIT" | Moves the cursor to the start of the unit. |
+| "(To) (the) end of (the) UNIT" | Moves the cursor to the end of the unit. |
+| "To (the) start", or "to (the) beginning" | Moves the cursor to the start of the text. |
+| "To (the) end" | Moves the cursor to the end of the text. |
+| "Move (the) (cursor)" or "go", and one of the phrases above | Moves the cursor, such as "move cursor left 3 words" or "go to the end of the line". |
+| "Select", or "highlight", and one of the phrases above | Selects the text from the cursor, such as "select next 2 words". |
+| "Copy" and one of the phrases above | Copies the text from the cursor, such as "copy previous sentence". |
+| "Cut" and one of the phrases above | Cuts the text from the cursor, such as "cut to end of paragraph". |
+| "Delete", or "remove" or "erase", and one of the phrases above | Deletes the text from the cursor, such as "delete last 5 words". |
+| "Select TEXT", or "highlight TEXT" | Selects the text in the field. Without it, activates the item on the screen with that text. |
+| "Copy TEXT" | Copies the text in the field. |
+| "Cut TEXT" | Cuts the text in the field. |
+| "Delete TEXT", or "remove TEXT" or "erase TEXT" | Deletes the text in the field. |
 
 ### Speech {#appendix-voice-commands-speech}
 
@@ -95,7 +117,7 @@ These phrases act on the focused edit field.
 | Say | What happens |
 | --- | --- |
 | "Open APP", or "launch APP", "start APP" or "switch to APP" | Opens the app. |
-| "Tap ITEM", or "tap on ITEM", "double tap (on) ITEM", "click (on) ITEM", "press ITEM", "activate ITEM" or "select ITEM" | Activates the item on the screen with that text. |
+| "Tap ITEM", or "tap on ITEM", "double tap (on) ITEM", "click (on) ITEM", "press ITEM", "activate ITEM" or "select ITEM" | Activates the item on the screen with that text. "Select ITEM" selects the text in the focused text field when it has the text. |
 | "Run COMMAND", or "do COMMAND" | Runs the command, macro or script command with that name. |
 | "Run (the) NAME macro", or "run (the) macro NAME" | Runs the macro. |
 | "Wait", or "wait (a) second" | Waits 1 second. |
