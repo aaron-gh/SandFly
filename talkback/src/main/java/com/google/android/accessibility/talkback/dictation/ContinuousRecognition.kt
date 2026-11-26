@@ -49,6 +49,11 @@ internal class ContinuousRecognition(
   private val punctuation: Boolean = true,
   /** Whether [service] masks offensive words. */
   private val blockOffensiveWords: Boolean = true,
+  /**
+   * The language to recognize instead of the phone's, such as the keyboard's, or null. Without it,
+   * the recognizer chosen in Android's settings uses its own language.
+   */
+  private val language: Locale? = null,
 ) : RecognitionListener {
   private var recognizer: SpeechRecognizer? = null
   private val parts = mutableListOf<String>()
@@ -87,7 +92,7 @@ internal class ContinuousRecognition(
       // On the phone, with punctuation and capital letters where the recognizer can add them.
       intent
         .putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true)
-        .putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault().toLanguageTag())
+        .putExtra(RecognizerIntent.EXTRA_LANGUAGE, (language ?: Locale.getDefault()).toLanguageTag())
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
         if (punctuation) {
           intent.putExtra(
@@ -97,6 +102,8 @@ internal class ContinuousRecognition(
         }
         intent.putExtra(RecognizerIntent.EXTRA_MASK_OFFENSIVE_WORDS, blockOffensiveWords)
       }
+    } else if (language != null) {
+      intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, language.toLanguageTag())
     }
     if (!once && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
       // One listening session with results for each part, so that a recognizer that supports it

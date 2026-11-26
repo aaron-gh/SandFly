@@ -23,6 +23,7 @@ import org.json.JSONObject
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -87,6 +88,24 @@ class DictationTest {
     assertTrue(DictationSettings.ramblerSupports(Locale.US))
     assertTrue(DictationSettings.ramblerSupports(Locale.forLanguageTag("vi-VN")))
     assertFalse(DictationSettings.ramblerSupports(Locale.forLanguageTag("cy-GB")))
+  }
+
+  @Test
+  fun keyboardLanguageIsTheSubtypesWhenItDiffersFromThePhones() {
+    val phone = Locale.US
+    assertEquals(
+      Locale.forLanguageTag("uk-UA"),
+      DictationSettings.subtypeLanguage("uk-UA", "uk_UA", "keyboard", phone),
+    )
+    // Without a language tag, the older locale string.
+    assertEquals(
+      Locale.forLanguageTag("uk-UA"),
+      DictationSettings.subtypeLanguage("", "uk_UA", "keyboard", phone),
+    )
+    assertNull(DictationSettings.subtypeLanguage("en-GB", "en_GB", "keyboard", phone))
+    assertNull(DictationSettings.subtypeLanguage("", "", "keyboard", phone))
+    assertNull(DictationSettings.subtypeLanguage("", "zz", "keyboard", phone))
+    assertNull(DictationSettings.subtypeLanguage("uk-UA", "uk_UA", "voice", phone))
   }
 
   /** Answers each request with [answer] and keeps the request's headers and body. */
