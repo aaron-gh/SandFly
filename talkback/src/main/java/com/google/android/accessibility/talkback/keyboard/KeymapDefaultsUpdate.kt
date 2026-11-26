@@ -27,7 +27,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
  */
 object KeymapDefaultsUpdate {
   /** The version of the defaults of the NVDA, JAWS, Orca and keyboard phone keymaps. */
-  private const val VERSION = 7
+  private const val VERSION = 8
 
   private const val NONE = KeyComboModel.NO_MODIFIER
   private const val SHIFT = KeyEvent.META_SHIFT_ON
@@ -294,6 +294,14 @@ object KeymapDefaultsUpdate {
     mapOf(Keymap.KEYBOARD_PHONE_SINGLE_KEYS to browseModeKeys)
   }
 
+  /**
+   * The version 7 defaults of the commands whose defaults changed in version 8, when the NVDA
+   * keymap got Insert + F9 for selection mode: none.
+   */
+  private val VERSION_7: Map<Keymap, Map<Int, KeyCombo>> by lazy {
+    mapOf(Keymap.NVDA to mapOf(R.string.keycombo_shortcut_other_toggle_selection to KeyCombo()))
+  }
+
   /** Each version's earlier defaults of the commands it changed. */
   private val CHANGES: List<Pair<Int, Map<Keymap, Map<Int, KeyCombo>>>> by lazy {
     listOf(
@@ -303,6 +311,7 @@ object KeymapDefaultsUpdate {
       5 to VERSION_4,
       6 to VERSION_5,
       7 to VERSION_6,
+      8 to VERSION_7,
     )
   }
 
