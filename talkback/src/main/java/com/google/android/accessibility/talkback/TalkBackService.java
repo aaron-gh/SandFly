@@ -961,6 +961,11 @@ public class TalkBackService extends AccessibilityServiceCompat
   private static final int VOLUME_KEY_MOVES_CURSOR = 2;
   private int volumeUpKeyUse = VOLUME_KEY_CHANGES_VOLUME;
   private int volumeDownKeyUse = VOLUME_KEY_CHANGES_VOLUME;
+  // What the presses of VolumeUp or VolumeDown being counted by volumeKeyCommands do when they run
+  // no command, instead of changing the volume: a key with a press command moves the cursor or
+  // adjusts the slider only once its presses are known to run none.
+  private int volumeUpDeferredUse = VOLUME_KEY_CHANGES_VOLUME;
+  private int volumeDownDeferredUse = VOLUME_KEY_CHANGES_VOLUME;
 
   /** "Volume keys adjust sliders" setting. */
   private boolean volumeKeysAdjustSliders = false;
@@ -1934,6 +1939,9 @@ public class TalkBackService extends AccessibilityServiceCompat
             keyEvent, () -> volumeKeyCommandsOffReason(triggerModifierPressed, keyCode))) {
       return true;
     }
+    if (useDeferredVolumeKeyNow(keyEvent)) {
+      return true;
+    }
     if (oneUiVolumeKeys != null
         && oneUiVolumeKeys.onKeyEvent(
             keyEvent, () -> canUseVolumeKeyPresses(triggerModifierPressed))) {
@@ -2124,7 +2132,8 @@ public class TalkBackService extends AccessibilityServiceCompat
    * moves the cursor back and volume down moves it on. Volume keys pressed while touching the
    * screen, with the keyboard shortcut modifier, or during continuous reading keep adjusting speech
    * volume. The key up that ends a press which adjusted the slider or moved the cursor is consumed
-   * too.
+   * too. A key with a press command is left to volumeKeyCommands, which moves the cursor or adjusts
+   * the slider for presses that run no command.
    */
   private boolean adjustSliderWithVolumeKey(KeyEvent keyEvent, boolean triggerModifierPressed) {
     int keyCode = keyEvent.getKeyCode();
@@ -2165,16 +2174,62 @@ public class TalkBackService extends AccessibilityServiceCompat
           use = VOLUME_KEY_MOVES_CURSOR;
         }
       }
+      int deferred = VOLUME_KEY_CHANGES_VOLUME;
+      if (use != VOLUME_KEY_CHANGES_VOLUME
+          && volumeKeyCommands != null
+          && volumeKeyCommands.hasAnyCommand(keyCode)) {
+        // Left to volumeKeyCommands, which counts the presses first so that a long, double or
+        // triple press can run its command.
+        deferred = use;
+        use = VOLUME_KEY_CHANGES_VOLUME;
+      }
       if (isUp) {
         volumeUpKeyUse = use;
+        volumeUpDeferredUse = deferred;
       } else {
         volumeDownKeyUse = use;
+        volumeDownDeferredUse = deferred;
       }
     }
     int use = isUp ? volumeUpKeyUse : volumeDownKeyUse;
     if (use == VOLUME_KEY_CHANGES_VOLUME) {
       return false;
     }
+    moveCursorOrAdjustSlider(isUp, use);
+    return true;
+  }
+
+  /**
+   * When volumeKeyCommands didn't keep a press that was left to it, such as during a call, moves
+   * the cursor or adjusts the slider at once, as for a key with no press command, and returns
+   * whether it did. The repeats and release of the press then go to {@link
+   * #adjustSliderWithVolumeKey}.
+   */
+  private boolean useDeferredVolumeKeyNow(KeyEvent keyEvent) {
+    int keyCode = keyEvent.getKeyCode();
+    boolean isUp = keyCode == KeyEvent.KEYCODE_VOLUME_UP;
+    if ((!isUp && keyCode != KeyEvent.KEYCODE_VOLUME_DOWN)
+        || keyEvent.getAction() != KeyEvent.ACTION_DOWN
+        || keyEvent.getRepeatCount() != 0) {
+      return false;
+    }
+    int deferred = isUp ? volumeUpDeferredUse : volumeDownDeferredUse;
+    if (deferred == VOLUME_KEY_CHANGES_VOLUME) {
+      return false;
+    }
+    if (isUp) {
+      volumeUpKeyUse = deferred;
+      volumeUpDeferredUse = VOLUME_KEY_CHANGES_VOLUME;
+    } else {
+      volumeDownKeyUse = deferred;
+      volumeDownDeferredUse = VOLUME_KEY_CHANGES_VOLUME;
+    }
+    moveCursorOrAdjustSlider(isUp, deferred);
+    return true;
+  }
+
+  /** Moves the cursor by a character, or adjusts the slider, as a volume key press does. */
+  private void moveCursorOrAdjustSlider(boolean isUp, int use) {
     if (use == VOLUME_KEY_MOVES_CURSOR) {
       pipeline
           .getFeedbackReturner()
@@ -2186,7 +2241,7 @@ public class TalkBackService extends AccessibilityServiceCompat
                           : TraversalStrategy.SEARCH_FOCUS_FORWARD)
                   .setInputMode(InputModeTracker.INPUT_MODE_KEYBOARD)
                   .setGranularity(CursorGranularity.CHARACTER));
-      return true;
+      return;
     }
     pipeline
         .getFeedbackReturner()
@@ -2195,7 +2250,17 @@ public class TalkBackService extends AccessibilityServiceCompat
             Feedback.adjustValue(
                 isUp ? Feedback.AdjustValue.Action.INCREASE_VALUE
                     : Feedback.AdjustValue.Action.DECREASE_VALUE));
-    return true;
+  }
+
+  private int deferredVolumeKeyUse(int keyCode) {
+    switch (keyCode) {
+      case KeyEvent.KEYCODE_VOLUME_UP:
+        return volumeUpDeferredUse;
+      case KeyEvent.KEYCODE_VOLUME_DOWN:
+        return volumeDownDeferredUse;
+      default:
+        return VOLUME_KEY_CHANGES_VOLUME;
+    }
   }
 
   private boolean isBrailleImeTouchInteracting() {
@@ -3368,7 +3433,21 @@ public class TalkBackService extends AccessibilityServiceCompat
             () ->
                 (oneUiVolumeKeys != null)
                     ? oneUiVolumeKeys.suggestedStream()
-                    : AudioManager.USE_DEFAULT_STREAM_TYPE);
+                    : AudioManager.USE_DEFAULT_STREAM_TYPE,
+            new VolumeKeyCommands.VolumeChangeReplacement() {
+              @Override
+              public boolean replaces(int keyCode) {
+                return deferredVolumeKeyUse(keyCode) != VOLUME_KEY_CHANGES_VOLUME;
+              }
+
+              @Override
+              public void replace(int keyCode) {
+                int use = deferredVolumeKeyUse(keyCode);
+                if (use != VOLUME_KEY_CHANGES_VOLUME) {
+                  moveCursorOrAdjustSlider(keyCode == KeyEvent.KEYCODE_VOLUME_UP, use);
+                }
+              }
+            });
     ringerModeAndScreenMonitor.addScreenChangedListener(
         (isInteractive, eventId) -> {
           if (!isInteractive) {

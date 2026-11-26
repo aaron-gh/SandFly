@@ -124,6 +124,20 @@ class VolumeKeyCommandsTest {
   @Test
   fun otherPresses_screenOff_passToAndroid() {
     assertEquals(OtherPresses.ANDROID, otherPresses(true, true, interactive = false))
+    assertEquals(
+      OtherPresses.ANDROID,
+      otherPresses(false, false, interactive = false, replaced = true),
+    )
+  }
+
+  @Test
+  fun otherPresses_replaced_keepsThemWhateverTheSwitches() {
+    // Volume keys move the cursor in a text field, with a press command assigned.
+    assertEquals(OtherPresses.VOLUME, otherPresses(true, false, interactive = true, replaced = true))
+    assertEquals(
+      OtherPresses.VOLUME,
+      otherPresses(false, false, interactive = true, replaced = true),
+    )
   }
 
   @Test
