@@ -35,6 +35,7 @@ import com.google.android.accessibility.talkback.compositor.rule.EventTypeViewCl
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
+import com.google.android.accessibility.talkback.report.ReportNotes;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
@@ -634,7 +635,11 @@ public class Compositor {
     if (scripted != null) {
       ttsOutput = scripted;
     }
-    if (!TextUtils.isEmpty(ttsOutput) && isLeftUnsaid(event, options)) {
+    boolean leftUnsaid = !TextUtils.isEmpty(ttsOutput) && isLeftUnsaid(event, options);
+    if (!TextUtils.isEmpty(ttsOutput)) {
+      noteAppSpeech(event, options, ttsOutput, leftUnsaid);
+    }
+    if (leftUnsaid) {
       LogUtils.d(TAG, "Not spoken, left out by the app speech filter: event=%d", event);
       ttsOutput = "";
     }
@@ -735,6 +740,40 @@ public class Compositor {
     }
     return AppSpeechFilter.alwaysMutes(source, packageName)
         || (active && AppSpeechFilter.mutes(source, packageName));
+  }
+
+  /**
+   * Adds speech an app caused by itself, an announcement, a live region, a window change, a toast
+   * or a notification, to {@link ReportNotes#appSpeech}, with the package and class of its event.
+   */
+  private static void noteAppSpeech(
+      int event, HandleEventOptions options, CharSequence ttsOutput, boolean leftUnsaid) {
+    String kind;
+    switch (event) {
+      case EVENT_TYPE_ANNOUNCEMENT -> kind = "Announcement";
+      case EVENT_TYPE_WINDOW_STATE_CHANGED -> kind = "Window change";
+      case EVENT_TYPE_NOTIFICATION_STATE_CHANGED -> kind = "Notification or toast";
+      case EVENT_TYPE_WINDOW_CONTENT_CHANGED -> {
+        if (options.sourceNode == null
+            || options.sourceNode.getLiveRegion() == View.ACCESSIBILITY_LIVE_REGION_NONE) {
+          return;
+        }
+        kind = "Live region";
+      }
+      default -> {
+        return;
+      }
+    }
+    @Nullable AccessibilityEvent eventObject = options.eventObject;
+    ReportNotes.appSpeech.add(
+        ReportNotes.appSpeechNote(
+            kind,
+            (eventObject == null) ? null : eventObject.getPackageName(),
+            (eventObject == null) ? null : eventObject.getClassName(),
+            (eventObject == null) ? -1 : eventObject.getWindowId(),
+            (options.sourceNode == null) ? null : options.sourceNode.getPackageName(),
+            leftUnsaid,
+            ttsOutput));
   }
 
   /** What caused the speech for {@code event}, or null for speech the filter always lets through. */

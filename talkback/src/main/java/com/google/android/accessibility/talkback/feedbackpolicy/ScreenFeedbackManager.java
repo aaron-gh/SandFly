@@ -46,6 +46,7 @@ import com.google.android.accessibility.talkback.eventprocessor.ProcessorAccessi
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.gesture.GestureHints;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
+import com.google.android.accessibility.talkback.report.ReportNotes;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
@@ -366,6 +367,7 @@ public class ScreenFeedbackManager
         if (appSpeechLeftUnsaid == null) {
           appSpeechLeftUnsaid = leavesAppSpeechUnsaid(interpretation);
         }
+        noteWindowSpeech(interpretation, feedbackPart, appSpeechLeftUnsaid);
         if (appSpeechLeftUnsaid) {
           LogUtils.d(TAG, "Window speech not spoken, from an app with its own speech");
           droppedWindowName = true;
@@ -397,6 +399,35 @@ public class ScreenFeedbackManager
                   com.google.android.accessibility.utils.R.raw.window_state)
               .vibration(com.google.android.accessibility.utils.R.array.window_state_pattern));
     }
+  }
+
+  /**
+   * Adds a window name or app announcement of {@code interpretation} to {@link
+   * ReportNotes#appSpeech}, with the package of the announcement or of the event that titled the
+   * window. Asks the apps nothing.
+   */
+  private void noteWindowSpeech(
+      WindowEventInterpreter.EventInterpretation interpretation,
+      FeedbackPart feedbackPart,
+      boolean leftUnsaid) {
+    @Nullable Announcement announcement = interpretation.getAnnouncement();
+    int windowId = interpretation.getEventSourceWindow().getId();
+    if (windowId == WINDOW_ID_NONE) {
+      windowId = interpretation.getWindowA().getId();
+    }
+    @Nullable CharSequence packageName =
+        (feedbackPart.isAppAnnouncement() && announcement != null)
+            ? announcement.packageName()
+            : (windowId == WINDOW_ID_NONE) ? null : interpreter.getWindowEventPackageName(windowId);
+    ReportNotes.appSpeech.add(
+        ReportNotes.appSpeechNote(
+            feedbackPart.isAppAnnouncement() ? "Window announcement" : "Window name",
+            packageName,
+            /* className= */ null,
+            (windowId == WINDOW_ID_NONE) ? -1 : windowId,
+            /* sourcePackage= */ null,
+            leftUnsaid,
+            feedbackPart.getSpeech()));
   }
 
   /**

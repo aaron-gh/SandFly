@@ -60,4 +60,44 @@ class ReportNotesTest {
     notes.clear()
     assertNull(notes.read())
   }
+
+  @Test
+  fun appSpeechNote_namesPackageClassWindowAndSourceApp() {
+    assertEquals(
+      "Announcement from com.oplus.viewtalk, class android.view.View, window 12, " +
+        "item in com.google.android.youtube, spoken: \"Image may contain\"",
+      ReportNotes.appSpeechNote(
+        "Announcement",
+        "com.oplus.viewtalk",
+        "android.view.View",
+        12,
+        "com.google.android.youtube",
+        leftOut = false,
+        "Image may contain",
+      ),
+    )
+  }
+
+  @Test
+  fun appSpeechNote_leavesOutUnknownsAndSamePackage() {
+    assertEquals(
+      "Window name from no package, left out: \"YouTube\"",
+      ReportNotes.appSpeechNote("Window name", null, null, -1, null, leftOut = true, "YouTube"),
+    )
+    assertEquals(
+      "Live region from a.b, spoken: \"x\"",
+      ReportNotes.appSpeechNote("Live region", "a.b", null, -1, "a.b", leftOut = false, "x"),
+    )
+  }
+
+  @Test
+  fun appSpeechNote_cutsLongTextToOneLine() {
+    val text = "line one\n" + "x".repeat(100)
+    val note =
+      ReportNotes.appSpeechNote("Announcement", "a.b", null, -1, null, leftOut = false, text)
+    val quoted = note.substringAfter('"').substringBeforeLast('"')
+    assertEquals(ReportNotes.MAX_APP_SPEECH_TEXT + 1, quoted.length)
+    assertTrue(quoted.startsWith("line one x"))
+    assertTrue(quoted.endsWith("…"))
+  }
 }

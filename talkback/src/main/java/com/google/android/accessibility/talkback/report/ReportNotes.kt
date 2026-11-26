@@ -68,5 +68,49 @@ class ReportNotes(@get:VisibleForTesting internal val maxEntries: Int) {
 
     /** How long the tests of macros' Show in Actions only when conditions took, per item. */
     @JvmField val macroConditions = ReportNotes(MAX_ENTRIES)
+
+    /**
+     * Speech that apps cause by themselves: announcements, live regions, window changes, toasts
+     * and notifications, with the package and class of the event and the start of the text, so
+     * that a report shows which app sent a text whatever the log level.
+     */
+    @JvmField val appSpeech = ReportNotes(MAX_APP_SPEECH_ENTRIES)
+
+    private const val MAX_APP_SPEECH_ENTRIES = 60
+
+    /** How much of a text an [appSpeech] note keeps. */
+    @VisibleForTesting internal const val MAX_APP_SPEECH_TEXT = 40
+
+    /**
+     * An [appSpeech] note: what [kind] of speech it is, the [packageName] and [className] of the
+     * event, its [windowId], the package of its [sourcePackage] node when it differs, whether it
+     * was [leftOut], and the start of [text].
+     */
+    @JvmStatic
+    fun appSpeechNote(
+      kind: String,
+      packageName: CharSequence?,
+      className: CharSequence?,
+      windowId: Int,
+      sourcePackage: CharSequence?,
+      leftOut: Boolean,
+      text: CharSequence?,
+    ): String {
+      val note = StringBuilder(kind).append(" from ").append(packageName ?: "no package")
+      if (className != null) note.append(", class ").append(className)
+      if (windowId != -1) note.append(", window ").append(windowId)
+      if (sourcePackage != null && sourcePackage.toString() != packageName?.toString()) {
+        note.append(", item in ").append(sourcePackage)
+      }
+      note.append(if (leftOut) ", left out: " else ", spoken: ")
+      val whole = text?.toString().orEmpty().replace('\n', ' ')
+      note
+        .append('"')
+        .append(
+          if (whole.length > MAX_APP_SPEECH_TEXT) whole.take(MAX_APP_SPEECH_TEXT) + "…" else whole
+        )
+        .append('"')
+      return note.toString()
+    }
   }
 }

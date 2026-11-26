@@ -62,6 +62,7 @@ A report always includes the fields you filled in and the version and build numb
 - The last gestures that SandFly recognized.
 - The last crash and the last time SandFly turned off, and times that SandFly stopped responding for a moment.
 - The accessibility services that are on, and the last volume key presses.
+- The last announcements, notifications, toasts and window names that apps sent, with the app that sent each and the start of its text.
 - The logs of the other SandFly processes, such as on-device AI.
 
 To report a problem soon after it happens, open **Send feedback** before you do anything else, so that the log still has it.
