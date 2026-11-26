@@ -32,6 +32,8 @@ import android.os.Looper
 import android.os.SystemClock
 import android.view.Display
 import android.view.MotionEvent
+import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE
 import android.view.MotionEvent.ACTION_DOWN
 import android.view.MotionEvent.ACTION_MOVE
 import android.view.MotionEvent.ACTION_UP
@@ -75,6 +77,9 @@ class TouchInteractionMonitorTest {
     var tapActivatesAtOnce = false
     var tapExplorations = 0
     val touchExplorerResets = mutableListOf<String>()
+    var mapping: GestureShortcutMapping? = null
+
+    override fun getGestureShortcutMapping(): GestureShortcutMapping? = mapping
 
     override fun resetTouchExplorer(reason: String) {
       touchExplorerResets.add(reason)
@@ -366,6 +371,73 @@ class TouchInteractionMonitorTest {
       TouchLock.stop()
     }
   }
+
+  private fun rotorTouchAt(action: Int, degrees: Double, timeMs: Long) {
+    val angle = Math.toRadians(degrees)
+    val dx = (120 * kotlin.math.cos(angle)).toFloat()
+    val dy = (120 * kotlin.math.sin(angle)).toFloat()
+    val props =
+      Array(2) { index ->
+        MotionEvent.PointerProperties().apply {
+          id = index
+          toolType = MotionEvent.TOOL_TYPE_FINGER
+        }
+      }
+    val coords =
+      Array(2) { index ->
+        MotionEvent.PointerCoords().apply {
+          val direction = if (index == 0) -1 else 1
+          x = 420f + direction * dx
+          y = 440f + direction * dy
+          pressure = 1f
+          size = 1f
+        }
+      }
+    val eventTime = start + timeMs
+    val event = MotionEvent.obtain(downTime, eventTime, action, 2, props, coords, 0, 0, 1f,
+      1f, 0, 0, android.view.InputDevice.SOURCE_TOUCHSCREEN, 0)
+    main.postAtTime({ callController("onMotionEvent", MotionEvent::class.java, event) }, eventTime)
+  }
+
+  /** Lifting and landing again can happen before Android reports a new interaction. */
+  private fun rotorAt(timeMs: Long, firstFingerMoves: Boolean, turn: Boolean) {
+    touchAt(ACTION_DOWN, if (firstFingerMoves) 92f else 300f, 440f, timeMs)
+    if (firstFingerMoves) {
+      touchAt(ACTION_MOVE, 160f, 440f, timeMs + 15)
+      touchAt(ACTION_MOVE, 230f, 440f, timeMs + 30)
+      touchAt(ACTION_MOVE, 300f, 440f, timeMs + 45)
+    }
+    rotorTouchAt(MotionEvent.ACTION_POINTER_DOWN or (1 shl 8), 0.0, timeMs + 55)
+    if (turn) {
+      rotorTouchAt(ACTION_MOVE, 12.0, timeMs + 72)
+      rotorTouchAt(ACTION_MOVE, 23.0, timeMs + 89)
+      rotorTouchAt(ACTION_MOVE, 37.0, timeMs + 106)
+    }
+    rotorTouchAt(MotionEvent.ACTION_POINTER_UP or (1 shl 8), if (turn) 37.0 else 0.0, timeMs + 122)
+    touchAt(ACTION_UP, 324f, 368f, timeMs + 140)
+  }
+
+  @Test
+  fun rotorCanStartWhenTheFirstFingerStartedAnUnfinishedSwipe() {
+    service.mapping = GestureShortcutMapping(service)
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    rotorAt(0, firstFingerMoves = true, turn = true)
+    runUntil(185)
+
+    assertEquals(listOf(GESTURE_2_FINGER_ROTATE_CLOCKWISE), service.gestures)
+  }
+
+  @Test
+  fun anInterruptedSwipeDoesNotBlockTheNextRotorTurn() {
+    service.mapping = GestureShortcutMapping(service)
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    rotorAt(0, firstFingerMoves = true, turn = false)
+    rotorAt(188, firstFingerMoves = false, turn = true)
+    runUntil(365)
+
+    assertEquals(listOf(GESTURE_2_FINGER_ROTATE_CLOCKWISE), service.gestures)
+  }
+
 
   @Test
   fun fingerHeldStillAsksForTouchExplorationOnTheMainThreadAfterTheDelay() {
