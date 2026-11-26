@@ -186,4 +186,119 @@
         <item>ný efnisgrein</item>
         <item>ýta á enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Ekki í boði í lykilorðareitum</string>
+    <string-array name="voice_commands_text_move">
+        <item>færa [bendil] {target}</item>
+        <item>farðu {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>velja {target}</item>
+        <item>veldu {target}</item>
+        <item>auðkenna {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>afrita {target}</item>
+        <item>afritaðu {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>klippa {target}</item>
+        <item>klipptu {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>eyða {target}</item>
+        <item>eyddu {target}</item>
+        <item>fjarlægja {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>næsta {units}</item>
+        <item>næstu {units}</item>
+        <item>til hægri {units}</item>
+        <item>áfram {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>fyrri {units}</item>
+        <item>síðasta {units}</item>
+        <item>síðustu {units}</item>
+        <item>til vinstri {units}</item>
+        <item>aftur {units}</item>
+        <item>til baka {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[í] byrjun {unit}</item>
+        <item>[í] upphaf {unit}</item>
+        <item>í byrjun</item>
+        <item>í upphaf</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[í] enda {unit}</item>
+        <item>[í] lok {unit}</item>
+        <item>í enda</item>
+        <item>í lok</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>stafur</item>
+        <item>stafir</item>
+        <item>stafi</item>
+        <item>stafs</item>
+        <item>stafa</item>
+        <item>tákn</item>
+        <item>tákna</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>orð</item>
+        <item>orðs</item>
+        <item>orða</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>setning</item>
+        <item>setningar</item>
+        <item>setningu</item>
+        <item>setninga</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>lína</item>
+        <item>línur</item>
+        <item>línu</item>
+        <item>lína</item>
+        <item>lína</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>málsgrein</item>
+        <item>málsgreinar</item>
+        <item>málsgrein</item>
+        <item>málsgreina</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>texti</item>
+        <item>texta</item>
+        <item>reitur</item>
+        <item>reit</item>
+        <item>textareitur</item>
+        <item>textareit</item>
+        <item>skjal</item>
+        <item>skjalið</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>einn|eitt|ein|einu|einum</item>
+        <item>tveir|tvö|tvær|tveimur|tveim</item>
+        <item>þrír|þrjú|þrjár|þremur</item>
+        <item>fjórir|fjögur|fjórar|fjórum</item>
+        <item>fimm</item>
+        <item>sex</item>
+        <item>sjö</item>
+        <item>átta</item>
+        <item>níu</item>
+        <item>tíu</item>
+        <item>ellefu</item>
+        <item>tólf</item>
+        <item>þrettán</item>
+        <item>fjórtán</item>
+        <item>fimmtán</item>
+        <item>sextán</item>
+        <item>sautján</item>
+        <item>átján</item>
+        <item>nítján</item>
+        <item>tuttugu</item>
+    </string-array>
 </resources>

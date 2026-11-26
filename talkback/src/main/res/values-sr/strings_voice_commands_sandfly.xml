@@ -318,4 +318,104 @@
         <item>нови пасус</item>
         <item>притисни ентер</item>
     </string-array>
+    <string name="voice_commands_text_password">Није доступно у пољима за лозинку</string>
+    <string-array name="voice_commands_text_move">
+        <item>помери [курсор] {target}</item>
+        <item>иди {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>изабери {target}</item>
+        <item>означи {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>копирај {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>исеци {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>обриши {target}</item>
+        <item>избриши {target}</item>
+        <item>уклони {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[на] следећи {units}</item>
+        <item>[на] следеће {units}</item>
+        <item>[на] следећу {units}</item>
+        <item>удесно за {units}</item>
+        <item>напред за {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[на] претходни {units}</item>
+        <item>[на] претходне {units}</item>
+        <item>[на] претходну {units}</item>
+        <item>улево за {units}</item>
+        <item>назад за {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[на] почетак {unit}</item>
+        <item>[на] почетак</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[на] крај {unit}</item>
+        <item>[на] крај</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>знак</item>
+        <item>знака</item>
+        <item>знакова</item>
+        <item>слово</item>
+        <item>слова</item>
+        <item>слова</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>реч</item>
+        <item>речи</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>реченица</item>
+        <item>реченице</item>
+        <item>реченица</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>ред</item>
+        <item>реда</item>
+        <item>редова</item>
+        <item>линија</item>
+        <item>линије</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>пасус</item>
+        <item>пасуса</item>
+        <item>пасуси</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>текст</item>
+        <item>поље</item>
+        <item>текстуално поље</item>
+        <item>документ</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>један|једна|једно</item>
+        <item>два|две</item>
+        <item>три</item>
+        <item>четири</item>
+        <item>пет</item>
+        <item>шест</item>
+        <item>седам</item>
+        <item>осам</item>
+        <item>девет</item>
+        <item>десет</item>
+        <item>једанаест</item>
+        <item>дванаест</item>
+        <item>тринаест</item>
+        <item>четрнаест</item>
+        <item>петнаест</item>
+        <item>шеснаест</item>
+        <item>седамнаест</item>
+        <item>осамнаест</item>
+        <item>деветнаест</item>
+        <item>двадесет</item>
+    </string-array>
 </resources>

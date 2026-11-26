@@ -308,4 +308,117 @@
         <item>нов абзац</item>
         <item>натисни enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Не е налично в полета за парола</string>
+    <string-array name="voice_commands_text_move">
+        <item>премести [курсора] {target}</item>
+        <item>отиди {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>избери {target}</item>
+        <item>маркирай {target}</item>
+        <item>селектирай {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>копирай {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>изрежи {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>изтрий {target}</item>
+        <item>премахни {target}</item>
+        <item>изчисти {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[към] следващата {units}</item>
+        <item>[към] следващия {units}</item>
+        <item>[към] следващото {units}</item>
+        <item>[към] следващите {units}</item>
+        <item>надясно [с] {units}</item>
+        <item>напред [с] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[към] предишната {units}</item>
+        <item>[към] предишния {units}</item>
+        <item>[към] предишното {units}</item>
+        <item>[към] предишните {units}</item>
+        <item>последните {units}</item>
+        <item>наляво [с] {units}</item>
+        <item>назад [с] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[към] началото на {unit}</item>
+        <item>[в] началото на {unit}</item>
+        <item>към началото</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[към] края на {unit}</item>
+        <item>[в] края на {unit}</item>
+        <item>към края</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>символ</item>
+        <item>символи</item>
+        <item>буква</item>
+        <item>букви</item>
+        <item>знак</item>
+        <item>знаци</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>дума</item>
+        <item>думи</item>
+        <item>думата</item>
+        <item>думите</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>изречение</item>
+        <item>изречения</item>
+        <item>изречението</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>ред</item>
+        <item>редове</item>
+        <item>реда</item>
+        <item>линия</item>
+        <item>линии</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>абзац</item>
+        <item>абзаци</item>
+        <item>абзаца</item>
+        <item>параграф</item>
+        <item>параграфи</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>текст</item>
+        <item>текста</item>
+        <item>поле</item>
+        <item>полето</item>
+        <item>текстово поле</item>
+        <item>документ</item>
+        <item>документа</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>един|една|едно</item>
+        <item>два|две</item>
+        <item>три</item>
+        <item>четири</item>
+        <item>пет</item>
+        <item>шест</item>
+        <item>седем</item>
+        <item>осем</item>
+        <item>девет</item>
+        <item>десет</item>
+        <item>единадесет|единайсет</item>
+        <item>дванадесет|дванайсет</item>
+        <item>тринадесет|тринайсет</item>
+        <item>четиринадесет|четиринайсет</item>
+        <item>петнадесет|петнайсет</item>
+        <item>шестнадесет|шестнайсет</item>
+        <item>седемнадесет|седемнайсет</item>
+        <item>осемнадесет|осемнайсет</item>
+        <item>деветнадесет|деветнайсет</item>
+        <item>двадесет|двайсет</item>
+    </string-array>
 </resources>

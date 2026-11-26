@@ -217,4 +217,111 @@
         <item>новий абзац</item>
         <item>натисни ентер</item>
     </string-array>
+    <string name="voice_commands_text_password">Недоступно в полях пароля</string>
+    <string-array name="voice_commands_text_move">
+        <item>перемісти [курсор] {target}</item>
+        <item>перейди {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>виділи {target}</item>
+        <item>познач {target}</item>
+        <item>вибери {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>копіюй {target}</item>
+        <item>скопіюй {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>виріж {target}</item>
+        <item>вирізати {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>видали {target}</item>
+        <item>стеріть {target}</item>
+        <item>прибери {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[до] наступного {units}</item>
+        <item>[до] наступних {units}</item>
+        <item>вправо на {units}</item>
+        <item>вперед на {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[до] попереднього {units}</item>
+        <item>[до] попередніх {units}</item>
+        <item>останні {units}</item>
+        <item>вліво на {units}</item>
+        <item>назад на {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[на] початок {unit}</item>
+        <item>[на] початок</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[в] кінець {unit}</item>
+        <item>[в] кінець</item>
+        <item>[на] кінець {unit}</item>
+        <item>[на] кінець</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>символ</item>
+        <item>символи</item>
+        <item>символів</item>
+        <item>символа</item>
+        <item>літера</item>
+        <item>літери</item>
+        <item>літер</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>слово</item>
+        <item>слова</item>
+        <item>слів</item>
+        <item>слову</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>речення</item>
+        <item>речень</item>
+        <item>речення</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>рядок</item>
+        <item>рядки</item>
+        <item>рядків</item>
+        <item>рядка</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>абзац</item>
+        <item>абзаци</item>
+        <item>абзаців</item>
+        <item>абзацу</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>текст</item>
+        <item>поле</item>
+        <item>текстове поле</item>
+        <item>документ</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>один|одне|одну|одна|одного</item>
+        <item>два|дві|двох|двоє</item>
+        <item>три|трьох</item>
+        <item>чотири|чотирьох</item>
+        <item>п\'ять|п\'яти</item>
+        <item>шість|шести</item>
+        <item>сім|семи</item>
+        <item>вісім|восьми</item>
+        <item>дев\'ять|дев\'яти</item>
+        <item>десять|десяти</item>
+        <item>одинадцять|одинадцяти</item>
+        <item>дванадцять|дванадцяти</item>
+        <item>тринадцять|тринадцяти</item>
+        <item>чотирнадцять|чотирнадцяти</item>
+        <item>п\'ятнадцять|п\'ятнадцяти</item>
+        <item>шістнадцять|шістнадцяти</item>
+        <item>сімнадцять|сімнадцяти</item>
+        <item>вісімнадцять|вісімнадцяти</item>
+        <item>дев\'ятнадцять|дев\'ятнадцяти</item>
+        <item>двадцять|двадцяти</item>
+    </string-array>
 </resources>

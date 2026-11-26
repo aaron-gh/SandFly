@@ -181,4 +181,99 @@
         <item>ಹೊಸ ಪ್ಯಾರಾಗ್ರಾಫ್</item>
         <item>ಎಂಟರ್ ಒತ್ತಿ</item>
     </string-array>
+    <string name="voice_commands_text_password">ಪಾಸ್‌ವರ್ಡ್ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಲಭ್ಯವಿಲ್ಲ</string>
+    <string-array name="voice_commands_text_move">
+        <item>[ಕರ್ಸರ್] {target}ಗೆ ಸರಿಸಿ</item>
+        <item>{target}ಗೆ ಹೋಗಿ</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} ಆಯ್ಕೆಮಾಡಿ</item>
+        <item>{target} ಹೈಲೈಟ್ ಮಾಡಿ</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} ನಕಲಿಸಿ</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} ಕತ್ತರಿಸಿ</item>
+        <item>{target} ಕಟ್ ಮಾಡಿ</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} ಅಳಿಸಿ</item>
+        <item>{target} ತೆಗೆದುಹಾಕಿ</item>
+        <item>{target} ಡಿಲೀಟ್ ಮಾಡಿ</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>ಮುಂದಿನ {units}</item>
+        <item>ಬಲಕ್ಕೆ {units}</item>
+        <item>ಮುಂದೆ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>ಹಿಂದಿನ {units}</item>
+        <item>ಕೊನೆಯ {units}</item>
+        <item>ಎಡಕ್ಕೆ {units}</item>
+        <item>ಹಿಂದೆ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} ಆರಂಭಕ್ಕೆ</item>
+        <item>{unit} ಪ್ರಾರಂಭಕ್ಕೆ</item>
+        <item>ಆರಂಭಕ್ಕೆ</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} ಕೊನೆಗೆ</item>
+        <item>{unit} ಅಂತ್ಯಕ್ಕೆ</item>
+        <item>ಕೊನೆಗೆ</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>ಅಕ್ಷರ</item>
+        <item>ಅಕ್ಷರಗಳು</item>
+        <item>ಕ್ಯಾರೆಕ್ಟರ್</item>
+        <item>ಕ್ಯಾರೆಕ್ಟರ್‌ಗಳು</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>ಪದ</item>
+        <item>ಪದಗಳು</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>ವಾಕ್ಯ</item>
+        <item>ವಾಕ್ಯಗಳು</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>ಸಾಲು</item>
+        <item>ಸಾಲುಗಳು</item>
+        <item>ಲೈನ್</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>ಪ್ಯಾರಾಗ್ರಾಫ್</item>
+        <item>ಪ್ಯಾರಾಗ್ರಾಫ್‌ಗಳು</item>
+        <item>ಪ್ಯಾರಾ</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>ಪಠ್ಯ</item>
+        <item>ಕ್ಷೇತ್ರ</item>
+        <item>ಪಠ್ಯ ಕ್ಷೇತ್ರ</item>
+        <item>ಡಾಕ್ಯುಮೆಂಟ್</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>ಒಂದು</item>
+        <item>ಎರಡು</item>
+        <item>ಮೂರು</item>
+        <item>ನಾಲ್ಕು</item>
+        <item>ಐದು</item>
+        <item>ಆರು</item>
+        <item>ಏಳು</item>
+        <item>ಎಂಟು</item>
+        <item>ಒಂಬತ್ತು</item>
+        <item>ಹತ್ತು</item>
+        <item>ಹನ್ನೊಂದು</item>
+        <item>ಹನ್ನೆರಡು</item>
+        <item>ಹದಿಮೂರು</item>
+        <item>ಹದಿನಾಲ್ಕು</item>
+        <item>ಹದಿನೈದು</item>
+        <item>ಹದಿನಾರು</item>
+        <item>ಹದಿನೇಳು</item>
+        <item>ಹದಿನೆಂಟು</item>
+        <item>ಹತ್ತೊಂಬತ್ತು</item>
+        <item>ಇಪ್ಪತ್ತು</item>
+    </string-array>
 </resources>

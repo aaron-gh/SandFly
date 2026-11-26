@@ -179,4 +179,93 @@
         <item>නව ඡේදය</item>
         <item>enter ඔබන්න</item>
     </string-array>
+    <string name="voice_commands_text_password">මුරපද ක්ෂේත්‍රවල නොමැත</string>
+    <string-array name="voice_commands_text_move">
+        <item>කර්සරය {target} වෙත ගෙන යන්න</item>
+        <item>{target} වෙත යන්න</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} තෝරන්න</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} පිටපත් කරන්න</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} කපන්න</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} මකන්න</item>
+        <item>{target} ඉවත් කරන්න</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>ඊළඟ {units}</item>
+        <item>දකුණට {units}</item>
+        <item>ඉදිරියට {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>කලින් {units}</item>
+        <item>වමට {units}</item>
+        <item>පසුපසට {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} ආරම්භය</item>
+        <item>{unit} මුලට</item>
+        <item>ආරම්භයට</item>
+        <item>මුලට</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} අවසානය</item>
+        <item>{unit} අගට</item>
+        <item>අවසානයට</item>
+        <item>අගට</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>අක්ෂරය</item>
+        <item>අක්ෂර</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>වචනය</item>
+        <item>වචන</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>වාක්‍යය</item>
+        <item>වාක්‍ය</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>පේළිය</item>
+        <item>පේළි</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>ඡේදය</item>
+        <item>ඡේද</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>පෙළ</item>
+        <item>ක්ෂේත්‍රය</item>
+        <item>පෙළ ක්ෂේත්‍රය</item>
+        <item>ලේඛනය</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>එක|එකක්</item>
+        <item>දෙක|දෙකක්</item>
+        <item>තුන</item>
+        <item>හතර</item>
+        <item>පහ</item>
+        <item>හය</item>
+        <item>හත</item>
+        <item>අට</item>
+        <item>නවය</item>
+        <item>දහය</item>
+        <item>එකොළහ</item>
+        <item>දොළහ</item>
+        <item>දහතුන</item>
+        <item>දාහතර</item>
+        <item>පහළොව</item>
+        <item>දාසය</item>
+        <item>දහහත</item>
+        <item>දහඅට</item>
+        <item>දහනවය</item>
+        <item>විස්ස</item>
+    </string-array>
 </resources>

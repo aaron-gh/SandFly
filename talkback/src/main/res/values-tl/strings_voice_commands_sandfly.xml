@@ -194,4 +194,101 @@
         <item>bagong talata</item>
         <item>pindutin ang enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Hindi available sa mga password field</string>
+    <string-array name="voice_commands_text_move">
+        <item>ilipat [ang] [cursor] {target}</item>
+        <item>pumunta {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>piliin ang {target}</item>
+        <item>i-highlight ang {target}</item>
+        <item>piliin {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopyahin ang {target}</item>
+        <item>kopyahin {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>i-cut ang {target}</item>
+        <item>cut {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>burahin ang {target}</item>
+        <item>tanggalin ang {target}</item>
+        <item>burahin {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[sa] susunod na {units}</item>
+        <item>pakanan {units}</item>
+        <item>pasulong {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[sa] nakaraang {units}</item>
+        <item>[ang] huling {units}</item>
+        <item>pakaliwa {units}</item>
+        <item>paatras {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[sa] simula ng {unit}</item>
+        <item>[sa] umpisa ng {unit}</item>
+        <item>sa simula</item>
+        <item>sa umpisa</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[sa] dulo ng {unit}</item>
+        <item>sa dulo</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>character</item>
+        <item>characters</item>
+        <item>letra</item>
+        <item>mga letra</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>salita</item>
+        <item>mga salita</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>pangungusap</item>
+        <item>mga pangungusap</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>linya</item>
+        <item>mga linya</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>talata</item>
+        <item>mga talata</item>
+        <item>paragraph</item>
+        <item>mga paragraph</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>teksto</item>
+        <item>field</item>
+        <item>text field</item>
+        <item>dokumento</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>isa|a</item>
+        <item>dalawa|to|too</item>
+        <item>tatlo</item>
+        <item>apat|for</item>
+        <item>lima</item>
+        <item>anim</item>
+        <item>pito</item>
+        <item>walo</item>
+        <item>siyam</item>
+        <item>sampu</item>
+        <item>labing-isa|labing isa</item>
+        <item>labindalawa|labing-dalawa|labing dalawa</item>
+        <item>labintatlo|labing-tatlo|labing tatlo</item>
+        <item>labing-apat|labing apat</item>
+        <item>labinlima|labing-lima|labing lima</item>
+        <item>labing-anim|labing anim</item>
+        <item>labimpito|labing-pito|labing pito</item>
+        <item>labingwalo|labing-walo|labing walo</item>
+        <item>labinsiyam|labing-siyam|labing siyam</item>
+        <item>dalawampu</item>
+    </string-array>
 </resources>

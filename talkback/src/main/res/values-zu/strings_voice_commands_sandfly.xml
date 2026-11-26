@@ -189,4 +189,94 @@
         <item>ipharagrafu entsha</item>
         <item>cindezela i-enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Ayitholakali emasimini egama lokungena</string>
+    <string-array name="voice_commands_text_move">
+        <item>hambisa [isikhombi] {target}</item>
+        <item>hamba {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>khetha {target}</item>
+        <item>khanyisa {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopisha {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>sika {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>susa {target}</item>
+        <item>cisha {target}</item>
+        <item>phinda {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>{units} elilandelayo</item>
+        <item>{units} elilandelayo</item>
+        <item>kwesokudla {units}</item>
+        <item>phambili {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>{units} elledlule</item>
+        <item>{units} langaphambilini</item>
+        <item>kwesokunxele {units}</item>
+        <item>emuva {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>ekuqaleni kwe{unit}</item>
+        <item>ekuqaleni</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>ekugcineni kwe{unit}</item>
+        <item>ekugcineni</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>isinhlamvu</item>
+        <item>izinhlamvu</item>
+        <item>uhlamvu</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>igama</item>
+        <item>amagama</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>umusho</item>
+        <item>imisho</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>umugqa</item>
+        <item>imigqa</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>isigaba</item>
+        <item>izigaba</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>umbhalo</item>
+        <item>insimu</item>
+        <item>insimu yombhalo</item>
+        <item>idokhumenti</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>kunye|munye</item>
+        <item>kubili|bili</item>
+        <item>kuthathu|thathu</item>
+        <item>kune|ne</item>
+        <item>kuhlanu|hlanu</item>
+        <item>isithupha|sithupha</item>
+        <item>isikhombisa|sikhombisa</item>
+        <item>isishiyagalombili|eshiyagalombili</item>
+        <item>isishiyagalolunye|eshiyagalolunye</item>
+        <item>ishumi</item>
+        <item>ishumi nanye</item>
+        <item>ishumi nambili</item>
+        <item>ishumi nantathu</item>
+        <item>ishumi nane</item>
+        <item>ishumi nanhlanu</item>
+        <item>ishumi nesithupha</item>
+        <item>ishumi nesikhombisa</item>
+        <item>ishumi nesishiyagalombili</item>
+        <item>ishumi nesishiyagalolunye</item>
+        <item>amashumi amabili</item>
+    </string-array>
 </resources>

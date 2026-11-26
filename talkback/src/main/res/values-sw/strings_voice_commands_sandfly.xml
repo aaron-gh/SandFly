@@ -192,4 +192,91 @@
         <item>aya mpya</item>
         <item>bonyeza enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Haipatikani katika sehemu za nenosiri</string>
+    <string-array name="voice_commands_text_move">
+        <item>hamisha [kielekezi] {target}</item>
+        <item>nenda {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>chagua {target}</item>
+        <item>angazia {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>nakili {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>kata {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>futa {target}</item>
+        <item>ondoa {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>{units} inayofuata</item>
+        <item>{units} ijayo</item>
+        <item>kulia {units}</item>
+        <item>mbele {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>{units} iliyotangulia</item>
+        <item>{units} ya awali</item>
+        <item>kushoto {units}</item>
+        <item>nyuma {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[hadi] mwanzo wa {unit}</item>
+        <item>[hadi] mwanzo</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[hadi] mwisho wa {unit}</item>
+        <item>[hadi] mwisho</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>herufi</item>
+        <item>kibambo</item>
+        <item>vibambo</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>neno</item>
+        <item>maneno</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>sentensi</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>mstari</item>
+        <item>mistari</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>aya</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>maandishi</item>
+        <item>sehemu</item>
+        <item>sehemu ya maandishi</item>
+        <item>hati</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>moja|mmoja|kimoja</item>
+        <item>mbili|wawili</item>
+        <item>tatu|watatu</item>
+        <item>nne|wanne</item>
+        <item>tano|watano</item>
+        <item>sita|sita</item>
+        <item>saba|saba</item>
+        <item>nane|wanane</item>
+        <item>tisa|tisa</item>
+        <item>kumi</item>
+        <item>kumi na moja</item>
+        <item>kumi na mbili</item>
+        <item>kumi na tatu</item>
+        <item>kumi na nne</item>
+        <item>kumi na tano</item>
+        <item>kumi na sita</item>
+        <item>kumi na saba</item>
+        <item>kumi na nane</item>
+        <item>kumi na tisa</item>
+        <item>ishirini</item>
+    </string-array>
 </resources>

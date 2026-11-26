@@ -210,4 +210,111 @@
         <item>新しい段落</item>
         <item>Enter を押す</item>
     </string-array>
+    <string name="voice_commands_text_password">パスワード欄では使用できません</string>
+    <string-array name="voice_commands_text_move">
+        <item>[カーソルを]{target}[に]移動</item>
+        <item>{target}へ移動</item>
+        <item>{target}に行く</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target}を選択</item>
+        <item>{target}を選ぶ</item>
+        <item>{target}をハイライト</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target}をコピー</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target}を切り取り</item>
+        <item>{target}をカット</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target}を削除</item>
+        <item>{target}を消去</item>
+        <item>{target}を消す</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>次の{units}</item>
+        <item>右へ{units}</item>
+        <item>右に{units}</item>
+        <item>前へ{units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>前の{units}</item>
+        <item>直前の{units}</item>
+        <item>左へ{units}</item>
+        <item>左に{units}</item>
+        <item>後ろへ{units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit}の先頭</item>
+        <item>{unit}の始め</item>
+        <item>{unit}の最初</item>
+        <item>先頭</item>
+        <item>最初</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit}の末尾</item>
+        <item>{unit}の終わり</item>
+        <item>{unit}の最後</item>
+        <item>末尾</item>
+        <item>最後</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>文字</item>
+        <item>字</item>
+        <item>もじ</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>単語</item>
+        <item>たんご</item>
+        <item>語</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>文</item>
+        <item>ぶん</item>
+        <item>文章</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>行</item>
+        <item>ぎょう</item>
+        <item>ライン</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>段落</item>
+        <item>だんらく</item>
+        <item>パラグラフ</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>テキスト</item>
+        <item>全文</item>
+        <item>フィールド</item>
+        <item>テキストフィールド</item>
+        <item>入力欄</item>
+        <item>文書</item>
+        <item>ドキュメント</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>1|一|いち|ひと</item>
+        <item>2|二|に|ふた</item>
+        <item>3|三|さん|みっ</item>
+        <item>4|四|よん|し|よっ</item>
+        <item>5|五|ご|いつ</item>
+        <item>6|六|ろく|むっ</item>
+        <item>7|七|なな|しち</item>
+        <item>8|八|はち|やっ</item>
+        <item>9|九|きゅう|く|ここの</item>
+        <item>10|十|じゅう|とお</item>
+        <item>11|十一|じゅういち</item>
+        <item>12|十二|じゅうに</item>
+        <item>13|十三|じゅうさん</item>
+        <item>14|十四|じゅうよん|じゅうし</item>
+        <item>15|十五|じゅうご</item>
+        <item>16|十六|じゅうろく</item>
+        <item>17|十七|じゅうなな|じゅうしち</item>
+        <item>18|十八|じゅうはち</item>
+        <item>19|十九|じゅうきゅう|じゅうく</item>
+        <item>20|二十|にじゅう</item>
+    </string-array>
 </resources>

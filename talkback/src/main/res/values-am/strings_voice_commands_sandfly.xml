@@ -187,4 +187,99 @@
         <item>አዲስ አንቀጽ</item>
         <item>ኢንተር ተጫን</item>
     </string-array>
+    <string name="voice_commands_text_password">በይለፍ ቃል መስኮች ውስጥ አይገኝም</string>
+    <string-array name="voice_commands_text_move">
+        <item>ጠቋሚውን {target} አንቀሳቅስ</item>
+        <item>{target} ሂድ</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} ምረጥ</item>
+        <item>{target} አድምቅ</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} ቅዳ</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} ቁረጥ</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} ሰርዝ</item>
+        <item>{target} አጥፋ</item>
+        <item>{target} አስወግድ</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>ቀጣዩ {units}</item>
+        <item>ወደ ቀጣዩ {units}</item>
+        <item>ወደ ፊት {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>ቀዳሚው {units}</item>
+        <item>ያለፈው {units}</item>
+        <item>ወደ ኋላ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>የ{unit} መጀመሪያ</item>
+        <item>{unit} መጀመሪያ</item>
+        <item>ወደ {unit} መጀመሪያ</item>
+        <item>ወደ መጀመሪያ</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>የ{unit} መጨረሻ</item>
+        <item>{unit} መጨረሻ</item>
+        <item>ወደ {unit} መጨረሻ</item>
+        <item>ወደ መጨረሻ</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>ፊደል</item>
+        <item>ፊደላት</item>
+        <item>ቁምፊ</item>
+        <item>ቁምፊዎች</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>ቃል</item>
+        <item>ቃላት</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>ዓረፍተ ነገር</item>
+        <item>አረፍተ ነገር</item>
+        <item>ዓረፍተ ነገሮች</item>
+        <item>አረፍተ ነገሮች</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>መስመር</item>
+        <item>መስመሮች</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>አንቀጽ</item>
+        <item>አንቀጾች</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>ጽሑፍ</item>
+        <item>መስክ</item>
+        <item>የጽሑፍ መስክ</item>
+        <item>ሰነድ</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>አንድ</item>
+        <item>ሁለት</item>
+        <item>ሦስት|ሶስት</item>
+        <item>አራት</item>
+        <item>አምስት</item>
+        <item>ስድስት</item>
+        <item>ሰባት</item>
+        <item>ስምንት</item>
+        <item>ዘጠኝ</item>
+        <item>አሥር|አስር</item>
+        <item>አሥራ አንድ|አስራ አንድ</item>
+        <item>አሥራ ሁለት|አስራ ሁለት</item>
+        <item>አሥራ ሦስት|አስራ ሶስት</item>
+        <item>አሥራ አራት|አስራ አራት</item>
+        <item>አሥራ አምስት|አስራ አምስት</item>
+        <item>አሥራ ስድስት|አስራ ስድስት</item>
+        <item>አሥራ ሰባት|አስራ ሰባት</item>
+        <item>አሥራ ስምንት|አስራ ስምንት</item>
+        <item>አሥራ ዘጠኝ|አስራ ዘጠኝ</item>
+        <item>ሃያ|ሀያ</item>
+    </string-array>
 </resources>

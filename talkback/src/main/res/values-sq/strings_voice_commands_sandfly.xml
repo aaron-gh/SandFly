@@ -186,4 +186,98 @@
         <item>paragraf i ri</item>
         <item>shtyp enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Nuk ofrohet te fushat e fjalëkalimit</string>
+    <string-array name="voice_commands_text_move">
+        <item>lëviz [kursorin] {target}</item>
+        <item>shko {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>përzgjidh {target}</item>
+        <item>zgjidh {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopjo {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>preje {target}</item>
+        <item>prit {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>fshi {target}</item>
+        <item>hiq {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[te] {units} tjetër</item>
+        <item>[te] {units} pasardhës</item>
+        <item>djathtas {units}</item>
+        <item>përpara {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[te] {units} i mëparshëm</item>
+        <item>[te] {units} e mëparshme</item>
+        <item>majtas {units}</item>
+        <item>prapa {units}</item>
+        <item>mbrapa {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[te] fillimi i {unit}</item>
+        <item>[te] fillimi</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[te] fundi i {unit}</item>
+        <item>[te] fundi</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>shkronjë</item>
+        <item>shkronja</item>
+        <item>karakter</item>
+        <item>karaktere</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>fjalë</item>
+        <item>fjalët</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>fjali</item>
+        <item>fjalitë</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>rresht</item>
+        <item>rreshta</item>
+        <item>rreshtat</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>paragraf</item>
+        <item>paragrafë</item>
+        <item>paragrafët</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>tekst</item>
+        <item>fushë</item>
+        <item>fushë teksti</item>
+        <item>dokument</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>një</item>
+        <item>dy</item>
+        <item>tre</item>
+        <item>katër</item>
+        <item>pesë</item>
+        <item>gjashtë</item>
+        <item>shtatë</item>
+        <item>tetë</item>
+        <item>nëntë</item>
+        <item>dhjetë</item>
+        <item>njëmbëdhjetë</item>
+        <item>dymbëdhjetë</item>
+        <item>trembëdhjetë</item>
+        <item>katërmbëdhjetë</item>
+        <item>pesëmbëdhjetë</item>
+        <item>gjashtëmbëdhjetë</item>
+        <item>shtatëmbëdhjetë</item>
+        <item>tetëmbëdhjetë</item>
+        <item>nëntëmbëdhjetë</item>
+        <item>njëzet</item>
+    </string-array>
 </resources>

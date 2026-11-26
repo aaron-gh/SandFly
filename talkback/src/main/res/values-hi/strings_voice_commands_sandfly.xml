@@ -213,4 +213,122 @@
         <item>नया पैराग्राफ़</item>
         <item>Enter दबाएं</item>
     </string-array>
+    <string name="voice_commands_text_password">पासवर्ड फ़ील्ड में उपलब्ध नहीं है</string>
+    <string-array name="voice_commands_text_move">
+        <item>[कर्सर] {target} पर ले जाएँ</item>
+        <item>[कर्सर] {target} पर ले जाएं</item>
+        <item>{target} पर जाएँ</item>
+        <item>{target} पर जाएं</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} चुनें</item>
+        <item>{target} चुनिए</item>
+        <item>{target} हाइलाइट करें</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} कॉपी करें</item>
+        <item>{target} कॉपी कीजिए</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} काटें</item>
+        <item>{target} कट करें</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} हटाएँ</item>
+        <item>{target} हटाएं</item>
+        <item>{target} मिटाएँ</item>
+        <item>{target} मिटाएं</item>
+        <item>{target} डिलीट करें</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>अगला {units}</item>
+        <item>अगले {units}</item>
+        <item>अगली {units}</item>
+        <item>दाएँ {units}</item>
+        <item>दाएं {units}</item>
+        <item>आगे {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>पिछला {units}</item>
+        <item>पिछले {units}</item>
+        <item>पिछली {units}</item>
+        <item>आखिरी {units}</item>
+        <item>बाएँ {units}</item>
+        <item>बाएं {units}</item>
+        <item>पीछे {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} की शुरुआत में</item>
+        <item>{unit} के शुरू में</item>
+        <item>{unit} के आरंभ में</item>
+        <item>शुरुआत में</item>
+        <item>शुरू में</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} के अंत में</item>
+        <item>{unit} के आखिर में</item>
+        <item>अंत में</item>
+        <item>आखिर में</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>अक्षर</item>
+        <item>अक्षरों</item>
+        <item>वर्ण</item>
+        <item>वर्णों</item>
+        <item>कैरेक्टर</item>
+        <item>कैरेक्टरों</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>शब्द</item>
+        <item>शब्दों</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>वाक्य</item>
+        <item>वाक्यों</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>पंक्ति</item>
+        <item>पंक्तियों</item>
+        <item>लाइन</item>
+        <item>लाइनों</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>अनुच्छेद</item>
+        <item>अनुच्छेदों</item>
+        <item>पैराग्राफ</item>
+        <item>पैराग्राफों</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>टेक्स्ट</item>
+        <item>पाठ</item>
+        <item>फ़ील्ड</item>
+        <item>फील्ड</item>
+        <item>टेक्स्ट फ़ील्ड</item>
+        <item>टेक्स्ट फील्ड</item>
+        <item>दस्तावेज़</item>
+        <item>दस्तावेज</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>एक|1</item>
+        <item>दो</item>
+        <item>तीन</item>
+        <item>चार</item>
+        <item>पाँच|पांच</item>
+        <item>छह|छः|छ</item>
+        <item>सात</item>
+        <item>आठ</item>
+        <item>नौ</item>
+        <item>दस</item>
+        <item>ग्यारह</item>
+        <item>बारह</item>
+        <item>तेरह</item>
+        <item>चौदह</item>
+        <item>पंद्रह|पन्द्रह</item>
+        <item>सोलह</item>
+        <item>सत्रह</item>
+        <item>अठारह</item>
+        <item>उन्नीस</item>
+        <item>बीस</item>
+    </string-array>
 </resources>

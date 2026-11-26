@@ -184,4 +184,132 @@
         <item>nauja pastraipa</item>
         <item>paspausti enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Slaptažodžių laukuose nepasiekiama</string>
+    <string-array name="voice_commands_text_move">
+        <item>perkelk žymeklį {target}</item>
+        <item>eik {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>pažymėk {target}</item>
+        <item>pasirink {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopijuok {target}</item>
+        <item>nukopijuok {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>iškirpk {target}</item>
+        <item>iškirpti {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>ištrink {target}</item>
+        <item>pašalink {target}</item>
+        <item>išvalyk {target}</item>
+        <item>trink {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>kitą {units}</item>
+        <item>kitus {units}</item>
+        <item>kitas {units}</item>
+        <item>į dešinę {units}</item>
+        <item>pirmyn {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>ankstesnį {units}</item>
+        <item>ankstesnius {units}</item>
+        <item>ankstesnę {units}</item>
+        <item>paskutinį {units}</item>
+        <item>paskutinius {units}</item>
+        <item>į kairę {units}</item>
+        <item>atgal {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} pradžią</item>
+        <item>{unit} pradžioje</item>
+        <item>į {unit} pradžią</item>
+        <item>į pradžią</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} pabaigą</item>
+        <item>{unit} pabaigoje</item>
+        <item>į {unit} pabaigą</item>
+        <item>į pabaigą</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>simbolis</item>
+        <item>simbolį</item>
+        <item>simboliai</item>
+        <item>simbolius</item>
+        <item>simbolių</item>
+        <item>raidė</item>
+        <item>raidę</item>
+        <item>raidės</item>
+        <item>raides</item>
+        <item>raidžių</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>žodis</item>
+        <item>žodį</item>
+        <item>žodžio</item>
+        <item>žodžiai</item>
+        <item>žodžius</item>
+        <item>žodžių</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>sakinys</item>
+        <item>sakinį</item>
+        <item>sakinio</item>
+        <item>sakiniai</item>
+        <item>sakinius</item>
+        <item>sakinių</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>eilutė</item>
+        <item>eilutę</item>
+        <item>eilutės</item>
+        <item>eilutes</item>
+        <item>eilučių</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>pastraipa</item>
+        <item>pastraipą</item>
+        <item>pastraipos</item>
+        <item>pastraipas</item>
+        <item>pastraipų</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>tekstas</item>
+        <item>teksto</item>
+        <item>tekstą</item>
+        <item>laukas</item>
+        <item>lauko</item>
+        <item>lauką</item>
+        <item>teksto laukas</item>
+        <item>teksto lauko</item>
+        <item>dokumentas</item>
+        <item>dokumento</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>vienas|viena|vieną|vieno|vienos</item>
+        <item>du|dvi|du|dviejų|dvejų</item>
+        <item>trys|tris|trijų</item>
+        <item>keturi|keturias|keturių</item>
+        <item>penki|penkias|penkių</item>
+        <item>šeši|šešias|šešių</item>
+        <item>septyni|septynias|septynių</item>
+        <item>aštuoni|aštuonias|aštuonių</item>
+        <item>devyni|devynias|devynių</item>
+        <item>dešimt|dešimtis|dešimties</item>
+        <item>vienuolika|vienuolikos</item>
+        <item>dvylika|dvylikos</item>
+        <item>trylika|trylikos</item>
+        <item>keturiolika|keturiolikos</item>
+        <item>penkiolika|penkiolikos</item>
+        <item>šešiolika|šešiolikos</item>
+        <item>septyniolika|septyniolikos</item>
+        <item>aštuoniolika|aštuoniolikos</item>
+        <item>devyniolika|devyniolikos</item>
+        <item>dvidešimt|dvidešimties</item>
+    </string-array>
 </resources>

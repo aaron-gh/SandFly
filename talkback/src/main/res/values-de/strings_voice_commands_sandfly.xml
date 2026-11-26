@@ -200,4 +200,121 @@
         <item>neuer Absatz</item>
         <item>Enter drücken</item>
     </string-array>
+    <string name="voice_commands_text_password">In Passwortfeldern nicht verfügbar</string>
+    <string-array name="voice_commands_text_move">
+        <item>bewege [den] [cursor] {target}</item>
+        <item>gehe {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>wähle {target} aus</item>
+        <item>wähle {target}</item>
+        <item>markiere {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopiere {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>schneide {target} aus</item>
+        <item>schneide {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>lösche {target}</item>
+        <item>entferne {target}</item>
+        <item>streiche {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[zum] nächsten {units}</item>
+        <item>[zur] nächsten {units}</item>
+        <item>[zum] nächstes {units}</item>
+        <item>[die] nächsten {units}</item>
+        <item>nach rechts [um] {units}</item>
+        <item>vor [um] {units}</item>
+        <item>vorwärts [um] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[zum] vorherigen {units}</item>
+        <item>[zur] vorherigen {units}</item>
+        <item>[zum] letzten {units}</item>
+        <item>[zur] letzten {units}</item>
+        <item>[die] vorherigen {units}</item>
+        <item>[die] letzten {units}</item>
+        <item>nach links [um] {units}</item>
+        <item>zurück [um] {units}</item>
+        <item>rückwärts [um] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[zum] anfang [des] {unit}</item>
+        <item>[zum] anfang [der] {unit}</item>
+        <item>[zum] beginn [des] {unit}</item>
+        <item>[zum] beginn [der] {unit}</item>
+        <item>zum anfang</item>
+        <item>zum beginn</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[zum] ende [des] {unit}</item>
+        <item>[zum] ende [der] {unit}</item>
+        <item>zum ende</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>zeichen</item>
+        <item>zeichens</item>
+        <item>buchstabe</item>
+        <item>buchstaben</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>wort</item>
+        <item>wörter</item>
+        <item>wortes</item>
+        <item>worte</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>satz</item>
+        <item>sätze</item>
+        <item>satzes</item>
+        <item>sätzen</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>zeile</item>
+        <item>zeilen</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>absatz</item>
+        <item>absätze</item>
+        <item>absatzes</item>
+        <item>absätzen</item>
+        <item>abschnitt</item>
+        <item>abschnitte</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>text</item>
+        <item>textes</item>
+        <item>feld</item>
+        <item>textfeld</item>
+        <item>textfeldes</item>
+        <item>dokument</item>
+        <item>dokuments</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>eins|ein|eine|einen|einem|einer</item>
+        <item>zwei|zwo</item>
+        <item>drei</item>
+        <item>vier</item>
+        <item>fünf</item>
+        <item>sechs</item>
+        <item>sieben</item>
+        <item>acht</item>
+        <item>neun</item>
+        <item>zehn</item>
+        <item>elf</item>
+        <item>zwölf</item>
+        <item>dreizehn</item>
+        <item>vierzehn</item>
+        <item>fünfzehn</item>
+        <item>sechzehn</item>
+        <item>siebzehn</item>
+        <item>achtzehn</item>
+        <item>neunzehn</item>
+        <item>zwanzig</item>
+    </string-array>
 </resources>

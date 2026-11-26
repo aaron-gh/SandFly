@@ -185,4 +185,95 @@
         <item>nytt stycke</item>
         <item>tryck enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Inte tillgängligt i lösenordsfält</string>
+    <string-array name="voice_commands_text_move">
+        <item>flytta [markören] {target}</item>
+        <item>gå {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>markera {target}</item>
+        <item>välj {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopiera {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>klipp ut {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>ta bort {target}</item>
+        <item>radera {target}</item>
+        <item>sudda {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[till] nästa {units}</item>
+        <item>höger [med] {units}</item>
+        <item>framåt [med] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[till] föregående {units}</item>
+        <item>[den] sista {units}</item>
+        <item>vänster [med] {units}</item>
+        <item>bakåt [med] {units}</item>
+        <item>tillbaka [med] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[till] början av {unit}</item>
+        <item>[till] början</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[till] slutet av {unit}</item>
+        <item>[till] slutet</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>tecken</item>
+        <item>bokstav</item>
+        <item>bokstäver</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>ord</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>mening</item>
+        <item>meningar</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>rad</item>
+        <item>rader</item>
+        <item>linje</item>
+        <item>linjer</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>stycke</item>
+        <item>stycken</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>text</item>
+        <item>fält</item>
+        <item>textfält</item>
+        <item>dokument</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>en|ett</item>
+        <item>två</item>
+        <item>tre</item>
+        <item>fyra</item>
+        <item>fem</item>
+        <item>sex</item>
+        <item>sju</item>
+        <item>åtta</item>
+        <item>nio</item>
+        <item>tio</item>
+        <item>elva</item>
+        <item>tolv</item>
+        <item>tretton</item>
+        <item>fjorton</item>
+        <item>femton</item>
+        <item>sexton</item>
+        <item>sjutton</item>
+        <item>arton</item>
+        <item>nitton</item>
+        <item>tjugo</item>
+    </string-array>
 </resources>

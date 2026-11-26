@@ -191,4 +191,99 @@
         <item>புதிய பத்தி</item>
         <item>என்டர் அழுத்து</item>
     </string-array>
+    <string name="voice_commands_text_password">கடவுச்சொல் புலங்களில் கிடைக்காது</string>
+    <string-array name="voice_commands_text_move">
+        <item>கர்சரை {target} க்கு நகர்த்து</item>
+        <item>{target} க்கு செல்</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} தேர்ந்தெடு</item>
+        <item>{target} ஐத் தேர்ந்தெடு</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} நகலெடு</item>
+        <item>{target} ஐ நகலெடு</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} வெட்டு</item>
+        <item>{target} ஐ வெட்டு</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} நீக்கு</item>
+        <item>{target} அழி</item>
+        <item>{target} ஐ நீக்கு</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>அடுத்த {units}</item>
+        <item>வலது {units}</item>
+        <item>முன்னோக்கி {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>முந்தைய {units}</item>
+        <item>இடது {units}</item>
+        <item>பின்னோக்கி {units}</item>
+        <item>பின்னால் {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} தொடக்கத்திற்கு</item>
+        <item>{unit} தொடக்கம்</item>
+        <item>தொடக்கத்திற்கு</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} முடிவுக்கு</item>
+        <item>{unit} முடிவு</item>
+        <item>முடிவுக்கு</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>எழுத்து</item>
+        <item>எழுத்துகள்</item>
+        <item>எழுத்துக்கள்</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>சொல்</item>
+        <item>சொற்கள்</item>
+        <item>வார்த்தை</item>
+        <item>வார்த்தைகள்</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>வாக்கியம்</item>
+        <item>வாக்கியங்கள்</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>வரி</item>
+        <item>வரிகள்</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>பத்தி</item>
+        <item>பத்திகள்</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>உரை</item>
+        <item>புலம்</item>
+        <item>உரைப் புலம்</item>
+        <item>ஆவணம்</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>ஒன்று|ஒரு</item>
+        <item>இரண்டு</item>
+        <item>மூன்று</item>
+        <item>நான்கு</item>
+        <item>ஐந்து</item>
+        <item>ஆறு</item>
+        <item>ஏழு</item>
+        <item>எட்டு</item>
+        <item>ஒன்பது</item>
+        <item>பத்து</item>
+        <item>பதினொன்று</item>
+        <item>பன்னிரண்டு</item>
+        <item>பதின்மூன்று</item>
+        <item>பதினான்கு</item>
+        <item>பதினைந்து</item>
+        <item>பதினாறு</item>
+        <item>பதினேழு</item>
+        <item>பதினெட்டு</item>
+        <item>பத்தொன்பது</item>
+        <item>இருபது</item>
+    </string-array>
 </resources>

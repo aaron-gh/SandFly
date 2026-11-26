@@ -196,4 +196,124 @@
         <item>νέα παράγραφος</item>
         <item>πάτημα enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Δεν είναι διαθέσιμο σε πεδία κωδικού πρόσβασης</string>
+    <string-array name="voice_commands_text_move">
+        <item>μετακίνησε [τον] [δείκτη] {target}</item>
+        <item>πήγαινε {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>επίλεξε {target}</item>
+        <item>επισήμανε {target}</item>
+        <item>διάλεξε {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>αντίγραψε {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>κόψε {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>διέγραψε {target}</item>
+        <item>διάγραψε {target}</item>
+        <item>σβήσε {target}</item>
+        <item>αφαίρεσε {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[στην] επόμενη {units}</item>
+        <item>[στον] επόμενο {units}</item>
+        <item>[στο] επόμενο {units}</item>
+        <item>[τις] επόμενες {units}</item>
+        <item>[τους] επόμενους {units}</item>
+        <item>δεξιά [κατά] {units}</item>
+        <item>μπροστά [κατά] {units}</item>
+        <item>εμπρός [κατά] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[στην] προηγούμενη {units}</item>
+        <item>[στον] προηγούμενο {units}</item>
+        <item>[στο] προηγούμενο {units}</item>
+        <item>[τις] προηγούμενες {units}</item>
+        <item>[τους] προηγούμενους {units}</item>
+        <item>[την] τελευταία {units}</item>
+        <item>[το] τελευταίο {units}</item>
+        <item>αριστερά [κατά] {units}</item>
+        <item>πίσω [κατά] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[στην] αρχή [της] {unit}</item>
+        <item>[στην] αρχή [του] {unit}</item>
+        <item>στην αρχή</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[στο] τέλος [της] {unit}</item>
+        <item>[στο] τέλος [του] {unit}</item>
+        <item>στο τέλος</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>χαρακτήρας</item>
+        <item>χαρακτήρες</item>
+        <item>χαρακτήρα</item>
+        <item>γράμμα</item>
+        <item>γράμματα</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>λέξη</item>
+        <item>λέξεις</item>
+        <item>λέξης</item>
+        <item>λέξεων</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>πρόταση</item>
+        <item>προτάσεις</item>
+        <item>πρότασης</item>
+        <item>προτάσεων</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>γραμμή</item>
+        <item>γραμμές</item>
+        <item>γραμμής</item>
+        <item>γραμμών</item>
+        <item>σειρά</item>
+        <item>σειρές</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>παράγραφος</item>
+        <item>παράγραφοι</item>
+        <item>παραγράφου</item>
+        <item>παράγραφο</item>
+        <item>παραγράφους</item>
+        <item>παραγράφων</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>κείμενο</item>
+        <item>κειμένου</item>
+        <item>πεδίο</item>
+        <item>πεδίου</item>
+        <item>πεδίο κειμένου</item>
+        <item>έγγραφο</item>
+        <item>εγγράφου</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>ένα|ένας|μία|μια|ενός|μιας|έναν</item>
+        <item>δύο|δυο</item>
+        <item>τρία|τρεις</item>
+        <item>τέσσερα|τέσσερις</item>
+        <item>πέντε</item>
+        <item>έξι</item>
+        <item>επτά|εφτά</item>
+        <item>οκτώ|οχτώ</item>
+        <item>εννέα|εννιά</item>
+        <item>δέκα</item>
+        <item>έντεκα|ένδεκα</item>
+        <item>δώδεκα</item>
+        <item>δεκατρία|δεκατρείς</item>
+        <item>δεκατέσσερα|δεκατέσσερις</item>
+        <item>δεκαπέντε</item>
+        <item>δεκαέξι|δεκάξι</item>
+        <item>δεκαεπτά|δεκαεφτά</item>
+        <item>δεκαοκτώ|δεκαοχτώ</item>
+        <item>δεκαεννέα|δεκαεννιά</item>
+        <item>είκοσι</item>
+    </string-array>
 </resources>

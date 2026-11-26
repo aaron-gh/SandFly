@@ -241,4 +241,107 @@
         <item>nouveau paragraphe</item>
         <item>appuyer sur entrée</item>
     </string-array>
+    <string name="voice_commands_text_password">Non disponible dans les champs de mot de passe</string>
+    <string-array name="voice_commands_text_move">
+        <item>déplacer [le] [curseur] {target}</item>
+        <item>déplace [le] [curseur] {target}</item>
+        <item>aller {target}</item>
+        <item>va {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>sélectionner {target}</item>
+        <item>sélectionne {target}</item>
+        <item>surligner {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>copier {target}</item>
+        <item>copie {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>couper {target}</item>
+        <item>coupe {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>supprimer {target}</item>
+        <item>supprime {target}</item>
+        <item>effacer {target}</item>
+        <item>efface {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[au] [aux] suivant {units}</item>
+        <item>[à] droite {units}</item>
+        <item>vers la droite {units}</item>
+        <item>en avant {units}</item>
+        <item>[les] prochains {units}</item>
+        <item>[le] prochain {units}</item>
+        <item>[la] prochaine {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[au] [aux] précédent {units}</item>
+        <item>[aux] précédents {units}</item>
+        <item>[la] précédente {units}</item>
+        <item>[le] dernier {units}</item>
+        <item>[à] gauche {units}</item>
+        <item>vers la gauche {units}</item>
+        <item>en arrière {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[au] début [de] [la] [du] [de le] {unit}</item>
+        <item>au début</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[à la] fin [de] [la] [du] [de le] {unit}</item>
+        <item>à la fin</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>caractère</item>
+        <item>caractères</item>
+        <item>lettre</item>
+        <item>lettres</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>mot</item>
+        <item>mots</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>phrase</item>
+        <item>phrases</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>ligne</item>
+        <item>lignes</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>paragraphe</item>
+        <item>paragraphes</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>texte</item>
+        <item>champ</item>
+        <item>champ de texte</item>
+        <item>document</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>un|une</item>
+        <item>deux</item>
+        <item>trois</item>
+        <item>quatre</item>
+        <item>cinq</item>
+        <item>six</item>
+        <item>sept</item>
+        <item>huit</item>
+        <item>neuf</item>
+        <item>dix</item>
+        <item>onze</item>
+        <item>douze</item>
+        <item>treize</item>
+        <item>quatorze</item>
+        <item>quinze</item>
+        <item>seize</item>
+        <item>dix-sept|dix sept</item>
+        <item>dix-huit|dix huit</item>
+        <item>dix-neuf|dix neuf</item>
+        <item>vingt</item>
+    </string-array>
 </resources>

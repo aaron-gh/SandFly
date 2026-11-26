@@ -182,4 +182,116 @@
         <item>uus lõik</item>
         <item>vajuta enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Paroolivälja korral pole saadaval</string>
+    <string-array name="voice_commands_text_move">
+        <item>liiguta [kursorit] {target}</item>
+        <item>mine {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>vali {target}</item>
+        <item>märgi {target}</item>
+        <item>tõsta esile {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopeeri {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>lõika {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>kustuta {target}</item>
+        <item>eemalda {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>järgmine {units}</item>
+        <item>järgmisele {units}</item>
+        <item>järgmised {units}</item>
+        <item>paremale {units}</item>
+        <item>edasi {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>eelmine {units}</item>
+        <item>eelmisele {units}</item>
+        <item>eelmised {units}</item>
+        <item>viimane {units}</item>
+        <item>vasakule {units}</item>
+        <item>tagasi {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} algusesse</item>
+        <item>{unit} algusse</item>
+        <item>{unit} algus</item>
+        <item>algusesse</item>
+        <item>algusse</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} lõppu</item>
+        <item>{unit} lõpp</item>
+        <item>lõppu</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>märk</item>
+        <item>märgid</item>
+        <item>märki</item>
+        <item>täht</item>
+        <item>tähed</item>
+        <item>tähte</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>sõna</item>
+        <item>sõnad</item>
+        <item>sõnu</item>
+        <item>sõnale</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>lause</item>
+        <item>laused</item>
+        <item>lauset</item>
+        <item>lausele</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>rida</item>
+        <item>read</item>
+        <item>rea</item>
+        <item>ridu</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>lõik</item>
+        <item>lõigud</item>
+        <item>lõiku</item>
+        <item>lõigu</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>tekst</item>
+        <item>teksti</item>
+        <item>väli</item>
+        <item>välja</item>
+        <item>tekstiväli</item>
+        <item>tekstivälja</item>
+        <item>dokument</item>
+        <item>dokumendi</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>üks|ühe|ühte</item>
+        <item>kaks|kahe|kaht</item>
+        <item>kolm|kolme</item>
+        <item>neli|nelja</item>
+        <item>viis|viie|viit</item>
+        <item>kuus|kuue|kuut</item>
+        <item>seitse|seitsme</item>
+        <item>kaheksa|kaheksat</item>
+        <item>üheksa|üheksat</item>
+        <item>kümme|kümmet|kümne</item>
+        <item>üksteist|üheteist</item>
+        <item>kaksteist|kaheteist</item>
+        <item>kolmteist|kolmeteist</item>
+        <item>neliteist|neljateist</item>
+        <item>viisteist|viieteist</item>
+        <item>kuusteist|kuueteist</item>
+        <item>seitseteist|seitsmeteist</item>
+        <item>kaheksateist</item>
+        <item>üheksateist</item>
+        <item>kakskümmend|kahekümne</item>
+    </string-array>
 </resources>

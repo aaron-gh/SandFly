@@ -178,4 +178,97 @@
         <item>жаңа абзац</item>
         <item>enter басыңыз</item>
     </string-array>
+    <string name="voice_commands_text_password">Құпия сөз өрістерінде қолжетімсіз</string>
+    <string-array name="voice_commands_text_move">
+        <item>[курсорды] {target} жылжыту</item>
+        <item>{target} өту</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} таңдау</item>
+        <item>{target} белгілеу</item>
+        <item>{target} бөлектеу</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} көшіру</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} қиып алу</item>
+        <item>{target} қию</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} жою</item>
+        <item>{target} өшіру</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>келесі {units}</item>
+        <item>оңға {units}</item>
+        <item>алға {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>алдыңғы {units}</item>
+        <item>соңғы {units}</item>
+        <item>солға {units}</item>
+        <item>артқа {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} басына</item>
+        <item>{unit} басы</item>
+        <item>басына</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} соңына</item>
+        <item>{unit} соңы</item>
+        <item>соңына</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>таңба</item>
+        <item>таңбалар</item>
+        <item>әріп</item>
+        <item>әріптер</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>сөз</item>
+        <item>сөздер</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>сөйлем</item>
+        <item>сөйлемдер</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>жол</item>
+        <item>жолдар</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>абзац</item>
+        <item>абзацтар</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>мәтін</item>
+        <item>өріс</item>
+        <item>мәтін өрісі</item>
+        <item>құжат</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>бір</item>
+        <item>екі</item>
+        <item>үш</item>
+        <item>төрт</item>
+        <item>бес</item>
+        <item>алты</item>
+        <item>жеті</item>
+        <item>сегіз</item>
+        <item>тоғыз</item>
+        <item>он</item>
+        <item>он бір</item>
+        <item>он екі</item>
+        <item>он үш</item>
+        <item>он төрт</item>
+        <item>он бес</item>
+        <item>он алты</item>
+        <item>он жеті</item>
+        <item>он сегіз</item>
+        <item>он тоғыз</item>
+        <item>жиырма</item>
+    </string-array>
 </resources>

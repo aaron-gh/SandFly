@@ -182,4 +182,99 @@
         <item>नयाँ अनुच्छेद</item>
         <item>एन्टर थिच्नुहोस्</item>
     </string-array>
+    <string name="voice_commands_text_password">पासवर्ड फिल्डमा उपलब्ध छैन</string>
+    <string-array name="voice_commands_text_move">
+        <item>कर्सर {target} सार्नुहोस्</item>
+        <item>{target} जानुहोस्</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} चयन गर्नुहोस्</item>
+        <item>{target} हाइलाइट गर्नुहोस्</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} प्रतिलिपि गर्नुहोस्</item>
+        <item>{target} कपी गर्नुहोस्</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} काट्नुहोस्</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} मेट्नुहोस्</item>
+        <item>{target} हटाउनुहोस्</item>
+        <item>{target} डिलिट गर्नुहोस्</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>अर्को {units}</item>
+        <item>दायाँ {units}</item>
+        <item>अगाडि {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>अघिल्लो {units}</item>
+        <item>पछिल्लो {units}</item>
+        <item>बायाँ {units}</item>
+        <item>पछाडि {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} को सुरुमा</item>
+        <item>{unit} सुरुमा</item>
+        <item>सुरुमा</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} को अन्त्यमा</item>
+        <item>{unit} अन्त्यमा</item>
+        <item>अन्त्यमा</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>अक्षर</item>
+        <item>अक्षरहरू</item>
+        <item>वर्ण</item>
+        <item>वर्णहरू</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>शब्द</item>
+        <item>शब्दहरू</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>वाक्य</item>
+        <item>वाक्यहरू</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>लाइन</item>
+        <item>लाइनहरू</item>
+        <item>पङ्क्ति</item>
+        <item>पङ्क्तिहरू</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>अनुच्छेद</item>
+        <item>अनुच्छेदहरू</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>पाठ</item>
+        <item>फिल्ड</item>
+        <item>पाठ फिल्ड</item>
+        <item>कागजात</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>एक</item>
+        <item>दुई</item>
+        <item>तीन</item>
+        <item>चार</item>
+        <item>पाँच</item>
+        <item>छ</item>
+        <item>सात</item>
+        <item>आठ</item>
+        <item>नौ</item>
+        <item>दश</item>
+        <item>एघार</item>
+        <item>बाह्र</item>
+        <item>तेह्र</item>
+        <item>चौध</item>
+        <item>पन्ध्र</item>
+        <item>सोह्र</item>
+        <item>सत्र</item>
+        <item>अठार</item>
+        <item>उन्नाइस</item>
+        <item>बीस</item>
+    </string-array>
 </resources>

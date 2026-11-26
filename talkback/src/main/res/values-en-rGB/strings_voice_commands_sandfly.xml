@@ -191,4 +191,97 @@
         <item>new paragraph</item>
         <item>press enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Not available in password fields</string>
+    <string-array name="voice_commands_text_move">
+        <item>move [the] [cursor] {target}</item>
+        <item>go {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>select {target}</item>
+        <item>highlight {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>copy {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>cut {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>delete {target}</item>
+        <item>remove {target}</item>
+        <item>erase {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[to] [the] next {units}</item>
+        <item>right [by] {units}</item>
+        <item>forward [by] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[to] [the] previous {units}</item>
+        <item>[the] last {units}</item>
+        <item>left [by] {units}</item>
+        <item>back [by] {units}</item>
+        <item>backward [by] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[to] [the] start of [the] {unit}</item>
+        <item>[to] [the] beginning of [the] {unit}</item>
+        <item>to [the] start</item>
+        <item>to [the] beginning</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[to] [the] end of [the] {unit}</item>
+        <item>to [the] end</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>character</item>
+        <item>characters</item>
+        <item>letter</item>
+        <item>letters</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>word</item>
+        <item>words</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>sentence</item>
+        <item>sentences</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>line</item>
+        <item>lines</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>paragraph</item>
+        <item>paragraphs</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>text</item>
+        <item>field</item>
+        <item>text field</item>
+        <item>document</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>one|a|an</item>
+        <item>two|to|too</item>
+        <item>three</item>
+        <item>four|for</item>
+        <item>five</item>
+        <item>six</item>
+        <item>seven</item>
+        <item>eight</item>
+        <item>nine</item>
+        <item>ten</item>
+        <item>eleven</item>
+        <item>twelve</item>
+        <item>thirteen</item>
+        <item>fourteen</item>
+        <item>fifteen</item>
+        <item>sixteen</item>
+        <item>seventeen</item>
+        <item>eighteen</item>
+        <item>nineteen</item>
+        <item>twenty</item>
+    </string-array>
 </resources>

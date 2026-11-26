@@ -191,4 +191,93 @@
         <item>ย่อหน้าใหม่</item>
         <item>กด enter</item>
     </string-array>
+    <string name="voice_commands_text_password">ไม่พร้อมใช้งานในช่องรหัสผ่าน</string>
+    <string-array name="voice_commands_text_move">
+        <item>ย้าย[เคอร์เซอร์]ไป{target}</item>
+        <item>ไป{target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>เลือก{target}</item>
+        <item>ไฮไลต์{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>คัดลอก{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>ตัด{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>ลบ{target}</item>
+        <item>เอา{target}ออก</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>{units}ถัดไป</item>
+        <item>{units}ต่อไป</item>
+        <item>ขวา {units}</item>
+        <item>ไปข้างหน้า {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>{units}ก่อนหน้า</item>
+        <item>{units}ที่แล้ว</item>
+        <item>ซ้าย {units}</item>
+        <item>ถอยหลัง {units}</item>
+        <item>ย้อนกลับ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>ไปที่จุดเริ่มต้นของ{unit}</item>
+        <item>จุดเริ่มต้นของ{unit}</item>
+        <item>ไปที่จุดเริ่มต้น</item>
+        <item>ไปที่ต้น</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>ไปที่จุดสิ้นสุดของ{unit}</item>
+        <item>จุดสิ้นสุดของ{unit}</item>
+        <item>ไปที่จุดสิ้นสุด</item>
+        <item>ไปที่ท้าย</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>ตัวอักษร</item>
+        <item>อักขระ</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>คำ</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>ประโยค</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>บรรทัด</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>ย่อหน้า</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>ข้อความ</item>
+        <item>ช่อง</item>
+        <item>ช่องข้อความ</item>
+        <item>เอกสาร</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>หนึ่ง|1</item>
+        <item>สอง|2</item>
+        <item>สาม|3</item>
+        <item>สี่|4</item>
+        <item>ห้า|5</item>
+        <item>หก|6</item>
+        <item>เจ็ด|7</item>
+        <item>แปด|8</item>
+        <item>เก้า|9</item>
+        <item>สิบ|10</item>
+        <item>สิบเอ็ด|11</item>
+        <item>สิบสอง|12</item>
+        <item>สิบสาม|13</item>
+        <item>สิบสี่|14</item>
+        <item>สิบห้า|15</item>
+        <item>สิบหก|16</item>
+        <item>สิบเจ็ด|17</item>
+        <item>สิบแปด|18</item>
+        <item>สิบเก้า|19</item>
+        <item>ยี่สิบ|20</item>
+    </string-array>
 </resources>

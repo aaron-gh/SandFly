@@ -238,4 +238,105 @@
         <item>새 단락</item>
         <item>엔터 누르기</item>
     </string-array>
+    <string name="voice_commands_text_password">비밀번호 입력란에서는 사용할 수 없습니다</string>
+    <string-array name="voice_commands_text_move">
+        <item>[커서]{target}[으로|로] 이동</item>
+        <item>{target}[으로|로] 가</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} 선택</item>
+        <item>{target} 선택해</item>
+        <item>{target} 강조</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} 복사</item>
+        <item>{target} 복사해</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} 잘라내기</item>
+        <item>{target} 잘라내</item>
+        <item>{target} 잘라</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} 삭제</item>
+        <item>{target} 삭제해</item>
+        <item>{target} 지워</item>
+        <item>{target} 지우기</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>다음 {units}</item>
+        <item>오른쪽 {units}</item>
+        <item>앞으로 {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>이전 {units}</item>
+        <item>마지막 {units}</item>
+        <item>왼쪽 {units}</item>
+        <item>뒤로 {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} 시작</item>
+        <item>{unit} 처음</item>
+        <item>{unit} 맨 앞</item>
+        <item>처음</item>
+        <item>맨 앞</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} 끝</item>
+        <item>{unit} 마지막</item>
+        <item>{unit} 맨 뒤</item>
+        <item>끝</item>
+        <item>맨 뒤</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>글자</item>
+        <item>문자</item>
+        <item>자</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>단어</item>
+        <item>낱말</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>문장</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>줄</item>
+        <item>행</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>문단</item>
+        <item>단락</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>텍스트</item>
+        <item>전체</item>
+        <item>필드</item>
+        <item>텍스트 필드</item>
+        <item>입력란</item>
+        <item>문서</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>한|하나|일|1</item>
+        <item>두|둘|이|2</item>
+        <item>세|셋|삼|3</item>
+        <item>네|넷|사|4</item>
+        <item>다섯|오|5</item>
+        <item>여섯|육|6</item>
+        <item>일곱|칠|7</item>
+        <item>여덟|팔|8</item>
+        <item>아홉|구|9</item>
+        <item>열|십|10</item>
+        <item>열한|열하나|십일|11</item>
+        <item>열두|열둘|십이|12</item>
+        <item>열세|열셋|십삼|13</item>
+        <item>열네|열넷|십사|14</item>
+        <item>열다섯|십오|15</item>
+        <item>열여섯|십육|16</item>
+        <item>열일곱|십칠|17</item>
+        <item>열여덟|십팔|18</item>
+        <item>열아홉|십구|19</item>
+        <item>스무|스물|이십|20</item>
+    </string-array>
 </resources>

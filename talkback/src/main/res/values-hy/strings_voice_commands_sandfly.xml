@@ -173,4 +173,96 @@
         <item>նոր պարբերություն</item>
         <item>սեղմել Enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Գաղտնաբառի դաշտերում հասանելի չէ</string>
+    <string-array name="voice_commands_text_move">
+        <item>տեղափոխել [կուրսորը] {target}</item>
+        <item>անցնել {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>ընտրել {target}</item>
+        <item>նշել {target}</item>
+        <item>ընդգծել {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>պատճենել {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>կտրել {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>ջնջել {target}</item>
+        <item>հեռացնել {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>հաջորդ {units}</item>
+        <item>աջ {units}</item>
+        <item>առաջ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>նախորդ {units}</item>
+        <item>վերջին {units}</item>
+        <item>ձախ {units}</item>
+        <item>հետ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} սկիզբ</item>
+        <item>{unit} սկզբին</item>
+        <item>սկիզբ</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} վերջ</item>
+        <item>{unit} վերջին</item>
+        <item>վերջ</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>նիշ</item>
+        <item>նիշեր</item>
+        <item>տառ</item>
+        <item>տառեր</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>բառ</item>
+        <item>բառեր</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>նախադասություն</item>
+        <item>նախադասություններ</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>տող</item>
+        <item>տողեր</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>պարբերություն</item>
+        <item>պարբերություններ</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>տեքստ</item>
+        <item>դաշտ</item>
+        <item>տեքստային դաշտ</item>
+        <item>փաստաթուղթ</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>մեկ</item>
+        <item>երկու</item>
+        <item>երեք</item>
+        <item>չորս</item>
+        <item>հինգ</item>
+        <item>վեց</item>
+        <item>յոթ</item>
+        <item>ութ</item>
+        <item>ինը</item>
+        <item>տաս</item>
+        <item>տասնմեկ</item>
+        <item>տասներկու</item>
+        <item>տասներեք</item>
+        <item>տասնչորս</item>
+        <item>տասնհինգ</item>
+        <item>տասնվեց</item>
+        <item>տասնյոթ</item>
+        <item>տասնութ</item>
+        <item>տասնինը</item>
+        <item>քսան</item>
+    </string-array>
 </resources>

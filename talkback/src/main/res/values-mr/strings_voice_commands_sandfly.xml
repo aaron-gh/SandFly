@@ -182,4 +182,99 @@
         <item>नवीन परिच्छेद</item>
         <item>एंटर दाबा</item>
     </string-array>
+    <string name="voice_commands_text_password">पासवर्ड फील्डमध्ये उपलब्ध नाही</string>
+    <string-array name="voice_commands_text_move">
+        <item>कर्सर {target} हलवा</item>
+        <item>{target} जा</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} निवडा</item>
+        <item>{target} हायलाइट करा</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} कॉपी करा</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} कट करा</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} हटवा</item>
+        <item>{target} काढा</item>
+        <item>{target} पुसा</item>
+        <item>{target} डिलीट करा</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>पुढील {units}</item>
+        <item>उजवीकडे {units}</item>
+        <item>पुढे {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>मागील {units}</item>
+        <item>शेवटचे {units}</item>
+        <item>डावीकडे {units}</item>
+        <item>मागे {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} च्या सुरुवातीला</item>
+        <item>{unit} सुरुवातीला</item>
+        <item>सुरुवातीला</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} च्या शेवटी</item>
+        <item>{unit} शेवटी</item>
+        <item>शेवटी</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>अक्षर</item>
+        <item>अक्षरे</item>
+        <item>वर्ण</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>शब्द</item>
+        <item>शब्दांचा</item>
+        <item>शब्दांच्या</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>वाक्य</item>
+        <item>वाक्ये</item>
+        <item>वाक्यांच्या</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>ओळ</item>
+        <item>ओळी</item>
+        <item>ओळीच्या</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>परिच्छेद</item>
+        <item>परिच्छेदाच्या</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>मजकूर</item>
+        <item>फील्ड</item>
+        <item>मजकूर फील्ड</item>
+        <item>दस्तऐवज</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>एक</item>
+        <item>दोन</item>
+        <item>तीन</item>
+        <item>चार</item>
+        <item>पाच</item>
+        <item>सहा</item>
+        <item>सात</item>
+        <item>आठ</item>
+        <item>नऊ</item>
+        <item>दहा</item>
+        <item>अकरा</item>
+        <item>बारा</item>
+        <item>तेरा</item>
+        <item>चौदा</item>
+        <item>पंधरा</item>
+        <item>सोळा</item>
+        <item>सतरा</item>
+        <item>अठरा</item>
+        <item>एकोणीस</item>
+        <item>वीस</item>
+    </string-array>
 </resources>

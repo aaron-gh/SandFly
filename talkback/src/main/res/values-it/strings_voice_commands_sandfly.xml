@@ -209,4 +209,104 @@
         <item>nuovo paragrafo</item>
         <item>premi invio</item>
     </string-array>
+    <string name="voice_commands_text_password">Non disponibile nei campi password</string>
+    <string-array name="voice_commands_text_move">
+        <item>sposta [il] [cursore] {target}</item>
+        <item>vai {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>seleziona {target}</item>
+        <item>evidenzia {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>copia {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>taglia {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>elimina {target}</item>
+        <item>cancella {target}</item>
+        <item>rimuovi {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[al] [alla] [ai] [alle] successivo {units}</item>
+        <item>[alla] successiva {units}</item>
+        <item>[ai] successivi {units}</item>
+        <item>[alle] successive {units}</item>
+        <item>[al] prossimo {units}</item>
+        <item>[alla] prossima {units}</item>
+        <item>a destra {units}</item>
+        <item>avanti {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[al] [alla] [ai] [alle] precedente {units}</item>
+        <item>[ai] [alle] precedenti {units}</item>
+        <item>ultimo {units}</item>
+        <item>a sinistra {units}</item>
+        <item>indietro {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[all] inizio [di] [del] [della] [dello] {unit}</item>
+        <item>inizio</item>
+        <item>all inizio</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[alla] fine [di] [del] [della] [dello] {unit}</item>
+        <item>[alla] fine</item>
+        <item>alla fine</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>carattere</item>
+        <item>caratteri</item>
+        <item>lettera</item>
+        <item>lettere</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>parola</item>
+        <item>parole</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>frase</item>
+        <item>frasi</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>riga</item>
+        <item>righe</item>
+        <item>linea</item>
+        <item>linee</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>paragrafo</item>
+        <item>paragrafi</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>testo</item>
+        <item>campo</item>
+        <item>campo di testo</item>
+        <item>documento</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>uno|una|un</item>
+        <item>due</item>
+        <item>tre</item>
+        <item>quattro</item>
+        <item>cinque</item>
+        <item>sei</item>
+        <item>sette</item>
+        <item>otto</item>
+        <item>nove</item>
+        <item>dieci</item>
+        <item>undici</item>
+        <item>dodici</item>
+        <item>tredici</item>
+        <item>quattordici</item>
+        <item>quindici</item>
+        <item>sedici</item>
+        <item>diciassette</item>
+        <item>diciotto</item>
+        <item>diciannove</item>
+        <item>venti</item>
+    </string-array>
 </resources>

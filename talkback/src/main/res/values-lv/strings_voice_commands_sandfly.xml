@@ -68,4 +68,123 @@
         <item>jauna rindkopa</item>
         <item>nospiest enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Paroļu laukos nav pieejams</string>
+    <string-array name="voice_commands_text_move">
+        <item>pārvieto kursoru {target}</item>
+        <item>ej {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>atlasi {target}</item>
+        <item>iezīmē {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopē {target}</item>
+        <item>nokopē {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>izgriez {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>dzēs {target}</item>
+        <item>izdzēs {target}</item>
+        <item>noņem {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>nākamo {units}</item>
+        <item>nākamos {units}</item>
+        <item>nākamā {units}</item>
+        <item>pa labi {units}</item>
+        <item>uz priekšu {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>iepriekšējo {units}</item>
+        <item>iepriekšējos {units}</item>
+        <item>pēdējo {units}</item>
+        <item>pēdējos {units}</item>
+        <item>pa kreisi {units}</item>
+        <item>atpakaļ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>uz {unit} sākumu</item>
+        <item>{unit} sākumu</item>
+        <item>{unit} sākumā</item>
+        <item>uz sākumu</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>uz {unit} beigām</item>
+        <item>{unit} beigām</item>
+        <item>{unit} beigās</item>
+        <item>uz beigām</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>rakstzīme</item>
+        <item>rakstzīmes</item>
+        <item>rakstzīmi</item>
+        <item>rakstzīmju</item>
+        <item>burts</item>
+        <item>burti</item>
+        <item>burtu</item>
+        <item>burtus</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>vārds</item>
+        <item>vārdi</item>
+        <item>vārdu</item>
+        <item>vārdus</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>teikums</item>
+        <item>teikumi</item>
+        <item>teikumu</item>
+        <item>teikumus</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>rinda</item>
+        <item>rindas</item>
+        <item>rindu</item>
+        <item>rindiņa</item>
+        <item>rindiņas</item>
+        <item>rindiņu</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>rindkopa</item>
+        <item>rindkopas</item>
+        <item>rindkopu</item>
+        <item>rindkopu</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>teksts</item>
+        <item>teksta</item>
+        <item>tekstu</item>
+        <item>lauks</item>
+        <item>lauka</item>
+        <item>lauku</item>
+        <item>teksta lauks</item>
+        <item>teksta lauka</item>
+        <item>dokuments</item>
+        <item>dokumenta</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>viens|viena|vienu</item>
+        <item>divi|divas|divus</item>
+        <item>trīs</item>
+        <item>četri|četras|četrus</item>
+        <item>pieci|piecas|piecus</item>
+        <item>seši|sešas|sešus</item>
+        <item>septiņi|septiņas|septiņus</item>
+        <item>astoņi|astoņas|astoņus</item>
+        <item>deviņi|deviņas|deviņus</item>
+        <item>desmit</item>
+        <item>vienpadsmit</item>
+        <item>divpadsmit</item>
+        <item>trīspadsmit</item>
+        <item>četrpadsmit</item>
+        <item>piecpadsmit</item>
+        <item>sešpadsmit</item>
+        <item>septiņpadsmit</item>
+        <item>astoņpadsmit</item>
+        <item>deviņpadsmit</item>
+        <item>divdesmit</item>
+    </string-array>
 </resources>

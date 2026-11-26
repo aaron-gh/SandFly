@@ -175,4 +175,98 @@
         <item>nuwe paragraaf</item>
         <item>druk enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Nie beskikbaar in wagwoordvelde nie</string>
+    <string-array name="voice_commands_text_move">
+        <item>beweeg [die] [wyser] {target}</item>
+        <item>gaan {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>kies {target}</item>
+        <item>merk {target}</item>
+        <item>selekteer {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopieer {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>knip {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>vee {target} uit</item>
+        <item>verwyder {target}</item>
+        <item>skrap {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[na] [die] volgende {units}</item>
+        <item>regs [met] {units}</item>
+        <item>vorentoe [met] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[na] [die] vorige {units}</item>
+        <item>[die] laaste {units}</item>
+        <item>links [met] {units}</item>
+        <item>terug [met] {units}</item>
+        <item>agtertoe [met] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[na] [die] begin van [die] {unit}</item>
+        <item>na [die] begin</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[na] [die] einde van [die] {unit}</item>
+        <item>na [die] einde</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>karakter</item>
+        <item>karakters</item>
+        <item>letter</item>
+        <item>letters</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>woord</item>
+        <item>woorde</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>sin</item>
+        <item>sinne</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>reël</item>
+        <item>reëls</item>
+        <item>lyn</item>
+        <item>lyne</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>paragraaf</item>
+        <item>paragrawe</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>teks</item>
+        <item>veld</item>
+        <item>teksveld</item>
+        <item>dokument</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>een|’n</item>
+        <item>twee</item>
+        <item>drie</item>
+        <item>vier</item>
+        <item>vyf</item>
+        <item>ses</item>
+        <item>sewe</item>
+        <item>agt</item>
+        <item>nege</item>
+        <item>tien</item>
+        <item>elf</item>
+        <item>twaalf</item>
+        <item>dertien</item>
+        <item>veertien</item>
+        <item>vyftien</item>
+        <item>sestien</item>
+        <item>sewentien</item>
+        <item>agtien</item>
+        <item>negentien</item>
+        <item>twintig</item>
+    </string-array>
 </resources>

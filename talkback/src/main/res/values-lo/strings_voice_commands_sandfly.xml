@@ -174,4 +174,98 @@
         <item>ຫຍໍ້ໜ້າໃໝ່</item>
         <item>ກົດ Enter</item>
     </string-array>
+    <string name="voice_commands_text_password">ບໍ່ສາມາດໃຊ້ໄດ້ໃນຊ່ອງລະຫັດຜ່ານ</string>
+    <string-array name="voice_commands_text_move">
+        <item>ຍ້າຍເຄີເຊີ {target}</item>
+        <item>ໄປ {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>ເລືອກ {target}</item>
+        <item>ໄຮໄລ້ {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>ສຳເນົາ {target}</item>
+        <item>ກ໊ອບປີ້ {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>ຕັດ {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>ລຶບ {target}</item>
+        <item>ລົບ {target}</item>
+        <item>ເອົາ {target} ອອກ</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>{units} ຖັດໄປ</item>
+        <item>ຕໍ່ໄປ {units}</item>
+        <item>ຂວາ {units}</item>
+        <item>ໄປໜ້າ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>{units} ກ່ອນໜ້າ</item>
+        <item>{units} ທີ່ຜ່ານມາ</item>
+        <item>ຊ້າຍ {units}</item>
+        <item>ຖອຍຫຼັງ {units}</item>
+        <item>ກັບຫຼັງ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>ຈຸດເລີ່ມຕົ້ນຂອງ {unit}</item>
+        <item>ຕອນຕົ້ນຂອງ {unit}</item>
+        <item>ໄປຈຸດເລີ່ມຕົ້ນ</item>
+        <item>ໄປຕອນຕົ້ນ</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>ທ້າຍຂອງ {unit}</item>
+        <item>ຕອນທ້າຍຂອງ {unit}</item>
+        <item>ໄປທ້າຍ</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>ຕົວອັກສອນ</item>
+        <item>ຕົວໜັງສື</item>
+        <item>ອັກຂະລະ</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>ຄຳ</item>
+        <item>ຄໍາ</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>ປະໂຫຍກ</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>ແຖວ</item>
+        <item>ບັນທັດ</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>ວັກ</item>
+        <item>ຍໍ້ໜ້າ</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>ຂໍ້ຄວາມ</item>
+        <item>ຊ່ອງ</item>
+        <item>ຊ່ອງຂໍ້ຄວາມ</item>
+        <item>ເອກະສານ</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>ໜຶ່ງ|ຫນຶ່ງ|ນຶ່ງ</item>
+        <item>ສອງ</item>
+        <item>ສາມ</item>
+        <item>ສີ່</item>
+        <item>ຫ້າ</item>
+        <item>ຫົກ</item>
+        <item>ເຈັດ</item>
+        <item>ແປດ</item>
+        <item>ເກົ້າ</item>
+        <item>ສິບ</item>
+        <item>ສິບເອັດ</item>
+        <item>ສິບສອງ</item>
+        <item>ສິບສາມ</item>
+        <item>ສິບສີ່</item>
+        <item>ສິບຫ້າ</item>
+        <item>ສິບຫົກ</item>
+        <item>ສິບເຈັດ</item>
+        <item>ສິບແປດ</item>
+        <item>ສິບເກົ້າ</item>
+        <item>ຊາວ</item>
+    </string-array>
 </resources>

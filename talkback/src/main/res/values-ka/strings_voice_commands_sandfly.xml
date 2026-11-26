@@ -176,4 +176,109 @@
         <item>ახალი აბზაცი</item>
         <item>დააჭირეთ Enter-ს</item>
     </string-array>
+    <string name="voice_commands_text_password">პაროლის ველებში მიუწვდომელია</string>
+    <string-array name="voice_commands_text_move">
+        <item>გადაიტანე [კურსორი] {target}</item>
+        <item>გადადი {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>მონიშნე {target}</item>
+        <item>აირჩიე {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>დააკოპირე {target}</item>
+        <item>დაკოპირება {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>ამოჭერი {target}</item>
+        <item>გამოჭერი {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>წაშალე {target}</item>
+        <item>წაშლა {target}</item>
+        <item>მოაცილე {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>შემდეგი {units}</item>
+        <item>მარჯვნივ {units}</item>
+        <item>წინ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>წინა {units}</item>
+        <item>ბოლო {units}</item>
+        <item>მარცხნივ {units}</item>
+        <item>უკან {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} დასაწყისში</item>
+        <item>{unit} დასაწყისამდე</item>
+        <item>დასაწყისში</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} ბოლოში</item>
+        <item>{unit} ბოლომდე</item>
+        <item>ბოლოში</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>სიმბოლო</item>
+        <item>სიმბოლოები</item>
+        <item>სიმბოლოს</item>
+        <item>ასო</item>
+        <item>ასოები</item>
+        <item>ასოს</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>სიტყვა</item>
+        <item>სიტყვები</item>
+        <item>სიტყვის</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>წინადადება</item>
+        <item>წინადადებები</item>
+        <item>წინადადების</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>ხაზი</item>
+        <item>ხაზები</item>
+        <item>სტრიქონი</item>
+        <item>სტრიქონები</item>
+        <item>სტრიქონის</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>აბზაცი</item>
+        <item>აბზაცები</item>
+        <item>აბზაცის</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>ტექსტი</item>
+        <item>ტექსტის</item>
+        <item>ველი</item>
+        <item>ველის</item>
+        <item>ტექსტური ველი</item>
+        <item>დოკუმენტი</item>
+        <item>დოკუმენტის</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>ერთი</item>
+        <item>ორი</item>
+        <item>სამი</item>
+        <item>ოთხი</item>
+        <item>ხუთი</item>
+        <item>ექვსი</item>
+        <item>შვიდი</item>
+        <item>რვა</item>
+        <item>ცხრა</item>
+        <item>ათი</item>
+        <item>თერთმეტი</item>
+        <item>თორმეტი</item>
+        <item>ცამეტი</item>
+        <item>თოთხმეტი</item>
+        <item>თხუთმეტი</item>
+        <item>თექვსმეტი</item>
+        <item>ჩვიდმეტი</item>
+        <item>თვრამეტი</item>
+        <item>ცხრამეტი</item>
+        <item>ოცი</item>
+    </string-array>
 </resources>

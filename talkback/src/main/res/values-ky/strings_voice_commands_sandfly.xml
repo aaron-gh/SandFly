@@ -174,4 +174,96 @@
         <item>жаңы абзац</item>
         <item>Enter басуу</item>
     </string-array>
+    <string name="voice_commands_text_password">Сырсөз талааларында жеткиликсиз</string>
+    <string-array name="voice_commands_text_move">
+        <item>курсорду {target} жылдыр</item>
+        <item>{target} барып</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} танда</item>
+        <item>{target} бөлүп көрсөт</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} көчүр</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} кес</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} өчүр</item>
+        <item>{target} жок кыл</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>кийинки {units}</item>
+        <item>алдыга {units}</item>
+        <item>оңго {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>мурунку {units}</item>
+        <item>акыркы {units}</item>
+        <item>солго {units}</item>
+        <item>артка {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} башына</item>
+        <item>{unit} башталышына</item>
+        <item>башына</item>
+        <item>башталышына</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} аягына</item>
+        <item>{unit} бүтүшүнө</item>
+        <item>аягына</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>символ</item>
+        <item>символдор</item>
+        <item>тамга</item>
+        <item>тамгалар</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>сөз</item>
+        <item>сөздөр</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>сүйлөм</item>
+        <item>сүйлөмдөр</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>сап</item>
+        <item>саптар</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>абзац</item>
+        <item>абзацтар</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>текст</item>
+        <item>талаа</item>
+        <item>текст талаасы</item>
+        <item>документ</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>бир</item>
+        <item>эки</item>
+        <item>үч</item>
+        <item>төрт</item>
+        <item>беш</item>
+        <item>алты</item>
+        <item>жети</item>
+        <item>сегиз</item>
+        <item>тогуз</item>
+        <item>он</item>
+        <item>он бир</item>
+        <item>он эки</item>
+        <item>он үч</item>
+        <item>он төрт</item>
+        <item>он беш</item>
+        <item>он алты</item>
+        <item>он жети</item>
+        <item>он сегиз</item>
+        <item>он тогуз</item>
+        <item>жыйырма</item>
+    </string-array>
 </resources>

@@ -195,4 +195,105 @@
         <item>פסקה חדשה</item>
         <item>ללחוץ על Enter</item>
     </string-array>
+    <string name="voice_commands_text_password">לא זמין בשדות סיסמה</string>
+    <string-array name="voice_commands_text_move">
+        <item>הזז [את] [הסמן] {target}</item>
+        <item>עבור {target}</item>
+        <item>לך {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>בחר {target}</item>
+        <item>סמן {target}</item>
+        <item>הדגש {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>העתק {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>גזור {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>מחק {target}</item>
+        <item>הסר {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[ה]הבא {units}</item>
+        <item>[ה]הבאה {units}</item>
+        <item>[ה]הבאים {units}</item>
+        <item>[ה]הבאות {units}</item>
+        <item>ימינה {units}</item>
+        <item>קדימה {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[ה]קודם {units}</item>
+        <item>[ה]קודמת {units}</item>
+        <item>[ה]קודמים {units}</item>
+        <item>[ה]קודמות {units}</item>
+        <item>[ה]אחרון {units}</item>
+        <item>[ה]אחרונה {units}</item>
+        <item>שמאלה {units}</item>
+        <item>אחורה {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>לתחילת ה{unit}</item>
+        <item>לתחילת {unit}</item>
+        <item>לתחילה</item>
+        <item>להתחלה</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>לסוף ה{unit}</item>
+        <item>לסוף {unit}</item>
+        <item>לסוף</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>תו</item>
+        <item>תווים</item>
+        <item>אות</item>
+        <item>אותיות</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>מילה</item>
+        <item>מילים</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>משפט</item>
+        <item>משפטים</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>שורה</item>
+        <item>שורות</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>פסקה</item>
+        <item>פסקאות</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>טקסט</item>
+        <item>שדה</item>
+        <item>שדה טקסט</item>
+        <item>מסמך</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>אחד|אחת|1</item>
+        <item>שניים|שתיים|שני|שתי|שנים</item>
+        <item>שלושה|שלוש</item>
+        <item>ארבעה|ארבע</item>
+        <item>חמישה|חמש</item>
+        <item>שישה|שש</item>
+        <item>שבעה|שבע</item>
+        <item>שמונה</item>
+        <item>תשעה|תשע</item>
+        <item>עשרה|עשר</item>
+        <item>אחד עשר|אחת עשרה</item>
+        <item>שנים עשר|שתים עשרה|שנים עשרה</item>
+        <item>שלושה עשר|שלוש עשרה</item>
+        <item>ארבעה עשר|ארבע עשרה</item>
+        <item>חמישה עשר|חמש עשרה</item>
+        <item>שישה עשר|שש עשרה</item>
+        <item>שבעה עשר|שבע עשרה</item>
+        <item>שמונה עשר|שמונה עשרה</item>
+        <item>תשעה עשר|תשע עשרה</item>
+        <item>עשרים</item>
+    </string-array>
 </resources>

@@ -190,4 +190,100 @@
         <item>perenggan baharu</item>
         <item>tekan enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Tidak tersedia dalam medan kata laluan</string>
+    <string-array name="voice_commands_text_move">
+        <item>alih kursor {target}</item>
+        <item>pergi {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>pilih {target}</item>
+        <item>serlahkan {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>salin {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>potong {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>padam {target}</item>
+        <item>buang {target}</item>
+        <item>hapus {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>{units} seterusnya</item>
+        <item>{units} berikutnya</item>
+        <item>kanan {units}</item>
+        <item>ke hadapan {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>{units} sebelumnya</item>
+        <item>{units} terakhir</item>
+        <item>kiri {units}</item>
+        <item>undur {units}</item>
+        <item>ke belakang {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>ke permulaan {unit}</item>
+        <item>ke awal {unit}</item>
+        <item>awal {unit}</item>
+        <item>ke permulaan</item>
+        <item>ke awal</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>ke penghujung {unit}</item>
+        <item>ke akhir {unit}</item>
+        <item>akhir {unit}</item>
+        <item>ke penghujung</item>
+        <item>ke akhir</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>aksara</item>
+        <item>huruf</item>
+        <item>watak</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>perkataan</item>
+        <item>kata</item>
+        <item>patah perkataan</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>ayat</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>baris</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>perenggan</item>
+        <item>para</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>teks</item>
+        <item>medan</item>
+        <item>medan teks</item>
+        <item>dokumen</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>satu|se</item>
+        <item>dua</item>
+        <item>tiga</item>
+        <item>empat</item>
+        <item>lima</item>
+        <item>enam</item>
+        <item>tujuh</item>
+        <item>lapan</item>
+        <item>sembilan</item>
+        <item>sepuluh</item>
+        <item>sebelas</item>
+        <item>dua belas</item>
+        <item>tiga belas</item>
+        <item>empat belas</item>
+        <item>lima belas</item>
+        <item>enam belas</item>
+        <item>tujuh belas</item>
+        <item>lapan belas</item>
+        <item>sembilan belas</item>
+        <item>dua puluh</item>
+    </string-array>
 </resources>

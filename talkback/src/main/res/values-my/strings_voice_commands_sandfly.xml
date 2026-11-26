@@ -174,4 +174,97 @@
         <item>စာပိုဒ်အသစ်</item>
         <item>Enter နှိပ်ပါ</item>
     </string-array>
+    <string name="voice_commands_text_password">စကားဝှက်အကွက်များတွင် မရနိုင်ပါ</string>
+    <string-array name="voice_commands_text_move">
+        <item>ကာဆာကို {target} ရွှေ့ပါ</item>
+        <item>{target} သွားပါ</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} ရွေးပါ</item>
+        <item>{target} မီးမောင်းထိုးပါ</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} ကူးပါ</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} ဖြတ်ပါ</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} ဖျက်ပါ</item>
+        <item>{target} ဖယ်ရှားပါ</item>
+        <item>{target} ဖယ်ပါ</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>နောက်ထပ် {units}</item>
+        <item>နောက်တစ်ခု {units}</item>
+        <item>ညာဘက် {units}</item>
+        <item>ရှေ့သို့ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>ယခင် {units}</item>
+        <item>ရှေ့က {units}</item>
+        <item>နောက်ဆုံး {units}</item>
+        <item>ဘယ်ဘက် {units}</item>
+        <item>နောက်သို့ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} အစသို့</item>
+        <item>{unit} အစ</item>
+        <item>အစသို့</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} အဆုံးသို့</item>
+        <item>{unit} အဆုံး</item>
+        <item>အဆုံးသို့</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>စာလုံး</item>
+        <item>အက္ခရာ</item>
+        <item>ကာရက်တာ</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>စကားလုံး</item>
+        <item>ဝေါဟာရ</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>ဝါကျ</item>
+        <item>ဝါကျများ</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>စာကြောင်း</item>
+        <item>စာကြောင်းများ</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>စာပိုဒ်</item>
+        <item>စာပိုဒ်များ</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>စာသား</item>
+        <item>အကွက်</item>
+        <item>စာသားအကွက်</item>
+        <item>စာတမ်း</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>တစ်</item>
+        <item>နှစ်</item>
+        <item>သုံး</item>
+        <item>လေး</item>
+        <item>ငါး</item>
+        <item>ခြောက်</item>
+        <item>ခုနစ်</item>
+        <item>ရှစ်</item>
+        <item>ကိုး</item>
+        <item>ဆယ်</item>
+        <item>ဆယ့်တစ်</item>
+        <item>ဆယ့်နှစ်</item>
+        <item>ဆယ့်သုံး</item>
+        <item>ဆယ့်လေး</item>
+        <item>ဆယ့်ငါး</item>
+        <item>ဆယ့်ခြောက်</item>
+        <item>ဆယ့်ခုနစ်</item>
+        <item>ဆယ့်ရှစ်</item>
+        <item>ဆယ့်ကိုး</item>
+        <item>နှစ်ဆယ်</item>
+    </string-array>
 </resources>

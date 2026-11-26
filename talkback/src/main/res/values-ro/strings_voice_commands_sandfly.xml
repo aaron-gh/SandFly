@@ -205,4 +205,131 @@
         <item>paragraf nou</item>
         <item>apasă enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Indisponibil în câmpurile de parolă</string>
+    <string-array name="voice_commands_text_move">
+        <item>mută cursorul {target}</item>
+        <item>du-te {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>selectează {target}</item>
+        <item>evidențiază {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>copiază {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>taie {target}</item>
+        <item>decupează {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>șterge {target}</item>
+        <item>elimină {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>următorul {units}</item>
+        <item>următoarea {units}</item>
+        <item>următoarele {units}</item>
+        <item>următorii {units}</item>
+        <item>la dreapta {units}</item>
+        <item>înainte {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>precedentul {units}</item>
+        <item>anteriorul {units}</item>
+        <item>precedent {units}</item>
+        <item>anterior {units}</item>
+        <item>ultimul {units}</item>
+        <item>ultimele {units}</item>
+        <item>la stânga {units}</item>
+        <item>înapoi {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>la începutul {unit}</item>
+        <item>începutul {unit}</item>
+        <item>la început</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>la sfârșitul {unit}</item>
+        <item>la finalul {unit}</item>
+        <item>sfârșitul {unit}</item>
+        <item>la sfârșit</item>
+        <item>la final</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>caracter</item>
+        <item>caractere</item>
+        <item>caracterul</item>
+        <item>caracterului</item>
+        <item>literă</item>
+        <item>litere</item>
+        <item>literei</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>cuvânt</item>
+        <item>cuvinte</item>
+        <item>cuvântul</item>
+        <item>cuvântului</item>
+        <item>cuvintelor</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>propoziție</item>
+        <item>propoziții</item>
+        <item>propoziția</item>
+        <item>propoziției</item>
+        <item>frază</item>
+        <item>fraze</item>
+        <item>frazei</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>rând</item>
+        <item>rânduri</item>
+        <item>rândul</item>
+        <item>rândului</item>
+        <item>linie</item>
+        <item>linii</item>
+        <item>liniei</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>paragraf</item>
+        <item>paragrafe</item>
+        <item>paragrafului</item>
+        <item>alineat</item>
+        <item>alineate</item>
+        <item>alineatului</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>text</item>
+        <item>textul</item>
+        <item>textului</item>
+        <item>câmp</item>
+        <item>câmpul</item>
+        <item>câmpului</item>
+        <item>câmp de text</item>
+        <item>câmpului de text</item>
+        <item>document</item>
+        <item>documentului</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>unu|una|un|o</item>
+        <item>doi|două</item>
+        <item>trei</item>
+        <item>patru</item>
+        <item>cinci</item>
+        <item>șase</item>
+        <item>șapte</item>
+        <item>opt</item>
+        <item>nouă</item>
+        <item>zece</item>
+        <item>unsprezece</item>
+        <item>doisprezece|douăsprezece</item>
+        <item>treisprezece</item>
+        <item>paisprezece|patrusprezece</item>
+        <item>cincisprezece</item>
+        <item>șaisprezece</item>
+        <item>șaptesprezece</item>
+        <item>optsprezece</item>
+        <item>nouăsprezece</item>
+        <item>douăzeci</item>
+    </string-array>
 </resources>

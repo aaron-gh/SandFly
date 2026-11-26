@@ -214,4 +214,109 @@
         <item>নতুন অনুচ্ছেদ</item>
         <item>এন্টার চাপুন</item>
     </string-array>
+    <string name="voice_commands_text_password">পাসওয়ার্ড ফিল্ডে উপলব্ধ নয়</string>
+    <string-array name="voice_commands_text_move">
+        <item>কার্সার {target} সরাও</item>
+        <item>{target} যাও</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} নির্বাচন করো</item>
+        <item>{target} হাইলাইট করো</item>
+        <item>{target} সিলেক্ট করো</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} কপি করো</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} কাট করো</item>
+        <item>{target} কেটে নাও</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} মুছো</item>
+        <item>{target} মুছে ফেলো</item>
+        <item>{target} ডিলিট করো</item>
+        <item>{target} সরাও</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>পরবর্তী {units}</item>
+        <item>ডানে {units}</item>
+        <item>সামনে {units}</item>
+        <item>এগিয়ে {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>আগের {units}</item>
+        <item>শেষ {units}</item>
+        <item>বামে {units}</item>
+        <item>পিছনে {units}</item>
+        <item>পিছিয়ে {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} শুরু</item>
+        <item>{unit} শুরুতে</item>
+        <item>শুরুতে</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} শেষ</item>
+        <item>{unit} শেষে</item>
+        <item>শেষে</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>অক্ষর</item>
+        <item>অক্ষরের</item>
+        <item>বর্ণ</item>
+        <item>অক্ষরগুলো</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>শব্দ</item>
+        <item>শব্দের</item>
+        <item>শব্দগুলো</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>বাক্য</item>
+        <item>বাক্যের</item>
+        <item>বাক্যগুলো</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>লাইন</item>
+        <item>লাইনের</item>
+        <item>লাইনগুলো</item>
+        <item>পংক্তি</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>অনুচ্ছেদ</item>
+        <item>অনুচ্ছেদের</item>
+        <item>প্যারাগ্রাফ</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>টেক্সট</item>
+        <item>লেখা</item>
+        <item>লেখার</item>
+        <item>ফিল্ড</item>
+        <item>টেক্সট ফিল্ড</item>
+        <item>নথি</item>
+        <item>ডকুমেন্ট</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>এক</item>
+        <item>দুই|দুটি|দুটো</item>
+        <item>তিন|তিনটি|তিনটে</item>
+        <item>চার|চারটি</item>
+        <item>পাঁচ|পাঁচটি</item>
+        <item>ছয়|ছয়টি|ছ</item>
+        <item>সাত</item>
+        <item>আট</item>
+        <item>নয়|নয়টি</item>
+        <item>দশ</item>
+        <item>এগারো</item>
+        <item>বারো</item>
+        <item>তেরো</item>
+        <item>চৌদ্দ</item>
+        <item>পনেরো</item>
+        <item>ষোলো</item>
+        <item>সতেরো</item>
+        <item>আঠারো</item>
+        <item>উনিশ</item>
+        <item>কুড়ি|বিশ</item>
+    </string-array>
 </resources>

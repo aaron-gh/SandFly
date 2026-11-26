@@ -191,4 +191,121 @@
         <item>új bekezdés</item>
         <item>nyomja meg az entert</item>
     </string-array>
+    <string name="voice_commands_text_password">Jelszómezőkben nem érhető el</string>
+    <string-array name="voice_commands_text_move">
+        <item>vidd [a] [kurzort] {target}</item>
+        <item>ugorj {target}</item>
+        <item>lépj {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>jelöld ki {target}</item>
+        <item>válaszd ki {target}</item>
+        <item>kijelölés {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>másold {target}</item>
+        <item>másolás {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>vágd ki {target}</item>
+        <item>kivágás {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>töröld {target}</item>
+        <item>törlés {target}</item>
+        <item>távolítsd el {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>következő {units}</item>
+        <item>következőt {units}</item>
+        <item>jobbra {units}</item>
+        <item>előre {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>előző {units}</item>
+        <item>előzőt {units}</item>
+        <item>utolsó {units}</item>
+        <item>balra {units}</item>
+        <item>vissza {units}</item>
+        <item>hátra {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} elejére</item>
+        <item>{unit} elejéhez</item>
+        <item>az elejére</item>
+        <item>elejére</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} végére</item>
+        <item>{unit} végéhez</item>
+        <item>a végére</item>
+        <item>végére</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>karakter</item>
+        <item>karaktert</item>
+        <item>karakterek</item>
+        <item>karaktereket</item>
+        <item>betű</item>
+        <item>betűt</item>
+        <item>betűk</item>
+        <item>betűket</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>szó</item>
+        <item>szót</item>
+        <item>szavak</item>
+        <item>szavakat</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>mondat</item>
+        <item>mondatot</item>
+        <item>mondatok</item>
+        <item>mondatokat</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>sor</item>
+        <item>sort</item>
+        <item>sorok</item>
+        <item>sorokat</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>bekezdés</item>
+        <item>bekezdést</item>
+        <item>bekezdések</item>
+        <item>bekezdéseket</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>szöveg</item>
+        <item>szöveget</item>
+        <item>mező</item>
+        <item>mezőt</item>
+        <item>szövegmező</item>
+        <item>szövegmezőt</item>
+        <item>dokumentum</item>
+        <item>dokumentumot</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>egy</item>
+        <item>két|kettő|2</item>
+        <item>három</item>
+        <item>négy</item>
+        <item>öt</item>
+        <item>hat</item>
+        <item>hét</item>
+        <item>nyolc</item>
+        <item>kilenc</item>
+        <item>tíz</item>
+        <item>tizenegy</item>
+        <item>tizenkettő|tizenkét</item>
+        <item>tizenhárom</item>
+        <item>tizennégy</item>
+        <item>tizenöt</item>
+        <item>tizenhat</item>
+        <item>tizenhét</item>
+        <item>tizennyolc</item>
+        <item>tizenkilenc</item>
+        <item>húsz</item>
+    </string-array>
 </resources>

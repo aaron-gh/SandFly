@@ -190,4 +190,118 @@
         <item>پاراگراف جدید</item>
         <item>فشردن اینتر</item>
     </string-array>
+    <string name="voice_commands_text_password">در فیلدهای گذرواژه در دسترس نیست</string>
+    <string-array name="voice_commands_text_move">
+        <item>مکان‌نما را {target} ببر</item>
+        <item>{target} برو</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} را انتخاب کن</item>
+        <item>انتخاب {target}</item>
+        <item>{target} را هایلایت کن</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} را کپی کن</item>
+        <item>کپی {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} را برش بده</item>
+        <item>برش {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} را حذف کن</item>
+        <item>حذف {target}</item>
+        <item>{target} را پاک کن</item>
+        <item>پاک کردن {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>{units} بعدی</item>
+        <item>[به] {units} بعدی</item>
+        <item>{units} بعد</item>
+        <item>به جلو {units}</item>
+        <item>جلو {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>{units} قبلی</item>
+        <item>[به] {units} قبلی</item>
+        <item>{units} قبل</item>
+        <item>{units} آخر</item>
+        <item>به عقب {units}</item>
+        <item>عقب {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[به] ابتدای {unit}</item>
+        <item>[به] اول {unit}</item>
+        <item>[به] شروع {unit}</item>
+        <item>به ابتدا</item>
+        <item>به اول</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[به] انتهای {unit}</item>
+        <item>[به] آخر {unit}</item>
+        <item>[به] پایان {unit}</item>
+        <item>به انتها</item>
+        <item>به آخر</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>نویسه</item>
+        <item>نویسه‌ها</item>
+        <item>کاراکتر</item>
+        <item>کاراکترها</item>
+        <item>حرف</item>
+        <item>حروف</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>کلمه</item>
+        <item>کلمه‌ها</item>
+        <item>کلمات</item>
+        <item>واژه</item>
+        <item>واژه‌ها</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>جمله</item>
+        <item>جمله‌ها</item>
+        <item>جملات</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>خط</item>
+        <item>خطوط</item>
+        <item>سطر</item>
+        <item>سطرها</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>پاراگراف</item>
+        <item>پاراگراف‌ها</item>
+        <item>بند</item>
+        <item>بندها</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>متن</item>
+        <item>فیلد</item>
+        <item>فیلد متن</item>
+        <item>سند</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>یک</item>
+        <item>دو</item>
+        <item>سه</item>
+        <item>چهار</item>
+        <item>پنج</item>
+        <item>شش</item>
+        <item>هفت</item>
+        <item>هشت</item>
+        <item>نه</item>
+        <item>ده</item>
+        <item>یازده</item>
+        <item>دوازده</item>
+        <item>سیزده</item>
+        <item>چهارده</item>
+        <item>پانزده</item>
+        <item>شانزده|شونزده</item>
+        <item>هفده</item>
+        <item>هجده</item>
+        <item>نوزده</item>
+        <item>بیست</item>
+    </string-array>
 </resources>

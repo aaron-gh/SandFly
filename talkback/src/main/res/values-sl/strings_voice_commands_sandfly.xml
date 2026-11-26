@@ -199,4 +199,102 @@
         <item>nov odstavek</item>
         <item>pritisni enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Ni na voljo v poljih za geslo</string>
+    <string-array name="voice_commands_text_move">
+        <item>premakni [kazalko] {target}</item>
+        <item>pojdi {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>izberi {target}</item>
+        <item>označi {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopiraj {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>izreži {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>izbriši {target}</item>
+        <item>odstrani {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[na] naslednji {units}</item>
+        <item>[na] naslednje {units}</item>
+        <item>desno za {units}</item>
+        <item>naprej za {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[na] prejšnji {units}</item>
+        <item>[na] prejšnje {units}</item>
+        <item>levo za {units}</item>
+        <item>nazaj za {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[na] začetek {unit}</item>
+        <item>[na] začetek</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[na] konec {unit}</item>
+        <item>[na] konec</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>znak</item>
+        <item>znaki</item>
+        <item>znakov</item>
+        <item>črka</item>
+        <item>črke</item>
+        <item>črk</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>beseda</item>
+        <item>besede</item>
+        <item>besed</item>
+        <item>besedo</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>poved</item>
+        <item>povedi</item>
+        <item>povedih</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>vrstica</item>
+        <item>vrstice</item>
+        <item>vrstic</item>
+        <item>vrstico</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>odstavek</item>
+        <item>odstavki</item>
+        <item>odstavkov</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>besedilo</item>
+        <item>polje</item>
+        <item>besedilno polje</item>
+        <item>dokument</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>ena|eno|en</item>
+        <item>dva|dve|dvoje</item>
+        <item>tri</item>
+        <item>štiri</item>
+        <item>pet</item>
+        <item>šest</item>
+        <item>sedem</item>
+        <item>osem</item>
+        <item>devet</item>
+        <item>deset</item>
+        <item>enajst</item>
+        <item>dvanajst</item>
+        <item>trinajst</item>
+        <item>štirinajst</item>
+        <item>petnajst</item>
+        <item>šestnajst</item>
+        <item>sedemnajst</item>
+        <item>osemnajst</item>
+        <item>devetnajst</item>
+        <item>dvajset</item>
+    </string-array>
 </resources>

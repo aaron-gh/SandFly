@@ -184,4 +184,104 @@
         <item>nyt afsnit</item>
         <item>tryk enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Ikke tilgængelig i adgangskodefelter</string>
+    <string-array name="voice_commands_text_move">
+        <item>flyt [markøren] {target}</item>
+        <item>gå {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>markér {target}</item>
+        <item>marker {target}</item>
+        <item>vælg {target}</item>
+        <item>fremhæv {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopiér {target}</item>
+        <item>kopier {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>klip {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>slet {target}</item>
+        <item>fjern {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[til] næste {units}</item>
+        <item>[til] det næste {units}</item>
+        <item>[til] den næste {units}</item>
+        <item>højre [med] {units}</item>
+        <item>frem [med] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[til] forrige {units}</item>
+        <item>[til] det forrige {units}</item>
+        <item>[til] den forrige {units}</item>
+        <item>[det] sidste {units}</item>
+        <item>[den] sidste {units}</item>
+        <item>venstre [med] {units}</item>
+        <item>tilbage [med] {units}</item>
+        <item>bagud [med] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[til] begyndelsen af [det] [den] {unit}</item>
+        <item>[til] starten af [det] [den] {unit}</item>
+        <item>til begyndelsen</item>
+        <item>til starten</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[til] slutningen af [det] [den] {unit}</item>
+        <item>[til] enden af [det] [den] {unit}</item>
+        <item>til slutningen</item>
+        <item>til enden</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>tegn</item>
+        <item>bogstav</item>
+        <item>bogstaver</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>ord</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>sætning</item>
+        <item>sætninger</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>linje</item>
+        <item>linjer</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>afsnit</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>tekst</item>
+        <item>felt</item>
+        <item>feltet</item>
+        <item>tekstfelt</item>
+        <item>dokument</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>en|et|ét</item>
+        <item>to</item>
+        <item>tre</item>
+        <item>fire</item>
+        <item>fem</item>
+        <item>seks</item>
+        <item>syv</item>
+        <item>otte</item>
+        <item>ni</item>
+        <item>ti</item>
+        <item>elleve</item>
+        <item>tolv</item>
+        <item>tretten</item>
+        <item>fjorten</item>
+        <item>femten</item>
+        <item>seksten</item>
+        <item>sytten</item>
+        <item>atten</item>
+        <item>nitten</item>
+        <item>tyve</item>
+    </string-array>
 </resources>

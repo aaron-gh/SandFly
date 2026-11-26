@@ -181,4 +181,109 @@
         <item>yeni abzas</item>
         <item>enter basın</item>
     </string-array>
+    <string name="voice_commands_text_password">Parol sahələrində əlçatan deyil</string>
+    <string-array name="voice_commands_text_move">
+        <item>[kursoru] {target} apar</item>
+        <item>{target} get</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} seç</item>
+        <item>{target} işarələ</item>
+        <item>{target} vurğula</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} kopyala</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} kəs</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} sil</item>
+        <item>{target} çıxar</item>
+        <item>{target} təmizlə</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>növbəti {units}</item>
+        <item>sağa {units}</item>
+        <item>irəli {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>əvvəlki {units}</item>
+        <item>sonuncu {units}</item>
+        <item>sola {units}</item>
+        <item>geri {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} başlanğıcı</item>
+        <item>{unit} əvvəli</item>
+        <item>başlanğıca</item>
+        <item>əvvələ</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} sonu</item>
+        <item>{unit} sonuna</item>
+        <item>sona</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>simvol</item>
+        <item>simvollar</item>
+        <item>simvolun</item>
+        <item>hərf</item>
+        <item>hərflər</item>
+        <item>hərfin</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>söz</item>
+        <item>sözlər</item>
+        <item>sözün</item>
+        <item>sözlərin</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>cümlə</item>
+        <item>cümlələr</item>
+        <item>cümlənin</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>sətir</item>
+        <item>sətirlər</item>
+        <item>sətrin</item>
+        <item>xətt</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>abzas</item>
+        <item>abzaslar</item>
+        <item>abzasın</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>mətn</item>
+        <item>mətnin</item>
+        <item>sahə</item>
+        <item>sahənin</item>
+        <item>mətn sahəsi</item>
+        <item>sənəd</item>
+        <item>sənədin</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>bir</item>
+        <item>iki</item>
+        <item>üç</item>
+        <item>dörd</item>
+        <item>beş</item>
+        <item>altı</item>
+        <item>yeddi</item>
+        <item>səkkiz</item>
+        <item>doqquz</item>
+        <item>on</item>
+        <item>on bir</item>
+        <item>on iki</item>
+        <item>on üç</item>
+        <item>on dörd</item>
+        <item>on beş</item>
+        <item>on altı</item>
+        <item>on yeddi</item>
+        <item>on səkkiz</item>
+        <item>on doqquz</item>
+        <item>iyirmi</item>
+    </string-array>
 </resources>

@@ -174,4 +174,99 @@
         <item>шинэ догол мөр</item>
         <item>enter дарах</item>
     </string-array>
+    <string name="voice_commands_text_password">Нууц үгийн талбарт боломжгүй</string>
+    <string-array name="voice_commands_text_move">
+        <item>курсорыг {target} зөөх</item>
+        <item>{target} очих</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} сонгох</item>
+        <item>{target} тодруулах</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} хуулах</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} таслах</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} устгах</item>
+        <item>{target} арилгах</item>
+        <item>{target} хасах</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>дараагийн {units}</item>
+        <item>баруун {units}</item>
+        <item>урагш {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>өмнөх {units}</item>
+        <item>сүүлийн {units}</item>
+        <item>зүүн {units}</item>
+        <item>хойш {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} эхлэл рүү</item>
+        <item>{unit} эхэнд</item>
+        <item>эхлэл рүү</item>
+        <item>эхэнд</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} төгсгөл рүү</item>
+        <item>{unit} төгсгөлд</item>
+        <item>төгсгөл рүү</item>
+        <item>төгсгөлд</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>тэмдэгт</item>
+        <item>тэмдэгтүүд</item>
+        <item>үсэг</item>
+        <item>үсгүүд</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>үг</item>
+        <item>үгс</item>
+        <item>үгнүүд</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>өгүүлбэр</item>
+        <item>өгүүлбэрүүд</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>мөр</item>
+        <item>мөрүүд</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>догол мөр</item>
+        <item>догол мөрүүд</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>текст</item>
+        <item>талбар</item>
+        <item>текстийн талбар</item>
+        <item>баримт бичиг</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>нэг</item>
+        <item>хоёр</item>
+        <item>гурав|гурван</item>
+        <item>дөрөв|дөрвөн</item>
+        <item>тав|таван</item>
+        <item>зургаа|зургаан</item>
+        <item>долоо|долоон</item>
+        <item>найм|найман</item>
+        <item>ес|есөн</item>
+        <item>арав|арван</item>
+        <item>арван нэг</item>
+        <item>арван хоёр</item>
+        <item>арван гурав</item>
+        <item>арван дөрөв</item>
+        <item>арван тав</item>
+        <item>арван зургаа</item>
+        <item>арван долоо</item>
+        <item>арван найм</item>
+        <item>арван ес</item>
+        <item>хорь|хорин</item>
+    </string-array>
 </resources>

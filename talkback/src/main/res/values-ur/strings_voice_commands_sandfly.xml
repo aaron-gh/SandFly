@@ -188,4 +188,100 @@
         <item>نیا پیراگراف</item>
         <item>انٹر دبائیں</item>
     </string-array>
+    <string name="voice_commands_text_password">پاس ورڈ فیلڈز میں دستیاب نہیں</string>
+    <string-array name="voice_commands_text_move">
+        <item>[کرسر کو] {target} پر لے جائیں</item>
+        <item>{target} پر جائیں</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} منتخب کریں</item>
+        <item>{target} سلیکٹ کریں</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} کاپی کریں</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} کاٹیں</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} حذف کریں</item>
+        <item>{target} مٹائیں</item>
+        <item>{target} ہٹائیں</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>اگلا {units}</item>
+        <item>اگلے {units}</item>
+        <item>دائیں {units}</item>
+        <item>آگے {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>پچھلا {units}</item>
+        <item>پچھلے {units}</item>
+        <item>بائیں {units}</item>
+        <item>پیچھے {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} کے آغاز پر</item>
+        <item>{unit} کی شروعات</item>
+        <item>آغاز پر</item>
+        <item>شروع پر</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} کے اختتام پر</item>
+        <item>{unit} کے آخر پر</item>
+        <item>اختتام پر</item>
+        <item>آخر پر</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>حرف</item>
+        <item>حروف</item>
+        <item>کریکٹر</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>لفظ</item>
+        <item>الفاظ</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>جملہ</item>
+        <item>جملے</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>لائن</item>
+        <item>لائنیں</item>
+        <item>سطر</item>
+        <item>سطریں</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>پیراگراف</item>
+        <item>پیراگرافس</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>متن</item>
+        <item>فیلڈ</item>
+        <item>ٹیکسٹ فیلڈ</item>
+        <item>دستاویز</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>ایک</item>
+        <item>دو</item>
+        <item>تین</item>
+        <item>چار</item>
+        <item>پانچ</item>
+        <item>چھ</item>
+        <item>سات</item>
+        <item>آٹھ</item>
+        <item>نو</item>
+        <item>دس</item>
+        <item>گیارہ</item>
+        <item>بارہ</item>
+        <item>تیرہ</item>
+        <item>چودہ</item>
+        <item>پندرہ</item>
+        <item>سولہ</item>
+        <item>سترہ</item>
+        <item>اٹھارہ</item>
+        <item>انیس</item>
+        <item>بیس</item>
+    </string-array>
 </resources>

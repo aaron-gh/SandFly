@@ -185,4 +185,110 @@
         <item>nytt avsnitt</item>
         <item>trykk enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Ikke tilgjengelig i passordfelt</string>
+    <string-array name="voice_commands_text_move">
+        <item>flytt markøren {target}</item>
+        <item>gå {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>marker {target}</item>
+        <item>velg {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopier {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>klipp ut {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>slett {target}</item>
+        <item>fjern {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>neste {units}</item>
+        <item>høyre {units}</item>
+        <item>fremover {units}</item>
+        <item>frem {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>forrige {units}</item>
+        <item>siste {units}</item>
+        <item>venstre {units}</item>
+        <item>tilbake {units}</item>
+        <item>bakover {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>til starten av {unit}</item>
+        <item>til begynnelsen av {unit}</item>
+        <item>til starten</item>
+        <item>til begynnelsen</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>til slutten av {unit}</item>
+        <item>til slutten</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>tegn</item>
+        <item>tegnet</item>
+        <item>tegnene</item>
+        <item>bokstav</item>
+        <item>bokstaven</item>
+        <item>bokstaver</item>
+        <item>bokstavene</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>ord</item>
+        <item>ordet</item>
+        <item>ordene</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>setning</item>
+        <item>setningen</item>
+        <item>setninger</item>
+        <item>setningene</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>linje</item>
+        <item>linjen</item>
+        <item>linjer</item>
+        <item>linjene</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>avsnitt</item>
+        <item>avsnittet</item>
+        <item>avsnittene</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>tekst</item>
+        <item>teksten</item>
+        <item>felt</item>
+        <item>feltet</item>
+        <item>tekstfelt</item>
+        <item>tekstfeltet</item>
+        <item>dokument</item>
+        <item>dokumentet</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>en|ei|ett|én</item>
+        <item>to</item>
+        <item>tre</item>
+        <item>fire</item>
+        <item>fem</item>
+        <item>seks</item>
+        <item>sju|syv</item>
+        <item>åtte</item>
+        <item>ni</item>
+        <item>ti</item>
+        <item>elleve</item>
+        <item>tolv</item>
+        <item>tretten</item>
+        <item>fjorten</item>
+        <item>femten</item>
+        <item>seksten</item>
+        <item>sytten</item>
+        <item>atten</item>
+        <item>nitten</item>
+        <item>tjue|tyve</item>
+    </string-array>
 </resources>

@@ -206,4 +206,111 @@
         <item>paràgraf nou</item>
         <item>prem intro</item>
     </string-array>
+    <string name="voice_commands_text_password">No disponible als camps de contrasenya</string>
+    <string-array name="voice_commands_text_move">
+        <item>mou [el] [cursor] {target}</item>
+        <item>ves {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>selecciona {target}</item>
+        <item>ressalta {target}</item>
+        <item>marca {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>copia {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>retalla {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>esborra {target}</item>
+        <item>elimina {target}</item>
+        <item>suprimeix {target}</item>
+        <item>treu {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[a] [la] següent {units}</item>
+        <item>[al] següent {units}</item>
+        <item>dreta [per] {units}</item>
+        <item>endavant [per] {units}</item>
+        <item>avança {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[a] [la] anterior {units}</item>
+        <item>[al] anterior {units}</item>
+        <item>[la] darrera {units}</item>
+        <item>[l\']última {units}</item>
+        <item>esquerra [per] {units}</item>
+        <item>enrere [per] {units}</item>
+        <item>retrocedeix {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[al] principi de [la] {unit}</item>
+        <item>[al] principi del {unit}</item>
+        <item>[al] principi de l\'{unit}</item>
+        <item>a l\'inici de [la] {unit}</item>
+        <item>a l\'inici del {unit}</item>
+        <item>a l\'inici de l\'{unit}</item>
+        <item>al principi</item>
+        <item>a l\'inici</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[al] final de [la] {unit}</item>
+        <item>[al] final del {unit}</item>
+        <item>[al] final de l\'{unit}</item>
+        <item>al final</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>caràcter</item>
+        <item>caràcters</item>
+        <item>lletra</item>
+        <item>lletres</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>paraula</item>
+        <item>paraules</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>oració</item>
+        <item>oracions</item>
+        <item>frase</item>
+        <item>frases</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>línia</item>
+        <item>línies</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>paràgraf</item>
+        <item>paràgrafs</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>text</item>
+        <item>camp</item>
+        <item>camp de text</item>
+        <item>document</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>un|una</item>
+        <item>dos|dues</item>
+        <item>tres</item>
+        <item>quatre</item>
+        <item>cinc</item>
+        <item>sis</item>
+        <item>set</item>
+        <item>vuit</item>
+        <item>nou</item>
+        <item>deu</item>
+        <item>onze</item>
+        <item>dotze</item>
+        <item>tretze</item>
+        <item>catorze</item>
+        <item>quinze</item>
+        <item>setze</item>
+        <item>disset</item>
+        <item>divuit</item>
+        <item>dinou</item>
+        <item>vint</item>
+    </string-array>
 </resources>

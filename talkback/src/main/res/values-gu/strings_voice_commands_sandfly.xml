@@ -181,4 +181,102 @@
         <item>નવો ફકરો</item>
         <item>Enter દબાવો</item>
     </string-array>
+    <string name="voice_commands_text_password">પાસવર્ડ ફીલ્ડમાં ઉપલબ્ધ નથી</string>
+    <string-array name="voice_commands_text_move">
+        <item>[કર્સર] {target} પર ખસેડો</item>
+        <item>{target} પર જાઓ</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} પસંદ કરો</item>
+        <item>{target} હાઇલાઇટ કરો</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} કૉપિ કરો</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} કાપો</item>
+        <item>{target} કટ કરો</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} ડિલીટ કરો</item>
+        <item>{target} કાઢી નાખો</item>
+        <item>{target} ભૂંસી નાખો</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>આગળના {units}</item>
+        <item>પછીના {units}</item>
+        <item>જમણે {units}</item>
+        <item>આગળ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>પાછળના {units}</item>
+        <item>પહેલાના {units}</item>
+        <item>છેલ્લા {units}</item>
+        <item>ડાબે {units}</item>
+        <item>પાછળ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit}ની શરૂઆતમાં</item>
+        <item>{unit}ના પ્રારંભે</item>
+        <item>શરૂઆતમાં</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit}ના અંતે</item>
+        <item>{unit}ના અંતમાં</item>
+        <item>અંતમાં</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>અક્ષર</item>
+        <item>અક્ષરો</item>
+        <item>કેરેક્ટર</item>
+        <item>કેરેક્ટરો</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>શબ્દ</item>
+        <item>શબ્દો</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>વાક્ય</item>
+        <item>વાક્યો</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>લીટી</item>
+        <item>લીટીઓ</item>
+        <item>લાઇન</item>
+        <item>લાઇનો</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>ફકરો</item>
+        <item>ફકરા</item>
+        <item>પેરેગ્રાફ</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>ટેક્સ્ટ</item>
+        <item>ફીલ્ડ</item>
+        <item>ટેક્સ્ટ ફીલ્ડ</item>
+        <item>દસ્તાવેજ</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>એક</item>
+        <item>બે</item>
+        <item>ત્રણ</item>
+        <item>ચાર</item>
+        <item>પાંચ</item>
+        <item>છ</item>
+        <item>સાત</item>
+        <item>આઠ</item>
+        <item>નવ</item>
+        <item>દસ</item>
+        <item>અગિયાર</item>
+        <item>બાર</item>
+        <item>તેર</item>
+        <item>ચૌદ</item>
+        <item>પંદર</item>
+        <item>સોળ</item>
+        <item>સત્તર</item>
+        <item>અઢાર</item>
+        <item>ઓગણીસ</item>
+        <item>વીસ</item>
+    </string-array>
 </resources>

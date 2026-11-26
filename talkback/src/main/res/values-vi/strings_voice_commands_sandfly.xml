@@ -219,4 +219,93 @@
         <item>đoạn mới</item>
         <item>nhấn enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Không có trong trường mật khẩu</string>
+    <string-array name="voice_commands_text_move">
+        <item>di chuyển [con trỏ] {target}</item>
+        <item>đi {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>chọn {target}</item>
+        <item>tô sáng {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>sao chép {target}</item>
+        <item>copy {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>cắt {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>xóa {target}</item>
+        <item>loại bỏ {target}</item>
+        <item>xoá {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>{units} tiếp theo</item>
+        <item>{units} kế tiếp</item>
+        <item>sang phải {units}</item>
+        <item>tiến {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>{units} trước</item>
+        <item>{units} trước đó</item>
+        <item>sang trái {units}</item>
+        <item>lùi {units}</item>
+        <item>quay lại {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[đến] đầu {unit}</item>
+        <item>[đến] đầu</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[đến] cuối {unit}</item>
+        <item>[đến] cuối</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>ký tự</item>
+        <item>kí tự</item>
+        <item>chữ cái</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>từ</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>câu</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>dòng</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>đoạn</item>
+        <item>đoạn văn</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>văn bản</item>
+        <item>trường</item>
+        <item>trường văn bản</item>
+        <item>tài liệu</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>một|1</item>
+        <item>hai|2</item>
+        <item>ba|3</item>
+        <item>bốn|4</item>
+        <item>năm|5</item>
+        <item>sáu|6</item>
+        <item>bảy|7</item>
+        <item>tám|8</item>
+        <item>chín|9</item>
+        <item>mười|10</item>
+        <item>mười một|11</item>
+        <item>mười hai|12</item>
+        <item>mười ba|13</item>
+        <item>mười bốn|14</item>
+        <item>mười lăm|15</item>
+        <item>mười sáu|16</item>
+        <item>mười bảy|17</item>
+        <item>mười tám|18</item>
+        <item>mười chín|19</item>
+        <item>hai mươi|20</item>
+    </string-array>
 </resources>

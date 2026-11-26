@@ -353,4 +353,137 @@
         <item>новый абзац</item>
         <item>нажать enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Недоступно в полях пароля</string>
+    <string-array name="voice_commands_text_move">
+        <item>переместить курсор {target}</item>
+        <item>перемести курсор {target}</item>
+        <item>курсор {target}</item>
+        <item>перейти {target}</item>
+        <item>перейди {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>выделить {target}</item>
+        <item>выдели {target}</item>
+        <item>выбрать {target}</item>
+        <item>выбери {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>копировать {target}</item>
+        <item>скопировать {target}</item>
+        <item>скопируй {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>вырезать {target}</item>
+        <item>вырежи {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>удалить {target}</item>
+        <item>удали {target}</item>
+        <item>стереть {target}</item>
+        <item>сотри {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>следующее {units}</item>
+        <item>следующий {units}</item>
+        <item>следующую {units}</item>
+        <item>следующие {units}</item>
+        <item>вправо {units}</item>
+        <item>вперёд {units}</item>
+        <item>вперед {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>предыдущее {units}</item>
+        <item>предыдущий {units}</item>
+        <item>предыдущую {units}</item>
+        <item>предыдущие {units}</item>
+        <item>последнее {units}</item>
+        <item>последний {units}</item>
+        <item>последние {units}</item>
+        <item>влево {units}</item>
+        <item>назад {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>в начало {unit}</item>
+        <item>к началу {unit}</item>
+        <item>начало {unit}</item>
+        <item>в начало</item>
+        <item>к началу</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>в конец {unit}</item>
+        <item>к концу {unit}</item>
+        <item>конец {unit}</item>
+        <item>в конец</item>
+        <item>к концу</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>символ</item>
+        <item>символа</item>
+        <item>символы</item>
+        <item>символов</item>
+        <item>символу</item>
+        <item>буква</item>
+        <item>буквы</item>
+        <item>букв</item>
+        <item>букву</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>слово</item>
+        <item>слова</item>
+        <item>слов</item>
+        <item>слову</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>предложение</item>
+        <item>предложения</item>
+        <item>предложений</item>
+        <item>предложению</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>строка</item>
+        <item>строки</item>
+        <item>строк</item>
+        <item>строку</item>
+        <item>строке</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>абзац</item>
+        <item>абзаца</item>
+        <item>абзацы</item>
+        <item>абзацев</item>
+        <item>абзацу</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>текст</item>
+        <item>текста</item>
+        <item>поле</item>
+        <item>поля</item>
+        <item>текстовое поле</item>
+        <item>текстового поля</item>
+        <item>документ</item>
+        <item>документа</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>один|одно|одну|одна|одного|одной</item>
+        <item>два|две|двух</item>
+        <item>три|трёх|трех</item>
+        <item>четыре|четырёх|четырех</item>
+        <item>пять|пяти</item>
+        <item>шесть|шести</item>
+        <item>семь|семи</item>
+        <item>восемь|восьми</item>
+        <item>девять|девяти</item>
+        <item>десять|десяти</item>
+        <item>одиннадцать|одиннадцати</item>
+        <item>двенадцать|двенадцати</item>
+        <item>тринадцать|тринадцати</item>
+        <item>четырнадцать|четырнадцати</item>
+        <item>пятнадцать|пятнадцати</item>
+        <item>шестнадцать|шестнадцати</item>
+        <item>семнадцать|семнадцати</item>
+        <item>восемнадцать|восемнадцати</item>
+        <item>девятнадцать|девятнадцати</item>
+        <item>двадцать|двадцати</item>
+    </string-array>
 </resources>

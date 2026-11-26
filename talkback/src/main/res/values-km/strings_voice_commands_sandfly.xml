@@ -183,4 +183,90 @@
         <item>កថាខណ្ឌថ្មី</item>
         <item>ចុច enter</item>
     </string-array>
+    <string name="voice_commands_text_password">មិនអាចប្រើបានក្នុងវាលពាក្យសម្ងាត់</string>
+    <string-array name="voice_commands_text_move">
+        <item>ផ្លាស់ទី[ទស្សន៍ទ្រនិច]ទៅ {target}</item>
+        <item>ទៅ {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>ជ្រើសរើស {target}</item>
+        <item>គូសបន្លិច {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>ចម្លង {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>កាត់ {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>លុប {target}</item>
+        <item>ដក {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>{units}បន្ទាប់</item>
+        <item>ស្តាំ {units}</item>
+        <item>ទៅមុខ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>{units}មុន</item>
+        <item>{units}ចុងក្រោយ</item>
+        <item>ឆ្វេង {units}</item>
+        <item>ថយក្រោយ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>ដើម{unit}</item>
+        <item>ទៅដើម{unit}</item>
+        <item>ទៅដើម</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>ចុង{unit}</item>
+        <item>ទៅចុង{unit}</item>
+        <item>ទៅចុង</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>តួអក្សរ</item>
+        <item>អក្សរ</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>ពាក្យ</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>ប្រយោគ</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>បន្ទាត់</item>
+        <item>ជួរ</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>កថាខណ្ឌ</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>អត្ថបទ</item>
+        <item>វាល</item>
+        <item>វាលអត្ថបទ</item>
+        <item>ឯកសារ</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>មួយ</item>
+        <item>ពីរ</item>
+        <item>បី</item>
+        <item>បួន</item>
+        <item>ប្រាំ</item>
+        <item>ប្រាំមួយ</item>
+        <item>ប្រាំពីរ</item>
+        <item>ប្រាំបី</item>
+        <item>ប្រាំបួន</item>
+        <item>ដប់</item>
+        <item>ដប់មួយ</item>
+        <item>ដប់ពីរ</item>
+        <item>ដប់បី</item>
+        <item>ដប់បួន</item>
+        <item>ដប់ប្រាំ</item>
+        <item>ដប់ប្រាំមួយ</item>
+        <item>ដប់ប្រាំពីរ</item>
+        <item>ដប់ប្រាំបី</item>
+        <item>ដប់ប្រាំបួន</item>
+        <item>ម្ភៃ</item>
+    </string-array>
 </resources>

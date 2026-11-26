@@ -183,4 +183,97 @@
         <item>కొత్త పేరా</item>
         <item>ఎంటర్ నొక్కండి</item>
     </string-array>
+    <string name="voice_commands_text_password">పాస్‌వర్డ్ ఫీల్డ్‌లలో అందుబాటులో లేదు</string>
+    <string-array name="voice_commands_text_move">
+        <item>కర్సర్‌ను {target} కు తరలించు</item>
+        <item>{target} కు వెళ్లు</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} ఎంచుకో</item>
+        <item>{target} ను ఎంచుకో</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} కాపీ చేయి</item>
+        <item>{target} ను కాపీ చేయి</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} కట్ చేయి</item>
+        <item>{target} ను కట్ చేయి</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} తొలగించు</item>
+        <item>{target} తీసివేయి</item>
+        <item>{target} ను తొలగించు</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>తదుపరి {units}</item>
+        <item>కుడి {units}</item>
+        <item>ముందుకు {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>మునుపటి {units}</item>
+        <item>ఎడమ {units}</item>
+        <item>వెనుకకు {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} ప్రారంభానికి</item>
+        <item>{unit} ప్రారంభం</item>
+        <item>ప్రారంభానికి</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} చివరకు</item>
+        <item>{unit} చివర</item>
+        <item>చివరకు</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>అక్షరం</item>
+        <item>అక్షరాలు</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>పదం</item>
+        <item>పదాలు</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>వాక్యం</item>
+        <item>వాక్యాలు</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>లైన్</item>
+        <item>లైన్లు</item>
+        <item>వరుస</item>
+        <item>వరుసలు</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>పేరా</item>
+        <item>పేరాలు</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>టెక్స్ట్</item>
+        <item>ఫీల్డ్</item>
+        <item>టెక్స్ట్ ఫీల్డ్</item>
+        <item>డాక్యుమెంట్</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>ఒకటి|ఒక</item>
+        <item>రెండు</item>
+        <item>మూడు</item>
+        <item>నాలుగు</item>
+        <item>ఐదు</item>
+        <item>ఆరు</item>
+        <item>ఏడు</item>
+        <item>ఎనిమిది</item>
+        <item>తొమ్మిది</item>
+        <item>పది</item>
+        <item>పదకొండు</item>
+        <item>పన్నెండు</item>
+        <item>పదమూడు</item>
+        <item>పద్నాలుగు</item>
+        <item>పదిహేను</item>
+        <item>పదహారు</item>
+        <item>పదిహేడు</item>
+        <item>పద్దెనిమిది</item>
+        <item>పంతొమ్మిది</item>
+        <item>ఇరవై</item>
+    </string-array>
 </resources>

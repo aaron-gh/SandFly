@@ -191,4 +191,103 @@
         <item>yeni paragraf</item>
         <item>enter tuşuna bas</item>
     </string-array>
+    <string name="voice_commands_text_password">Parola alanlarında kullanılamaz</string>
+    <string-array name="voice_commands_text_move">
+        <item>[imleci] {target} taşı</item>
+        <item>{target} git</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} seç</item>
+        <item>{target} vurgula</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} kopyala</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} kes</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} sil</item>
+        <item>{target} kaldır</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>sonraki {units}</item>
+        <item>sağa {units}</item>
+        <item>ileri {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>önceki {units}</item>
+        <item>son {units}</item>
+        <item>sola {units}</item>
+        <item>geri {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} başına</item>
+        <item>{unit} başı</item>
+        <item>başa</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} sonuna</item>
+        <item>{unit} sonu</item>
+        <item>sona</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>karakter</item>
+        <item>karakteri</item>
+        <item>karakterler</item>
+        <item>harf</item>
+        <item>harfi</item>
+        <item>harfler</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>kelime</item>
+        <item>kelimeyi</item>
+        <item>kelimeler</item>
+        <item>sözcük</item>
+        <item>sözcükler</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>cümle</item>
+        <item>cümleyi</item>
+        <item>cümleler</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>satır</item>
+        <item>satırı</item>
+        <item>satırlar</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>paragraf</item>
+        <item>paragrafı</item>
+        <item>paragraflar</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>metin</item>
+        <item>alan</item>
+        <item>metin alanı</item>
+        <item>belge</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>bir</item>
+        <item>iki</item>
+        <item>üç</item>
+        <item>dört</item>
+        <item>beş</item>
+        <item>altı</item>
+        <item>yedi</item>
+        <item>sekiz</item>
+        <item>dokuz</item>
+        <item>on</item>
+        <item>on bir</item>
+        <item>on iki</item>
+        <item>on üç</item>
+        <item>on dört</item>
+        <item>on beş</item>
+        <item>on altı</item>
+        <item>on yedi</item>
+        <item>on sekiz</item>
+        <item>on dokuz</item>
+        <item>yirmi</item>
+    </string-array>
 </resources>

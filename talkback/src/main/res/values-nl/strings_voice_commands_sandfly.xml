@@ -196,4 +196,111 @@
         <item>nieuwe alinea</item>
         <item>druk op enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Niet beschikbaar in wachtwoordvelden</string>
+    <string-array name="voice_commands_text_move">
+        <item>verplaats de cursor {target}</item>
+        <item>ga {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>selecteer {target}</item>
+        <item>markeer {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopieer {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>knip {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>verwijder {target}</item>
+        <item>wis {target}</item>
+        <item>haal {target} weg</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>naar de volgende {units}</item>
+        <item>volgende {units}</item>
+        <item>volgend {units}</item>
+        <item>naar rechts {units}</item>
+        <item>rechts {units}</item>
+        <item>vooruit {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>naar de vorige {units}</item>
+        <item>vorige {units}</item>
+        <item>voorgaande {units}</item>
+        <item>laatste {units}</item>
+        <item>links {units}</item>
+        <item>terug {units}</item>
+        <item>achteruit {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>naar het begin van {unit}</item>
+        <item>naar het begin van de {unit}</item>
+        <item>begin van {unit}</item>
+        <item>naar het begin</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>naar het einde van {unit}</item>
+        <item>naar het einde van de {unit}</item>
+        <item>einde van {unit}</item>
+        <item>naar het einde</item>
+        <item>naar het eind</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>teken</item>
+        <item>tekens</item>
+        <item>letter</item>
+        <item>letters</item>
+        <item>karakter</item>
+        <item>karakters</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>woord</item>
+        <item>woorden</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>zin</item>
+        <item>zinnen</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>regel</item>
+        <item>regels</item>
+        <item>lijn</item>
+        <item>lijnen</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>alinea</item>
+        <item>alinea\'s</item>
+        <item>paragraaf</item>
+        <item>paragrafen</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>tekst</item>
+        <item>veld</item>
+        <item>tekstveld</item>
+        <item>document</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>een|één</item>
+        <item>twee</item>
+        <item>drie</item>
+        <item>vier</item>
+        <item>vijf</item>
+        <item>zes</item>
+        <item>zeven</item>
+        <item>acht</item>
+        <item>negen</item>
+        <item>tien</item>
+        <item>elf</item>
+        <item>twaalf</item>
+        <item>dertien</item>
+        <item>veertien</item>
+        <item>vijftien</item>
+        <item>zestien</item>
+        <item>zeventien</item>
+        <item>achttien</item>
+        <item>negentien</item>
+        <item>twintig</item>
+    </string-array>
 </resources>

@@ -195,4 +195,117 @@
         <item>فقرة جديدة</item>
         <item>اضغط Enter</item>
     </string-array>
+    <string name="voice_commands_text_password">غير متاح في حقول كلمة المرور</string>
+    <string-array name="voice_commands_text_move">
+        <item>حرك [المؤشر] {target}</item>
+        <item>انتقل {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>حدد {target}</item>
+        <item>اختر {target}</item>
+        <item>ظلل {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>انسخ {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>قص {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>احذف {target}</item>
+        <item>امسح {target}</item>
+        <item>أزل {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[إلى] التالي {units}</item>
+        <item>[إلى] التالية {units}</item>
+        <item>للأمام {units}</item>
+        <item>إلى الأمام {units}</item>
+        <item>تقدم {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[إلى] السابق {units}</item>
+        <item>[إلى] السابقة {units}</item>
+        <item>الأخير {units}</item>
+        <item>الأخيرة {units}</item>
+        <item>للخلف {units}</item>
+        <item>إلى الخلف {units}</item>
+        <item>ارجع {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[إلى] بداية {unit}</item>
+        <item>[إلى] أول {unit}</item>
+        <item>إلى البداية</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[إلى] نهاية {unit}</item>
+        <item>[إلى] آخر {unit}</item>
+        <item>إلى النهاية</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>حرف</item>
+        <item>حروف</item>
+        <item>الحرف</item>
+        <item>الحروف</item>
+        <item>رمز</item>
+        <item>رموز</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>كلمة</item>
+        <item>كلمات</item>
+        <item>الكلمة</item>
+        <item>الكلمات</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>جملة</item>
+        <item>جمل</item>
+        <item>الجملة</item>
+        <item>الجمل</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>سطر</item>
+        <item>أسطر</item>
+        <item>سطور</item>
+        <item>السطر</item>
+        <item>الأسطر</item>
+        <item>السطور</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>فقرة</item>
+        <item>فقرات</item>
+        <item>الفقرة</item>
+        <item>الفقرات</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>نص</item>
+        <item>النص</item>
+        <item>حقل</item>
+        <item>الحقل</item>
+        <item>حقل النص</item>
+        <item>مستند</item>
+        <item>المستند</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>واحد|واحدة</item>
+        <item>اثنان|اثنين|اثنتين</item>
+        <item>ثلاثة|ثلاث</item>
+        <item>أربعة|أربع</item>
+        <item>خمسة|خمس</item>
+        <item>ستة|ست</item>
+        <item>سبعة|سبع</item>
+        <item>ثمانية|ثماني|ثمان</item>
+        <item>تسعة|تسع</item>
+        <item>عشرة|عشر</item>
+        <item>أحد عشر|إحدى عشرة</item>
+        <item>اثنا عشر|اثني عشر|اثنتا عشرة</item>
+        <item>ثلاثة عشر|ثلاث عشرة</item>
+        <item>أربعة عشر|أربع عشرة</item>
+        <item>خمسة عشر|خمس عشرة</item>
+        <item>ستة عشر|ست عشرة</item>
+        <item>سبعة عشر|سبع عشرة</item>
+        <item>ثمانية عشر|ثماني عشرة</item>
+        <item>تسعة عشر|تسع عشرة</item>
+        <item>عشرون|عشرين</item>
+    </string-array>
 </resources>

@@ -182,4 +182,115 @@
         <item>paragrafo berria</item>
         <item>sakatu enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Ez dago erabilgarri pasahitz-eremuetan</string>
+    <string-array name="voice_commands_text_move">
+        <item>mugitu [kurtsorea] {target}</item>
+        <item>joan {target}</item>
+        <item>{target} joan</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>hautatu {target}</item>
+        <item>aukeratu {target}</item>
+        <item>nabarmendu {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopiatu {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>ebaki {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>ezabatu {target}</item>
+        <item>kendu {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>hurrengo {units}</item>
+        <item>hurrengora {units}</item>
+        <item>eskuinera {units}</item>
+        <item>aurrera {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>aurreko {units}</item>
+        <item>azken {units}</item>
+        <item>ezkerrera {units}</item>
+        <item>atzera {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} hasiera</item>
+        <item>{unit} hasierara</item>
+        <item>hasierara</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} amaiera</item>
+        <item>{unit} amaierara</item>
+        <item>{unit} bukaera</item>
+        <item>amaierara</item>
+        <item>bukaerara</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>karaktere</item>
+        <item>karakterea</item>
+        <item>karaktereak</item>
+        <item>hizki</item>
+        <item>hizkia</item>
+        <item>hizkiak</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>hitz</item>
+        <item>hitza</item>
+        <item>hitzak</item>
+        <item>hitzaren</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>esaldi</item>
+        <item>esaldia</item>
+        <item>esaldiak</item>
+        <item>esaldiaren</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>lerro</item>
+        <item>lerroa</item>
+        <item>lerroak</item>
+        <item>lerroaren</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>paragrafo</item>
+        <item>paragrafoa</item>
+        <item>paragrafoak</item>
+        <item>paragrafoaren</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>testu</item>
+        <item>testua</item>
+        <item>testuaren</item>
+        <item>eremu</item>
+        <item>eremua</item>
+        <item>testu-eremu</item>
+        <item>testu-eremua</item>
+        <item>dokumentu</item>
+        <item>dokumentua</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>bat</item>
+        <item>bi</item>
+        <item>hiru</item>
+        <item>lau</item>
+        <item>bost</item>
+        <item>sei</item>
+        <item>zazpi</item>
+        <item>zortzi</item>
+        <item>bederatzi</item>
+        <item>hamar</item>
+        <item>hamaika</item>
+        <item>hamabi</item>
+        <item>hamahiru</item>
+        <item>hamalau</item>
+        <item>hamabost</item>
+        <item>hamasei</item>
+        <item>hamazazpi</item>
+        <item>hemezortzi</item>
+        <item>hemeretzi</item>
+        <item>hogei</item>
+    </string-array>
 </resources>

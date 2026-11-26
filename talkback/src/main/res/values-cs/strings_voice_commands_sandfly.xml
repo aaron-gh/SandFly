@@ -203,4 +203,116 @@
         <item>nový odstavec</item>
         <item>stiskni enter</item>
     </string-array>
+    <string name="voice_commands_text_password">V polích pro heslo není dostupné</string>
+    <string-array name="voice_commands_text_move">
+        <item>přesuň [kurzor] {target}</item>
+        <item>jdi {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>vyber {target}</item>
+        <item>označ {target}</item>
+        <item>zvýrazni {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>zkopíruj {target}</item>
+        <item>kopíruj {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>vyjmi {target}</item>
+        <item>vystřihni {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>smaž {target}</item>
+        <item>odstraň {target}</item>
+        <item>vymaž {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[na] další {units}</item>
+        <item>[na] následující {units}</item>
+        <item>doprava [o] {units}</item>
+        <item>vpřed [o] {units}</item>
+        <item>dopředu [o] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[na] předchozí {units}</item>
+        <item>[na] poslední {units}</item>
+        <item>doleva [o] {units}</item>
+        <item>zpět [o] {units}</item>
+        <item>dozadu [o] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[na] začátek {unit}</item>
+        <item>na začátek</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[na] konec {unit}</item>
+        <item>na konec</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>znak</item>
+        <item>znaky</item>
+        <item>znaků</item>
+        <item>znaku</item>
+        <item>písmeno</item>
+        <item>písmena</item>
+        <item>písmen</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>slovo</item>
+        <item>slova</item>
+        <item>slov</item>
+        <item>slovu</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>věta</item>
+        <item>věty</item>
+        <item>vět</item>
+        <item>větu</item>
+        <item>větě</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>řádek</item>
+        <item>řádky</item>
+        <item>řádků</item>
+        <item>řádku</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>odstavec</item>
+        <item>odstavce</item>
+        <item>odstavců</item>
+        <item>odstavci</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>text</item>
+        <item>textu</item>
+        <item>pole</item>
+        <item>pole textu</item>
+        <item>textové pole</item>
+        <item>textového pole</item>
+        <item>dokument</item>
+        <item>dokumentu</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>jedna|jeden|jedno|jedné|jednu</item>
+        <item>dva|dvě|dvou</item>
+        <item>tři|tří</item>
+        <item>čtyři|čtyř</item>
+        <item>pět|pěti</item>
+        <item>šest|šesti</item>
+        <item>sedm|sedmi</item>
+        <item>osm|osmi</item>
+        <item>devět|devíti</item>
+        <item>deset|deseti</item>
+        <item>jedenáct</item>
+        <item>dvanáct</item>
+        <item>třináct</item>
+        <item>čtrnáct</item>
+        <item>patnáct</item>
+        <item>šestnáct</item>
+        <item>sedmnáct</item>
+        <item>osmnáct</item>
+        <item>devatenáct</item>
+        <item>dvacet</item>
+    </string-array>
 </resources>

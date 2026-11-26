@@ -263,4 +263,129 @@
         <item>новы абзац</item>
         <item>націсні enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Недаступна ў палях пароля</string>
+    <string-array name="voice_commands_text_move">
+        <item>перамясці [курсор] {target}</item>
+        <item>перайдзі {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>вылучы {target}</item>
+        <item>абяры {target}</item>
+        <item>вылучыць {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>скапіруй {target}</item>
+        <item>капіруй {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>выраж {target}</item>
+        <item>вырадзі {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>выдалі {target}</item>
+        <item>выдаліць {target}</item>
+        <item>сатры {target}</item>
+        <item>сцёрці {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[на] наступнае {units}</item>
+        <item>[на] наступны {units}</item>
+        <item>[на] наступную {units}</item>
+        <item>[на] наступныя {units}</item>
+        <item>направа [на] {units}</item>
+        <item>наперад [на] {units}</item>
+        <item>уперад [на] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[на] папярэдняе {units}</item>
+        <item>[на] папярэдні {units}</item>
+        <item>[на] папярэднюю {units}</item>
+        <item>[на] папярэднія {units}</item>
+        <item>[на] апошні {units}</item>
+        <item>[на] апошняе {units}</item>
+        <item>[на] апошнюю {units}</item>
+        <item>[на] апошнія {units}</item>
+        <item>налева [на] {units}</item>
+        <item>назад [на] {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[да] пачатку {unit}</item>
+        <item>[у] пачатак {unit}</item>
+        <item>да пачатку</item>
+        <item>у пачатак</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[да] канца {unit}</item>
+        <item>[у] канец {unit}</item>
+        <item>да канца</item>
+        <item>у канец</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>сімвал</item>
+        <item>сімвалы</item>
+        <item>сімвалаў</item>
+        <item>літара</item>
+        <item>літары</item>
+        <item>літар</item>
+        <item>знак</item>
+        <item>знакі</item>
+        <item>знакаў</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>слова</item>
+        <item>словы</item>
+        <item>слоў</item>
+        <item>слове</item>
+        <item>словам</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>сказ</item>
+        <item>сказы</item>
+        <item>сказаў</item>
+        <item>сказа</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>радок</item>
+        <item>радкі</item>
+        <item>радкоў</item>
+        <item>радка</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>абзац</item>
+        <item>абзацы</item>
+        <item>абзацаў</item>
+        <item>абзаца</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>тэкст</item>
+        <item>тэксту</item>
+        <item>поле</item>
+        <item>поля</item>
+        <item>тэкставае поле</item>
+        <item>дакумент</item>
+        <item>дакумента</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>адзін|адна|адно|адну</item>
+        <item>два|дзве|двух</item>
+        <item>тры|трох</item>
+        <item>чатыры|чатырох</item>
+        <item>пяць|пяці</item>
+        <item>шэсць|шасці</item>
+        <item>сем|сямі</item>
+        <item>восем|васьмі</item>
+        <item>дзевяць|дзевяці</item>
+        <item>дзесяць|дзесяці</item>
+        <item>адзінаццаць|адзінаццаці</item>
+        <item>дванаццаць|дванаццаці</item>
+        <item>трынаццаць|трынаццаці</item>
+        <item>чатырнаццаць|чатырнаццаці</item>
+        <item>пятнаццаць|пятнаццаці</item>
+        <item>шаснаццаць|шаснаццаці</item>
+        <item>сямнаццаць|сямнаццаці</item>
+        <item>васямнаццаць|васямнаццаці</item>
+        <item>дзевятнаццаць|дзевятнаццаці</item>
+        <item>дваццаць|дваццаці</item>
+    </string-array>
 </resources>

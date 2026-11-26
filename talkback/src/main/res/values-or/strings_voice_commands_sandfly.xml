@@ -179,4 +179,96 @@
         <item>ନୂଆ ଅନୁଚ୍ଛେଦ</item>
         <item>ଏଣ୍ଟର ଦବାନ୍ତୁ</item>
     </string-array>
+    <string name="voice_commands_text_password">ପାସୱାର୍ଡ ଫିଲ୍ଡରେ ଉପଲବ୍ଧ ନୁହେଁ</string>
+    <string-array name="voice_commands_text_move">
+        <item>କର୍ସରକୁ {target} ନିଅନ୍ତୁ</item>
+        <item>{target} ଯାଆନ୍ତୁ</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} ଚୟନ କରନ୍ତୁ</item>
+        <item>{target} ହାଇଲାଇଟ୍ କରନ୍ତୁ</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} କପି କରନ୍ତୁ</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} କଟ୍ କରନ୍ତୁ</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} ଡିଲିଟ୍ କରନ୍ତୁ</item>
+        <item>{target} ହଟାନ୍ତୁ</item>
+        <item>{target} ଲିଭାନ୍ତୁ</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>ପରବର୍ତ୍ତୀ {units}</item>
+        <item>ଡାହାଣ {units}</item>
+        <item>ଆଗକୁ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>ପୂର୍ବ {units}</item>
+        <item>ଶେଷ {units}</item>
+        <item>ବାମ {units}</item>
+        <item>ପଛକୁ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit}ର ଆରମ୍ଭକୁ</item>
+        <item>{unit} ଆରମ୍ଭକୁ</item>
+        <item>ଆରମ୍ଭକୁ</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit}ର ଶେଷକୁ</item>
+        <item>{unit} ଶେଷକୁ</item>
+        <item>ଶେଷକୁ</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>ଅକ୍ଷର</item>
+        <item>ଅକ୍ଷରଗୁଡ଼ିକ</item>
+        <item>ବର୍ଣ୍ଣ</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>ଶବ୍ଦ</item>
+        <item>ଶବ୍ଦଗୁଡ଼ିକ</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>ବାକ୍ୟ</item>
+        <item>ବାକ୍ୟଗୁଡ଼ିକ</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>ଲାଇନ୍</item>
+        <item>ଲାଇନ୍‌ଗୁଡ଼ିକ</item>
+        <item>ଧାଡ଼ି</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>ଅନୁଚ୍ଛେଦ</item>
+        <item>ଅନୁଚ୍ଛେଦଗୁଡ଼ିକ</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>ଟେକ୍ସଟ୍</item>
+        <item>ଫିଲ୍ଡ</item>
+        <item>ଟେକ୍ସଟ୍ ଫିଲ୍ଡ</item>
+        <item>ଡକ୍ୟୁମେଣ୍ଟ</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>ଏକ|ଗୋଟିଏ</item>
+        <item>ଦୁଇ|ଦୁଇଟି</item>
+        <item>ତିନି|ତିନିଟି</item>
+        <item>ଚାରି|ଚାରିଟି</item>
+        <item>ପାଞ୍ଚ</item>
+        <item>ଛଅ</item>
+        <item>ସାତ</item>
+        <item>ଆଠ</item>
+        <item>ନଅ</item>
+        <item>ଦଶ</item>
+        <item>ଏଗାର</item>
+        <item>ବାର</item>
+        <item>ତେର</item>
+        <item>ଚଉଦ</item>
+        <item>ପନ୍ଦର</item>
+        <item>ଷୋହଳ</item>
+        <item>ସତର</item>
+        <item>ଅଠର</item>
+        <item>ଉଣେଇଶ</item>
+        <item>କୋଡ଼ିଏ</item>
+    </string-array>
 </resources>

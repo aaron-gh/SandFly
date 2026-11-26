@@ -228,4 +228,96 @@
         <item>新段落</item>
         <item>按 Enter</item>
     </string-array>
+    <string name="voice_commands_text_password">密碼欄位中無法使用</string>
+    <string-array name="voice_commands_text_move">
+        <item>移動[游標]到{target}</item>
+        <item>去{target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>選取{target}</item>
+        <item>選擇{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>複製{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>剪下{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>刪除{target}</item>
+        <item>移除{target}</item>
+        <item>清除{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>下一個{units}</item>
+        <item>向右{units}</item>
+        <item>向前{units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>上一個{units}</item>
+        <item>最後一個{units}</item>
+        <item>向左{units}</item>
+        <item>向後{units}</item>
+        <item>後退{units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>到{unit}開頭</item>
+        <item>{unit}開頭</item>
+        <item>到開頭</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>到{unit}結尾</item>
+        <item>{unit}結尾</item>
+        <item>到結尾</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>字元</item>
+        <item>字</item>
+        <item>字母</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>詞</item>
+        <item>字詞</item>
+        <item>單字</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>句</item>
+        <item>句子</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>行</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>段</item>
+        <item>段落</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>文字</item>
+        <item>欄位</item>
+        <item>文字欄位</item>
+        <item>文件</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>一|1</item>
+        <item>二|兩|2</item>
+        <item>三|3</item>
+        <item>四|4</item>
+        <item>五|5</item>
+        <item>六|6</item>
+        <item>七|7</item>
+        <item>八|8</item>
+        <item>九|9</item>
+        <item>十|10</item>
+        <item>十一|11</item>
+        <item>十二|12</item>
+        <item>十三|13</item>
+        <item>十四|14</item>
+        <item>十五|15</item>
+        <item>十六|16</item>
+        <item>十七|17</item>
+        <item>十八|18</item>
+        <item>十九|19</item>
+        <item>二十|20</item>
+    </string-array>
 </resources>

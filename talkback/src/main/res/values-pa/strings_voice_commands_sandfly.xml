@@ -182,4 +182,99 @@
         <item>ਨਵਾਂ ਪੈਰਾ</item>
         <item>ਐਂਟਰ ਦਬਾਓ</item>
     </string-array>
+    <string name="voice_commands_text_password">ਪਾਸਵਰਡ ਖੇਤਰਾਂ ਵਿੱਚ ਉਪਲਬਧ ਨਹੀਂ</string>
+    <string-array name="voice_commands_text_move">
+        <item>ਕਰਸਰ ਨੂੰ {target} ਲੈ ਜਾਓ</item>
+        <item>{target} ਜਾਓ</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} ਚੁਣੋ</item>
+        <item>{target} ਹਾਈਲਾਈਟ ਕਰੋ</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} ਕਾਪੀ ਕਰੋ</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} ਕੱਟੋ</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} ਮਿਟਾਓ</item>
+        <item>{target} ਹਟਾਓ</item>
+        <item>{target} ਡਿਲੀਟ ਕਰੋ</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>ਅਗਲਾ {units}</item>
+        <item>ਅਗਲੇ {units}</item>
+        <item>ਸੱਜੇ {units}</item>
+        <item>ਅੱਗੇ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>ਪਿਛਲਾ {units}</item>
+        <item>ਪਿਛਲੇ {units}</item>
+        <item>ਆਖਰੀ {units}</item>
+        <item>ਖੱਬੇ {units}</item>
+        <item>ਪਿੱਛੇ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} ਦੀ ਸ਼ੁਰੂਆਤ ਤੱਕ</item>
+        <item>{unit} ਦੇ ਸ਼ੁਰੂ ਤੱਕ</item>
+        <item>ਸ਼ੁਰੂ ਤੱਕ</item>
+        <item>ਸ਼ੁਰੂਆਤ ਤੱਕ</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} ਦੇ ਅੰਤ ਤੱਕ</item>
+        <item>ਅੰਤ ਤੱਕ</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>ਅੱਖਰ</item>
+        <item>ਅੱਖਰਾਂ</item>
+        <item>ਵਰਣ</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>ਸ਼ਬਦ</item>
+        <item>ਸ਼ਬਦਾਂ</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>ਵਾਕ</item>
+        <item>ਵਾਕਾਂ</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>ਲਾਈਨ</item>
+        <item>ਲਾਈਨਾਂ</item>
+        <item>ਸਤਰ</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>ਪੈਰਾ</item>
+        <item>ਪੈਰੇ</item>
+        <item>ਪੈਰਿਆਂ</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>ਟੈਕਸਟ</item>
+        <item>ਖੇਤਰ</item>
+        <item>ਟੈਕਸਟ ਖੇਤਰ</item>
+        <item>ਦਸਤਾਵੇਜ਼</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>ਇੱਕ|ਇਕ</item>
+        <item>ਦੋ</item>
+        <item>ਤਿੰਨ</item>
+        <item>ਚਾਰ</item>
+        <item>ਪੰਜ</item>
+        <item>ਛੇ</item>
+        <item>ਸੱਤ</item>
+        <item>ਅੱਠ</item>
+        <item>ਨੌਂ</item>
+        <item>ਦਸ</item>
+        <item>ਗਿਆਰਾਂ</item>
+        <item>ਬਾਰਾਂ</item>
+        <item>ਤੇਰਾਂ</item>
+        <item>ਚੌਦਾਂ</item>
+        <item>ਪੰਦਰਾਂ</item>
+        <item>ਸੋਲਾਂ</item>
+        <item>ਸਤਾਰਾਂ</item>
+        <item>ਅਠਾਰਾਂ</item>
+        <item>ਉੱਨੀ</item>
+        <item>ਵੀਹ</item>
+    </string-array>
 </resources>

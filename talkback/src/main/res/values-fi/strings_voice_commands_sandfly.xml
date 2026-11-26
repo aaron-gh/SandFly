@@ -184,4 +184,114 @@
         <item>uusi kappale</item>
         <item>paina enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Ei käytettävissä salasanakentissä</string>
+    <string-array name="voice_commands_text_move">
+        <item>siirrä [kohdistin] {target}</item>
+        <item>siirry {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>valitse {target}</item>
+        <item>korosta {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopioi {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>leikkaa {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>poista {target}</item>
+        <item>tyhjennä {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[siirry] seuraava {units}</item>
+        <item>seuraavat {units}</item>
+        <item>oikealle {units}</item>
+        <item>eteenpäin {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>edellinen {units}</item>
+        <item>edelliset {units}</item>
+        <item>viimeinen {units}</item>
+        <item>vasemmalle {units}</item>
+        <item>taaksepäin {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[siirry] {unit} alkuun</item>
+        <item>[siirry] alkuun</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[siirry] {unit} loppuun</item>
+        <item>[siirry] loppuun</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>merkki</item>
+        <item>merkkiä</item>
+        <item>merkit</item>
+        <item>merkin</item>
+        <item>kirjain</item>
+        <item>kirjainta</item>
+        <item>kirjaimet</item>
+        <item>kirjaimen</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>sana</item>
+        <item>sanaa</item>
+        <item>sanat</item>
+        <item>sanan</item>
+        <item>sanoja</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>lause</item>
+        <item>lausetta</item>
+        <item>lauseet</item>
+        <item>lauseen</item>
+        <item>lauseita</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>rivi</item>
+        <item>riviä</item>
+        <item>rivit</item>
+        <item>rivin</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>kappale</item>
+        <item>kappaletta</item>
+        <item>kappaleet</item>
+        <item>kappaleen</item>
+        <item>kappaleita</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>teksti</item>
+        <item>tekstin</item>
+        <item>kenttä</item>
+        <item>kentän</item>
+        <item>tekstikenttä</item>
+        <item>tekstikentän</item>
+        <item>asiakirja</item>
+        <item>asiakirjan</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>yksi|yhden|yhtä</item>
+        <item>kaksi|kahden|kahta</item>
+        <item>kolme|kolmen|kolmea</item>
+        <item>neljä|neljän|neljää</item>
+        <item>viisi|viiden|viittä</item>
+        <item>kuusi|kuuden|kuutta</item>
+        <item>seitsemän|seitsemää</item>
+        <item>kahdeksan|kahdeksaa</item>
+        <item>yhdeksän|yhdeksää</item>
+        <item>kymmenen|kymmentä</item>
+        <item>yksitoista|yhtätoista</item>
+        <item>kaksitoista|kahtatoista</item>
+        <item>kolmetoista|kolmeatoista</item>
+        <item>neljätoista|neljäätoista</item>
+        <item>viisitoista|viittätoista</item>
+        <item>kuusitoista|kuuttatoista</item>
+        <item>seitsemäntoista|seitsemäätoista</item>
+        <item>kahdeksantoista|kahdeksaatoista</item>
+        <item>yhdeksäntoista|yhdeksäätoista</item>
+        <item>kaksikymmentä|kahtakymmentä</item>
+    </string-array>
 </resources>

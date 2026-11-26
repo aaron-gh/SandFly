@@ -175,4 +175,94 @@
         <item>yangi xatboshi</item>
         <item>enter bosish</item>
     </string-array>
+    <string name="voice_commands_text_password">Parol maydonlarida mavjud emas</string>
+    <string-array name="voice_commands_text_move">
+        <item>[kursorni] {target} ga o‘tkaz</item>
+        <item>{target} ga bor</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} ni tanla</item>
+        <item>{target} ni belgila</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} ni nusxala</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} ni kes</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} ni o‘chir</item>
+        <item>{target} ni olib tashla</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>keyingi {units}</item>
+        <item>o‘ngga {units}</item>
+        <item>oldinga {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>oldingi {units}</item>
+        <item>chapga {units}</item>
+        <item>orqaga {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} boshiga</item>
+        <item>{unit} boshi</item>
+        <item>boshiga</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} oxiriga</item>
+        <item>{unit} oxiri</item>
+        <item>oxiriga</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>belgi</item>
+        <item>belgilar</item>
+        <item>harf</item>
+        <item>harflar</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>so‘z</item>
+        <item>so‘zlar</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>gap</item>
+        <item>gaplar</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>qator</item>
+        <item>qatorlar</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>xatboshi</item>
+        <item>xatboshilar</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>matn</item>
+        <item>maydon</item>
+        <item>matn maydoni</item>
+        <item>hujjat</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>bir</item>
+        <item>ikki</item>
+        <item>uch</item>
+        <item>to‘rt</item>
+        <item>besh</item>
+        <item>olti</item>
+        <item>yetti</item>
+        <item>sakkiz</item>
+        <item>to‘qqiz</item>
+        <item>o‘n</item>
+        <item>o‘n bir</item>
+        <item>o‘n ikki</item>
+        <item>o‘n uch</item>
+        <item>o‘n to‘rt</item>
+        <item>o‘n besh</item>
+        <item>o‘n olti</item>
+        <item>o‘n yetti</item>
+        <item>o‘n sakkiz</item>
+        <item>o‘n to‘qqiz</item>
+        <item>yigirma</item>
+    </string-array>
 </resources>

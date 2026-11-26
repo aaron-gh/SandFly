@@ -181,4 +181,106 @@
         <item>പുതിയ ഖണ്ഡിക</item>
         <item>എന്റർ അമർത്തുക</item>
     </string-array>
+    <string name="voice_commands_text_password">പാസ്‌വേഡ് ഫീൽഡുകളിൽ ലഭ്യമല്ല</string>
+    <string-array name="voice_commands_text_move">
+        <item>കഴ്‌സർ {target} നീക്കുക</item>
+        <item>{target} പോകുക</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} തിരഞ്ഞെടുക്കുക</item>
+        <item>{target} ഹൈലൈറ്റ് ചെയ്യുക</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} പകർത്തുക</item>
+        <item>{target} കോപ്പി ചെയ്യുക</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} മുറിക്കുക</item>
+        <item>{target} കട്ട് ചെയ്യുക</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} ഇല്ലാതാക്കുക</item>
+        <item>{target} ഒഴിവാക്കുക</item>
+        <item>{target} മായ്ക്കുക</item>
+        <item>{target} ഡിലീറ്റ് ചെയ്യുക</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>അടുത്ത {units}</item>
+        <item>വലത്തേക്ക് {units}</item>
+        <item>മുന്നോട്ട് {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>മുമ്പത്തെ {units}</item>
+        <item>മുൻപത്തെ {units}</item>
+        <item>അവസാനത്തെ {units}</item>
+        <item>ഇടത്തേക്ക് {units}</item>
+        <item>പിന്നോട്ട് {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit} ആരംഭത്തിലേക്ക്</item>
+        <item>{unit} തുടക്കത്തിലേക്ക്</item>
+        <item>തുടക്കത്തിലേക്ക്</item>
+        <item>ആരംഭത്തിലേക്ക്</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit} അവസാനത്തിലേക്ക്</item>
+        <item>{unit} അറ്റത്തേക്ക്</item>
+        <item>അവസാനത്തിലേക്ക്</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>അക്ഷരം</item>
+        <item>അക്ഷരങ്ങൾ</item>
+        <item>പ്രതീകം</item>
+        <item>പ്രതീകങ്ങൾ</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>വാക്ക്</item>
+        <item>വാക്കുകൾ</item>
+        <item>പദം</item>
+        <item>പദങ്ങൾ</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>വാചകം</item>
+        <item>വാചകങ്ങൾ</item>
+        <item>വാക്യം</item>
+        <item>വാക്യങ്ങൾ</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>വരി</item>
+        <item>വരികൾ</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>ഖണ്ഡിക</item>
+        <item>ഖണ്ഡികകൾ</item>
+        <item>പാരഗ്രാഫ്</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>ടെക്സ്റ്റ്</item>
+        <item>ഫീൽഡ്</item>
+        <item>ടെക്സ്റ്റ് ഫീൽഡ്</item>
+        <item>ഡോക്യുമെന്റ്</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>ഒന്ന്|ഒരു</item>
+        <item>രണ്ട്|രണ്ടു</item>
+        <item>മൂന്ന്|മൂന്നു</item>
+        <item>നാല്|നാലു</item>
+        <item>അഞ്ച്|അഞ്ചു</item>
+        <item>ആറ്|ആറു</item>
+        <item>ഏഴ്|ഏഴു</item>
+        <item>എട്ട്|എട്ടു</item>
+        <item>ഒമ്പത്|ഒൻപത്</item>
+        <item>പത്ത്|പത്തു</item>
+        <item>പതിനൊന്ന്</item>
+        <item>പന്ത്രണ്ട്</item>
+        <item>പതിമൂന്ന്</item>
+        <item>പതിനാല്</item>
+        <item>പതിനഞ്ച്</item>
+        <item>പതിനാറ്</item>
+        <item>പതിനേഴ്</item>
+        <item>പതിനെട്ട്</item>
+        <item>പത്തൊമ്പത്</item>
+        <item>ഇരുപത്</item>
+    </string-array>
 </resources>

@@ -178,4 +178,102 @@
         <item>নতুন পেৰাগ্ৰাফ</item>
         <item>এণ্টাৰ টিপক</item>
     </string-array>
+    <string name="voice_commands_text_password">পাছৱৰ্ড ক্ষেত্ৰত উপলব্ধ নহয়</string>
+    <string-array name="voice_commands_text_move">
+        <item>কাৰ্ছাৰ {target} লৈ নিয়া</item>
+        <item>{target} লৈ যোৱা</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>{target} বাছনি কৰা</item>
+        <item>{target} হাইলাইট কৰা</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>{target} কপি কৰা</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>{target} কাট কৰা</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>{target} মচা</item>
+        <item>{target} আঁতৰোৱা</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>পৰৱৰ্তী {units}</item>
+        <item>আগলৈ {units}</item>
+        <item>সন্মুখলৈ {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>পূৰ্বৰ {units}</item>
+        <item>শেষৰ {units}</item>
+        <item>পিছলৈ {units}</item>
+        <item>উভতি {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>{unit}ৰ আৰম্ভণি</item>
+        <item>{unit}ৰ আৰম্ভণিলৈ</item>
+        <item>{unit} আৰম্ভণি</item>
+        <item>আৰম্ভণিলৈ</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>{unit}ৰ শেষ</item>
+        <item>{unit}ৰ শেষলৈ</item>
+        <item>{unit} শেষ</item>
+        <item>শেষলৈ</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>আখৰ</item>
+        <item>আখৰবোৰ</item>
+        <item>বৰ্ণ</item>
+        <item>বৰ্ণবোৰ</item>
+        <item>অক্ষৰ</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>শব্দ</item>
+        <item>শব্দবোৰ</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>বাক্য</item>
+        <item>বাক্যবোৰ</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>শাৰী</item>
+        <item>শাৰীবোৰ</item>
+        <item>লাইন</item>
+        <item>লাইনবোৰ</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>অনুচ্ছেদ</item>
+        <item>অনুচ্ছেদবোৰ</item>
+        <item>পেৰাগ্ৰাফ</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>পাঠ</item>
+        <item>লেখা</item>
+        <item>ক্ষেত্ৰ</item>
+        <item>পাঠ ক্ষেত্ৰ</item>
+        <item>নথি</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>এক</item>
+        <item>দুই</item>
+        <item>তিনি|তিন</item>
+        <item>চাৰি|চাৰ</item>
+        <item>পাঁচ</item>
+        <item>ছয়|ছ</item>
+        <item>সাত</item>
+        <item>আঠ</item>
+        <item>ন|নয়</item>
+        <item>দহ</item>
+        <item>এঘাৰ</item>
+        <item>বাৰ</item>
+        <item>তেৰ</item>
+        <item>চৌদ্দ</item>
+        <item>পোন্ধৰ</item>
+        <item>ষোল্ল|ষোল</item>
+        <item>সোতৰ</item>
+        <item>ঠাৰি|আঠাৰ</item>
+        <item>ঊনৈশ|উনৈশ</item>
+        <item>বিশ</item>
+    </string-array>
 </resources>

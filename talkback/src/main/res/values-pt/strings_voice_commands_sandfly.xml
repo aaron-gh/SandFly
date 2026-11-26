@@ -252,4 +252,122 @@
         <item>novo parágrafo</item>
         <item>pressionar enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Indisponível em campos de senha</string>
+    <string-array name="voice_commands_text_move">
+        <item>mover o cursor {target}</item>
+        <item>ir {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>selecionar {target}</item>
+        <item>seleciona {target}</item>
+        <item>realçar {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>copiar {target}</item>
+        <item>copia {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>cortar {target}</item>
+        <item>corta {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>eliminar {target}</item>
+        <item>apagar {target}</item>
+        <item>remover {target}</item>
+        <item>elimina {target}</item>
+        <item>apaga {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>próximo {units}</item>
+        <item>próxima {units}</item>
+        <item>próximos {units}</item>
+        <item>próximas {units}</item>
+        <item>direita {units}</item>
+        <item>para a direita {units}</item>
+        <item>avançar {units}</item>
+        <item>em frente {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>anterior {units}</item>
+        <item>anteriores {units}</item>
+        <item>último {units}</item>
+        <item>última {units}</item>
+        <item>últimos {units}</item>
+        <item>últimas {units}</item>
+        <item>esquerda {units}</item>
+        <item>para a esquerda {units}</item>
+        <item>recuar {units}</item>
+        <item>para trás {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>para o início de {unit}</item>
+        <item>para o início da {unit}</item>
+        <item>para o início do {unit}</item>
+        <item>início de {unit}</item>
+        <item>início da {unit}</item>
+        <item>início do {unit}</item>
+        <item>para o início</item>
+        <item>ao início</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>para o fim de {unit}</item>
+        <item>para o fim da {unit}</item>
+        <item>para o fim do {unit}</item>
+        <item>para o final de {unit}</item>
+        <item>para o final da {unit}</item>
+        <item>para o final do {unit}</item>
+        <item>para o fim</item>
+        <item>para o final</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>caractere</item>
+        <item>caracteres</item>
+        <item>letra</item>
+        <item>letras</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>palavra</item>
+        <item>palavras</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>frase</item>
+        <item>frases</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>linha</item>
+        <item>linhas</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>parágrafo</item>
+        <item>parágrafos</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>texto</item>
+        <item>campo</item>
+        <item>campo de texto</item>
+        <item>documento</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>um|uma</item>
+        <item>dois|duas</item>
+        <item>três</item>
+        <item>quatro</item>
+        <item>cinco</item>
+        <item>seis</item>
+        <item>sete</item>
+        <item>oito</item>
+        <item>nove</item>
+        <item>dez</item>
+        <item>onze</item>
+        <item>doze</item>
+        <item>treze</item>
+        <item>quatorze|catorze</item>
+        <item>quinze</item>
+        <item>dezesseis</item>
+        <item>dezessete</item>
+        <item>dezoito</item>
+        <item>dezenove</item>
+        <item>vinte</item>
+    </string-array>
 </resources>

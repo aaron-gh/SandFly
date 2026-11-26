@@ -198,4 +198,121 @@
         <item>novi odlomak</item>
         <item>pritisni enter</item>
     </string-array>
+    <string name="voice_commands_text_password">Nije dostupno u poljima za lozinku</string>
+    <string-array name="voice_commands_text_move">
+        <item>pomakni [kursor] {target}</item>
+        <item>idi {target}</item>
+        <item>{target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_select">
+        <item>odaberi {target}</item>
+        <item>označi {target}</item>
+        <item>izaberi {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_copy">
+        <item>kopiraj {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_cut">
+        <item>izreži {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_delete">
+        <item>izbriši {target}</item>
+        <item>obriši {target}</item>
+        <item>ukloni {target}</item>
+    </string-array>
+    <string-array name="voice_commands_text_next">
+        <item>[na] sljedeći {units}</item>
+        <item>[na] sljedeća {units}</item>
+        <item>[na] sljedeće {units}</item>
+        <item>desno {units}</item>
+        <item>naprijed {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_previous">
+        <item>[na] prethodni {units}</item>
+        <item>[na] prethodna {units}</item>
+        <item>[na] prethodne {units}</item>
+        <item>zadnji {units}</item>
+        <item>lijevo {units}</item>
+        <item>natrag {units}</item>
+    </string-array>
+    <string-array name="voice_commands_text_start">
+        <item>[na] početak {unit}</item>
+        <item>[na] početka {unit}</item>
+        <item>na početak</item>
+    </string-array>
+    <string-array name="voice_commands_text_end">
+        <item>[na] kraj {unit}</item>
+        <item>na kraj</item>
+    </string-array>
+    <string-array name="voice_commands_text_characters">
+        <item>znak</item>
+        <item>znakova</item>
+        <item>znaka</item>
+        <item>znakovi</item>
+        <item>slovo</item>
+        <item>slova</item>
+        <item>slovu</item>
+    </string-array>
+    <string-array name="voice_commands_text_words">
+        <item>riječ</item>
+        <item>riječi</item>
+        <item>riječima</item>
+    </string-array>
+    <string-array name="voice_commands_text_sentences">
+        <item>rečenica</item>
+        <item>rečenice</item>
+        <item>rečenicu</item>
+        <item>rečenici</item>
+        <item>rečenicama</item>
+    </string-array>
+    <string-array name="voice_commands_text_lines">
+        <item>redak</item>
+        <item>retka</item>
+        <item>redaka</item>
+        <item>retke</item>
+        <item>redu</item>
+        <item>redovi</item>
+        <item>red</item>
+        <item>reda</item>
+        <item>redova</item>
+    </string-array>
+    <string-array name="voice_commands_text_paragraphs">
+        <item>odlomak</item>
+        <item>odlomka</item>
+        <item>odlomaka</item>
+        <item>odlomke</item>
+        <item>odlomci</item>
+    </string-array>
+    <string-array name="voice_commands_text_whole">
+        <item>tekst</item>
+        <item>teksta</item>
+        <item>polje</item>
+        <item>polja</item>
+        <item>tekstno polje</item>
+        <item>tekstnog polja</item>
+        <item>dokument</item>
+        <item>dokumenta</item>
+    </string-array>
+    <string-array name="voice_commands_text_numbers">
+        <item>jedan|jedna|jedno|jednu</item>
+        <item>dva|dvije|dvije|dvaju</item>
+        <item>tri</item>
+        <item>četiri</item>
+        <item>pet</item>
+        <item>šest</item>
+        <item>sedam</item>
+        <item>osam</item>
+        <item>devet</item>
+        <item>deset</item>
+        <item>jedanaest</item>
+        <item>dvanaest</item>
+        <item>trinaest</item>
+        <item>četrnaest</item>
+        <item>petnaest</item>
+        <item>šesnaest</item>
+        <item>sedamnaest</item>
+        <item>osamnaest</item>
+        <item>devetnaest</item>
+        <item>dvadeset</item>
+    </string-array>
 </resources>
