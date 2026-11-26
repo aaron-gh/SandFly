@@ -25,7 +25,7 @@ public interface BrailleTranslator {
   /** Translates a {@link BrailleWord} into a String (print). */
   String translateToPrint(BrailleWord brailleWord);
 
-  /** Translates just the new cells, with adjoining letters already in the text field. */
+  /** Translates new cells using adjoining letters and digits already in the text field. */
   default String translateToPrint(BrailleWord brailleWord, String before, String after) {
     return translateToPrint(brailleWord);
   }

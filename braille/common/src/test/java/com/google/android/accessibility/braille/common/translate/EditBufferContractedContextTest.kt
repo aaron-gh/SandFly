@@ -43,6 +43,8 @@ import org.robolectric.annotation.Config
 @Config(sdk = [34])
 class EditBufferContractedContextTest {
   private val context = RuntimeEnvironment.getApplication()
+  private val mixedText = "5xa93fG1iYT2xB98^c2Fi9*"
+  private var lastContext: Pair<String, String>? = null
   private val cells = mapOf(
     'a' to BrailleCharacter("1"),
     'b' to BrailleCharacter("12"),
@@ -52,6 +54,9 @@ class EditBufferContractedContextTest {
     'n' to BrailleCharacter("1345"),
     'o' to BrailleCharacter("135"),
     'w' to BrailleCharacter("2456"),
+    'x' to BrailleCharacter("1346"),
+    'y' to BrailleCharacter("13456"),
+    '?' to BrailleCharacter("236"),
     ' ' to BrailleCharacter.EMPTY_CELL,
   )
   private val translator = object : BrailleTranslator {
@@ -60,8 +65,17 @@ class EditBufferContractedContextTest {
 
     override fun translateToPrint(word: BrailleWord, before: String, after: String): String {
       if (word.isEmpty) return ""
+      lastContext = before to after
       val input = before + translateToPrintPartial(word) + after
-      val translated = input.split(' ').joinToString(" ") { if (it == "k") "knowledge" else it }
+      val translated = input.split(' ').joinToString(" ") {
+        when (it) {
+          "k" -> "knowledge"
+          "x" -> "it"
+          "y" -> "you"
+          "?" -> "his"
+          else -> it
+        }
+      }
       return translated.substring(before.length, translated.length - after.length)
     }
 
@@ -137,6 +151,84 @@ class EditBufferContractedContextTest {
     buffer.commit(field.connection)
 
     assertEquals("backnow", field.contents.toString())
+  }
+
+  @Test
+  fun replacesASingleLetterAfterADigit() {
+    val field = Field("3x")
+    buffer.deleteCharacterBackward(field.connection)
+    type("y", field)
+    buffer.commit(field.connection)
+    assertEquals("3y", field.contents.toString())
+
+    buffer.deleteCharacterBackward(field.connection)
+    type("x", field)
+    buffer.appendSpace(field.connection)
+    assertEquals("3x ", field.contents.toString())
+  }
+
+  @Test
+  fun restoresAQuestionMarkAfterANumber() {
+    val field = Field("11x")
+    buffer.deleteCharacterBackward(field.connection)
+    type("?", field)
+    buffer.commit(field.connection)
+
+    assertEquals("11?", field.contents.toString())
+  }
+
+  @Test
+  fun usesTheNumberOnTheRightWhenReplacingALetter() {
+    val field = Field("y3", cursor = 1)
+    buffer.deleteCharacterBackward(field.connection)
+    type("x", field)
+    buffer.commit(field.connection)
+
+    assertEquals("x3", field.contents.toString())
+    assertEquals(1, Selection.getSelectionStart(field.contents))
+  }
+
+  @Test
+  fun keepsDigitsAndMixedCaseOnBothSidesOfTheReplacement() {
+    assertMixedTextReplacement(
+      at = mixedText.indexOf("xB"),
+      replacement = "y",
+      before = "5xa93fG1iYT2",
+      after = "B98",
+    )
+  }
+
+  @Test
+  fun stopsContextAtPunctuationBesideTheReplacement() {
+    assertMixedTextReplacement(
+      at = mixedText.indexOf('^') - 1,
+      replacement = "x",
+      before = "5xa93fG1iYT2xB9",
+      after = "",
+    )
+    assertMixedTextReplacement(
+      at = mixedText.indexOf('^') + 1,
+      replacement = "y",
+      before = "",
+      after = "2Fi9",
+    )
+    assertMixedTextReplacement(
+      at = mixedText.indexOf('*') - 1,
+      replacement = "x",
+      before = "c2Fi",
+      after = "",
+    )
+  }
+
+  private fun assertMixedTextReplacement(at: Int, replacement: String, before: String, after: String) {
+    val field = Field(mixedText, cursor = at + 1)
+    buffer.deleteCharacterBackward(field.connection)
+    type(replacement, field)
+    buffer.commit(field.connection)
+
+    assertEquals(before to after, lastContext)
+    assertEquals(mixedText.replaceRange(at, at + 1, replacement), field.contents.toString())
+    assertEquals(at + 1, Selection.getSelectionStart(field.contents))
   }
 
   private fun type(letters: String, field: Field) {

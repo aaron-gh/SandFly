@@ -284,9 +284,9 @@ public abstract class EditBufferContracted implements EditBuffer {
     }
     InputConnection inputConnection = imeConnection.inputConnection;
     String wordBefore =
-        adjoiningLetters(inputConnection.getTextBeforeCursor(WORD_CONTEXT_MAX, 0), true);
+        adjoiningWordContext(inputConnection.getTextBeforeCursor(WORD_CONTEXT_MAX, 0), true);
     String wordAfter =
-        adjoiningLetters(inputConnection.getTextAfterCursor(WORD_CONTEXT_MAX, 0), false);
+        adjoiningWordContext(inputConnection.getTextAfterCursor(WORD_CONTEXT_MAX, 0), false);
     String holdingsBeforeCursor =
         translator.translateToPrint(
             holdings.subword(0, holdingPosition),
@@ -318,7 +318,7 @@ public abstract class EditBufferContracted implements EditBuffer {
     holdingPosition = NO_CURSOR;
   }
 
-  private static String adjoiningLetters(CharSequence text, boolean beforeCursor) {
+  private static String adjoiningWordContext(CharSequence text, boolean beforeCursor) {
     if (TextUtils.isEmpty(text)) {
       return "";
     }
@@ -327,7 +327,7 @@ public abstract class EditBufferContracted implements EditBuffer {
       int codePoint =
           beforeCursor ? Character.codePointBefore(text, index) : Character.codePointAt(text, index);
       int type = Character.getType(codePoint);
-      if (!Character.isLetter(codePoint)
+      if (!Character.isLetterOrDigit(codePoint)
           && type != Character.NON_SPACING_MARK
           && type != Character.COMBINING_SPACING_MARK) {
         break;
