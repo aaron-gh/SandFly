@@ -57,7 +57,19 @@ object GuideMarkdown {
   private val FENCE = Regex("""^(\s*)(```|~~~)""")
   private val LINK_TARGET = Regex("""\]\(([^)\s]+)\)""")
 
-  /** Returns the page for [chapters], in order. */
+  /** The query parameter of links from a section page to headings outside it: `?section=ID`. */
+  const val SECTION_PARAMETER = "section"
+
+  /** The ID that links from a section page to the contents of the whole guide. */
+  const val CONTENTS_ID = "contents"
+
+  private val PAGE_LINK = Regex("""href="#([^"]*)"""")
+
+  /**
+   * Returns the page for [chapters], in order. With [section], the ID of a heading, the page has
+   * only that heading and the ones under it, and links to other headings go to `?section=ID`;
+   * the whole guide is shown when no heading has that ID.
+   */
   fun render(
     chapters: List<Chapter>,
     sources: Sources,
@@ -65,6 +77,7 @@ object GuideMarkdown {
     lang: String,
     rtl: Boolean,
     dark: Boolean,
+    section: String? = null,
   ): String {
     val includedBy = includedBy(chapters)
     val documents = chapters.map { expand(it, sources, includedBy) }
@@ -76,7 +89,13 @@ object GuideMarkdown {
       .append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n")
       .append("<title>").append(escape(strings.title)).append("</title>\n<style>")
       .append(STYLE).append("</style>\n</head>\n<body>\n")
-      .append("<h1>").append(escape(strings.title)).append("</h1>\n")
+    val sectionDocument = section?.let { id -> documents.firstOrNull { document -> document.headings.any { it.id == id } } }
+    if (section != null && sectionDocument != null) {
+      for (heading in headings) heading.display = display(heading, strings)
+      sectionPage(html, sectionDocument, section, byId, lang, strings)
+      return html.toString()
+    }
+    html.append("<h1>").append(escape(strings.title)).append("</h1>\n")
     contents(html, headings, strings)
     html.append("<main>\n")
     for (document in documents) {
@@ -88,6 +107,38 @@ object GuideMarkdown {
     }
     html.append("</main>\n</body>\n</html>\n")
     return html.toString()
+  }
+
+  /** Appends the heading [id] of [document] and the headings under it, and the end of the page. */
+  private fun sectionPage(
+    html: StringBuilder,
+    document: Document,
+    id: String,
+    byId: Map<String, Heading>,
+    lang: String,
+    strings: Strings,
+  ) {
+    val first = document.headings.indexOfFirst { it.id == id }
+    val level = document.headings[first].level
+    var next = first + 1
+    while (next < document.headings.size && document.headings[next].level > level) next++
+    val start = document.headingLines[first]
+    val end = if (next < document.headings.size) document.headingLines[next] else document.lines.size
+    val body = StringBuilder()
+    body.append("<main>\n")
+    body.append(if (document.lang == lang) "<div>\n" else "<div lang=\"${attribute(document.lang)}\">\n")
+    Renderer(byId, document.headings.subList(first, next).iterator()).blocks(document.lines.subList(start, end), body)
+    body.append("<p class=\"back\"><a href=\"#").append(CONTENTS_ID).append("\">").append(escape(strings.backToContents))
+      .append("</a></p>\n</div>\n</main>\n")
+    // Links to headings that aren't on the page open their own section.
+    val onPage = document.headings.subList(first, next).map { it.id }.toSet()
+    html.append(
+      PAGE_LINK.replace(body) { match ->
+        val target = match.groupValues[1]
+        if (target in onPage) match.value else "href=\"?$SECTION_PARAMETER=$target\""
+      }
+    )
+    html.append("</body>\n</html>\n")
   }
 
   /**
@@ -145,11 +196,13 @@ object GuideMarkdown {
     var display: String = ""
   }
 
+  /** [headingLines] has the index in [lines] of each of [headings]. */
   private class Document(
     val appendix: Boolean,
     val lang: String,
     val lines: List<String>,
     val headings: List<Heading>,
+    val headingLines: List<Int>,
   )
 
   /**
@@ -181,6 +234,7 @@ object GuideMarkdown {
     }
 
     val headings = mutableListOf<Heading>()
+    val headingLines = mutableListOf<Int>()
     inFence = false
     for ((index, line) in lines.withIndex()) {
       if (FENCE.containsMatchIn(line)) inFence = !inFence
@@ -191,9 +245,10 @@ object GuideMarkdown {
       val id = HEADING_ID.find(raw)?.groupValues?.get(1) ?: slug(raw)
       val text = raw.replace(HEADING_ID, "")
       headings += Heading(level, id, text)
+      headingLines += index
       lines[index] = "#".repeat(level) + " " + text
     }
-    return Document(chapter.name.startsWith("appendix"), chapter.lang, lines, headings)
+    return Document(chapter.name.startsWith("appendix"), chapter.lang, lines, headings, headingLines)
   }
 
   /** Returns the ID of the chapter that includes each included document, by document name. */

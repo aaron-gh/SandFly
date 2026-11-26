@@ -32,8 +32,10 @@ import com.google.android.accessibility.talkback.training.TrainingSectionLoggerI
 import com.google.android.accessibility.talkback.training.content.TutorialContentSupplierImpl;
 import com.google.android.accessibility.talkback.trainingcommon.TrainingActivityInterfaceInjector;
 import com.google.android.accessibility.talkback.trainingcommon.content.TutorialContentInterfaceInjector;
+import com.google.android.accessibility.talkback.userguide.SettingsGuideSections;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.mlkit.MlKitHelper;
+import com.google.android.accessibility.utils.preference.SettingsHelp;
 
 /** A top level Application for TalkBack. */
 public class TalkBackApplication extends Application {
@@ -71,5 +73,7 @@ public class TalkBackApplication extends Application {
         TalkBackDisabledWarmingDialogImpl::new);
     TutorialContentInterfaceInjector.initialize(new TutorialContentSupplierImpl());
     ScreenReaderCommands.Provider.set(BrailleDisplayCommands.INSTANCE);
+    // The Help action of settings screens opens their section of the user guide.
+    SettingsHelp.setProvider(SettingsGuideSections.INSTANCE);
   }
 }

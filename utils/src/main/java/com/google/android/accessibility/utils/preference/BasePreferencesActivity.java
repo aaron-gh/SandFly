@@ -15,13 +15,22 @@
  */
 package com.google.android.accessibility.utils.preference;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.MenuItem;
+import androidx.core.view.MenuProvider;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import com.google.android.accessibility.utils.FeatureSupport;
+import com.google.android.accessibility.utils.R;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -35,6 +44,60 @@ public abstract class BasePreferencesActivity extends AppCompatActivity {
   public static final String FRAGMENT_ARGS = "FragmentArgs";
 
   private static final int DEFAULT_CONTAINER_ID = android.R.id.content;
+
+  @Override
+  protected void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    if (SettingsHelp.getProvider() == null) {
+      return;
+    }
+    addMenuProvider(new HelpMenu());
+    // The action follows the screen shown.
+    getSupportFragmentManager()
+        .registerFragmentLifecycleCallbacks(
+            new FragmentManager.FragmentLifecycleCallbacks() {
+              @Override
+              public void onFragmentResumed(@NonNull FragmentManager manager, @NonNull Fragment fragment) {
+                invalidateOptionsMenu();
+              }
+            },
+            /* recursive= */ false);
+  }
+
+  /** The Help action of the screen shown, when it has help. */
+  private final class HelpMenu implements MenuProvider {
+    @Override
+    public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
+      SettingsHelp.Provider provider = SettingsHelp.getProvider();
+      if (provider == null || helpIntent(provider) == null) {
+        return;
+      }
+      menu.add(Menu.NONE, R.id.settings_help, Menu.NONE, provider.title(BasePreferencesActivity.this))
+          .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+    }
+
+    @Override
+    public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
+      if (menuItem.getItemId() != R.id.settings_help) {
+        return false;
+      }
+      SettingsHelp.Provider provider = SettingsHelp.getProvider();
+      Intent intent = provider == null ? null : helpIntent(provider);
+      if (intent != null) {
+        try {
+          startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+          // Nothing to open.
+        }
+      }
+      return true;
+    }
+
+    private @Nullable Intent helpIntent(SettingsHelp.Provider provider) {
+      Fragment screen = getSupportFragmentManager().findFragmentById(getContainerId());
+      return provider.helpIntent(BasePreferencesActivity.this, screen);
+    }
+  }
 
   /**
    * If action-bar back key button is pressed, end this sub-activity when there is no fragment in

@@ -2,6 +2,8 @@
 
 The SandFly User Guide opens from **Help & feedback** > **User guide** in SandFly settings. SandFly builds one page from the files in this folder, with a table of contents, section numbers and links.
 
+**Help** in the app bar of a settings screen opens the section about that screen: the heading and the headings under it. `SettingsGuideSections` in `talkback/.../userguide/` maps each screen to the ID of its heading; screens without an entry have no **Help**. When you change or remove a heading ID, update that map. `GuideMarkdownTest` checks that every mapped ID exists in each guide.
+
 ## Files
 
 - `en/` holds the English guide. Each other language has a folder of its own, named like the Android resource folders (`de`, `pt-rBR`, `zh-rCN`), with files of the same names. A file missing from a language folder is shown in English.

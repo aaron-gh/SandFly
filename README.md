@@ -72,7 +72,7 @@ To turn SandFly on and off quickly, set up the accessibility shortcut for SandFl
 ## Learn SandFly
 
 - **SandFly tutorial**: interactive lessons for the basic gestures. It opens the first time, and later from **Help & feedback** > **SandFly tutorial** in SandFly settings.
-- **SandFly User Guide**: describes every feature and setting, with appendices that list every default gesture and keyboard shortcut and the developer APIs. It opens from **Help & feedback** > **User guide** in SandFly settings. Its source is in [docs/user-guide](docs/user-guide/en/01-getting-started.md).
+- **SandFly User Guide**: describes every feature and setting, with appendices that list every default gesture and keyboard shortcut and the developer APIs. It opens from **Help & feedback** > **User guide** in SandFly settings, and **Help** in the app bar of a settings screen opens the section about that screen. Its source is in [docs/user-guide](docs/user-guide/en/01-getting-started.md).
 
 To open SandFly settings, open **SandFly** in the apps list, or choose **SandFly settings** in the SandFly menu. **Search** at the top of the settings screen finds any setting or command.
 

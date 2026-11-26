@@ -41,9 +41,12 @@ object UserGuide {
   private const val ENGLISH = "en"
   private const val API = "api"
 
-  /** Returns the page of the guide. [keyComboManager] names keys as the device does. */
+  /**
+   * Returns the page of the guide, or with [section], the page of that heading. [keyComboManager]
+   * names keys as the device does.
+   */
   @WorkerThread
-  fun build(context: Context, keyComboManager: KeyComboManager): String {
+  fun build(context: Context, keyComboManager: KeyComboManager, section: String? = null): String {
     val folders = languageFolders(context, context.resources.configuration.locales[0])
     val names = context.assets.list("$ROOT/$ENGLISH").orEmpty().filter { it.endsWith(".md") }.sorted()
     val chapters =
@@ -75,7 +78,7 @@ object UserGuide {
     val dark =
       context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK ==
         Configuration.UI_MODE_NIGHT_YES
-    return GuideMarkdown.render(chapters, sources, strings, langOf(folders.first()), rtl, dark)
+    return GuideMarkdown.render(chapters, sources, strings, langOf(folders.first()), rtl, dark, section)
   }
 
   /**
