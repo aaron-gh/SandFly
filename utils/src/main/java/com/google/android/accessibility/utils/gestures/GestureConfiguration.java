@@ -103,7 +103,7 @@ public final class GestureConfiguration {
    */
   public static final int DEFAULT_SWIPE_START_TIME_MS = 150;
 
-  private static final int MAX_SWIPE_START_TIME_MS = 300;
+  private static final int MAX_SWIPE_START_TIME_MS = 2000;
 
   private static volatile int swipeStartTimeMs = DEFAULT_SWIPE_START_TIME_MS;
 

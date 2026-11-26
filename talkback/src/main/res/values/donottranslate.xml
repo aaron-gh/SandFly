@@ -2319,6 +2319,11 @@
       <item>@string/value_handwriting_wait_200</item>
       <item>@string/value_touch_explore_time_out_250ms</item>
       <item>@string/value_handwriting_wait_300</item>
+      <item>@string/value_focus_delay_500ms</item>
+      <item>@string/value_focus_delay_750ms</item>
+      <item>@string/value_focus_delay_1000ms</item>
+      <item>@string/value_focus_delay_1500ms</item>
+      <item>@string/value_focus_delay_2000ms</item>
     </string-array>
 
   <!-- Gesture start time values, in milliseconds. -->
@@ -2327,6 +2332,11 @@
       <item>200</item>
       <item>250</item>
       <item>300</item>
+      <item>500</item>
+      <item>750</item>
+      <item>1000</item>
+      <item>1500</item>
+      <item>2000</item>
     </string-array>
 
     <string name="pref_swipe_start_time_default" translatable="false">150</string>

@@ -8,7 +8,7 @@ Standaard focust het aanraken van een item dit en leest SandFly het voor, en act
 
 #### Focusvertraging {#touch-focus-delay}
 
-**Aanraking** > **Focusvertraging** stelt in hoe lang de vinger op een item rust voordat SandFly het focust en voorleest, van 0,15 tot 0,3 seconden. De standaardwaarde is 0,15 seconden. Een kortere vertraging laat SandFly eerder spreken na het aanraken van het scherm. Heeft Android 13 of hoger nodig.
+**Aanraking** > **Focusvertraging** stelt in hoe lang de vinger op een item rust voordat SandFly het focust en voorleest, van 0,15 tot 2 seconden. De standaardwaarde is 0,15 seconden. Een kortere vertraging laat SandFly eerder spreken na het aanraken van het scherm. Heeft Android 13 of hoger nodig.
 
 **Focusvertraging** is ook een leesinstelling, standaard uit; zie [](#commands).
 

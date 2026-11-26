@@ -214,7 +214,7 @@ With **Handle two-finger swipes in SandFly** off, two-finger swipes go to the ap
 
 - **Time between one-finger taps**: how long SandFly waits for a further tap before it decides that a one-finger tap gesture is finished, from 0.1 to 2 seconds. The default is 0.25 seconds. A shorter time makes one-finger double-taps respond faster, but a slow double-tap can then count as two taps. With a longer time, two taps on an item within that time activate it, and corner taps and multi-finger single taps wait longer. Taps with two or more fingers always allow at least 0.25 seconds between taps.
 - **Hold time after a swipe**: how long the finger rests after a swipe for a swipe and hold gesture, from 0.1 to 0.5 seconds. The default is 0.25 seconds. See [](#gestures-swipe-and-hold).
-- **Gesture start time**: how long a one-finger swipe can take to move its first centimeter before the touch becomes touch exploration, from 0.15 to 0.3 seconds. The default is 0.15 seconds. Choose a longer time if slow swipes start touch exploration.
+- **Gesture start time**: how long a one-finger swipe can take to move its first centimeter before the touch becomes touch exploration, from 0.15 to 2 seconds. The default is 0.15 seconds. Choose a longer time if slow swipes start touch exploration.
 - **Time between two-stroke swipes**: how long after a swipe the second swipe of a two-stroke swipe can start: **Off**, 0.25, 0.5, 1, 1.5 or 2 seconds. The default is **Off**, which turns two-stroke swipes off and hides their categories. See [](#gestures-two-stroke).
 
 These settings need gesture recognition by SandFly; see [](#gestures-recognition). **Hold time after a swipe**, **Gesture start time** and **Time between two-stroke swipes** aren't on watches.

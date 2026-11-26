@@ -8,7 +8,7 @@ Domyślnie, gdy dotkniesz elementu, SandFly ustawia na nim fokus i go odczytuje.
 
 #### Opóźnienie zaznaczenia {#touch-focus-delay}
 
-Wybierz **Dotyk** > **Opóźnienie zaznaczenia**, aby ustawić, jak długo SandFly czeka po dotknięciu, zanim przeniesie fokus i odczyta element. Do wyboru masz od 0,15 do 0,3 sekundy. Domyślnie SandFly czeka 0,15 sekundy. Krótszy czas oznacza szybszą reakcję na dotyk. Opcja wymaga Androida 13 lub nowszego.
+Wybierz **Dotyk** > **Opóźnienie zaznaczenia**, aby ustawić, jak długo SandFly czeka po dotknięciu, zanim przeniesie fokus i odczyta element. Do wyboru masz od 0,15 do 2 sekund. Domyślnie SandFly czeka 0,15 sekundy. Krótszy czas oznacza szybszą reakcję na dotyk. Opcja wymaga Androida 13 lub nowszego.
 
 Możesz dodać **Opóźnienie zaznaczenia** do [sterowania czytaniem](#commands). Domyślnie tej opcji nie ma na liście.
 
