@@ -26,6 +26,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
@@ -88,6 +89,9 @@ public class CursorGranularityManager {
    * represented in {@link #navigableNodes}.
    */
   private @Nullable AccessibilityNodeInfoCompat lockedNode;
+
+  /** Web text last shown on screen before a move through it, so that it is shown once. */
+  private @Nullable AccessibilityNodeInfoCompat webTextShown;
 
   /** The index of the current node within {@link #navigableNodes}. */
   private int currentNodeIndex;
@@ -469,6 +473,7 @@ public class CursorGranularityManager {
     navigableNodes.clear();
     granularityTraversal.clearAllCursors();
     lockedNode = null;
+    webTextShown = null;
 
     // Copying mode goes on from item to item.
     if (!copySelection.isActive()) {
@@ -634,10 +639,15 @@ public class CursorGranularityManager {
           && !isSelectionModeActive()
           && granularityTraversal.traverseEmojiWordInFrameworkText(currentNode, forward, eventId)) {
         return SUCCESS;
-      } else if (pipeline.returnFeedback(
-          eventId, Feedback.nodeAction(currentNode, action, arguments))) {
-        LogUtils.d(TAG, "Granularity traversal handled by framework");
-        return SUCCESS;
+      } else {
+        showWebTextOnScreen(currentNode, eventId);
+        if (pipeline.returnFeedback(eventId, Feedback.nodeAction(currentNode, action, arguments))) {
+          LogUtils.d(TAG, "Granularity traversal handled by framework");
+          return SUCCESS;
+        }
+        if (WebInterfaceUtils.isWebContainer(currentNode)) {
+          logWebMoveFailed(currentNode, requestedGranularity);
+        }
       }
 
       LogUtils.v(
@@ -650,6 +660,45 @@ public class CursorGranularityManager {
     // Microgranularity traversal can't navigate out of a focused editable node. For non-editable
     // nodes, allow traversal out of the focused node.
     return isEditing ? HIT_EDGE : NOT_SUPPORTED;
+  }
+
+  /**
+   * Scrolls web text that the browser moves through onto the screen, before the first move through
+   * it, when it is wholly or partly outside the page's viewport. Text taller than the viewport is
+   * always partly outside, so later moves leave the page where it is. (#621)
+   */
+  private void showWebTextOnScreen(AccessibilityNodeInfoCompat node, EventId eventId) {
+    if (!node.equals(webTextShown)
+        && WebInterfaceUtils.isWebContainer(node)
+        && WebInterfaceUtils.isOutsideWebViewport(node)) {
+      webTextShown = node;
+      boolean shown =
+          pipeline.returnFeedback(
+              eventId,
+              Feedback.nodeAction(node, AccessibilityActionCompat.ACTION_SHOW_ON_SCREEN.getId()));
+      LogUtils.i(TAG, "Web text outside the viewport, shown on screen: %s", shown);
+    }
+  }
+
+  /**
+   * Logs the state of web text the browser did not move through. The browser moves only through
+   * the node it holds accessibility focus on, and only within that node's text.
+   */
+  private static void logWebMoveFailed(
+      AccessibilityNodeInfoCompat node, CursorGranularity granularity) {
+    boolean refreshed = node.refresh();
+    CharSequence text = node.getText();
+    LogUtils.i(
+        TAG,
+        "Browser did not move by %s: refreshed=%s focused=%s outsideViewport=%s"
+            + " granularities=%d textLength=%d node=%s",
+        granularity.name(),
+        refreshed,
+        node.isAccessibilityFocused(),
+        WebInterfaceUtils.isOutsideWebViewport(node),
+        node.getMovementGranularities(),
+        (text == null) ? -1 : text.length(),
+        node);
   }
 
   /**

@@ -17,6 +17,7 @@
 package com.google.android.accessibility.utils;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.os.Bundle;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
@@ -34,6 +35,12 @@ public class WebInterfaceUtils {
 
   private static final String KEY_WEB_IMAGE = "AccessibilityNodeInfo.hasImage";
   private static final String VALUE_HAS_WEB_IMAGE = "true";
+
+  /** Chromium's extras: set on a node scrolled out of the viewport, and its bounds unclipped. */
+  private static final String KEY_OFFSCREEN = "AccessibilityNodeInfo.offscreen";
+
+  private static final String KEY_UNCLIPPED_TOP = "AccessibilityNodeInfo.unclippedTop";
+  private static final String KEY_UNCLIPPED_BOTTOM = "AccessibilityNodeInfo.unclippedBottom";
 
   private static final String ACTION_ARGUMENT_HTML_ELEMENT_STRING_VALUES =
       "ACTION_ARGUMENT_HTML_ELEMENT_STRING_VALUES";
@@ -389,6 +396,31 @@ public class WebInterfaceUtils {
       return false;
     }
     return hasNativeWebContent(node) || isNodeFromFirefox(node);
+  }
+
+  /**
+   * Whether Chromium reports web {@code node} as wholly or partly outside the page's viewport: its
+   * offscreen extra is set, or its unclipped top or bottom lies past its bounds on screen, which
+   * Chromium clips to the viewport.
+   */
+  public static boolean isOutsideWebViewport(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null) {
+      return false;
+    }
+    Bundle extras = node.getExtras();
+    if (extras == null) {
+      return false;
+    }
+    if (extras.getBoolean(KEY_OFFSCREEN, false)) {
+      return true;
+    }
+    if (!extras.containsKey(KEY_UNCLIPPED_TOP) || !extras.containsKey(KEY_UNCLIPPED_BOTTOM)) {
+      return false;
+    }
+    Rect bounds = new Rect();
+    node.getBoundsInScreen(bounds);
+    return extras.getInt(KEY_UNCLIPPED_TOP) < bounds.top
+        || extras.getInt(KEY_UNCLIPPED_BOTTOM) > bounds.bottom;
   }
 
   /** Returns {@code true} if the {@code node} or its descendant contains image. */

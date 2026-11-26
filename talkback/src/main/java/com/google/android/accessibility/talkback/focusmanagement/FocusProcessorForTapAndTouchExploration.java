@@ -51,6 +51,7 @@ import com.google.android.accessibility.talkback.directtouch.DirectTouchRegions;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.action.TouchExplorationAction;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
+import com.google.android.accessibility.talkback.gesture.GboardPopupNotes;
 import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
 import com.google.android.accessibility.talkback.gesture.KeyboardHover;
 import com.google.android.accessibility.talkback.scripting.Scripts;
@@ -598,6 +599,9 @@ public class FocusProcessorForTapAndTouchExploration {
     postDelayHandler.cancelHoldToCancel();
 
     long currentTime = SystemClock.uptimeMillis();
+    if (longPressedGboardKey) {
+      GboardPopupNotes.onTouchEnd(lastFocusableNodeBeingTouched);
+    }
 
     boolean result = false;
     boolean liftActivates = liftActivates();
@@ -829,6 +833,7 @@ public class FocusProcessorForTapAndTouchExploration {
                   if (KeyboardExploration.usesTouchExploration(
                       parent.context, node.getPackageName())) {
                     parent.longPressedGboardKey = true;
+                    GboardPopupNotes.onLongPress(node);
                   }
                   parent.interpretationReceiver.input(
                       /* eventId= */ null,

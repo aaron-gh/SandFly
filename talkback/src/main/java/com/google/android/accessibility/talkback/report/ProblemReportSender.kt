@@ -382,9 +382,9 @@ object ProblemReportSender {
    * The log, after SandFly's last crash, last turn-off and main thread stalls if there were any,
    * which the log doesn't reach back to, how its last processes ended, the accessibility services
    * turned on, the last volume key and Enter key events, focus returns after Back, macro Actions
-   * condition checks, speech that apps caused by themselves and audio changes, then the last
-   * gesture lines, and then the ends of the logs of SandFly's other processes, such as the one
-   * that runs on-device AI.
+   * condition checks, speech that apps caused by themselves, audio changes and typing from
+   * Gboard's popup, then the last gesture lines, and then the ends of the logs of SandFly's other
+   * processes, such as the one that runs on-device AI.
    */
   @WorkerThread
   private fun logWithCrash(context: Context, snapshot: LogcatSnapshot?): String? {
@@ -399,6 +399,7 @@ object ProblemReportSender {
     val macroConditions = ReportNotes.macroConditions.read()
     val appSpeech = ReportNotes.appSpeech.read()
     val audio = ReportNotes.audio.read()
+    val gboardPopup = ReportNotes.gboardPopup.read()
     val others = snapshot?.others ?: otherProcessLogs(context)
     val log = snapshot?.main ?: readLog(Process.myPid(), LOG_LINES, MAIN_LOG_PRIORITY)
     val gestures = snapshot?.gestures ?: readGestureLog(Process.myPid()).orEmpty()
@@ -415,6 +416,7 @@ object ProblemReportSender {
         "Macro Actions conditions log" to macroConditions,
         "App speech log" to appSpeech,
         "Audio log" to audio,
+        "Gboard popup log" to gboardPopup,
       )
     if (sections.all { it.second == null } && others.isEmpty() && gestures.isEmpty()) {
       return log

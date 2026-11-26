@@ -117,5 +117,7 @@ class ReportNotes(@get:VisibleForTesting internal val maxEntries: Int) {
 
     // Players start and stop with each utterance, so the audio notes need more lines.
     private const val MAX_AUDIO_ENTRIES = 100
+    /** Typing from the popup of alternative characters of Gboard 18.8 and later. */
+    @JvmField val gboardPopup = ReportNotes(MAX_ENTRIES)
   }
 }

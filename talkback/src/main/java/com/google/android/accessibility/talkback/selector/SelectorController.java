@@ -24,7 +24,7 @@ import static com.google.android.accessibility.talkback.Feedback.AdjustVolume.Ac
 import static com.google.android.accessibility.talkback.Feedback.AdjustVolume.StreamType.STREAM_TYPE_ACCESSIBILITY;
 import static com.google.android.accessibility.talkback.Feedback.DimScreen.Action.BRIGHTEN;
 import static com.google.android.accessibility.talkback.Feedback.DimScreen.Action.DIM;
-import static com.google.android.accessibility.talkback.Feedback.Focus.Action.CLICK_NODE;
+import static com.google.android.accessibility.talkback.Feedback.Focus.Action.CLICK_CURRENT;
 import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.NEXT_PAGE;
 import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.PREVIOUS_PAGE;
 import static com.google.android.accessibility.talkback.Feedback.Language.Action.NEXT_LANGUAGE;
@@ -3306,9 +3306,10 @@ public class SelectorController implements UserInputEventListener {
       return false;
     }
 
-    // Always perform click action on the node.
+    // Click activates the focused item as double tap does with any other reading control, so that
+    // a list item activated with it, such as a folder, is focused again after Back.
     if (currentActionId.itemId() == AccessibilityNodeInfoCompat.ACTION_CLICK) {
-      pipeline.returnFeedback(eventId, Feedback.focus(CLICK_NODE).setTarget(node));
+      pipeline.returnFeedback(eventId, Feedback.focus(CLICK_CURRENT));
       return true;
     }
 

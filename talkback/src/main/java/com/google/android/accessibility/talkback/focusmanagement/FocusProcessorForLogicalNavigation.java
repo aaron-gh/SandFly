@@ -3364,6 +3364,7 @@ public class FocusProcessorForLogicalNavigation {
               columnWrap(webPivot, target, navigationAction, logicalDirection),
               eventId)) {
         LogUtils.d(TAG, "Web item from the node tree: %s", target);
+        showWebItemOnScreen(target, eventId);
         return true;
       }
     }
@@ -3380,6 +3381,22 @@ public class FocusProcessorForLogicalNavigation {
           rtl);
     }
     return true;
+  }
+
+  /**
+   * Scrolls a web item that focus has moved to from the page's node tree onto the screen when it is
+   * wholly or partly outside the page's viewport. Chromium scrolls for its own next and previous
+   * item actions, but for an accessibility focus action only while no hover is in progress, and a
+   * paragraph left outside the viewport is not moved through by character or word. The page's
+   * scroll comes within the navigation's scroll window, so it is not taken for a manual scroll.
+   * (#621)
+   */
+  private void showWebItemOnScreen(AccessibilityNodeInfoCompat target, EventId eventId) {
+    if (!WebInterfaceUtils.isOutsideWebViewport(target)) {
+      return;
+    }
+    boolean shown = showOnScreen(target, eventId);
+    LogUtils.i(TAG, "Web item outside the viewport, shown on screen: %s", shown);
   }
 
   /** Finds the node next to the WebView that holds {@code webPivot}, in the window's order. */
