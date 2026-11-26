@@ -30,7 +30,8 @@ enum class RecognitionMode(
   POINT_AND_SPEAK(R.string.live_recognition_point, true),
   PEOPLE(R.string.live_recognition_people, true),
   DOORS(R.string.live_recognition_doors, true),
-  LIGHT(R.string.live_recognition_light, false, usesCamera = false);
+  LIGHT(R.string.live_recognition_light, false, usesCamera = false),
+  LIGHT_TONE(R.string.live_recognition_light_tone, false);
 
   fun step(forward: Boolean): RecognitionMode =
     entries[ValueSteps.step(ordinal, entries.size, forward)]

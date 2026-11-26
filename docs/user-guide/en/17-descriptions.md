@@ -203,6 +203,7 @@ Each mode turns on and off by itself, with a check box on the screen:
 - **People detection**: describes people in the camera view.
 - **Door detection**: describes doors in the camera view.
 - **Light level**: reads the light level from the light sensor: **Dark**, **Dim light**, **Normal light**, **Bright light** or **Very bright light**. It doesn't use the camera.
+- **Light level tone**: plays a continuous tone whose pitch rises with the brightness of what the rear camera sees, from 200 Hz in the dark to 1600 Hz in sunlight. The tone plays at the volume of SandFly's sounds, and stops when the mode is turned off or the screen is left.
 
 The status line says **Camera on** or **Camera off**. SandFly asks for the camera permission the first time a mode needs it.
 

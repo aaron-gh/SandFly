@@ -21,8 +21,9 @@ import org.junit.Test
 
 class RecognitionAnnouncementsTest {
   @Test fun rotorWrapsInBothDirectionsAcrossAllModes() {
-    assertEquals(RecognitionMode.LIGHT, RecognitionMode.SCENES.step(false))
-    assertEquals(RecognitionMode.SCENES, RecognitionMode.LIGHT.step(true))
+    val last = RecognitionMode.entries.last()
+    assertEquals(last, RecognitionMode.SCENES.step(false))
+    assertEquals(RecognitionMode.SCENES, last.step(true))
     var mode = RecognitionMode.SCENES
     val seen = mutableSetOf<RecognitionMode>()
     repeat(RecognitionMode.entries.size) { seen.add(mode); mode = mode.step(true) }
