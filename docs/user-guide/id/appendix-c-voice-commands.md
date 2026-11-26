@@ -13,7 +13,7 @@ Beberapa frasa dikenali di bagian mana pun dari ucapan Anda: frasa tersebut dita
 | "Judul berikutnya" | Berpindah ke judul berikutnya. |
 | "Kontrol berikutnya" | Berpindah ke kontrol berikutnya. |
 | "Tautan berikutnya" | Berpindah ke tautan berikutnya. |
-| "Penanda berikutnya" | Berpindah ke penanda berikutnya di halaman web. |
+| "Penunjuk berikutnya" | Berpindah ke penunjuk berikutnya di halaman web. |
 | Frasa yang mengandung "pertama" atau "atas" | Berpindah ke item pertama di layar. |
 | Frasa yang mengandung "terakhir" atau "bawah" | Berpindah ke item terakhir di layar. |
 | "Cari TEKS", atau "telusuri TEKS" | Berpindah ke item pertama di layar yang menyertakan teks tersebut. |
@@ -31,7 +31,7 @@ Beberapa frasa dikenali di bagian mana pun dari ucapan Anda: frasa tersebut dita
 | "Navigasi paragraf", atau "navigasi menurut paragraf", "perincian paragraf", atau "baca menurut paragraf" | Memilih kontrol pembacaan **Paragraf**. |
 | "Navigasi judul", atau "navigasi menurut judul", "perincian judul", atau "baca menurut judul" | Memilih kontrol pembacaan **Judul**. |
 | "Navigasi kontrol", atau "navigasi menurut kontrol", "perincian kontrol", atau "baca menurut kontrol" | Memilih kontrol pembacaan **Kontrol**. |
-| "Navigasi penanda", atau "navigasi menurut penanda", "perincian penanda", atau "baca menurut penanda" | Memilih kontrol pembacaan **Penunjuk**. |
+| "Navigasi penunjuk", atau "navigasi menurut penunjuk", "perincian penunjuk", atau "baca menurut penunjuk" | Memilih kontrol pembacaan **Penunjuk**. |
 | "Navigasi jendela", atau "navigasi menurut jendela", "perincian jendela", atau "baca menurut jendela" | Memilih kontrol pembacaan **Jendela**. |
 | "Navigasi default", atau "navigasi menurut default", "perincian default", atau "baca menurut default" | Memilih **Navigasi default**. |
 

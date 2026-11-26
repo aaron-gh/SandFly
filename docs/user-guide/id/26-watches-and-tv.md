@@ -23,7 +23,7 @@ Anda menginstal `sandfly-wear.apk` dari komputer menggunakan adb.
 
 Untuk membuka setelan SandFly di jam tangan, buka **SandFly** di daftar aplikasi jam tangan. Saat pertama kali SandFly diaktifkan, tutorial jam tangan akan terbuka.
 
-#### Gestur di jam tangan {#devices-watch-gestures}
+#### Gerakan di jam tangan {#devices-watch-gestures}
 
 Layar jam tangan hanya melacak maksimal dua jari, sehingga gerakan tiga atau empat jari tidak tersedia. Geseran dua jari diteruskan ke aplikasi untuk menggulir.
 
