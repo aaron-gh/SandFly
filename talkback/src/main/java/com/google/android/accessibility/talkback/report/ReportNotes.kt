@@ -68,5 +68,8 @@ class ReportNotes(@get:VisibleForTesting internal val maxEntries: Int) {
 
     /** How long the tests of macros' Show in Actions only when conditions took, per item. */
     @JvmField val macroConditions = ReportNotes(MAX_ENTRIES)
+
+    /** Typing from the popup of alternative characters of Gboard 18.8 and later. */
+    @JvmField val gboardPopup = ReportNotes(MAX_ENTRIES)
   }
 }

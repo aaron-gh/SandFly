@@ -216,6 +216,7 @@ import com.google.android.accessibility.talkback.focusmanagement.interpreter.Tou
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.talkback.gesture.AccelerometerGestures;
+import com.google.android.accessibility.talkback.gesture.GboardPopupNotes;
 import com.google.android.accessibility.talkback.gesture.GestureController;
 import com.google.android.accessibility.talkback.gesture.GestureLayout;
 import com.google.android.accessibility.talkback.gesture.GestureLayoutActivity;
@@ -1418,6 +1419,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       FocusProcessorForLogicalNavigation.onScrollEventReceived(event);
     }
     HiddenFieldEcho.onAccessibilityEvent(event);
+    GboardPopupNotes.onEventReceived(event);
     ScrollAhead.onAccessibilityEvent(event);
     if (event.getEventType() == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
       ScrollEventInterpreter.onTouchInteractionStart();
@@ -3648,6 +3650,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     textEventFilter.setKeyboardEditSuppressor(SandFlyKeyboardHost::isKeyboardEdit);
     // The SandFly keyboard's suggestion said right after the keyboard echo of a key.
     textEventFilter.setTextChangeHandledListener(SandFlyKeyboardHost::onTextChangeHandled);
+    // Text changes after typing from Gboard's popup of alternative characters, for problem reports.
+    textEventFilter.addListener(
+        interpretation -> GboardPopupNotes.onTextEventKept(interpretation.event));
     SandFlyKeyboardHost.setSuggestionStopper(
         () -> {
           if (speechController != null) {
