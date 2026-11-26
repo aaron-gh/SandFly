@@ -713,15 +713,18 @@ class Actors {
         case FOLLOW ->
             directionNavigator.followTo(
                 direction.targetNode(), direction.granularity(), direction.direction(), eventId);
-        case NEXT_PAGE -> directionNavigator.more(eventId);
-        case PREVIOUS_PAGE -> directionNavigator.less(eventId);
-        case SCROLL_UP -> directionNavigator.scrollDirection(eventId, NavigationAction.SCROLL_UP);
+        // A scroll that nothing could take, such as at the end of a list, fails, so the gesture
+        // that asked for it plays the failure sound rather than nothing.
+        case NEXT_PAGE -> success &= directionNavigator.more(eventId);
+        case PREVIOUS_PAGE -> success &= directionNavigator.less(eventId);
+        case SCROLL_UP ->
+            success &= directionNavigator.scrollDirection(eventId, NavigationAction.SCROLL_UP);
         case SCROLL_DOWN ->
-            directionNavigator.scrollDirection(eventId, NavigationAction.SCROLL_DOWN);
+            success &= directionNavigator.scrollDirection(eventId, NavigationAction.SCROLL_DOWN);
         case SCROLL_LEFT ->
-            directionNavigator.scrollDirection(eventId, NavigationAction.SCROLL_LEFT);
+            success &= directionNavigator.scrollDirection(eventId, NavigationAction.SCROLL_LEFT);
         case SCROLL_RIGHT ->
-            directionNavigator.scrollDirection(eventId, NavigationAction.SCROLL_RIGHT);
+            success &= directionNavigator.scrollDirection(eventId, NavigationAction.SCROLL_RIGHT);
         case TOP -> directionNavigator.jumpToTop(direction.inputMode(), eventId);
         case BOTTOM -> directionNavigator.jumpToBottom(direction.inputMode(), eventId);
         case SET_GRANULARITY ->
