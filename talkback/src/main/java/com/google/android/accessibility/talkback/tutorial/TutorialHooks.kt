@@ -54,6 +54,9 @@ object TutorialHooks {
      * matched as if every gesture had a command.
      */
     fun takesAllGestures(): Boolean = false
+
+    /** Whether the practice lesson is shown with window focus. */
+    fun isPracticing(): Boolean = false
   }
 
   /** Keys that Android acts on with the Meta key: Back, Home, recent apps and notifications. */
@@ -73,6 +76,9 @@ object TutorialHooks {
 
   /** Whether the tutorial on screen says every gesture made, with a command or not. */
   @JvmStatic fun takesAllGestures(): Boolean = listener?.takesAllGestures() ?: false
+
+  /** Whether the tutorial's practice lesson is on screen with window focus. */
+  @JvmStatic fun isPracticing(): Boolean = listener?.isPracticing() ?: false
 
   @JvmStatic
   fun onKeys(keys: String?, command: String): Boolean = listener?.onKeys(keys, command) ?: false

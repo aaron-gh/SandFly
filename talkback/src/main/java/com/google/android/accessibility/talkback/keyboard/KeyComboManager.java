@@ -2193,6 +2193,13 @@ public class KeyComboManager
           return true;
         }
       }
+      logKeysWithoutCommandInPractice(
+          event,
+          new KeyCombo(
+              otherModifiers,
+              KeyComboModel.NO_PREFIX_KEY_CODE,
+              getConvertedKeyCode(event),
+              /* triggerModifierUsed= */ false));
       // TalkBack may not handle the key event in this case. Add the current keys to the passed
       // keys set to avoid the key event being handled by TalkBack when not needed.
       passedKeys.addAll(currentKeysDown);
@@ -2285,9 +2292,25 @@ public class KeyComboManager
     }
 
     if (!hasPartialMatch) {
+      logKeysWithoutCommandInPractice(event, currentKeyCombo);
       passedKeys.addAll(currentKeysDown);
     }
     return hasPartialMatch;
+  }
+
+  /**
+   * Logs keys that run no command and go to the app while the tutorial's practice lesson is shown,
+   * which says only keys that run a command.
+   */
+  private void logKeysWithoutCommandInPractice(KeyEvent event, KeyCombo keyCombo) {
+    if (event.getRepeatCount() == 0
+        && !KeyEvent.isModifierKey(event.getKeyCode())
+        && TutorialHooks.isPracticing()) {
+      LogUtils.i(
+          TAG,
+          "Keys without a command in tutorial practice, passed to the app: %s",
+          getKeyComboStringRepresentation(keyCombo));
+    }
   }
 
   private void announcePerformedShortcutAndAction(
