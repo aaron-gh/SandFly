@@ -94,6 +94,18 @@ class ActivatedItemsAfterBackTest {
   }
 
   @Test
+  fun cancelledBackKeepsTheItems() {
+    history.onItemActivated(item("A"))
+    history.onItemActivated(item("B"))
+    back(1000)
+    history.cancelBack()
+    assertFalse(history.isBackPending(1100))
+    assertEquals(2, history.activatedItemCount)
+    back(2000)
+    assertEquals(listOf("B", "A"), history.getActivatedItemsAfterBack(2100).map { it.label })
+  }
+
+  @Test
   fun itemsOfClosedWindowsAreDropped() {
     history.onItemActivated(item("Gone", window = 3))
     history.onItemActivated(item("A"))

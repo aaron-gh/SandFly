@@ -2870,6 +2870,26 @@ public class TalkBackService extends AccessibilityServiceCompat
   }
 
   /**
+   * Notes a Back that one of SandFly's own screens runs, such as its settings showing the screen
+   * before in the same window, so that focus returns to the item activated there. Called on the
+   * main thread before the screen changes.
+   */
+  public static void onBackInOwnScreen() {
+    TalkBackService service = instance;
+    if (service != null && service.focuser != null) {
+      service.focuser.onBackInApp();
+    }
+  }
+
+  /** Ends a Back noted by {@link #onBackInOwnScreen}, given up before it ran. */
+  public static void onBackCancelledInOwnScreen() {
+    TalkBackService service = instance;
+    if (service != null && service.focuser != null) {
+      service.focuser.onBackCancelled();
+    }
+  }
+
+  /**
    * Keeps the volume monitor from announcing a volume change that SandFly made and has spoken
    * itself, such as in its quick settings panel.
    */

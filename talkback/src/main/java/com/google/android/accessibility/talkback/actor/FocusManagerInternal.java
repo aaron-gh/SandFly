@@ -517,6 +517,24 @@ public class FocusManagerInternal {
   }
 
   /**
+   * Notes a Back that an app runs itself, such as SandFly's settings showing the screen before,
+   * unless a Back that SandFly ran or saw still waits for its list: that Back is the same one.
+   * Backs from the navigation bar or the system Back gesture don't reach SandFly otherwise.
+   */
+  void onBackInApp() {
+    if (history.isBackPending(SystemClock.uptimeMillis())) {
+      return;
+    }
+    noteBack("Back run by the app");
+    onBack();
+  }
+
+  /** Ends the pending Back, given up before it ran, without dropping an activated item. */
+  void onBackCancelled() {
+    history.cancelBack();
+  }
+
+  /**
    * Within {@link AccessibilityFocusActionHistory#RESTORE_AFTER_BACK_MS} of a Back, focuses the
    * list item activated before in the same window, as when an app shows a folder's list again in
    * place of the subfolder's. Focus is left alone when it was moved by the user after the Back,
