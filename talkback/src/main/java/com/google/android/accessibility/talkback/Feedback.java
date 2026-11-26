@@ -160,7 +160,10 @@ public abstract class Feedback {
    * records or plays audio.
    */
   public static Part.Builder requestedSpeech(CharSequence text) {
-    return speech(text, SpeakOptions.create().setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL));
+    return speech(
+        text,
+        SpeakOptions.create()
+            .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL | FeedbackItem.FLAG_COMMAND_FEEDBACK));
   }
 
   public static Part.Builder synthesize(

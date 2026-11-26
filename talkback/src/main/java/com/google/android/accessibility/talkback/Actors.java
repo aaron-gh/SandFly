@@ -35,6 +35,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -124,8 +125,11 @@ import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor;
+import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.utils.output.FeedbackController;
+import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils.PunctuationVerbosity;
+import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.accessibility.utils.output.SpeechControllerImpl;
 import com.google.android.accessibility.utils.output.TextToSpeechBubbleOverlay;
 import com.google.android.accessibility.utils.output.TextToSpeechOverlay;
@@ -317,6 +321,30 @@ class Actors {
     return new ActorState(actorState);
   }
 
+  /**
+   * Says the result of a command or of a text edit in the voice profile chosen for command
+   * feedback, if there is one. If that voice can't say it, SandFly's voice does.
+   *
+   * @return false if the text isn't command feedback or no voice profile is chosen, so the caller
+   *     says it in SandFly's voice
+   */
+  private boolean speakCommandFeedbackInVoiceProfile(
+      CharSequence text, @Nullable EventId eventId, @Nullable SpeakOptions options) {
+    if (options == null
+        || (options.mFlags & FeedbackItem.FLAG_COMMAND_FEEDBACK) == 0
+        || Looper.myLooper() != Looper.getMainLooper()) {
+      return false;
+    }
+    SpeakOptions sandFlyVoice =
+        SpeakOptions.create()
+            .setQueueMode(options.mQueueMode)
+            .setFlags(options.mFlags & ~FeedbackItem.FLAG_COMMAND_FEEDBACK)
+            .setUtteranceGroup(options.mUtteranceGroup);
+    boolean interrupt = (options.mQueueMode & SpeechControllerImpl.QUEUE_MODE_BIT_INTERRUPT) != 0;
+    return NotificationReader.sayCommandFeedback(
+        text, interrupt, () -> speaker.speak(text, eventId, sandFlyVoice));
+  }
+
   /** Executes feedback and modifies actorState. Returns success flag. */
   public boolean act(@Nullable EventId eventId, Feedback.Part part) {
     LogUtils.d(LOG_TAG, "act() eventId=%s part=%s", eventId, part);
@@ -371,7 +399,9 @@ class Actors {
                 speech.hintSpeakOptions().mCompletedAction);
           }
           if (speech.text() != null) {
-            speaker.speak(speech.text(), eventId, speech.options());
+            if (!speakCommandFeedbackInVoiceProfile(speech.text(), eventId, speech.options())) {
+              speaker.speak(speech.text(), eventId, speech.options());
+            }
           }
         }
         case SAVE_LAST -> speaker.saveLastUtterance();

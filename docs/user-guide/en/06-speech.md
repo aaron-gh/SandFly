@@ -104,6 +104,14 @@ Two settings in the **Voice** group change how emoji sound:
 
 They apply whether the speech engine reads the emoji or SandFly replaces them with their names. Whether emoji are read, and how, is set in **Verbosity** > **Emoji**. See [](#verbosity-emoji).
 
+### Command feedback and text editing voice {#speech-command-feedback}
+
+**Speech** > **Voice for command feedback and text editing** sets the voice that says what a command or a text edit did, such as the battery level, the status, the time, and the result of paste, cut and copy. **SandFly default**, the default, says it in SandFly's voice, in the same queue as the items you move to. A voice profile says it in that profile's voice instead. See [](#speech-voice-profiles).
+
+**Read over SandFly's speech in a different voice** is available while a voice profile is chosen. With it off, the feedback waits until SandFly stops speaking. With it on, it is said at once, over what SandFly is saying, so that the item you moved to isn't held back. It's off by default.
+
+If the engine of the voice profile doesn't start or doesn't say the text, SandFly says it in its own voice.
+
 ### Voice effects {#voice-effects}
 
 **Speech** > **Voice effects** sets an 11-band equalizer and compression effects for **SandFly default**. **Voice effects** on the screen of a voice profile sets them for that profile. A new profile starts with the voice effects of **SandFly default**. Voice effects aren't available on watches.

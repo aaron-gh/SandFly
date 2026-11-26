@@ -21,6 +21,7 @@ import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.ACTIO
 import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.FOCUS_INPUT;
 import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.SELECTION_MODE_OFF;
 import static com.google.android.accessibility.talkback.compositor.CompositorUtils.joinCharSequences;
+import static com.google.android.accessibility.utils.output.FeedbackItem.FLAG_COMMAND_FEEDBACK;
 import static com.google.android.accessibility.utils.output.FeedbackItem.FLAG_FORCE_FEEDBACK_ALL;
 import static com.google.android.accessibility.utils.output.FeedbackItem.FLAG_NO_HISTORY;
 import static com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_INTERRUPT;
@@ -81,7 +82,8 @@ public class TextEditActor {
           .setQueueMode(QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH)
           .setFlags(
               FLAG_NO_HISTORY
-                  | FLAG_FORCE_FEEDBACK_ALL);
+                  | FLAG_FORCE_FEEDBACK_ALL
+                  | FLAG_COMMAND_FEEDBACK);
 
   /** Inserted text is said as typed text is: the next speech interrupts it. */
   private static final SpeakOptions INSERTED_TEXT_OPTIONS =

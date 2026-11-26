@@ -72,6 +72,10 @@ import java.util.Locale
  */
 object NotificationReader {
   private const val TAG = "NotificationReader"
+  /** The voice profile the result of a command or of a text edit is said with; empty for SandFly's. */
+  const val KEY_COMMAND_VOICE = "pref_command_feedback_voice_profile"
+  /** Whether that voice talks over SandFly's speech instead of waiting for it to end. */
+  const val KEY_COMMAND_OVER_SPEECH = "pref_command_feedback_over_speech"
   private const val LANGUAGE_WAIT_MS = 600L
   private const val MAX_REPEATING = 10
   private const val VOLUME_KEY_PAIR_MS = 400L
@@ -244,6 +248,7 @@ object NotificationReader {
         key == NotificationSettings.Companion.Keys.VOICE_PROFILE ||
           key == NotificationSettings.Companion.Keys.CLOCK_VOICE_PROFILE ||
           key == BatteryLevelAnnouncements.KEY_VOICE ||
+          key == KEY_COMMAND_VOICE ||
           key == NotificationSettings.Companion.Keys.APPS ||
           key == NotificationSettings.Companion.Keys.RULES ||
           key == VoiceProfiles.PREF_IDS ||
@@ -1177,6 +1182,45 @@ object NotificationReader {
     watchSpeech()
   }
 
+  /** The voice profile that the result of a command or of a text edit is said with, or empty. */
+  private fun commandVoice(prefs: SharedPreferences): String = prefs.getString(KEY_COMMAND_VOICE, null).orEmpty()
+
+  /**
+   * Says [text], the result of a command or of a text edit such as paste, cut, battery level or
+   * status, in the voice profile chosen for command feedback. Without Read over SandFly's speech it
+   * waits for SandFly's speech to end first. If that voice's engine doesn't start or doesn't take
+   * the text, [fallback] says it in SandFly's voice.
+   *
+   * @return false if no voice profile is chosen or it's gone, so the caller says it in SandFly's
+   *   voice and [fallback] isn't run
+   */
+  @JvmStatic
+  @MainThread
+  fun sayCommandFeedback(text: CharSequence, interrupt: Boolean, fallback: Runnable): Boolean {
+    val context = context ?: return false
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    val voice = voiceFor(commandVoice(prefs)) ?: return false
+    val overSpeech = prefs.getBoolean(KEY_COMMAND_OVER_SPEECH, false)
+    whenSandFlyIsQuiet(SystemClock.uptimeMillis(), maxWait = if (overSpeech) 0L else QUIET_WAIT_MS) {
+      voice.speak(
+        text,
+        flush = interrupt,
+        locale = null,
+        listener =
+          object : NotificationVoice.Listener {
+            override fun onStart() {}
+
+            override fun onDone(spoken: Boolean) {}
+
+            override fun onUnavailable() {
+              fallback.run()
+            }
+          },
+      )
+    }
+    return true
+  }
+
   /**
    * Says [text] in the notification voice, or SandFly's when there is none: summaries and time
    * announcements.
@@ -1251,7 +1295,12 @@ object NotificationReader {
     val settings = NotificationSettings.read(prefs)
     val ids = VoiceProfiles.ids(prefs)
     val wanted =
-      (listOf(settings.voiceProfile, clockVoice(settings), batteryVoice(context, settings)) +
+      (listOf(
+          settings.voiceProfile,
+          clockVoice(settings),
+          batteryVoice(context, settings),
+          commandVoice(prefs),
+        ) +
           settings.apps.values.mapNotNull { it.voiceProfile } +
           settings.rules.flatMap { rule ->
             rule.actions.filter { it.type == RuleAction.Type.VOICE }.map { it.value }
