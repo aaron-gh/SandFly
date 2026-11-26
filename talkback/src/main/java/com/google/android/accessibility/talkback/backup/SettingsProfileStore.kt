@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.backup
 
+import com.google.android.accessibility.talkback.utils.FileReplace
 import java.io.File
 import java.io.IOException
 import java.util.UUID
@@ -326,7 +327,7 @@ class SettingsProfileStore(
       if (profile.id !in settings) settingsFile(profile.id).delete()
     }
     for (profile in kept) {
-      File(directory, "${profile.id}$NEW_SUFFIX").renameTo(settingsFile(profile.id))
+      FileReplace.replace(File(directory, "${profile.id}$NEW_SUFFIX"), settingsFile(profile.id))
     }
     legacy = false
     legacyActiveId = null
@@ -427,7 +428,7 @@ class SettingsProfileStore(
     val temporary = File(directory, "${file.name}.tmp")
     return try {
       temporary.writeText(text)
-      temporary.renameTo(file) || run {
+      FileReplace.replace(temporary, file) || run {
         temporary.delete()
         false
       }

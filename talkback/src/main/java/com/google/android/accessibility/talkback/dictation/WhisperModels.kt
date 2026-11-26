@@ -27,6 +27,7 @@ import com.google.android.accessibility.talkback.actor.gemini.local.DownloadProg
 import com.google.android.accessibility.talkback.actor.gemini.local.ModelDownloader
 import com.google.android.accessibility.talkback.actor.gemini.local.ModelFiles
 import com.google.android.accessibility.talkback.actor.gemini.local.ModelServer
+import com.google.android.accessibility.talkback.utils.FileReplace
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.io.File
 import java.util.concurrent.CopyOnWriteArraySet
@@ -282,7 +283,7 @@ class WhisperModels private constructor(context: Context) {
           }
         }
       }
-      if (!part.renameTo(customFile())) return ImportFailure.STORAGE
+      if (!FileReplace.replace(part, customFile())) return ImportFailure.STORAGE
       return null
     } catch (e: java.io.IOException) {
       return ImportFailure.STORAGE

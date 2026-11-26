@@ -21,6 +21,7 @@ import android.content.Context
 import android.net.Uri
 import android.os.Build
 import androidx.core.os.UserManagerCompat
+import com.google.android.accessibility.talkback.utils.FileReplace
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
@@ -162,7 +163,7 @@ object SettingsImporter {
       val input =
         context.contentResolver.openInputStream(uri) ?: throw IOException("Cannot open $uri")
       input.use { source -> temp.outputStream().use { source.copyTo(it) } }
-      if (!temp.renameTo(target)) {
+      if (!FileReplace.replace(temp, target)) {
         throw IOException("Cannot move $temp to $target")
       }
     } finally {
