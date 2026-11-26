@@ -5,7 +5,7 @@
 - **Panduan pengguna**: panduan ini. Lihat [](#getting-started-user-guide).
 - **Tutorial SandFly**: tutorial interaktif. Lihat [](#help-tutorial).
 - **Berlatih gerakan**: pelajaran latihan gerakan dari tutorial. Lihat [](#help-tutorial).
-- **Pelatih gerakan**: latihan yang mengukur gerakan Anda berdasarkan batas yang dipakai SandFly. Lihat [](#gestures-trainer).
+- **Uji ketepatan gerakan**: latihan yang mengukur gerakan Anda berdasarkan batas yang dipakai SandFly. Lihat [](#gestures-trainer).
 - **Kirim masukan**: laporan masalah dan saran kepada pengembang SandFly, beserta balasannya. Lihat [](#help-feedback).
 - **Riwayat versi**: catatan rilis dari setiap rilis SandFly. Lihat [](#help-version-history).
 - **Kebijakan privasi**: kebijakan privasi SandFly. Lihat [](#help-version-history).

@@ -297,9 +297,9 @@ Pintasan ditambahkan ke daftar, tempat Anda dapat mengganti nama atau menghapusn
 
 **Gerakan** > **Berlatih gerakan** membuka halaman tempat Anda dapat mencoba gerakan apa pun. SandFly menyebutkan fungsi gerakan tersebut tanpa menjalankannya. Perintah **Berlatih gerakan** membuka halaman yang sama.
 
-### Pelatih gerakan {#gestures-trainer}
+### Uji ketepatan gerakan {#gestures-trainer}
 
-**Bantuan & masukan** > **Pelatih gerakan** mengukur gerakan Anda berdasarkan batas yang dipakai SandFly dengan setelan Anda. Fitur ini memerlukan Android 13 atau yang lebih baru.
+**Bantuan & masukan** > **Uji ketepatan gerakan** mengukur gerakan Anda berdasarkan batas yang dipakai SandFly dengan setelan Anda. Fitur ini memerlukan Android 13 atau yang lebih baru.
 
 1. Pilih grup, misalnya **Satu jari**, **Menu tepi**, atau **Ketuk belakang**.
 2. Baca penjelasan gerakannya, lalu pilih **Mulai**.

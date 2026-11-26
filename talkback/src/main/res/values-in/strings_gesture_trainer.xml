@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="gesture_trainer_title">Pelatih gerakan</string>
+    <string name="gesture_trainer_title">Uji ketepatan gerakan</string>
     <string name="gesture_trainer_intro">Pilih grup gerakan. Setiap latihan menjelaskan satu gerakan. Lakukan gerakan sebanyak <xliff:g id="tries">%1$d</xliff:g> kali. Hasil setiap percobaan diucapkan. Setelah percobaan terakhir, layar menampilkan hasil pengukuran setiap percobaan, apa yang perlu diubah, dan setelan terkait.</string>
     <string name="gesture_trainer_group_one_finger">Satu jari</string>
     <string name="gesture_trainer_group_two_fingers">Dua jari</string>
@@ -9,7 +9,7 @@
     <string name="gesture_trainer_group_pinch_rotate_scrub">Jepit, putar, dan gosok</string>
     <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> latihan</string>
     <string name="gesture_trainer_close">Tutup</string>
-    <string name="gesture_trainer_no_detection">Pelatih gerakan memerlukan Android 13 atau yang lebih baru.</string>
+    <string name="gesture_trainer_no_detection">Uji ketepatan gerakan memerlukan Android 13 atau yang lebih baru.</string>
     <string name="gesture_trainer_left_out_swipes_before_lift">Gerakan bolak-balik dan gerakan berbentuk sudut tidak disertakan: <xliff:g id="setting">%1$s</xliff:g> aktif.</string>
     <string name="gesture_trainer_left_out_two_finger_swipes">Geseran dua jari tidak disertakan: <xliff:g id="setting">%1$s</xliff:g> nonaktif, sehingga geseran tersebut menggulir aplikasi.</string>
     <string name="gesture_trainer_exercise_heading">Latihan <xliff:g id="number">%1$d</xliff:g> dari <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
@@ -36,7 +36,7 @@
     <string name="gesture_trainer_how_taps">Ketuk <xliff:g id="taps">%1$s</xliff:g> dengan <xliff:g id="fingers">%2$s</xliff:g>. Letakkan jari-jari bersamaan dan angkat bersamaan, dengan cepat, tanpa menggeser.</string>
     <string name="gesture_trainer_how_taps_quick">Lakukan ketukan dengan cepat dan di tempat yang sama: ketukan berikutnya harus dilakukan dalam <xliff:g id="gap">%1$d</xliff:g> ms setelah ketukan sebelumnya.</string>
     <string name="gesture_trainer_how_hold">Letakkan <xliff:g id="fingers">%1$s</xliff:g> di layar bersamaan dan biarkan tetap diam, tanpa menggeser, selama setidaknya <xliff:g id="hold">%2$d</xliff:g> ms.</string>
-    <string name="gesture_trainer_how_long_hold_turns_off">Jika tidak ada perintah lain yang ditetapkan, gerakan ini menonaktifkan SandFly. Di pelatih gerakan, gerakan ini tidak menjalankan apa pun.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Jika tidak ada perintah lain yang ditetapkan, gerakan ini menonaktifkan SandFly. Saat uji ketepatan gerakan, gerakan ini tidak menjalankan apa pun.</string>
     <string name="gesture_trainer_how_taps_hold">Ketuk <xliff:g id="taps">%1$s</xliff:g> dengan <xliff:g id="fingers">%2$s</xliff:g>, dan pada ketukan terakhir biarkan jari-jari tetap diam di layar selama setidaknya <xliff:g id="hold">%3$d</xliff:g> ms.</string>
     <string name="gesture_trainer_how_three_finger_hand">Gunakan ibu jari, jari telunjuk, dan jari tengah.</string>
     <string name="gesture_trainer_how_four_finger_pinch_hand">Letakkan jari telunjuk dan jari tengah berdampingan, lalu ibu jari dan jari manis di kedua sisinya, beberapa sentimeter jauhnya. Lalu satukan keempat ujung jari ke satu titik.</string>
