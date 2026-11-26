@@ -143,7 +143,7 @@ Swiping right and left scrolls lists by itself when the next item is off screen.
 
 In the default gesture layout, two-finger swipes go to the app and scroll it. With **Gestures** > **Handle two-finger swipes in SandFly** on, as in the VoiceOver gesture layout, two-finger swipes run commands instead: by default **Scroll up**, **Scroll down**, **Scroll left** and **Scroll right**, which move the content in the direction of the swipe. Where no item on the screen scrolls sideways, **Scroll left** and **Scroll right** send a one-finger swipe to the pager around the focused item, such as the folder tabs in Solid Explorer. These four commands need Android 11 or later, and aren't on watches.
 
-When nothing on the screen can scroll that way, such as at the end of a list, **Scroll forward**, **Scroll back** and these four commands play the **Action done or end reached** sound.
+When nothing on the screen can scroll that way, such as at the end of a list, **Scroll forward**, **Scroll back** and these four commands play the **Action done or end reached** sound. At the top of a list, **Scroll back** and **Scroll down** pull the list down instead, with no sound. From a braille display, **Scroll forward** and **Scroll back** play the **Braille command failed** sound instead.
 
 These commands, in the **Scrolling** category, have no gesture by default:
 
