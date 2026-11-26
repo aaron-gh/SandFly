@@ -43,9 +43,8 @@ object FileReplace {
     }
 
   /** Moves [source] to [target] in one step where the file system can, replacing [target]. */
-  @JvmStatic
   @Throws(IOException::class)
-  fun move(source: File, target: File) {
+  private fun move(source: File, target: File) {
     try {
       Files.move(
         source.toPath(),

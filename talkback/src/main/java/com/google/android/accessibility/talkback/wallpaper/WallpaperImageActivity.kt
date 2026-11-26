@@ -27,6 +27,7 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.utils.FileReplace
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
 import java.io.FileOutputStream
@@ -112,7 +113,7 @@ class WallpaperImageActivity : Activity() {
         } finally {
           bitmap.recycle()
         }
-        temporary.renameTo(target)
+        FileReplace.replace(temporary, target)
       } catch (e: Throwable) {
         // A broken or huge image, or running out of memory, must never take SandFly down.
         LogUtils.e(TAG, "Cannot use the image as the wallpaper: %s", e)
