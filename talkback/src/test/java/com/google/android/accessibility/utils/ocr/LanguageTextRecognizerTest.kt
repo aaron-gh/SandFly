@@ -3,6 +3,8 @@ package com.google.android.accessibility.utils.ocr
 import com.google.android.accessibility.utils.ocr.LanguageTextRecognizer.Script
 import java.util.Locale
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class LanguageTextRecognizerTest {
@@ -30,9 +32,55 @@ class LanguageTextRecognizerTest {
   fun latinLettersAndScriptsWithoutARecognizerUseLatin() {
     assertEquals(Script.LATIN, scriptFor("en-US"))
     assertEquals(Script.LATIN, scriptFor("de-DE", "fr-FR"))
-    assertEquals(Script.LATIN, scriptFor("ru-RU"))
     assertEquals(Script.LATIN, scriptFor("ar-EG"))
     assertEquals(Script.LATIN, scriptFor())
+  }
+
+  @Test
+  fun languagesWrittenInCyrillicUseTheCyrillicRecognizer() {
+    assertEquals(Script.CYRILLIC, scriptFor("ru-RU"))
+    assertEquals(Script.CYRILLIC, scriptFor("uk-UA"))
+    assertEquals(Script.CYRILLIC, scriptFor("sr-RS"))
+    assertEquals(Script.CYRILLIC, scriptFor("en-US", "bg-BG"))
+    assertEquals(Script.CYRILLIC, scriptFor("uz-Cyrl-UZ"))
+  }
+
+  @Test
+  fun cyrillicLanguagesInLatinLettersUseLatin() {
+    assertEquals(Script.LATIN, scriptFor("sr-Latn-RS"))
+    assertEquals(Script.LATIN, scriptFor("uz-UZ"))
+    assertEquals(Script.LATIN, scriptFor("az-AZ"))
+    assertEquals(Script.LATIN, scriptFor("mn-Mong-CN"))
+  }
+
+  @Test
+  fun eachCyrillicLanguageHasATesseractModel() {
+    fun model(tag: String) = CyrillicOcr.modelFor(Locale.forLanguageTag(tag))
+    assertEquals("rus", model("ru-RU"))
+    assertEquals("ukr", model("uk"))
+    assertEquals("srp", model("sr-Cyrl-RS"))
+    assertEquals("uzb_cyrl", model("uz-Cyrl"))
+    // Other languages in Cyrillic have the Russian one.
+    assertEquals(CyrillicOcr.DEFAULT_MODEL, model("ba-RU"))
+    assertEquals(null, model("sr-Latn"))
+    assertEquals(null, model("en-US"))
+  }
+
+  @Test
+  fun latinLettersAreReadWithTheCyrillicModelWhenDownloaded() {
+    assertEquals("rus+eng", CyrillicOcr.languages("rus", latinInstalled = true))
+    assertEquals("rus", CyrillicOcr.languages("rus", latinInstalled = false))
+    assertEquals("ru", CyrillicOcr.languageOf("rus"))
+    assertEquals("und", CyrillicOcr.languageOf("xyz"))
+  }
+
+  @Test
+  fun onlyDownloadedModelsAreLoaded() {
+    assertTrue(CyrillicOcr.isValidLanguages("rus+eng"))
+    assertTrue(CyrillicOcr.isValidLanguages("ukr"))
+    assertFalse(CyrillicOcr.isValidLanguages("rus+ukr+eng"))
+    assertFalse(CyrillicOcr.isValidLanguages("../../files/x"))
+    assertFalse(CyrillicOcr.isValidLanguages(""))
   }
 
   @Test

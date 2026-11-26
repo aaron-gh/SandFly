@@ -26,7 +26,19 @@ The first time you run **Describe screen**, SandFly shows the **Screen descripti
 
 - **Detailed image descriptions** (off by default): **Describe image** sends the focused image to the AI service in use, or to the on-device model, for a full description.
 - **Automatic descriptions for text in images**: SandFly reads the text in an image when focus moves to it. Choose **All images**, **Unlabelled images only** (the default) or **Don't describe images**. Text is recognized on the phone.
+- **Cyrillic text recognition**: downloads and deletes the text recognition models for languages written in Cyrillic, such as Russian, Ukrainian and Serbian. See [](#descriptions-cyrillic-text). Not on watches.
 - **Live recognition**: opens the Live recognition screen. See [](#descriptions-live-recognition). Only on devices with a camera.
+
+### Cyrillic text recognition {#descriptions-cyrillic-text}
+
+Text recognition reads Cyrillic text with a model for the language, which you download first. SandFly uses the model of the speech language, or of the first phone language, that is written in Cyrillic. Without the model, only Latin letters are read, and SandFly says once that the model isn't downloaded.
+
+1. Go to **Image and screen descriptions** > **Cyrillic text recognition**.
+2. Choose the language. Its model, a few megabytes, is downloaded, with the model of Latin letters the first time, so that text in both is read.
+
+To stop a download, choose the language again. To delete a model, choose a downloaded language, then **Delete**. The model of Latin letters is deleted with the last language.
+
+The models come from the Tesseract OCR project and are read by Tesseract on the phone. Recognition is slower than for other scripts.
 
 ### Describe an image {#descriptions-describe-image}
 

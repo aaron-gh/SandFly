@@ -1637,6 +1637,8 @@ The source release of TalkBack doesn't include working Gemini support, so that *
 
 To turn on descriptions, turn on **Image and screen descriptions** > **Detailed image descriptions**. **Image and screen descriptions** > **Automatic descriptions for text in images** reads the text in images when focus moves to them: **All images**, **Unlabelled images only**, the default, or **Don't describe images**.
 
+ML Kit, which TalkBack recognizes text with, has no Cyrillic recognizer. SandFly reads Cyrillic text with Tesseract OCR once the model of the language is downloaded in **Image and screen descriptions** > **Cyrillic text recognition**, for the speech language or the first phone language written in Cyrillic. Not on watches.
+
 With Gemini, SandFly requests as little thinking as the model allows, and requests Gemini Flash-Lite when the chosen model is busy or takes more than 15 seconds. **Gemini model** is **Automatic** by default, which uses Gemini Flash.
 
 ### Spoken descriptions and questions

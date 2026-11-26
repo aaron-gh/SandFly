@@ -54,6 +54,7 @@ import com.google.android.accessibility.talkback.notificationlist.NotificationLi
 import com.google.android.accessibility.talkback.notifications.NotificationXmlFragment
 import com.google.android.accessibility.talkback.notifications.SpokenSchedules
 import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter
+import com.google.android.accessibility.talkback.preference.base.AutomaticDescriptionsFragment
 import com.google.android.accessibility.talkback.preference.base.BrailleFragment
 import com.google.android.accessibility.talkback.preference.base.GestureListPreference
 import com.google.android.accessibility.talkback.preference.base.ItemListFragment
@@ -73,6 +74,7 @@ import com.google.android.accessibility.utils.SettingsUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor
 import com.google.android.accessibility.utils.output.CapturePolicy
+import com.google.android.accessibility.utils.ocr.TesseractRecognizer
 import com.google.android.accessibility.utils.output.HapticPatternParser
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.ExecutionException
@@ -404,6 +406,11 @@ object SettingsIndex {
     hideIf(Distribution.IS_PLAY, "pref_updates_screen")
     hideIf(Distribution.IS_PLAY, "pref_shizuku_root_screen")
     hideIf(!ImageCaptioner.supportsImageCaption(context), R.string.pref_auto_image_captioning_key)
+    // AutomaticDescriptionsFragment: watch builds have no Tesseract.
+    hideIf(
+      !TesseractRecognizer.IS_AVAILABLE,
+      AutomaticDescriptionsFragment.KEY_CYRILLIC_TEXT_RECOGNITION,
+    )
     // During setup.
     hideIf(!SettingsUtils.allowLinksOutOfSettings(context), R.string.pref_manage_labels_key)
 

@@ -19,6 +19,8 @@ mlkit-text-recognition-korean = "com.google.android.gms:play-services-mlkit-text
 mlkit-language-id = "com.google.android.gms:play-services-mlkit-language-id:17.0.0"
 mlkit-digital-ink = "com.google.mlkit:digital-ink-recognition:19.0.0"
 mlkit-translate = "com.google.mlkit:translate:17.0.3"
+# Tesseract OCR for scripts ML Kit has no recognizer for, such as Cyrillic. From JitPack.
+tesseract4android = "cz.adaptech.tesseract4android:tesseract4android:4.9.0"
 material = "com.google.android.material:material:1.14.0"
 
 # Testing

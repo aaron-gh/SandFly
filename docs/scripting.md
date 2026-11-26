@@ -667,7 +667,7 @@ end)
 
 ### Recognizing text
 
-*Version 2.* `sf.screen.recognizeText()` and `item:recognizeText()` take a screenshot and recognize the text in it, on the device. SandFly uses the recognizer for the script of the speech language and the device languages: Latin, Chinese, Japanese, Korean or Devanagari. They [wait](#waiting), need `screen` and Android 11 or later, and give `{ text, blocks }`. Each block is `{ text, bounds, lines }`, and each line `{ text, bounds }`, in screen pixels, so a script can tap a line with `sf.touch.tap`.
+*Version 2.* `sf.screen.recognizeText()` and `item:recognizeText()` take a screenshot and recognize the text in it, on the device. SandFly uses the recognizer for the script of the speech language and the device languages: Latin, Chinese, Japanese, Korean, Devanagari, or Cyrillic once its model is downloaded in **Image and screen descriptions** > **Cyrillic text recognition**. They [wait](#waiting), need `screen` and Android 11 or later, and give `{ text, blocks }`. Each block is `{ text, bounds, lines }`, and each line `{ text, bounds }`, in screen pixels, so a script can tap a line with `sf.touch.tap`.
 
 A script can recognize text twice at once. Android allows only a few screenshots a second, so SandFly tries again twice when Android refuses one, and raises an error after that. Recognition also raises an error when the item isn't on screen.
 

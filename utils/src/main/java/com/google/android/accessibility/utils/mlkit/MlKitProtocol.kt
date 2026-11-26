@@ -39,7 +39,10 @@ object MlKitProtocol {
   /** [KEY_TEXT], with [KEY_THRESHOLD]: answers [KEY_LANGUAGES] and [KEY_CONFIDENCES]. */
   const val MSG_IDENTIFY_POSSIBLE_LANGUAGES = 2
 
-  /** [KEY_IMAGE] and [KEY_ROTATION] in [KEY_SCRIPT]: answers [KEY_TEXT_DATA] or [KEY_TEXT_FILE]. */
+  /**
+   * [KEY_IMAGE] and [KEY_ROTATION] in [KEY_SCRIPT], with [KEY_TESSERACT_MODELS] for Cyrillic:
+   * answers [KEY_TEXT_DATA] or [KEY_TEXT_FILE].
+   */
   const val MSG_RECOGNIZE_TEXT = 3
 
   /** Asks Google Play services to download the recognizer for [KEY_SCRIPT]. Answers nothing. */
@@ -59,6 +62,7 @@ object MlKitProtocol {
   const val KEY_IMAGE = "image"
   const val KEY_ROTATION = "rotation"
   const val KEY_SCRIPT = "script"
+  const val KEY_TESSERACT_MODELS = "tesseract_models"
   const val KEY_TEXT_DATA = "text_data"
   const val KEY_TEXT_FILE = "text_file"
   const val KEY_ERROR = "error"
