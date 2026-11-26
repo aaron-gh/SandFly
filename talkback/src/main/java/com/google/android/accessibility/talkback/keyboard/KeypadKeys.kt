@@ -41,7 +41,8 @@ import java.util.function.BooleanSupplier
  * Letter keys press keypad buttons on keyboards whose letters carry numbers, as on BlackBerry, Zinwa
  * and Unihertz phones, where W, E and R are 1, 2 and 3: on the lock screen PIN pad, in calls, where
  * they play the keypad tones, and in calculators, where the letters' Alt characters, such as + and
- * -, press the operator buttons. A letter on the lock screen before the PIN pad shows opens it.
+ * -, press the operator buttons. A letter on the lock screen before the PIN pad shows opens it, or
+ * unlocks the device where no PIN is needed.
  *
  * Keys with a modifier, digit keys and keys typed into a text field being edited aren't taken.
  */
@@ -238,6 +239,11 @@ class KeypadKeys(private val service: AccessibilityService) {
       digitOf(keyCode)
         ?: keypadCharacter(event.keyCharacterMap, keyCode)?.takeIf { it.isDigit() }
         ?: return false
+    // Where no PIN is needed, as while Extend Unlock keeps the device unlocked or with a swipe lock,
+    // a digit unlocks instead.
+    if (!keyguard.isDeviceLocked && pendingDigits.isEmpty() && !hasPinPad(roots)) {
+      return unlock(roots)
+    }
     if (pendingDigits.isNotEmpty()) {
       if (pendingDigits.length < MAX_PENDING_DIGITS) {
         pendingDigits.append(digit)
@@ -274,8 +280,28 @@ class KeypadKeys(private val service: AccessibilityService) {
     return service.windows.mapNotNull { it.root }.filter { it.packageName?.toString() == SYSTEM_UI }
   }
 
+  /**
+   * Dismisses a lock screen that needs no PIN: presses its lock icon, which says "Unlocked", or
+   * swipes up across it where no lock icon shows.
+   */
+  private fun unlock(roots: List<AccessibilityNodeInfo>): Boolean {
+    val icon = findById(roots, SYSTEM_UI, "lock_icon_view")
+    // The icon may take the click action without being marked clickable, as on a double tap.
+    val clicked =
+      icon != null &&
+        if (icon.actionList.contains(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK)) {
+          icon.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+        } else {
+          click(icon)
+        }
+    LogUtils.e(TAG, "Lock screen needs no PIN: lock icon %s, clicked %s", icon != null, clicked)
+    return clicked || swipeUp()
+  }
+
   /** Swipes up across the lock screen, which shows its PIN pad. */
-  private fun openPinPad(): Boolean {
+  private fun openPinPad(): Boolean = swipeUp()
+
+  private fun swipeUp(): Boolean {
     val metrics = service.resources.displayMetrics
     val x = metrics.widthPixels / 2f
     val path =
@@ -296,7 +322,7 @@ class KeypadKeys(private val service: AccessibilityService) {
       } else {
         service.dispatchGesture(gesture, null, null)
       }
-    LogUtils.e(TAG, "PIN pad swipe sent: %s, as SandFly's own touch: %s", sent, SyntheticTouches.isAvailable())
+    LogUtils.e(TAG, "Lock screen swipe sent: %s, as SandFly's own touch: %s", sent, SyntheticTouches.isAvailable())
     return sent
   }
 
