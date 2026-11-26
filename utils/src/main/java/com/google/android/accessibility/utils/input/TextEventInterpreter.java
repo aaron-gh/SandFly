@@ -334,6 +334,7 @@ public class TextEventInterpreter {
         interpret(event, shouldEchoAddedText, shouldEchoInitialWords);
 
     filter.filterAndSendInterpretation(event, eventId, interpretation);
+    filter.onTextEventHandled(event);
   }
 
   // dereference of possibly-null reference event.getBeforeText()

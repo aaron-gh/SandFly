@@ -129,6 +129,9 @@ public class TextEventFilter {
    */
   private @Nullable Predicate<AccessibilityEvent> keyboardEditSuppressor;
 
+  /** Told after each text change is handled, spoken or dropped. */
+  private @Nullable Runnable textChangeHandledListener;
+
   ///////////////////////////////////////////////////////////////////////////////////
   // Member variables
 
@@ -473,6 +476,20 @@ public class TextEventFilter {
    * Leaves out the text changes that [suppressor] accepts, the SandFly keyboard's own edits, which
    * it says itself.
    */
+  public void setTextChangeHandledListener(@Nullable Runnable listener) {
+    this.textChangeHandledListener = listener;
+  }
+
+  /**
+   * Tells the listener that a text change of [event] was handled: its speech, if any, is queued.
+   */
+  public void onTextEventHandled(AccessibilityEvent event) {
+    if (textChangeHandledListener != null
+        && event.getEventType() == AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED) {
+      textChangeHandledListener.run();
+    }
+  }
+
   public void setKeyboardEditSuppressor(@Nullable Predicate<AccessibilityEvent> suppressor) {
     this.keyboardEditSuppressor = suppressor;
   }

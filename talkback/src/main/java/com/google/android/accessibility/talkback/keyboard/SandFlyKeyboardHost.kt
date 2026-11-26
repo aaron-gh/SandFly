@@ -17,8 +17,11 @@ package com.google.android.accessibility.talkback.keyboard
 
 import android.content.Context
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityEvent
+import androidx.annotation.VisibleForTesting
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
@@ -215,24 +218,100 @@ object SandFlyKeyboardHost {
   }
 
   /**
-   * Speaks a correction or word suggestion said when typing pauses, at a lower pitch than typing,
-   * interrupted by the next speech.
+   * Speaks a correction or word suggestion said while typing, at a lower pitch than typing: at
+   * once, interrupting other speech, or with [queued], after the speech queued before it, such as
+   * the keyboard echo of the key just typed. The next key stops it ([stopSuggestion]).
    */
   @JvmStatic
-  fun speakSuggestion(text: CharSequence) {
-    feedback?.returnFeedback(
+  fun speakSuggestion(text: CharSequence, queued: Boolean = false) {
+    val feedback = feedback ?: return
+    suggestionSpoken = true
+    feedback.returnFeedback(
       EVENT_ID_UNTRACKED,
       Feedback.speech(
         text,
         SpeakOptions.create()
-          .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)
+          .setQueueMode(
+            if (queued) SpeechController.QUEUE_MODE_QUEUE else SpeechController.QUEUE_MODE_INTERRUPT
+          )
+          .setUtteranceGroup(SpeechController.UTTERANCE_GROUP_KEYBOARD_SUGGESTIONS)
           .setSpeechParams(Bundle().apply { putFloat(SpeechParam.PITCH, SUGGESTION_PITCH) })
-          .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL),
+          .setFlags(
+            FeedbackItem.FLAG_FORCE_FEEDBACK_ALL or
+              FeedbackItem.FLAG_CLEAR_QUEUED_UTTERANCES_WITH_SAME_UTTERANCE_GROUP or
+              FeedbackItem.FLAG_INTERRUPT_CURRENT_UTTERANCE_WITH_SAME_UTTERANCE_GROUP
+          ),
       ),
     )
   }
 
-  /** The pitch of corrections and suggestions said when typing pauses, relative to speech's. */
+  /**
+   * Speaks [text] right after the keyboard echo of the key pressed at [keyTime], in uptime
+   * milliseconds: once SandFly has handled the text change that key made, whether it spoke it or
+   * not, or at once if it already has. Where no text change comes within [ECHO_WAIT_MS], as with
+   * fields that send none, [text] is spoken then.
+   */
+  @JvmStatic
+  fun speakSuggestionAfterEcho(text: CharSequence, keyTime: Long) {
+    main.removeCallbacks(pendingTimeout)
+    if (lastTextChangeHandled >= keyTime) {
+      pendingSuggestion = null
+      speakSuggestion(text, queued = true)
+      return
+    }
+    pendingSuggestion = text
+    main.postDelayed(pendingTimeout, ECHO_WAIT_MS)
+  }
+
+  /**
+   * SandFly handled a text change, after any keyboard echo of it was queued: speaks the suggestion
+   * waiting for it.
+   */
+  @JvmStatic
+  fun onTextChangeHandled() {
+    lastTextChangeHandled = SystemClock.uptimeMillis()
+    val text = pendingSuggestion ?: return
+    pendingSuggestion = null
+    main.removeCallbacks(pendingTimeout)
+    speakSuggestion(text, queued = true)
+  }
+
+  /** Forgets a suggestion waiting for the echo, and stops one spoken or queued. */
+  @JvmStatic
+  fun stopSuggestion() {
+    pendingSuggestion = null
+    main.removeCallbacks(pendingTimeout)
+    if (suggestionSpoken) {
+      suggestionSpoken = false
+      suggestionStopper?.invoke()
+    }
+  }
+
+  /** Forgets the suggestion speech state, for tests, whose clock starts again for each. */
+  @VisibleForTesting
+  fun resetSuggestionSpeech() {
+    stopSuggestion()
+    lastTextChangeHandled = 0L
+    suggestionSpoken = false
+  }
+
+  /** Stops the speech of [SpeechController.UTTERANCE_GROUP_KEYBOARD_SUGGESTIONS]; set by SandFly. */
+  @JvmStatic @Volatile var suggestionStopper: (() -> Unit)? = null
+
+  private val main = Handler(Looper.getMainLooper())
+  private var pendingSuggestion: CharSequence? = null
+  private var lastTextChangeHandled = 0L
+  private var suggestionSpoken = false
+  private val pendingTimeout = Runnable {
+    val text = pendingSuggestion
+    pendingSuggestion = null
+    if (text != null) speakSuggestion(text, queued = true)
+  }
+
+  /** How long a suggestion waits for the text change of its key before it is spoken anyway. */
+  private const val ECHO_WAIT_MS = 300L
+
+  /** The pitch of corrections and suggestions said while typing, relative to speech's. */
   private const val SUGGESTION_PITCH = 0.8f
 
   /** Speaks [text] at once, as SandFly's own feedback. */

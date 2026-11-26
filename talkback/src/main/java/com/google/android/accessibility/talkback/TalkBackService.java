@@ -1230,6 +1230,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     HandwritingKeyboardHost.setFeedback(null);
     SandFlyKeyboardHost.setFeedback(null);
+    SandFlyKeyboardHost.setSuggestionStopper(null);
     TutorialHooks.setFeedback(null);
     instance = null;
     // Shutdown and unregister all components.
@@ -3566,6 +3567,16 @@ public class TalkBackService extends AccessibilityServiceCompat
     textEventFilter.setPasswordCharacterSuppressor(SandFlyKeyboardHost::speaksPasswordCharacters);
     // The SandFly keyboard's corrections and word suggestions, which it says.
     textEventFilter.setKeyboardEditSuppressor(SandFlyKeyboardHost::isKeyboardEdit);
+    // The SandFly keyboard's suggestion said right after the keyboard echo of a key.
+    textEventFilter.setTextChangeHandledListener(SandFlyKeyboardHost::onTextChangeHandled);
+    SandFlyKeyboardHost.setSuggestionStopper(
+        () -> {
+          if (speechController != null) {
+            speechController.stopUtteranceGroup(
+                SpeechController.UTTERANCE_GROUP_KEYBOARD_SUGGESTIONS);
+          }
+          return kotlin.Unit.INSTANCE;
+        });
     textEventFilter.setBrailleInputReader(
         () -> {
           BrailleImeForTalkBack brailleIme = getBrailleImeForTalkBack();

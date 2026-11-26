@@ -1289,7 +1289,7 @@ The SandFly keyboard can correct and complete the word being typed, with word li
 
 - **Auto-correct**: Space, punctuation or Enter after a misspelled word put its correction in its place, taking neighbouring keys of the keyboard's layout, doubled, missing and swapped letters, apostrophes and accents into account. Backspace straight after a correction undoes it, and the word isn't corrected again.
 - **Word suggestions**: while a word is typed, Up Arrow and Down Arrow, which the Zinwa Q25's trackpad sends, go through corrections and completions; Enter or a trackpad click types one with a space, and Space or punctuation types it with that character. Without a word being typed, the arrows move in the text.
-- **Speak suggestion after a pause**: when typing pauses within a word, 1 second by default, the correction Space would type ("receive, correction"), or else the first suggestion, is said at a lower pitch.
+- **Speak suggestion**: the correction Space would type ("receive, correction"), or else the first suggestion, said at a lower pitch while a word is typed: **Immediately**, right after the keyboard echo of each key, or after typing pauses for 0.25 to 3 seconds (1 second by default), or **Off**. The next key stops it.
 - **Word list language**: the system language by default. **Delete learned words** deletes the words learned from typing, which rank higher in suggestions.
 - **Next word suggestion**, **Previous word suggestion** and **Type word suggestion**, in the **Text editing** category, and the **Word suggestions** reading control, off by default, for keyboards without arrow keys and for touch.
 
