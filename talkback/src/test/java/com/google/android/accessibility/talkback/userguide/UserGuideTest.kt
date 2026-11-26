@@ -20,6 +20,7 @@ import android.content.Context
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager
 import com.google.android.accessibility.utils.FormFactorUtils
 import java.io.File
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -46,6 +47,19 @@ class UserGuideTest {
     assertTrue(html.contains("<h3 id=\"api-scripting-the-manifest\"") || html.contains("id=\"scripting-the-manifest\""))
     // Gestures and shortcuts are listed with their commands.
     assertTrue(Regex("<td>[^<]+</td><td>[^<]+</td>").findAll(html).count() > 200)
+  }
+
+  /** The Help action of the Voice profiles screen opens only that section. */
+  @Test
+  fun buildsTheSectionOfASettingsScreen() {
+    val context = RuntimeEnvironment.getApplication() as Context
+    FormFactorUtils.initialize(context)
+    val html = UserGuide.build(context, KeyComboManager.create(context), "speech-voice-profiles")
+    assertTrue(html.contains("<h3 id=\"speech-voice-profiles\">"))
+    assertTrue(html.contains("<h4 id=\"speech-add-voice-profile\">"))
+    assertFalse(html.contains("id=\"speech-emoji\""))
+    assertFalse(html.contains("<nav"))
+    assertTrue(html.contains("href=\"?section=contents\""))
   }
 
   /** Under Indonesian locale, the guide loads docs/user-guide/id/ with Indonesian headings and lists. */

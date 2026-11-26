@@ -197,6 +197,77 @@ class GuideMarkdownTest {
   }
 
   @Test
+  fun sectionPageHasOnlyTheSectionAndLinksOutToOthers() {
+    val chapters =
+      listOf(
+        "01-a.md" to
+          """
+          ## Get started {#start}
+          ### Install {#start-install}
+          See [](#start-on-shortcut) and [](#start-install-play).
+          #### From Google Play {#start-install-play}
+          Text.
+          ### Turn on {#start-on}
+          #### With the shortcut {#start-on-shortcut}
+          """,
+        "02-b.md" to "## Speech {#speech}",
+      )
+    val html =
+      GuideMarkdown.render(
+        chapters.map { GuideMarkdown.Chapter(it.first, it.second.trimIndent(), "en") },
+        Files(),
+        strings,
+        lang = "en",
+        rtl = false,
+        dark = false,
+        section = "start-install",
+      )
+    assertTrue(html.contains("<h3 id=\"start-install\">1.1 Install</h3>"))
+    assertTrue(html.contains("<h4 id=\"start-install-play\">1.1.1 From Google Play</h4>"))
+    assertFalse(html.contains("id=\"start-on\""))
+    assertFalse(html.contains("id=\"speech\""))
+    assertFalse(html.contains("<nav"))
+    // Links within the section stay on the page; others open their own section.
+    assertTrue(html.contains("<a href=\"#start-install-play\">1.1.1 From Google Play</a>"))
+    assertTrue(html.contains("<a href=\"?section=start-on-shortcut\">1.2.1 With the shortcut</a>"))
+    assertTrue(html.contains("<a href=\"?section=contents\">Back to contents</a>"))
+  }
+
+  @Test
+  fun unknownSectionShowsTheWholeGuide() {
+    val html =
+      GuideMarkdown.render(
+        listOf(GuideMarkdown.Chapter("01-a.md", "## A {#a}\n### B {#a-b}", "en")),
+        Files(),
+        strings,
+        lang = "en",
+        rtl = false,
+        dark = false,
+        section = "nothing",
+      )
+    assertTrue(html.contains("<nav"))
+    assertTrue(html.contains("<h3 id=\"a-b\">"))
+  }
+
+  /** Every section that the Help action of a settings screen opens is in each guide. */
+  @Test
+  fun settingsHelpSectionsExistInTheGuides() {
+    val root = File("../docs").takeIf { it.isDirectory } ?: File("docs")
+    val sections =
+      SettingsGuideSections.SECTIONS.values.toSet() +
+        SettingsGuideSections.PRO_SETTINGS +
+        SettingsGuideSections.APP_KEYBOARD_SHORTCUTS
+    for (language in listOf("en", "id", "nl", "pl")) {
+      val ids =
+        File(root, "user-guide/$language").listFiles { file -> file.name.endsWith(".md") }.orEmpty().flatMap {
+          Regex("""\{#([A-Za-z0-9_-]+)\}""").findAll(it.readText()).map { match -> match.groupValues[1] }.toList()
+        }.toSet()
+      assertTrue(ids.isNotEmpty())
+      assertEquals("$language guide", emptyList<String>(), sections.filter { it !in ids }.sorted())
+    }
+  }
+
+  @Test
   fun problemsFindsBrokenLinksAndHeadings() {
     val chapters =
       listOf(

@@ -33,7 +33,10 @@ import com.google.android.accessibility.talkback.keyboard.KeyComboManager
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
-/** Help & feedback > User guide: the user guide in a web view, with its table of contents first. */
+/**
+ * Help & feedback > User guide: the user guide in a web view, with its table of contents first.
+ * With [EXTRA_SECTION], the Help action of a settings screen, only the section of that screen.
+ */
 class UserGuideActivity : AppCompatActivity() {
 
   private var webView: WebView? = null
@@ -66,6 +69,15 @@ class UserGuideActivity : AppCompatActivity() {
           val url = request.url
           // Links to headings stay on the page.
           if (url.toString().substringBefore('#') == BASE_URL) return false
+          // Links from a section to other headings open their section, or the whole guide.
+          if (url.toString().startsWith(BASE_URL)) {
+            val target = url.getQueryParameter(GuideMarkdown.SECTION_PARAMETER)
+            if (target != null) {
+              val section = target.takeIf { it != GuideMarkdown.CONTENTS_ID }
+              startActivity(UserGuideActivity.intent(this@UserGuideActivity, section))
+            }
+            return true
+          }
           try {
             startActivity(Intent(Intent.ACTION_VIEW, url).addCategory(Intent.CATEGORY_BROWSABLE))
           } catch (e: ActivityNotFoundException) {
@@ -88,10 +100,11 @@ class UserGuideActivity : AppCompatActivity() {
     val keyComboManager =
       TalkBackService.getInstance()?.keyComboManager ?: KeyComboManager.create(this)
     val context: Context = this
+    val section = intent.getStringExtra(EXTRA_SECTION)
     Thread {
       val html =
         try {
-          UserGuide.build(context, keyComboManager)
+          UserGuide.build(context, keyComboManager, section)
         } catch (e: Exception) {
           LogUtils.e(TAG, "User guide failed: %s", e)
           null
@@ -132,6 +145,13 @@ class UserGuideActivity : AppCompatActivity() {
     /** Whether the guide can open: not on watches, which have no web view. */
     @JvmStatic fun isAvailable(): Boolean = !FormFactorUtils.isAndroidWear()
 
-    @JvmStatic fun intent(context: Context): Intent = Intent(context, UserGuideActivity::class.java)
+    /** The ID of the heading to show with the headings under it, instead of the whole guide. */
+    private const val EXTRA_SECTION = "section"
+
+    /** Opens the whole guide, or with [section], the heading with that ID and the ones under it. */
+    @JvmStatic
+    @JvmOverloads
+    fun intent(context: Context, section: String? = null): Intent =
+      Intent(context, UserGuideActivity::class.java).apply { if (section != null) putExtra(EXTRA_SECTION, section) }
   }
 }

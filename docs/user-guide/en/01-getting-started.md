@@ -144,6 +144,8 @@ The **Gestures** and **Keyboard shortcuts** screens have a **Search** of their o
 
 This guide opens from **Help & feedback** > **User guide** in the SandFly settings. It starts with a table of contents, and links in the text go to the sections they name. The guide is shown in the language of SandFly. Chapters that aren't translated into that language are shown in English.
 
+Most SandFly settings screens have **Help** in the app bar, after the screen title. **Help** opens the section of this guide about that screen. Links in the section to other sections open those sections, and **Back to contents** opens the whole guide.
+
 ### Move from Backtalk Aaron {#getting-started-backtalk}
 
 SandFly replaces Backtalk Aaron, which gets no more updates. The last build of Backtalk Aaron offers SandFly as an update, with the notification or dialog **Backtalk Aaron is now SandFly**.
