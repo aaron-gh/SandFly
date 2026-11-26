@@ -107,7 +107,7 @@ class GestureStartTimeTest {
     assertEquals(150, GestureConfiguration.getSwipeStartTimeMs())
     GestureConfiguration.setSwipeStartTimeMs(100)
     assertEquals(150, GestureConfiguration.getSwipeStartTimeMs())
-    GestureConfiguration.setSwipeStartTimeMs(1_000)
+    GestureConfiguration.setSwipeStartTimeMs(3_000)
     assertEquals(150, GestureConfiguration.getSwipeStartTimeMs())
     GestureConfiguration.setSwipeStartTimeMs(250)
     assertEquals(250, GestureConfiguration.getSwipeStartTimeMs())
