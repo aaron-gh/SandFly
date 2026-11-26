@@ -173,7 +173,7 @@ While keyboard practice is on, SandFly says each key that you press and the comm
 - While arrow key navigation is on, the arrow keys are said with their arrow key navigation commands.
 - A key held down is said once.
 
-To turn keyboard practice on, select **Keyboard shortcuts** > **Keyboard practice**, or press the shortcut of **Turn keyboard practice on or off**: SandFly key + Shift + K in the keyboard phone keymaps. Other keymaps have no default shortcut. SandFly says "Keyboard practice on".
+To turn keyboard practice on, select **Keyboard shortcuts** > **Keyboard practice** or **Help & feedback** > **Keyboard practice**, or press the shortcut of **Turn keyboard practice on or off**: SandFly key + Shift + K in the keyboard phone keymaps. Other keymaps have no default shortcut. SandFly says "Keyboard practice on".
 
 To turn it off, press the shortcut again, Back or Escape. SandFly says "Keyboard practice off". Keyboard practice is also off when SandFly restarts.
 

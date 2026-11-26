@@ -24,14 +24,17 @@ import android.widget.Toast;
 import androidx.annotation.StringRes;
 import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.userguide.UserGuideActivity;
+import com.google.android.accessibility.utils.FormFactorUtils;
 
 /**
- * Help and feedback: the user guide, the tutorial, gesture practice, problem reports, the version history and the
- * privacy policy.
+ * Help and feedback: the user guide, the tutorial, gesture practice, keyboard practice, problem
+ * reports, the version history and the privacy policy.
  */
 public class HelpFragment extends AdvancedSettingFragment {
   private static final String USER_GUIDE_KEY = "pref_user_guide";
+  private static final String KEY_PRACTICE_KEY = "pref_key_practice_help";
 
   public HelpFragment() {
     super(R.xml.help_and_feedback_preferences, R.string.title_pref_help_and_feedback);
@@ -48,8 +51,30 @@ public class HelpFragment extends AdvancedSettingFragment {
         userGuide.setVisible(false);
       }
     }
+    Preference keyPractice = findPreference(KEY_PRACTICE_KEY);
+    if (keyPractice != null) {
+      if (FormFactorUtils.isAndroidWear()) {
+        keyPractice.setVisible(false);
+      } else {
+        keyPractice.setOnPreferenceClickListener(
+            clicked -> {
+              TalkBackKeyboardShortcutPreferenceFragment.startKeyPractice();
+              return true;
+            });
+      }
+    }
     opensUrl(R.string.pref_version_history_key, R.string.version_history_url);
     opensUrl(R.string.pref_privacy_policy_key, R.string.privacy_policy_url);
+  }
+
+  @Override
+  public void onResume() {
+    super.onResume();
+    // Keyboard practice runs in SandFly, so it can only turn on while SandFly is on.
+    Preference keyPractice = findPreference(KEY_PRACTICE_KEY);
+    if (keyPractice != null) {
+      keyPractice.setEnabled(TalkBackService.isServiceActive());
+    }
   }
 
   /** Makes the preference with the key {@code keyRes} open the address {@code urlRes}. */
