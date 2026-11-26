@@ -75,6 +75,18 @@ internal class WordInput(
   /** Whether the announcement waiting to run is said right after the echo, not after a pause. */
   private var announceImmediately = false
 
+  /**
+   * The correction or suggestion said for the word typed, which Enter types and the list starts
+   * with, while the cursor stays at [Offer.cursor] and no other key is pressed.
+   */
+  private var offered: Offer? = null
+
+  private class Offer(val word: String, val typed: String, val cursor: Int)
+
+  /** The last move through the list, for the second move a trackpad swipe sends. */
+  private var lastMoveKey = KeyEvent.KEYCODE_UNKNOWN
+  private var lastMoveTime = 0L
+
   private val handler = Handler(Looper.getMainLooper())
   private val pauseAnnouncement = Runnable { announcePause() }
 
@@ -152,6 +164,7 @@ internal class WordInput(
 
   fun onStartInput(info: EditorInfo, restarting: Boolean) {
     handler.removeCallbacks(pauseAnnouncement)
+    offered = null
     fieldTakesWords = takesWords(info.inputType)
     learning = info.imeOptions and EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING == 0
     selStart = info.initialSelStart
@@ -169,6 +182,7 @@ internal class WordInput(
 
   fun onFinishInput() {
     handler.removeCallbacks(pauseAnnouncement)
+    offered = null
     SandFlyKeyboardHost.stopSuggestion()
     list = null
     correction = null
@@ -201,6 +215,7 @@ internal class WordInput(
       return true
     }
     ownEditEnd = -1
+    offered = null
     if (pendingTyping > 0 && now - lastTypingTime <= TYPING_UPDATE_MS) {
       pendingTyping--
       wordActive = newStart == newEnd
@@ -216,11 +231,22 @@ internal class WordInput(
   /** Whether SandFly should leave [keyCode] to the keyboard: the keys of the list. */
   fun takesKey(keyCode: Int): Boolean {
     if (list != null) return keyCode in LIST_KEYS
+    if (keyCode in ENTER_KEYS) return validOffer() != null && enterTypesOffer()
     return (keyCode == KeyEvent.KEYCODE_DPAD_UP || keyCode == KeyEvent.KEYCODE_DPAD_DOWN) &&
       wordActive &&
       fieldTakesWords &&
       suggestionsOn()
   }
+
+  /** The suggestion said for the word typed, while the cursor hasn't moved since. */
+  private fun validOffer(): Offer? =
+    offered?.takeIf { wordActive && fieldTakesWords && selStart == selEnd && it.cursor == selStart }
+
+  private fun enterTypesOffer(): Boolean =
+    prefs.getBoolean(
+      context.getString(R.string.pref_sandfly_keyboard_enter_types_suggestion_key),
+      context.resources.getBoolean(R.bool.pref_sandfly_keyboard_enter_types_suggestion_default),
+    )
 
   /** Whether a word is being typed with word suggestions on, for the reading control. */
   fun hasWord(): Boolean = wordActive && fieldTakesWords && suggestionsOn()
@@ -236,10 +262,13 @@ internal class WordInput(
     handler.removeCallbacks(pauseAnnouncement)
     SandFlyKeyboardHost.stopSuggestion()
     if (connection == null || KeyEvent.isModifierKey(keyCode)) return false
+    // Said for the word as it is, before this key.
+    val offer = validOffer()
+    offered = null
     val suggester = suggester()
     if (suggester != null) {
       useLayout(suggester, event)
-      if (event.repeatCount == 0 && onWordKey(keyCode, event, connection, suggester)) {
+      if (event.repeatCount == 0 && onWordKey(keyCode, event, connection, suggester, offer)) {
         return true
       }
     } else {
@@ -255,6 +284,7 @@ internal class WordInput(
     event: KeyEvent,
     connection: InputConnection,
     suggester: WordSuggester,
+    offer: Offer?,
   ): Boolean {
     val made = correction
     correction = null
@@ -269,10 +299,21 @@ internal class WordInput(
       if (onListKey(open, keyCode, event, connection, suggester)) return true
       list = null
     }
+    // Enter, or the click of the Zinwa Q25's trackpad, which sends Enter, types the suggestion
+    // said.
+    if (offer != null && keyCode in ENTER_KEYS && noModifiers(event) && enterTypesOffer()) {
+      val word = currentWord(connection)
+      if (word != null && word.text == offer.typed) {
+        type(Suggestions(word, listOf(offer.word), 0), ' ', connection, suggester)
+        return true
+      }
+    }
     val upOrDown = keyCode == KeyEvent.KEYCODE_DPAD_UP || keyCode == KeyEvent.KEYCODE_DPAD_DOWN
     if (upOrDown && noModifiers(event) && wordActive && suggestionsOn()) {
       val word = currentWord(connection) ?: return false
-      openList(word, suggester, next = keyCode == KeyEvent.KEYCODE_DPAD_DOWN)
+      openList(word, suggester, next = keyCode == KeyEvent.KEYCODE_DPAD_DOWN, offer = offer)
+      lastMoveKey = keyCode
+      lastMoveTime = event.eventTime
       return true
     }
     val ending = endingCharacter(keyCode, event)
@@ -302,6 +343,11 @@ internal class WordInput(
       KeyEvent.KEYCODE_DPAD_DOWN,
       KeyEvent.KEYCODE_DPAD_UP -> {
         if (!noModifiers(event)) return false
+        // A trackpad swipe sends two or more moves in a row; one moves through the list.
+        val burst = keyCode == lastMoveKey && event.eventTime - lastMoveTime < TRACKPAD_BURST_MS
+        lastMoveKey = keyCode
+        lastMoveTime = event.eventTime
+        if (burst) return true
         move(open, next = keyCode == KeyEvent.KEYCODE_DPAD_DOWN)
         SandFlyKeyboardHost.speak(describe(open))
         return true
@@ -338,7 +384,9 @@ internal class WordInput(
     }
     val word = if (wordActive) currentWord(connection) else null
     if (word == null) return context.getString(R.string.sandfly_keyboard_no_suggestions)
-    return openList(word, suggester, next, speak = false)
+    val offer = validOffer()
+    offered = null
+    return openList(word, suggester, next, speak = false, offer = offer)
   }
 
   /**
@@ -359,7 +407,10 @@ internal class WordInput(
     var open = list
     if (open == null) {
       val word = if (wordActive) currentWord(connection) else null
-      val words = word?.let { suggester.suggestions(it.text) }.orEmpty()
+      val offer = validOffer()?.takeIf { it.typed == word?.text }
+      offered = null
+      val words =
+        offer?.let { listOf(it.word) } ?: word?.let { suggester.suggestions(it.text) }.orEmpty()
       if (word == null || words.isEmpty()) {
         SandFlyKeyboardHost.speak(context.getString(R.string.sandfly_keyboard_no_suggestions))
         return true
@@ -413,6 +464,7 @@ internal class WordInput(
     if (autoCorrectOn()) {
       val corrected = suggester.correction(word.text, word.sentenceStart)
       if (corrected != null && corrected != word.text) {
+        offered = Offer(corrected, word.text, selStart)
         announce(
           context.getString(R.string.sandfly_keyboard_pending_correction, corrected),
           announceImmediately,
@@ -422,26 +474,34 @@ internal class WordInput(
     }
     if (suggestionsOn()) {
       suggester.suggestions(word.text, max = 1).firstOrNull()?.let {
+        offered = Offer(it, word.text, selStart)
         announce(it, announceImmediately)
       }
     }
   }
 
-  /** Opens the list for [word] at its first or, going back, its last suggestion. */
+  /**
+   * Opens the list for [word] at its first or, going back, its last suggestion. The suggestion
+   * already said, [offer], comes first, and going on starts after it.
+   */
   private fun openList(
     word: Word,
     suggester: WordSuggester,
     next: Boolean,
     speak: Boolean = true,
+    offer: Offer? = null,
   ): String {
     handler.removeCallbacks(pauseAnnouncement)
-    val words = suggester.suggestions(word.text)
     val said: String
+    var words = suggester.suggestions(word.text)
+    val saidFirst = offer?.takeIf { it.typed == word.text }
+    if (saidFirst != null) words = listOf(saidFirst.word) + words.filter { it != saidFirst.word }
     if (words.isEmpty()) {
       list = null
       said = context.getString(R.string.sandfly_keyboard_no_suggestions)
     } else {
-      val open = Suggestions(word, words, if (next) 0 else words.size - 1)
+      val first = if (saidFirst != null && words.size > 1) 1 else 0
+      val open = Suggestions(word, words, if (next) first else words.size - 1)
       list = open
       said = describe(open)
     }
@@ -604,6 +664,16 @@ internal class WordInput(
     /** The setting value, and [pauseMs], of saying the suggestion right after the echo. */
     const val SPEAK_IMMEDIATELY = "immediately"
     const val IMMEDIATELY = -1L
+
+    /** Enter, Numpad Enter and the centre of a D-pad, which type the suggestion said. */
+    val ENTER_KEYS =
+      setOf(KeyEvent.KEYCODE_ENTER, KeyEvent.KEYCODE_NUMPAD_ENTER, KeyEvent.KEYCODE_DPAD_CENTER)
+
+    /**
+     * Moves in the same direction closer together than this are one trackpad swipe: on the Zinwa
+     * Q25, a swipe down sends two Down presses 68 ms apart.
+     */
+    const val TRACKPAD_BURST_MS = 100L
 
     /** How long after a typing key its selection update is waited for. */
     const val TYPING_UPDATE_MS = 1_000L

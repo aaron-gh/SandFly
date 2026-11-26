@@ -4520,6 +4520,8 @@
     <string name="value_sandfly_keyboard_suggestion_pause_off">Off</string>
     <!-- Speak suggestion: right after the keyboard echo of each key typed. -->
     <string name="value_sandfly_keyboard_suggestion_pause_immediately">Immediately</string>
+    <!-- Typing > Physical keyboard: with the SandFly keyboard, Enter, or the click of a trackpad that sends Enter, types the correction or suggestion just spoken for the word typed, instead of going to the app. -->
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter types the spoken suggestion</string>
     <!-- Spoken when typing pauses within a word that Space would correct: the correction, such as "receive, correction". -->
     <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, correction</string>
     <!-- Typing > Physical keyboard: the language of the word list that auto-correct and word suggestions use. -->
