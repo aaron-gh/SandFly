@@ -31,6 +31,7 @@ import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.actor.DirectionNavigationActor;
 import com.google.android.accessibility.talkback.actor.search.SearchScreenOverlay;
 import com.google.android.accessibility.talkback.actor.search.UniversalSearchActor;
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForLogicalNavigation;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.WeakReferenceHandler;
@@ -78,6 +79,11 @@ public class AutoScrollInterpreter implements ScrollEventHandler {
   public void onScrollEvent(
       AccessibilityEvent event, ScrollEventInterpretation interpretation, EventId eventId) {
     LogUtils.d(TAG, "onScrollEvent, event = %s", event);
+    if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_SCROLLED
+        && interpretation.scrollInstanceId == UNKNOWN_SCROLL_INSTANCE_ID
+        && interpretation.userAction == ScrollActionRecord.ACTION_MANUAL_SCROLL) {
+      FocusProcessorForLogicalNavigation.onManualScrollDuringIndexedNavigation(event);
+    }
 
     if ((interpretation.scrollInstanceId != UNKNOWN_SCROLL_INSTANCE_ID)
         && (autoScrollRecordId() == interpretation.scrollInstanceId)
@@ -94,19 +100,17 @@ public class AutoScrollInterpreter implements ScrollEventHandler {
       // searching for next node.
       autoScrollHandler.removeHandleAutoScrollSuccessMessages();
 
+      int deltaX = AccessibilityEventUtils.getScrollDeltaX(event);
+      int deltaY = AccessibilityEventUtils.getScrollDeltaY(event);
+      FocusProcessorForLogicalNavigation.onFocusedRowRevealScroll(record, deltaX, deltaY);
       AutoScrollSuccessChecker checker = record.getAutoScrollSuccessChecker();
       LogUtils.d(TAG, "onScrollEvent, checker = %s", checker);
       if (checker != null && checker.isAutoScrollSuccess(record.getScrolledNode(), event)) {
         autoScrollHandler.handleAutoScrollSuccess(
-            eventId,
-            AccessibilityEventUtils.getScrollDeltaX(event),
-            AccessibilityEventUtils.getScrollDeltaY(event));
+            eventId, deltaX, deltaY);
       } else {
         autoScrollHandler.delayHandleAutoScrollSuccess(
-            eventId,
-            AccessibilityEventUtils.getScrollDeltaX(event),
-            AccessibilityEventUtils.getScrollDeltaY(event),
-            TIMEOUT_MS_HANDLE_SCROLL_BY_GESTURE);
+            eventId, deltaX, deltaY, TIMEOUT_MS_HANDLE_SCROLL_BY_GESTURE);
       }
     }
   }

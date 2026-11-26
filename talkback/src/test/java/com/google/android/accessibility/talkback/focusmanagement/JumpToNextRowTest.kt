@@ -37,6 +37,56 @@ import org.robolectric.annotation.Config
 class JumpToNextRowTest {
 
   @Test
+  fun recognizesOnlyTheMissingPartOfTheFocusedRow() {
+    val list = Rect(46, 434, 1175, 2400)
+    val full = Rect(0, 0, 1129, 239)
+    val end = Rect(46, 2346, 1175, 2400)
+    val start = Rect(46, 434, 1175, 488)
+    assertEquals(185, FocusProcessorForLogicalNavigation.clippedFocusedRowDelta(list, end, full))
+    assertEquals(-185, FocusProcessorForLogicalNavigation.clippedFocusedRowDelta(list, start, full))
+    assertEquals(
+      0,
+      FocusProcessorForLogicalNavigation.clippedFocusedRowDelta(
+        list,
+        Rect(46, 2161, 1175, 2400),
+        full,
+      ),
+    )
+    assertEquals(
+      0,
+      FocusProcessorForLogicalNavigation.clippedFocusedRowDelta(
+        list,
+        Rect(46, 2346, 800, 2400),
+        full,
+      ),
+    )
+    assertEquals(
+      0,
+      FocusProcessorForLogicalNavigation.clippedFocusedRowDelta(
+        list,
+        end,
+        Rect(0, 0, 1129, 1966),
+      ),
+    )
+  }
+
+  @Test
+  fun anchorsThePreviousViewportUsingMeasuredRows() {
+    val known = (9..17).associateWith { 239 }
+    assertEquals(10, PreviousListRows.previousViewportAnchor(17, 1966, known))
+    assertEquals(9, PreviousListRows.previousViewportAnchor(9, 1966, known))
+  }
+
+  @Test
+  fun keepsUnknownAndOversizedRowsOutOfThePreviousViewport() {
+    assertEquals(-1, PreviousListRows.previousViewportAnchor(17, 1966, mapOf(16 to 239)))
+    assertEquals(-1, PreviousListRows.previousViewportAnchor(17, 1966, mapOf(17 to 1966)))
+    assertEquals(16, PreviousListRows.previousViewportAnchor(17, 1966, mapOf(16 to 239, 17 to 239)))
+    assertEquals(17, PreviousListRows.previousViewportAnchor(17, 1966, mapOf(16 to 2000, 17 to 239)))
+  }
+
+
+  @Test
   fun usesRowAfterSpan() {
     assertEquals(3, FocusProcessorForLogicalNavigation.rowAfter(2, 1, 10))
     assertEquals(5, FocusProcessorForLogicalNavigation.rowAfter(2, 3, 10))
