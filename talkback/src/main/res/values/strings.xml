@@ -4514,10 +4514,12 @@
     <string name="title_pref_sandfly_keyboard_autocorrect">Auto-correct</string>
     <!-- Typing > Physical keyboard: with the SandFly keyboard, Up and Down go through corrections and longer words for the word being typed. Also the name of the reading control. -->
     <string name="title_pref_sandfly_keyboard_suggestions">Word suggestions</string>
-    <!-- Typing > Physical keyboard: how long typing pauses within a word before the SandFly keyboard says the correction Space would type, or the first word suggestion. -->
-    <string name="title_pref_sandfly_keyboard_suggestion_pause">Speak suggestion after a pause</string>
-    <!-- Speak suggestion after a pause: never. -->
+    <!-- Typing > Physical keyboard: when the SandFly keyboard says the correction Space would type, or the first word suggestion, while a word is typed: right after each key, after typing pauses for a time, or never. The values other than Off and Immediately are the pause, such as "0.5 seconds". -->
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Speak suggestion</string>
+    <!-- Speak suggestion: never. -->
     <string name="value_sandfly_keyboard_suggestion_pause_off">Off</string>
+    <!-- Speak suggestion: right after the keyboard echo of each key typed. -->
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Immediately</string>
     <!-- Spoken when typing pauses within a word that Space would correct: the correction, such as "receive, correction". -->
     <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, correction</string>
     <!-- Typing > Physical keyboard: the language of the word list that auto-correct and word suggestions use. -->

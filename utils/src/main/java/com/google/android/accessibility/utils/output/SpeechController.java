@@ -147,6 +147,9 @@ public interface SpeechController {
   int UTTERANCE_GROUP_NOTIFICATIONS = 8;
   // Camera descriptions can be stopped without cutting off the newly focused screen.
   int UTTERANCE_GROUP_LIVE_RECOGNITION = 9;
+  // SandFly: the SandFly keyboard's corrections and suggestions said while typing, which the next
+  // key stops.
+  int UTTERANCE_GROUP_KEYBOARD_SUGGESTIONS = 10;
 
   /** Enumeration of utterance-group values. */
   @IntDef({
@@ -159,7 +162,8 @@ public interface SpeechController {
     UTTERANCE_GROUP_CONTENT_HINTS,
     UTTERANCE_GROUP_OTHER_APPS,
     UTTERANCE_GROUP_NOTIFICATIONS,
-    UTTERANCE_GROUP_LIVE_RECOGNITION
+    UTTERANCE_GROUP_LIVE_RECOGNITION,
+    UTTERANCE_GROUP_KEYBOARD_SUGGESTIONS
   })
   @Retention(RetentionPolicy.SOURCE)
   public @interface UtteranceGroup {}

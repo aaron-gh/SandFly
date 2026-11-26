@@ -46,9 +46,9 @@ import java.util.Locale
  *   being typed, the keys go to the app.
  * - Auto-correct: Space, punctuation or Enter after a misspelled word put its correction in its
  *   place. Delete right after a correction undoes it, and the word is never corrected again.
- * - Speak suggestion after a pause: when typing pauses within a word, the keyboard says, at a lower
- *   pitch, the correction that Space would put in its place ("receive, correction"), or else the
- *   first word suggestion.
+ * - Speak suggestion: right after the keyboard echo of each key typed in a word, or when typing
+ *   pauses within it, the keyboard says, at a lower pitch, the correction that Space would put in
+ *   its place ("receive, correction"), or else the first word suggestion. The next key stops it.
  *
  * Neither is used in password, email, web address and number fields, nor in fields that ask for no
  * suggestions. Words are learned, for ranking and undone corrections, only where the field allows
@@ -60,8 +60,20 @@ internal class WordInput(
   /** The input connection of the text field being edited, for the pause announcement. */
   private val connection: () -> InputConnection?,
 ) {
-  /** Says the correction or suggestion after a pause; replaced in tests. */
-  var announce: (String) -> Unit = { SandFlyKeyboardHost.speakSuggestion(it) }
+  /**
+   * Says the correction or suggestion: after the keyboard echo of the last key with [immediately],
+   * else at once, after a pause. Replaced in tests.
+   */
+  var announce: (text: String, immediately: Boolean) -> Unit = { text, immediately ->
+    if (immediately) {
+      SandFlyKeyboardHost.speakSuggestionAfterEcho(text, lastTypingTime)
+    } else {
+      SandFlyKeyboardHost.speakSuggestion(text)
+    }
+  }
+
+  /** Whether the announcement waiting to run is said right after the echo, not after a pause. */
+  private var announceImmediately = false
 
   private val handler = Handler(Looper.getMainLooper())
   private val pauseAnnouncement = Runnable { announcePause() }
@@ -157,6 +169,7 @@ internal class WordInput(
 
   fun onFinishInput() {
     handler.removeCallbacks(pauseAnnouncement)
+    SandFlyKeyboardHost.stopSuggestion()
     list = null
     correction = null
     wordActive = false
@@ -218,8 +231,10 @@ internal class WordInput(
    */
   fun onKeyDown(keyCode: Int, event: KeyEvent, connection: InputConnection?): Boolean {
     typedCharacter = null
-    // A key before the pause ends, Shift too, means typing goes on.
+    // A key before the pause ends, Shift too, means typing goes on; the next key stops the
+    // suggestion of the last.
     handler.removeCallbacks(pauseAnnouncement)
+    SandFlyKeyboardHost.stopSuggestion()
     if (connection == null || KeyEvent.isModifierKey(keyCode)) return false
     val suggester = suggester()
     if (suggester != null) {
@@ -360,20 +375,30 @@ internal class WordInput(
     if (language() == null) R.string.sandfly_keyboard_no_word_list
     else R.string.sandfly_keyboard_no_suggestions
 
-  /** The pause after typing in a word after which the suggestion is said, or 0 for never. */
-  private fun pauseMs(): Long =
-    prefs
-      .getString(
+  /**
+   * The pause after typing in a word after which the suggestion is said, [IMMEDIATELY] for right
+   * after the echo, or 0 for never.
+   */
+  private fun pauseMs(): Long {
+    val value =
+      prefs.getString(
         context.getString(R.string.pref_sandfly_keyboard_suggestion_pause_key),
         context.getString(R.string.pref_sandfly_keyboard_suggestion_pause_default),
       )
-      ?.toLongOrNull() ?: 0L
+    if (value == SPEAK_IMMEDIATELY) return IMMEDIATELY
+    return value?.toLongOrNull()?.coerceAtLeast(0L) ?: 0L
+  }
 
   private fun schedulePause() {
     handler.removeCallbacks(pauseAnnouncement)
     if (!fieldTakesWords || !(autoCorrectOn() || suggestionsOn())) return
     val delay = pauseMs()
-    if (delay > 0) handler.postDelayed(pauseAnnouncement, delay)
+    announceImmediately = delay == IMMEDIATELY
+    when {
+      // After this selection update, with the text of the key in the field.
+      announceImmediately -> handler.post(pauseAnnouncement)
+      delay > 0 -> handler.postDelayed(pauseAnnouncement, delay)
+    }
   }
 
   /**
@@ -388,12 +413,17 @@ internal class WordInput(
     if (autoCorrectOn()) {
       val corrected = suggester.correction(word.text, word.sentenceStart)
       if (corrected != null && corrected != word.text) {
-        announce(context.getString(R.string.sandfly_keyboard_pending_correction, corrected))
+        announce(
+          context.getString(R.string.sandfly_keyboard_pending_correction, corrected),
+          announceImmediately,
+        )
         return
       }
     }
     if (suggestionsOn()) {
-      suggester.suggestions(word.text, max = 1).firstOrNull()?.let(announce)
+      suggester.suggestions(word.text, max = 1).firstOrNull()?.let {
+        announce(it, announceImmediately)
+      }
     }
   }
 
@@ -570,6 +600,10 @@ internal class WordInput(
 
   private companion object {
     const val TAG = "SandFlyKeyboard"
+
+    /** The setting value, and [pauseMs], of saying the suggestion right after the echo. */
+    const val SPEAK_IMMEDIATELY = "immediately"
+    const val IMMEDIATELY = -1L
 
     /** How long after a typing key its selection update is waited for. */
     const val TYPING_UPDATE_MS = 1_000L

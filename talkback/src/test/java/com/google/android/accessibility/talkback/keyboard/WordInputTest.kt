@@ -80,7 +80,7 @@ class WordInputTest {
     }
     field = Field(context)
     input = WordInput(context, prefs) { field }
-    input.announce = { said += it }
+    input.announce = { text, immediately -> said += if (immediately) "now: $text" else text }
     start(InputType.TYPE_CLASS_TEXT)
     waitForList()
   }
@@ -266,6 +266,27 @@ class WordInputTest {
     assertTrue(said.toString(), said.isEmpty())
     type(" ")
     ShadowLooper.idleMainLooper(2_000, TimeUnit.MILLISECONDS)
+    assertTrue(said.toString(), said.isEmpty())
+  }
+
+  @Test
+  fun immediatelyAfterEachKey() {
+    prefs.edit {
+      putString(
+        context.getString(R.string.pref_sandfly_keyboard_suggestion_pause_key),
+        "immediately",
+      )
+    }
+    type("rec")
+    ShadowLooper.idleMainLooper()
+    assertTrue(said.toString(), said.isNotEmpty() && said.all { it.startsWith("now: ") })
+    said.clear()
+    type("ieve")
+    ShadowLooper.idleMainLooper()
+    assertEquals("now: receive, correction", said.last())
+    said.clear()
+    type(" ")
+    ShadowLooper.idleMainLooper()
     assertTrue(said.toString(), said.isEmpty())
   }
 

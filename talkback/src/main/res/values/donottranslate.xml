@@ -246,19 +246,28 @@
     <string name="pref_sandfly_keyboard_word_language_default" translatable="false">system</string>
     <string name="pref_sandfly_keyboard_suggestion_pause_key" translatable="false">pref_sandfly_keyboard_suggestion_pause</string>
     <string name="pref_sandfly_keyboard_suggestion_pause_default" translatable="false">1000</string>
+    <!-- "immediately" must match WordInput.SPEAK_IMMEDIATELY; the others are milliseconds. -->
     <string-array name="pref_sandfly_keyboard_suggestion_pause_values" translatable="false">
         <item>0</item>
+        <item>immediately</item>
+        <item>250</item>
         <item>500</item>
+        <item>750</item>
         <item>1000</item>
         <item>1500</item>
         <item>2000</item>
+        <item>3000</item>
     </string-array>
     <string-array name="pref_sandfly_keyboard_suggestion_pause_entries" translatable="false">
         <item>@string/value_sandfly_keyboard_suggestion_pause_off</item>
+        <item>@string/value_sandfly_keyboard_suggestion_pause_immediately</item>
+        <item>@string/value_touch_explore_time_out_250ms</item>
         <item>@string/value_handwriting_wait_500</item>
+        <item>@string/value_multi_tap_timeout_750ms</item>
         <item>@string/value_handwriting_wait_1000</item>
         <item>@string/value_two_stroke_swipe_time_1500</item>
         <item>@string/value_typing_long_press_2000ms</item>
+        <item>@string/value_hold_to_cancel_3000</item>
     </string-array>
     <string name="pref_sandfly_keyboard_delete_learned_words_key" translatable="false">pref_sandfly_keyboard_delete_learned_words</string>
     <!-- Must match WordLanguage's codes; "system" is the system language. -->
