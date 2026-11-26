@@ -122,20 +122,32 @@ object ScreenElements {
   /** Where the focused element was, while accessibility focus is on one. */
   private var focusedBounds: Rect? = null
 
-  private var pendingPackage: String? = null
-  private var pendingChange: Change? = null
+  /** The changes waiting for [notify], by package, in the order the packages reported them. */
+  private val pending = LinkedHashMap<String, Change>()
   private var pendingSince = 0L
+  /** Whether a tap on an element asked for the waiting check. */
+  private var pendingTap = false
   private val notify = Runnable {
-    val pkg = pendingPackage
-    val change = pendingChange
-    pendingPackage = null
-    pendingChange = null
+    // A window of another package that the app in front keeps, such as the keyboard or System UI,
+    // doesn't take the place of the change of the app in front.
+    val front = frontAppPackage()
+    val pkg = if (front != null && pending.containsKey(front)) front else pending.keys.lastOrNull()
+    val change = pkg?.let { pending[it] }
+    if (pendingTap || pending.size > 1) {
+      LogUtils.i(TAG, "Screen change after %s: %s of %s, of %s", if (pendingTap) "a tap" else "events", change, pkg, pending.keys)
+    }
+    pending.clear()
+    pendingTap = false
     if (pkg != null && change != null) listener?.onScreenChanged(pkg, change)
   }
 
   @JvmStatic
   fun attach(service: AccessibilityService, pipeline: () -> Pipeline.FeedbackReturner?) {
-    windows = ScreenElementWindows(service, pipeline) { scheduleChange(hostPackage, Change.CONTENT) }
+    windows =
+      ScreenElementWindows(service, pipeline) {
+        pendingTap = true
+        scheduleChange(hostPackage, Change.CONTENT)
+      }
   }
 
   @JvmStatic
@@ -144,6 +156,8 @@ object ScreenElements {
     windows = null
     listener = null
     handler.removeCallbacksAndMessages(null)
+    pending.clear()
+    pendingTap = false
   }
 
   @JvmStatic
@@ -514,13 +528,22 @@ object ScreenElements {
     }
   }
 
+  /** The package of the app window in front, or null. */
+  private fun frontAppPackage(): String? {
+    val service = windows?.service ?: return null
+    val apps = service.windows.filter { it.type == AccessibilityWindowInfo.TYPE_APPLICATION }
+    val front = apps.firstOrNull { it.isActive } ?: apps.maxByOrNull { it.layer } ?: return null
+    return front.root?.packageName?.toString()
+  }
+
   private fun scheduleChange(pkg: String?, change: Change) {
     if (pkg == null || listener == null) return
     val now = SystemClock.uptimeMillis()
-    if (pendingChange == null) pendingSince = now
-    // A window change outweighs a content change that is still waiting.
-    if (pendingChange != Change.WINDOW || pendingPackage != pkg) pendingChange = change
-    pendingPackage = pkg
+    if (pending.isEmpty()) pendingSince = now
+    // A window change outweighs a content change that is still waiting. The package goes last, as
+    // the latest to report a change.
+    val waiting = pending.remove(pkg)
+    pending[pkg] = if (waiting == Change.WINDOW) Change.WINDOW else change
     handler.removeCallbacks(notify)
     // An app that never stops sending events still gets its screen checked.
     val delay = minOf(SETTLE_MS, pendingSince + MAX_WAIT_MS - now).coerceAtLeast(0)
@@ -540,7 +563,7 @@ object ScreenElements {
  * the screen at its centre, with the windows made untouchable for the tap so that it reaches the
  * app.
  *
- * @param onTapped called once the app has had time to respond to a tap.
+ * @param onTapped called once the app has had time to respond to a tap, and again a moment later.
  */
 class ScreenElementWindows(
   val service: AccessibilityService,
@@ -679,6 +702,9 @@ class ScreenElementWindows(
             REFOCUS_DELAY_MS,
           )
           onTapped()
+          // A screen that was still loading, from an app that sends no event once it has, is
+          // checked again.
+          handler.postDelayed({ if (shown.any { it.first === view }) onTapped() }, RECHECK_MS)
         }
       },
       SETTLE_MS,
@@ -720,6 +746,7 @@ class ScreenElementWindows(
 
     private const val PASS_THROUGH_WAIT_MS = 350L
     private const val SETTLE_MS = 600L
+    private const val RECHECK_MS = 2500L
     private const val REFOCUS_DELAY_MS = 150L
   }
 }

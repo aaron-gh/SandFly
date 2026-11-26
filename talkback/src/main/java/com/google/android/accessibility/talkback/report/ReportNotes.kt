@@ -112,5 +112,10 @@ class ReportNotes(@get:VisibleForTesting internal val maxEntries: Int) {
         .append('"')
       return note.toString()
     }
+    /** What played and recorded, each time that changed; see [AudioNotes]. */
+    @JvmField val audio = ReportNotes(MAX_AUDIO_ENTRIES)
+
+    // Players start and stop with each utterance, so the audio notes need more lines.
+    private const val MAX_AUDIO_ENTRIES = 100
   }
 }
