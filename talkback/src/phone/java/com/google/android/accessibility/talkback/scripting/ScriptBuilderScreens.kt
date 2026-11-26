@@ -28,6 +28,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.macros.MacroFragment
 import com.google.android.accessibility.talkback.macros.Macros
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
+import com.google.android.accessibility.talkback.preference.base.GesturePreferenceFragmentCompat
 import com.google.android.accessibility.talkback.scripting.ScriptBuilder.objects
 import java.io.IOException
 import org.json.JSONArray
@@ -111,6 +112,22 @@ abstract class ScriptBuilderBaseFragment : NotificationCodeFragment(R.string.scr
 /** The page of a built script: its name, apps, rules and reading controls. */
 class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
   override fun getTitle(): CharSequence = draft()?.optString("name") ?: getText(R.string.script_builder_title)
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    // The command list for the default of a command setting gives the command chosen.
+    parentFragmentManager.setFragmentResultListener(defaultCommandResultKey(), this) { _, result ->
+      val index = result.getString(GesturePreferenceFragmentCompat.RESULT_TAG)?.toIntOrNull()
+      val command = result.getString(GesturePreferenceFragmentCompat.RESULT_COMMAND)
+      if (index != null && command != null) {
+        edit { draft ->
+          draft.optJSONArray("settings")?.optJSONObject(index)
+            ?.takeIf { it.optString("type") == "command" }
+            ?.putOrRemove("default", command.ifEmpty { null })
+        }
+      }
+    }
+  }
 
   override fun build(screen: PreferenceGroup) {
     val draft = draft() ?: return
@@ -502,6 +519,7 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
           "list" -> R.string.script_builder_setting_list
           "text" -> R.string.script_builder_setting_text
           "number" -> R.string.script_builder_setting_number
+          "command" -> R.string.script_builder_setting_command
           else -> R.string.script_builder_setting_button
         }
       )
@@ -510,7 +528,7 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
   }
 
   private fun addSetting() {
-    val types = listOf("switch", "list", "text", "number", "button")
+    val types = listOf("switch", "list", "text", "number", "button", "command")
     val names =
       listOf(
         R.string.script_builder_setting_switch,
@@ -518,6 +536,7 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
         R.string.script_builder_setting_text,
         R.string.script_builder_setting_number,
         R.string.script_builder_setting_button,
+        R.string.script_builder_setting_command,
       ).map { getString(it) }
     choose(getString(R.string.script_builder_add_setting), names) { which ->
       askText(names[which], hint = getString(R.string.script_builder_title_field), inputType = InputType.TYPE_CLASS_TEXT) { title, _, _ ->
@@ -547,7 +566,7 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
         rename,
         summary,
         default.takeIf { type != "button" },
-        options.takeIf { type == "list" },
+        options.takeIf { type == "list" || type == "command" },
         remove,
       )
     fun change(block: (JSONObject) -> Unit) = edit { block(it.getJSONArray("settings").getJSONObject(index)) }
@@ -570,6 +589,7 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
               val values = optionValues(setting)
               choose(default, values, values.indexOf(setting.optString("default"))) { chosen -> change { it.put("default", values[chosen]) } }
             }
+            "command" -> chooseDefaultCommand(index, setting)
             "number" ->
               askText(default, setting.opt("default")?.toString().orEmpty(), inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_SIGNED or InputType.TYPE_NUMBER_FLAG_DECIMAL) { text, _, _ ->
                 change { it.putOrRemove("default", text.toDoubleOrNull()?.let { n -> if (n % 1.0 == 0.0) n.toLong() else n }) }
@@ -583,23 +603,61 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
     }
   }
 
+  /**
+   * The key of the fragment result that gets the default chosen for a command setting of this
+   * script, so that the builder of another script, opened over this one by Duplicate script, can't
+   * take it.
+   */
+  private fun defaultCommandResultKey(): String = "$DEFAULT_COMMAND_RESULT:$scriptId"
+
+  /**
+   * Opens the list of commands used for gestures, with the setting's own options first, for the
+   * default of the command setting at [index].
+   */
+  private fun chooseDefaultCommand(index: Int, setting: JSONObject) {
+    val options = optionValues(setting).toTypedArray()
+    onPreferenceTreeClick(
+      Preference(requireContext()).apply {
+        fragment = GesturePreferenceFragmentCompat::class.java.name
+        extras.putAll(
+          GesturePreferenceFragmentCompat.commandSettingArguments(
+            getString(R.string.script_builder_setting_default),
+            setting.optString("default"),
+            defaultCommandResultKey(),
+            index.toString(),
+            options,
+            options,
+          )
+        )
+      }
+    )
+  }
+
   private fun optionValues(setting: JSONObject): List<String> =
     setting.optJSONArray("options")?.let { list -> (0 until list.length()).map { list.optString(it) } }.orEmpty()
 
-  /** Asks for the options of the list setting at [index], one a line. */
+  /**
+   * Asks for the options of the list or command setting at [index], one a line. A list needs one;
+   * a command setting may have none.
+   */
   private fun editOptions(index: Int) {
     val setting = draft()?.optJSONArray("settings")?.optJSONObject(index) ?: return
+    val command = setting.optString("type") == "command"
+    val old = optionValues(setting)
     askText(
       getString(R.string.script_builder_setting_options),
-      optionValues(setting).joinToString("\n"),
+      old.joinToString("\n"),
       message = getString(R.string.script_builder_setting_options_help),
     ) { text, _, _ ->
       val values = text.lines().map { it.trim() }.filter { it.isNotEmpty() }.distinct()
-      if (values.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
+      if (values.isEmpty() && !command) return@askText getString(R.string.script_builder_name_empty)
       edit { draft ->
         val edited = draft.getJSONArray("settings").getJSONObject(index)
-        edited.put("options", JSONArray(values))
-        if (edited.optString("default") !in values) edited.remove("default")
+        if (values.isEmpty()) edited.remove("options") else edited.put("options", JSONArray(values))
+        val default = edited.optString("default")
+        // A command setting's default may be a command, which stays, rather than an option.
+        val removed = if (command) default in old else true
+        if (default !in values && removed) edited.remove("default")
       }
       null
     }
@@ -656,6 +714,8 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
   }
 
   companion object {
+    private const val DEFAULT_COMMAND_RESULT = "script_builder_default_command"
+
     fun appText(context: Context, app: Any): String {
       val record = app as? JSONObject
       val packageName = record?.optString("package") ?: app.toString()

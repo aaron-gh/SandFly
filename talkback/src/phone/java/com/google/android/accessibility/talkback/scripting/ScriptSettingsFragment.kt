@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.scripting
 
+import android.os.Bundle
 import android.text.InputType
 import androidx.appcompat.app.AlertDialog
 import androidx.preference.EditTextPreference
@@ -23,11 +24,30 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceGroup
 import androidx.preference.PreferenceScreen
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.commands.Commands
+import com.google.android.accessibility.talkback.preference.base.GesturePreferenceFragmentCompat
 import org.json.JSONObject
 
 class ScriptSettingsFragment : ScriptScreenFragment() {
 
   public override fun getTitle(): CharSequence = getText(R.string.script_settings_category)
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    // The command list of a command setting gives the command chosen when it closes.
+    parentFragmentManager.setFragmentResultListener(commandResultKey(), this) { _, result ->
+      val key = result.getString(GesturePreferenceFragmentCompat.RESULT_TAG)
+      val command = result.getString(GesturePreferenceFragmentCompat.RESULT_COMMAND)
+      val declared =
+        store.find(scriptId)?.manifest?.settings.orEmpty().any {
+          it.key == key && it.type == ScriptSetting.Type.COMMAND
+        }
+      if (key != null && command != null && declared) {
+        store.setSetting(scriptId, key, jsonOf(command))
+        if (isAdded) rebuild()
+      }
+    }
+  }
 
   override fun state(): Any? =
     store.find(scriptId)?.let { script ->
@@ -63,9 +83,52 @@ class ScriptSettingsFragment : ScriptScreenFragment() {
           listSetting(title, store.settingOptions(script, setting), current.toString(), save)
         ScriptSetting.Type.TEXT,
         ScriptSetting.Type.NUMBER -> textSetting(setting, title, current, save)
+        ScriptSetting.Type.COMMAND ->
+          commandSetting(
+            setting.key,
+            title,
+            store.settingOptions(script, setting),
+            if (current == JSONObject.NULL) "" else current.toString(),
+          )
       }
     preference.key = "$KEY_PREFIX${setting.key}"
   }
+
+  /**
+   * A row that shows the command of a command setting and opens the list of commands used for
+   * gestures, with the script's own [options] first.
+   */
+  private fun PreferenceGroup.commandSetting(
+    key: String,
+    title: String,
+    options: List<Pair<String, String>>,
+    current: String,
+  ): Preference =
+    item(Preference(context), title, commandLabel(options, current)) {
+      fragment = GesturePreferenceFragmentCompat::class.java.name
+      extras.putAll(
+        GesturePreferenceFragmentCompat.commandSettingArguments(
+          title,
+          current,
+          commandResultKey(),
+          key,
+          options.map { it.second }.toTypedArray(),
+          options.map { it.first }.toTypedArray(),
+        )
+      )
+    }
+
+  /**
+   * The key of the fragment result that gets the command chosen for a setting of this script, so
+   * that the settings of another script, opened over these, can't take it.
+   */
+  private fun commandResultKey(): String = "$COMMAND_RESULT:$scriptId"
+
+  /** The name of [value] in a command setting: an option's label, Unassigned, or a command's. */
+  private fun commandLabel(options: List<Pair<String, String>>, value: String): String =
+    options.firstOrNull { it.first == value }?.second
+      ?: if (value.isEmpty()) getString(R.string.shortcut_unassigned)
+      else Commands.label(requireContext(), value) ?: value
 
   private fun PreferenceGroup.textSetting(
     setting: ScriptSetting,
@@ -125,6 +188,7 @@ class ScriptSettingsFragment : ScriptScreenFragment() {
 
   private companion object {
     const val KEY_PREFIX = "setting_"
+    const val COMMAND_RESULT = "script_command_setting"
     const val NUMBER_INPUT =
       InputType.TYPE_CLASS_NUMBER or
         InputType.TYPE_NUMBER_FLAG_DECIMAL or

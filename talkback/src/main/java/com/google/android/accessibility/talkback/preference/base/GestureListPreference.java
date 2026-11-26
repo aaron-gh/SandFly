@@ -45,6 +45,7 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.ImmutableList;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.List;
 
 /**
  * A {@link DialogPreference} which contains a list for all TalkBack supported actions. It works
@@ -298,6 +299,32 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
             context.getResources().getString(R.string.shortcut_value_unassigned),
             TYPE_ACTION_ITEM));
     for (Commands.Category category : Commands.categories(context)) {
+      builder.add(new ActionItem(context.getString(category.getTitleRes()), TYPE_TITLE));
+      for (Commands.Command command : category.getCommands()) {
+        builder.add(new ActionItem(command.getLabel(), command.getValue(), TYPE_ACTION_ITEM));
+      }
+    }
+    return builder.build();
+  }
+
+  /**
+   * Lists the choices of a script's command setting: the script's own choices, given by {@code
+   * choiceLabels} and {@code choiceValues}, then Unassigned, with an empty value, then the commands
+   * of {@code categories}.
+   */
+  public static ImmutableList<ActionItem> buildCommandSettingItems(
+      Context context,
+      String[] choiceLabels,
+      String[] choiceValues,
+      List<Commands.Category> categories) {
+    ImmutableList.Builder<ActionItem> builder = ImmutableList.builder();
+    for (int i = 0; i < Math.min(choiceLabels.length, choiceValues.length); i++) {
+      builder.add(new ActionItem(choiceLabels[i], choiceValues[i], TYPE_ACTION_ITEM));
+    }
+    builder.add(
+        new ActionItem(
+            context.getString(R.string.shortcut_unassigned), /* value= */ "", TYPE_ACTION_ITEM));
+    for (Commands.Category category : categories) {
       builder.add(new ActionItem(context.getString(category.getTitleRes()), TYPE_TITLE));
       for (Commands.Command command : category.getCommands()) {
         builder.add(new ActionItem(command.getLabel(), command.getValue(), TYPE_ACTION_ITEM));

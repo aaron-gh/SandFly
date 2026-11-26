@@ -88,7 +88,7 @@ Go to **Scripts** and select the script. Its page has:
 - **Change with SandFly Pro**: shown for a script made in the script builder, with SandFly Pro. See [](#scripts-builder-pro).
 - **Compatibility**: shown when the script was made for a different version of SandFly.
 - **Open homepage**: opens the web page of the script, after you confirm the address.
-- **Settings**: the settings of the script, if it has any.
+- **Settings**: the settings of the script, if it has any. A command setting opens the list of commands used for gestures, with its search, and with the script's own choices first.
 - **Permissions**: a switch for each permission that the script needs. See [](#scripts-permissions).
 - **Commands**: the commands of the script and their gestures and keys. See [](#scripts-commands).
 - **Run earlier** and **Run later**: the order of scripts that change the same speech. App scripts run first.
@@ -242,7 +242,7 @@ Timed triggers run only while the script runs.
 
 #### Settings, About and Code {#scripts-builder-settings}
 
-- **Settings** > **Add setting**: adds a **Switch**, **List**, **Text**, **Number** or **Button** to the page of the script. Steps use the value of a setting, and a button runs a trigger.
+- **Settings** > **Add setting**: adds a **Switch**, **List**, **Text**, **Number**, **Button** or **Command** to the page of the script. Steps use the value of a setting, and a button runs a trigger. A command lets the user choose a SandFly command as for a gesture, with the setting's own options first; **Lua code** can run it with `sf.commands.run`.
 - **About**: **Description**, **Version**, **Homepage**, **Load only to run a command** and **Keep running with the screen off**.
 - **Code**: **Lua code** added to the end of the script, which SandFly checks for errors before it saves it, and **Extra permissions** that the code needs.
 

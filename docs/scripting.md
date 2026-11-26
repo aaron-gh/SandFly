@@ -1,6 +1,6 @@
 # Writing SandFly scripts
 
-This document is the reference for the SandFly script API, version 6. A script is a Lua program that changes how SandFly works in one app or in every app, or adds commands to SandFly. To install and manage scripts, or to make one without code in the script builder, see the [Scripts and custom labels](user-guide/en/20-scripts.md) chapter of the SandFly User Guide.
+This document is the reference for the SandFly script API, version 7. A script is a Lua program that changes how SandFly works in one app or in every app, or adds commands to SandFly. To install and manage scripts, or to make one without code in the script builder, see the [Scripts and custom labels](user-guide/en/20-scripts.md) chapter of the SandFly User Guide.
 
 ## Overview
 
@@ -27,7 +27,7 @@ Scripts run on phones and tablets. Watches and TVs don't run scripts.
 
 ### API versions
 
-This document describes script API version 6. `sf.apiVersion` gives the version of the SandFly a script runs in. Items added after version 1 are marked with the version that added them, such as *Version 2*. Set `minApiVersion` in the manifest to the highest version marked on anything the script uses. Versions 2 to 6 only add to version 1; nothing a version 1 script uses has changed.
+This document describes script API version 7. `sf.apiVersion` gives the version of the SandFly a script runs in. Items added after version 1 are marked with the version that added them, such as *Version 2*. Set `minApiVersion` in the manifest to the highest version marked on anything the script uses. Versions 2 to 7 only add to version 1; nothing a version 1 script uses has changed.
 
 ## Write your first script
 
@@ -40,7 +40,7 @@ local manifest = {
   author = 'Your name',
   version = '1',
   minApiVersion = 6,
-  testedApiVersion = 6,
+  testedApiVersion = 7,
   apps = { 'com.android.settings' },
   permissions = { 'speech' },
   commands = {
@@ -812,17 +812,30 @@ settings = {
   { key = 'name', type = 'text', title = 'Your name', summary = 'Used in greetings' },
   { key = 'count', type = 'number', title = 'How many' },
   { key = 'reset', type = 'button', title = 'Reset counts' },
+  { key = 'onUnlock', type = 'command', title = 'When unlocked', default = 'TOGGLE_TOUCH_LOCK',
+    options = { { value = 'vibrate', label = 'Vibrate the time' } } },
 },
 ```
 
 | Field | Meaning |
 |---|---|
 | `key` | Required. Letters, digits, `.`, `-` and `_`, up to 64 characters, unique in the script. |
-| `type` | `'switch'` (the default), `'list'`, `'text'`, `'number'` or `'button'`. |
+| `type` | `'switch'` (the default), `'list'`, `'text'`, `'number'`, `'button'` or `'command'` (*Version 7*). |
 | `title` | Required. |
-| `summary` | Text under the title. A list shows its chosen option instead. |
-| `default` | The value before the user changes it. If left out: `false` for a switch, the first option for a list, `''` for text, 0 for a number. |
-| `options` | For a list, required: values, or `{ value, label }` records. |
+| `summary` | Text under the title. A list shows its chosen option instead, and a command setting its chosen command. |
+| `default` | The value before the user changes it. If left out: `false` for a switch, the first option for a list, `''` for text, 0 for a number, `''` (no command) for a command setting. |
+| `options` | For a list, required: values, or `{ value, label }` records. For a command setting, the script's own choices, in the same form. |
+
+*Version 7.* A command setting lets the user choose a SandFly command in the list used to assign a command to a gesture or a volume key press, with its categories and its search. The list has the setting's own `options` first, then **Unassigned**, then the commands of [`sf.commands.list()`](#run-sandfly-commands). The value is the command's id, which [`sf.commands.run`](#run-sandfly-commands) takes, an option's value, or `''` for **Unassigned**, so an option's value can't be empty. `sf.commands.run` needs the `input` permission, and the permissions some commands need, such as `system`. A script handles its own options itself, as in this example:
+
+```lua
+local command = sf.settings.get('onUnlock')
+if command == 'vibrate' then
+  vibrateTime()
+elseif command ~= '' then
+  sf.commands.run(command)
+end
+```
 
 A button has no value. Pressing it calls [`sf.onButton`](#hooks) with its key; while the script is off, SandFly shows "Turn the script on first".
 
