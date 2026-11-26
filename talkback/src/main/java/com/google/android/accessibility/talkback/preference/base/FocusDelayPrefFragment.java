@@ -39,7 +39,12 @@ public class FocusDelayPrefFragment extends TalkbackBaseFragment {
     DELAY_150_MS(R.string.value_focus_delay_150ms_default, 150),
     DELAY_200_MS(R.string.value_touch_explore_time_out_200ms, 200),
     DELAY_250_MS(R.string.value_touch_explore_time_out_250ms, 250),
-    DELAY_300_MS(R.string.value_focus_delay_300ms, 300);
+    DELAY_300_MS(R.string.value_focus_delay_300ms, 300),
+    DELAY_500_MS(R.string.value_focus_delay_500ms, 500),
+    DELAY_750_MS(R.string.value_focus_delay_750ms, 750),
+    DELAY_1000_MS(R.string.value_focus_delay_1000ms, 1000),
+    DELAY_1500_MS(R.string.value_focus_delay_1500ms, 1500),
+    DELAY_2000_MS(R.string.value_focus_delay_2000ms, 2000);
 
     @StringRes private final int titleId;
     private final int delay;

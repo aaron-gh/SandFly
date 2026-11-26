@@ -8,7 +8,7 @@ Secara default, menyentuh suatu item akan memfokuskannya dan SandFly membacakann
 
 #### Penundaan fokus {#touch-focus-delay}
 
-**Sentuhan** > **Penundaan fokus** mengatur berapa lama jari diam di atas suatu item sebelum SandFly memfokuskan dan membacakannya, dari 0,15 hingga 0,3 detik. Default-nya adalah 0,15 detik. Penundaan yang lebih singkat membuat SandFly berbicara lebih cepat setelah Anda menyentuh layar. Memerlukan Android 13 atau yang lebih baru.
+**Sentuhan** > **Penundaan fokus** mengatur berapa lama jari diam di atas suatu item sebelum SandFly memfokuskan dan membacakannya, dari 0,15 hingga 2 detik. Default-nya adalah 0,15 detik. Penundaan yang lebih singkat membuat SandFly berbicara lebih cepat setelah Anda menyentuh layar. Memerlukan Android 13 atau yang lebih baru.
 
 **Penundaan fokus** juga merupakan kontrol pembacaan, yang nonaktif secara default. Lihat [](#commands).
 

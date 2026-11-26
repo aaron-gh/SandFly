@@ -8,7 +8,7 @@ By default, touching an item focuses it and SandFly reads it, and a double-tap a
 
 #### Focus delay {#touch-focus-delay}
 
-**Touch** > **Focus delay** sets how long the finger rests on an item before SandFly focuses it and reads it, from 0.15 to 0.3 seconds. The default is 0.15 seconds. A shorter delay makes SandFly speak sooner after you touch the screen. Needs Android 13 or later.
+**Touch** > **Focus delay** sets how long the finger rests on an item before SandFly focuses it and reads it, from 0.15 to 2 seconds. The default is 0.15 seconds. A shorter delay makes SandFly speak sooner after you touch the screen. Needs Android 13 or later.
 
 **Focus delay** is also a reading control, off by default; see [](#commands).
 

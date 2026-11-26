@@ -17,6 +17,16 @@
         android:title="@string/value_touch_explore_time_out_250ms" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
         android:title="@string/value_focus_delay_300ms" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
+        android:title="@string/value_focus_delay_500ms" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
+        android:title="@string/value_focus_delay_750ms" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
+        android:title="@string/value_focus_delay_1000ms" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
+        android:title="@string/value_focus_delay_1500ms" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
+        android:title="@string/value_focus_delay_2000ms" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
 
