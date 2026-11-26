@@ -1499,6 +1499,11 @@ public class TalkBackService extends AccessibilityServiceCompat
           AppSpeechFilter.onKeyboardShown(keyboard);
         }
       }
+      // An assistant records what the user says as soon as its window is shown, along with any
+      // speech that is playing.
+      if (AppSpeechFilter.onWindowsChanged(this)) {
+        interruptAllFeedback(/* stopTtsSpeechCompletely= */ false);
+      }
     }
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
         && HomeScreenPages.isHomePackage(this, event.getPackageName())) {

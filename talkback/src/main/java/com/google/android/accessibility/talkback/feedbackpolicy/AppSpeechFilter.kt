@@ -23,6 +23,7 @@ import android.content.SharedPreferences
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.AudioPlaybackConfiguration
+import android.view.accessibility.AccessibilityWindowInfo
 import androidx.annotation.MainThread
 import androidx.annotation.VisibleForTesting
 import androidx.core.content.edit
@@ -30,6 +31,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils
+import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils
 import com.google.android.accessibility.utils.KeyboardUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.ValueSteps
@@ -42,7 +44,9 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  *   announcements, live regions and window titles are not spoken. Focus that the user moved by
  *   touch, gestures, keys, a braille display or commands is.
  * - Speak only focus moved by the user while an assistant or call plays audio: the same in all
- *   apps, while another app plays audio with the assistant or voice communication usage.
+ *   apps, while another app plays audio with the assistant or voice communication usage, or while
+ *   an assistant's window is shown, such as Gemini over an app or the lock screen while it
+ *   records. The screen-on and unlock readouts are left out then too.
  * - Keyboards with their own speech: while one of them is shown, its keys, typed and deleted text
  *   and cursor movement are not spoken.
  *
@@ -85,6 +89,11 @@ object AppSpeechFilter {
     val mode: String = MODE_OFF,
     val apps: Set<String> = emptySet(),
     val assistantPlaying: Boolean = false,
+    /**
+     * Whether an assistant's window is shown, a voice interaction window such as Gemini's over an
+     * app or the lock screen. The assistant plays no audio while it records.
+     */
+    val assistantShown: Boolean = false,
     /** The package of the keyboard with its own speech that is shown, or null. */
     val keyboardPackage: String? = null,
     /** SandFly's own package, whose screens and overlays are always spoken. */
@@ -96,6 +105,7 @@ object AppSpeechFilter {
         mode == MODE_ALL_APPS ||
           (mode == MODE_CHOSEN_APPS && apps.isNotEmpty()) ||
           assistantPlaying ||
+          assistantShown ||
           keyboardPackage != null
   }
 
@@ -104,6 +114,12 @@ object AppSpeechFilter {
   // Normalized input method IDs of the keyboards with their own speech.
   @Volatile private var keyboards: Set<String> = emptySet()
   private var assistantAudio: AssistantAudio? = null
+  // Whether assistant windows are watched, as Speak only focus moved by the user while an
+  // assistant or call plays audio is on.
+  @Volatile private var watchesAssistant = false
+  // Voice interaction windows on screen by ID, and whether each counts as an assistant's: false
+  // for System UI's and SandFly's own. Main thread only.
+  private val assistantWindows = HashMap<Int, Boolean>()
 
   /** Whether any speech can be left unsaid now; false while the settings are at their defaults. */
   @JvmStatic fun isActive(): Boolean = active
@@ -142,7 +158,7 @@ object AppSpeechFilter {
     }
     if (source != Source.APP_FOCUS && source != Source.APP_SPEECH) return false
     if (pkg != null && pkg == state.ownPackage) return false
-    if (state.assistantPlaying) return true
+    if (state.assistantPlaying || state.assistantShown) return true
     return when (state.mode) {
       MODE_ALL_APPS -> true
       MODE_CHOSEN_APPS -> pkg != null && pkg in state.apps
@@ -160,6 +176,81 @@ object AppSpeechFilter {
     sourceAction == FocusActionInfo.TOUCH_EXPLORATION ||
       sourceAction == FocusActionInfo.LOGICAL_NAVIGATION ||
       sourceAction == FocusActionInfo.KEYBOARD_SHORTCUT_REFOCUS
+
+  /**
+   * Whether the screen-on and unlock readouts are left out now: an assistant's window is shown or
+   * another app plays assistant or call audio, while Speak only focus moved by the user while an
+   * assistant or call plays audio is on.
+   */
+  @JvmStatic
+  fun leavesOutReadouts(): Boolean {
+    val now = state
+    return now.assistantPlaying || now.assistantShown
+  }
+
+  /**
+   * Whether a window of [type], an [AccessibilityWindowInfo] type, may be an assistant's. Android
+   * gives voice interaction windows, such as the one Gemini shows over apps and the lock screen, no
+   * accessibility window type. App overlays are system windows.
+   */
+  @VisibleForTesting
+  @JvmStatic
+  fun isVoiceInteractionType(type: Int): Boolean =
+    type == AccessibilityWindowInfoUtils.WINDOW_TYPE_NONE
+
+  /**
+   * Whether a voice interaction window with [packageName] at its root counts as an assistant's: not
+   * System UI's or SandFly's own. A window without content yet, such as a voice interaction
+   * starting window, counts.
+   */
+  @VisibleForTesting
+  @JvmStatic
+  fun isAssistantWindowPackage(packageName: CharSequence?, ownPackage: String?): Boolean {
+    val pkg = packageName?.toString() ?: return true
+    return pkg != "com.android.systemui" && pkg != ownPackage
+  }
+
+  /**
+   * Notes whether an assistant's window is shown, after the windows changed. Returns true when one
+   * has just been shown, as speech playing then would be recorded with what the user says.
+   */
+  @JvmStatic
+  @MainThread
+  fun onWindowsChanged(service: AccessibilityService): Boolean {
+    if (!watchesAssistant) return false
+    var shownId = -1
+    val seen = HashSet<Int>()
+    for (window in AccessibilityServiceCompatUtils.getWindows(service)) {
+      if (!isVoiceInteractionType(window.type)) continue
+      val id = window.id
+      seen += id
+      val counts =
+        assistantWindows[id]
+          ?: run {
+            val pkg = window.root?.packageName
+            val result = isAssistantWindowPackage(pkg, service.packageName)
+            LogUtils.i(TAG, "Voice interaction window %d of %s: assistant %b", id, pkg, result)
+            // A window without content yet is asked again at the next change.
+            if (pkg != null) assistantWindows[id] = result
+            result
+          }
+      if (counts && shownId == -1) shownId = id
+    }
+    assistantWindows.keys.retainAll(seen)
+    val shown = shownId != -1
+    if (shown == state.assistantShown) return false
+    if (shown) {
+      LogUtils.i(TAG, "Assistant window %d shown", shownId)
+    } else {
+      LogUtils.i(TAG, "Assistant window closed")
+    }
+    update { it.copy(assistantShown = shown) }
+    return shown
+  }
+
+  /** The windows on screen by ID and type, for the log. */
+  private fun describeWindows(service: AccessibilityService): String =
+    AccessibilityServiceCompatUtils.getWindows(service).joinToString { "${it.id}:${it.type}" }
 
   /** The choice after [mode] in [MODES], or before it, as [ValueSteps] goes. */
   @JvmStatic
@@ -282,23 +373,36 @@ object AppSpeechFilter {
           service.getSystemService(AudioManager::class.java),
           ownUsage = { FailoverTextToSpeech.speechUsage(appContext) },
         ) { playing ->
+          if (playing && !state.assistantPlaying) {
+            // Shows which window an assistant that isn't recognized by its window uses.
+            LogUtils.i(TAG, "Assistant or call audio started, windows %s", describeWindows(service))
+          }
           update { it.copy(assistantPlaying = playing) }
         }
     } else if (!watchAudio) {
       assistantAudio?.stop()
       assistantAudio = null
     }
+    val wasWatchingAssistant = watchesAssistant
+    watchesAssistant = watchAudio
+    if (!watchAudio) {
+      assistantWindows.clear()
+    }
     update {
       it.copy(
         mode = mode,
         apps = apps,
         assistantPlaying = watchAudio && it.assistantPlaying,
+        assistantShown = watchAudio && it.assistantShown,
         keyboardPackage = keyboardPackage,
         ownPackage = service.packageName,
       )
     }
     // Started after the state is set, as it reports what plays now at once.
     assistantAudio?.start()
+    if (watchAudio && !wasWatchingAssistant) {
+      onWindowsChanged(service)
+    }
   }
 
   /** Stops watching, as SandFly stops. */
@@ -308,6 +412,8 @@ object AppSpeechFilter {
     assistantAudio?.stop()
     assistantAudio = null
     keyboards = emptySet()
+    watchesAssistant = false
+    assistantWindows.clear()
     update { State() }
   }
 
