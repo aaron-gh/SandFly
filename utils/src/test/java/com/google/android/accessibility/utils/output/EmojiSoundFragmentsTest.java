@@ -23,6 +23,7 @@ import static org.junit.Assert.assertTrue;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
+import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.R;
 import java.util.List;
 import java.util.Locale;
@@ -54,7 +55,7 @@ public class EmojiSoundFragmentsTest {
 
   private FeedbackItem split(String mode, String text) {
     EmojiSpeech.setMode(context, mode);
-    FeedbackItem item = new FeedbackItem(/* eventId= */ null);
+    FeedbackItem item = new FeedbackItem((EventId) null);
     item.addFragment(new FeedbackFragment(EmojiSpeech.process(context, text), null));
     FeedbackProcessingUtils.addFormattingCharacteristics(
         context,
@@ -146,7 +147,7 @@ public class EmojiSoundFragmentsTest {
 
   @Test
   public void soundFragmentsAreAddedAfterFragmentsMarkedAsEmoji() {
-    FeedbackItem item = new FeedbackItem(/* eventId= */ null);
+    FeedbackItem item = new FeedbackItem((EventId) null);
     Bundle emoji = new Bundle();
     emoji.putBoolean(EmojiSpeech.SPEECH_PARAM_EMOJI, true);
     item.addFragment(new FeedbackFragment("grinning face", emoji));
