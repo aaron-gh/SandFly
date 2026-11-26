@@ -481,8 +481,11 @@ class LiveRecognitionActivity : ComponentActivity() {
           .also { if (light) readExposure(it) }
           .build()
         val text = RecognitionMode.TEXT in enabled
+        val colors = if (RecognitionMode.COLORS in enabled) ColorSampler() else null
+        val colorAnnouncer = ColorAnnouncer()
         var lastFrame = -FRAME_INTERVAL_MS
         var lastLight = -LIGHT_TONE_INTERVAL_MS
+        var lastColors = -COLOR_INTERVAL_MS
         newAnalysis.setAnalyzer(worker) { frame ->
           var took = false
           try {
@@ -491,6 +494,10 @@ class LiveRecognitionActivity : ComponentActivity() {
             if (light && now - lastLight >= LIGHT_TONE_INTERVAL_MS) {
               lastLight = now
               measureLight(frame)
+            }
+            if (colors != null && now - lastColors >= COLOR_INTERVAL_MS) {
+              lastColors = now
+              measureColors(frame, colors, colorAnnouncer, token, now)
             }
             // Gemini takes a frame every few seconds at most, so most frames are only read for text.
             val ai = describer?.canRequest() == true
@@ -548,6 +555,24 @@ class LiveRecognitionActivity : ComponentActivity() {
     lightTone.setLevel(LightToneLevel.level(mean, exposure.exposureNs, exposure.iso, exposure.aperture))
   }
 
+  /**
+   * Names the colors of the centre of [frame] when they change, for Color detection. Analysis
+   * thread.
+   */
+  private fun measureColors(frame: ImageProxy, sampler: ColorSampler, announcer: ColorAnnouncer, token: Int, now: Long) {
+    if (frame.format != ImageFormat.YUV_420_888) return
+    val planes = frame.planes
+    if (planes.size < 3) return
+    val result = sampler.measure(
+      planes[0].buffer, planes[0].rowStride, planes[0].pixelStride,
+      planes[1].buffer, planes[2].buffer, planes[1].rowStride, planes[1].pixelStride,
+      frame.width, frame.height,
+    )
+    val spoken = announcer.update(result, now)
+    if (spoken == ColorAnnouncer.NOTHING) return
+    handler.post { if (generation == token) announceResult(SOURCE_COLORS, ColorNames.describe(this, spoken)) }
+  }
+
   private fun cameraFailed() { stopRecognition(); report(R.string.live_recognition_camera_error) }
 
   private fun processFrame(bitmap: Bitmap, jpeg: String?, token: Int, capturedAt: Long) {
@@ -602,8 +627,9 @@ class LiveRecognitionActivity : ComponentActivity() {
       val (source, result) = iterator.next()
       iterator.remove()
       val age = now - result.second
+      // Color detection speaks only changed colors itself, and more often than other results.
       if (age <= GeminiLiveSession.MAX_RESULT_AGE_MS &&
-          announcements.shouldSpeak(source, result.first, now)) {
+          (source == SOURCE_COLORS || announcements.shouldSpeak(source, result.first, now))) {
         LogUtils.d(TAG, "Speaking %s result, %d ms after it came", source, age)
         status.text = result.first
         speak(result.first, false)
@@ -624,6 +650,7 @@ class LiveRecognitionActivity : ComponentActivity() {
     private const val CLOUD_CONSENT_PREF = "pref_live_recognition_cloud_consent"
     private const val SOURCE_TEXT = "text"
     private const val SOURCE_AI = "ai"
+    private const val SOURCE_COLORS = "colors"
     /** The first part of the key that says the user agreed to images going to an AI service. */
     private const val SERVICE_CONSENT_PREF = "pref_live_recognition_consent_"
     /** How old an answer from the on-device model or an AI service can be when it comes. */
@@ -635,6 +662,8 @@ class LiveRecognitionActivity : ComponentActivity() {
     private const val LIGHT_SETTLE_MS = 1000L
     /** How often the Light level tone follows the camera. */
     private const val LIGHT_TONE_INTERVAL_MS = 50L
+    /** How often Color detection reads the camera. */
+    private const val COLOR_INTERVAL_MS = 200L
     private const val JPEG_QUALITY = 70
     private const val MAX_TEXT_LENGTH = 1_200
     private const val TAG = "LiveRecognition"
