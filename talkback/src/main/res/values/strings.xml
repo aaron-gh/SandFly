@@ -6598,4 +6598,10 @@
     <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> uses deprecated SandFly API names</string>
     <!-- One line of that notification for each deprecated name the app used: the deprecated name, then the name to use instead. [CHAR LIMIT=NONE] -->
     <string name="deprecated_api_replace">Replace <xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> with <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g>.</string>
+  <!-- Image and screen descriptions settings: title of the screen that lists the languages written in Cyrillic, such as Russian and Ukrainian, whose text recognition models can be downloaded and deleted there. [CHAR LIMIT=NONE] -->
+  <string name="title_pref_cyrillic_text_recognition">Cyrillic text recognition</string>
+  <!-- Spoken once after SandFly starts, when text in an image or on the screen is recognized for a language written in Cyrillic whose text recognition model isn't downloaded, so only Latin letters are read. The language's name, such as Russian, is filled in. "Image and screen descriptions" and "Cyrillic text recognition" are the titles of the settings screens where the model is downloaded. [CHAR LIMIT=NONE] -->
+  <string name="cyrillic_text_model_missing">No text recognition model for <xliff:g id="language" example="Russian">%1$s</xliff:g>. Download it in Image and screen descriptions, Cyrillic text recognition.</string>
+  <!-- Cyrillic text recognition settings: shown under a language when the server that has the text recognition models refused the download. [CHAR LIMIT=NONE] -->
+  <string name="cyrillic_text_model_error_http">The download server did not accept the request. Try again later.</string>
 </resources>

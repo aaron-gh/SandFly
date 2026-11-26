@@ -339,6 +339,7 @@ import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport;
 import com.google.android.accessibility.talkback.utils.VerbosityPreferences;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
+import com.google.android.accessibility.utils.ocr.LanguageTextRecognizer;
 import com.google.android.accessibility.utils.output.OutputMute;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
@@ -400,6 +401,7 @@ import com.google.android.accessibility.utils.output.FeedbackProcessingUtils;
 import com.google.android.accessibility.utils.output.ScrollActionRecord;
 import com.google.android.accessibility.utils.output.SelectionStateReader;
 import com.google.android.accessibility.utils.output.SpeechController;
+import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.accessibility.utils.output.SpeechController.UtteranceCompleteRunnable;
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils;
 import com.google.android.accessibility.utils.output.SpeechControllerImpl;
@@ -1349,6 +1351,32 @@ public class TalkBackService extends AccessibilityServiceCompat
             }
           }
         });
+  }
+
+  /**
+   * Says that Cyrillic text in {@code language} was read with the Latin recognizer, since its
+   * model isn't downloaded. Said once each time the screen reader starts. Called from any thread.
+   */
+  private void speakMissingTextModel(Locale language) {
+    String text =
+        getString(
+            R.string.cyrillic_text_model_missing, language.getDisplayLanguage(Locale.getDefault()));
+    new Handler(Looper.getMainLooper())
+        .post(
+            () -> {
+              if (pipeline != null) {
+                // Not cut off by the recognized text that follows.
+                pipeline
+                    .getFeedbackReturner()
+                    .returnFeedback(
+                        EVENT_ID_UNTRACKED,
+                        Feedback.speech(
+                            text,
+                            SpeakOptions.create()
+                                .setQueueMode(
+                                    SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH)));
+              }
+            });
   }
 
   /** Says why the model on the phone could not answer, such as low memory. */
@@ -2960,6 +2988,7 @@ public class TalkBackService extends AccessibilityServiceCompat
    */
   private void initializeInfrastructure() {
     ConcurrentNodeQueries.start();
+    LanguageTextRecognizer.setMissingModelListener(this::speakMissingTextModel);
     FocusActionRecord.startNodeQueries();
     ScrollEventInterpreter.resetNavigation();
     // TODO: we still need it keep true for TV until TouchExplore and Accessibility focus is
@@ -4501,6 +4530,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (imageCaptioner != null) {
       imageCaptioner.shutdown();
     }
+    LanguageTextRecognizer.setMissingModelListener(null);
 
     if (proximitySensorMonitor != null) {
       proximitySensorMonitor.shutdown();

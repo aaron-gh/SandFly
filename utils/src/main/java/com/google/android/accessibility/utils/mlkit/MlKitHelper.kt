@@ -182,12 +182,14 @@ constructor(
 
   /**
    * Recognizes the text in [bitmap], turned by [rotation] degrees, with the recognizer for
-   * [script]. The bitmap must stay as it is until the task completes.
+   * [script]. Cyrillic is read by Tesseract with [models], such as "rus+eng". The bitmap must stay
+   * as it is until the task completes.
    */
-  fun recognizeText(bitmap: Bitmap, rotation: Int, script: Script): Task<Text> {
+  fun recognizeText(bitmap: Bitmap, rotation: Int, script: Script, models: String? = null): Task<Text> {
     val data = Bundle()
     data.putInt(MlKitProtocol.KEY_ROTATION, rotation)
     data.putString(MlKitProtocol.KEY_SCRIPT, script.name)
+    if (models != null) data.putString(MlKitProtocol.KEY_TESSERACT_MODELS, models)
     // Hardware bitmaps, such as screenshots, can't always be passed to another process.
     val image =
       if (bitmap.config == Bitmap.Config.HARDWARE) {

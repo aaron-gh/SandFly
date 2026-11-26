@@ -20,6 +20,10 @@
       android:key="@string/pref_text_recognition_key"
       android:title="@string/title_pref_text_recognition" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.textrecognition.CyrillicTextRecognitionFragment"
+      android:key="pref_cyrillic_text_recognition_screen"
+      android:title="@string/title_pref_cyrillic_text_recognition" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:key="pref_live_recognition_screen"
       android:title="@string/live_recognition_title">
     <intent

@@ -72,6 +72,7 @@ import com.google.android.accessibility.talkback.imagecaption.ImageCaptionConsta
 import com.google.android.accessibility.talkback.imagecaption.ImageCaptionUtils.CaptionType;
 import com.google.android.accessibility.talkback.imagecaption.Request.ErrorCode;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.ocr.TesseractRecognizer;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -104,6 +105,9 @@ public class AutomaticDescriptionsFragment extends TalkbackBaseFragment {
   @Nullable private ListenableFuture<Boolean> hasAiCoreFuture;
   private Optional<Boolean> useAiCore = Optional.empty();
 
+  /** The link to Cyrillic text recognition, which has the Tesseract models. */
+  public static final String KEY_CYRILLIC_TEXT_RECOGNITION = "pref_cyrillic_text_recognition_screen";
+
   public AutomaticDescriptionsFragment() {
     super(R.xml.automatic_descriptions_preferences);
   }
@@ -128,6 +132,14 @@ public class AutomaticDescriptionsFragment extends TalkbackBaseFragment {
       Preference liveRecognition = findPreference("pref_live_recognition_screen");
       if (liveRecognition != null) {
         liveRecognition.setVisible(false);
+      }
+    }
+
+    // Watch builds have no Tesseract, which reads Cyrillic text.
+    if (!TesseractRecognizer.IS_AVAILABLE) {
+      Preference cyrillic = findPreference(KEY_CYRILLIC_TEXT_RECOGNITION);
+      if (cyrillic != null) {
+        cyrillic.setVisible(false);
       }
     }
 

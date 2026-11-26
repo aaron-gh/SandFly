@@ -28,7 +28,9 @@ import android.os.Messenger
 import android.os.RemoteException
 import android.util.Log
 import com.google.android.accessibility.utils.mlkit.MlKitProtocol.DEFAULT_THRESHOLD
+import com.google.android.accessibility.utils.ocr.CyrillicOcr
 import com.google.android.accessibility.utils.ocr.LanguageTextRecognizer.Script
+import com.google.android.accessibility.utils.ocr.TesseractRecognizer
 import com.google.android.gms.common.moduleinstall.ModuleInstall
 import com.google.android.gms.common.moduleinstall.ModuleInstallRequest
 import com.google.android.gms.tasks.Task
@@ -38,6 +40,7 @@ import com.google.mlkit.nl.languageid.LanguageIdentification
 import com.google.mlkit.nl.languageid.LanguageIdentificationOptions
 import com.google.mlkit.nl.languageid.LanguageIdentifier
 import com.google.mlkit.vision.common.InputImage
+import com.google.mlkit.vision.text.Text
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.TextRecognizer
 import com.google.mlkit.vision.text.TextRecognizerOptionsInterface
@@ -51,7 +54,8 @@ import java.util.concurrent.Executor
 
 /**
  * Runs the ML Kit APIs that load their code from Google Play services, language identification and
- * text recognition, in their own process, `:mlkit`. Android stops every process that has code of
+ * text recognition, in their own process, `:mlkit`. Tesseract, which reads Cyrillic text, runs here
+ * too, so that a crash in its native code stops only this process. Android stops every process that has code of
  * an app loaded when that app is updated; in SandFly's process, an update of Google Play services
  * then stopped the screen reader, and Android left it off as a crashed accessibility service. Here
  * it stops only this process, which starts again with the next request.
@@ -67,6 +71,7 @@ class MlKitHelperService : Service() {
   // Used on [thread] only.
   private val identifiers = HashMap<Float, LanguageIdentifier>()
   private val recognizers = HashMap<Script, TextRecognizer>()
+  private var tesseract: TesseractRecognizer? = null
 
   override fun onCreate() {
     super.onCreate()
@@ -94,6 +99,8 @@ class MlKitHelperService : Service() {
       identifiers.clear()
       recognizers.values.forEach { closeQuietly(it::close) }
       recognizers.clear()
+      tesseract?.close()
+      tesseract = null
     }
     thread.quitSafely()
     super.onDestroy()
@@ -115,12 +122,17 @@ class MlKitHelperService : Service() {
             .identifyPossibleLanguages(data.getString(MlKitProtocol.KEY_TEXT).orEmpty())
             .answer(replyTo, id) { MlKitProtocol.putLanguages(this, it) }
         MlKitProtocol.MSG_RECOGNIZE_TEXT -> recognize(data, replyTo, id)
-        MlKitProtocol.MSG_INSTALL_TEXT_RECOGNIZER ->
+        MlKitProtocol.MSG_INSTALL_TEXT_RECOGNIZER -> {
+          // Tesseract's models are downloaded in SandFly's settings.
+          if (script(data) == Script.CYRILLIC) {
+            throw MlKitException("No Cyrillic module", MlKitException.INVALID_ARGUMENT)
+          }
           ModuleInstall.getClient(this)
             .installModules(
               ModuleInstallRequest.newBuilder().addApi(recognizer(script(data))).build()
             )
             .answer(replyTo, id) {}
+        }
         else -> Log.w(TAG, "Unknown request ${message.what}")
       }
     } catch (e: Throwable) {
@@ -133,9 +145,17 @@ class MlKitHelperService : Service() {
     val bitmap =
       data.getParcelable<Bitmap>(MlKitProtocol.KEY_IMAGE)
         ?: throw MlKitException("No image", MlKitException.INVALID_ARGUMENT)
-    val image = InputImage.fromBitmap(bitmap, data.getInt(MlKitProtocol.KEY_ROTATION))
-    recognizer(script(data)).process(image).addOnCompleteListener(onThread) { task ->
-      bitmap.recycle()
+    val script = script(data)
+    val recognition =
+      if (script == Script.CYRILLIC) {
+        recognizeWithTesseract(bitmap, data)
+      } else {
+        val image = InputImage.fromBitmap(bitmap, data.getInt(MlKitProtocol.KEY_ROTATION))
+        recognizer(script).process(image)
+      }
+    recognition.addOnCompleteListener(onThread) { task ->
+      // Tesseract recycles its bitmaps itself, once it is done with them.
+      if (script != Script.CYRILLIC) bitmap.recycle()
       if (!task.isSuccessful) {
         fail(replyTo, id, task.exception)
         return@addOnCompleteListener
@@ -159,6 +179,22 @@ class MlKitHelperService : Service() {
         }
       send(replyTo, reply)
     }
+  }
+
+  /** Reads Cyrillic text with Tesseract, with the models SandFly asked for. Recycles [bitmap]. */
+  private fun recognizeWithTesseract(bitmap: Bitmap, data: Bundle): Task<Text> {
+    val models = data.getString(MlKitProtocol.KEY_TESSERACT_MODELS)
+    if (models == null || !CyrillicOcr.isValidLanguages(models)) {
+      bitmap.recycle()
+      throw MlKitException("No Tesseract models: $models", MlKitException.INVALID_ARGUMENT)
+    }
+    val recognizer = tesseract ?: TesseractRecognizer(this).also { tesseract = it }
+    return recognizer.recognize(
+      bitmap,
+      data.getInt(MlKitProtocol.KEY_ROTATION),
+      models,
+      CyrillicOcr.languageOf(models.substringBefore('+')),
+    )
   }
 
   private fun identifier(data: Bundle): LanguageIdentifier {
@@ -249,6 +285,8 @@ class MlKitHelperService : Service() {
         Script.DEVANAGARI -> DevanagariTextRecognizerOptions.Builder().build()
         Script.JAPANESE -> JapaneseTextRecognizerOptions.Builder().build()
         Script.KOREAN -> KoreanTextRecognizerOptions.Builder().build()
+        // Read by Tesseract; never asked for.
+        Script.CYRILLIC -> throw MlKitException("No ML Kit Cyrillic recognizer", MlKitException.INVALID_ARGUMENT)
       }
   }
 }

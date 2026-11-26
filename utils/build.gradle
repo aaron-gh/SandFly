@@ -8,6 +8,9 @@ apply from: "../shared.gradle"
 
 dependencies {
     implementation project(':proguard')
+    // Cyrillic text recognition. Watches recognize no Cyrillic text, and their APK stays without its
+    // native libraries.
+    phoneImplementation libs.tesseract4android
     testImplementation libs.junit
     testImplementation libs.robolectric
 }
