@@ -31,12 +31,14 @@ import androidx.annotation.VisibleForTesting
 import androidx.core.content.ContextCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
  * The Battery level setting: says the battery level each time it reaches a multiple of a step, such
- * as every 10%, or at a time interval, charging or not. Nothing is said while the screen is off, and
- * nothing runs while the setting is Off. The time interval runs on a handler while the screen is
- * on, so it never wakes the device.
+ * as every 10%, or at a time interval, charging or not. Nothing is said while the screen is off: a
+ * level reached or an interval ended while it was off is said once when it turns on. Nothing runs
+ * while the setting is Off. The time interval runs on a handler while the screen is on, so it never
+ * wakes the device.
  */
 class BatteryLevelAnnouncements(
   private val context: Context,
@@ -55,6 +57,10 @@ class BatteryLevelAnnouncements(
   private var level = UNKNOWN_LEVEL
   /** When the time interval started, in [SystemClock.elapsedRealtime]. */
   private var since = 0L
+  /** When the screen turned off, in [SystemClock.elapsedRealtime], or [SCREEN_IS_ON]. */
+  private var screenOffAt = SCREEN_IS_ON
+  /** Whether a level step was reached while the screen was off. */
+  private var stepReachedWhileOff = false
 
   private val tick = Runnable { onTick() }
 
@@ -68,8 +74,8 @@ class BatteryLevelAnnouncements(
       override fun onReceive(context: Context, intent: Intent) {
         when (intent.action) {
           Intent.ACTION_BATTERY_CHANGED -> onLevel(intent)
-          Intent.ACTION_SCREEN_ON -> scheduleTick()
-          Intent.ACTION_SCREEN_OFF -> handler.removeCallbacks(tick)
+          Intent.ACTION_SCREEN_ON -> onScreenOn()
+          Intent.ACTION_SCREEN_OFF -> onScreenOff()
         }
       }
     }
@@ -99,6 +105,8 @@ class BatteryLevelAnnouncements(
     release()
     if (now == null) return
     since = SystemClock.elapsedRealtime()
+    screenOffAt = if (isScreenOn()) SCREEN_IS_ON else since
+    stepReachedWhileOff = false
     val filter =
       IntentFilter().apply {
         addAction(Intent.ACTION_BATTERY_CHANGED)
@@ -118,6 +126,30 @@ class BatteryLevelAnnouncements(
       context.unregisterReceiver(receiver)
     }
     level = UNKNOWN_LEVEL
+    stepReachedWhileOff = false
+  }
+
+  private fun onScreenOff() {
+    handler.removeCallbacks(tick)
+    if (screenOffAt == SCREEN_IS_ON) screenOffAt = SystemClock.elapsedRealtime()
+  }
+
+  /** Says the level once if a step was reached or an interval ended while the screen was off. */
+  private fun onScreenOn() {
+    val offAt = screenOffAt
+    screenOffAt = SCREEN_IS_ON
+    val minutes = interval?.minutes ?: 0
+    val missed =
+      stepReachedWhileOff ||
+        (minutes > 0 &&
+          offAt != SCREEN_IS_ON &&
+          intervalEndedBetween(since, offAt, SystemClock.elapsedRealtime(), minutes * MINUTE_MS))
+    stepReachedWhileOff = false
+    if (missed && level != UNKNOWN_LEVEL) {
+      LogUtils.i(TAG, "Battery level %d%% reached while the screen was off", level)
+      sayLevel()
+    }
+    scheduleTick()
   }
 
   private fun onLevel(intent: Intent) {
@@ -128,8 +160,13 @@ class BatteryLevelAnnouncements(
     val last = level
     level = now
     val step = interval?.percent ?: 0
-    if (step > 0 && last != UNKNOWN_LEVEL && reachesStep(last, now, step) && isScreenOn()) {
-      sayLevel()
+    if (step > 0 && last != UNKNOWN_LEVEL && reachesStep(last, now, step)) {
+      if (isScreenOn()) {
+        LogUtils.i(TAG, "Battery level %d%% reached", now)
+        sayLevel()
+      } else {
+        stepReachedWhileOff = true
+      }
     }
   }
 
@@ -144,7 +181,10 @@ class BatteryLevelAnnouncements(
   }
 
   private fun onTick() {
-    if (isScreenOn() && level != UNKNOWN_LEVEL) sayLevel()
+    if (isScreenOn() && level != UNKNOWN_LEVEL) {
+      LogUtils.i(TAG, "Battery level %d%% at the interval", level)
+      sayLevel()
+    }
     scheduleTick()
   }
 
@@ -161,7 +201,9 @@ class BatteryLevelAnnouncements(
     /** The voice the battery level is said with, as the time announcements choose theirs. */
     const val KEY_VOICE = "pref_battery_level_voice_profile"
 
+    private const val TAG = "BatteryLevelAnnouncements"
     private const val UNKNOWN_LEVEL = -1
+    private const val SCREEN_IS_ON = -1L
     private const val MINUTE_MS = 60_000L
 
     /** Returns the interval that a value of the Battery level setting names, null for Off. */
@@ -203,6 +245,18 @@ class BatteryLevelAnnouncements(
       if (intervalMs <= 0) return 0
       val elapsed = (now - since).coerceAtLeast(0)
       return intervalMs - elapsed % intervalMs
+    }
+
+    /**
+     * Returns whether a time interval of [intervalMs] counted from [since] ended after [from] and
+     * no later than [to], such as while the screen was off.
+     */
+    @VisibleForTesting
+    fun intervalEndedBetween(since: Long, from: Long, to: Long, intervalMs: Long): Boolean {
+      if (intervalMs <= 0 || to <= from) return false
+      val start = (from - since).coerceAtLeast(0)
+      val end = (to - since).coerceAtLeast(0)
+      return end / intervalMs > start / intervalMs
     }
   }
 }

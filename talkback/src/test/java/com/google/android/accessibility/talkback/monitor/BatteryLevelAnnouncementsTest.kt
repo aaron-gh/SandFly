@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.monitor
 
+import com.google.android.accessibility.talkback.monitor.BatteryLevelAnnouncements.Companion.intervalEndedBetween
 import com.google.android.accessibility.talkback.monitor.BatteryLevelAnnouncements.Companion.nextTickDelay
 import com.google.android.accessibility.talkback.monitor.BatteryLevelAnnouncements.Companion.parse
 import com.google.android.accessibility.talkback.monitor.BatteryLevelAnnouncements.Companion.reachesStep
@@ -89,5 +90,26 @@ class BatteryLevelAnnouncementsTest {
   fun nextTickDelay_beforeTheStartOrWithNoInterval() {
     assertEquals(15 * minute, nextTickDelay(0L, 1_000L, 15 * minute))
     assertEquals(0L, nextTickDelay(1_000L, 0L, 0L))
+  }
+
+  @Test
+  fun intervalEndedBetween_whileTheScreenWasOff() {
+    val since = 1_000_000L
+    val hour = 60 * minute
+    // Off from minute 50 to minute 70: the first hour ended meanwhile.
+    assertTrue(intervalEndedBetween(since, since + 50 * minute, since + 70 * minute, hour))
+    // Off from minute 5 to minute 50: no hour ended.
+    assertFalse(intervalEndedBetween(since, since + 5 * minute, since + 50 * minute, hour))
+    // Off at the start, on exactly at the end of the first hour.
+    assertTrue(intervalEndedBetween(since, since, since + hour, hour))
+    // Off for several hours: one end is enough.
+    assertTrue(intervalEndedBetween(since, since + 10 * minute, since + 5 * hour, hour))
+  }
+
+  @Test
+  fun intervalEndedBetween_noTimeOrNoInterval_isFalse() {
+    assertFalse(intervalEndedBetween(0L, 30 * minute, 30 * minute, 15 * minute))
+    assertFalse(intervalEndedBetween(0L, 30 * minute, 10 * minute, 15 * minute))
+    assertFalse(intervalEndedBetween(0L, 0L, 60 * minute, 0L))
   }
 }
