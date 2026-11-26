@@ -400,13 +400,8 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
     if (!isSwitchGranularityValid()) {
       return false;
     }
-    Setting current = SelectorController.getCurrentSetting(service);
-    do {
-      selectorController.selectPreviousOrNextSettingWithoutOverlay(
-          EVENT_ID_UNTRACKED, AnnounceType.DESCRIPTION, isNext);
-    } while (!VALID_GRANULARITIES.contains(SelectorController.getCurrentSetting(service))
-        && current != SelectorController.getCurrentSetting(service));
-    return true;
+    return selectorController.selectPreviousOrNextSettingOf(
+        EVENT_ID_UNTRACKED, AnnounceType.DESCRIPTION, isNext, VALID_GRANULARITIES);
   }
 
   private boolean isSwitchGranularityValid() {

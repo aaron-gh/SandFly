@@ -154,6 +154,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Class to handle changes to selector and calls from {@link GestureController}. */
@@ -1853,12 +1854,51 @@ public class SelectorController implements UserInputEventListener {
   }
 
   /**
-   * Selects the previous or next setting without overlay displayed. For selecting setting via
-   * gesture.
+   * Selects the nearest reading control of {@code wanted} after or before the selected one, without
+   * the overlay: in the list that next and previous reading control go through, or in the main list
+   * when that list has none of them. The selected one again when it is the only one.
+   *
+   * @return {@code false} if neither list has one that can be used now.
    */
-  public void selectPreviousOrNextSettingWithoutOverlay(
-      EventId eventId, AnnounceType announceType, boolean isNext) {
-    selectPreviousOrNext(eventId, announceType, isNext, false);
+  public boolean selectPreviousOrNextSettingOf(
+      EventId eventId, AnnounceType announceType, boolean isNext, Set<Setting> wanted) {
+    applyPendingSwitch();
+    List<Object> entries = rotorEntries();
+    @Nullable Setting setting =
+        adjacentSettingOf(entries, currentRotorIndex(entries), isNext, wanted);
+    if (setting == null) {
+      List<Object> main = new ArrayList<>(getFilteredSettings());
+      setting = adjacentSettingOf(main, currentRotorIndex(main), isNext, wanted);
+    }
+    if (setting == null) {
+      return false;
+    }
+    pipeline.returnFeedback(
+        eventId,
+        Feedback.sound(isNext ? R.raw.next_reading_control : R.raw.previous_reading_control));
+    setCurrentSetting(eventId, setting, announceType, /* showOverlay= */ false);
+    return true;
+  }
+
+  /**
+   * The nearest entry of {@code entries} after or before {@code index} that is a setting of {@code
+   * wanted}, wrapping around, or null if there is none. From the start or end of the list when
+   * {@code index} is -1.
+   */
+  @VisibleForTesting
+  static @Nullable Setting adjacentSettingOf(
+      List<?> entries, int index, boolean isNext, Set<Setting> wanted) {
+    int size = entries.size();
+    for (int step = 1; step <= size; step++) {
+      int i =
+          index < 0
+              ? (isNext ? step - 1 : size - step)
+              : Math.floorMod(index + (isNext ? step : -step), size);
+      if (entries.get(i) instanceof Setting setting && wanted.contains(setting)) {
+        return setting;
+      }
+    }
+    return null;
   }
 
   /**
