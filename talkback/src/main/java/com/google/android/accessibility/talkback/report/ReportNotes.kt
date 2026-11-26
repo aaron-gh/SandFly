@@ -68,5 +68,11 @@ class ReportNotes(@get:VisibleForTesting internal val maxEntries: Int) {
 
     /** How long the tests of macros' Show in Actions only when conditions took, per item. */
     @JvmField val macroConditions = ReportNotes(MAX_ENTRIES)
+
+    /** What played and recorded, each time that changed; see [AudioNotes]. */
+    @JvmField val audio = ReportNotes(MAX_AUDIO_ENTRIES)
+
+    // Players start and stop with each utterance, so the audio notes need more lines.
+    private const val MAX_AUDIO_ENTRIES = 100
   }
 }
