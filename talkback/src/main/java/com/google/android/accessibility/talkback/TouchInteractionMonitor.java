@@ -378,7 +378,8 @@ public class TouchInteractionMonitor
   // Whether this monitor is waiting for a state transition.
   // Motion events will be queued and sent to listeners after the transition has taken place.
   private boolean stateChangeRequested = false;
-  private boolean nextTouchMayContinueSwipe;
+  // Tracks Android's interaction, which can contain more than one physical touch.
+  private boolean receivedDownInInteraction;
   private boolean continuedTouchNeedsMove;
   private boolean explorationWaitingForMove;
   // This is used to monitor whether all 1-finger gesture detectors have failed(cancelled).
@@ -1049,8 +1050,10 @@ public class TouchInteractionMonitor
       requestTouchExplorationDelayed.cancel();
     }
     if (action == ACTION_DOWN) {
-      continuedTouchNeedsMove = state == STATE_TOUCH_INTERACTING && nextTouchMayContinueSwipe;
-      nextTouchMayContinueSwipe = false;
+      continuedTouchNeedsMove = state == STATE_TOUCH_INTERACTING && receivedDownInInteraction;
+      if (state == STATE_TOUCH_INTERACTING) {
+        receivedDownInInteraction = true;
+      }
       explorationWaitingForMove = false;
       downOnKeyboard =
           typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
@@ -1372,7 +1375,9 @@ public class TouchInteractionMonitor
     if (state != STATE_TOUCH_INTERACTING) {
       continuedTouchNeedsMove = false;
       explorationWaitingForMove = false;
-      nextTouchMayContinueSwipe = false;
+    }
+    if (state == STATE_CLEAR) {
+      receivedDownInInteraction = false;
     }
     previousState = this.state;
     this.state = state;
@@ -1472,7 +1477,6 @@ public class TouchInteractionMonitor
     stateChangeRequested = false;
     continuedTouchNeedsMove = false;
     explorationWaitingForMove = false;
-    nextTouchMayContinueSwipe = false;
     if (keepWaitingTaps) {
       gestureDetector.clearExceptWaitingTaps();
     } else {
@@ -1891,11 +1895,6 @@ public class TouchInteractionMonitor
     }
     clear();
     clearGestureDetectorOnNextDown = true;
-    int gestureId = gestureEvent.getGestureId();
-    nextTouchMayContinueSwipe =
-        state == STATE_TOUCH_INTERACTING
-            && gestureId >= GESTURE_SWIPE_UP
-            && gestureId <= GESTURE_SWIPE_RIGHT;
     // A gesture recognized from events that corner taps hand back ended in the past, with the
     // finger as those events left it.
     if (fingerDown && !replayingCornerTaps) {
