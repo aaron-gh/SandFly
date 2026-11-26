@@ -26,8 +26,8 @@ import com.google.android.accessibility.braille.translate.BrailleTranslator;
 import java.util.Map;
 
 /**
- * An EditBuffer for contracted Indonesian braille (Tusing). A cell typed at the start of a word that
- * has no translation of its own is announced as its letter.
+ * An EditBuffer for contracted Indonesian braille (Tusing). Cells a to z typed at the start of a word
+ * are announced as letters, including those that are word signs.
  */
 public class EditBufferIndonesian2 extends EditBufferContracted {
 
