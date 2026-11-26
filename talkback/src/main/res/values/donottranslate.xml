@@ -270,7 +270,7 @@
         <item>@string/value_hold_to_cancel_3000</item>
     </string-array>
     <string name="pref_sandfly_keyboard_enter_types_suggestion_key" translatable="false">pref_sandfly_keyboard_enter_types_suggestion</string>
-    <bool name="pref_sandfly_keyboard_enter_types_suggestion_default">true</bool>
+    <bool name="pref_sandfly_keyboard_enter_types_suggestion_default">false</bool>
     <string name="pref_sandfly_keyboard_delete_learned_words_key" translatable="false">pref_sandfly_keyboard_delete_learned_words</string>
     <!-- Must match WordLanguage's codes; "system" is the system language. -->
     <string-array name="pref_sandfly_keyboard_word_language_values" translatable="false">
