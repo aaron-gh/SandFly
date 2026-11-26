@@ -73,6 +73,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
  * SandFly's tutorial: lessons in chapters, each with an instruction and practice items. Each step
@@ -168,7 +169,9 @@ class TutorialActivity : AppCompatActivity() {
         handler.post { onInput(TutorialInput.BrowseMode(enabled)) }
       }
 
-      override fun takesAllGestures(): Boolean =
+      override fun takesAllGestures(): Boolean = isPracticing()
+
+      override fun isPracticing(): Boolean =
         hasWindowFocus() && lesson?.id == TutorialLessons.PRACTICE_LESSON && !lessonDone
 
       /** A gesture or keys ran [action]: [inputName] names them, for practice. */
@@ -184,6 +187,19 @@ class TutorialActivity : AppCompatActivity() {
             } else {
               step?.taken?.any { commandValue(it) == action } == true
             }
+        // Shows in a report which gestures and keys reached the tutorial, and what it did.
+        LogUtils.i(
+          TAG,
+          "%s runs %s in lesson %s: %s",
+          inputName() ?: "Input",
+          action,
+          lesson?.id,
+          when {
+            !focused -> "not taken, the tutorial window has no focus"
+            taken -> "taken"
+            else -> "not taken"
+          },
+        )
         if (taken && lesson?.id != TutorialLessons.PRACTICE_LESSON) {
           speakNow(actionName(action))
         }
@@ -1141,6 +1157,8 @@ class TutorialActivity : AppCompatActivity() {
   private fun indexOf(id: String?): Int = lessons.indexOfFirst { it.id == id }
 
   companion object {
+    private const val TAG = "SandFlyTutorial"
+
     /** The ID of the lesson to open, instead of the one the tutorial was last on. */
     const val EXTRA_LESSON = "lesson"
 
