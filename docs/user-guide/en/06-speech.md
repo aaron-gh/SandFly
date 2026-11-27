@@ -114,6 +114,16 @@ Speech that is off or muted, the speech filter and script rewrites, the pronunci
 
 If the engine of the voice profile doesn't start within 2 seconds, SandFly's own voice says the text. With **Read command feedback over SandFly's speech** on, the text is dropped instead.
 
+### Popups voice {#speech-popups}
+
+**Speech** > **Voice for popups** sets the voice that says popups, the short messages that Android and apps show over the screen for a few seconds, such as "Press back again to exit". **SandFly's voice**, the default, says them as always. A voice profile says them in that profile's voice instead. See [](#speech-voice-profiles).
+
+It works as **Voice for command feedback and text editing** does: speech that is off or muted, the speech filter, the dictionary and the speech history apply, a touch or a gesture that stops SandFly's speech stops this voice too, and notifications read in the same profile go on.
+
+**Read popups over SandFly's speech** is available while a voice profile is chosen. With it off, the popup waits in SandFly's speech queue. With it on, it is said at once, over what SandFly is saying. It's off by default.
+
+**Queue popups** sets what happens when a popup comes while another is being said. On, the default, the new popup waits for the one before it. Off, it replaces the one before it.
+
 ### Voice effects {#voice-effects}
 
 **Speech** > **Voice effects** sets an 11-band equalizer and compression effects for **SandFly default**. **Voice effects** on the screen of a voice profile sets them for that profile. A new profile starts with the voice effects of **SandFly default**. Voice effects aren't available on watches.

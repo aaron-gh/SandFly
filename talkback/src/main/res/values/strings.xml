@@ -534,6 +534,12 @@
     <string name="title_pref_command_feedback_voice">Voice for command feedback and text editing</string>
     <!-- Title of a switch, in Speech, that is available while a voice profile is chosen for command feedback. On: the feedback is said over the speech of SandFly. Off: it waits for it. -->
     <string name="title_pref_command_feedback_over_speech">Read command feedback over SandFly\'s speech</string>
+    <!-- Title of a setting, in Speech, that chooses the voice profile that popups (toasts), the short messages that Android and apps show over the screen, are said with. -->
+    <string name="title_pref_popup_voice">Voice for popups</string>
+    <!-- Title of a switch, in Speech, available while a voice profile is chosen for popups. On: popups are said over the speech of SandFly. Off: they wait for it. -->
+    <string name="title_pref_popup_over_speech">Read popups over SandFly\'s speech</string>
+    <!-- Title of a switch, in Speech. On: a popup waits for the one before it to be said. Off: it replaces the one before it. -->
+    <string name="title_pref_popup_queue">Queue popups</string>
     <!-- Title of the switch that says how long a phone call lasted when it ends. [CHAR LIMIT=NONE] -->
     <string name="title_pref_announce_call_length">Announce call length</string>
     <!-- Spoken when a phone call ends, with Announce call length on. %1$s is how long it lasted, such as "3 minutes, 12 seconds". [CHAR LIMIT=NONE] -->
