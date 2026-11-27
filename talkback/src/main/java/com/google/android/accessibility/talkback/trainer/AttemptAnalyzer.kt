@@ -21,6 +21,7 @@ import com.google.android.accessibility.talkback.gesture.CornerTapTracker.Corner
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge
+import com.google.android.accessibility.talkback.gesture.TopAndBottomTap
 import com.google.android.accessibility.talkback.gesture.ShakeDetector
 import kotlin.math.abs
 import kotlin.math.acos
@@ -427,11 +428,10 @@ class AttemptAnalyzer(private val limits: TrainerLimits) {
   /** Checks that the fingers lifted in [half] of the screen, as SandFly takes their middle there. */
   private fun checkHalf(check: Checks, touch: Touch, half: ScreenHalf) {
     if (half == ScreenHalf.TOP_AND_BOTTOM) {
-      // SandFly takes where the fingers of the last tap went down.
-      val ys = touch.fingers.map { it.start.y }
-      val top = limits.screenHeight / 3f
-      val bottom = limits.screenHeight * 2 / 3f
-      val topAndBottom = ys.size == 2 && ys.any { it < top } && ys.any { it >= bottom }
+      // SandFly takes where the fingers of the last tap went down, along the device held upright.
+      val ys = touch.fingers.map { TopAndBottomTap.alongDevice(it.start.x, it.start.y, limits.rotation) }
+      val length = TopAndBottomTap.deviceLength(limits.screenWidth, limits.screenHeight, limits.rotation)
+      val topAndBottom = ys.size == 2 && TopAndBottomTap.isTopAndBottom(ys[0], ys[1], length)
       if (!topAndBottom) check.problem(FindingKind.TAP_NOT_TOP_AND_BOTTOM)
       return
     }

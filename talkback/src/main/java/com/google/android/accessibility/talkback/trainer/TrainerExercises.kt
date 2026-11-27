@@ -711,6 +711,8 @@ class TrainerLimits(
   val swipeHoldMs: Long = 500,
   /** How soon after the first swipe of a two-stroke swipe lifts the second must start. */
   val twoStrokeMs: Long = 1000,
+  /** The rotation of the display, a [android.view.Surface] rotation. */
+  val rotation: Int = 0,
 ) {
   fun toMm(px: Float): Float = px / pxPerCm * 10f
 
@@ -726,7 +728,7 @@ class TrainerLimits(
     private const val SWIPE_START_MS_PER_CM = 150
     private const val SWIPE_CONTINUE_MS_PER_CM = 350
 
-    fun read(context: Context, screenWidth: Int, screenHeight: Int): TrainerLimits {
+    fun read(context: Context, screenWidth: Int, screenHeight: Int, rotation: Int): TrainerLimits {
       val prefs = SharedPreferencesUtils.getSharedPreferences(context)
       val res = context.resources
       val config = ViewConfiguration.get(context)
@@ -772,6 +774,7 @@ class TrainerLimits(
         screenHeight = screenHeight,
         swipeHoldMs = GestureConfiguration.getSwipeHoldTimeMs().toLong(),
         twoStrokeMs = TrainerExercises.twoStrokeSwipeTimeMs(context).toLong(),
+        rotation = rotation,
       )
     }
   }

@@ -372,8 +372,9 @@ class GestureTrainerActivity : AppCompatActivity() {
   /** Reads the limits again, as settings may have changed in a settings screen opened from here. */
   private fun readLimits() {
     val size = Point()
-    @Suppress("DEPRECATION") windowManager.defaultDisplay.getRealSize(size)
-    limits = TrainerLimits.read(this, size.x, size.y)
+    @Suppress("DEPRECATION") val shownDisplay = windowManager.defaultDisplay
+    shownDisplay.getRealSize(size)
+    limits = TrainerLimits.read(this, size.x, size.y, shownDisplay.rotation)
     analyzer = AttemptAnalyzer(limits)
   }
 
