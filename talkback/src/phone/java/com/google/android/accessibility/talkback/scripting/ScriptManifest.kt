@@ -76,6 +76,11 @@ data class ScriptSetting(
     TEXT("text"),
     NUMBER("number"),
     BUTTON("button", hasValue = false),
+    /**
+     * A SandFly command that the user chooses as for a gesture, or one of the script's own
+     * [options], or an empty text for none.
+     */
+    COMMAND("command"),
   }
 }
 
@@ -329,7 +334,7 @@ data class ScriptManifest(
     }
 
   companion object {
-    const val API_VERSION = 6
+    const val API_VERSION = 7
 
     /**
      * The last version that changed what scripts already used. A script tested with it or later

@@ -226,6 +226,7 @@ import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
 import com.google.android.accessibility.talkback.gesture.KeyboardHover;
+import com.google.android.accessibility.talkback.gesture.PowerCommands;
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
 import com.google.android.accessibility.talkback.gesture.TextTraversalTracker;
 import com.google.android.accessibility.talkback.touchlock.TouchLock;
@@ -1501,7 +1502,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       // keyboard, the volume panel and the notification shade send this event too, and closing
       // them sends none for the app under them.
       int windowType = AccessibilityEventUtils.getWindowType(event);
-      if (isAppWindowType(windowType, lastWindowPackage)) {
+      if (isAppWindowType(windowType, lastWindowPackage) && showsWindow(event)) {
         SpeechDictionary.onWindowShown(lastWindowPackage);
         AppGestures.onWindowShown(lastWindowPackage);
         // An event from SandFly whose window can't be told may be one of its overlays; the window
@@ -2321,6 +2322,14 @@ public class TalkBackService extends AccessibilityServiceCompat
       processorVolumeStream.forgetTouchInteraction();
     }
     NotificationReader.onTouchEnded();
+  }
+
+  /** Finds an item in a native list whose scroll moved the old focus off screen. */
+  public @Nullable AccessibilityNodeInfoCompat itemInRecentlyScrolledList(
+      @TraversalStrategy.SearchDirectionOrUnknown int direction) {
+    return accessibilityFocusInterpreter == null
+        ? null
+        : accessibilityFocusInterpreter.itemInRecentlyScrolledList(direction);
   }
 
   @Override
@@ -4946,6 +4955,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     globalVariables.setTypingMethod(accessibilityFocusInterpreter.getTypingMethod());
     FocusProcessorForLogicalNavigation.setTypingMethod(
         accessibilityFocusInterpreter.getTypingMethod());
+    FocusProcessorForLogicalNavigation.setSwipesThroughKeys(
+        getBooleanPref(
+            R.string.pref_typing_swipes_through_keys_key,
+            R.bool.pref_typing_swipes_through_keys_default));
 
     applyTouchExplorationPreference();
 
@@ -6026,6 +6039,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   }
 
   public void onShutDown() {
+    PowerCommands.onShutDown();
     if (shouldLogAliveTime()) {
       analytics.sendAliveTimeLog();
     }
@@ -6641,6 +6655,16 @@ public class TalkBackService extends AccessibilityServiceCompat
       default:
         return false;
     }
+  }
+
+  /**
+   * Whether a window state change shows a window or pane, rather than reporting a change of text or
+   * content inside one, such as the clock of vivo's System UI plugin every minute.
+   */
+  private static boolean showsWindow(AccessibilityEvent event) {
+    int types = event.getContentChangeTypes();
+    return types == AccessibilityEvent.CONTENT_CHANGE_TYPE_UNDEFINED
+        || (types & AccessibilityEvent.CONTENT_CHANGE_TYPE_PANE_APPEARED) != 0;
   }
 
   /**

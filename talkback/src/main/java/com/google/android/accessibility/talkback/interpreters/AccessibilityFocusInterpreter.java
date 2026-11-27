@@ -29,6 +29,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Interpretation;
@@ -63,6 +64,7 @@ import com.google.android.accessibility.utils.BuildVersionUtils;
 import com.google.android.accessibility.utils.ConcurrentNodeQueries;
 import com.google.android.accessibility.utils.DisplayUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
+import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Performance.EventId;
@@ -70,8 +72,11 @@ import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.labeling.Label;
 import com.google.android.accessibility.utils.monitor.TouchMonitor;
+import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy.SearchDirection;
+import com.google.android.accessibility.utils.traversal.TraversalStrategy.SearchDirectionOrUnknown;
+import com.google.android.accessibility.utils.traversal.TraversalStrategyUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.Collections;
 import java.util.List;
@@ -97,6 +102,7 @@ public class AccessibilityFocusInterpreter
   // Scroll events arrive many times per second, and finding a new focus target queries the app's
   // node tree over IPC on the main thread. Waiting for scrolling to settle keeps touch responsive.
   private static final long MANUAL_SCROLL_SETTLE_MS = 150;
+  private static final long RECENT_NATIVE_SCROLL_MS = 2_500;
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
   // Member variables
@@ -134,6 +140,8 @@ public class AccessibilityFocusInterpreter
   private @Nullable AccessibilityNodeInfoCompat webStrip;
 
   private @Nullable ManualScrollInterpretation pendingManualScroll;
+  // Inertia can remove a newly focused row after the pending recovery was dispatched.
+  private @Nullable ManualScrollInterpretation lastScrollOfFocusedList;
   private final Runnable handlePendingManualScroll =
       new Runnable() {
         @Override
@@ -226,6 +234,7 @@ public class AccessibilityFocusInterpreter
   /** Called by {@link ScreenStateMonitor}. */
   @Override
   public boolean onScreenStateChanged(ScreenState screenState, EventId eventId) {
+    lastScrollOfFocusedList = null;
     return focusProcessorForScreenStateChange.onScreenStateChanged(screenState, eventId);
   }
 
@@ -251,6 +260,10 @@ public class AccessibilityFocusInterpreter
               AccessibilityEvent.obtain(interpretation.event()),
               interpretation.direction(),
               interpretation.scrolledHoldsFocus());
+      if (interpretation.scrolledHoldsFocus()
+          && interpretation.event().getEventType() == AccessibilityEvent.TYPE_VIEW_SCROLLED) {
+        lastScrollOfFocusedList = pendingManualScroll;
+      }
     }
     schedulePendingManualScroll();
   }
@@ -383,6 +396,10 @@ public class AccessibilityFocusInterpreter
     if (!shouldMoveFocus(currentA11yFocusedNode, interpretation.direction())) {
       return;
     }
+    ManualScroll.Builder builder =
+        ManualScroll.builder()
+            .setDirection(interpretation.direction())
+            .setScreenState(screenState.getStableScreenState());
     // The scroll was matched to the focus before it was delayed. A swipe since then may have
     // moved focus into another list or document, which an old scroll must not take focus from.
     if (!FormFactorUtils.isAndroidWear()) {
@@ -398,17 +415,90 @@ public class AccessibilityFocusInterpreter
       if (focusPath == null || !focusPath.containsNodeByHashAndIdentity(scrolled)) {
         return;
       }
-    }
-
-    ManualScroll.Builder builder =
-        ManualScroll.builder()
-            .setDirection(interpretation.direction())
-            .setScreenState(screenState.getStableScreenState());
-    if (FormFactorUtils.isAndroidWear()) {
+      if (currentA11yFocusedNode == null) {
+        AccessibilityNodeInfoCompat item =
+            visibleItemInNativeList(scrolled, interpretation.direction());
+        if (item != null) {
+          builder.setItemInView(item);
+        }
+      }
+    } else {
       builder.setCurrentFocusedNode(currentA11yFocusedNode);
     }
 
     pipelineInterpretations.input(interpretation.eventId(), interpretation.event(), builder.build());
+  }
+
+  /**
+   * Finds an on-screen item before lost focus would fall back to window-wide navigation.
+   * Called only after the caller has checked that there is no current accessibility focus.
+   */
+  public @Nullable AccessibilityNodeInfoCompat itemInRecentlyScrolledList(
+      @SearchDirectionOrUnknown int direction) {
+    ManualScrollInterpretation scroll = lastScrollOfFocusedList;
+    if (scroll == null
+        || isWebScrollFocusPending()
+        || FormFactorUtils.isAndroidWear()
+        || !screenState.areMainWindowsStable()) {
+      return null;
+    }
+    ScreenState state = screenState.getStableScreenState();
+    AccessibilityWindowInfo window = state == null ? null : state.getActiveWindow();
+    if (window == null
+        || window.getId() != scroll.event().getWindowId()
+        || SystemClock.uptimeMillis() - scroll.event().getEventTime() > RECENT_NATIVE_SCROLL_MS) {
+      return null;
+    }
+    // Focus moved by swipes since the scroll is lost from where they left it, not from the scroll,
+    // so window-wide navigation goes on from the lost item.
+    FocusActionRecord lastFocus = actorState.getFocusHistory().getLastFocusActionRecord();
+    if (lastFocus != null
+        && lastFocus.getActionTime() > scroll.event().getEventTime()
+        && lastFocus.getExtraInfo().sourceAction != FocusActionInfo.MANUAL_SCROLL) {
+      return null;
+    }
+    AccessibilityNodeInfoCompat list = AccessibilityEventUtils.sourceCompat(scroll.event());
+    if (list == null || list.getCollectionInfo() == null || WebScrollFocus.isWebContent(list)) {
+      return null;
+    }
+    NodePathDescription focusPath = actorState.getFocusHistory().getLastFocusAncestorIdentityPath();
+    if (focusPath == null || !focusPath.containsNodeByHashAndIdentity(list)) {
+      return null;
+    }
+    if (!list.refresh()) {
+      return null;
+    }
+    return visibleItemInNativeList(
+        list, direction == TraversalStrategy.SEARCH_FOCUS_UNKNOWN ? scroll.direction() : direction);
+  }
+
+  private static @Nullable AccessibilityNodeInfoCompat visibleItemInNativeList(
+      @Nullable AccessibilityNodeInfoCompat list, @SearchDirection int direction) {
+    if (list == null || list.getCollectionInfo() == null || WebScrollFocus.isWebContent(list)) {
+      return null;
+    }
+    Rect viewport = new Rect();
+    list.getBoundsInScreen(viewport);
+    if (viewport.isEmpty()) {
+      return null;
+    }
+    OrderedTraversalStrategy strategy = new OrderedTraversalStrategy(list);
+    Rect bounds = new Rect();
+    return TraversalStrategyUtils.findFirstFocusInNodeTree(
+        strategy,
+        list,
+        direction,
+        Filter.node(
+            node -> {
+              if (node == null
+                  || node.equals(list)
+                  || !AccessibilityNodeInfoUtils.shouldFocusNode(
+                      node, strategy.getSpeakingNodesCache())) {
+                return false;
+              }
+              node.getBoundsInScreen(bounds);
+              return Rect.intersects(viewport, bounds);
+            }));
   }
 
   /** How long one run of {@link #webFocusRecovery} may read nodes before other input is handled. */
@@ -652,7 +742,7 @@ public class AccessibilityFocusInterpreter
               ManualScroll.builder()
                   .setDirection(interpretation.direction())
                   .setScreenState(screenState.getStableScreenState())
-                  .setWebItemInView(item)
+                  .setItemInView(item)
                   .build());
         if (focused && webScroll == interpretation) {
           // Focusing the item may make its carousel scroll it sideways into view. That is
@@ -692,6 +782,7 @@ public class AccessibilityFocusInterpreter
     cancelWebFocusRecovery();
     handler.removeCallbacks(handlePendingManualScroll);
     pendingManualScroll = null;
+    lastScrollOfFocusedList = null;
     webScroll = null;
   }
 

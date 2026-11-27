@@ -22,6 +22,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.os.Build.VERSION_CODES;
 import android.os.Build;
+import android.text.TextUtils;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.annotation.VisibleForTesting;
@@ -146,6 +147,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     pendingWebActionTime = -1;
     pendingDirectTouchTime = -1;
     completedWebNavigation.clear();
+    latestNativeScrollPosition = null;
   }
 
   /**
@@ -185,6 +187,11 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
   /** A new one-finger touch may be the next flick, not direct scrolling of the app. */
   public static synchronized void onTouchInteractionStart() {
     if (!webNavigation) clearNavigation();
+  }
+
+  /** Whether touch since this action could have scrolled the app directly. */
+  public static synchronized boolean directTouchSince(long actionTime) {
+    return lastDirectTouchUptime >= actionTime;
   }
 
   /** Called before multi-finger or delegated motion can scroll the app directly. */
@@ -282,6 +289,9 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     /** Whether the event comes from SandFly scrolling a list ahead of the focused item. */
     public final boolean isFromScrollAhead;
 
+    /** Whether a completed explicit scroll command is still moving the same view. */
+    public final boolean isFromFinishedScrollCommand;
+
     @VisibleForTesting
     public ScrollEventInterpretation(
         @UserAction int userAction,
@@ -313,8 +323,33 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
         int scrollInstanceId,
         boolean isFromNavigation,
         boolean isFromScrollAhead) {
+      this(
+          userAction,
+          scrollDirection,
+          hasValidIndex,
+          isDuplicateEvent,
+          isFromScrollable,
+          isMediaPlayerAutoScroll,
+          scrollInstanceId,
+          isFromNavigation,
+          isFromScrollAhead,
+          /* isFromFinishedScrollCommand= */ false);
+    }
+
+    public ScrollEventInterpretation(
+        @UserAction int userAction,
+        @SearchDirectionOrUnknown int scrollDirection,
+        boolean hasValidIndex,
+        boolean isDuplicateEvent,
+        boolean isFromScrollable,
+        boolean isMediaPlayerAutoScroll,
+        int scrollInstanceId,
+        boolean isFromNavigation,
+        boolean isFromScrollAhead,
+        boolean isFromFinishedScrollCommand) {
       this.isFromNavigation = isFromNavigation;
       this.isFromScrollAhead = isFromScrollAhead;
+      this.isFromFinishedScrollCommand = isFromFinishedScrollCommand;
       this.userAction = userAction;
       this.scrollDirection = scrollDirection;
       this.hasValidIndex = hasValidIndex;
@@ -338,6 +373,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
       sb.append(", scrollInstanceId=").append(scrollInstanceId);
       sb.append(", isFromNavigation=").append(isFromNavigation);
       sb.append(", isFromScrollAhead=").append(isFromScrollAhead);
+      sb.append(", isFromFinishedScrollCommand=").append(isFromFinishedScrollCommand);
       sb.append('}');
       return sb.toString();
     }
@@ -357,13 +393,15 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
           && (scrollDirection == that.scrollDirection)
           && (hasValidIndex == that.hasValidIndex)
           && (isDuplicateEvent == that.isDuplicateEvent)
-          && (scrollInstanceId == that.scrollInstanceId);
+          && (scrollInstanceId == that.scrollInstanceId)
+          && (isFromFinishedScrollCommand == that.isFromFinishedScrollCommand);
     }
 
     @Override
     public int hashCode() {
       return Objects.hash(
-          userAction, scrollDirection, hasValidIndex, isDuplicateEvent, scrollInstanceId);
+          userAction, scrollDirection, hasValidIndex, isDuplicateEvent, scrollInstanceId,
+          isFromFinishedScrollCommand);
     }
   }
 
@@ -416,6 +454,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
   // Inputs
   private Supplier<ScrollActionRecord> scrollActorState;
   private Supplier<ScrollActionRecord> finishedScrollRecord = () -> null;
+  private Supplier<ScrollActionRecord> supersededScrollRecord = () -> null;
   private final @Nullable AudioPlaybackMonitor audioPlaybackMonitor;
   private final @NonNull TouchMonitor touchMonitor;
 
@@ -447,6 +486,10 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     this.finishedScrollRecord = finishedScrollRecord;
   }
 
+  public void setSupersededScrollActionRecord(Supplier<ScrollActionRecord> supersededScrollRecord) {
+    this.supersededScrollRecord = supersededScrollRecord;
+  }
+
   public void setScrollActorState(Supplier<ScrollActionRecord> scrollActorState) {
     this.scrollActorState = scrollActorState;
   }
@@ -470,6 +513,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
       case AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED:
         // Window state changes clear the cache.
         cachedPositionInfo.clear();
+        latestNativeScrollPosition = null;
         resetWebNavigation();
         break;
       case AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED:
@@ -575,6 +619,17 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
 
   private void processScrollEvent(AccessibilityEvent event, EventId eventId,
       AccessibilityNodeInfo source, boolean fromWebNavigation, boolean mediaScroll) {
+    if (Build.VERSION.SDK_INT >= VERSION_CODES.UPSIDE_DOWN_CAKE
+        && source != null
+        && event.getEventType() == AccessibilityEvent.TYPE_VIEW_SCROLLED
+        && TextUtils.equals(source.getClassName(), "android.widget.ScrollView")
+        && event.getScrollX() == 0
+        && event.getMaxScrollY() > 0
+        && event.getScrollY() >= 0
+        && event.getScrollY() <= event.getMaxScrollY()) {
+      latestNativeScrollPosition =
+          new NativeScrollPosition(source, event.getScrollY(), event.getMaxScrollY());
+    }
     ScrollEventInterpretation interpretation = interpret(event, source, fromWebNavigation, mediaScroll);
     if (interpretation == null) return;
     if (source != null && interpretation.hasValidIndex) {
@@ -623,10 +678,13 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     final int scrollInstanceId;
     boolean isFromNavigation = false;
     boolean isFromScrollAhead = false;
+    boolean isFromFinishedScrollCommand = false;
 
     @Nullable ScrollActionRecord autoScrollRecord = fromWebNavigation ? null : getAutoScrollRecordIfAvailable(event);
     if (autoScrollRecord == null) {
       scrollInstanceId = SCROLL_INSTANCE_ID_UNDEFINED;
+      @Nullable ScrollActionRecord finished =
+          fromWebNavigation ? null : getFinishedAutoScrollRecord(event);
       // Note that TYPE_WINDOW_CONTENT_CHANGED events can also be interpreted as manual scroll
       // action. TYPE_VIEW_SCROLLED events are filed at very coarse granularity. If we rely only on
       // TYPE_VIEW_SCROLLED events to detect manual scroll action, it happens when the user slightly
@@ -638,13 +696,17 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
       if (fromWebNavigation) {
         userAction = ScrollActionRecord.ACTION_UNKNOWN;
         isFromNavigation = true;
-      } else if (isFromFinishedAutoScroll(event)) {
+      } else if (finished != null) {
         // TalkBack's own scroll, still moving after it went far enough to count as complete. As a
         // manual scroll, it would move the focus that the scroll has just placed.
         userAction = ScrollActionRecord.ACTION_UNKNOWN;
-        isFromNavigation = isNavigationScroll(finishedScrollRecord.get());
-        isFromScrollAhead = isScrollAhead(finishedScrollRecord.get());
+        isFromNavigation = isNavigationScroll(finished);
+        isFromScrollAhead = isScrollAhead(finished);
+        isFromFinishedScrollCommand = finished.userAction == ScrollActionRecord.ACTION_SCROLL_COMMAND;
         LogUtils.i(TAG, "End of an auto scroll");
+      } else if (wasSupersededRecyclerNavigation(event, sourceNode)) {
+        userAction = ScrollActionRecord.ACTION_UNKNOWN;
+        isFromNavigation = true;
       } else if (followsCurrentNavigation(event.getWindowId(), event.getEventTime())) {
         // The app scrolled to show the item that moving to the next or previous item focused,
         // such as a web view showing a web element.
@@ -686,7 +748,8 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
             isMediaPlayerAutoScroll,
             scrollInstanceId,
             isFromNavigation,
-            isFromScrollAhead);
+            isFromScrollAhead,
+            isFromFinishedScrollCommand);
     LogUtils.d(TAG, "interpret ScrollEventInterpretation=%s", interpretation);
     return interpretation;
   }
@@ -707,14 +770,46 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
   }
 
   /**
-   * Whether the {@code event} comes from the last auto-scroll that was reset as complete, from the
-   * same node and within the time an auto-scroll record lasts.
+   * Returns the completed auto-scroll record if the event matches its node and time window.
    */
-  private boolean isFromFinishedAutoScroll(AccessibilityEvent event) {
+  private @Nullable ScrollActionRecord getFinishedAutoScrollRecord(AccessibilityEvent event) {
     @Nullable ScrollActionRecord finished = finishedScrollRecord.get();
     return finished != null
         && isFromAutoScrollAction(event, finished)
-        && finished.scrolledNodeMatches(AccessibilityEventUtils.sourceCompat(event));
+        && finished.scrolledNodeMatches(AccessibilityEventUtils.sourceCompat(event))
+        ? finished : null;
+  }
+
+  private static boolean isFocusScroll(@Nullable ScrollActionRecord record) {
+    return record != null && record.userAction == ScrollActionRecord.ACTION_AUTO_SCROLL
+        && ScrollActionRecord.FOCUS.equals(record.scrollSource);
+  }
+
+  private static boolean isRecyclerScroll(AccessibilityEvent event, AccessibilityNodeInfo source) {
+    return event.getEventType() == TYPE_VIEW_SCROLLED
+        && TextUtils.equals(source.getClassName(), "androidx.recyclerview.widget.RecyclerView");
+  }
+
+  /** An event from the previous swipe can reach us after the next scroll starts. */
+  private boolean wasSupersededRecyclerNavigation(
+      AccessibilityEvent event, AccessibilityNodeInfo source) {
+    ScrollActionRecord prior = supersededScrollRecord.get();
+    if (!isFocusScroll(prior) || !isRecyclerScroll(event, source)) {
+      return false;
+    }
+    ScrollActionRecord latest = scrollActorState.get();
+    if (latest == null) {
+      latest = finishedScrollRecord.get();
+    }
+    long time = event.getEventTime();
+    if (!isFocusScroll(latest)
+        || time < prior.autoScrolledTime || time >= latest.autoScrolledTime
+        || directTouchSince(prior.autoScrolledTime) || !isFromAutoScrollAction(event, prior)) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat node = AccessibilityNodeInfoCompat.wrap(source);
+    // Classify the event without handing it to the callback of either swipe.
+    return prior.scrolledNodeMatches(node);
   }
 
   /** Whether {@code record} is of a scroll that moving to the next or previous item made. */
@@ -862,6 +957,19 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
         && audioPlaybackMonitor.isPlaybackSourceActive(
             AudioPlaybackMonitor.PlaybackSource.USAGE_MEDIA)
         && !touchMonitor.isUserTouchingScreen();
+  }
+
+  /** Latest native vertical position, used only while the same view still reports that offset. */
+  private record NativeScrollPosition(AccessibilityNodeInfo source, int y, int maxY) {}
+
+  @Nullable private static NativeScrollPosition latestNativeScrollPosition;
+
+  /** Returns the range reported for the given native view at its current offset. */
+  public static int measuredVerticalScrollMax(AccessibilityNodeInfo source, int y) {
+    NativeScrollPosition position = latestNativeScrollPosition;
+    return position != null && position.y() == y && source.equals(position.source())
+        ? position.maxY()
+        : -1;
   }
 
   /** Caches scroll position from {@link AccessibilityEvent}. */

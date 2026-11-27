@@ -266,6 +266,8 @@ public class TouchInteractionMonitor
   // Whether a gesture other than a two-finger swipe started. A two-finger swipe starts as soon as
   // one finger moves, which must not stop a rotation, which starts later.
   private boolean nonSwipeGestureStarted = false;
+  private boolean oneFingerSwipeStarted = false;
+  private boolean oneFingerSwipeInterrupted = false;
 
   // Whether each gesture runs a command, as gesture matching found during the current interaction,
   // and the app whose gestures applied then. Cleared as each interaction starts.
@@ -312,6 +314,7 @@ public class TouchInteractionMonitor
   private final Point screenSize = new Point();
   // Where the fingers of the latest touch that reached gesture detection went down, kept after they
   // lift, for Double-tap with 2 fingers, top and bottom.
+  private final float[] latestTouchDownX = new float[2];
   private final float[] latestTouchDownY = new float[2];
   private int latestTouchFingers;
   // Whether touch exploration was requested while an edge swipe could still start, and waits for
@@ -630,7 +633,8 @@ public class TouchInteractionMonitor
             this::edgeStages,
             this::edgeScrolls,
             edgeSwipeListener,
-            this::edgeMenuItemCount);
+            this::edgeMenuItemCount,
+            this::edgeMenuHorizontal);
     systemTapTimeoutMs =
         ViewConfiguration.getTapTimeout()
             + context
@@ -880,6 +884,14 @@ public class TouchInteractionMonitor
     return menu.getSize();
   }
 
+  /**
+   * Returns whether the menu that {@link #edgeMenuItemCount} has just given for the touch goes across
+   * the screen instead of along the edge. The trainer's sample menu goes along it.
+   */
+  private boolean edgeMenuHorizontal(MenuEdge edge) {
+    return touchEdgeMenu.getHorizontal();
+  }
+
   /** Returns whether a slide along an edge, such as {@code ALONG_LEFT_UP}, scrolls the app. */
   private boolean edgeScrolls(Edge slide) {
     if (edgeGesturesOff) {
@@ -1044,6 +1056,11 @@ public class TouchInteractionMonitor
       }
     } else if (action == ACTION_POINTER_DOWN) {
       explorationWaitingForMove = false;
+      if (event.getPointerCount() == 2 && oneFingerSwipeStarted && !nonSwipeGestureStarted) {
+        // The swipe matchers cancel on a second finger. Let the two-finger movement be classified.
+        oneFingerSwipeInterrupted = true;
+        gestureStarted = false;
+      }
     } else if (action == MotionEvent.ACTION_CANCEL && continuedTouchNeedsMove) {
       explorationWaitingForMove = false;
       keepMonitorTouchExplore = false;
@@ -1055,6 +1072,13 @@ public class TouchInteractionMonitor
         receivedDownInInteraction = true;
       }
       explorationWaitingForMove = false;
+      if (oneFingerSwipeInterrupted && !nonSwipeGestureStarted) {
+        // Android can group separate touches. Only the interrupted swipe belongs to the old touch.
+        gestureDetector.clearOneFingerSwipes();
+        gestureStarted = false;
+      }
+      oneFingerSwipeStarted = false;
+      oneFingerSwipeInterrupted = false;
       downOnKeyboard =
           typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
               && isOnKeyboard(event.getX(), event.getY());
@@ -1453,6 +1477,8 @@ public class TouchInteractionMonitor
     passingSyntheticTouch = false;
     gestureStarted = false;
     nonSwipeGestureStarted = false;
+    oneFingerSwipeStarted = false;
+    oneFingerSwipeInterrupted = false;
     clearGestureDetectorOnNextDown = false;
     rotationTracker.clear();
     edgeSwipeTracker.clear();
@@ -1860,6 +1886,7 @@ public class TouchInteractionMonitor
     if (action == ACTION_DOWN || action == ACTION_POINTER_DOWN) {
       // A third finger makes no two-finger tap.
       if (latestTouchFingers < latestTouchDownY.length) {
+        latestTouchDownX[latestTouchFingers] = event.getX(event.getActionIndex());
         latestTouchDownY[latestTouchFingers] = event.getY(event.getActionIndex());
       }
       latestTouchFingers++;
@@ -1869,7 +1896,8 @@ public class TouchInteractionMonitor
   /**
    * Returns a two-finger double tap with one finger in the top third of the screen and the other in
    * the bottom third in place of {@code tap} when that gesture runs a command, otherwise {@code
-   * tap}. The fingers of the last tap decide; the screen is as displayed.
+   * tap}. The fingers of the last tap decide. Top and bottom are those of the device held in its
+   * natural orientation: on a phone, the earpiece end and the charging port end, also in landscape.
    */
   private AccessibilityGestureEvent twoFingerDoubleTapTopAndBottom(AccessibilityGestureEvent tap) {
     int gestureId = GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM;
@@ -1881,7 +1909,11 @@ public class TouchInteractionMonitor
     }
     Point size = new Point();
     display.getRealSize(size);
-    if (!TopAndBottomTap.isTopAndBottom(latestTouchDownY[0], latestTouchDownY[1], size.y)) {
+    int rotation = display.getRotation();
+    if (!TopAndBottomTap.isTopAndBottom(
+        TopAndBottomTap.alongDevice(latestTouchDownX[0], latestTouchDownY[0], rotation),
+        TopAndBottomTap.alongDevice(latestTouchDownX[1], latestTouchDownY[1], rotation),
+        TopAndBottomTap.deviceLength(size.x, size.y, rotation))) {
       return tap;
     }
     return new AccessibilityGestureEvent(gestureId, tap.getDisplayId(), tap.getMotionEvents());
@@ -2755,8 +2787,10 @@ public class TouchInteractionMonitor
   @Override
   public void onGestureStarted(int gestureId) {
     gestureStarted = true;
-    // A two-finger angle gesture starts as a two-finger swipe does.
-    if (gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_UP
+    if ((gestureId >= GESTURE_SWIPE_UP && gestureId <= GESTURE_SWIPE_DOWN_AND_RIGHT)
+        || GestureConfiguration.isThreeDirectionSwipe(gestureId)) {
+      oneFingerSwipeStarted = true;
+    } else if (gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_UP
         && gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_DOWN
         && gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_LEFT
         && gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_RIGHT

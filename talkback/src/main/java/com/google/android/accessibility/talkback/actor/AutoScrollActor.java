@@ -80,6 +80,11 @@ public class AutoScrollActor {
     public @Nullable ScrollActionRecord getFinishedScrollActionRecord() {
       return AutoScrollActor.this.finishedScrollActionRecord;
     }
+
+    /** For recognizing late progress after the next scroll action has already started. */
+    public @Nullable ScrollActionRecord getSupersededScrollActionRecord() {
+      return AutoScrollActor.this.supersededScrollActionRecord;
+    }
   }
 
   /** Read-only interface for pulling state data. */
@@ -115,6 +120,7 @@ public class AutoScrollActor {
   @Nullable private ScrollActionRecord scrollActionRecord = null;
   @Nullable private ScrollActionRecord failedScrollActionRecord = null;
   @Nullable private ScrollActionRecord finishedScrollActionRecord = null;
+  @Nullable private ScrollActionRecord supersededScrollActionRecord;
 
   public void setPipelineEventReceiver(Pipeline.EventReceiver pipeline) {
     this.pipelineReceiver = pipeline;
@@ -283,6 +289,8 @@ public class AutoScrollActor {
     // Ignores previous failed auto-scroll record if there is a new auto-scroll record (when next
     // auto-scroll action performs).
     failedScrollActionRecord = null;
+    supersededScrollActionRecord =
+        scrollActionRecord == null ? finishedScrollActionRecord : scrollActionRecord;
     finishedScrollActionRecord = null;
     scrollActionRecord = newRecord;
   }

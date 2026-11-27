@@ -22,8 +22,9 @@ import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge
 
 /**
- * The settings of the menus along the left and right edges: a switch for each edge, and the
- * commands of its menu in order, one setting for each position.
+ * The settings of the menus along the left and right edges: a switch for each edge, a switch that
+ * makes its menu go across the screen, and the commands of its menu in order, one setting for each
+ * position.
  */
 object EdgeMenus {
   /** The most commands a menu has. */
@@ -33,6 +34,9 @@ object EdgeMenus {
 
   /** The key of the switch that makes [edge] a menu. */
   @JvmStatic fun switchKey(edge: MenuEdge): String = PREFIX + edge.name.lowercase()
+
+  /** The key of the switch that makes the menu of [edge] go across the screen instead of along it. */
+  @JvmStatic fun horizontalKey(edge: MenuEdge): String = switchKey(edge) + "_horizontal"
 
   /** The key of the command at [position], from 1, in the menu along [edge]. */
   @JvmStatic fun itemKey(edge: MenuEdge, position: Int): String = "${switchKey(edge)}_$position"
@@ -65,10 +69,17 @@ object EdgeMenus {
   /** The menu along [edge] as touch uses it: none while its switch is off or it has no commands. */
   @JvmStatic
   fun read(prefs: SharedPreferences, edge: MenuEdge, unassigned: String): Menu =
-    if (prefs.getBoolean(switchKey(edge), false)) Menu(items(prefs, edge, unassigned)) else Menu.NONE
+    if (prefs.getBoolean(switchKey(edge), false)) {
+      Menu(items(prefs, edge, unassigned), prefs.getBoolean(horizontalKey(edge), false))
+    } else {
+      Menu.NONE
+    }
 
-  /** The commands of a menu, with their names, which are all looked up when one is first needed. */
-  class Menu(private val commands: List<String>) {
+  /**
+   * The commands of a menu, with their names, which are all looked up when one is first needed, and
+   * whether it goes across the screen.
+   */
+  class Menu(private val commands: List<String>, val horizontal: Boolean = false) {
     private var names: List<String>? = null
 
     /** Whether the menu is the gesture trainer's sample menu, whose items run no commands. */

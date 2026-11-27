@@ -48,6 +48,7 @@ import com.google.android.accessibility.talkback.gesture.GestureLayout
 import com.google.android.accessibility.talkback.gesture.ShakeDetector
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.talkback.gesture.CornerTapTracker.Corner
+import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge
 import com.google.android.accessibility.talkback.gesture.GestureLog
@@ -371,8 +372,9 @@ class GestureTrainerActivity : AppCompatActivity() {
   /** Reads the limits again, as settings may have changed in a settings screen opened from here. */
   private fun readLimits() {
     val size = Point()
-    @Suppress("DEPRECATION") windowManager.defaultDisplay.getRealSize(size)
-    limits = TrainerLimits.read(this, size.x, size.y)
+    @Suppress("DEPRECATION") val shownDisplay = windowManager.defaultDisplay
+    shownDisplay.getRealSize(size)
+    limits = TrainerLimits.read(this, size.x, size.y, shownDisplay.rotation)
     analyzer = AttemptAnalyzer(limits)
   }
 
@@ -1009,6 +1011,7 @@ class GestureTrainerActivity : AppCompatActivity() {
       FindingKind.CORNER_TAP_SLOW -> getString(R.string.gesture_trainer_finding_corner_tap_slow, ms, limitMs)
       FindingKind.MENU_IN_CORNER -> getString(R.string.gesture_trainer_finding_menu_in_corner)
       FindingKind.MENU_LEFT_EDGE -> getString(R.string.gesture_trainer_finding_menu_left_edge, v, l)
+      FindingKind.MENU_LEFT_LINE -> getString(R.string.gesture_trainer_finding_menu_left_line, v, l)
       FindingKind.MENU_WRONG_ITEM -> getString(R.string.gesture_trainer_finding_menu_wrong_item, ms, limitMs)
       FindingKind.SWIPE_HOLD_TOO_SHORT -> getString(R.string.gesture_trainer_finding_swipe_hold_too_short, ms, limitMs)
       FindingKind.TAP_WRONG_HALF -> getString(R.string.gesture_trainer_finding_tap_wrong_half)
@@ -1082,7 +1085,13 @@ class GestureTrainerActivity : AppCompatActivity() {
         FindingKind.CORNER_TAP_SLOW -> R.string.gesture_trainer_tip_corner_tap_slow
         FindingKind.MENU_IN_CORNER -> R.string.gesture_trainer_tip_menu_in_corner
         FindingKind.MENU_LEFT_EDGE -> R.string.gesture_trainer_tip_menu_left_edge
-        FindingKind.MENU_WRONG_ITEM -> R.string.gesture_trainer_tip_menu_wrong_item
+        FindingKind.MENU_LEFT_LINE -> R.string.gesture_trainer_tip_menu_left_line
+        FindingKind.MENU_WRONG_ITEM ->
+          if ((exercise?.shape as? Shape.EdgeMenu)?.horizontal == true) {
+            R.string.gesture_trainer_tip_menu_wrong_item_across
+          } else {
+            R.string.gesture_trainer_tip_menu_wrong_item
+          }
         FindingKind.SWIPE_HOLD_TOO_SHORT -> R.string.gesture_trainer_tip_swipe_hold_too_short
         FindingKind.TAP_WRONG_HALF -> R.string.gesture_trainer_tip_tap_wrong_half
         FindingKind.SWIPE_MISSING -> R.string.gesture_trainer_tip_swipe_missing
@@ -1169,6 +1178,28 @@ class GestureTrainerActivity : AppCompatActivity() {
         else -> R.string.gesture_trainer_taps_4
       }
     )
+
+  /** How to choose the item of a menu across the screen: where each item is, from the edge. */
+  private fun howToMenuAcross(shape: Shape.EdgeMenu): String {
+    val items = shape.names.size
+    val width = limits.screenWidth.toFloat()
+    fun startOf(item: Int) =
+      EdgeSwipeTracker.horizontalMenuItemStart(item, items, width, limits.edgeFirstStagePx)
+    return getString(
+      R.string.gesture_trainer_how_menu_horizontal,
+      getString(
+        if (shape.edge == MenuEdge.LEFT) R.string.gesture_trainer_edge_left
+        else R.string.gesture_trainer_edge_right
+      ),
+      mm(limits.edgeFirstStagePx),
+      items,
+      shape.item + 1,
+      shape.names[shape.item],
+      cm(startOf(1) - startOf(0)),
+      cm(startOf(shape.item)),
+      cm(startOf(shape.item + 1)),
+    )
+  }
 
   private fun mm(px: Float): Int = Math.round(limits.toMm(px))
 
@@ -1259,20 +1290,24 @@ class GestureTrainerActivity : AppCompatActivity() {
       Shape.Scrub -> getString(R.string.gesture_trainer_how_scrub)
       is Shape.EdgeSlide -> howToEdge(shape)
       is Shape.EdgeMenu ->
-        getString(
-          R.string.gesture_trainer_how_menu,
+        if (shape.horizontal) {
+          howToMenuAcross(shape)
+        } else {
           getString(
-            if (shape.edge == MenuEdge.LEFT) R.string.gesture_trainer_edge_left
-            else R.string.gesture_trainer_edge_right
-          ),
-          mm(limits.edgeFirstStagePx),
-          shape.names.size,
-          shape.item + 1,
-          shape.names[shape.item],
-          cm(limits.screenHeight.toFloat() / shape.names.size),
-          cm(limits.screenHeight.toFloat() * shape.item / shape.names.size),
-          cm(limits.screenHeight.toFloat() * (shape.item + 1) / shape.names.size),
-        )
+            R.string.gesture_trainer_how_menu,
+            getString(
+              if (shape.edge == MenuEdge.LEFT) R.string.gesture_trainer_edge_left
+              else R.string.gesture_trainer_edge_right
+            ),
+            mm(limits.edgeFirstStagePx),
+            shape.names.size,
+            shape.item + 1,
+            shape.names[shape.item],
+            cm(limits.screenHeight.toFloat() / shape.names.size),
+            cm(limits.screenHeight.toFloat() * shape.item / shape.names.size),
+            cm(limits.screenHeight.toFloat() * (shape.item + 1) / shape.names.size),
+          )
+        }
       is Shape.CornerTaps ->
         getString(
           R.string.gesture_trainer_how_corner,

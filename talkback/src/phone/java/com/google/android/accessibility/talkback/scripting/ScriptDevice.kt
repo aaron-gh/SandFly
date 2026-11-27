@@ -30,6 +30,8 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.shizuku.ShizukuGrants
+import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -185,6 +187,18 @@ class ScriptDevice(private val context: Context) {
         .map { (packageName, label) -> jsonObject("package" to packageName, "label" to label) }
     )
   }
+
+  /**
+   * Whether SandFly can run commands through Shizuku, or through root with Use root instead of
+   * Shizuku on: `ready`, `not running` (also without the SandFly add-on in the Google Play build)
+   * or `not allowed`. It asks the user nothing.
+   */
+  fun shizuku(): String =
+    when {
+      !ShizukuShell.isAvailable(context) || !ShizukuGrants.isReady() -> "not running"
+      !ShizukuShell.isAllowed() -> "not allowed"
+      else -> "ready"
+    }
 
   fun appLabel(packageName: String?): String? =
     packageName?.let {

@@ -1125,11 +1125,11 @@
     <string name="overview_empty">No recent apps</string>
     <!-- Shown in SandFly's overview when the recent apps can't be read through Shizuku. [CHAR_LIMIT=NONE] -->
     <string name="overview_unavailable">Recent apps unavailable</string>
-    <!-- Spoken when the system's recent apps screen opens in place of SandFly's overview, or a quick settings tile command can't run, because Shizuku isn't running. [CHAR_LIMIT=NONE] -->
+    <!-- Spoken when the system's recent apps screen opens in place of SandFly's overview, the system power menu in place of Restart phone or Power off phone, or a quick settings tile command can't run, because Shizuku isn't running. [CHAR_LIMIT=NONE] -->
     <string name="overview_shizuku_not_running">Shizuku not running</string>
-    <!-- Spoken when the system's recent apps screen opens in place of SandFly's overview, or a quick settings tile command can't run, because Shizuku doesn't allow SandFly. [CHAR_LIMIT=NONE] -->
+    <!-- Spoken when the system's recent apps screen opens in place of SandFly's overview, the system power menu in place of Restart phone or Power off phone, or a quick settings tile command can't run, because Shizuku doesn't allow SandFly. [CHAR_LIMIT=NONE] -->
     <string name="overview_shizuku_not_allowed">Shizuku doesn\'t allow SandFly</string>
-    <!-- Spoken when a feature that needs root can't run because su doesn't give SandFly root, with Use root instead of Shizuku on. [CHAR_LIMIT=NONE] -->
+    <!-- Spoken when a feature that needs root can't run because su doesn't give SandFly root, with Use root instead of Shizuku on, such as when the system power menu opens in place of Restart phone or Power off phone. [CHAR_LIMIT=NONE] -->
     <string name="no_root_access">No root access</string>
     <!-- Spoken when SandFly's overview couldn't switch to or close an app. [CHAR_LIMIT=NONE] -->
     <string name="overview_failed">Failed</string>
@@ -2115,6 +2115,8 @@
     <string name="title_pref_typing_long_tap_duration">Touch and hold delay when typing</string>
     <!-- Title of the switch that makes touching and holding a keyboard key until the touch and hold delay ends press the key down until the finger lifts, so that keys such as Delete repeat. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_typing_hold_keys_down">Hold keys down after the touch and hold delay</string>
+    <!-- Title of the switch that makes swipes while focus is on an on-screen keyboard key move to the next or previous key with every typing method. Off, they go on in the app from the text field, except with double-tap typing. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_typing_swipes_through_keys">Swipe from key to key with every typing method</string>
     <!--
       Source: Preference title.
       Description: This preference that shows current touch explore time out to exploration. [CHAR_LIMIT=60]
@@ -2696,6 +2698,20 @@
     <string name="shortcut_lock_screen">Lock screen</string>
     <!-- Label for the shortcut that opens the system power menu. [CHAR_LIMIT=40] -->
     <string name="shortcut_power_menu">Power menu</string>
+    <!-- Label for the command that restarts the phone through Shizuku or root, after a dialog asks to confirm it. [CHAR_LIMIT=40] -->
+    <string name="shortcut_restart_phone">Restart phone</string>
+    <!-- Label for the command that turns the phone off through Shizuku or root, after a dialog asks to confirm it. [CHAR_LIMIT=40] -->
+    <string name="shortcut_power_off_phone">Power off phone</string>
+    <!-- Title of the dialog that Restart phone shows before it restarts the phone. [CHAR_LIMIT=NONE] -->
+    <string name="restart_phone_confirm_title">Restart the phone?</string>
+    <!-- The button of the Restart phone dialog that restarts the phone. [CHAR_LIMIT=NONE] -->
+    <string name="restart_phone_confirm_button">Restart</string>
+    <!-- Title of the dialog that Power off phone shows before it turns the phone off. [CHAR_LIMIT=NONE] -->
+    <string name="power_off_phone_confirm_title">Power off the phone?</string>
+    <!-- The button of the Power off phone dialog that turns the phone off. [CHAR_LIMIT=NONE] -->
+    <string name="power_off_phone_confirm_button">Power off</string>
+    <!-- Spoken when Restart phone or Power off phone fails through Shizuku or root, as the system power menu opens in its place. [CHAR_LIMIT=NONE] -->
+    <string name="power_command_failed">Failed, power menu opened</string>
     <!-- Label for the shortcut that opens the custom action menu. [CHAR_LIMIT=40] -->
     <string name="shortcut_show_custom_actions">Show custom actions</string>
     <!-- Label for the shortcut that opens the TalkBack context breakout menu [CHAR_LIMIT=100] -->
@@ -4301,6 +4317,8 @@
     <string name="title_pref_edge_menu_left_switch">Use the left edge as a menu</string>
     <!-- Title of the switch that makes one finger sliding up or down the right edge of the screen go through a menu of commands. [CHAR LIMIT=NONE]-->
     <string name="title_pref_edge_menu_right_switch">Use the right edge as a menu</string>
+    <!-- Title of the switch, on the screen of the left or right edge menu, that makes the menu go across the screen: one finger slides in from that edge toward the middle of the screen, instead of sliding up or down along the edge. [CHAR LIMIT=NONE]-->
+    <string name="title_pref_edge_menu_horizontal">Slide in from the edge</string>
     <!-- Button that adds a command at the end of an edge menu. [CHAR LIMIT=NONE]-->
     <string name="edge_menu_add_command">Add command</string>
     <!-- Option that replaces a command of an edge menu with another. [CHAR LIMIT=NONE]-->

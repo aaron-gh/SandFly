@@ -260,6 +260,8 @@
     <string name="script_builder_setting_number">Number</string>
     <!-- Kind of setting: a button that runs a trigger's steps. [CHAR LIMIT=40] -->
     <string name="script_builder_setting_button">Button</string>
+    <!-- Kind of setting: a SandFly command that the user chooses from the list of commands used for gestures. [CHAR LIMIT=40] -->
+    <string name="script_builder_setting_command">Command</string>
     <!-- Summary of a setting. %1$s is its kind, %2$s how steps use its value, such as {setting.s1}. [CHAR LIMIT=NONE] -->
     <string name="script_builder_setting_value">%1$s, in steps as %2$s</string>
     <!-- The text under a setting's title. [CHAR LIMIT=40] -->

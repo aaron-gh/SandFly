@@ -147,6 +147,8 @@ Swiping right and left scrolls lists by itself when the next item is off screen.
 
 In the default gesture layout, two-finger swipes go to the app and scroll it. With **Gestures** > **Handle two-finger swipes in SandFly** on, as in the VoiceOver gesture layout, two-finger swipes run commands instead: by default **Scroll up**, **Scroll down**, **Scroll left** and **Scroll right**, which move the content in the direction of the swipe. Where no item on the screen scrolls sideways, **Scroll left** and **Scroll right** send a one-finger swipe to the pager around the focused item, such as the folder tabs in Solid Explorer. These four commands need Android 11 or later, and aren't on watches.
 
+On a phone, if a two-finger scroll moves the focused item out of view, SandFly can move focus to a visible item in the same list. When you run **Scroll forward** or **Scroll back** from a list item, focus moves with the list.
+
 When nothing on the screen can scroll that way, such as at the end of a list, **Scroll forward**, **Scroll back** and these four commands play the **Action done or end reached** sound. At the top of a list, **Scroll back** and **Scroll down** pull the list down instead, with no sound. From a braille display, **Scroll forward** and **Scroll back** play the **Braille command failed** sound instead.
 
 These commands, in the **Scrolling** category, have no gesture by default:
@@ -161,7 +163,7 @@ While you scroll with two fingers, SandFly plays the scroll sound and a light vi
 These settings on the **Navigation** screen change how swipes scroll lists:
 
 - **Scroll ahead to the next item**: When the focused item is the last item of a list on the screen, SandFly scrolls the list forward while it reads the item, until the next item is on the screen, so that the next swipe doesn't wait for a scroll. Focus stays on the item, and the scroll makes no sound. After a move back, SandFly scrolls back instead. It doesn't scroll ahead in text fields, in web content or during continuous reading, and stops when you touch the screen, press a key or a window changes. On by default.
-- **Speak the next item while scrolling**: When a swipe has to scroll a list to reach the next item, SandFly focuses and reads the item as soon as it comes on the screen, while the list is still moving. Turn it off to wait until the list slows down. On by default.
+- **Speak the next item while scrolling**: When a swipe has to scroll a list to reach the next item, SandFly focuses and reads the item as soon as it comes on the screen, while the list is still moving. At the edge of an Android scroll view, SandFly can move on as soon as it confirms that scrolling has reached the end. Turn it off to wait until the list slows down. On by default.
 - **Speak items before they scroll into view**: When a swipe moves to an item that is only partly on the screen, SandFly reads it at once, including the parts still past the edge of the list, instead of waiting for the list to scroll. Off by default, because some apps keep hidden text outside an item instead of hiding it, and that text is then read.
 
 ### Lists and tables {#reading-lists-tables}

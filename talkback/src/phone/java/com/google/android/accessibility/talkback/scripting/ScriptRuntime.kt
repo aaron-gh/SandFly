@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.scripting
 import android.accessibilityservice.AccessibilityService
 import android.annotation.SuppressLint
 import android.content.ClipboardManager
+import android.content.Context
 import android.graphics.Rect
 import android.os.Handler
 import android.os.SystemClock
@@ -266,7 +267,7 @@ class ScriptRuntime(
     on("commands.run", INPUT) { args ->
       apiCheck(!manager.inBacktalk) { "Scripts can't run commands on SandFly's own screens" }
       val value = args.optString("id")
-      apiCheck(commandList().items().any { (it as JSONObject).optString("id") == value }) {
+      apiCheck(isKnownCommand(value)) {
         "Unknown command $value. sf.commands.list() gives the commands."
       }
       // Commands that do what other calls need a permission for need that permission too.
@@ -427,6 +428,7 @@ class ScriptRuntime(
     on("system.startActivity", SYSTEM) { manager.device.startActivity(it) }
     on("system.sendBroadcast", SYSTEM) { manager.device.sendBroadcast(it) }
     on("system.apps", SYSTEM) { manager.device.apps() }
+    on("system.shizuku", SYSTEM) { manager.device.shizuku() }
     on("translate", NETWORK) { args -> translate(args) }
     on("files.read") { args ->
       val path = args.optString("path")
@@ -635,19 +637,25 @@ class ScriptRuntime(
   private fun commandList(): JSONArray =
     commandListCache
       ?: JSONArray(
-          Commands.categories(manager.service).flatMap { category ->
+          runnableCommands(manager.service).flatMap { category ->
             val title = manager.service.getString(category.titleRes)
-            category.commands
-              .filter {
-                !ScriptCommands.isCommand(it.value) &&
-                  !OpenAppActions.isAction(it.value) &&
-                  !AppShortcutActions.isAction(it.value) &&
-                  it.value !in REFUSED_COMMANDS
-              }
-              .map { jsonObject("id" to it.value, "title" to it.label, "category" to title) }
+            category.commands.map {
+              jsonObject("id" to it.value, "title" to it.label, "category" to title)
+            }
           }
         )
         .also { commandListCache = it }
+
+  /**
+   * Whether [value] is in [commandList], read again when it isn't: a command setting offers the
+   * commands as they are now, such as a macro made after the list was read.
+   */
+  private fun isKnownCommand(value: String): Boolean {
+    fun listed() = commandList().items().any { (it as JSONObject).optString("id") == value }
+    if (listed()) return true
+    commandListCache = null
+    return listed()
+  }
 
   private fun translate(args: JSONObject): JSONObject {
     val text = args.optString("text")
@@ -876,6 +884,27 @@ class ScriptRuntime(
       setOf("TOGGLE_SCRIPTS", "KEYCOMBO:keycombo_shortcut_toggle_keyboard_input")
 
     /**
+     * The commands that scripts may run, by category: not those of scripts, opening apps, app
+     * shortcuts or [REFUSED_COMMANDS]. sf.commands.list gives them, and a command setting offers
+     * them.
+     */
+    @JvmStatic
+    fun runnableCommands(context: Context): List<Commands.Category> =
+      Commands.categories(context)
+        .map { category ->
+          Commands.Category(
+            category.titleRes,
+            category.commands.filter {
+              !ScriptCommands.isCommand(it.value) &&
+                !OpenAppActions.isAction(it.value) &&
+                !AppShortcutActions.isAction(it.value) &&
+                it.value !in REFUSED_COMMANDS
+            },
+          )
+        }
+        .filter { it.commands.isNotEmpty() }
+
+    /**
      * The permissions a script needs to run [macro] with sf.macros.run: reading the screen and
      * acting on it, as its steps do, and those of the commands it runs and of opening apps.
      */
@@ -935,7 +964,7 @@ class ScriptRuntime(
     private val COMMAND_PERMISSIONS: Map<String, ScriptPermission> =
       listOf(
           "PAUSE_BACKTALK", "PAUSE_FEEDBACK", "TOGGLE_VOICE_FEEDBACK", "TOGGLE_NOTIFICATION_SPEECH",
-          "LOCK_SCREEN", "POWER_MENU", "BACK", "HOME", "OVERVIEW", "SYSTEM_OVERVIEW", "PREVIOUS_APP", "OLDER_APP", "NEWER_APP", "TAKE_SCREENSHOT", "ANSWER_CALL", "END_CALL", "ALL_APPS", "NOTIFICATIONS",
+          "LOCK_SCREEN", "POWER_MENU", "RESTART_PHONE", "POWER_OFF_PHONE", "BACK", "HOME", "OVERVIEW", "SYSTEM_OVERVIEW", "PREVIOUS_APP", "OLDER_APP", "NEWER_APP", "TAKE_SCREENSHOT", "ANSWER_CALL", "END_CALL", "ALL_APPS", "NOTIFICATIONS",
           "SYSTEM_NOTIFICATIONS", "QUICK_SETTINGS", "SYSTEM_QUICK_SETTINGS", "ACCESSIBILITY_BUTTON",
           "ACCESSIBILITY_BUTTON_CHOOSER", "INCREASE_VOLUME", "DECREASE_VOLUME",
           "INCREASE_MEDIA_VOLUME", "DECREASE_MEDIA_VOLUME", "DICTATE", "SWITCH_KEYBOARD",

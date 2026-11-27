@@ -18,8 +18,10 @@ package com.google.android.accessibility.talkback.trainer
 
 import com.google.android.accessibility.talkback.gesture.BackTapDetector
 import com.google.android.accessibility.talkback.gesture.CornerTapTracker.Corner
+import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge
+import com.google.android.accessibility.talkback.gesture.TopAndBottomTap
 import com.google.android.accessibility.talkback.gesture.ShakeDetector
 import kotlin.math.abs
 import kotlin.math.acos
@@ -83,6 +85,8 @@ enum class FindingKind {
   CORNER_TAP_SLOW,
   MENU_IN_CORNER,
   MENU_LEFT_EDGE,
+  /** A menu across the screen that the finger left by moving up or down from where it opened. */
+  MENU_LEFT_LINE,
   MENU_WRONG_ITEM,
   SWIPE_HOLD_TOO_SHORT,
   TAP_WRONG_HALF,
@@ -424,11 +428,10 @@ class AttemptAnalyzer(private val limits: TrainerLimits) {
   /** Checks that the fingers lifted in [half] of the screen, as SandFly takes their middle there. */
   private fun checkHalf(check: Checks, touch: Touch, half: ScreenHalf) {
     if (half == ScreenHalf.TOP_AND_BOTTOM) {
-      // SandFly takes where the fingers of the last tap went down.
-      val ys = touch.fingers.map { it.start.y }
-      val top = limits.screenHeight / 3f
-      val bottom = limits.screenHeight * 2 / 3f
-      val topAndBottom = ys.size == 2 && ys.any { it < top } && ys.any { it >= bottom }
+      // SandFly takes where the fingers of the last tap went down, along the device held upright.
+      val ys = touch.fingers.map { TopAndBottomTap.alongDevice(it.start.x, it.start.y, limits.rotation) }
+      val length = TopAndBottomTap.deviceLength(limits.screenWidth, limits.screenHeight, limits.rotation)
+      val topAndBottom = ys.size == 2 && TopAndBottomTap.isTopAndBottom(ys[0], ys[1], length)
       if (!topAndBottom) check.problem(FindingKind.TAP_NOT_TOP_AND_BOTTOM)
       return
     }
@@ -748,6 +751,10 @@ class AttemptAnalyzer(private val limits: TrainerLimits) {
     fun fromEdge(p: TouchPoint) = maxOf(if (left) p.x else w - p.x, 0f)
     check.measure(MeasureKind.EDGE_DISTANCE_MM, limits.toMm(fromEdge(start)))
     check.atMost(FindingKind.EDGE_START_TOO_FAR, limits.toMm(fromEdge(start)), limits.toMm(limits.edgeZonePx))
+    if (shape.horizontal) {
+      menuAcross(check, shape, finger, ::fromEdge)
+      return
+    }
     // The ends of a side edge belong to the top and bottom edges.
     if (start.y <= limits.edgeZonePx || start.y >= h - limits.edgeZonePx) {
       check.problem(FindingKind.MENU_IN_CORNER)
@@ -770,6 +777,51 @@ class AttemptAnalyzer(private val limits: TrainerLimits) {
     )
     val items = shape.names.size
     val liftedAt = (end.y * items / h).toInt().coerceIn(0, items - 1)
+    check.measure(MeasureKind.MENU_ITEM, (liftedAt + 1).toFloat())
+    if (liftedAt != shape.item) {
+      check.problem(FindingKind.MENU_WRONG_ITEM, (liftedAt + 1).toFloat(), (shape.item + 1).toFloat())
+    }
+  }
+
+  /**
+   * The rest of [edgeMenu] for a menu across the screen, as EdgeSwipeTracker takes it: the slide in
+   * from the edge that it replaces, from the corners too, then the item level with the finger across
+   * the screen, while the finger stays level with where the menu opened.
+   */
+  private fun menuAcross(
+    check: Checks,
+    shape: Shape.EdgeMenu,
+    finger: FingerPath,
+    fromEdge: (TouchPoint) -> Float,
+  ) {
+    val start = finger.start
+    val left = shape.edge == MenuEdge.LEFT
+    fun inward(p: TouchPoint) = if (left) p.x - start.x else start.x - p.x
+    val opened = finger.points.firstOrNull { inward(it) >= limits.edgeFirstStagePx }
+    if (opened == null) {
+      val farthest = maxOf(finger.points.maxOf { inward(it) }, 0f)
+      check.atLeast(FindingKind.EDGE_TOO_SHORT, limits.toMm(farthest), limits.toMm(limits.edgeFirstStagePx))
+      return
+    }
+    check.atMost(FindingKind.EDGE_TOO_SLOW, (opened.timeMs - finger.downMs).toFloat(), EDGE_START_MS)
+    val angle =
+      Math.toDegrees(atan2(abs(opened.y - start.y).toDouble(), inward(opened).toDouble())).toFloat()
+    check.atMost(FindingKind.EDGE_SIDEWAYS, angle, MAX_ANGLE_DEGREES)
+    val end = finger.end
+    check.atMost(
+      FindingKind.MENU_LEFT_LINE,
+      limits.toMm(abs(end.y - opened.y)),
+      limits.toMm(limits.edgeZonePx * MENU_ZONE_FACTOR),
+    )
+    val items = shape.names.size
+    val liftedAt =
+      EdgeSwipeTracker.horizontalMenuItem(
+          fromEdge(end),
+          items,
+          limits.screenWidth.toFloat(),
+          limits.edgeFirstStagePx,
+        )
+        .coerceAtLeast(0)
     check.measure(MeasureKind.MENU_ITEM, (liftedAt + 1).toFloat())
     if (liftedAt != shape.item) {
       check.problem(FindingKind.MENU_WRONG_ITEM, (liftedAt + 1).toFloat(), (shape.item + 1).toFloat())

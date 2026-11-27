@@ -44,6 +44,8 @@ import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics
 import com.google.android.accessibility.talkback.gesture.EdgeMenus
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
+import com.google.android.accessibility.talkback.trainer.GestureTrainerHooks
+import com.google.android.accessibility.talkback.trainer.TrainerExercises
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.gestures.GestureConfiguration
@@ -525,6 +527,57 @@ class TrackedGestureTest {
       service.commands,
     )
     assertEquals(listOf<Int>(), service.gestures)
+  }
+
+  @Test
+  fun slidingInFromAHorizontalMenuEdgeRunsTheItemTheFingerLiftsOn() {
+    // Home is the left half of the width beyond the first click and Back the right half.
+    leftEdgeMenu(R.string.shortcut_value_home, R.string.shortcut_value_back)
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putBoolean(EdgeMenus.horizontalKey(MenuEdge.LEFT), true)
+      .commit()
+    slideSideways(200f, 5f, 300f)
+    slideSideways(200f, 5f, 120f)
+    assertEquals(
+      listOf(service.getString(R.string.shortcut_value_back), service.getString(R.string.shortcut_value_home)),
+      service.commands,
+    )
+    assertEquals(listOf<Int>(), service.gestures)
+  }
+
+  @Test
+  fun practiceMenuOfAnEdgeWithoutCommandsGoesAlongItWithSlideInOn() {
+    // The edge is a menu that slides in from the edge, but it has no commands, so the trainer
+    // practises it with its sample menu, which goes along the edge as the trainer describes it.
+    leftEdgeMenu()
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putBoolean(EdgeMenus.horizontalKey(MenuEdge.LEFT), true)
+      .commit()
+    val choices = ArrayList<Int>()
+    GestureTrainerHooks.listener =
+      object : GestureTrainerHooks.Listener {
+        override val practisedGestureId = TrainerExercises.MENU_GESTURE_ID
+
+        override fun onTouch(event: MotionEvent) {}
+
+        override fun onGesture(gestureId: Int): Boolean = true
+
+        override fun practiceMenuItems(edge: MenuEdge): List<String> = listOf("Option 1", "Option 2")
+
+        override fun onEdgeMenuChoice(edge: MenuEdge, item: Int) {
+          choices += item
+        }
+      }
+    try {
+      // The second option along the edge; a menu across the screen would give the first.
+      slide(5f, 100f, 300f)
+      slideSideways(200f, 5f, 120f)
+    } finally {
+      GestureTrainerHooks.listener = null
+    }
+    assertEquals(listOf(1), choices)
   }
 
   @Test

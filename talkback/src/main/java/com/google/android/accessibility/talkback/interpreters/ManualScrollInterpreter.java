@@ -102,7 +102,8 @@ public class ManualScrollInterpreter implements ScrollEventHandler {
   @Override
   public void onScrollEvent(
       AccessibilityEvent event, ScrollEventInterpretation interpretation, EventId eventId) {
-    if ((interpretation.userAction != ScrollActionRecord.ACTION_MANUAL_SCROLL)
+    if ((!interpretation.isFromFinishedScrollCommand
+            && interpretation.userAction != ScrollActionRecord.ACTION_MANUAL_SCROLL)
         || (interpretation.scrollDirection == TraversalStrategy.SEARCH_FOCUS_UNKNOWN)
         || ListEdgeScroller.isActive()) {
       return;
@@ -110,7 +111,9 @@ public class ManualScrollInterpreter implements ScrollEventHandler {
 
     AccessibilityNodeInfoCompat scrolledNode =
         AccessibilityNodeInfoUtils.toCompat(event.getSource());
-    if (scrolledNode == null) {
+    if (scrolledNode == null
+        || (interpretation.isFromFinishedScrollCommand
+            && (FormFactorUtils.isAndroidWear() || WebScrollFocus.isWebContent(scrolledNode)))) {
       return;
     }
 

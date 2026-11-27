@@ -228,6 +228,7 @@
     <string name="pref_typing_confirmation_key" translatable="false">pref_typing_confirmation</string>
     <string name="pref_typing_long_press_duration_key" translatable="false">pref_typing_long_press_duration</string>
     <string name="pref_typing_hold_keys_down_key" translatable="false">pref_typing_hold_keys_down</string>
+    <string name="pref_typing_swipes_through_keys_key" translatable="false">pref_typing_swipes_through_keys</string>
     <string name="pref_keypad_letter_keys_key" translatable="false">pref_keypad_letter_keys</string>
     <string name="pref_enter_sends_messages_key" translatable="false">pref_enter_sends_messages</string>
     <string name="pref_sandfly_keyboard_key" translatable="false">pref_sandfly_keyboard</string>
@@ -2756,6 +2757,8 @@
   <string name="shortcut_value_split_screen" translatable="false">SPLIT_SCREEN</string>
   <string name="shortcut_value_lock_screen">LOCK_SCREEN</string>
   <string name="shortcut_value_power_menu">POWER_MENU</string>
+  <string name="shortcut_value_restart_phone">RESTART_PHONE</string>
+  <string name="shortcut_value_power_off_phone">POWER_OFF_PHONE</string>
   <string name="shortcut_value_show_custom_actions">SHOW_CUSTOM_ACTIONS</string>
   <string name="shortcut_value_editing">EDITING</string>
   <string name="shortcut_value_talkback_breakout">TALKBACK_BREAKOUT</string>
@@ -3257,6 +3260,7 @@
     <bool name="pref_overview_newest_last_default">false</bool>
     <bool name="pref_cache_keyboard_keys_default">false</bool>
     <bool name="pref_typing_hold_keys_down_default">false</bool>
+    <bool name="pref_typing_swipes_through_keys_default">false</bool>
     <bool name="pref_keypad_letter_keys_default">true</bool>
     <bool name="pref_enter_sends_messages_default">false</bool>
     <bool name="pref_double_tap_moves_cursor_default">false</bool>

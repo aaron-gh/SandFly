@@ -106,13 +106,15 @@ sealed interface Shape {
 
   /**
    * Choosing [item] of the menu along [edge], whose items are [names]: the user's menu, or sample
-   * items when [sample] is true, as the edge has no menu.
+   * items when [sample] is true, as the edge has no menu. When [horizontal] is true, the menu goes
+   * across the screen, through a slide in from the edge.
    */
   data class EdgeMenu(
     val edge: MenuEdge,
     val item: Int,
     val names: List<String>,
     val sample: Boolean,
+    val horizontal: Boolean = false,
   ) : Shape
 }
 
@@ -282,8 +284,13 @@ object TrainerExercises {
             )
         }
       TrainerGroup.EDGE_SWIPES -> {
-        exercises += edgeSlides(long = false)
-        exercises += edgeSlides(long = true)
+        val menus = acrossMenuEdges(context, prefs)
+        exercises += edgeSlides(long = false).filter { it.slideSide() !in menus }
+        exercises += edgeSlides(long = true).filter { it.slideSide() !in menus }
+        leftOut +=
+          menus.map { side ->
+            context.getString(R.string.gesture_trainer_left_out_in_menu, alongEdgeName(context, side))
+          }
       }
       TrainerGroup.ALONG_EDGES -> {
         val taken = takenEdges(context, prefs)
@@ -567,10 +574,12 @@ object TrainerExercises {
     val names =
       if (sample) sampleMenuItems(context)
       else (0 until menu.size).map { menu.name(context, it) }
+    // The sample menu goes along the edge, as touch gives it.
+    val horizontal = !sample && menu.horizontal
     return names.indices
       .shuffled()
       .take(MENU_EXERCISES_PER_EDGE)
-      .map { Exercise(MENU_GESTURE_ID, Shape.EdgeMenu(edge, it, names, sample)) }
+      .map { Exercise(MENU_GESTURE_ID, Shape.EdgeMenu(edge, it, names, sample, horizontal)) }
   }
 
   fun sampleMenuItems(context: Context): List<String> =
@@ -628,7 +637,9 @@ object TrainerExercises {
         context.resources.getBoolean(R.bool.pref_edge_scroll_default),
       )
     val unassigned = context.getString(R.string.shortcut_value_unassigned)
-    fun isMenu(edge: MenuEdge) = EdgeMenus.read(prefs, edge, unassigned).size > 0
+    // A menu across the screen leaves the slides along its edge to gestures and scrolling.
+    fun isMenu(edge: MenuEdge) =
+      EdgeMenus.read(prefs, edge, unassigned).let { it.size > 0 && !it.horizontal }
     val taken = LinkedHashMap<ScreenSide, Int>()
     fun take(side: ScreenSide, menu: Boolean, scrollKey: Int) {
       when {
@@ -642,6 +653,22 @@ object TrainerExercises {
     take(ScreenSide.BOTTOM, false, R.string.pref_edge_scroll_bottom_key)
     return taken
   }
+
+  /**
+   * The side edges whose menu goes across the screen, so that a slide in from them opens the menu
+   * instead of running a gesture.
+   */
+  private fun acrossMenuEdges(
+    context: Context,
+    prefs: android.content.SharedPreferences,
+  ): List<ScreenSide> {
+    val unassigned = context.getString(R.string.shortcut_value_unassigned)
+    return listOf(MenuEdge.LEFT to ScreenSide.LEFT, MenuEdge.RIGHT to ScreenSide.RIGHT)
+      .filter { (edge, _) -> EdgeMenus.read(prefs, edge, unassigned).let { it.size > 0 && it.horizontal } }
+      .map { (_, side) -> side }
+  }
+
+  private fun Exercise.slideSide(): ScreenSide? = (shape as? Shape.EdgeSlide)?.edge?.side
 
   /** "the left edge" and so on, as in "along the left edge". */
   fun alongEdgeName(context: Context, side: ScreenSide): String =
@@ -684,6 +711,8 @@ class TrainerLimits(
   val swipeHoldMs: Long = 500,
   /** How soon after the first swipe of a two-stroke swipe lifts the second must start. */
   val twoStrokeMs: Long = 1000,
+  /** The rotation of the display, a [android.view.Surface] rotation. */
+  val rotation: Int = 0,
 ) {
   fun toMm(px: Float): Float = px / pxPerCm * 10f
 
@@ -699,7 +728,7 @@ class TrainerLimits(
     private const val SWIPE_START_MS_PER_CM = 150
     private const val SWIPE_CONTINUE_MS_PER_CM = 350
 
-    fun read(context: Context, screenWidth: Int, screenHeight: Int): TrainerLimits {
+    fun read(context: Context, screenWidth: Int, screenHeight: Int, rotation: Int): TrainerLimits {
       val prefs = SharedPreferencesUtils.getSharedPreferences(context)
       val res = context.resources
       val config = ViewConfiguration.get(context)
@@ -745,6 +774,7 @@ class TrainerLimits(
         screenHeight = screenHeight,
         swipeHoldMs = GestureConfiguration.getSwipeHoldTimeMs().toLong(),
         twoStrokeMs = TrainerExercises.twoStrokeSwipeTimeMs(context).toLong(),
+        rotation = rotation,
       )
     }
   }

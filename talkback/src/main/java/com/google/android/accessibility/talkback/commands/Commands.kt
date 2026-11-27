@@ -1017,6 +1017,8 @@ object Commands {
         )
         gesture(R.string.shortcut_value_lock_screen, R.string.shortcut_lock_screen)
         gesture(R.string.shortcut_value_power_menu, R.string.shortcut_power_menu)
+        gesture(R.string.shortcut_value_restart_phone, R.string.shortcut_restart_phone)
+        gesture(R.string.shortcut_value_power_off_phone, R.string.shortcut_power_off_phone)
         val systemActions = FeatureSupport.supportGetSystemActions(context)
         gesture(R.string.shortcut_value_all_apps, R.string.shortcut_all_apps, available = systemActions)
         gesture(

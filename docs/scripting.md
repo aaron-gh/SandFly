@@ -1,6 +1,6 @@
 # Writing SandFly scripts
 
-This document is the reference for the SandFly script API, version 6. A script is a Lua program that changes how SandFly works in one app or in every app, or adds commands to SandFly. To install and manage scripts, or to make one without code in the script builder, see the [Scripts and custom labels](user-guide/en/20-scripts.md) chapter of the SandFly User Guide.
+This document is the reference for the SandFly script API, version 7. A script is a Lua program that changes how SandFly works in one app or in every app, or adds commands to SandFly. To install and manage scripts, or to make one without code in the script builder, see the [Scripts and custom labels](user-guide/en/20-scripts.md) chapter of the SandFly User Guide.
 
 ## Overview
 
@@ -27,7 +27,7 @@ Scripts run on phones and tablets. Watches and TVs don't run scripts.
 
 ### API versions
 
-This document describes script API version 6. `sf.apiVersion` gives the version of the SandFly a script runs in. Items added after version 1 are marked with the version that added them, such as *Version 2*. Set `minApiVersion` in the manifest to the highest version marked on anything the script uses. Versions 2 to 6 only add to version 1; nothing a version 1 script uses has changed.
+This document describes script API version 7. `sf.apiVersion` gives the version of the SandFly a script runs in. Items added after version 1 are marked with the version that added them, such as *Version 2*. Set `minApiVersion` in the manifest to the highest version marked on anything the script uses. Versions 2 to 7 only add to version 1; nothing a version 1 script uses has changed.
 
 ## Write your first script
 
@@ -40,7 +40,7 @@ local manifest = {
   author = 'Your name',
   version = '1',
   minApiVersion = 6,
-  testedApiVersion = 6,
+  testedApiVersion = 7,
   apps = { 'com.android.settings' },
   permissions = { 'speech' },
   commands = {
@@ -762,7 +762,7 @@ The script builder keeps the steps of each command and trigger in a file in `mac
 
 **`sf.commands.run(id)`** runs a command from the list, as its gesture would, and gives whether it ran. It raises an error for an id not in the list, and on SandFly screens. Needs `input`. These commands also need:
 
-*   `system`: commands that pause or silence SandFly, turn spoken notifications on or off, act on the system (Back, Home, recent apps, previous app, notifications, quick settings, screenshots, lock screen, power menu, all apps, accessibility button), answer or end a call, change the volume, switch the keyboard, use the microphone (dictation, voice commands), turn magnification, the braille display, pass-through or direct touch on or off, and the SandFly Pro commands.
+*   `system`: commands that pause or silence SandFly, turn spoken notifications on or off, act on the system (Back, Home, recent apps, previous app, notifications, quick settings, screenshots, lock screen, power menu, restart and power off, all apps, accessibility button), answer or end a call, change the volume, switch the keyboard, use the microphone (dictation, voice commands), turn magnification, the braille display, pass-through or direct touch on or off, and the SandFly Pro commands.
 *   `clipboard`: commands that copy, cut, paste or add to the clipboard, copy text from the screen, the last utterance, the screen tree or item details, select the last spoken phrase, and open the clipboard or speech history.
 
 ```lua
@@ -812,17 +812,30 @@ settings = {
   { key = 'name', type = 'text', title = 'Your name', summary = 'Used in greetings' },
   { key = 'count', type = 'number', title = 'How many' },
   { key = 'reset', type = 'button', title = 'Reset counts' },
+  { key = 'onUnlock', type = 'command', title = 'When unlocked', default = 'TOGGLE_TOUCH_LOCK',
+    options = { { value = 'vibrate', label = 'Vibrate the time' } } },
 },
 ```
 
 | Field | Meaning |
 |---|---|
 | `key` | Required. Letters, digits, `.`, `-` and `_`, up to 64 characters, unique in the script. |
-| `type` | `'switch'` (the default), `'list'`, `'text'`, `'number'` or `'button'`. |
+| `type` | `'switch'` (the default), `'list'`, `'text'`, `'number'`, `'button'` or `'command'` (*Version 7*). |
 | `title` | Required. |
-| `summary` | Text under the title. A list shows its chosen option instead. |
-| `default` | The value before the user changes it. If left out: `false` for a switch, the first option for a list, `''` for text, 0 for a number. |
-| `options` | For a list, required: values, or `{ value, label }` records. |
+| `summary` | Text under the title. A list shows its chosen option instead, and a command setting its chosen command. |
+| `default` | The value before the user changes it. If left out: `false` for a switch, the first option for a list, `''` for text, 0 for a number, `''` (no command) for a command setting. |
+| `options` | For a list, required: values, or `{ value, label }` records. For a command setting, the script's own choices, in the same form. |
+
+*Version 7.* A command setting lets the user choose a SandFly command in the list used to assign a command to a gesture or a volume key press, with its categories and its search. The list has the setting's own `options` first, then **Unassigned**, then the commands of [`sf.commands.list()`](#run-sandfly-commands). The value is the command's id, which [`sf.commands.run`](#run-sandfly-commands) takes, an option's value, or `''` for **Unassigned**, so an option's value can't be empty. `sf.commands.run` needs the `input` permission, and the permissions some commands need, such as `system`. A script handles its own options itself, as in this example:
+
+```lua
+local command = sf.settings.get('onUnlock')
+if command == 'vibrate' then
+  vibrateTime()
+elseif command ~= '' then
+  sf.commands.run(command)
+end
+```
 
 A button has no value. Pressing it calls [`sf.onButton`](#hooks) with its key; while the script is off, SandFly shows "Turn the script on first".
 
@@ -904,6 +917,16 @@ These need the `system` permission.
 **`sf.system.openApp(packageName)`** opens an app and, in a task, gives whether it opened.
 
 **`sf.system.apps()`** *Version 2* gives a list of the apps with a launcher icon, `{ package, label }`, by name.
+
+**`sf.system.shizuku()`** *Version 7* gives whether SandFly can run commands through Shizuku, without asking the user anything: `'ready'`, `'not running'` or `'not allowed'`. With **Use root instead of Shizuku** on, `'ready'` means that su gave SandFly root, and `'not allowed'` that it hasn't yet. The Google Play build without the SandFly add-on gives `'not running'`. A script can use what needs Shizuku, such as `sf.keys.press`, when it gives `'ready'`, and do the work another way otherwise.
+
+```lua
+if sf.system.shizuku() == 'ready' then
+  sf.keys.press('enter')
+else
+  -- Press the app's Send button instead.
+end
+```
 
 **`sf.system.openUrl(url)`** *Version 2* opens an `http`, `https`, `mailto`, `tel`, `sms`, `smsto`, `geo` or `market` address in the app for it, and gives whether an app opened it.
 
@@ -1062,7 +1085,7 @@ These are the names for `gesture` in commands and `sf.bind`.
 
 `swipeUp`, `swipeDown`, `swipeLeft`, `swipeRight`, `swipeUpThenDown`, `swipeDownThenUp`, `swipeLeftThenRight`, `swipeRightThenLeft`, `swipeUpThenLeft`, `swipeUpThenRight`, `swipeDownThenLeft`, `swipeDownThenRight`, `swipeLeftThenUp`, `swipeLeftThenDown`, `swipeRightThenUp`, `swipeRightThenDown`, `doubleTap`, `doubleTapAndHold`, `twoFingerTap`, `twoFingerDoubleTap`, `twoFingerTripleTap`, `twoFingerTapAndHold`, `twoFingerDoubleTapAndHold`, `twoFingerTripleTapAndHold`, `twoFingerSwipeUp`, `twoFingerSwipeDown`, `twoFingerSwipeLeft`, `twoFingerSwipeRight`, `twoFingerSwipeUpThenLeft`, `twoFingerSwipeUpThenRight`, `twoFingerSwipeDownThenLeft`, `twoFingerSwipeDownThenRight`, `twoFingerSwipeLeftThenUp`, `twoFingerSwipeLeftThenDown`, `twoFingerSwipeRightThenUp`, `twoFingerSwipeRightThenDown`, `twoFingerRotateClockwise`, `twoFingerRotateCounterclockwise`, `threeFingerTap`, `threeFingerDoubleTap`, `threeFingerTripleTap`, `threeFingerQuadrupleTap`, `threeFingerTapAndHold`, `threeFingerDoubleTapAndHold`, `threeFingerTripleTapAndHold`, `threeFingerSwipeUp`, `threeFingerSwipeDown`, `threeFingerSwipeLeft`, `threeFingerSwipeRight`, `fourFingerTap`, `fourFingerDoubleTap`, `fourFingerTripleTap`, `fourFingerDoubleTapAndHold`, `fourFingerSwipeUp`, `fourFingerSwipeDown`, `fourFingerSwipeLeft`, `fourFingerSwipeRight`, `fingerprintSwipeUp`, `fingerprintSwipeDown`, `fingerprintSwipeLeft` and `fingerprintSwipeRight`.
 
-SandFly gestures, which SandFly recognizes only while a command or a script uses them: `tripleTap`, `quadrupleTap`, `edgeSwipeUpFromBottom`, `edgeLongSwipeUpFromBottom`, `edgeSwipeDownFromTopLeft`, `edgeLongSwipeDownFromTopLeft`, `edgeSwipeDownFromTopRight`, `edgeLongSwipeDownFromTopRight`, `edgeSwipeRightFromLeftTop`, `edgeLongSwipeRightFromLeftTop`, `edgeSwipeRightFromLeftBottom`, `edgeLongSwipeRightFromLeftBottom`, `edgeSwipeLeftFromRightTop`, `edgeLongSwipeLeftFromRightTop`, `edgeSwipeLeftFromRightBottom`, `edgeLongSwipeLeftFromRightBottom`, `edgeSwipeUpAlongLeft`, `edgeSwipeDownAlongLeft`, `edgeSwipeUpAlongRight`, `edgeSwipeDownAlongRight`, `edgeSwipeLeftAlongTop`, `edgeSwipeRightAlongTop`, `edgeSwipeLeftAlongBottom`, `edgeSwipeRightAlongBottom`, `cornerTapTopLeft`, `cornerDoubleTapTopLeft`, `cornerTripleTapTopLeft`, `cornerDoubleTapAndHoldTopLeft`, `cornerTripleTapAndHoldTopLeft`, `cornerTapTopRight`, `cornerDoubleTapTopRight`, `cornerTripleTapTopRight`, `cornerDoubleTapAndHoldTopRight`, `cornerTripleTapAndHoldTopRight`, `cornerTapBottomLeft`, `cornerDoubleTapBottomLeft`, `cornerTripleTapBottomLeft`, `cornerDoubleTapAndHoldBottomLeft`, `cornerTripleTapAndHoldBottomLeft`, `cornerTapBottomRight`, `cornerDoubleTapBottomRight`, `cornerTripleTapBottomRight`, `cornerDoubleTapAndHoldBottomRight`, `cornerTripleTapAndHoldBottomRight`, `twoFingerTapThenSwipeUp`, `twoFingerTapThenSwipeDown`, `twoFingerTapThenSwipeLeft`, `twoFingerTapThenSwipeRight`, `twoFingerDoubleTapThenSwipeUp`, `twoFingerDoubleTapThenSwipeDown`, `twoFingerDoubleTapThenSwipeLeft`, `twoFingerDoubleTapThenSwipeRight`, `twoFingerTripleTapThenSwipeUp`, `twoFingerTripleTapThenSwipeDown`, `twoFingerTripleTapThenSwipeLeft`, `twoFingerTripleTapThenSwipeRight`, `threeFingerTapThenSwipeUp`, `threeFingerTapThenSwipeDown`, `threeFingerTapThenSwipeLeft`, `threeFingerTapThenSwipeRight`, `threeFingerDoubleTapThenSwipeUp`, `threeFingerDoubleTapThenSwipeDown`, `threeFingerDoubleTapThenSwipeLeft`, `threeFingerDoubleTapThenSwipeRight`, `threeFingerTripleTapThenSwipeUp`, `threeFingerTripleTapThenSwipeDown`, `threeFingerTripleTapThenSwipeLeft`, `threeFingerTripleTapThenSwipeRight`, `fourFingerTapThenSwipeUp`, `fourFingerTapThenSwipeDown`, `fourFingerTapThenSwipeLeft`, `fourFingerTapThenSwipeRight`, `fourFingerDoubleTapThenSwipeUp`, `fourFingerDoubleTapThenSwipeDown`, `fourFingerDoubleTapThenSwipeLeft`, `fourFingerDoubleTapThenSwipeRight`, `fourFingerTripleTapThenSwipeUp`, `fourFingerTripleTapThenSwipeDown`, `fourFingerTripleTapThenSwipeLeft`, `fourFingerTripleTapThenSwipeRight`, `twoFingerTapThenOneFingerSwipeUp`, `twoFingerTapThenOneFingerSwipeDown`, `twoFingerTapThenOneFingerSwipeLeft`, `twoFingerTapThenOneFingerSwipeRight`, `twoFingerDoubleTapThenOneFingerSwipeUp`, `twoFingerDoubleTapThenOneFingerSwipeDown`, `twoFingerDoubleTapThenOneFingerSwipeLeft`, `twoFingerDoubleTapThenOneFingerSwipeRight`, `twoFingerTripleTapThenOneFingerSwipeUp`, `twoFingerTripleTapThenOneFingerSwipeDown`, `twoFingerTripleTapThenOneFingerSwipeLeft`, `twoFingerTripleTapThenOneFingerSwipeRight`, `twoFingerPinch`, `twoFingerSpread`, `threeFingerPinch`, `threeFingerSpread`, `fourFingerPinch`, `fourFingerSpread`, `twoFingerScrub`, and the swipe-and-hold gestures `swipeUpAndHold`, `swipeDownAndHold`, `swipeLeftAndHold`, `swipeRightAndHold`, `swipeUpThenDownAndHold`, `swipeDownThenUpAndHold`, `swipeLeftThenRightAndHold`, `swipeRightThenLeftAndHold`, `swipeUpThenLeftAndHold`, `swipeUpThenRightAndHold`, `swipeDownThenLeftAndHold`, `swipeDownThenRightAndHold`, `swipeLeftThenUpAndHold`, `swipeLeftThenDownAndHold`, `swipeRightThenUpAndHold` and `swipeRightThenDownAndHold`, and the three-part swipes, named in the same way, such as `swipeRightThenUpThenRight` and `swipeUpThenDownThenUp`, and the two-stroke swipes, such as `swipeRightLiftSwipeUp`, `swipeDownLiftSwipeDown`, `swipeUpThenLeftLiftSwipeRight` and `swipeUpLiftSwipeRightThenDown`, which also need **Time between two-stroke swipes** set. Slides along an edge that is an edge menu go to the menu instead.
+SandFly gestures, which SandFly recognizes only while a command or a script uses them: `tripleTap`, `quadrupleTap`, `edgeSwipeUpFromBottom`, `edgeLongSwipeUpFromBottom`, `edgeSwipeDownFromTopLeft`, `edgeLongSwipeDownFromTopLeft`, `edgeSwipeDownFromTopRight`, `edgeLongSwipeDownFromTopRight`, `edgeSwipeRightFromLeftTop`, `edgeLongSwipeRightFromLeftTop`, `edgeSwipeRightFromLeftBottom`, `edgeLongSwipeRightFromLeftBottom`, `edgeSwipeLeftFromRightTop`, `edgeLongSwipeLeftFromRightTop`, `edgeSwipeLeftFromRightBottom`, `edgeLongSwipeLeftFromRightBottom`, `edgeSwipeUpAlongLeft`, `edgeSwipeDownAlongLeft`, `edgeSwipeUpAlongRight`, `edgeSwipeDownAlongRight`, `edgeSwipeLeftAlongTop`, `edgeSwipeRightAlongTop`, `edgeSwipeLeftAlongBottom`, `edgeSwipeRightAlongBottom`, `cornerTapTopLeft`, `cornerDoubleTapTopLeft`, `cornerTripleTapTopLeft`, `cornerDoubleTapAndHoldTopLeft`, `cornerTripleTapAndHoldTopLeft`, `cornerTapTopRight`, `cornerDoubleTapTopRight`, `cornerTripleTapTopRight`, `cornerDoubleTapAndHoldTopRight`, `cornerTripleTapAndHoldTopRight`, `cornerTapBottomLeft`, `cornerDoubleTapBottomLeft`, `cornerTripleTapBottomLeft`, `cornerDoubleTapAndHoldBottomLeft`, `cornerTripleTapAndHoldBottomLeft`, `cornerTapBottomRight`, `cornerDoubleTapBottomRight`, `cornerTripleTapBottomRight`, `cornerDoubleTapAndHoldBottomRight`, `cornerTripleTapAndHoldBottomRight`, `twoFingerTapThenSwipeUp`, `twoFingerTapThenSwipeDown`, `twoFingerTapThenSwipeLeft`, `twoFingerTapThenSwipeRight`, `twoFingerDoubleTapThenSwipeUp`, `twoFingerDoubleTapThenSwipeDown`, `twoFingerDoubleTapThenSwipeLeft`, `twoFingerDoubleTapThenSwipeRight`, `twoFingerTripleTapThenSwipeUp`, `twoFingerTripleTapThenSwipeDown`, `twoFingerTripleTapThenSwipeLeft`, `twoFingerTripleTapThenSwipeRight`, `threeFingerTapThenSwipeUp`, `threeFingerTapThenSwipeDown`, `threeFingerTapThenSwipeLeft`, `threeFingerTapThenSwipeRight`, `threeFingerDoubleTapThenSwipeUp`, `threeFingerDoubleTapThenSwipeDown`, `threeFingerDoubleTapThenSwipeLeft`, `threeFingerDoubleTapThenSwipeRight`, `threeFingerTripleTapThenSwipeUp`, `threeFingerTripleTapThenSwipeDown`, `threeFingerTripleTapThenSwipeLeft`, `threeFingerTripleTapThenSwipeRight`, `fourFingerTapThenSwipeUp`, `fourFingerTapThenSwipeDown`, `fourFingerTapThenSwipeLeft`, `fourFingerTapThenSwipeRight`, `fourFingerDoubleTapThenSwipeUp`, `fourFingerDoubleTapThenSwipeDown`, `fourFingerDoubleTapThenSwipeLeft`, `fourFingerDoubleTapThenSwipeRight`, `fourFingerTripleTapThenSwipeUp`, `fourFingerTripleTapThenSwipeDown`, `fourFingerTripleTapThenSwipeLeft`, `fourFingerTripleTapThenSwipeRight`, `twoFingerTapThenOneFingerSwipeUp`, `twoFingerTapThenOneFingerSwipeDown`, `twoFingerTapThenOneFingerSwipeLeft`, `twoFingerTapThenOneFingerSwipeRight`, `twoFingerDoubleTapThenOneFingerSwipeUp`, `twoFingerDoubleTapThenOneFingerSwipeDown`, `twoFingerDoubleTapThenOneFingerSwipeLeft`, `twoFingerDoubleTapThenOneFingerSwipeRight`, `twoFingerTripleTapThenOneFingerSwipeUp`, `twoFingerTripleTapThenOneFingerSwipeDown`, `twoFingerTripleTapThenOneFingerSwipeLeft`, `twoFingerTripleTapThenOneFingerSwipeRight`, `twoFingerPinch`, `twoFingerSpread`, `threeFingerPinch`, `threeFingerSpread`, `fourFingerPinch`, `fourFingerSpread`, `twoFingerScrub`, and the swipe-and-hold gestures `swipeUpAndHold`, `swipeDownAndHold`, `swipeLeftAndHold`, `swipeRightAndHold`, `swipeUpThenDownAndHold`, `swipeDownThenUpAndHold`, `swipeLeftThenRightAndHold`, `swipeRightThenLeftAndHold`, `swipeUpThenLeftAndHold`, `swipeUpThenRightAndHold`, `swipeDownThenLeftAndHold`, `swipeDownThenRightAndHold`, `swipeLeftThenUpAndHold`, `swipeLeftThenDownAndHold`, `swipeRightThenUpAndHold` and `swipeRightThenDownAndHold`, and the three-part swipes, named in the same way, such as `swipeRightThenUpThenRight` and `swipeUpThenDownThenUp`, and the two-stroke swipes, such as `swipeRightLiftSwipeUp`, `swipeDownLiftSwipeDown`, `swipeUpThenLeftLiftSwipeRight` and `swipeUpLiftSwipeRightThenDown`, which also need **Time between two-stroke swipes** set. Slides along an edge that is an edge menu go to the menu instead, and so do slides in from that edge while its menu goes across the screen, with **Slide in from the edge** on.
 
 ## Testing and debugging
 

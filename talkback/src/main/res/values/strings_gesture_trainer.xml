@@ -210,6 +210,14 @@
   <string name="gesture_trainer_tip_menu_in_corner">Start a little away from the top and bottom ends of the edge.</string>
   <string name="gesture_trainer_tip_menu_left_edge">Keep the finger close to the edge while you slide, and lift it there.</string>
   <string name="gesture_trainer_tip_menu_wrong_item">Each item has a fixed place along the edge, and the item where the finger lifts is chosen. Lift when the item is spoken.</string>
+  <!-- How to choose an item of the left or right edge menu when the menu goes across the screen: one finger starts at the edge and slides in toward the middle of the screen. %1$s is "at the left edge" or "at the right edge"; %2$d is the distance in millimeters at which the menu opens; %3$d is the number of items; %4$d and %5$s are the number and name of the item to choose; %6$s is the width of each item in centimeters; %7$s and %8$s are where the item begins and ends, in centimeters from the edge. [CHAR LIMIT=NONE] -->
+  <string name="gesture_trainer_how_menu_horizontal">Put one finger <xliff:g id="edge">%1$s</xliff:g> and slide it in toward the middle of the screen for at least <xliff:g id="distance">%2$d</xliff:g> mm to open the menu. It has <xliff:g id="count">%3$d</xliff:g> items across the screen, from the edge, each about <xliff:g id="size">%6$s</xliff:g> cm wide. Item <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, is <xliff:g id="from">%7$s</xliff:g> to <xliff:g id="to">%8$s</xliff:g> cm from the edge. Keep the finger at the same height, and lift it when the item is spoken.</string>
+  <!-- Result of a try at an edge menu that goes across the screen: the finger lifted too far above or below the height where the menu opened, so the menu closed without a choice. %1$.0f is that distance and %2$.0f the most allowed, both in millimeters. [CHAR LIMIT=NONE] -->
+  <string name="gesture_trainer_finding_menu_left_line">The finger lifted <xliff:g id="mm">%1$.0f</xliff:g> mm above or below where the menu opened, and the menu closes beyond <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+  <!-- Tip after a try at an edge menu that goes across the screen, in which the finger moved too far up or down. [CHAR LIMIT=NONE] -->
+  <string name="gesture_trainer_tip_menu_left_line">Keep the finger at the same height while you slide in, and lift it there.</string>
+  <!-- Tip after a try at an edge menu that goes across the screen, in which the finger lifted at another item than the one asked for. [CHAR LIMIT=NONE] -->
+  <string name="gesture_trainer_tip_menu_wrong_item_across">Each item has a fixed place across the screen, from the edge, and the item where the finger lifts is chosen. Lift when the item is spoken.</string>
 
   <!-- Contents -->
   <string name="gesture_trainer_contents">Contents</string>
@@ -241,6 +249,8 @@
   <string name="gesture_trainer_along_bottom">the bottom edge</string>
   <string name="gesture_trainer_left_out_along_menu">Slides along <xliff:g id="edge">%1$s</xliff:g> are left out: it has an edge menu, so a slide along it opens the menu instead of running a gesture.</string>
   <string name="gesture_trainer_left_out_along_scroll">Slides along <xliff:g id="edge">%1$s</xliff:g> are left out: it scrolls, so a slide along it scrolls the app instead of running a gesture.</string>
+  <!-- Says why the gesture trainer leaves out the slides in from the left or right edge: that edge's menu goes across the screen, so a slide in from it opens the menu. %1$s is "the left edge" or "the right edge". [CHAR LIMIT=NONE] -->
+  <string name="gesture_trainer_left_out_in_menu">Slides in from <xliff:g id="edge">%1$s</xliff:g> are left out: its edge menu goes across the screen, so a slide in from it opens the menu instead of running a gesture.</string>
   <string name="gesture_trainer_finding_along_off_edge">The finger moved too far away from the edge.</string>
   <string name="gesture_trainer_tip_along_off_edge">Keep the finger on the very rim of the glass, straight along the edge.</string>
   <string name="gesture_trainer_go_back_tap">Make the back tap gesture <xliff:g id="tries">%1$d</xliff:g> times. A touch on the screen fails the try.</string>
@@ -288,8 +298,8 @@
   <string name="gesture_trainer_how_shake">Hold the phone firmly and shake it quickly back and forth, as if shaking off a drop of water: at least twice each way, all within about two thirds of a second. Then hold it still.</string>
   <string name="gesture_trainer_how_two_stroke">Swipe <xliff:g id="first">%1$s</xliff:g> with one finger, about 2 cm, and lift. Then at once, within <xliff:g id="time">%3$d</xliff:g> ms, swipe <xliff:g id="second">%2$s</xliff:g> with one finger, about 2 cm, and lift.</string>
   <string name="gesture_trainer_how_three_part">Touch the screen with one finger and, without lifting, swipe <xliff:g id="first">%1$s</xliff:g>, then turn sharply and swipe <xliff:g id="second">%2$s</xliff:g>, then turn sharply again and swipe <xliff:g id="third">%3$s</xliff:g>, each part about 2 cm, and lift. Make it one quick, smooth movement with sharp corners, not curves.</string>
-  <string name="gesture_trainer_how_taps_top_and_bottom">Put one finger in the top third of the screen and the other in the bottom third, for example the thumb low and the index finger high.</string>
-  <string name="gesture_trainer_finding_tap_not_top_and_bottom">The fingers were not one in the top third of the screen and one in the bottom third.</string>
+  <string name="gesture_trainer_how_taps_top_and_bottom">Put one finger in the third of the screen at one end of the device and the other in the third at the other end. On a phone, the ends are the earpiece end and the charging port end, also with the screen turned sideways.</string>
+  <string name="gesture_trainer_finding_tap_not_top_and_bottom">The fingers were not one in the third of the screen at each end of the device.</string>
   <string name="gesture_trainer_finding_second_stroke_missing">There was no second swipe.</string>
   <string name="gesture_trainer_finding_second_stroke_late">The second swipe started <xliff:g id="ms">%1$d</xliff:g> ms after the first, and at most <xliff:g id="limit">%2$d</xliff:g> ms is allowed.</string>
   <string name="gesture_trainer_finding_first_stroke_wrong_direction">The first swipe went <xliff:g id="direction">%1$s</xliff:g>.</string>

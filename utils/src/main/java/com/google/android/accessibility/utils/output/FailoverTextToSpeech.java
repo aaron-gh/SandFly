@@ -95,7 +95,15 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.function.BooleanSupplier;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -403,6 +411,30 @@ public class FailoverTextToSpeech {
 
   /** How long an engine that says it is speaking, perhaps for another app, may say nothing. */
   private static final long ENGINE_BUSY_HANG_MS = 20_000;
+
+  /**
+   * How long the main thread waits for the engine to say whether it is speaking. An engine that
+   * doesn't answer counts as not speaking.
+   */
+  private static final long ENGINE_PROBE_WAIT_MS = 300;
+
+  /**
+   * Asks engines whether they are speaking. A call into an engine waits until the engine answers,
+   * which an engine that is stuck never does, so the main thread doesn't make it. Each engine has
+   * at most one unanswered question, and a thread stuck on one is not used for the others.
+   */
+  private static final ThreadPoolExecutor ENGINE_PROBE =
+      new ThreadPoolExecutor(
+          /* corePoolSize= */ 0,
+          /* maximumPoolSize= */ 4,
+          /* keepAliveTime= */ 10,
+          TimeUnit.SECONDS,
+          new SynchronousQueue<>(),
+          runnable -> {
+            Thread thread = new Thread(runnable, "TtsEngineProbe");
+            thread.setDaemon(true);
+            return thread;
+          });
 
   /**
    * How long speech plays the usual way after the audio mode changes, such as when a call starts or
@@ -2027,6 +2059,24 @@ public class FailoverTextToSpeech {
   }
 
   /**
+   * The current engine's voices, kept from the last time they were listed, or null without an
+   * engine. Listing them calls the engine, which can take seconds, so menus that ask each time they
+   * are shown, such as the reading controls asking whether Language applies, list them once per
+   * engine.
+   */
+  public @Nullable Set<Voice> getVoices() {
+    synchronized (ttsLock) {
+      if (tts == null) {
+        return null;
+      }
+      if (engineVoices == null) {
+        engineVoices = tts.getVoices();
+      }
+      return engineVoices;
+    }
+  }
+
+  /**
    * Returns the current engine's installed voice called {@code name}, or null if it has none. The
    * engine's voices are kept from the last time they were needed, as listing them is slow, and
    * listed again only if the voice isn't there, as it may have been installed since. A voice still
@@ -2646,13 +2696,8 @@ public class FailoverTextToSpeech {
         @Override
         public void onEngineQuiet(String id) {
           // Any call to the engine unfreezes a frozen engine process, which then goes on making
-          // the speech.
-          mHandler.post(
-              () -> {
-                if (tts != null) {
-                  isEngineSpeaking();
-                }
-              });
+          // the speech. The answer isn't needed.
+          mHandler.post(FailoverTextToSpeech.this::askEngineIfSpeaking);
         }
 
         @Override
@@ -2730,13 +2775,67 @@ public class FailoverTextToSpeech {
     }
   }
 
-  /** Whether the engine says it is speaking, for any app. A hung engine says it is not. */
+  /**
+   * Whether the engine says it is speaking, for any app. A hung engine, or one that doesn't answer
+   * in {@link #ENGINE_PROBE_WAIT_MS}, says it is not. Called on the main thread.
+   */
   private boolean isEngineSpeaking() {
-    try {
-      return tts.isSpeaking();
-    } catch (RuntimeException e) {
+    @Nullable Future<Boolean> probe = askEngineIfSpeaking();
+    if (probe == null) {
       return false;
     }
+    try {
+      return probe.get(ENGINE_PROBE_WAIT_MS, TimeUnit.MILLISECONDS);
+    } catch (TimeoutException e) {
+      LogUtils.w(
+          TAG,
+          "TTS engine %s didn't say in %d ms whether it is speaking",
+          ttsEngine,
+          ENGINE_PROBE_WAIT_MS);
+      return false;
+    } catch (ExecutionException | CancellationException e) {
+      return false;
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      return false;
+    }
+  }
+
+  /** The last question to {@link #engineProbeTts} of whether it is speaking. Main thread only. */
+  private @Nullable Future<Boolean> engineProbe;
+
+  private @Nullable TextToSpeech engineProbeTts;
+
+  /**
+   * Asks the engine in use on another thread whether it is speaking, unless an earlier question to
+   * it is still unanswered, and returns the answer to come. Returns null with no engine, or when
+   * other engines hold up every thread. Called on the main thread.
+   */
+  private @Nullable Future<Boolean> askEngineIfSpeaking() {
+    final @Nullable TextToSpeech engine = tts;
+    if (engine == null) {
+      return null;
+    }
+    @Nullable Future<Boolean> probe = engineProbe;
+    if (probe != null && !probe.isDone() && engineProbeTts == engine) {
+      return probe;
+    }
+    try {
+      probe =
+          ENGINE_PROBE.submit(
+              () -> {
+                try {
+                  return engine.isSpeaking();
+                } catch (Throwable t) {
+                  return false;
+                }
+              });
+    } catch (RejectedExecutionException e) {
+      return null;
+    }
+    engineProbe = probe;
+    engineProbeTts = engine;
+    return probe;
   }
 
   /** Notes that the engine said something about {@code utteranceId}, so it is not hung. */

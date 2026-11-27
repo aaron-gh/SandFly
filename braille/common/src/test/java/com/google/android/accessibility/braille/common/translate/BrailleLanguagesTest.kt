@@ -154,4 +154,25 @@ class BrailleLanguagesTest {
       Locale.setDefault(originalLocale)
     }
   }
+
+  @Test
+  fun afrikaansCodeConfiguration() {
+    val afrikaans = Code.valueOf("AFRIKAANS")
+    assertEquals("af", afrikaans.locale.language)
+    assertTrue(afrikaans.isSupportsContracted(context))
+    assertFalse(afrikaans.isEightDot)
+    assertTrue(afrikaans.isAvailable(context))
+    assertEquals("Afrikaans", afrikaans.getUserFacingName(context))
+  }
+
+  @Test
+  fun defaultCodeForAfrikaansLocale() {
+    val originalLocale = Locale.getDefault()
+    try {
+      Locale.setDefault(Locale.forLanguageTag("af-ZA"))
+      assertEquals(Code.AFRIKAANS, BrailleLanguages.getDefaultCode(context))
+    } finally {
+      Locale.setDefault(originalLocale)
+    }
+  }
 }

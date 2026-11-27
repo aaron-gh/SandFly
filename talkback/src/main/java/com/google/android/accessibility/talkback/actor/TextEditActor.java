@@ -820,16 +820,43 @@ public class TextEditActor {
   }
 
   /**
-   * Selects {@code start} to {@code end} of edit-text without the selection change being read, and
-   * deletes it as Delete does. Not in password fields.
+   * Deletes {@code start} to {@code end} of edit-text, puts the cursor where it was, and says the
+   * deleted text, as Delete does. The range is taken out of the text as it is, rather than selected
+   * first, since an app can report the new selection after the node is read again. Not in password
+   * fields.
    */
   public boolean deleteRange(
       @Nullable AccessibilityNodeInfoCompat node, int start, int end, EventId eventId) {
-    if (rangeText(node, start, end) == null || !setSelectionQuietly(node, start, end, eventId)) {
+    @Nullable CharSequence range = rangeText(node, start, end);
+    @Nullable CharSequence text = node == null ? null : AccessibilityNodeInfoUtils.getText(node);
+    if (range == null || text == null) {
       return false;
     }
-    node.refresh();
-    return delete(node, eventId);
+    Bundle arguments = new Bundle();
+    arguments.putCharSequence(
+        ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,
+        TextUtils.concat(text.subSequence(0, start), text.subSequence(end, text.length()))
+            .toString());
+    editTextActionHistory.beforeSetText();
+    editTextActionHistory.beforeSpokenEdit();
+    boolean result = PerformActionUtils.performAction(node, ACTION_SET_TEXT, arguments, eventId);
+    // The text is deleted even when the app doesn't take the cursor move.
+    if (result && !moveCursor(node, start, eventId)) {
+      LogUtils.d(TAG, "deleteRange: moving the cursor to %d failed", start);
+    }
+    editTextActionHistory.afterSetText();
+    editTextActionHistory.afterSpokenEdit();
+    if (!result) {
+      return false;
+    }
+    pipeline.returnFeedback(
+        eventId,
+        Feedback.speech(
+            SpannableUtils.getSpannedFormattedString(
+                service.getString(R.string.template_text_removed),
+                CompositorUtils.refineInputText(service, range)),
+            SPEAK_OPTIONS));
+    return true;
   }
 
   /**

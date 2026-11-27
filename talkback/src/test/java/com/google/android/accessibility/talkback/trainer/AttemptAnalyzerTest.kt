@@ -459,6 +459,90 @@ class AttemptAnalyzerTest {
     assertTrue(failed.problems.any { it.kind == FindingKind.MENU_IN_CORNER })
   }
 
+  // The same menu across the screen: the 9 cm of the 10 cm width beyond the first stage, 1 cm from
+  // the edge, divided into four items of 2.25 cm. The third is 5.5 to 7.75 cm from the edge.
+  private fun thirdItemAcross(edge: MenuEdge) =
+    Exercise(
+      TrainerExercises.MENU_GESTURE_ID,
+      Shape.EdgeMenu(
+        edge,
+        item = 2,
+        names = listOf("Option 1", "Option 2", "Option 3", "Option 4"),
+        sample = false,
+        horizontal = true,
+      ),
+    )
+
+  @Test
+  fun menuAcrossLiftedAtTheWantedItem_succeeds() {
+    val path = line(0, 10f, 1000f, 650f, 1010f, durationMs = 300)
+    val report =
+      analyzer.analyze(thirdItemAcross(MenuEdge.LEFT), listOf(touch(path)), emptyList(), menuChoice = 2)
+    assertTrue(report.problems.toString(), report.success)
+    assertEquals(3f, report.measures.single { it.kind == MeasureKind.MENU_ITEM }.value)
+  }
+
+  @Test
+  fun rightMenuAcrossCountsFromTheRightEdge() {
+    val path = line(0, 990f, 1000f, 350f, 990f, durationMs = 300)
+    val report =
+      analyzer.analyze(thirdItemAcross(MenuEdge.RIGHT), listOf(touch(path)), emptyList(), menuChoice = 2)
+    assertTrue(report.problems.toString(), report.success)
+    assertEquals(3f, report.measures.single { it.kind == MeasureKind.MENU_ITEM }.value)
+  }
+
+  @Test
+  fun menuAcrossLiftedAtAnotherItem_namesBothItems() {
+    val path = line(0, 10f, 1000f, 400f, 1000f, durationMs = 300)
+    val report =
+      analyzer.analyze(thirdItemAcross(MenuEdge.LEFT), listOf(touch(path)), emptyList(), menuChoice = 1)
+    assertFalse(report.success)
+    val wrong = report.problems.single { it.kind == FindingKind.MENU_WRONG_ITEM }
+    assertEquals(2f, wrong.value)
+    assertEquals(3f, wrong.limit)
+  }
+
+  @Test
+  fun menuAcrossLeftUpOrDown_leftTheLineNotTheEdge() {
+    // Opens about 0.3 cm lower than it started, then lifts 1.7 cm below that, beyond 1.5 cm.
+    val path = line(0, 10f, 1000f, 650f, 1200f, durationMs = 300)
+    val report =
+      analyzer.analyze(
+        thirdItemAcross(MenuEdge.LEFT),
+        listOf(touch(path)),
+        emptyList(),
+        menuChoice = AttemptAnalyzer.NO_MENU_ITEM,
+      )
+    assertFalse(report.success)
+    assertTrue(report.problems.any { it.kind == FindingKind.MENU_LEFT_LINE })
+    assertFalse(report.problems.any { it.kind == FindingKind.MENU_LEFT_EDGE })
+    assertFalse(report.problems.any { it.kind == FindingKind.EDGE_SIDEWAYS })
+  }
+
+  @Test
+  fun menuAcrossFromACorner_isNotInTheCorner() {
+    val path = line(0, 10f, 20f, 650f, 20f, durationMs = 300)
+    val report =
+      analyzer.analyze(thirdItemAcross(MenuEdge.LEFT), listOf(touch(path)), emptyList(), menuChoice = 2)
+    assertTrue(report.problems.toString(), report.success)
+    assertFalse(report.problems.any { it.kind == FindingKind.MENU_IN_CORNER })
+  }
+
+  @Test
+  fun menuAcrossSlidAlongTheEdge_neverOpened() {
+    val path = line(0, 10f, 300f, 10f, 1200f, durationMs = 300)
+    val report =
+      analyzer.analyze(
+        thirdItemAcross(MenuEdge.LEFT),
+        listOf(touch(path)),
+        emptyList(),
+        menuChoice = AttemptAnalyzer.NO_MENU_ITEM,
+      )
+    assertFalse(report.success)
+    assertTrue(report.problems.any { it.kind == FindingKind.EDGE_TOO_SHORT })
+    assertFalse(report.problems.any { it.kind == FindingKind.EDGE_SIDEWAYS })
+  }
+
   @Test
   fun lightShake_isTooLight() {
     val shake = Exercise(TrainerExercises.SHAKE_ID, Shape.Shake)

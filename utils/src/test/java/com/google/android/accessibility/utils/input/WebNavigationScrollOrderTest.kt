@@ -6,6 +6,7 @@ import android.os.SystemClock
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.utils.monitor.TouchMonitor
 import com.google.android.accessibility.utils.output.ScrollActionRecord
 import java.time.Duration
@@ -70,6 +71,37 @@ class WebNavigationScrollOrderTest {
     assertFalse(received.single().isFromNavigation)
     assertTrue(received.single().hasValidIndex)
     assertEquals(ScrollActionRecord.ACTION_MANUAL_SCROLL, received.single().userAction)
+  }
+
+  @Test fun onlyMatchingEventsFromAFinishedExplicitScrollAreMarkedForFocusRecovery() {
+    val interpreter = interpreter()
+    val received = mutableListOf<ScrollEventInterpreter.ScrollEventInterpretation>()
+    interpreter.addListener { _, interpretation, _ -> received.add(interpretation) }
+    val time = SystemClock.uptimeMillis()
+    fun nativeSource() = AccessibilityNodeInfo.obtain(View(RuntimeEnvironment.getApplication()))
+      .apply { isScrollable = true }
+    val source = nativeSource()
+    var action = ScrollActionRecord.ACTION_SCROLL_COMMAND
+    interpreter.setFinishedScrollActionRecord {
+      ScrollActionRecord(1, null, AccessibilityNodeInfoCompat.wrap(source), action, time,
+        ScrollActionRecord.FOCUS)
+    }
+
+    interpreter.onAccessibilityEvent(scroll(time + 35, source), null)
+    assertEquals(ScrollActionRecord.ACTION_UNKNOWN, received.last().userAction)
+    assertTrue(received.last().isFromFinishedScrollCommand)
+    assertFalse(received.last().isFromNavigation)
+
+    interpreter.onAccessibilityEvent(scroll(time + 70, nativeSource()), null)
+    assertFalse(received.last().isFromFinishedScrollCommand)
+    interpreter.onAccessibilityEvent(scroll(time + 1_001, source), null)
+    assertFalse(received.last().isFromFinishedScrollCommand)
+
+    action = ScrollActionRecord.ACTION_AUTO_SCROLL
+    interpreter.onAccessibilityEvent(scroll(time + 100, source), null)
+    assertEquals(ScrollActionRecord.ACTION_UNKNOWN, received.last().userAction)
+    assertFalse(received.last().isFromFinishedScrollCommand)
+    assertTrue(received.last().isFromNavigation)
   }
 
   @Test fun navigationUpdatesTheCacheBeforeAManualReverseScrollWithoutDeltas() {

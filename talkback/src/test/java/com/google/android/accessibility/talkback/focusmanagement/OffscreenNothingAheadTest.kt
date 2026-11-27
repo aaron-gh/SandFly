@@ -213,6 +213,48 @@ class OffscreenNothingAheadTest {
   }
 
   @Test
+  fun exactVerticalLimit_requiresAValidRangeAndTheRequestedDirection() {
+    assertTrue(FocusProcessorForLogicalNavigation.isVerticalScrollLimit(100, 100, true))
+    assertTrue(FocusProcessorForLogicalNavigation.isVerticalScrollLimit(0, 100, false))
+    assertFalse(FocusProcessorForLogicalNavigation.isVerticalScrollLimit(99, 100, true))
+    assertFalse(FocusProcessorForLogicalNavigation.isVerticalScrollLimit(1, 100, false))
+    assertFalse(FocusProcessorForLogicalNavigation.isVerticalScrollLimit(0, 0, false))
+    assertFalse(FocusProcessorForLogicalNavigation.isVerticalScrollLimit(-1, -1, true))
+    assertFalse(FocusProcessorForLogicalNavigation.isVerticalScrollLimit(100, 100, false))
+  }
+
+  @Test
+  fun exactVerticalLimit_mustLoseBothActionsForThatDirection() {
+    val bottom = scrollView().apply { addAction(AccessibilityActionCompat.ACTION_SCROLL_UP) }
+    assertTrue(FocusProcessorForLogicalNavigation.confirmsVerticalScrollLimit(bottom, true))
+    assertFalse(FocusProcessorForLogicalNavigation.confirmsVerticalScrollLimit(bottom, false))
+    bottom.addAction(AccessibilityActionCompat.ACTION_SCROLL_DOWN)
+    assertFalse(FocusProcessorForLogicalNavigation.confirmsVerticalScrollLimit(bottom, true))
+
+    val top = scrollView().apply { addAction(AccessibilityActionCompat.ACTION_SCROLL_FORWARD) }
+    assertTrue(FocusProcessorForLogicalNavigation.confirmsVerticalScrollLimit(top, false))
+    top.addAction(AccessibilityActionCompat.ACTION_SCROLL_BACKWARD)
+    assertFalse(FocusProcessorForLogicalNavigation.confirmsVerticalScrollLimit(top, false))
+
+    assertFalse(FocusProcessorForLogicalNavigation.confirmsVerticalScrollLimit(scrollView(), true))
+  }
+
+  @Test
+  fun exactVerticalLimit_isOnlyUsedForPlainVerticalScrollViews() {
+    assertTrue(FocusProcessorForLogicalNavigation.isPlainVerticalScrollView(scrollView()))
+    val indexed = scrollView().apply {
+      addAction(AccessibilityActionCompat.ACTION_SCROLL_TO_POSITION)
+    }
+    assertFalse(FocusProcessorForLogicalNavigation.isPlainVerticalScrollView(indexed))
+    assertFalse(FocusProcessorForLogicalNavigation.isPlainVerticalScrollView(
+      Node("android.widget.HorizontalScrollView")
+    ))
+    assertFalse(FocusProcessorForLogicalNavigation.isPlainVerticalScrollView(
+      scrollView().apply { packageName = "com.android.systemui" }
+    ))
+  }
+
+  @Test
   fun pivotOutsideTheScrollView_scrollsAsBefore() {
     val scroll = scrollView().add(longText())
     assertFalse(OffscreenContent.hasNothingAhead(scroll, longText(), /* forward= */ true, /* rtl= */ false))

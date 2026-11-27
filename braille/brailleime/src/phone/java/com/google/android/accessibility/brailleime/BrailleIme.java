@@ -61,6 +61,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
+import android.view.inputmethod.InputMethodSubtype;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
@@ -447,6 +448,7 @@ public class BrailleIme extends InputMethodService {
       boolean shown = showKeyboardView();
       if (shown) {
         returnToPreviousKeyboardOnFinishInput = true;
+        useSubtypeOfTable();
       }
       if (shown && !restarting) {
         playActiveSound(true);
@@ -1820,6 +1822,45 @@ public class BrailleIme extends InputMethodService {
     }
   }
 
+  /**
+   * Makes the keyboard's subtype the language of the braille table in use, so that apps' spell
+   * checkers and dictation, which take the language from the keyboard, use it. A table of no
+   * language, such as Unicode braille, keeps the subtype in use.
+   */
+  private void useSubtypeOfTable() {
+    Code code = BrailleUserPreferences.readCurrentActiveInputCodeAndCorrect(this);
+    @Nullable Locale locale = code.hasNoLanguage() ? null : code.getLocale();
+    if (locale == null || Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
+      return;
+    }
+    String tag = locale.toLanguageTag();
+    try {
+      InputMethodManager imm = getSystemService(InputMethodManager.class);
+      if (imm == null) {
+        return;
+      }
+      @Nullable InputMethodSubtype current = imm.getCurrentInputMethodSubtype();
+      if (current != null && tag.equals(current.getLanguageTag())) {
+        return;
+      }
+      String imeId = new ComponentName(this, BrailleIme.class).flattenToShortString();
+      InputMethodSubtype subtype =
+          new InputMethodSubtype.InputMethodSubtypeBuilder()
+              .setSubtypeNameResId(R.string.braille_ime_service_name)
+              .setLanguageTag(tag)
+              .setSubtypeLocale(locale.toString())
+              .setSubtypeMode("keyboard")
+              .setIsAsciiCapable(true)
+              .setSubtypeId(("braille:" + tag).hashCode())
+              .build();
+      imm.setAdditionalInputMethodSubtypes(imeId, new InputMethodSubtype[] {subtype});
+      switchInputMethod(imeId, subtype);
+      BrailleImeLog.d(TAG, "Subtype language " + tag);
+    } catch (RuntimeException e) {
+      BrailleImeLog.w(TAG, "Cannot set the subtype language: " + e);
+    }
+  }
+
   /** Whether the language tag {@code tag} is the language of the braille table {@code code}. */
   private static boolean isLanguageOf(String tag, Code code) {
     if (tag.isEmpty() || code.getLocale() == null) {
@@ -2278,6 +2319,7 @@ public class BrailleIme extends InputMethodService {
               keyboardView.refreshInputView();
             }
             refreshEditBufferAndBrailleDisplay();
+            useSubtypeOfTable();
           } else if (key.equals(getString(R.string.pref_brailleime_tablet_held_up_faces_away))) {
             tabletHeldUpFacesAway =
                 BrailleUserPreferences.readTabletHeldUpFacesAway(BrailleIme.this);

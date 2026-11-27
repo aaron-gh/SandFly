@@ -55,7 +55,8 @@ class KeyboardInSwipesTest {
   fun onlyDoubleTapTypingSwipesThroughKeys() {
     assertFalse(
       FocusProcessorForLogicalNavigation.swipesFromKeysStayInApp(
-        FocusProcessorForTapAndTouchExploration.DOUBLE_TAP
+        FocusProcessorForTapAndTouchExploration.DOUBLE_TAP,
+        /* throughKeys= */ false,
       )
     )
     for (method in
@@ -65,7 +66,8 @@ class KeyboardInSwipesTest {
         FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE_EXCEPT_ACTION_KEY,
         FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE,
       )) {
-      assertTrue(FocusProcessorForLogicalNavigation.swipesFromKeysStayInApp(method))
+      assertTrue(FocusProcessorForLogicalNavigation.swipesFromKeysStayInApp(method, false))
+      assertFalse(FocusProcessorForLogicalNavigation.swipesFromKeysStayInApp(method, true))
     }
   }
 

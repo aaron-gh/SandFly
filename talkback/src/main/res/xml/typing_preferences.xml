@@ -17,6 +17,10 @@
         android:key="@string/pref_typing_confirmation_key"
         android:title="@string/title_pref_typing_confirmation"
         app:summary="%s" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_typing_swipes_through_keys_default"
+        android:key="@string/pref_typing_swipes_through_keys_key"
+        android:title="@string/title_pref_typing_swipes_through_keys" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
         android:defaultValue="@string/pref_typing_long_press_duration_default"
         android:dialogTitle="@string/title_pref_typing_long_tap_duration"

@@ -10,7 +10,7 @@ To open the typing settings, go to **Typing** in SandFly settings. The screen ha
 
 - **Keyboard echo**: what SandFly reads as you type with each kind of keyboard. See [](#typing-keyboard-echo).
 - **Double-tap moves cursor to start or end**. See [](#typing-double-tap-cursor).
-- **On-screen keyboard**: **Typing method**, **Touch and hold delay when typing**, **Hold keys down after the touch and hold delay**, **Typing focus delay** and **Announce keyboard keys faster**. See [](#typing-on-screen-keyboard).
+- **On-screen keyboard**: **Typing method**, **Swipe from key to key with every typing method**, **Touch and hold delay when typing**, **Hold keys down after the touch and hold delay**, **Typing focus delay** and **Announce keyboard keys faster**. See [](#typing-on-screen-keyboard).
 - **Physical keyboard**: shown only while a physical keyboard is connected. See [](#typing-physical-keyboard).
 - **Other ways to type**: **Dictation**, **Handwriting keyboard** and **Wait after writing**. See [](#typing-dictation) and [](#typing-handwriting).
 
@@ -62,7 +62,7 @@ You can also change the delay while you type with the **Typing focus delay** rea
 
 #### Swipes and the keyboard {#typing-swipes-keyboard}
 
-Swipes from an app, the status bar or the navigation bar never move focus into the keyboard. With any typing method except **Hold finger to select any key, then double-tap**, a swipe while focus is on a key goes on in the app, from the text field that you are typing in. With the double-tap method, swipes move through the keys. Swipes from inside the keyboard can still leave it.
+Swipes from an app, the status bar or the navigation bar never move focus into the keyboard. With any typing method except **Hold finger to select any key, then double-tap**, a swipe while focus is on a key goes on in the app, from the text field that you are typing in. With the double-tap method, swipes move through the keys. With **Typing** > **Swipe from key to key with every typing method** on, swipes move through the keys with every typing method. It is off by default. Swipes from inside the keyboard can still leave it.
 
 ### Keyboard echo {#typing-keyboard-echo}
 
