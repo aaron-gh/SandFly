@@ -2409,6 +2409,7 @@ public class SpeechControllerImpl implements SpeechController {
       if (speakInCommandVoice(
           feedbackItem.getUtteranceId(),
           commandText,
+          feedbackItem.shouldFlushGlobalTtsQueue(),
           () ->
               failoverTts.speak(
                   commandText,
@@ -2462,15 +2463,23 @@ public class SpeechControllerImpl implements SpeechController {
    * as the speech engine would. Speech that is said over SandFly's speech ends at once, so that it
    * doesn't hold back the speech after it.
    *
+   * @param flush whether the item interrupts what SandFly is saying, as it does when the speech
+   *     engine says it
    * @param fallback says the fragment in SandFly's voice, when the command voice can't
    * @return false if there is no command voice, so the speech engine says the fragment
    */
-  private boolean speakInCommandVoice(String utteranceId, CharSequence text, Runnable fallback) {
+  private boolean speakInCommandVoice(
+      String utteranceId, CharSequence text, boolean flush, Runnable fallback) {
     final CommandVoice voice = commandVoice;
     if (voice == null || !voice.isActive()) {
       return false;
     }
     final boolean over = voice.isOverSpeech();
+    if (flush) {
+      // The speech engine would have stopped what SandFly is saying, and its emoji and language
+      // voices, before saying this: the old speech must not play on under the command voice.
+      failoverTts.stopFromTalkBack();
+    }
     voice.say(
         text,
         new CommandVoice.Callback() {
@@ -2494,9 +2503,16 @@ public class SpeechControllerImpl implements SpeechController {
           @Override
           public void onUnavailable() {
             // In the speech queue, SandFly's voice says it and ends the item, as for any text. Text
-            // said over SandFly's speech has ended already, so it is dropped.
+            // said over SandFly's speech has ended already, so it is dropped. Not if the item was
+            // interrupted meanwhile: the old text must not follow the speech that replaced it.
             if (!over) {
-              mHandler.post(fallback);
+              mHandler.post(
+                  () -> {
+                    if (currentFeedbackItem != null
+                        && utteranceId.equals(currentFeedbackItem.getUtteranceId())) {
+                      fallback.run();
+                    }
+                  });
             }
           }
         });

@@ -1186,7 +1186,7 @@ object NotificationReader {
   /** The voice profile that the result of a command or of a text edit is said with, or empty. */
   private fun commandVoiceId(prefs: SharedPreferences): String = prefs.getString(KEY_COMMAND_VOICE, null).orEmpty()
 
-  /** How long a command's result waits for its voice to start before it is dropped. */
+  /** How long a command's result waits for its voice to start, before SandFly's voice says it. */
   private const val COMMAND_START_MS = 2_000L
 
   /** A text of a command's result that the command voice says, and the callback of the speech controller. */
@@ -1197,8 +1197,9 @@ object NotificationReader {
   ) : NotificationVoice.Listener {
     var started = false
     var finished = false
-    var sentAt = SystemClock.uptimeMillis()
     var giveUp: Runnable? = null
+    /** Set when it is stopped because the voice didn't start it in time, for SandFly's voice to say it. */
+    var fallBack = false
 
     override fun onStart() {
       started = true
@@ -1206,17 +1207,14 @@ object NotificationReader {
     }
 
     override fun onDone(spoken: Boolean) {
-      if (finish()) callback?.onDone(spoken)
+      if (!finish()) return
+      if (fallBack && !started) callback?.onUnavailable() else callback?.onDone(spoken)
     }
 
     override fun onUnavailable() {
       if (!finish()) return
-      // Too late to fall back: the user has heard the speech after it by now.
-      if (started || SystemClock.uptimeMillis() - sentAt > COMMAND_START_MS) {
-        callback?.onDone(false)
-      } else {
-        callback?.onUnavailable()
-      }
+      // Said over SandFly's speech, it ended already: there is nothing to fall back for.
+      if (started || over) callback?.onDone(false) else callback?.onUnavailable()
     }
 
     /** Marks it ended, once. Returns whether this call ended it. */
@@ -1242,10 +1240,20 @@ object NotificationReader {
     object : CommandVoice {
       private fun chosenVoice(): NotificationVoice? {
         val context = context ?: return null
+        // The profile SandFly speaks with is SandFly's voice: its speech says the text.
         return voiceFor(commandVoiceId(SharedPreferencesUtils.getSharedPreferences(context)))
+          ?.takeIf { it.currentProfile?.id() != VoiceProfiles.active()?.id() }
       }
 
-      override fun isActive(): Boolean = chosenVoice() != null
+      /** The command requests of [voice] that haven't ended. */
+      private fun ours(voice: NotificationVoice): List<CommandSaid> = commandSaid.filter { it.voice === voice }
+
+      // The engine can only be stopped whole, so a command text is never sent to a voice that is
+      // reading anything else, such as a notification: stopping the text would cut that off.
+      override fun isActive(): Boolean {
+        val voice = chosenVoice() ?: return false
+        return !voice.hasRequestsOtherThan(ours(voice))
+      }
 
       override fun isOverSpeech(): Boolean {
         val context = context ?: return false
@@ -1260,12 +1268,16 @@ object NotificationReader {
         }
         val request = CommandSaid(voice, isOverSpeech(), callback)
         commandSaid += request
-        // A text whose voice hasn't started in time is dropped, rather than said after the speech
-        // that followed it.
+        // A text whose voice hasn't started in time is said in SandFly's voice, in the queue, rather
+        // than after the speech that followed it. Said over SandFly's speech, it is dropped. It is
+        // stopped only when it is alone in the engine, whose queue can't be stopped in part.
         val giveUp = Runnable {
-          if (!request.started && !request.finished) {
-            voice.stop(request)
-            if (request.finish()) callback?.onDone(false)
+          if (request.started || request.finished) return@Runnable
+          if (voice.hasRequestsOtherThan(listOf(request))) return@Runnable
+          request.fallBack = !request.over
+          voice.stop(request)
+          if (request.finish()) {
+            if (request.fallBack) callback?.onUnavailable() else callback?.onDone(false)
           }
         }
         request.giveUp = giveUp
