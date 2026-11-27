@@ -77,6 +77,8 @@ object NotificationReader {
   const val KEY_COMMAND_VOICE = "pref_command_feedback_voice_profile"
   /** Whether that voice talks over SandFly's speech instead of waiting for it to end. */
   const val KEY_COMMAND_OVER_SPEECH = "pref_command_feedback_over_speech"
+  /** Whether the result of a command waits for the one before it, or interrupts it. On by default. */
+  const val KEY_COMMAND_QUEUE = "pref_command_feedback_queue"
   private const val LANGUAGE_WAIT_MS = 600L
   private const val MAX_REPEATING = 10
   private const val VOLUME_KEY_PAIR_MS = 400L

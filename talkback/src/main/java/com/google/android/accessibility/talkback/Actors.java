@@ -124,8 +124,11 @@ import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor;
+import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.utils.output.FeedbackController;
+import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils.PunctuationVerbosity;
+import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.accessibility.utils.output.SpeechControllerImpl;
 import com.google.android.accessibility.utils.output.TextToSpeechBubbleOverlay;
 import com.google.android.accessibility.utils.output.TextToSpeechOverlay;
@@ -317,6 +320,24 @@ class Actors {
     return new ActorState(actorState);
   }
 
+  /**
+   * Returns {@code options} to speak with: for the result of a command, interrupting the speech
+   * before it unless "Queue command feedback" is on, which it is by default.
+   */
+  private @Nullable SpeakOptions commandFeedbackQueueing(@Nullable SpeakOptions options) {
+    if (options == null
+        || (options.mFlags & FeedbackItem.FLAG_COMMAND_FEEDBACK) == 0
+        || options.mQueueMode != SpeechControllerImpl.QUEUE_MODE_QUEUE
+        || SharedPreferencesUtils.getSharedPreferences(context)
+            .getBoolean(NotificationReader.KEY_COMMAND_QUEUE, true)) {
+      return options;
+    }
+    return SpeakOptions.create()
+        .setQueueMode(SpeechControllerImpl.QUEUE_MODE_INTERRUPT)
+        .setFlags(options.mFlags)
+        .setUtteranceGroup(options.mUtteranceGroup);
+  }
+
   /** Executes feedback and modifies actorState. Returns success flag. */
   public boolean act(@Nullable EventId eventId, Feedback.Part part) {
     LogUtils.d(LOG_TAG, "act() eventId=%s part=%s", eventId, part);
@@ -371,7 +392,7 @@ class Actors {
                 speech.hintSpeakOptions().mCompletedAction);
           }
           if (speech.text() != null) {
-            speaker.speak(speech.text(), eventId, speech.options());
+            speaker.speak(speech.text(), eventId, commandFeedbackQueueing(speech.options()));
           }
         }
         case SAVE_LAST -> speaker.saveLastUtterance();
