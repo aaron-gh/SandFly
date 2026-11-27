@@ -25,8 +25,14 @@ import static com.google.android.accessibility.talkback.Feedback.Focus.Action.IN
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.LONG_CLICK_NODE;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.RESTORE_TO_CACHE;
 
+import android.graphics.Rect;
+import android.os.Build;
+import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat;
+import androidx.core.view.accessibility.AccessibilityWindowInfoCompat;
+import com.google.android.accessibility.talkback.gesture.HoverlessWindows;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Feedback.Focus;
 import com.google.android.accessibility.talkback.Feedback.Focus.Action;
@@ -208,6 +214,57 @@ public class FocusFeedbackMapper {
         traversalStrategy, pager, TraversalStrategy.SEARCH_FOCUS_FORWARD, pageFilter);
   }
 
+  /**
+   * Whether {@code pager} is a feed of full-screen pages that turn up and down, as TikTok, Reels
+   * and Shorts are: it covers most of its window, and it turned vertically, as {@code scrollEvent}
+   * reports, or it scrolls only up and down.
+   */
+  public static boolean isFeedPager(
+      AccessibilityNodeInfoCompat pager, @Nullable AccessibilityEvent scrollEvent) {
+    AccessibilityWindowInfoCompat window = AccessibilityNodeInfoUtils.getWindow(pager);
+    if (window == null) {
+      return false;
+    }
+    Rect windowBounds = new Rect();
+    window.getBoundsInScreen(windowBounds);
+    Rect pagerBounds = new Rect();
+    pager.getBoundsInScreen(pagerBounds);
+    return HoverlessWindows.coversMostOf(pagerBounds, windowBounds)
+        && turnsVertically(pager, scrollEvent);
+  }
+
+  private static boolean turnsVertically(
+      AccessibilityNodeInfoCompat pager, @Nullable AccessibilityEvent scrollEvent) {
+    // Android 9 and later report how far the view scrolled; -1 is no value.
+    if (scrollEvent != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+      int dx = scrollEvent.getScrollDeltaX();
+      int dy = scrollEvent.getScrollDeltaY();
+      if (dy != 0 && dy != -1) {
+        return dx == 0 || dx == -1;
+      }
+      if (dx != 0 && dx != -1) {
+        return false;
+      }
+    }
+    boolean upDown = false;
+    boolean sideways = false;
+    for (AccessibilityActionCompat action : pager.getActionList()) {
+      int id = action.getId();
+      if (id == AccessibilityActionCompat.ACTION_SCROLL_UP.getId()
+          || id == AccessibilityActionCompat.ACTION_SCROLL_DOWN.getId()
+          || id == AccessibilityActionCompat.ACTION_PAGE_UP.getId()
+          || id == AccessibilityActionCompat.ACTION_PAGE_DOWN.getId()) {
+        upDown = true;
+      } else if (id == AccessibilityActionCompat.ACTION_SCROLL_LEFT.getId()
+          || id == AccessibilityActionCompat.ACTION_SCROLL_RIGHT.getId()
+          || id == AccessibilityActionCompat.ACTION_PAGE_LEFT.getId()
+          || id == AccessibilityActionCompat.ACTION_PAGE_RIGHT.getId()) {
+        sideways = true;
+      }
+    }
+    return upDown && !sideways;
+  }
+
   /** Feedback-mapping function. */
   public static Part.@Nullable Builder onNodeManuallyScrolled(
       Variables variables, int depth, FocusFinder focusFinder) {
@@ -275,13 +332,15 @@ public class FocusFeedbackMapper {
       return null;
     }
 
-    // A page turned with the fingers is heard by its scroll sound, as with TalkBack, which leaves
-    // focus where it was. Focus moves to the new page without speaking, so that the next swipe goes
-    // on from there, and a feed such as TikTok's doesn't read an item of each video as it turns.
+    // A feed of full-screen videos turned with the fingers, such as TikTok's, is heard by its scroll
+    // sound, as with TalkBack, which leaves focus where it was. Focus moves to the new video without
+    // speaking, and the next swipe reads it. Other pagers, such as onboarding screens and galleries,
+    // read the new page's first item as before.
+    boolean silent = pageTurned && isFeedPager(scrolledNode, variables.event(depth));
     FocusActionInfo focusActionInfo =
         new FocusActionInfo.Builder()
             .setSourceAction(FocusActionInfo.MANUAL_SCROLL)
-            .setForceMuteFeedback(pageTurned)
+            .setForceMuteFeedback(silent)
             .build();
 
     return Feedback.part()

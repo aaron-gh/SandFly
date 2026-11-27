@@ -707,6 +707,16 @@ public class FocusProcessorForLogicalNavigation {
             /* useInputFocusIfEmpty= */ false,
             /* requireEditable= */ false,
             /* isCurrent= */ Filter.node(TraversalTreeCache::holds));
+    if (navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+        && isMoveToNextOrPreviousItem(navigationAction)
+        && goesForward(navigationAction)
+        && FocusManagerInternal.isUnreadPageTurnFocus(currentFocus)
+        && setAccessibilityFocusInternal(currentFocus, navigationAction, eventId)) {
+      // A feed's page turn focused this item without speaking it. Moving past it, the next swipe
+      // would skip it unheard.
+      LogUtils.d(TAG, "Read the item a page turn focused without speaking.");
+      return true;
+    }
     if (currentFocus == null
         && navigationAction.inputMode == INPUT_MODE_TOUCH
         && isMoveToNextOrPreviousItem(navigationAction)

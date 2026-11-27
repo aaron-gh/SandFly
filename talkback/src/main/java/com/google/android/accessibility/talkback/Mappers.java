@@ -414,6 +414,11 @@ public final class Mappers {
       return source;
     }
 
+    /** The event being mapped, such as the last scroll event of a manual scroll. */
+    public @Nullable AccessibilityEvent event(int depth) {
+      return event;
+    }
+
     @SearchDirection
     public int scrollDirection(int depth) {
       @SearchDirectionOrUnknown

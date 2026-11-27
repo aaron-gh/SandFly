@@ -248,6 +248,9 @@ public class FocusManagerInternal {
     boolean isAccessibilityFocusActionPerformedSuccessfully =
         performAccessibilityFocusActionInternal(
             node, focusActionInfo, eventId, /* maySpeakFirst= */ !shouldSyncInputFocus);
+    if (isAccessibilityFocusActionPerformedSuccessfully) {
+      silentPageTurnFocus = continuesSilentPageTurn(focusActionInfo) ? node : null;
+    }
     if (isAccessibilityFocusActionPerformedSuccessfully
         && !shouldSyncInputFocus
         && FocusActorHelper.shouldClearFocusAfterSetAccessibilityFocus(service, focusActionInfo)) {
@@ -972,7 +975,7 @@ public class FocusManagerInternal {
     // Focus moved without speaking, as after a page turned with the fingers, is put back without
     // speaking too. TikTok draws its next video again after the page turns, which loses the focus
     // placed on it, and the window's first item, "LIVE" or "Page", would be read on every video.
-    if (isSilentFromPageTurn(record.getExtraInfo())) {
+    if (continuesSilentPageTurn(record.getExtraInfo())) {
       forceMuteFeedback = true;
       // The window's first item can be the feed's pager, which holds every item of the page:
       // focused, it would read the video's progress and each button's state as they change.
@@ -1022,6 +1025,33 @@ public class FocusManagerInternal {
   @VisibleForTesting
   static boolean isSilentFromPageTurn(FocusActionInfo info) {
     return info.forceMuteFeedback && info.sourceAction == FocusActionInfo.MANUAL_SCROLL;
+  }
+
+  /**
+   * The item a feed's page turn focused without speaking, or put back silently after the feed drew
+   * the page again, while focus stays there; otherwise null. The next swipe forward reads it rather
+   * than moving past it, so that it is heard.
+   */
+  private static volatile @Nullable AccessibilityNodeInfoCompat silentPageTurnFocus;
+
+  /**
+   * Whether focus with {@code info} was placed without speaking by a feed's page turn, or put back
+   * silently after focus from one was lost.
+   */
+  private static boolean continuesSilentPageTurn(FocusActionInfo info) {
+    return isSilentFromPageTurn(info)
+        || (info.isSourceEnsureOnScreen()
+            && info.forceMuteFeedback
+            && silentPageTurnFocus != null);
+  }
+
+  /**
+   * Whether {@code node} was focused without speaking by a feed's page turn and has not been read
+   * since. See {@link #silentPageTurnFocus}.
+   */
+  public static boolean isUnreadPageTurnFocus(@Nullable AccessibilityNodeInfoCompat node) {
+    AccessibilityNodeInfoCompat silent = silentPageTurnFocus;
+    return node != null && silent != null && silent.equals(node);
   }
 
   /** Focuses {@code item}, the focused item drawn again, without speaking it again. */
