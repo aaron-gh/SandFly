@@ -760,6 +760,15 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
     return false;
   }
 
+  /** Resets single-finger swipes for a new touch after adding a second finger cancelled them. */
+  public void clearOneFingerSwipes() {
+    for (GestureMatcher matcher : gestures) {
+      if (matcher instanceof Swipe) {
+        matcher.clear();
+      }
+    }
+  }
+
   public void clear() {
     for (GestureMatcher matcher : gestures) {
       matcher.clear();
