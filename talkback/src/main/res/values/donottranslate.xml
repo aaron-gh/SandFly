@@ -473,6 +473,22 @@
     <string name="pref_touch_stops_speech_key" translatable="false">pref_touch_stops_speech_key</string>
     <string name="pref_focus_new_windows_key" translatable="false">pref_focus_new_windows_key</string>
     <string name="pref_leave_system_bars_key" translatable="false">pref_leave_system_bars</string>
+    <string name="pref_category_sliders_key" translatable="false">pref_category_sliders</string>
+    <string name="pref_slider_step_key" translatable="false">pref_slider_step</string>
+    <!-- SliderSteps.STEP_APP -->
+    <string name="pref_slider_step_default" translatable="false">app</string>
+    <string-array name="pref_slider_step_entries" translatable="false">
+      <item>@string/value_slider_step_app</item>
+      <item>@string/value_slider_step_percent</item>
+      <item>@string/value_slider_step_smallest</item>
+    </string-array>
+    <!-- SliderSteps.STEP_APP, STEP_PERCENT and STEP_SMALLEST -->
+    <string-array name="pref_slider_step_values" translatable="false">
+      <item>app</item>
+      <item>percent</item>
+      <item>smallest</item>
+    </string-array>
+    <string name="pref_slider_skip_unchanged_key" translatable="false">pref_slider_skip_unchanged</string>
     <string name="pref_volume_keys_adjust_sliders_key" translatable="false">pref_volume_keys_adjust_sliders_key</string>
     <string name="pref_volume_keys_screen_off_key" translatable="false">pref_volume_keys_screen_off</string>
     <string name="pref_volume_keys_move_cursor_key" translatable="false">pref_volume_keys_move_cursor</string>
@@ -3308,6 +3324,7 @@
     <bool name="pref_touch_stops_speech_default">true</bool>
     <bool name="pref_focus_new_windows_default">true</bool>
     <bool name="pref_leave_system_bars_default">false</bool>
+    <bool name="pref_slider_skip_unchanged_default">false</bool>
     <bool name="pref_volume_keys_adjust_sliders_default">false</bool>
     <bool name="pref_volume_keys_move_cursor_default">false</bool>
     <bool name="pref_volume_change_tone_during_media_default">false</bool>

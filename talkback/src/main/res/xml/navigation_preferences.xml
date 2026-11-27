@@ -52,6 +52,22 @@
       android:key="@string/pref_browse_mode_per_app_key"
       android:title="@string/title_pref_browse_mode_per_app" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="@string/pref_category_sliders_key"
+      android:title="@string/title_pref_category_sliders">
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_slider_step_default"
+        android:dialogTitle="@string/title_pref_slider_step"
+        android:entries="@array/pref_slider_step_entries"
+        android:entryValues="@array/pref_slider_step_values"
+        android:key="@string/pref_slider_step_key"
+        android:summary="%s"
+        android:title="@string/title_pref_slider_step" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_slider_skip_unchanged_default"
+        android:key="@string/pref_slider_skip_unchanged_key"
+        android:title="@string/title_pref_slider_skip_unchanged" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="pref_navigation_apps_category"
       android:title="@string/title_pref_category_apps">
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference

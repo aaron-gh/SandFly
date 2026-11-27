@@ -117,6 +117,15 @@ The reading controls under **Element navigation** and **Heading levels** on the 
 
 You can assign a gesture or keyboard shortcut to move to the next or previous character, word, line, paragraph, heading, link, control, landmark, button, checkbox, radio button, edit field, combo box, focusable item, graphic, list, list item, table, visited link, unvisited link, or heading of a given level. These moves don't change the selected reading control. In the list of commands for a gesture, they are under **Navigate by text** and **Navigate by element**. See [](#gestures).
 
+### Sliders {#reading-sliders}
+
+**Adjust slider** moves a slider one step at a time, by swipe, keyboard shortcut, braille display command, or the volume keys with **Volume keys adjust sliders** on. The **Navigation** screen has these settings under **Sliders**:
+
+- **Slider step**: **As the app sets it** (the default; a standard Android slider moves by 5% of its range), **1%**, or **Smallest step of the range**: 1 on a slider of whole numbers, 1% on other sliders. **1%** and **Smallest step of the range** apply to sliders whose value SandFly can set; other sliders use the app's step.
+- **Skip steps that don't change the value**: after a step that leaves the spoken value the same, SandFly takes further steps in the same direction until the value changes, the slider reaches the end of its range, or 200 steps are taken. A touch or a focus change stops it. Off by default.
+
+**Enter value**, in the actions of a slider whose value SandFly can set, opens a field for a value between the lowest and highest values shown.
+
 ### Read continuously {#reading-continuous}
 
 SandFly can read every item, one after another, and scroll lists on the way:
@@ -267,6 +276,7 @@ The **Navigation** screen in SandFly settings has these settings:
 - **Focus text inside items separately**: Each piece of text and each state inside an item gets focus of its own, so that you can reach it by swiping and by touch. The item itself keeps focus only when it has text, a state or actions of its own; activating a piece of text inside it activates the item. Off by default. The command **Focus text inside items separately**, in the **Navigation** category, turns it on or off and reads "Focus text inside items separately on" or "Focus text inside items separately off".
 - **Switch to table navigation in tables**: **Rows and columns** is selected when focus enters a table. Off by default. See [](#reading-tables).
 - **Smart browse mode** and **Remember browse mode in each app**: See [](#web).
+- **Slider step** and **Skip steps that don't change the value**, under **Sliders**: See [](#reading-sliders).
 - **Read Telegram reply quotes with the message**, under **Apps**: See [](#reading-telegram).
 
 #### Telegram {#reading-telegram}
