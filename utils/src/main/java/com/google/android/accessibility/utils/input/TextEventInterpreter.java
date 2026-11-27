@@ -36,6 +36,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.BuildVersionUtils;
+import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.R;
 import com.google.android.accessibility.utils.input.GranularityIterator.TextSegmentIterator;
@@ -231,9 +232,10 @@ public class TextEventInterpreter {
     if (nodeInfo != null && !nodeInfo.isVisibleToUser()) {
       // For wearOS, we will receive 2 same text events from the real invisible EditText and the
       // gBoard visible EditText. We should skip the invisible one.
-      if (Build.VERSION.SDK_INT != Build.VERSION_CODES.P) {
+      if (Build.VERSION.SDK_INT != Build.VERSION_CODES.P && !isCoveredFocusedField(nodeInfo)) {
         // In Android P, when typing with braille keyboard, nodeInfo.isVisibleToUser is false.
         // Therefore add an exception here.
+        LogUtils.d(TAG, "Drop text event: its source is not visible.");
         return;
       }
     }
@@ -261,6 +263,15 @@ public class TextEventInterpreter {
     } else {
       interpretInternal(event, eventId);
     }
+  }
+
+  /**
+   * Whether {@code node} is the field being typed in, reported not visible because a window over
+   * it takes touches, such as Gboard's popup of alternative characters as it types one. (#609)
+   */
+  @VisibleForTesting
+  static boolean isCoveredFocusedField(AccessibilityNodeInfo node) {
+    return node.isFocused() && node.isEditable() && !FormFactorUtils.isAndroidWear();
   }
 
   /** Extract a text event interpretation data from event. May return null. */
