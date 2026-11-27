@@ -239,7 +239,7 @@ class NodeVariables implements ParseTree.VariableDelegate {
       case NODE_WINDOW_IS_IME -> AccessibilityNodeInfoUtils.isKeyboard(mNode);
       case NODE_LIFTS_TO_TYPE -> globalVariables != null && globalVariables.liftsToType(mNode);
       case NODE_HAS_SPELLING_SUGGESTIONS ->
-          !AccessibilityNodeInfoUtils.getSpellingSuggestions(mContext, mNode).isEmpty();
+          !AccessibilityNodeInfoUtils.getCachedSpellingSuggestions(mContext, mNode).isEmpty();
       default -> mParentVariables.getBoolean(variableId);
     };
   }

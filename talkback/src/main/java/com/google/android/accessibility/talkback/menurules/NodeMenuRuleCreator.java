@@ -100,6 +100,19 @@ public class NodeMenuRuleCreator {
     return getMenuRule(rule).getMenuItemsForNode(context, node, includeAncestors);
   }
 
+  /** Returns whether {@code rule} produces at least one menu item for {@code node}. */
+  public boolean hasNodeMenuByRule(
+      @NonNull MenuRules rule,
+      Context context,
+      AccessibilityNodeInfoCompat node,
+      boolean includeAncestors) {
+    NodeMenuRule menuRule = getMenuRule(rule);
+    if (menuRule instanceof RuleAction actionRule) {
+      return actionRule.hasMenuItemsForNode(context, node, includeAncestors);
+    }
+    return !menuRule.getMenuItemsForNode(context, node, includeAncestors).isEmpty();
+  }
+
   @Nullable NodeMenuRule getMenuRuleById(int ruleId) {
     return getMenuRule(MenuRules.getRuleById(ruleId));
   }

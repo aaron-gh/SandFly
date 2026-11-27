@@ -186,6 +186,10 @@ public class AccessibilityFocusMonitor {
    */
   public @Nullable AccessibilityNodeInfoCompat getEditingNodeFromFocusedKeyboard(
       AccessibilityNodeInfoCompat accessibilityFocusNode) {
+    if (accessibilityFocusNode == null
+        || AccessibilityNodeInfoUtils.isEditField(accessibilityFocusNode)) {
+      return null;
+    }
 
     if (FormFactorUtils.isAndroidWear()) {
       // The editing node in the IME window has higher order than the one in the app window because

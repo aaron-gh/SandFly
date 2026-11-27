@@ -95,8 +95,8 @@ public class TypoSuggestionMenu implements NodeMenu {
 
     int currentCursorPosition = actorState.getEditState().getCurrentCursorPosition();
     return currentCursorPosition == NO_POSITION
-        ? !AccessibilityNodeInfoUtils.getSpellingSuggestions(context, editingNode).isEmpty()
-        : !AccessibilityNodeInfoUtils.getSpellingSuggestions(
+        ? !AccessibilityNodeInfoUtils.getCachedSpellingSuggestions(context, editingNode).isEmpty()
+        : !AccessibilityNodeInfoUtils.getCachedSpellingSuggestions(
                 context, editingNode, currentCursorPosition)
             .isEmpty();
   }
@@ -202,8 +202,8 @@ public class TypoSuggestionMenu implements NodeMenu {
 
     List<SpellingSuggestion> spellingSuggestions =
         currentCursorPosition == NO_POSITION
-            ? AccessibilityNodeInfoUtils.getSpellingSuggestions(context, node)
-            : AccessibilityNodeInfoUtils.getSpellingSuggestions(
+            ? AccessibilityNodeInfoUtils.getCachedSpellingSuggestions(context, node)
+            : AccessibilityNodeInfoUtils.getCachedSpellingSuggestions(
                 context, node, currentCursorPosition);
 
     return spellingSuggestions.isEmpty() ? null : spellingSuggestions.get(0);

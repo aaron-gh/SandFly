@@ -113,6 +113,10 @@ public class DirectionNavigationActor implements UserInputEventListener {
       return DirectionNavigationActor.this.hasNavigableTableContent();
     }
 
+    public boolean hasNavigableTableContent(@Nullable AccessibilityNodeInfoCompat node) {
+      return DirectionNavigationActor.this.hasNavigableTableContent(node);
+    }
+
     /** See {@link CursorGranularityManager#ownTextCursor}. */
     public @Nullable TextCursor ownTextCursor(@Nullable AccessibilityNodeInfoCompat node) {
       return cursorGranularityManager.ownTextCursor(node);
@@ -742,8 +746,15 @@ public class DirectionNavigationActor implements UserInputEventListener {
 
   /** Returns true if the current node is in a table cell or in a web table. */
   public boolean hasNavigableTableContent() {
-    AccessibilityNodeInfoCompat current =
-        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    return hasNavigableTableContent(
+        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false));
+  }
+
+  /** Returns true if {@code current} is in a table cell or in a web table. */
+  public boolean hasNavigableTableContent(@Nullable AccessibilityNodeInfoCompat current) {
+    if (current == null) {
+      return false;
+    }
     return AccessibilityNodeInfoUtils.getTableCellUnderTable(current) != null
         || SheetsGrid.isCell(current)
         || (WebInterfaceUtils.hasNavigableWebContent(current)

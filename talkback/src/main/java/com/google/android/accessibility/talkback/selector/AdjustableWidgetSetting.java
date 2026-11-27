@@ -24,9 +24,11 @@ public class AdjustableWidgetSetting implements ContextualSetting {
       return false;
     }
 
-    AccessibilityNodeInfoCompat adjustableNode =
-        AccessibilityNodeInfoUtils.getMatchingAncestor(node, NUMBER_PICKER_FILTER_FOR_ADJUST);
+    if (Role.getRole(node) == Role.ROLE_SEEK_CONTROL) {
+      return true;
+    }
 
-    return (Role.getRole(node) == Role.ROLE_SEEK_CONTROL) || (adjustableNode != null);
+    return AccessibilityNodeInfoUtils.getMatchingAncestor(node, NUMBER_PICKER_FILTER_FOR_ADJUST)
+        != null;
   }
 }

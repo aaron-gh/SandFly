@@ -70,6 +70,35 @@ public class RuleAction extends NodeMenuRule {
         || sheetsEditMenu.accept(context, node);
   }
 
+  /** Returns whether {@code node} has at least one action without building every rule's items. */
+  public boolean hasMenuItemsForNode(
+      Context context, AccessibilityNodeInfoCompat node, boolean includeAncestors) {
+    // Check editing actions first so edit boxes short-circuit before ancestor and subtree walks.
+    if (editingAndSelectingMenu.accept(context, node)
+        && !editingAndSelectingMenu.getMenuItemsForNode(context, node, includeAncestors).isEmpty()) {
+      return true;
+    }
+    if (typoSuggestionMenu.accept(context, node)) {
+      return true;
+    }
+    if (customActionMenu.accept(context, node)
+        && !customActionMenu.getMenuItemsForNode(context, node, includeAncestors).isEmpty()) {
+      return true;
+    }
+    if (linkMenu.accept(context, node)
+        && !linkMenu.getMenuItemsForNode(context, node, includeAncestors).isEmpty()) {
+      return true;
+    }
+    if (quotedMessageMenu.accept(context, node)) {
+      return true;
+    }
+    if (telegramShareMenu.accept(context, node)) {
+      return true;
+    }
+    return sheetsEditMenu.accept(context, node)
+        && !sheetsEditMenu.getMenuItemsForNode(context, node, includeAncestors).isEmpty();
+  }
+
   @Override
   public List<ContextMenuItem> getMenuItemsForNode(
       Context context, AccessibilityNodeInfoCompat node, boolean includeAncestors) {

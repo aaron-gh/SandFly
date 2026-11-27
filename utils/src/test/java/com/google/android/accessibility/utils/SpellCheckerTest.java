@@ -71,6 +71,7 @@ public class SpellCheckerTest {
   @After
   public void tearDown() {
     SpellChecker.resetSessionUnavailable();
+    SpellChecker.clearCache();
   }
 
   @Test
@@ -83,6 +84,35 @@ public class SpellCheckerTest {
     assertFalse(first.perform());
     assertTrue(SpellChecker.isSessionUnavailable());
     assertEquals("wrd", SpellChecker.getTextWithSuggestionSpans(context, "wrd").toString());
+
+    ShadowSystemClock.advanceBy(Duration.ofMillis(SpellChecker.NO_SESSION_RETRY_DELAY_MS));
+    assertFalse(SpellChecker.isSessionUnavailable());
+  }
+
+  @Test
+  public void cachedTextReturnsInputOnMissAndSpansOnCacheHit() {
+    Context context = RuntimeEnvironment.getApplication();
+    String text = "wrd";
+
+    CharSequence miss = SpellChecker.getCachedTextWithSuggestionSpans(context, text);
+    assertEquals(text, miss.toString());
+    assertTrue(SpellChecker.isSessionUnavailable());
+
+    SentenceSuggestionsInfo info =
+        new SentenceSuggestionsInfo(new SuggestionsInfo[] {typo()}, new int[] {0}, new int[] {3});
+    CharSequence checked =
+        SpellChecker.wrapSuggestionSpansForAllMisspelledWords(
+            context, text, ImmutableList.of(info));
+    SpellChecker.updateCachedResult(checked);
+
+    CharSequence hit = SpellChecker.getCachedTextWithSuggestionSpans(context, text);
+    assertEquals(1, spans(hit).length);
+  }
+
+  @Test
+  public void timeoutBackoffSkipsNewSessionsUntilDelayExpires() {
+    SpellChecker.markSessionUnavailable();
+    assertTrue(SpellChecker.isSessionUnavailable());
 
     ShadowSystemClock.advanceBy(Duration.ofMillis(SpellChecker.NO_SESSION_RETRY_DELAY_MS));
     assertFalse(SpellChecker.isSessionUnavailable());

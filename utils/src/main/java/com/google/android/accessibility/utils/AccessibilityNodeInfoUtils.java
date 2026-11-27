@@ -3593,6 +3593,38 @@ public class AccessibilityNodeInfoUtils {
   }
 
   /**
+   * Returns spelling suggestions at the cursor using cached spell-check results or existing spans
+   * on {@code node}, warming the spell-check cache in the background without blocking.
+   */
+  public static ImmutableList<SpellingSuggestion> getCachedSpellingSuggestions(
+      Context context, AccessibilityNodeInfoCompat node) {
+    if (node == null || hasNoSuggestionsNeed(node.getInputType())) {
+      return ImmutableList.of();
+    }
+
+    int start = node.getTextSelectionStart();
+    int end = node.getTextSelectionEnd();
+    if (start != end) {
+      return ImmutableList.of();
+    }
+
+    return getCachedSpellingSuggestions(context, node, end);
+  }
+
+  /**
+   * Returns spelling suggestions at {@code cursorPosition} using cached spell-check results or
+   * existing spans on {@code node}, warming the spell-check cache in the background.
+   */
+  public static ImmutableList<SpellingSuggestion> getCachedSpellingSuggestions(
+      Context context, AccessibilityNodeInfoCompat node, int cursorPosition) {
+    if (node == null || hasNoSuggestionsNeed(node.getInputType())) {
+      return ImmutableList.of();
+    }
+    return extractSpellingSuggestions(
+        SpellChecker.getCachedTextWithSuggestionSpans(context, node), cursorPosition);
+  }
+
+  /**
    * Returns a list of {@link SpellingSuggestion} for all {@link SuggestionSpan}s at the cursor
    * position in the given {@link AccessibilityNodeInfoCompat}.
    *
@@ -3607,6 +3639,11 @@ public class AccessibilityNodeInfoUtils {
       boolean activeSpellCheck) {
     @Nullable CharSequence text =
         activeSpellCheck ? SpellChecker.getTextWithSuggestionSpans(context, node) : node.getText();
+    return extractSpellingSuggestions(text, cursorPosition);
+  }
+
+  private static ImmutableList<SpellingSuggestion> extractSpellingSuggestions(
+      @Nullable CharSequence text, int cursorPosition) {
     List<SpellingSuggestion> spellingSuggestions = new ArrayList<>();
     if (TextUtils.isEmpty(text) || !(text instanceof Spannable spannedText)) {
       LogUtils.v(TAG, "getSpellingSuggestions() text is null or not a Spannable");
@@ -3774,7 +3811,7 @@ public class AccessibilityNodeInfoUtils {
     }
 
     @Nullable CharSequence textWithSuggestionSpans =
-        SpellChecker.getTextWithSuggestionSpans(context, text);
+        SpellChecker.getCachedTextWithSuggestionSpans(context, text);
     if (TextUtils.isEmpty(textWithSuggestionSpans)
         || !(textWithSuggestionSpans instanceof Spannable spannedText)) {
       return ImmutableList.of();

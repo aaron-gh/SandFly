@@ -73,33 +73,31 @@ public class EditingAndSelectingMenu implements NodeMenu {
 
   @Override
   public boolean accept(Context context, AccessibilityNodeInfoCompat node) {
-    AccessibilityNodeInfoCompat editingNode =
-        accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(node);
-    return acceptEditingAndSelectingMenu(node, editingNode);
+    if (isDirectEditOrSelectableText(node)) {
+      return true;
+    }
+    return accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(node) != null;
   }
 
-  private static boolean acceptEditingAndSelectingMenu(
-      AccessibilityNodeInfoCompat node, AccessibilityNodeInfoCompat editingNode) {
+  private static boolean isDirectEditOrSelectableText(AccessibilityNodeInfoCompat node) {
     // An edit box offers its editing options while it has accessibility focus, without having to
     // be in it first.
     return Role.getRole(node) == Role.ROLE_EDIT_TEXT
-        || AccessibilityNodeInfoUtils.isNonEditableSelectableText(node)
-        || (editingNode != null);
+        || AccessibilityNodeInfoUtils.isNonEditableSelectableText(node);
   }
 
   @Override
   public List<ContextMenuItem> getMenuItemsForNode(
       Context context, AccessibilityNodeInfoCompat node, boolean includeAncestors) {
     List<ContextMenuItem> editingItems = new ArrayList<>();
+    if (isDirectEditOrSelectableText(node)) {
+      populateEditingAndSelectingMenuItemsForNode(context, node, editingItems);
+      return editingItems;
+    }
     AccessibilityNodeInfoCompat editingNode =
         accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(node);
-    if (acceptEditingAndSelectingMenu(node, editingNode)) {
-      if (editingNode != null) {
-        // Apply edit options on the editing node, instead of the focused node.
-        populateEditingAndSelectingMenuItemsForNode(context, editingNode, editingItems);
-      } else {
-        populateEditingAndSelectingMenuItemsForNode(context, node, editingItems);
-      }
+    if (editingNode != null) {
+      populateEditingAndSelectingMenuItemsForNode(context, editingNode, editingItems);
     }
     return editingItems;
   }
