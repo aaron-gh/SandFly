@@ -449,6 +449,14 @@ public class AccessibilityFocusInterpreter
         || SystemClock.uptimeMillis() - scroll.event().getEventTime() > RECENT_NATIVE_SCROLL_MS) {
       return null;
     }
+    // Focus moved by swipes since the scroll is lost from where they left it, not from the scroll,
+    // so window-wide navigation goes on from the lost item.
+    FocusActionRecord lastFocus = actorState.getFocusHistory().getLastFocusActionRecord();
+    if (lastFocus != null
+        && lastFocus.getActionTime() > scroll.event().getEventTime()
+        && lastFocus.getExtraInfo().sourceAction != FocusActionInfo.MANUAL_SCROLL) {
+      return null;
+    }
     AccessibilityNodeInfoCompat list = AccessibilityEventUtils.sourceCompat(scroll.event());
     if (list == null || list.getCollectionInfo() == null || WebScrollFocus.isWebContent(list)) {
       return null;
