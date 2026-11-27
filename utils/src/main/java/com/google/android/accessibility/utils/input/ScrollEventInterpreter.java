@@ -22,6 +22,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.os.Build.VERSION_CODES;
 import android.os.Build;
+import android.text.TextUtils;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.annotation.VisibleForTesting;
@@ -470,6 +471,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
       case AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED:
         // Window state changes clear the cache.
         cachedPositionInfo.clear();
+        latestNativeScrollPosition = null;
         resetWebNavigation();
         break;
       case AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED:
@@ -575,6 +577,17 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
 
   private void processScrollEvent(AccessibilityEvent event, EventId eventId,
       AccessibilityNodeInfo source, boolean fromWebNavigation, boolean mediaScroll) {
+    if (Build.VERSION.SDK_INT >= VERSION_CODES.UPSIDE_DOWN_CAKE
+        && source != null
+        && event.getEventType() == AccessibilityEvent.TYPE_VIEW_SCROLLED
+        && TextUtils.equals(source.getClassName(), "android.widget.ScrollView")
+        && event.getScrollX() == 0
+        && event.getMaxScrollY() > 0
+        && event.getScrollY() >= 0
+        && event.getScrollY() <= event.getMaxScrollY()) {
+      latestNativeScrollPosition =
+          new NativeScrollPosition(source, event.getScrollY(), event.getMaxScrollY());
+    }
     ScrollEventInterpretation interpretation = interpret(event, source, fromWebNavigation, mediaScroll);
     if (interpretation == null) return;
     if (source != null && interpretation.hasValidIndex) {
@@ -862,6 +875,19 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
         && audioPlaybackMonitor.isPlaybackSourceActive(
             AudioPlaybackMonitor.PlaybackSource.USAGE_MEDIA)
         && !touchMonitor.isUserTouchingScreen();
+  }
+
+  /** Latest native vertical position, used only while the same view still reports that offset. */
+  private record NativeScrollPosition(AccessibilityNodeInfo source, int y, int maxY) {}
+
+  @Nullable private static NativeScrollPosition latestNativeScrollPosition;
+
+  /** Returns the range reported for the given native view at its current offset. */
+  public static int measuredVerticalScrollMax(AccessibilityNodeInfo source, int y) {
+    NativeScrollPosition position = latestNativeScrollPosition;
+    return position != null && position.y() == y && source.equals(position.source())
+        ? position.maxY()
+        : -1;
   }
 
   /** Caches scroll position from {@link AccessibilityEvent}. */
