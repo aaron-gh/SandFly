@@ -6622,4 +6622,10 @@
   <string name="cyrillic_text_model_missing">No text recognition model for <xliff:g id="language" example="Russian">%1$s</xliff:g>. Download it in Image and screen descriptions, Cyrillic text recognition.</string>
   <!-- Cyrillic text recognition settings: shown under a language when the server that has the text recognition models refused the download. [CHAR LIMIT=NONE] -->
   <string name="cyrillic_text_model_error_http">The download server did not accept the request. Try again later.</string>
+  <!-- Heading on the Voice commands settings screen of the voice commands said that SandFly didn't understand 3 times, each of which can be made a custom voice command. [CHAR LIMIT=40] -->
+  <string name="voice_phrases_not_understood">Phrases not understood</string>
+  <!-- Switch under Phrases not understood on the Voice commands settings screen: counts the voice commands that SandFly doesn't understand and lists those not understood 3 times. Off forgets them. [CHAR LIMIT=60] -->
+  <string name="title_pref_voice_phrases_not_understood">Save phrases not understood</string>
+  <!-- Spoken after the message that a voice command isn't recognized, when it is the 3rd time and the phrase is now listed under Phrases not understood in the Voice commands settings. "Phrases not understood" is the heading of that list. [CHAR LIMIT=NONE] -->
+  <string name="voice_phrases_not_understood_listed">Added to Phrases not understood.</string>
 </resources>

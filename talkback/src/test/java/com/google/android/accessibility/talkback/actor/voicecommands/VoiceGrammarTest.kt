@@ -348,6 +348,25 @@ class VoiceGrammarTest {
     )
   }
 
+  @Test
+  fun customPhraseLeavesOutFillersAndPunctuation() {
+    assertEquals("read my mail", grammar.customPhrase("Please read my mail."))
+    assertEquals("Read my mail", grammar.customPhrase("  Read my mail for me?"))
+    // Counted under the phrase that a custom voice command is matched by.
+    assertEquals("read my mail", grammar.customPhrase("could you read my mail now"))
+  }
+
+  @Test
+  fun customPhraseIsNullForTextToTypeAndEmptyOrLongText() {
+    assertEquals(null, grammar.customPhrase("type my secret"))
+    assertEquals(null, grammar.customPhrase("Write"))
+    assertEquals(null, grammar.customPhrase("enter, the code"))
+    assertEquals(null, grammar.customPhrase(" ... "))
+    assertEquals(null, grammar.customPhrase("a".repeat(CustomVoiceCommands.MAX_PHRASE + 1)))
+    // A word that only starts like a type word isn't text to type.
+    assertEquals("typewriter sounds", grammar.customPhrase("typewriter sounds"))
+  }
+
   private fun textEdit(said: String): VoiceStep.TextEdit {
     val steps = steps(said)
     assertEquals(said, 1, steps.size)

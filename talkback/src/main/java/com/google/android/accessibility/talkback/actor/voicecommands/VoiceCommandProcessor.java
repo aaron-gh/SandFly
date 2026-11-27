@@ -866,14 +866,21 @@ public class VoiceCommandProcessor {
 
   /** Says that {@code command} isn't a voice command, as when no command matches it. */
   public void sayNotRecognized(String command) {
-    if (echoNotRecognizedTextEnabled) {
-      speakDelayed(
-          service.getString(R.string.voice_commands_echo_feedback_not_recognized, command));
-    } else {
-      speakDelayed(
-          service.getString(
-              R.string.voice_commands_partial_result, service.getString(R.string.title_pref_help)));
-    }
+    sayNotRecognized(command, /* after= */ null);
+  }
+
+  /**
+   * Says that {@code command} isn't a voice command, then {@code after}, when it isn't null, in the
+   * same utterance.
+   */
+  public void sayNotRecognized(String command, @Nullable String after) {
+    String text =
+        echoNotRecognizedTextEnabled
+            ? service.getString(R.string.voice_commands_echo_feedback_not_recognized, command)
+            : service.getString(
+                R.string.voice_commands_partial_result,
+                service.getString(R.string.title_pref_help));
+    speakDelayed(after == null ? text : text + " " + after);
     analytics.onVoiceCommandEvent(VOICE_COMMAND_UNRECOGNIZED);
   }
 
