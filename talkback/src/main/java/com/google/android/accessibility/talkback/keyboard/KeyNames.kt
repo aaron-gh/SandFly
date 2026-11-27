@@ -36,7 +36,7 @@ object KeyNames {
       KeyEvent.KEYCODE_PAGE_DOWN to R.string.keycombo_key_page_down,
       KeyEvent.KEYCODE_MOVE_HOME to R.string.keycombo_key_home,
       KeyEvent.KEYCODE_MOVE_END to R.string.keycombo_key_end,
-      KeyEvent.KEYCODE_INSERT to R.string.keycombo_key_insert,
+      KeyEvent.KEYCODE_INSERT to R.string.keycombo_key_modifier_insert,
       KeyEvent.KEYCODE_FORWARD_DEL to R.string.keycombo_key_delete,
       KeyEvent.KEYCODE_MENU to R.string.keycombo_key_menu,
       KeyEvent.KEYCODE_SEARCH to R.string.keycombo_key_search,
