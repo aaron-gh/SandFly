@@ -2059,6 +2059,24 @@ public class FailoverTextToSpeech {
   }
 
   /**
+   * The current engine's voices, kept from the last time they were listed, or null without an
+   * engine. Listing them calls the engine, which can take seconds, so menus that ask each time they
+   * are shown, such as the reading controls asking whether Language applies, list them once per
+   * engine.
+   */
+  public @Nullable Set<Voice> getVoices() {
+    synchronized (ttsLock) {
+      if (tts == null) {
+        return null;
+      }
+      if (engineVoices == null) {
+        engineVoices = tts.getVoices();
+      }
+      return engineVoices;
+    }
+  }
+
+  /**
    * Returns the current engine's installed voice called {@code name}, or null if it has none. The
    * engine's voices are kept from the last time they were needed, as listing them is slow, and
    * listed again only if the voice isn't there, as it may have been installed since. A voice still
