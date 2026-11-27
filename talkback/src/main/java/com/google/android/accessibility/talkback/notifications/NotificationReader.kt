@@ -886,11 +886,16 @@ object NotificationReader {
   /**
    * Called when the user makes a gesture or presses a shortcut. The notifications handed to voice
    * profiles' engines stop, as those in SandFly's voice are cut off by the speech that follows.
+   *
+   * With [textEditing] true, for the commands that copy, paste or select text, they go on while
+   * a voice profile is chosen for command feedback: the result is said in SandFly's voice if the
+   * profile is reading, so that the notification isn't cut off by a command.
    */
   @JvmStatic
   @MainThread
-  fun onUserAction() {
+  fun onUserAction(textEditing: Boolean) {
     stopSummary()
+    if (textEditing && hasCommandVoice()) return
     val handed = (listOfNotNull(reading) + queued).filter { it.voiceKey.isNotEmpty() }
     if (handed.isEmpty()) return
     LogUtils.d(TAG, "User action; stopping %d notifications in voice profiles", handed.size)
@@ -1185,6 +1190,14 @@ object NotificationReader {
 
   /** The voice profile that the result of a command or of a text edit is said with, or empty. */
   private fun commandVoiceId(prefs: SharedPreferences): String = prefs.getString(KEY_COMMAND_VOICE, null).orEmpty()
+
+  /** Whether a voice profile other than the one SandFly speaks with is chosen for command feedback. */
+  @JvmStatic
+  fun hasCommandVoice(): Boolean {
+    val context = context ?: return false
+    return voiceFor(commandVoiceId(SharedPreferencesUtils.getSharedPreferences(context)))
+      ?.let { it.currentProfile?.id() != VoiceProfiles.active()?.id() } == true
+  }
 
   /** How long a command's result waits for its voice to start, before SandFly's voice says it. */
   private const val COMMAND_START_MS = 2_000L
