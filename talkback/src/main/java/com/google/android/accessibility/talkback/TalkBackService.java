@@ -1500,7 +1500,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       // keyboard, the volume panel and the notification shade send this event too, and closing
       // them sends none for the app under them.
       int windowType = AccessibilityEventUtils.getWindowType(event);
-      if (isAppWindowType(windowType, lastWindowPackage)) {
+      if (isAppWindowType(windowType, lastWindowPackage) && showsWindow(event)) {
         SpeechDictionary.onWindowShown(lastWindowPackage);
         AppGestures.onWindowShown(lastWindowPackage);
         // An event from SandFly whose window can't be told may be one of its overlays; the window
@@ -6627,6 +6627,16 @@ public class TalkBackService extends AccessibilityServiceCompat
       default:
         return false;
     }
+  }
+
+  /**
+   * Whether a window state change shows a window or pane, rather than reporting a change of text or
+   * content inside one, such as the clock of vivo's System UI plugin every minute.
+   */
+  private static boolean showsWindow(AccessibilityEvent event) {
+    int types = event.getContentChangeTypes();
+    return types == AccessibilityEvent.CONTENT_CHANGE_TYPE_UNDEFINED
+        || (types & AccessibilityEvent.CONTENT_CHANGE_TYPE_PANE_APPEARED) != 0;
   }
 
   /**
