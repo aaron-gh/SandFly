@@ -1490,6 +1490,9 @@ end
 function system.apps()
   return call('system.apps')
 end
+function system.shizuku()
+  return call('system.shizuku')
+end
 
 local function point(x, y)
   x, y = tonumber(x), tonumber(y)
