@@ -711,6 +711,7 @@ public class FocusProcessorForLogicalNavigation {
         && isMoveToNextOrPreviousItem(navigationAction)
         && goesForward(navigationAction)
         && FocusManagerInternal.isUnreadPageTurnFocus(currentFocus)
+        && isInActiveWindow(currentFocus)
         && setAccessibilityFocusInternal(currentFocus, navigationAction, eventId)) {
       // A feed's page turn focused this item without speaking it. Moving past it, the next swipe
       // would skip it unheard.
@@ -9857,5 +9858,14 @@ public class FocusProcessorForLogicalNavigation {
     return (AccessibilityWindowInfoUtils.getType(window)
             == AccessibilityWindowInfoCompat.TYPE_ACCESSIBILITY_OVERLAY)
         && TextUtils.equals(window.getTitle(), context.getString(R.string.title_screen_search));
+  }
+
+  /**
+   * Whether {@code node} is in the active window. A window opened over a feed, with focus left in
+   * the feed, takes the next swipe.
+   */
+  private boolean isInActiveWindow(AccessibilityNodeInfoCompat node) {
+    AccessibilityNodeInfoCompat root = AccessibilityServiceCompatUtils.getRootInActiveWindow(service);
+    return root != null && root.getWindowId() == node.getWindowId();
   }
 }

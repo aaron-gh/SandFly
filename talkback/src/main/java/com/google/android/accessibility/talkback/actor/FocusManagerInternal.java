@@ -1054,6 +1054,11 @@ public class FocusManagerInternal {
     return node != null && silent != null && silent.equals(node);
   }
 
+  /** Forgets the item a feed's page turn focused without speaking, when the service stops. */
+  public static void clearPageTurnFocus() {
+    silentPageTurnFocus = null;
+  }
+
   /** Focuses {@code item}, the focused item drawn again, without speaking it again. */
   private boolean focusSameItem(AccessibilityNodeInfoCompat item, EventId eventId) {
     FocusActionInfo focusActionInfo =

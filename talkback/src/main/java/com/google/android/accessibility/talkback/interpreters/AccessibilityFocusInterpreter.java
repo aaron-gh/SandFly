@@ -35,6 +35,7 @@ import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Interpretation;
 import com.google.android.accessibility.talkback.Interpretation.ManualScroll;
 import com.google.android.accessibility.talkback.Pipeline;
+import com.google.android.accessibility.talkback.actor.FocusManagerInternal;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.compositor.AccessibilityFocusEventInterpretation;
@@ -805,6 +806,7 @@ public class AccessibilityFocusInterpreter
     pendingManualScroll = null;
     lastScrollOfFocusedList = null;
     pageTurnSettlesUntil = 0;
+    FocusManagerInternal.clearPageTurnFocus();
     webScroll = null;
   }
 
