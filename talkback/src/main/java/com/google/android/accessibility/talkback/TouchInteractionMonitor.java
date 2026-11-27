@@ -2866,6 +2866,9 @@ public class TouchInteractionMonitor
         && !isOnKeyboard(lastFingerX, lastFingerY)
         && service.onStationaryContinuedTouch(displayId, lastFingerX, lastFingerY, !fingerDown)) {
       explorationWaitingForMove = true;
+      // The matchers gave up on this touch, and the interaction goes on: a new touch starts them
+      // over.
+      clearGestureDetectorOnNextDown = true;
       return;
     }
     try {

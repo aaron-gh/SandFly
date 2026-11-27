@@ -131,20 +131,25 @@ object KeyboardExploration {
     return if (isGboardPackage(root.packageName)) AccessibilityNodeInfoCompat.wrap(root) else null
   }
 
-  /** Returns the topmost window at [x], [y] on [displayId], from the cached window list. */
+  /**
+   * Returns the topmost window at [x], [y] on [displayId], from the cached window list. Accessibility
+   * overlays other than the clipboard history are skipped unless [withOverlays].
+   */
   @RequiresApi(Build.VERSION_CODES.R)
   private fun topmostWindowAt(
     service: AccessibilityService,
     displayId: Int,
     x: Float,
     y: Float,
+    withOverlays: Boolean = false,
   ): AccessibilityWindowInfo? {
     val region = Region()
     val windows = service.windowsOnAllDisplays.get(displayId) ?: return null
     for (window in windows) {
       // The clipboard history covers the keyboard.
       if (
-        window.type == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY &&
+        !withOverlays &&
+          window.type == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY &&
           !ClipboardHistoryOverlay.isOwnWindow(service, window)
       ) {
         continue
@@ -211,8 +216,15 @@ object KeyboardExploration {
     y: Float,
   ): AccessibilityNodeInfoCompat? {
     val budget = StationaryTouchLookup()
-    val window = topmostWindowAt(service, displayId, x, y) ?: return null
-    if (window.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD) return null
+    val window = topmostWindowAt(service, displayId, x, y, withOverlays = true) ?: return null
+    // SandFly's overlays, such as Screen search, cover the app: Android's touch exploration finds
+    // their items.
+    if (
+      window.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD ||
+        window.type == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY
+    ) {
+      return null
+    }
     val root = window.root ?: return null
     return focusableAt(AccessibilityNodeInfoCompat.wrap(root), x.toInt(), y.toInt(), Rect(), 0, budget)
   }
@@ -225,6 +237,9 @@ object KeyboardExploration {
     fun hasTime() = SystemClock.uptimeMillis() < deadline
 
     fun takeChild() = hasTime() && childrenLeft-- > 0
+
+    /** Whether the lookup stopped before it read every child it needed. */
+    fun exhausted() = !hasTime() || childrenLeft < 0
   }
 
   private const val MAX_DEPTH = 30
@@ -401,7 +416,8 @@ object KeyboardExploration {
         return found
       }
     }
-    if (stationaryTouch?.hasTime() == false) return null
+    // The item under the finger may be in a child left unread: not this container.
+    if (stationaryTouch?.exhausted() == true) return null
     return node.takeIf { AccessibilityNodeInfoUtils.FILTER_SHOULD_FOCUS_EXCEPT_WEB_VIEW.accept(it) }
   }
 }
