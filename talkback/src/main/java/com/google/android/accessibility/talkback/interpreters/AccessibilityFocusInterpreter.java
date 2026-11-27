@@ -158,6 +158,7 @@ public class AccessibilityFocusInterpreter
           }
           boolean stripScrolled = pageScrolledFocusStrip;
           pendingManualScroll = null;
+          pageTurnSettlesUntil = 0;
           pageScrolledFocusStrip = false;
           if (interpretation != null) {
             handleManualScroll(interpretation, stripScrolled);
@@ -265,7 +266,27 @@ public class AccessibilityFocusInterpreter
         lastScrollOfFocusedList = pendingManualScroll;
       }
     }
+    if (pendingManualScroll.scrolledHoldsFocus()
+        && Role.getRole(AccessibilityEventUtils.sourceCompat(pendingManualScroll.event()))
+            == Role.ROLE_PAGER) {
+      pageTurnSettlesUntil = SystemClock.uptimeMillis() + PAGE_TURN_SETTLE_LIMIT_MS;
+    }
     schedulePendingManualScroll();
+  }
+
+  /** Longest time after a pager's scroll that the page turn is taken to be settling. */
+  private static final long PAGE_TURN_SETTLE_LIMIT_MS = 1_000;
+
+  /** Until when a pager that holds the focus is turning, and its scroll waits to settle. */
+  private static volatile long pageTurnSettlesUntil;
+
+  /**
+   * Whether a pager that holds the focus was turned with the fingers and its scroll is waiting to
+   * settle, when it moves the focus onto the new page. Focus that the page turn loses before then,
+   * as TikTok's feed drops the focused item while it turns, is left for that scroll to place.
+   */
+  public static boolean isPageTurnSettling() {
+    return SystemClock.uptimeMillis() < pageTurnSettlesUntil;
   }
 
   @Override
@@ -783,6 +804,7 @@ public class AccessibilityFocusInterpreter
     handler.removeCallbacks(handlePendingManualScroll);
     pendingManualScroll = null;
     lastScrollOfFocusedList = null;
+    pageTurnSettlesUntil = 0;
     webScroll = null;
   }
 

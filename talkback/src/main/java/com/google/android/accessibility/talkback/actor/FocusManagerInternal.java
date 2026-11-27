@@ -40,6 +40,7 @@ import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.TouchInteractionMonitor;
 import com.google.android.accessibility.talkback.actor.helper.FocusActorHelper;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
+import com.google.android.accessibility.talkback.focusmanagement.FocusFeedbackMapper;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
 import com.google.android.accessibility.talkback.focusmanagement.SheetsGrid;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForLogicalNavigation;
@@ -47,6 +48,7 @@ import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCa
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
+import com.google.android.accessibility.talkback.interpreters.AccessibilityFocusInterpreter;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory.ActivatedItem;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory.WindowIdentifier;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
@@ -72,6 +74,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -245,6 +248,9 @@ public class FocusManagerInternal {
     boolean isAccessibilityFocusActionPerformedSuccessfully =
         performAccessibilityFocusActionInternal(
             node, focusActionInfo, eventId, /* maySpeakFirst= */ !shouldSyncInputFocus);
+    if (isAccessibilityFocusActionPerformedSuccessfully) {
+      silentPageTurnFocus = continuesSilentPageTurn(focusActionInfo) ? node : null;
+    }
     if (isAccessibilityFocusActionPerformedSuccessfully
         && !shouldSyncInputFocus
         && FocusActorHelper.shouldClearFocusAfterSetAccessibilityFocus(service, focusActionInfo)) {
@@ -347,6 +353,12 @@ public class FocusManagerInternal {
       // Has focus on screen.
       LogUtils.d(TAG, String.format("%s: Return, accessibility focus is already there.", subTag));
       return true;
+    }
+
+    if (AccessibilityFocusInterpreter.isPageTurnSettling()) {
+      // The page turn moves focus onto the new page, without speaking, once its scroll settles.
+      LogUtils.d(TAG, String.format("%s: Return, a page turn is still to focus an item.", subTag));
+      return false;
     }
 
     if (FocusProcessorForLogicalNavigation.swipeScrollPending()) {
@@ -960,6 +972,29 @@ public class FocusManagerInternal {
     if (AccessibilityWindowInfoUtils.isImeWindow(AccessibilityNodeInfoUtils.getWindow(root))) {
       forceMuteFeedback = true;
     }
+    // Focus moved without speaking, as after a page turned with the fingers, is put back without
+    // speaking too. TikTok draws its next video again after the page turns, which loses the focus
+    // placed on it, and the window's first item, "LIVE" or "Page", would be read on every video.
+    if (continuesSilentPageTurn(record.getExtraInfo())) {
+      forceMuteFeedback = true;
+      // The window's first item can be the feed's pager, which holds every item of the page:
+      // focused, it would read the video's progress and each button's state as they change.
+      if (nodeToFocus.isScrollable()) {
+        TraversalStrategy strategy =
+            TraversalStrategyUtils.getTraversalStrategy(
+                nodeToFocus, focusFinder, TraversalStrategy.SEARCH_FOCUS_FORWARD);
+        Map<AccessibilityNodeInfoCompat, Boolean> cache = strategy.getSpeakingNodesCache();
+        AccessibilityNodeInfoCompat item =
+            FocusFeedbackMapper.firstSpokenItemOfPage(
+                nodeToFocus,
+                strategy,
+                Filter.node((node) -> AccessibilityNodeInfoUtils.shouldFocusNode(node, cache)),
+                cache);
+        if (item != null) {
+          nodeToFocus = item;
+        }
+      }
+    }
 
     FocusActionInfo focusActionInfo =
         FocusActionInfo.builder()
@@ -980,6 +1015,43 @@ public class FocusManagerInternal {
       stableScreenState.consumeInterpretFirstTimeWhenWakeUp();
     }
     return success;
+  }
+
+  /**
+   * Whether focus with {@code info} was moved without speaking by a scroll made with the fingers,
+   * so that focus lost from it is put back silently too. Other silent focus, such as a text field
+   * focused again, is left out: losing focus from there can be a change the user needs to hear.
+   */
+  @VisibleForTesting
+  static boolean isSilentFromPageTurn(FocusActionInfo info) {
+    return info.forceMuteFeedback && info.sourceAction == FocusActionInfo.MANUAL_SCROLL;
+  }
+
+  /**
+   * The item a feed's page turn focused without speaking, or put back silently after the feed drew
+   * the page again, while focus stays there; otherwise null. The next swipe forward reads it rather
+   * than moving past it, so that it is heard.
+   */
+  private static volatile @Nullable AccessibilityNodeInfoCompat silentPageTurnFocus;
+
+  /**
+   * Whether focus with {@code info} was placed without speaking by a feed's page turn, or put back
+   * silently after focus from one was lost.
+   */
+  private static boolean continuesSilentPageTurn(FocusActionInfo info) {
+    return isSilentFromPageTurn(info)
+        || (info.isSourceEnsureOnScreen()
+            && info.forceMuteFeedback
+            && silentPageTurnFocus != null);
+  }
+
+  /**
+   * Whether {@code node} was focused without speaking by a feed's page turn and has not been read
+   * since. See {@link #silentPageTurnFocus}.
+   */
+  public static boolean isUnreadPageTurnFocus(@Nullable AccessibilityNodeInfoCompat node) {
+    AccessibilityNodeInfoCompat silent = silentPageTurnFocus;
+    return node != null && silent != null && silent.equals(node);
   }
 
   /** Focuses {@code item}, the focused item drawn again, without speaking it again. */

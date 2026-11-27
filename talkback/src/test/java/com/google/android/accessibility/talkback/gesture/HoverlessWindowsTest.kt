@@ -116,6 +116,160 @@ class HoverlessWindowsTest {
     assertNull(itemFor(overlay))
   }
 
+  /**
+   * TikTok's video page: a clickable frame with no label over the page takes every hover. The
+   * Like button is drawn over it, and the clickable "Video" view over the page is listed after it.
+   */
+  private fun tikTokPage(
+    parent: AccessibilityNodeInfo = root
+  ): Triple<AccessibilityNodeInfo, AccessibilityNodeInfo, AccessibilityNodeInfo> {
+    val frame = clickable(node(SCREEN))
+    val like = clickable(node(Rect(880, 1300, 1080, 1480))).apply { contentDescription = "Like video" }
+    val buttons = clickable(node(Rect(0, 1000, 1080, 2200))).apply { addChild(like) }
+    val widgets = node(SCREEN).apply { addChild(frame) }
+    shadowOf(widgets).addChild(buttons)
+    val video = clickable(node(SCREEN)).apply { contentDescription = "Video" }
+    shadowOf(parent).addChild(widgets)
+    shadowOf(parent).addChild(video)
+    return Triple(frame, like, video)
+  }
+
+  private fun clickable(node: AccessibilityNodeInfo) =
+    node.apply {
+      isClickable = true
+      isFocusable = true
+      addAction(AccessibilityNodeInfo.ACTION_CLICK)
+    }
+
+  private fun AccessibilityNodeInfo.addChild(child: AccessibilityNodeInfo) {
+    shadowOf(this).addChild(child)
+  }
+
+  private fun coverItemFor(touched: AccessibilityNodeInfo) =
+    HoverlessWindows.itemOverSilentCover(AccessibilityNodeInfoCompat.wrap(touched))
+
+  @Test
+  fun silentCover_focusesTheButtonUnderTheFinger() {
+    val (frame, like, _) = tikTokPage()
+    HoverlessWindows.onTouchExplorationRequested(980f, 1390f)
+    assertEquals(AccessibilityNodeInfoCompat.wrap(like), coverItemFor(frame))
+  }
+
+  @Test
+  fun silentCover_awayFromTheButtons_focusesTheVideo() {
+    val (frame, _, video) = tikTokPage()
+    HoverlessWindows.onTouchExplorationRequested(400f, 600f)
+    assertEquals(AccessibilityNodeInfoCompat.wrap(video), coverItemFor(frame))
+  }
+
+  @Test
+  fun pagerOverThePage_focusesTheButtonUnderTheFinger() {
+    // TikTok reports the hover for the feed's pager first, read as "Page". The page is in it.
+    val pager =
+      node(SCREEN).apply {
+        className = "androidx.viewpager.widget.ViewPager"
+        isFocusable = true
+        isScrollable = true
+        addAction(AccessibilityNodeInfo.ACTION_SCROLL_FORWARD)
+        addChild(node(Rect(0, 100, 1080, 200)).apply { text = "LIVE now" })
+      }
+    shadowOf(root).addChild(pager)
+    val (_, like, _) = tikTokPage(pager)
+    HoverlessWindows.onTouchExplorationRequested(980f, 1390f)
+    assertEquals(AccessibilityNodeInfoCompat.wrap(like), coverItemFor(pager))
+  }
+
+  @Test
+  fun pagerOverThePage_awayFromTheButtons_focusesTheVideoAndNotThePager() {
+    // Smaller than the "Video" view, the pager would be the smallest item that speaks.
+    val pager =
+      node(Rect(0, 0, 1080, 2300)).apply {
+        className = "androidx.viewpager.widget.ViewPager"
+        isFocusable = true
+        isScrollable = true
+        addAction(AccessibilityNodeInfo.ACTION_SCROLL_FORWARD)
+        addChild(node(Rect(0, 100, 1080, 200)).apply { text = "LIVE now" })
+      }
+    shadowOf(root).addChild(pager)
+    val (frame, _, video) = tikTokPage(pager)
+    HoverlessWindows.onTouchExplorationRequested(400f, 600f)
+    assertEquals(AccessibilityNodeInfoCompat.wrap(video), coverItemFor(pager))
+    assertEquals(AccessibilityNodeInfoCompat.wrap(video), coverItemFor(frame))
+  }
+
+  @Test
+  fun silentCover_aLabelledCoverIsLeftAlone() {
+    val (frame, _, _) = tikTokPage()
+    frame.contentDescription = "Page"
+    HoverlessWindows.onTouchExplorationRequested(980f, 1390f)
+    assertNull(coverItemFor(frame))
+  }
+
+  @Test
+  fun silentCover_aSmallSilentButtonIsLeftAlone() {
+    val (_, like, _) = tikTokPage()
+    like.contentDescription = null
+    HoverlessWindows.onTouchExplorationRequested(980f, 1390f)
+    assertNull(coverItemFor(like))
+  }
+
+  @Test
+  fun silentCover_withoutAFingerPositionNothingIsFound() {
+    val (frame, _, _) = tikTokPage()
+    assertNull(coverItemFor(frame))
+  }
+
+  @Test
+  fun silentCover_theAppsFurtherHoversOfTheTouch_getTheSameItem() {
+    val (frame, like, _) = tikTokPage()
+    HoverlessWindows.onTouchExplorationRequested(980f, 1390f)
+    assertEquals(AccessibilityNodeInfoCompat.wrap(like), coverItemFor(frame))
+    // TikTok reports the frame again a few milliseconds later, as for the pager before it.
+    assertEquals(AccessibilityNodeInfoCompat.wrap(like), coverItemFor(frame))
+  }
+
+  @Test
+  fun silentCover_aFingerThatStartsOnAButtonAndSlidesOntoTheCover_doesNotTakeTheButton() {
+    val (frame, like, _) = tikTokPage()
+    HoverlessWindows.onTouchExplorationRequested(980f, 1390f)
+    // The touch's first hover is the labelled button itself.
+    assertNull(coverItemFor(like))
+    // The finger slides onto the video; the frame is focused, not the button.
+    assertNull(coverItemFor(frame))
+  }
+
+  @Test
+  fun silentCover_onlyTheFirstHoverOfATouchSearches() {
+    val (frame, like, _) = tikTokPage()
+    HoverlessWindows.onTouchExplorationRequested(400f, 600f)
+    assertNull(coverItemFor(like))
+    HoverlessWindows.onTouchExplorationRequested(980f, 1390f)
+    assertEquals(AccessibilityNodeInfoCompat.wrap(like), coverItemFor(frame))
+  }
+
+  @Test
+  fun scrimDrawnOverThePage_keepsItsHover() {
+    val (_, _, _) = tikTokPage()
+    // A dialog's scrim over the whole window, clickable and with no label, drawn last.
+    val scrim = clickable(node(SCREEN))
+    shadowOf(root).addChild(scrim)
+    HoverlessWindows.onTouchExplorationRequested(980f, 1390f)
+    assertNull(coverItemFor(scrim))
+  }
+
+  @Test
+  fun drawingOrder_decidesOverTheOrderOfChildren() {
+    val (frame, like, _) = tikTokPage()
+    val framePath = listOf(frame, frame.parent, root).map { AccessibilityNodeInfoCompat.wrap(it) }
+    val likeCompat = AccessibilityNodeInfoCompat.wrap(like)
+    // Listed after the frame, the buttons are drawn over it.
+    assertFalse(HoverlessWindows.isDrawnUnder(likeCompat, framePath))
+    // Drawn first, though listed after the frame, the buttons are under it.
+    frame.drawingOrder = 2
+    like.parent.drawingOrder = 1
+    assertTrue(HoverlessWindows.isDrawnUnder(likeCompat, framePath))
+  }
+
   @Test
   fun mostOfTheWindowIsThreeQuartersOfItsArea() {
     assertTrue(HoverlessWindows.coversMostOf(Rect(0, 0, 1080, 1800), SCREEN))

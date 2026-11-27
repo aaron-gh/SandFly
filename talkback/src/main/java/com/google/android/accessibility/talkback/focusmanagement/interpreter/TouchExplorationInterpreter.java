@@ -278,8 +278,17 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
 
     setLastTouchedNode(touchedNode);
 
-    final AccessibilityNodeInfoCompat touchedFocusableNode =
+    AccessibilityNodeInfoCompat focusableNode =
         AccessibilityNodeInfoUtils.findFocusFromHover(touchedNode);
+    if (focusableNode != null) {
+      // An app can report its hover for a silent view over the whole page, under the items it
+      // draws; see HoverlessWindows.
+      AccessibilityNodeInfoCompat item = HoverlessWindows.itemOverSilentCover(focusableNode);
+      if (item != null) {
+        focusableNode = item;
+      }
+    }
+    final AccessibilityNodeInfoCompat touchedFocusableNode = focusableNode;
     LogUtils.v(
         TAG,
         "handleHoverEnterEvent: touchedNode=%s, touchedFocusableNode=%s",

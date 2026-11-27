@@ -25,8 +25,14 @@ import static com.google.android.accessibility.talkback.Feedback.Focus.Action.IN
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.LONG_CLICK_NODE;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.RESTORE_TO_CACHE;
 
+import android.graphics.Rect;
+import android.os.Build;
+import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat;
+import androidx.core.view.accessibility.AccessibilityWindowInfoCompat;
+import com.google.android.accessibility.talkback.gesture.HoverlessWindows;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Feedback.Focus;
 import com.google.android.accessibility.talkback.Feedback.Focus.Action;
@@ -182,6 +188,83 @@ public class FocusFeedbackMapper {
             .build());
   }
 
+  /**
+   * Returns the item to focus on the page {@code pager} has just turned to: the item the app asks
+   * to focus first, if it has something to speak, or else the first item in view on the page that
+   * has, or null. TikTok's video feed starts each page with an unlabelled frame, and the pager
+   * itself takes focus, so the page's first item would be read as "Unlabelled" or "Page" on every
+   * video.
+   */
+  public static @Nullable AccessibilityNodeInfoCompat firstSpokenItemOfPage(
+      AccessibilityNodeInfoCompat pager,
+      TraversalStrategy traversalStrategy,
+      Filter<AccessibilityNodeInfoCompat> nodeFilter,
+      @Nullable Map<AccessibilityNodeInfoCompat, Boolean> speakingNodesCache) {
+    Filter<AccessibilityNodeInfoCompat> pageFilter =
+        nodeFilter.and(
+            Filter.node(
+                (node) ->
+                    !pager.equals(node)
+                        && AccessibilityNodeInfoUtils.isSpeakingNode(node, speakingNodesCache)));
+    @Nullable AccessibilityNodeInfoCompat initial = traversalStrategy.focusInitial(pager);
+    if (pageFilter.accept(initial)) {
+      return initial;
+    }
+    return TraversalStrategyUtils.findFirstFocusInNodeTree(
+        traversalStrategy, pager, TraversalStrategy.SEARCH_FOCUS_FORWARD, pageFilter);
+  }
+
+  /**
+   * Whether {@code pager} is a feed of full-screen pages that turn up and down, as TikTok, Reels
+   * and Shorts are: it covers most of its window, and it turned vertically, as {@code scrollEvent}
+   * reports, or it scrolls only up and down.
+   */
+  public static boolean isFeedPager(
+      AccessibilityNodeInfoCompat pager, @Nullable AccessibilityEvent scrollEvent) {
+    AccessibilityWindowInfoCompat window = AccessibilityNodeInfoUtils.getWindow(pager);
+    if (window == null) {
+      return false;
+    }
+    Rect windowBounds = new Rect();
+    window.getBoundsInScreen(windowBounds);
+    Rect pagerBounds = new Rect();
+    pager.getBoundsInScreen(pagerBounds);
+    return HoverlessWindows.coversMostOf(pagerBounds, windowBounds)
+        && turnsVertically(pager, scrollEvent);
+  }
+
+  private static boolean turnsVertically(
+      AccessibilityNodeInfoCompat pager, @Nullable AccessibilityEvent scrollEvent) {
+    // Android 9 and later report how far the view scrolled; -1 is no value.
+    if (scrollEvent != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+      int dx = scrollEvent.getScrollDeltaX();
+      int dy = scrollEvent.getScrollDeltaY();
+      if (dy != 0 && dy != -1) {
+        return dx == 0 || dx == -1;
+      }
+      if (dx != 0 && dx != -1) {
+        return false;
+      }
+    }
+    boolean upDown = false;
+    boolean sideways = false;
+    for (AccessibilityActionCompat action : pager.getActionList()) {
+      int id = action.getId();
+      if (id == AccessibilityActionCompat.ACTION_SCROLL_UP.getId()
+          || id == AccessibilityActionCompat.ACTION_SCROLL_DOWN.getId()
+          || id == AccessibilityActionCompat.ACTION_PAGE_UP.getId()
+          || id == AccessibilityActionCompat.ACTION_PAGE_DOWN.getId()) {
+        upDown = true;
+      } else if (id == AccessibilityActionCompat.ACTION_SCROLL_LEFT.getId()
+          || id == AccessibilityActionCompat.ACTION_SCROLL_RIGHT.getId()
+          || id == AccessibilityActionCompat.ACTION_PAGE_LEFT.getId()
+          || id == AccessibilityActionCompat.ACTION_PAGE_RIGHT.getId()) {
+        sideways = true;
+      }
+    }
+    return upDown && !sideways;
+  }
+
   /** Feedback-mapping function. */
   public static Part.@Nullable Builder onNodeManuallyScrolled(
       Variables variables, int depth, FocusFinder focusFinder) {
@@ -219,12 +302,11 @@ public class FocusFeedbackMapper {
 
     // If the app developer requests the initial focus position on the ViewPager, use it as the
     // initial focus instead of focusing on the first or last item on the page.
-    if (Role.getRole(scrolledNode) == Role.ROLE_PAGER) {
+    boolean pageTurned = Role.getRole(scrolledNode) == Role.ROLE_PAGER;
+    if (pageTurned) {
       LogDepth.logFunc(Mappers.LOG_TAG, ++depth, "ViewPager switches pages.");
-      nodeToFocus = traversalStrategy.focusInitial(scrolledNode);
-      if (!nodeFilter.accept(nodeToFocus)) {
-        nodeToFocus = null;
-      }
+      nodeToFocus =
+          firstSpokenItemOfPage(scrolledNode, traversalStrategy, nodeFilter, speakingNodesCache);
     }
 
     if (nodeToFocus == null) {
@@ -250,8 +332,16 @@ public class FocusFeedbackMapper {
       return null;
     }
 
+    // A feed of full-screen videos turned with the fingers, such as TikTok's, is heard by its scroll
+    // sound, as with TalkBack, which leaves focus where it was. Focus moves to the new video without
+    // speaking, and the next swipe reads it. Other pagers, such as onboarding screens and galleries,
+    // read the new page's first item as before.
+    boolean silent = pageTurned && isFeedPager(scrolledNode, variables.event(depth));
     FocusActionInfo focusActionInfo =
-        new FocusActionInfo.Builder().setSourceAction(FocusActionInfo.MANUAL_SCROLL).build();
+        new FocusActionInfo.Builder()
+            .setSourceAction(FocusActionInfo.MANUAL_SCROLL)
+            .setForceMuteFeedback(silent)
+            .build();
 
     return Feedback.part()
         .setFocus(Feedback.focus(nodeToFocus, focusActionInfo).build())

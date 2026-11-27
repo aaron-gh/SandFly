@@ -405,6 +405,12 @@ While touch is locked, touches and gestures on the screen do nothing, and nothin
 
 TalkBack stops speech when a finger touches the screen. To keep speech going until touch focuses an item, turn off **Speech** > **Stopping speech** > **Stop speech when touching the screen**, which is on by default. When touch focuses an item, all speech stops, including notifications, window titles and other speech that new speech doesn't cut off; gestures that speak still interrupt. Activating an item, with a double tap, a key or a braille display, stops speech whether the setting is on or off.
 
+### Buttons drawn over a view that covers the page
+
+Some apps report every touch for a view as large as the window that has nothing to read, such as TikTok's video pages, where a clickable frame with no label and the feed's pager cover the page. TalkBack then reads "Page" and "Unlabelled" wherever you touch, and the Like, Comment and other buttons drawn over them can only be reached by swiping. When the item that a touch finds has nothing to read or is a pager or list read only as its role, and covers at least three quarters of the app's window, SandFly focuses the smallest item at the place where the finger started that has something to read and is drawn over that view, such as the button under your finger or the video. A scrim or overlay drawn over the page keeps the touch.
+
+This uses only the first item that the app reports for each touch, and the place where the finger started, so it needs gesture recognition by SandFly. A finger that slides from one button to another over such a view reads nothing new, because the app reports nothing new: lift the finger and touch again. A finger that starts on a button and slides onto the video reads the view under it, as TalkBack does.
+
 ### Stuck touch exploration
 
 On some phones, after a touch with several fingers, Android can stop touch exploration for every screen reader until the phone restarts. Swipes and taps still work, but dragging a finger reads nothing.
@@ -440,6 +446,10 @@ When focus is in the status bar or the navigation bar, swipes past the first or 
 ### Focus in new windows
 
 When a window opens, or you go back, TalkBack moves focus into it: back to the item you were on, to the text field with the cursor, or to the first item. To leave focus where it is, turn off **Navigation** > **Move focus to new windows**. SandFly then reads only the window name, and the next swipe moves to the first item. This applies to the menus and dialogs of SandFly too, when they open and when they close. Focus follows input focus only when you move input focus with a key, such as an arrow key or Tab, not when an app moves it. When the focused item disappears and the windows haven't changed, focus is placed again. The setting isn't on TVs, where focus always follows input focus.
+
+### Video feeds turned with two fingers
+
+When you turn a pager with two fingers while focus is in it, TalkBack moves focus to the new page's first item if the focused item scrolled away, and reads it. SandFly moves focus to the first item of the new page that has something to read, never to an unlabelled view or to the pager itself. In a feed of full-screen videos that turns up and down, such as TikTok, Instagram Reels or YouTube Shorts, SandFly moves focus without reading anything, so that only the scroll sound plays as each video comes up; the next swipe right reads the item that was focused, and the swipe after it moves on. If the app draws the video again and the focus is lost, focus is put back on the video without speaking. Other pagers, such as onboarding screens, galleries and banners, read the new page's first item.
 
 ### Reading place kept when an item disappears
 
