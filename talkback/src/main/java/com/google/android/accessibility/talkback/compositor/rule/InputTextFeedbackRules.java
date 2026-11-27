@@ -162,6 +162,7 @@ public final class InputTextFeedbackRules {
         .setForceFeedbackEvenIfAudioPlaybackActive(true)
         .setForceFeedbackEvenIfMicrophoneActive(true)
         .setForceFeedbackEvenIfSsbActive(false)
+        .setCommandFeedback(isCutAction)
         .build();
   }
 
@@ -228,6 +229,7 @@ public final class InputTextFeedbackRules {
         .setForceFeedbackEvenIfMicrophoneActive(true)
         .setForceFeedbackEvenIfSsbActive(true)
         .setTtsPitch(1.2d)
+        .setCommandFeedback(isCutAction)
         .build();
   }
 
@@ -334,6 +336,7 @@ public final class InputTextFeedbackRules {
         .setForceFeedbackEvenIfAudioPlaybackActive(true)
         .setForceFeedbackEvenIfMicrophoneActive(true)
         .setForceFeedbackEvenIfSsbActive(true)
+        .setCommandFeedback(isPasteAction)
         .build();
   }
 
@@ -389,6 +392,7 @@ public final class InputTextFeedbackRules {
         .setForceFeedbackEvenIfMicrophoneActive(true)
         .setForceFeedbackEvenIfSsbActive(true)
         .setTtsPitch(1.2d)
+        .setCommandFeedback(isPasteAction)
         .build();
   }
 

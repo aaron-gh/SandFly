@@ -41,6 +41,8 @@ import com.google.android.accessibility.talkback.macros.Macros
 import com.google.android.accessibility.talkback.permission.PermissionUtils
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.FeedbackItem
+import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.Locale
 
@@ -717,7 +719,7 @@ object VoicePlanRunner {
       }
 
     private fun say(text: String) {
-      service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.requestedSpeech(text))
+      service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, SpeakOptions.create().setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)))
     }
 
     /** Says [text] and stops. */

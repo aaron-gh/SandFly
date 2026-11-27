@@ -574,6 +574,19 @@ class NotificationVoice(private val context: Context) {
     releaseWhenIdle()
   }
 
+  /**
+   * Whether the voice has text of someone other than [ours], waiting, taken by the engine or being
+   * said. Text without a listener, such as the summary and the time, is always another's. The
+   * engine's queue can only be stopped whole, so [ours] can be stopped alone only when this is false.
+   */
+  @MainThread
+  fun hasRequestsOtherThan(ours: Collection<Listener>): Boolean {
+    fun other(listener: Listener?) = listener == null || ours.none { it === listener }
+    return pending.any { other(it.listener) } ||
+      unstarted.values.any { other(it.listener) } ||
+      speaking.any { other(listeners[it]) }
+  }
+
   @MainThread
   fun shutdown() {
     stop()

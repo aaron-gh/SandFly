@@ -52,6 +52,7 @@ import com.google.android.accessibility.talkback.scripting.Scripts
 import com.google.android.accessibility.talkback.translation.AutomaticTranslation
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.CommandVoice
 import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
@@ -72,6 +73,10 @@ import java.util.Locale
  */
 object NotificationReader {
   private const val TAG = "NotificationReader"
+  /** The voice profile the result of a command or of a text edit is said with; empty for SandFly's. */
+  const val KEY_COMMAND_VOICE = "pref_command_feedback_voice_profile"
+  /** Whether that voice talks over SandFly's speech instead of waiting for it to end. */
+  const val KEY_COMMAND_OVER_SPEECH = "pref_command_feedback_over_speech"
   private const val LANGUAGE_WAIT_MS = 600L
   private const val MAX_REPEATING = 10
   private const val VOLUME_KEY_PAIR_MS = 400L
@@ -244,6 +249,7 @@ object NotificationReader {
         key == NotificationSettings.Companion.Keys.VOICE_PROFILE ||
           key == NotificationSettings.Companion.Keys.CLOCK_VOICE_PROFILE ||
           key == BatteryLevelAnnouncements.KEY_VOICE ||
+          key == KEY_COMMAND_VOICE ||
           key == NotificationSettings.Companion.Keys.APPS ||
           key == NotificationSettings.Companion.Keys.RULES ||
           key == VoiceProfiles.PREF_IDS ||
@@ -880,11 +886,16 @@ object NotificationReader {
   /**
    * Called when the user makes a gesture or presses a shortcut. The notifications handed to voice
    * profiles' engines stop, as those in SandFly's voice are cut off by the speech that follows.
+   *
+   * With [textEditing] true, for the commands that copy, paste or select text, they go on while
+   * a voice profile is chosen for command feedback: the result is said in SandFly's voice if the
+   * profile is reading, so that the notification isn't cut off by a command.
    */
   @JvmStatic
   @MainThread
-  fun onUserAction() {
+  fun onUserAction(textEditing: Boolean) {
     stopSummary()
+    if (textEditing && hasCommandVoice()) return
     val handed = (listOfNotNull(reading) + queued).filter { it.voiceKey.isNotEmpty() }
     if (handed.isEmpty()) return
     LogUtils.d(TAG, "User action; stopping %d notifications in voice profiles", handed.size)
@@ -1177,6 +1188,125 @@ object NotificationReader {
     watchSpeech()
   }
 
+  /** The voice profile that the result of a command or of a text edit is said with, or empty. */
+  private fun commandVoiceId(prefs: SharedPreferences): String = prefs.getString(KEY_COMMAND_VOICE, null).orEmpty()
+
+  /** Whether a voice profile other than the one SandFly speaks with is chosen for command feedback. */
+  @JvmStatic
+  fun hasCommandVoice(): Boolean {
+    val context = context ?: return false
+    return voiceFor(commandVoiceId(SharedPreferencesUtils.getSharedPreferences(context)))
+      ?.let { it.currentProfile?.id() != VoiceProfiles.active()?.id() } == true
+  }
+
+  /** How long a command's result waits for its voice to start, before SandFly's voice says it. */
+  private const val COMMAND_START_MS = 2_000L
+
+  /** A text of a command's result that the command voice says, and the callback of the speech controller. */
+  private class CommandSaid(
+    val voice: NotificationVoice,
+    val over: Boolean,
+    val callback: CommandVoice.Callback?,
+  ) : NotificationVoice.Listener {
+    var started = false
+    var finished = false
+    var giveUp: Runnable? = null
+    /** Set when it is stopped because the voice didn't start it in time, for SandFly's voice to say it. */
+    var fallBack = false
+
+    override fun onStart() {
+      started = true
+      callback?.onStart()
+    }
+
+    override fun onDone(spoken: Boolean) {
+      if (!finish()) return
+      if (fallBack && !started) callback?.onUnavailable() else callback?.onDone(spoken)
+    }
+
+    override fun onUnavailable() {
+      if (!finish()) return
+      // Said over SandFly's speech, it ended already: there is nothing to fall back for.
+      if (started || over) callback?.onDone(false) else callback?.onUnavailable()
+    }
+
+    /** Marks it ended, once. Returns whether this call ended it. */
+    fun finish(): Boolean {
+      if (finished) return false
+      finished = true
+      giveUp?.let { handler.removeCallbacks(it) }
+      commandSaid.remove(this)
+      return true
+    }
+  }
+
+  /** What the command voice has said and not finished, so that it can be stopped alone. */
+  private val commandSaid = mutableListOf<CommandSaid>()
+
+  /**
+   * The voice profile chosen for command feedback, for [SpeechControllerImpl]. The speech controller
+   * does the muting, the filters, the history and the queue; this says the text of an item in the
+   * profile's voice, and stops only what it said itself.
+   */
+  @JvmField
+  val commandVoice: CommandVoice =
+    object : CommandVoice {
+      private fun chosenVoice(): NotificationVoice? {
+        val context = context ?: return null
+        // The profile SandFly speaks with is SandFly's voice: its speech says the text.
+        return voiceFor(commandVoiceId(SharedPreferencesUtils.getSharedPreferences(context)))
+          ?.takeIf { it.currentProfile?.id() != VoiceProfiles.active()?.id() }
+      }
+
+      /** The command requests of [voice] that haven't ended. */
+      private fun ours(voice: NotificationVoice): List<CommandSaid> = commandSaid.filter { it.voice === voice }
+
+      // The engine can only be stopped whole, so a command text is never sent to a voice that is
+      // reading anything else, such as a notification: stopping the text would cut that off.
+      override fun isActive(): Boolean {
+        val voice = chosenVoice() ?: return false
+        return !voice.hasRequestsOtherThan(ours(voice))
+      }
+
+      override fun isOverSpeech(): Boolean {
+        val context = context ?: return false
+        return SharedPreferencesUtils.getSharedPreferences(context).getBoolean(KEY_COMMAND_OVER_SPEECH, false)
+      }
+
+      override fun say(text: CharSequence, callback: CommandVoice.Callback?) {
+        val voice = chosenVoice()
+        if (voice == null) {
+          callback?.onUnavailable()
+          return
+        }
+        val request = CommandSaid(voice, isOverSpeech(), callback)
+        commandSaid += request
+        // A text whose voice hasn't started in time is said in SandFly's voice, in the queue, rather
+        // than after the speech that followed it. Said over SandFly's speech, it is dropped. It is
+        // stopped only when it is alone in the engine, whose queue can't be stopped in part.
+        val giveUp = Runnable {
+          if (request.started || request.finished) return@Runnable
+          if (voice.hasRequestsOtherThan(listOf(request))) return@Runnable
+          request.fallBack = !request.over
+          voice.stop(request)
+          if (request.finish()) {
+            if (request.fallBack) callback?.onUnavailable() else callback?.onDone(false)
+          }
+        }
+        request.giveUp = giveUp
+        handler.postDelayed(giveUp, COMMAND_START_MS)
+        // Never flushed: the voice profile may be reading notifications too.
+        voice.speak(text, flush = false, locale = null, listener = request)
+      }
+
+      override fun stop(includingOverSpeech: Boolean) {
+        for (request in commandSaid.toList()) {
+          if (request.over && !includingOverSpeech) continue
+          request.voice.stop(request)
+        }
+      }
+    }
+
   /**
    * Says [text] in the notification voice, or SandFly's when there is none: summaries and time
    * announcements.
@@ -1251,7 +1381,12 @@ object NotificationReader {
     val settings = NotificationSettings.read(prefs)
     val ids = VoiceProfiles.ids(prefs)
     val wanted =
-      (listOf(settings.voiceProfile, clockVoice(settings), batteryVoice(context, settings)) +
+      (listOf(
+          settings.voiceProfile,
+          clockVoice(settings),
+          batteryVoice(context, settings),
+          commandVoiceId(prefs),
+        ) +
           settings.apps.values.mapNotNull { it.voiceProfile } +
           settings.rules.flatMap { rule ->
             rule.actions.filter { it.type == RuleAction.Type.VOICE }.map { it.value }

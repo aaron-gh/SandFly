@@ -50,6 +50,12 @@ public abstract class EventFeedback {
 
   public abstract boolean ttsForceFeedback();
 
+  /**
+   * Whether the speech tells the result of a text edit, such as paste or cut, which can be said in
+   * the voice profile chosen for command feedback.
+   */
+  public abstract boolean commandFeedback();
+
   public abstract double ttsPitch();
 
   public abstract boolean preventDeviceSleep();
@@ -126,6 +132,9 @@ public abstract class EventFeedback {
     if (ttsSkipDuplicate()) {
       flags |= FeedbackItem.FLAG_SKIP_DUPLICATE;
     }
+    if (commandFeedback()) {
+      flags |= FeedbackItem.FLAG_COMMAND_FEEDBACK;
+    }
     if (ttsClearQueueGroup() != SpeechController.UTTERANCE_GROUP_DEFAULT) {
       flags |= FeedbackItem.FLAG_CLEAR_QUEUED_UTTERANCES_WITH_SAME_UTTERANCE_GROUP;
     }
@@ -189,6 +198,7 @@ public abstract class EventFeedback {
         .setForceFeedbackEvenIfSsbActive(false)
         .setForceFeedbackEvenIfPhoneCallActive(true)
         .setTtsForceFeedback(false)
+        .setCommandFeedback(false)
         .setTtsInterruptSameGroup(false)
         .setTtsClearQueueGroup(SpeechController.UTTERANCE_GROUP_DEFAULT)
         .setTtsSkipDuplicate(false)
@@ -230,6 +240,8 @@ public abstract class EventFeedback {
     public abstract Builder setTtsClearQueueGroup(int value);
 
     public abstract Builder setTtsInterruptSameGroup(boolean value);
+
+    public abstract Builder setCommandFeedback(boolean value);
 
     public abstract Builder setTtsSkipDuplicate(boolean value);
 

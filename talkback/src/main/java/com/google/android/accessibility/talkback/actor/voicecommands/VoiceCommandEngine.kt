@@ -26,6 +26,8 @@ import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.actor.gemini.AiTextRequests
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.FeedbackItem
+import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.Locale
 import java.util.concurrent.LinkedBlockingQueue
@@ -190,7 +192,7 @@ class VoiceCommandEngine(
     }
 
   private fun say(text: String) {
-    service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.requestedSpeech(text))
+    service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, SpeakOptions.create().setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)))
   }
 
   private fun locale(): Locale = service.resources.configuration.locales[0] ?: Locale.getDefault()

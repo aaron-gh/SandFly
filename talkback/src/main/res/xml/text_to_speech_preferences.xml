@@ -44,6 +44,16 @@
         android:key="pref_emoji_rate"
         android:summary="%s"
         android:title="@string/title_pref_emoji_rate" />
+    <!-- Keys match NotificationReader. TextToSpeechSettingsFragment lists the voices. -->
+    <ListPreference
+        android:defaultValue=""
+        android:key="pref_command_feedback_voice_profile"
+        android:summary="%s"
+        android:title="@string/title_pref_command_feedback_voice" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_command_feedback_over_speech"
+        android:title="@string/title_pref_command_feedback_over_speech" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.preference.base.SpeechEqualizerFragment"
         android:key="pref_speech_equalizer_screen"

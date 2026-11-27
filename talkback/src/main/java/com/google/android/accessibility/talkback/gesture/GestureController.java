@@ -586,11 +586,21 @@ public class GestureController {
     R.string.shortcut_value_next_braille_command_profile,
   };
 
+  /** Whether {@code action} copies, pastes or selects text: its result is command feedback. */
+  private boolean isTextEditingAction(String action) {
+    return action.equals(service.getString(R.string.shortcut_value_copy))
+        || action.equals(service.getString(R.string.shortcut_value_cut))
+        || action.equals(service.getString(R.string.shortcut_value_paste))
+        || action.equals(service.getString(R.string.shortcut_value_select_all))
+        || action.equals(service.getString(R.string.shortcut_value_clear_selection))
+        || action.equals(service.getString(R.string.shortcut_value_add_to_clipboard));
+  }
+
   /** Runs {@code action}, over an input overlay as well. */
   private void runAction(String action, EventId eventId) {
     RecentUserInput.mark();
     MacroRecorder.onCommand(service, action);
-    NotificationReader.onUserAction();
+    NotificationReader.onUserAction(isTextEditingAction(action));
     boolean defaultItemNavigation =
         action.equals(service.getString(R.string.shortcut_value_next))
             || action.equals(service.getString(R.string.shortcut_value_previous));

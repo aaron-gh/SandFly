@@ -111,6 +111,13 @@ public class FeedbackItem {
   /** Flag to indicate that the speech rate is absolute, not a multiplier of the system rate. */
   public static final int FLAG_RATE_IS_ABSOLUTE = 0x10000;
 
+  /**
+   * Flag to indicate that the feedback tells the result of a command or of a text edit, such as
+   * paste, cut, battery level and status. It can be said in a voice profile of its own, over the
+   * speech that is playing.
+   */
+  public static final int FLAG_COMMAND_FEEDBACK = 0x20000;
+
   /** Unique ID defining this generated feedback */
   private String mUtteranceId = "";
 
@@ -499,6 +506,7 @@ public class FeedbackItem {
       case FLAG_CHUNKING_APPLIED -> "FLAG_CHUNKING_APPLIED";
       case FLAG_INLINE_FORMATTING -> "FLAG_INLINE_FORMATTING";
       case FLAG_RATE_IS_ABSOLUTE -> "FLAG_RATE_IS_ABSOLUTE";
+      case FLAG_COMMAND_FEEDBACK -> "FLAG_COMMAND_FEEDBACK";
       default -> null;
     };
   }

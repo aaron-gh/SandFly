@@ -15,6 +15,8 @@ import com.google.android.accessibility.talkback.speech.SlowerRepeat;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.SpeechRateAndPitchActor;
+import com.google.android.accessibility.talkback.notifications.NotificationReader;
+import com.google.android.accessibility.talkback.notifications.VoiceChoices;
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
@@ -52,8 +54,11 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
           // Switched by a gesture, keyboard shortcut or the Backtalk menu.
           updateVoiceProfileSummary();
         } else if (TextUtils.equals(key, VoiceProfiles.PREF_IDS)) {
-          // A profile chosen as the emoji voice may have been removed.
+          // A profile chosen as the emoji voice or the command feedback voice may have been removed.
           setUpEmojiVoice();
+          setUpCommandFeedbackVoice();
+        } else if (TextUtils.equals(key, NotificationReader.KEY_COMMAND_VOICE)) {
+          updateCommandFeedbackOverSpeech();
         } else if (SpeechEqualizer.isKey(key)
             || TextUtils.equals(key, FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY)) {
           // Changed by the Equalizer reading controls.
@@ -114,6 +119,7 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     updateEqualizerSummary();
     // Profiles may have been added, renamed or removed on their own screen.
     setUpEmojiVoice();
+    setUpCommandFeedbackVoice();
 
     boolean serviceActive =
         TalkBackService.getServiceState() == ServiceStateListener.SERVICE_STATE_ACTIVE;
@@ -185,6 +191,25 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     if (value == null || list.findIndexOfValue(value) < 0) {
       // A removed profile: emoji are spoken with the speech voice, as the service reads it.
       list.setValue("");
+    }
+  }
+
+  /**
+   * Lists SandFly's voice and the voice profiles, by name, to say the result of commands and text
+   * edits with.
+   */
+  private void setUpCommandFeedbackVoice() {
+    if (findPreference(NotificationReader.KEY_COMMAND_VOICE) instanceof ListPreference list) {
+      VoiceChoices.setUp(requireContext(), prefs, list, /* notificationVoice= */ false);
+      updateCommandFeedbackOverSpeech();
+    }
+  }
+
+  /** Read over SandFly's speech applies only while a voice profile is chosen for the feedback. */
+  private void updateCommandFeedbackOverSpeech() {
+    Preference overSpeech = findPreference(NotificationReader.KEY_COMMAND_OVER_SPEECH);
+    if (overSpeech != null) {
+      overSpeech.setEnabled(!prefs.getString(NotificationReader.KEY_COMMAND_VOICE, "").isEmpty());
     }
   }
 

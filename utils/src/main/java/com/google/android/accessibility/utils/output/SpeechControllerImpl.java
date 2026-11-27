@@ -336,6 +336,14 @@ public class SpeechControllerImpl implements SpeechController {
   /** Whether voice feedback is mute. */
   private boolean isMuteSpeech = false;
 
+  /** The voice the result of commands is said with, or null for the speech engine. */
+  private volatile @Nullable CommandVoice commandVoice;
+
+  /** Sets the voice profile that items flagged {@link FeedbackItem#FLAG_COMMAND_FEEDBACK} use. */
+  public void setCommandVoice(@Nullable CommandVoice voice) {
+    commandVoice = voice;
+  }
+
   /** Whether muted speech still plays its earcons and haptics, as when the user turned speech off. */
   private boolean playFeedbackWhileMuted = false;
 
@@ -1605,6 +1613,9 @@ public class SpeechControllerImpl implements SpeechController {
       if (currentFeedbackItem != null && filter.accept(currentFeedbackItem)) {
         // Always flush if current item interrupted.
         item.setFlushGlobalTtsQueue(true);
+        if (currentFeedbackItem.hasFlag(FeedbackItem.FLAG_COMMAND_FEEDBACK)) {
+          stopCommandVoice(/* includingOverSpeech= */ false);
+        }
         notifyItemInterrupted(currentFeedbackItem);
         currentFeedbackInterrupted = true;
       }
@@ -1915,6 +1926,8 @@ public class SpeechControllerImpl implements SpeechController {
     // Clear and post all remaining completion actions.
     clearUtteranceCompletionActions(true);
 
+    // What the user stopped or interrupted stops the command voice too, speech said over included.
+    stopCommandVoice(/* includingOverSpeech= */ true);
     if (stopTtsSpeechCompletely) {
       // Stop all TTS audios.
       failoverTts.stopAll();
@@ -1976,6 +1989,7 @@ public class SpeechControllerImpl implements SpeechController {
     notifyItemInterrupted(currentFeedbackItem);
     currentFragmentIterator = null;
     // Stopped before the next item starts, which would otherwise queue behind it.
+    stopCommandVoice(/* includingOverSpeech= */ false);
     failoverTts.stopFromTalkBack();
     if (!feedbackQueue.isEmpty()) {
       speakNextItem();
@@ -2386,6 +2400,33 @@ public class SpeechControllerImpl implements SpeechController {
     }
 
     sourceIsVolumeControl = feedbackItem.hasFlag(FLAG_SOURCE_IS_VOLUME_CONTROL);
+    if (text != null && feedbackItem.hasFlag(FeedbackItem.FLAG_COMMAND_FEEDBACK)) {
+      // If the voice can't say it soon enough, SandFly's own voice says it, as it would have.
+      final CharSequence commandText = text;
+      final HashMap<String, String> commandParams = new HashMap<>(params);
+      final float commandPitch = pitch;
+      final float commandRate = rate;
+      if (speakInCommandVoice(
+          feedbackItem.getUtteranceId(),
+          commandText,
+          feedbackItem.shouldFlushGlobalTtsQueue(),
+          () ->
+              failoverTts.speak(
+                  commandText,
+                  locale,
+                  commandPitch,
+                  commandRate,
+                  commandParams,
+                  customFlags,
+                  stream,
+                  volume,
+                  preventDeviceSleep,
+                  /* flush= */ false,
+                  eventId))) {
+        displayInOverlay(text, eventId);
+        return true;
+      }
+    }
     // It's okay if the utterance is empty, the fail-over TTS will
     // immediately call the fragment completion listener. This process is
     // important for things like continuous reading.
@@ -2402,6 +2443,12 @@ public class SpeechControllerImpl implements SpeechController {
         feedbackItem.shouldFlushGlobalTtsQueue(),
         eventId);
 
+    displayInOverlay(text, eventId);
+
+    return true;
+  }
+
+  private void displayInOverlay(@Nullable CharSequence text, @Nullable EventId eventId) {
     if (ttsOverlay != null) {
       if (eventId != null) {
         ttsOverlay.displayText(text, eventId.getEventSubtype());
@@ -2409,8 +2456,82 @@ public class SpeechControllerImpl implements SpeechController {
         ttsOverlay.displayText(text);
       }
     }
+  }
 
+  /**
+   * Says a fragment in the command voice, if there is one, and tells the controller when it ends,
+   * as the speech engine would. Speech that is said over SandFly's speech ends at once, so that it
+   * doesn't hold back the speech after it.
+   *
+   * @param flush whether the item interrupts what SandFly is saying, as it does when the speech
+   *     engine says it
+   * @param fallback says the fragment in SandFly's voice, when the command voice can't
+   * @return false if there is no command voice, so the speech engine says the fragment
+   */
+  private boolean speakInCommandVoice(
+      String utteranceId, CharSequence text, boolean flush, Runnable fallback) {
+    final CommandVoice voice = commandVoice;
+    if (voice == null || !voice.isActive()) {
+      return false;
+    }
+    final boolean over = voice.isOverSpeech();
+    if (flush) {
+      // The speech engine would have stopped what SandFly is saying, and its emoji and language
+      // voices, before saying this: the old speech must not play on under the command voice.
+      failoverTts.stopFromTalkBack();
+    }
+    voice.say(
+        text,
+        new CommandVoice.Callback() {
+          @Override
+          public void onStart() {
+            if (!over) {
+              mHandler.post(() -> onFragmentStarted(utteranceId));
+            }
+          }
+
+          @Override
+          public void onDone(boolean spoken) {
+            if (!over) {
+              mHandler.post(
+                  () ->
+                      onFragmentCompleted(
+                          utteranceId, spoken, /* advance= */ true, /* notifyObserver= */ false));
+            }
+          }
+
+          @Override
+          public void onUnavailable() {
+            // In the speech queue, SandFly's voice says it and ends the item, as for any text. Text
+            // said over SandFly's speech has ended already, so it is dropped. Not if the item was
+            // interrupted meanwhile: the old text must not follow the speech that replaced it.
+            if (!over) {
+              mHandler.post(
+                  () -> {
+                    if (currentFeedbackItem != null
+                        && utteranceId.equals(currentFeedbackItem.getUtteranceId())) {
+                      fallback.run();
+                    }
+                  });
+            }
+          }
+        });
+    if (over) {
+      mHandler.post(() -> onFragmentStarted(utteranceId));
+      mHandler.post(
+          () ->
+              onFragmentCompleted(
+                  utteranceId, /* success= */ true, /* advance= */ true, /* notifyObserver= */ false));
+    }
     return true;
+  }
+
+  /** Stops the command voice, if it is saying something. */
+  private void stopCommandVoice(boolean includingOverSpeech) {
+    final CommandVoice voice = commandVoice;
+    if (voice != null) {
+      voice.stop(includingOverSpeech);
+    }
   }
 
   private void playEarconsAndHaptics(
