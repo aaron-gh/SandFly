@@ -117,6 +117,45 @@ class JumpToNextRowTest {
   }
 
   @Test
+  fun onlyTheGroupDescribesTheCompleteRow() {
+    val item = textRow()
+    assertEquals(item.getChild(0), FocusProcessorForLogicalNavigation.singleTextRowFocus(item))
+  }
+
+  @Test
+  fun rowWithoutDescriptionKeepsPaging() {
+    assertNull(FocusProcessorForLogicalNavigation.singleTextRowFocus(textRow(label = null)))
+  }
+
+  @Test
+  fun anotherControlInTheRowKeepsPaging() {
+    assertNull(FocusProcessorForLogicalNavigation.singleTextRowFocus(textRow(hasAnotherControl = true)))
+  }
+
+  @Test
+  fun independentlyFocusableRowWrapperKeepsPaging() {
+    val item = textRow()
+    item.unwrap().isScreenReaderFocusable = true
+    assertNull(FocusProcessorForLogicalNavigation.singleTextRowFocus(item))
+  }
+
+  private fun textRow(
+    label: String? = "Full message",
+    hasAnotherControl: Boolean = false,
+  ): AccessibilityNodeInfoCompat {
+    val item = node().apply { unwrap().className = "android.view.ViewGroup" }
+    node(item).unwrap().apply {
+      className = "android.view.ViewGroup"
+      contentDescription = label
+      isClickable = true
+    }
+    if (hasAnotherControl) {
+      node(item).unwrap().isClickable = true
+    }
+    return item
+  }
+
+  @Test
   fun tooManyNodesCountAsPartsTakingFocus() {
     val item = node()
     repeat(101) { node(item) }

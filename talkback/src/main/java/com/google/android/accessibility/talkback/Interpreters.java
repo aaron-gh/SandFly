@@ -206,6 +206,8 @@ public class Interpreters {
     scrollEventInterpreter.setScrollActorState(actorState.getScrollerState());
     scrollEventInterpreter.setFinishedScrollActionRecord(
         actorState.getScrollerState()::getFinishedScrollActionRecord);
+    scrollEventInterpreter.setSupersededScrollActionRecord(
+        actorState.getScrollerState()::getSupersededScrollActionRecord);
     manualScrollInterpreter.setActorState(actorState);
     autoScrollInterpreter.setActorState(actorState);
     accessibilityFocusInterpreter.setActorState(actorState);
