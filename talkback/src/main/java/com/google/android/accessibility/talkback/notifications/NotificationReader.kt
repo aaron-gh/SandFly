@@ -79,6 +79,8 @@ object NotificationReader {
   const val KEY_COMMAND_OVER_SPEECH = "pref_command_feedback_over_speech"
   /** The voice profile popups (toasts) are said with; empty for SandFly's. */
   const val KEY_POPUP_VOICE = "pref_popup_voice_profile"
+  /** The voice profile the caller of an incoming call is said with; empty for SandFly's. */
+  const val KEY_CALLER_VOICE = "pref_caller_voice_profile"
   /** Whether that voice talks over SandFly's speech instead of waiting for it to end. */
   const val KEY_POPUP_OVER_SPEECH = "pref_popup_over_speech"
   /** Whether a popup waits for the one before it, or replaces it. On by default. */
@@ -257,6 +259,7 @@ object NotificationReader {
           key == BatteryLevelAnnouncements.KEY_VOICE ||
           key == KEY_COMMAND_VOICE ||
           key == KEY_POPUP_VOICE ||
+          key == KEY_CALLER_VOICE ||
           key == NotificationSettings.Companion.Keys.APPS ||
           key == NotificationSettings.Companion.Keys.RULES ||
           key == VoiceProfiles.PREF_IDS ||
@@ -1257,7 +1260,7 @@ object NotificationReader {
    * popups. The speech controller does the muting, the filters, the history and the queue; this
    * says the text of an item in the profile's voice, and stops only what it said itself.
    */
-  private class FeedbackVoice(private val voiceKey: String, private val overSpeechKey: String) : CommandVoice {
+  private class FeedbackVoice(private val voiceKey: String, private val overSpeechKey: String?) : CommandVoice {
     private fun chosenVoice(): NotificationVoice? {
       val context = context ?: return null
       val id = SharedPreferencesUtils.getSharedPreferences(context).getString(voiceKey, null).orEmpty()
@@ -1277,6 +1280,7 @@ object NotificationReader {
 
     override fun isOverSpeech(): Boolean {
       val context = context ?: return false
+      if (overSpeechKey == null) return false
       return SharedPreferencesUtils.getSharedPreferences(context).getBoolean(overSpeechKey, false)
     }
 
@@ -1323,6 +1327,9 @@ object NotificationReader {
 
   /** The voice profile chosen for popups, for [SpeechControllerImpl]. */
   @JvmField val popupVoice: CommandVoice = FeedbackVoice(KEY_POPUP_VOICE, KEY_POPUP_OVER_SPEECH)
+
+  /** The voice profile chosen for the caller of an incoming call, for [SpeechControllerImpl]. It waits in the queue. */
+  @JvmField val callerVoice: CommandVoice = FeedbackVoice(KEY_CALLER_VOICE, null)
 
   /**
    * Says [text] in the notification voice, or SandFly's when there is none: summaries and time
@@ -1404,6 +1411,7 @@ object NotificationReader {
           batteryVoice(context, settings),
           commandVoiceId(prefs),
           prefs.getString(KEY_POPUP_VOICE, null).orEmpty(),
+          prefs.getString(KEY_CALLER_VOICE, null).orEmpty(),
         ) +
           settings.apps.values.mapNotNull { it.voiceProfile } +
           settings.rules.flatMap { rule ->

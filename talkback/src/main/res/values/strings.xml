@@ -526,6 +526,8 @@
     <string name="title_pref_battery_level_voice">Battery level voice</string>
     <!-- List: how often SandFly says the caller of an incoming phone call or app call, such as a WhatsApp call: once, repeatedly while the call rings, or not at all. [CHAR LIMIT=NONE] -->
     <string name="title_pref_announce_caller">Announce caller</string>
+    <!-- List, in Verbosity, next to Announce caller: the voice the caller of an incoming call is said with, SandFly's voice or a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_caller_voice">Caller voice</string>
     <!-- Choice in the Announce caller list: say the caller once when the call starts ringing. [CHAR LIMIT=40] -->
     <string name="announce_caller_once">Once</string>
     <!-- Choice in the Announce caller list: say the caller again every few seconds until the call is answered, declined or ends. [CHAR LIMIT=40] -->

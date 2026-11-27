@@ -62,6 +62,12 @@ public abstract class EventFeedback {
    */
   public abstract boolean popupFeedback();
 
+  /**
+   * Whether the speech says the caller of an incoming call, which can be said in the voice profile
+   * chosen for the caller.
+   */
+  public abstract boolean callerFeedback();
+
   public abstract double ttsPitch();
 
   public abstract boolean preventDeviceSleep();
@@ -144,6 +150,9 @@ public abstract class EventFeedback {
     if (popupFeedback()) {
       flags |= FeedbackItem.FLAG_POPUP_FEEDBACK;
     }
+    if (callerFeedback()) {
+      flags |= FeedbackItem.FLAG_CALLER_FEEDBACK;
+    }
     if (ttsClearQueueGroup() != SpeechController.UTTERANCE_GROUP_DEFAULT) {
       flags |= FeedbackItem.FLAG_CLEAR_QUEUED_UTTERANCES_WITH_SAME_UTTERANCE_GROUP;
     }
@@ -209,6 +218,7 @@ public abstract class EventFeedback {
         .setTtsForceFeedback(false)
         .setCommandFeedback(false)
         .setPopupFeedback(false)
+        .setCallerFeedback(false)
         .setTtsInterruptSameGroup(false)
         .setTtsClearQueueGroup(SpeechController.UTTERANCE_GROUP_DEFAULT)
         .setTtsSkipDuplicate(false)
@@ -254,6 +264,8 @@ public abstract class EventFeedback {
     public abstract Builder setCommandFeedback(boolean value);
 
     public abstract Builder setPopupFeedback(boolean value);
+
+    public abstract Builder setCallerFeedback(boolean value);
 
     public abstract Builder setTtsSkipDuplicate(boolean value);
 

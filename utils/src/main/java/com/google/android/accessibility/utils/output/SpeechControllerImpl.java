@@ -352,8 +352,24 @@ public class SpeechControllerImpl implements SpeechController {
     popupVoice = voice;
   }
 
+  /** The voice the caller of an incoming call is said with, or null for the speech engine. */
+  private volatile @Nullable CommandVoice callerVoice;
+
+  /** Sets the voice profile that items flagged {@link FeedbackItem#FLAG_CALLER_FEEDBACK} use. */
+  public void setCallerVoice(@Nullable CommandVoice voice) {
+    callerVoice = voice;
+  }
+
   /** The voice profile that {@code item} is said with, or null for the speech engine. */
   private @Nullable CommandVoice profileVoiceFor(FeedbackItem item) {
+    if (item.hasFlag(FeedbackItem.FLAG_CALLER_FEEDBACK)) {
+      // The caller has its own voice. Without one, Say caller, which is also command feedback, is
+      // said in the command feedback voice, and the rest in SandFly's.
+      final CommandVoice caller = callerVoice;
+      if (caller != null && caller.isActive()) {
+        return caller;
+      }
+    }
     if (item.hasFlag(FeedbackItem.FLAG_COMMAND_FEEDBACK)) {
       return commandVoice;
     }
@@ -2567,6 +2583,10 @@ public class SpeechControllerImpl implements SpeechController {
     final CommandVoice popup = popupVoice;
     if (popup != null) {
       popup.stop(includingOverSpeech);
+    }
+    final CommandVoice caller = callerVoice;
+    if (caller != null) {
+      caller.stop(includingOverSpeech);
     }
   }
 

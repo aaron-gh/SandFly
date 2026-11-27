@@ -131,7 +131,9 @@ public final class EventTypeNotificationStateChangedFeedbackRule {
                   .setForceFeedbackEvenIfMicrophoneActive(isToastOrCall)
                   .setForceFeedbackEvenIfSsbActive(false)
                   .setForceFeedbackEvenIfPhoneCallActive(isToastOrCall)
-                  .setPopupFeedback(isToast);
+                  .setPopupFeedback(isToast)
+                  // The announcement of a call notification says the caller.
+                  .setCallerFeedback(!isToast && isToastOrCall);
           if (replacePopups) {
             feedback
                 .setTtsClearQueueGroup(SpeechController.UTTERANCE_GROUP_POPUPS)
