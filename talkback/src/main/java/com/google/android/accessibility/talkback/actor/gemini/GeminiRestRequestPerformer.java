@@ -73,10 +73,10 @@ public class GeminiRestRequestPerformer {
    * How long to wait before asking every model again when each answered that it is busy (HTTP 500
    * and above, such as 503 when a model is overloaded), which often passes within seconds.
    */
-  private static final long[] BUSY_RETRY_DELAYS_MS = {1_000, 2_000};
+  private static final long[] BUSY_RETRY_DELAYS_MS = {1_000, 2_000, 4_000};
 
   /** No retry starts later than this after the first request, so the answer comes in time. */
-  private static final long RETRY_WINDOW_MS = 20_000;
+  private static final long RETRY_WINDOW_MS = 24_000;
 
   interface GeminiRestResponseCallback {
     void onResponse(GeminiResponse response);
@@ -156,7 +156,14 @@ public class GeminiRestRequestPerformer {
       return;
     }
     send(
-        urls, apiKey, postData, loggingFailures(unloggedCallback), 0, 0, SystemClock.uptimeMillis());
+        urls,
+        apiKey,
+        postData,
+        loggingFailures(unloggedCallback),
+        0,
+        0,
+        SystemClock.uptimeMillis(),
+        /* sawBusy= */ false);
   }
 
   private void send(
@@ -166,7 +173,8 @@ public class GeminiRestRequestPerformer {
       GeminiRestResponseCallback callback,
       int model,
       int round,
-      long firstAt) {
+      long firstAt,
+      boolean sawBusy) {
     String url = urls.get(model);
     String modelName = modelOf(url);
     boolean thinkingSetting = !modelsWithoutThinkingSetting.contains(modelName);
@@ -203,10 +211,11 @@ public class GeminiRestRequestPerformer {
                     modelName,
                     failure.getLogMessage());
                 modelsWithoutThinkingSetting.add(modelName);
-                send(urls, apiKey, postData, callback, model, round, firstAt);
+                send(urls, apiKey, postData, callback, model, round, firstAt, sawBusy);
                 return;
               }
               boolean busy = kind == GeminiFailure.Kind.BUSY;
+              boolean nextSawBusy = sawBusy || busy;
               boolean another =
                   busy
                       || kind == GeminiFailure.Kind.QUOTA
@@ -214,15 +223,28 @@ public class GeminiRestRequestPerformer {
               if (another && model + 1 < urls.size() && now - firstAt < RETRY_WINDOW_MS) {
                 LogUtils.w(
                     TAG, "%s, asking the next model: %s", modelName, failure.getLogMessage());
-                send(urls, apiKey, postData, callback, model + 1, round, firstAt);
+                send(urls, apiKey, postData, callback, model + 1, round, firstAt, nextSawBusy);
                 return;
               }
-              if (busy && round < BUSY_RETRY_DELAYS_MS.length && now - firstAt < RETRY_WINDOW_MS) {
-                LogUtils.w(TAG, "Gemini is busy, asking again: %s", failure.getLogMessage());
+              long retryAfterMs =
+                  error.networkResponse == null
+                      ? 0L
+                      : GeminiFailure.parseRetryAfterMs(error.networkResponse.headers);
+              long elapsedMs = Math.max(0L, now - firstAt);
+              if (nextSawBusy && round < BUSY_RETRY_DELAYS_MS.length && elapsedMs < RETRY_WINDOW_MS) {
+                long delayMs =
+                    Math.min(
+                        busyRetryDelayMs(round, retryAfterMs),
+                        Math.max(0L, RETRY_WINDOW_MS - elapsedMs));
+                LogUtils.w(
+                    TAG,
+                    "Gemini is busy, asking again in %d ms: %s",
+                    delayMs,
+                    failure.getLogMessage());
                 handler.postAtTime(
-                    () -> send(urls, apiKey, postData, callback, 0, round + 1, firstAt),
+                    () -> send(urls, apiKey, postData, callback, 0, round + 1, firstAt, false),
                     retryToken,
-                    now + BUSY_RETRY_DELAYS_MS[round]);
+                    now + delayMs);
                 return;
               }
               callback.onFailure(failure);
@@ -244,6 +266,14 @@ public class GeminiRestRequestPerformer {
             MAX_RETRIES,
             DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
     requestQueue.add(stringRequest);
+  }
+
+  /** Delay before retrying after a busy response in [round], respecting any `Retry-After`. */
+  static long busyRetryDelayMs(int round, long retryAfterMs) {
+    if (round < 0 || round >= BUSY_RETRY_DELAYS_MS.length) {
+      return Math.max(0L, retryAfterMs);
+    }
+    return Math.max(BUSY_RETRY_DELAYS_MS[round], Math.max(0L, retryAfterMs));
   }
 
   /**

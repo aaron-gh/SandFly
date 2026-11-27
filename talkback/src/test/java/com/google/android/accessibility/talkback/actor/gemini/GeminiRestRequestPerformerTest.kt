@@ -84,4 +84,12 @@ class GeminiRestRequestPerformerTest {
     assertEquals(17_000, GeminiRestRequestPerformer.timeoutMs(false, 15_000))
     assertEquals(8_000, GeminiRestRequestPerformer.timeoutMs(false, 30_000))
   }
+
+  @Test
+  fun busyRetryDelayHonorsScheduleAndRetryAfter() {
+    assertEquals(1_000L, GeminiRestRequestPerformer.busyRetryDelayMs(0, 0L))
+    assertEquals(2_000L, GeminiRestRequestPerformer.busyRetryDelayMs(1, 500L))
+    assertEquals(4_000L, GeminiRestRequestPerformer.busyRetryDelayMs(2, 0L))
+    assertEquals(5_000L, GeminiRestRequestPerformer.busyRetryDelayMs(0, 5_000L))
+  }
 }

@@ -115,6 +115,7 @@ public class LocalGemmaRequestPerformer extends GeminiRestRequestPerformer {
   @Override
   public void cancelExistingRequestIfNeeded() {
     runner.cancel();
+    aiService.cancel();
     super.cancelExistingRequestIfNeeded();
   }
 

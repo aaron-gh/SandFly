@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.actor.gemini
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -27,6 +28,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.google.android.accessibility.talkback.actor.gemini.GeminiRestRequestPerformer.GeminiRestResponseCallback
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -35,6 +37,7 @@ internal class AiServiceRequestPerformer(context: Context) {
   private val appContext = context.applicationContext
   private val requestQueue: RequestQueue by lazy { GeminiRestRequestPerformer.sharedQueue(appContext) }
   private val mainHandler = Handler(Looper.getMainLooper())
+  private val retryToken = Any()
 
   /**
    * Reports a failure found before sending, after [performRequest] returns, as Volley reports its
@@ -72,6 +75,20 @@ internal class AiServiceRequestPerformer(context: Context) {
         return
       }
     val wantsJson = AiService.wantsJson(geminiRequest)
+    send(address, model, apiKey, chatRequest, wantsJson, sandflyPro, callback, 0, SystemClock.uptimeMillis())
+  }
+
+  private fun send(
+    address: String,
+    model: String,
+    apiKey: String,
+    chatRequest: JSONObject,
+    wantsJson: Boolean,
+    sandflyPro: Boolean,
+    callback: GeminiRestResponseCallback,
+    round: Int,
+    firstAt: Long,
+  ) {
     val request =
       object :
         JsonObjectRequest(
@@ -85,7 +102,32 @@ internal class AiServiceRequestPerformer(context: Context) {
               callback.onFailure(GeminiFailure.other("Could not read the answer: $e"))
             }
           },
-          { error -> callback.onFailure(failure(error, sandflyPro)) },
+          { error ->
+            val failure = failure(error, sandflyPro)
+            val now = SystemClock.uptimeMillis()
+            val elapsedMs = maxOf(0L, now - firstAt)
+            if (
+              !sandflyPro &&
+                failure.kind == GeminiFailure.Kind.BUSY &&
+                round < BUSY_RETRY_DELAYS_MS.size &&
+                elapsedMs < RETRY_WINDOW_MS
+            ) {
+              val retryAfterMs = GeminiFailure.parseRetryAfterMs(error.networkResponse?.headers)
+              val delayMs =
+                minOf(
+                  maxOf(BUSY_RETRY_DELAYS_MS[round], retryAfterMs),
+                  maxOf(0L, RETRY_WINDOW_MS - elapsedMs),
+                )
+              LogUtils.w(TAG, "AI service busy, retrying in %d ms: %s", delayMs, failure.logMessage)
+              mainHandler.postAtTime(
+                { send(address, model, apiKey, chatRequest, wantsJson, false, callback, round + 1, firstAt) },
+                retryToken,
+                now + delayMs,
+              )
+            } else {
+              callback.onFailure(failure)
+            }
+          },
         ) {
         override fun getHeaders(): MutableMap<String, String> {
           val headers = HashMap(super.getHeaders())
@@ -97,6 +139,10 @@ internal class AiServiceRequestPerformer(context: Context) {
     request.retryPolicy =
       DefaultRetryPolicy(TIMEOUT_MS, MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
     requestQueue.add(request)
+  }
+
+  fun cancel() {
+    mainHandler.removeCallbacksAndMessages(retryToken)
   }
 
   /**
@@ -113,10 +159,13 @@ internal class AiServiceRequestPerformer(context: Context) {
   }
 
   private companion object {
+    const val TAG = "AiServiceRequest"
     const val HTTP_PAYMENT_REQUIRED = 402
     // Services that run large models on demand can take longer than Gemini to answer.
     const val TIMEOUT_MS = 60_000
     // Retrying a request that timed out sends and pays for the same slow request again.
     const val MAX_RETRIES = 0
+    val BUSY_RETRY_DELAYS_MS = longArrayOf(1_000L, 2_000L, 4_000L)
+    const val RETRY_WINDOW_MS = 24_000L
   }
 }
