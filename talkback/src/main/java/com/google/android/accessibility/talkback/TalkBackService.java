@@ -1331,7 +1331,8 @@ public class TalkBackService extends AccessibilityServiceCompat
                     Feedback.speech(
                         text,
                         SpeechController.SpeakOptions.create()
-                            .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)));
+                            .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)
+                            .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)));
           }
 
           @Override
