@@ -82,6 +82,29 @@ class CustomActionMenuAncestorsTest {
   }
 
   @Test
+  fun listsNamedAppActionsUsingAndroidResourceIds() {
+    @Suppress("DEPRECATION") val row = AccessibilityNodeInfoCompat.obtain()
+    row.packageName = PACKAGE
+    row.addAction(AccessibilityActionCompat(android.R.id.background, "View threads"))
+    row.addAction(AccessibilityActionCompat(android.R.id.checkbox, "Group members"))
+    row.addAction(AccessibilityActionCompat(android.R.id.content, null))
+    row.addAction(AccessibilityActionCompat(AccessibilityActionCompat.ACTION_SCROLL_UP.id, "Scroll"))
+    row.addAction(AccessibilityActionCompat(AccessibilityNodeInfoCompat.ACTION_CLICK, "Open"))
+    row.addAction(AccessibilityActionCompat(0x7f0a0001, "Archive"))
+
+    val entries = menu.getMenuItemsForNode(context, row, /* includeAncestors= */ true)
+
+    assertEquals(
+      listOf(
+        android.R.id.background to "View threads",
+        android.R.id.checkbox to "Group members",
+        0x7f0a0001 to "Archive",
+      ),
+      entries.map { it.itemId to it.title.toString() },
+    )
+  }
+
+  @Test
   fun aScriptActionPlacedFirstDoesNotHideTheActionsOfTheItemAroundIt() {
     scriptActions = listOf(ScriptItemAction("Script first", first = true) {})
     assertEquals(listOf("Script first", "Archive", "Mark as read"), titles(textInRow()))
