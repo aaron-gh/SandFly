@@ -4616,17 +4616,22 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
   }
 
-  /** Handles the item under a stationary finger before Android has a hover event for the touch. */
+  /** Tries to handle the item under a stationary finger while Android has no hover event for it. */
   @RequiresApi(Build.VERSION_CODES.R)
-  public void onStationaryContinuedTouch(int displayId, float x, float y) {
+  public boolean onStationaryContinuedTouch(int displayId, float x, float y, boolean tap) {
     if (touchExplorationInterpreter == null || PauseController.isPaused()) {
-      return;
+      return false;
     }
     @Nullable AccessibilityNodeInfoCompat target =
         KeyboardExploration.stationaryTouchTargetAt(this, displayId, x, y);
-    if (target != null) {
-      touchExplorationInterpreter.onNodeTouched(target, EVENT_ID_UNTRACKED);
+    if (target == null) {
+      return false;
     }
+    if (tap) {
+      onTapExploration();
+    }
+    touchExplorationInterpreter.onNodeTouched(target, EVENT_ID_UNTRACKED);
+    return true;
   }
 
   /** Types the key explored on Gboard when a second finger touches the screen: split tap. */

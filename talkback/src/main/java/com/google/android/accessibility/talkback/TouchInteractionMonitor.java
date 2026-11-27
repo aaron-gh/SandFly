@@ -383,7 +383,7 @@ public class TouchInteractionMonitor
   private boolean stateChangeRequested = false;
   // Tracks Android's interaction, which can contain more than one physical touch.
   private boolean receivedDownInInteraction;
-  private boolean continuedTouchNeedsMove;
+  private boolean continuedTouchWithoutMove;
   private boolean explorationWaitingForMove;
   // This is used to monitor whether all 1-finger gesture detectors have failed(cancelled).
   // If the condition met, we can request touch control for touch explore state transition.
@@ -1047,27 +1047,29 @@ public class TouchInteractionMonitor
     }
     receivedPointerTracker.onMotionEvent(event);
     int action = event.getActionMasked();
-    if (action == ACTION_MOVE && continuedTouchNeedsMove) {
-      continuedTouchNeedsMove = false;
+    if (action == ACTION_MOVE && continuedTouchWithoutMove) {
+      continuedTouchWithoutMove = false;
       if (explorationWaitingForMove && event.getPointerCount() == 1) {
         explorationWaitingForMove = false;
         requestTouchExploration("firstMoveOfContinuedTouch");
         return;
       }
     } else if (action == ACTION_POINTER_DOWN) {
+      continuedTouchWithoutMove = false;
       explorationWaitingForMove = false;
       if (event.getPointerCount() == 2 && oneFingerSwipeStarted && !nonSwipeGestureStarted) {
         // The swipe matchers cancel on a second finger. Let the two-finger movement be classified.
         oneFingerSwipeInterrupted = true;
         gestureStarted = false;
       }
-    } else if (action == MotionEvent.ACTION_CANCEL && continuedTouchNeedsMove) {
+    } else if (action == MotionEvent.ACTION_CANCEL && continuedTouchWithoutMove) {
+      continuedTouchWithoutMove = false;
       explorationWaitingForMove = false;
       keepMonitorTouchExplore = false;
       requestTouchExplorationDelayed.cancel();
     }
     if (action == ACTION_DOWN) {
-      continuedTouchNeedsMove = state == STATE_TOUCH_INTERACTING && receivedDownInInteraction;
+      continuedTouchWithoutMove = state == STATE_TOUCH_INTERACTING && receivedDownInInteraction;
       if (state == STATE_TOUCH_INTERACTING) {
         receivedDownInInteraction = true;
       }
@@ -1397,7 +1399,7 @@ public class TouchInteractionMonitor
     }
 
     if (state != STATE_TOUCH_INTERACTING) {
-      continuedTouchNeedsMove = false;
+      continuedTouchWithoutMove = false;
       explorationWaitingForMove = false;
     }
     if (state == STATE_CLEAR) {
@@ -1501,7 +1503,7 @@ public class TouchInteractionMonitor
     lastExploredNode = null;
     skipLookupsInLastExploredBounds = false;
     stateChangeRequested = false;
-    continuedTouchNeedsMove = false;
+    continuedTouchWithoutMove = false;
     explorationWaitingForMove = false;
     if (keepWaitingTaps) {
       gestureDetector.clearExceptWaitingTaps();
@@ -2853,16 +2855,17 @@ public class TouchInteractionMonitor
       startExploringKeyboard(caller);
       return;
     }
-    if (continuedTouchNeedsMove && state == STATE_TOUCH_INTERACTING) {
-      // Android clears its hover buffer on a later down in the same interaction. Requesting
-      // exploration with an empty buffer leaves the controller waiting for a state change.
-      if (!explorationWaitingForMove && receivedPointerTracker.getReceivedPointerDownCount() <= 1) {
-        explorationWaitingForMove = true;
-        if (!fingerDown) {
-          service.onTapExploration();
-        }
-        service.onStationaryContinuedTouch(displayId, lastFingerX, lastFingerY);
-      }
+    if (explorationWaitingForMove) {
+      return;
+    }
+    // A second down in the same interaction clears Android's hover buffer. Until the finger
+    // moves, a native request can leave the controller waiting for a state change.
+    if (state == STATE_TOUCH_INTERACTING
+        && continuedTouchWithoutMove
+        && receivedPointerTracker.getReceivedPointerDownCount() <= 1
+        && !isOnKeyboard(lastFingerX, lastFingerY)
+        && service.onStationaryContinuedTouch(displayId, lastFingerX, lastFingerY, !fingerDown)) {
+      explorationWaitingForMove = true;
       return;
     }
     try {

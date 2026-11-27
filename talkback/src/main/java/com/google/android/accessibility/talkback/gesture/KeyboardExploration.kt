@@ -211,7 +211,9 @@ object KeyboardExploration {
     y: Float,
   ): AccessibilityNodeInfoCompat? {
     val budget = StationaryTouchLookup()
-    val root = topmostWindowAt(service, displayId, x, y)?.root ?: return null
+    val window = topmostWindowAt(service, displayId, x, y) ?: return null
+    if (window.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD) return null
+    val root = window.root ?: return null
     return focusableAt(AccessibilityNodeInfoCompat.wrap(root), x.toInt(), y.toInt(), Rect(), 0, budget)
   }
 

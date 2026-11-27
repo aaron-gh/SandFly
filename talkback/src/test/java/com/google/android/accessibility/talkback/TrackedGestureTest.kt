@@ -136,8 +136,9 @@ class TrackedGestureTest {
 
     override fun onGestureDetectionStarted() {}
 
-    override fun onStationaryContinuedTouch(displayId: Int, x: Float, y: Float) {
+    override fun onStationaryContinuedTouch(displayId: Int, x: Float, y: Float, tap: Boolean): Boolean {
       stationaryTouches.add(x to y)
+      return true
     }
 
     override fun getGestureShortcutMapping(): GestureShortcutMapping? = mapping
@@ -1431,7 +1432,7 @@ class TrackedGestureTest {
   }
 
   @Test
-  fun heldSecondTapInACornerLiftedBeforeItsHoldIsExplored() {
+  fun releasingACornerHoldTooSoonOnlyExploresTheStationaryTouch() {
     assign(
       R.string.shortcut_value_home,
       R.string.pref_shortcut_corner_top_right_double_tap_hold_key,
