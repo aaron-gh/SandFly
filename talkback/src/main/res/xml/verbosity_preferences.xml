@@ -183,6 +183,14 @@
         android:key="pref_caller_voice_profile"
         android:summary="%s"
         android:title="@string/title_pref_caller_voice" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="speech"
+        android:dialogTitle="@string/title_pref_caller_stream"
+        android:entries="@array/pref_caller_stream_entries"
+        android:entryValues="@array/pref_caller_stream_values"
+        android:key="pref_caller_stream"
+        android:summary="%s"
+        android:title="@string/title_pref_caller_stream" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_announce_call_length_default"
         android:key="@string/pref_announce_call_length_key"

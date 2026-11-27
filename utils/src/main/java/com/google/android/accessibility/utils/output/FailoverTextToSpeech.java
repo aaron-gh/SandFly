@@ -957,7 +957,15 @@ public class FailoverTextToSpeech {
    * volume like a call, on the earpiece when no headset is connected.
    */
   public static int speechUsage(Context context) {
-    return switch (speechStream(context)) {
+    return usageForStream(speechStream(context));
+  }
+
+  /** The audio usage of a volume, one of {@link #STREAM_VALUES}; accessibility for any other. */
+  public static int usageForStream(@Nullable String stream) {
+    if (stream == null) {
+      return AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY;
+    }
+    return switch (stream) {
       case STREAM_VALUE_MEDIA -> AudioAttributes.USAGE_MEDIA;
       case STREAM_VALUE_RING -> AudioAttributes.USAGE_NOTIFICATION_RINGTONE;
       case STREAM_VALUE_CALL -> AudioAttributes.USAGE_VOICE_COMMUNICATION;

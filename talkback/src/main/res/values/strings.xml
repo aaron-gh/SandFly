@@ -528,6 +528,10 @@
     <string name="title_pref_announce_caller">Announce caller</string>
     <!-- List, in Verbosity, next to Announce caller: the voice the caller of an incoming call is said with, SandFly's voice or a voice profile. [CHAR LIMIT=NONE] -->
     <string name="title_pref_caller_voice">Caller voice</string>
+    <!-- List, in Verbosity, available while a voice profile is chosen for the caller: the volume the caller is said at. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_caller_stream">Caller volume</string>
+    <!-- Choice of Caller volume: the caller is said at the volume chosen for speech, in Speech > Speech volume. [CHAR LIMIT=60] -->
+    <string name="caller_stream_speech">Same as the speech volume</string>
     <!-- Choice in the Announce caller list: say the caller once when the call starts ringing. [CHAR LIMIT=40] -->
     <string name="announce_caller_once">Once</string>
     <!-- Choice in the Announce caller list: say the caller again every few seconds until the call is answered, declined or ends. [CHAR LIMIT=40] -->

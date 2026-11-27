@@ -146,6 +146,20 @@
     <string name="pref_system_tts_settings_key">pref_system_tts_settings</string>
     <string name="pref_tts_engine_key">pref_tts_engine</string>
     <string name="pref_speech_stream_key" translatable="false">pref_speech_stream</string>
+    <string-array name="pref_caller_stream_entries">
+        <item>@string/caller_stream_speech</item>
+        <item>@string/speech_stream_accessibility</item>
+        <item>@string/speech_stream_media</item>
+        <item>@string/speech_stream_ring</item>
+        <item>@string/speech_stream_call</item>
+    </string-array>
+    <string-array name="pref_caller_stream_values" translatable="false">
+        <item>speech</item>
+        <item>accessibility</item>
+        <item>media</item>
+        <item>ring</item>
+        <item>call</item>
+    </string-array>
     <string-array name="pref_speech_stream_values" translatable="false">
         <item>accessibility</item>
         <item>media</item>

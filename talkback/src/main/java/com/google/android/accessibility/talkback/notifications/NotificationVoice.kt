@@ -64,6 +64,8 @@ class NotificationVoice(private val context: Context) {
     val flush: Boolean,
     val locale: Locale?,
     val listener: Listener?,
+    /** The audio usage it plays with, or null for the one of SandFly's speech. */
+    val usage: Int? = null,
   ) {
     /** Whether it was sent again on a new connection after the engine didn't take it. */
     var retried = false
@@ -187,6 +189,13 @@ class NotificationVoice(private val context: Context) {
     if (isIdle) handler.postDelayed(release, IDLE_MS)
   }
 
+  private fun audioAttributes(usage: Int): AudioAttributes =
+    CapturePolicy.applyTo(
+        AudioAttributes.Builder().setUsage(usage).setContentType(AudioAttributes.CONTENT_TYPE_SPEECH),
+        SharedPreferencesUtils.getSharedPreferences(context),
+      )
+      .build()
+
   private fun onInit(connection: TextToSpeech?, status: Int) {
     val tts = tts
     if (tts == null || tts !== connection) return
@@ -196,15 +205,7 @@ class NotificationVoice(private val context: Context) {
       unavailable()
       return
     }
-    tts.setAudioAttributes(
-      CapturePolicy.applyTo(
-          AudioAttributes.Builder()
-            .setUsage(FailoverTextToSpeech.speechUsage(context))
-            .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH),
-          SharedPreferencesUtils.getSharedPreferences(context),
-        )
-        .build()
-    )
+    tts.setAudioAttributes(audioAttributes(FailoverTextToSpeech.speechUsage(context)))
     tts.setOnUtteranceProgressListener(
       object : UtteranceProgressListener() {
         override fun onStart(utteranceId: String) {
@@ -435,9 +436,10 @@ class NotificationVoice(private val context: Context) {
     flush: Boolean,
     locale: Locale?,
     listener: Listener?,
+    usage: Int? = null,
   ) {
     handler.removeCallbacks(release)
-    val request = Request("notification_${nextId++}", text, flush, locale, listener)
+    val request = Request("notification_${nextId++}", text, flush, locale, listener, usage)
     if (ready) {
       speakNow(request)
       return
@@ -489,6 +491,8 @@ class NotificationVoice(private val context: Context) {
     val volume = maxOf(profile.volume, minVolume) / 100f
     val params =
       Bundle().apply { putFloat(TextToSpeech.Engine.KEY_PARAM_VOLUME, volume.coerceIn(0f, 1f)) }
+    // The volume it plays at: the one of this text, or the one of SandFly's speech.
+    tts.setAudioAttributes(audioAttributes(request.usage ?: FailoverTextToSpeech.speechUsage(context)))
     request.listener?.let { listeners[request.id] = it }
     unstarted[request.id] = request
     val text = request.text.let { if (it.length > MAX_LENGTH) it.subSequence(0, MAX_LENGTH) else it }
@@ -565,7 +569,7 @@ class NotificationVoice(private val context: Context) {
     val again =
       unstarted.values
         .filter { it.id != id }
-        .map { Request("notification_${nextId++}", it.text, false, it.locale, it.listener) }
+        .map { Request("notification_${nextId++}", it.text, false, it.locale, it.listener, it.usage) }
     (unstarted.keys.toList() + id).forEach(::forget)
     handler.removeCallbacks(startTimeout)
     if (ready) runCatching { tts?.stop() }
