@@ -326,7 +326,7 @@ The 16 gestures are at the end of the **1 finger**, **1 finger back-and-forth** 
 
 ### Two-finger double-tap at the top and bottom
 
-**Double-tap with 2 fingers, top and bottom**, in **Gestures** > **2 fingers**, is a separate gesture. While it has a command, a two-finger double-tap with one finger in the top third of the screen and the other in the bottom third, as displayed, runs it instead of **Double-tap with 2 fingers**. It is unassigned by default, requires Android 13 or later and **Handle gestures in SandFly** turned on, and isn't on watches.
+**Double-tap with 2 fingers, top and bottom**, in **Gestures** > **2 fingers**, is a separate gesture. While it has a command, a two-finger double-tap with one finger in the top third of the screen and the other in the bottom third, measured between the ends of the device held upright, runs it instead of **Double-tap with 2 fingers**. It is unassigned by default, requires Android 13 or later and **Handle gestures in SandFly** turned on, and isn't on watches.
 
 ### One-finger triple-tap and quadruple-tap
 
