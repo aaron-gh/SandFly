@@ -161,27 +161,32 @@ object CallNotifications {
   }
 
   /**
+   * The newest notification of an incoming call of another app in the shade, or null when there is
+   * none or the notification listener isn't connected.
+   */
+  @JvmStatic
+  @MainThread
+  fun incomingCallInShade(context: Context): Notification? =
+    shadeCandidates()
+      ?.filter { it.notice.packageName != context.packageName && CallNotices.isIncoming(it.notice) }
+      ?.maxByOrNull { it.notice.postTime }
+      ?.notification
+
+  /** Whether [notification], from an accessibility event of [packageName], is an incoming call. */
+  @JvmStatic
+  fun isIncomingCall(packageName: CharSequence?, notification: Notification): Boolean {
+    val name = packageName?.toString() ?: return false
+    val notice = noticeOf(name, name, System.currentTimeMillis(), notification) ?: return false
+    return CallNotices.isIncoming(notice)
+  }
+
+  /**
    * The call notifications in the shade, or without the notification listener, those of calls that
    * rang in the last [EVENT_RINGING_MS].
    */
   private fun candidates(): List<Candidate> {
-    val active =
-      NotificationListService.instance?.let { listener ->
-        try {
-          listener.activeNotifications
-        } catch (e: RuntimeException) {
-          // SecurityException while the listener disconnects, or a notification that can't be read.
-          Log.w(TAG, "Can't read the notifications", e)
-          null
-        }
-      }
-    if (active != null) {
-      return active.mapNotNull { posted ->
-        val notification = posted.notification ?: return@mapNotNull null
-        noticeOf(posted.key, posted.packageName, posted.postTime, notification)?.let {
-          Candidate(it, notification)
-        }
-      }
+    shadeCandidates()?.let {
+      return it
     }
     val now = SystemClock.uptimeMillis()
     seen.values.removeAll { now - it.uptime >= EVENT_RINGING_MS }
@@ -194,6 +199,28 @@ object CallNotifications {
         )
         ?.takeIf { CallNotices.isIncoming(it) }
         ?.let { Candidate(it, event.notification) }
+    }
+  }
+
+  /**
+   * The call notifications in the shade, or null when the notification listener isn't connected or
+   * can't read them.
+   */
+  private fun shadeCandidates(): List<Candidate>? {
+    val listener = NotificationListService.instance ?: return null
+    val active =
+      try {
+        listener.activeNotifications
+      } catch (e: RuntimeException) {
+        // SecurityException while the listener disconnects, or a notification that can't be read.
+        Log.w(TAG, "Can't read the notifications", e)
+        null
+      } ?: return null
+    return active.mapNotNull { posted ->
+      val notification = posted.notification ?: return@mapNotNull null
+      noticeOf(posted.key, posted.packageName, posted.postTime, notification)?.let {
+        Candidate(it, notification)
+      }
     }
   }
 

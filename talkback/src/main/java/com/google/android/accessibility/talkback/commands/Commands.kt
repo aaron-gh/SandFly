@@ -732,6 +732,7 @@ object Commands {
           Key.ANNOUNCE_BATTERY_STATE,
           available = FeatureFlagReader.enableAnnounceBatteryState(context),
         )
+        gesture(R.string.shortcut_value_say_caller, R.string.shortcut_say_caller)
         gesture(
           R.string.shortcut_value_announce_current_title,
           R.string.shortcut_announce_current_title,

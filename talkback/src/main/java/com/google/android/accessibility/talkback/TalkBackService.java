@@ -167,6 +167,7 @@ import com.google.android.accessibility.talkback.braille.TalkBackForBrailleDispl
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeImpl;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeImpl.TalkBackPrivateMethodProvider;
 import com.google.android.accessibility.talkback.commands.RemovedCommands;
+import com.google.android.accessibility.talkback.calls.CallerAnnouncer;
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.compositor.ActionsAvailable;
 import com.google.android.accessibility.talkback.compositor.ClickFeedback;
@@ -772,6 +773,9 @@ public class TalkBackService extends AccessibilityServiceCompat
   /** Monitors the call state for the phone device. */
   private CallStateMonitor callStateMonitor;
 
+  /** Announce caller repeats and the Say caller command. */
+  private @Nullable CallerAnnouncer callerAnnouncer;
+
   /** Monitors voice actions from other applications */
   private VoiceActionMonitor voiceActionMonitor;
 
@@ -1186,6 +1190,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     SpeechControl.detach();
     NotificationReader.detach();
+    if (callerAnnouncer != null) {
+      callerAnnouncer.shutdown();
+    }
     NotificationListService.onSandFlyStopped();
 
     if (oneUiVolumeKeys != null) {
@@ -2094,7 +2101,7 @@ public class TalkBackService extends AccessibilityServiceCompat
    * Returns null when double, triple and long presses of the volume key {@code keyCode} run their
    * commands now, and otherwise why they don't. They run as for {@link #canUseVolumeKeyPresses},
    * and also while an always-on display shows the lock screen. While a call rings, only a key with
-   * Answer call or End call among its presses' commands is counted.
+   * Answer call, End call or Say caller among its presses' commands is counted.
    */
   private @Nullable String volumeKeyCommandsOffReason(boolean triggerModifierPressed, int keyCode) {
     String reason =
@@ -2113,14 +2120,16 @@ public class TalkBackService extends AccessibilityServiceCompat
   }
 
   /**
-   * Whether a call rings and a press of the volume key {@code keyCode} has Answer call or End call.
+   * Whether a call rings and a press of the volume key {@code keyCode} has Answer call, End call or
+   * Say caller.
    */
   private boolean isRingingCallAnsweredBy(int keyCode) {
     return volumeKeyCommands != null
         && voiceActionMonitor != null
         && voiceActionMonitor.getCurrentCallState() == TelephonyManager.CALL_STATE_RINGING
         && (volumeKeyCommands.hasCommand(keyCode, getString(R.string.shortcut_value_answer_call))
-            || volumeKeyCommands.hasCommand(keyCode, getString(R.string.shortcut_value_end_call)));
+            || volumeKeyCommands.hasCommand(keyCode, getString(R.string.shortcut_value_end_call))
+            || volumeKeyCommands.hasCommand(keyCode, getString(R.string.shortcut_value_say_caller)));
   }
 
   private boolean canTakeVolumeKeys(boolean triggerModifierPressed) {
@@ -2451,6 +2460,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
 
     return feedbackController;
+  }
+
+  /** Announce caller repeats and the Say caller command, or null before SandFly has started. */
+  public @Nullable CallerAnnouncer getCallerAnnouncer() {
+    return callerAnnouncer;
   }
 
   public VoiceActionMonitor getVoiceActionMonitor() {
@@ -3467,6 +3481,13 @@ public class TalkBackService extends AccessibilityServiceCompat
             this);
     callStateMonitor.addCallStateChangedListener(
         CallDurationAnnouncer.create(this, pipeline.getFeedbackReturner()));
+    callerAnnouncer =
+        CallerAnnouncer.create(
+            this,
+            pipeline.getFeedbackReturner(),
+            callStateMonitor::getCurrentCallState,
+            () -> speechController != null && speechController.isSpeaking());
+    callStateMonitor.addCallStateChangedListener(callerAnnouncer);
     if (speechCacheController != null) {
       ringerModeAndScreenMonitor.addScreenChangedListener(speechCacheController);
     }
@@ -3641,6 +3662,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     // in the order they are added.
     eventFilter =
         new EventFilter(this, compositor, touchMonitor, globalVariables, earlyFocusSpeech);
+    eventFilter.setCallerAnnouncer(callerAnnouncer);
     focuser.setFocusSetListener(
         new FocusManagerInternal.FocusSetListener() {
           @Override

@@ -38,7 +38,7 @@ The presses don't run commands, and the keys change the volume as usual, in thes
 - While a finger is on the screen, or during continuous reading.
 - While the Shortcut Menu app is shown.
 
-While a phone call rings, only a volume key with the **Answer call** or **End call** command assigned to one of its presses runs commands.
+While a phone call rings, only a volume key with the **Answer call**, **End call** or **Say caller** command assigned to one of its presses runs commands.
 
 ### Keep volume key presses from Android {#buttons-take-all}
 

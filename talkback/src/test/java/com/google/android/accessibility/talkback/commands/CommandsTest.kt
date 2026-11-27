@@ -99,6 +99,7 @@ class CommandsTest {
         R.string.shortcut_value_share_focused_image,
         R.string.shortcut_value_share_screenshot,
         R.string.shortcut_value_voice_editing,
+        R.string.shortcut_value_say_caller,
       )) {
       assertTrue(context.getString(res) in values)
     }

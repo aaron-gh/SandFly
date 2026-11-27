@@ -28,6 +28,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.calls.CallNotifications;
+import com.google.android.accessibility.talkback.calls.CallerAnnouncer;
 import com.google.android.accessibility.talkback.compositor.rule.EventTypeViewAccessibilityFocusedFeedbackRule;
 import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
@@ -70,6 +71,7 @@ public class EventFilter {
   private final Context context;
   private final Compositor compositor;
   private VoiceActionDelegate voiceActionDelegate;
+  private @Nullable CallerAnnouncer callerAnnouncer;
 
   private AccessibilityFocusEventInterpreter accessibilityFocusEventInterpreter;
   private final GlobalVariables globalVariables;
@@ -163,6 +165,11 @@ public class EventFilter {
 
   ///////////////////////////////////////////////////////////////////////////////////
   // Methods
+
+  /** Sets what keeps the caller of incoming calls for Announce caller and Say caller. */
+  public void setCallerAnnouncer(@Nullable CallerAnnouncer announcer) {
+    callerAnnouncer = announcer;
+  }
 
   public void setVoiceActionDelegate(VoiceActionDelegate delegate) {
     voiceActionDelegate = delegate;
@@ -304,6 +311,14 @@ public class EventFilter {
         // Answer call and End call use the call notifications of apps.
         CallNotifications.onNotificationEvent(context, event.getPackageName(), notification);
       }
+      boolean isIncomingCall =
+          isCall
+              && (callerAnnouncer != null)
+              && callerAnnouncer.isIncomingCall(event.getPackageName(), notification);
+      if (isIncomingCall) {
+        // Say caller says it whatever Announce caller and Do Not Disturb are.
+        callerAnnouncer.onIncomingCall(notification);
+      }
       // Read now: the state kept in GlobalVariables changes only when a setting does.
       boolean dnd = SettingsUtils.getDoNotDisturbState(context) > 0;
       boolean touching = touchMonitor.isUserTouchingScreen();
@@ -312,6 +327,13 @@ public class EventFilter {
       if (isCall && dnd && !NotificationReader.callAllowedDuringDnd(event, notification)) {
         LogUtils.d(TAG, "Do not announce call: DND is enabled");
         return;
+      }
+      if (isIncomingCall && !callerAnnouncer.announcesIncomingCalls()) {
+        LogUtils.d(TAG, "Do not announce call: Announce caller is off");
+        return;
+      }
+      if (isIncomingCall) {
+        callerAnnouncer.onIncomingCallAnnounced();
       }
       if (isCall) {
         NotificationReader.noteCall(event, notification);

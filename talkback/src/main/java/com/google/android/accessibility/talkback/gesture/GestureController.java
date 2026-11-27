@@ -148,6 +148,7 @@ import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.ScriptCommands;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.calls.AnswerCall;
+import com.google.android.accessibility.talkback.calls.CallerAnnouncer;
 import com.google.android.accessibility.talkback.calls.EndCall;
 import com.google.android.accessibility.talkback.actor.voicecommands.VoiceEditing;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
@@ -547,6 +548,7 @@ public class GestureController {
     R.string.shortcut_value_describe_text_formatting,
     R.string.shortcut_value_announce_current_time_and_date,
     R.string.shortcut_value_announce_battery_state,
+    R.string.shortcut_value_say_caller,
     R.string.shortcut_value_announce_status,
     R.string.shortcut_value_announce_current_title,
     R.string.shortcut_value_announce_phonetic_pronunciation,
@@ -1563,6 +1565,12 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.requestedSpeech(batteryMonitor.getBatteryStateDescription()));
+    } else if (action.equals(service.getString(R.string.shortcut_value_say_caller))) {
+      CallerAnnouncer callerAnnouncer = service.getCallerAnnouncer();
+      result =
+          callerAnnouncer != null
+              && pipeline.returnFeedback(
+                  eventId, Feedback.requestedSpeech(callerAnnouncer.sayCallerText()));
     } else if (action.equals(service.getString(R.string.shortcut_value_announce_status))) {
       result =
           pipeline.returnFeedback(eventId, Feedback.requestedSpeech(statusReader.describe()));
