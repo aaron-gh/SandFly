@@ -89,6 +89,15 @@ jobs:
           key: ccache-${{ matrix.name }}-${{ hashFiles('**/*.c', '**/*.cc', '**/*.cpp', '**/*.h', '**/*.hpp', '**/CMakeLists.txt', '**/*.cmake', '**/*.mk', 'shared.gradle') }}
           restore-keys: ccache-${{ matrix.name }}-
 
+      # Robolectric downloads an Android jar for each SDK level the tests use. Maven Central
+      # rate-limits runners (HTTP 429), which fails the tests.
+      - uses: actions/cache@v6
+        if: matrix.name == 'unit-tests'
+        with:
+          path: ~/.m2/repository/org/robolectric
+          key: robolectric-${{ hashFiles('gradle/libs.versions.toml') }}
+          restore-keys: robolectric-
+
       # Signs builds with SandFly's key, so that installed builds update in place. Pull requests
       # from forks do not get the secrets, so they are signed with a new debug key.
       - name: Install SandFly's signing key
