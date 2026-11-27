@@ -27,6 +27,7 @@ import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFo
 import com.google.android.accessibility.talkback.menurules.CustomActionMenu;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleCreator;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleCreator.MenuRules;
+import com.google.android.accessibility.talkback.menurules.RuleAction;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
@@ -101,9 +102,13 @@ public class ActionsSetting implements SelectorController.ContextualSetting {
     return !actions.isEmpty() && !hasOtherThanMacros(actions);
   }
 
+  /**
+   * Enter value of a slider doesn't switch the reading control to Actions either: Adjust slider is
+   * kept on sliders.
+   */
   private static boolean hasOtherThanMacros(List<ContextMenuItem> actions) {
     for (ContextMenuItem action : actions) {
-      if (!CustomActionMenu.isMacroItem(action)) {
+      if (!CustomActionMenu.isMacroItem(action) && !RuleAction.isSliderValueItem(action)) {
         return true;
       }
     }
@@ -112,7 +117,9 @@ public class ActionsSetting implements SelectorController.ContextualSetting {
 
   private static boolean hasOtherThanEditingOptions(List<ContextMenuItem> actions) {
     for (ContextMenuItem action : actions) {
-      if (!isEditingOption(action) && !CustomActionMenu.isMacroItem(action)) {
+      if (!isEditingOption(action)
+          && !CustomActionMenu.isMacroItem(action)
+          && !RuleAction.isSliderValueItem(action)) {
         return true;
       }
     }

@@ -41,6 +41,7 @@ public class RuleAction extends NodeMenuRule {
   private final QuotedMessageMenu quotedMessageMenu;
   private final TelegramShareMenu telegramShareMenu;
   private final SheetsEditMenu sheetsEditMenu = new SheetsEditMenu();
+  private final SliderValueMenu sliderValueMenu;
 
   public RuleAction(
       Pipeline.FeedbackReturner pipeline,
@@ -57,6 +58,7 @@ public class RuleAction extends NodeMenuRule {
     linkMenu = new LinkMenu(analytics);
     quotedMessageMenu = new QuotedMessageMenu(pipeline);
     telegramShareMenu = new TelegramShareMenu(pipeline);
+    sliderValueMenu = new SliderValueMenu(pipeline);
   }
 
   @Override
@@ -67,7 +69,31 @@ public class RuleAction extends NodeMenuRule {
         || linkMenu.accept(context, node)
         || quotedMessageMenu.accept(context, node)
         || telegramShareMenu.accept(context, node)
-        || sheetsEditMenu.accept(context, node);
+        || sheetsEditMenu.accept(context, node)
+        || sliderValueMenu.accept(context, node);
+  }
+
+  /**
+   * Enter value, which every slider that can be set has, isn't announced as an action: the hint is
+   * given only for the other actions.
+   */
+  @Override
+  boolean hasHint(Context context, AccessibilityNodeInfoCompat node) {
+    if (!sliderValueMenu.accept(context, node)) {
+      return true;
+    }
+    for (ContextMenuItem item :
+        getMenuItemsForNode(context, node, /* includeAncestors= */ false)) {
+      if (!SliderValueMenu.isItem(item)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /** Whether {@code item} is Enter value of a slider. */
+  public static boolean isSliderValueItem(ContextMenuItem item) {
+    return SliderValueMenu.isItem(item);
   }
 
   @Override
@@ -102,6 +128,10 @@ public class RuleAction extends NodeMenuRule {
 
     if (sheetsEditMenu.accept(context, node)) {
       actionItems.addAll(sheetsEditMenu.getMenuItemsForNode(context, node, includeAncestors));
+    }
+
+    if (sliderValueMenu.accept(context, node)) {
+      actionItems.addAll(sliderValueMenu.getMenuItemsForNode(context, node, includeAncestors));
     }
 
     return actionItems;

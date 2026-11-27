@@ -986,6 +986,8 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   /** Volume keys > double, triple and long presses of each volume key. */
   @Nullable private VolumeKeyCommands volumeKeyCommands;
+  /** Adjusts sliders and number pickers; skips slider steps that don't change the value. */
+  @Nullable private NumberAdjustor numberAdjustor;
 
   /** Alt+Tab through SandFly's overview. */
   @Nullable private AppSwitcherKeys appSwitcherKeys;
@@ -3278,6 +3280,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     KeyboardActor keyboardActor = new KeyboardActor(this);
 
+    numberAdjustor = new NumberAdjustor(this, accessibilityFocusMonitor);
     // Construct pipeline.
     pipeline =
         new Pipeline(
@@ -3336,7 +3339,7 @@ public class TalkBackService extends AccessibilityServiceCompat
                 passThroughModeActor,
                 new TalkBackUIActor(this),
                 speechRateAndPitchActor,
-                new NumberAdjustor(this, accessibilityFocusMonitor),
+                numberAdjustor,
                 new TypoNavigator(this, editor, accessibilityFocusMonitor, textCursorTracker),
                 new VolumeAdjustor(this),
                 voiceCommandActor,
@@ -3441,6 +3444,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       addEventListener(processorMagnification);
     }
     addEventListener(pipeline);
+    addEventListener(numberAdjustor);
 
     touchExplorationInterpreter.addTouchExplorationActionListener(accessibilityFocusInterpreter);
     screenStateMonitor.addScreenStateChangeListener(accessibilityFocusInterpreter);
@@ -4416,6 +4420,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (volumeKeyCommands != null) {
       volumeKeyCommands.cancel();
     }
+    if (numberAdjustor != null) {
+      numberAdjustor.stopSkipping();
+    }
     if (accelerometerGestures != null) {
       accelerometerGestures.setAllowed(false);
     }
@@ -4556,6 +4563,9 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     if (fullScreenReadActor != null) {
       fullScreenReadActor.shutdown();
+    }
+    if (numberAdjustor != null) {
+      numberAdjustor.stopSkipping();
     }
     cancelContinuousCopy();
 
