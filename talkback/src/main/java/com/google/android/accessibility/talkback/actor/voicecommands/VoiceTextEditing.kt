@@ -212,8 +212,8 @@ object VoiceTextRanges {
       TextUnit.CHARACTER -> TextPieces.split(text, Granularity.CHARACTERS, locale).map { it.coreStart to it.coreEnd }
       TextUnit.WORD ->
         TextPieces.split(text, Granularity.WORDS, locale)
-          .filter { piece -> (piece.coreStart until piece.coreEnd).any { text[it].isLetterOrDigit() } }
-          .map { it.coreStart to it.coreEnd }
+          .flatMap { piece -> splitAtSentenceEnds(text, piece.coreStart, piece.coreEnd) }
+          .filter { (start, end) -> (start until end).any { text[it].isLetterOrDigit() } }
       TextUnit.SENTENCE ->
         TextPieces.split(text, Granularity.SENTENCES, locale)
           .filterNot { TextPieces.isWhiteSpace(text, it) }
@@ -226,6 +226,28 @@ object VoiceTextRanges {
       TextUnit.TEXT -> listOf(0 to text.length)
     }
   }
+
+  /**
+   * [start] to [end] of [text], split after each full stop, question mark or exclamation mark
+   * between a letter and a capital letter, as in "one.Two", which text with no space after its
+   * sentences has, and which Android reads as one word.
+   */
+  private fun splitAtSentenceEnds(text: String, start: Int, end: Int): List<Pair<Int, Int>> {
+    val parts = ArrayList<Pair<Int, Int>>()
+    var from = start
+    for (index in start + 1 until end - 1) {
+      if (
+        text[index] in SENTENCE_ENDS && text[index - 1].isLetter() && text[index + 1].isUpperCase()
+      ) {
+        parts += from to index + 1
+        from = index + 1
+      }
+    }
+    parts += from to end
+    return parts
+  }
+
+  private const val SENTENCE_ENDS = ".?!"
 
   /**
    * [start] to [end], deleted whole units, with the white space that would be left over: the white

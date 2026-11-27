@@ -94,6 +94,21 @@ class VoiceTextRangesTest {
   }
 
   @Test
+  fun wordsAcrossSentences() {
+    // Each word counts once across the end of a sentence.
+    val spaced = "one two. Three four five"
+    assertEquals(Plan.Edit(4, 20), plan(spaced, 4, TextOperation.DELETE, words(3, forward = true)))
+    assertEquals(Plan.Edit(8, 24), plan(spaced, 24, TextOperation.DELETE, words(3, forward = false)))
+    // With no space after the full stop, "two.Three" is still two words.
+    val joined = "one two.Three four five"
+    assertEquals(Plan.Edit(4, 19), plan(joined, 4, TextOperation.DELETE, words(3, forward = true)))
+    assertEquals(Plan.Edit(8, 23), plan(joined, 23, TextOperation.DELETE, words(3, forward = false)))
+    // Abbreviations, addresses and numbers stay one word.
+    assertEquals(Plan.Move(0, 11), plan("example.com is", 0, TextOperation.MOVE, words(1, forward = true)))
+    assertEquals(Plan.Move(0, 4), plan("3.14 is", 0, TextOperation.MOVE, words(1, forward = true)))
+  }
+
+  @Test
   fun characters() {
     val characters = TextTarget.Units(TextUnit.CHARACTER, 2, forward = true)
     assertEquals(Plan.Edit(0, 2), plan("abc", 0, TextOperation.DELETE, characters))
