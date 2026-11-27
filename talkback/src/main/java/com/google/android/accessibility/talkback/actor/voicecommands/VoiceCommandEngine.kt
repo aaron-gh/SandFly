@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.actor.voicecommands
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
+import android.view.accessibility.AccessibilityNodeInfo
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
@@ -56,16 +57,23 @@ class VoiceCommandEngine(
     val id = ++generation
     val locale = locale()
     val phrases = phrases(locale)
+    // Nothing said while a password field has input focus is counted.
+    val count = NotUnderstoodPhrases.isOn(service) && !inPasswordField()
     EXECUTOR.execute {
       val targets = VoiceTargets(service, locale)
+      var phrase: String? = null
       val result =
         try {
-          VoiceGrammar(phrases, targets, locale).parse(said)
+          val grammar = VoiceGrammar(phrases, targets, locale)
+          grammar.parse(said).also {
+            if (count && it.parts == 1 && !it.complete && !it.cancel) phrase = grammar.customPhrase(said)
+          }
         } catch (e: Throwable) {
           LogUtils.w(TAG, "Cannot read the voice command: %s", e)
           null
         }
-      mainHandler.post { if (id == generation) decide(id, said, result, targets, locale) }
+      val failed = phrase
+      mainHandler.post { if (id == generation) decide(id, said, result, failed, targets, locale) }
     }
   }
 
@@ -76,7 +84,18 @@ class VoiceCommandEngine(
     ai?.cancel()
   }
 
-  private fun decide(id: Int, said: String, result: VoiceGrammar.Result?, targets: VoiceTargets, locale: Locale) {
+  /**
+   * Runs what [result] understood of [said]. [phrase] is what is counted for Phrases not understood
+   * when nothing understands it, or null when nothing is counted.
+   */
+  private fun decide(
+    id: Int,
+    said: String,
+    result: VoiceGrammar.Result?,
+    phrase: String?,
+    targets: VoiceTargets,
+    locale: Locale,
+  ) {
     val legacyText = VoiceCommandActor.commandText(said)
     if (result == null) {
       if (!processor.handleIfRecognized(legacyText)) processor.sayNotRecognized(legacyText)
@@ -93,17 +112,17 @@ class VoiceCommandEngine(
     val useAi = aiEnabled(service) && AiTextRequests.isSetUp(service)
     if (result.parts == 1 && !(useAi && result.joined)) {
       if (processor.handleIfRecognized(legacyText)) return
-      if (useAi) askAi(id, said, targets, locale) else processor.sayNotRecognized(legacyText)
+      if (useAi) askAi(id, said, phrase, targets, locale) else notUnderstood(legacyText, phrase, locale)
       return
     }
-    if (useAi) askAi(id, said, targets, locale) else run(result.steps, locale)
+    if (useAi) askAi(id, said, null, targets, locale) else run(result.steps, locale)
   }
 
   private fun run(steps: List<VoiceStep>, locale: Locale) {
     VoicePlanRunner.run(service, steps, locale, legacy = { text -> processor.handleIfRecognized(text) })
   }
 
-  private fun askAi(id: Int, said: String, targets: VoiceTargets, locale: Locale) {
+  private fun askAi(id: Int, said: String, phrase: String?, targets: VoiceTargets, locale: Locale) {
     EXECUTOR.execute {
       val prompt =
         try {
@@ -134,7 +153,7 @@ class VoiceCommandEngine(
           val steps = VoiceCommandAi.parse(answer, targets.commandsByValue)
           if (steps.isNullOrEmpty()) {
             LogUtils.w(TAG, "No steps in the AI answer")
-            processor.sayNotRecognized(VoiceCommandActor.commandText(said))
+            notUnderstood(VoiceCommandActor.commandText(said), phrase, locale)
           } else {
             run(steps, locale)
           }
@@ -142,6 +161,33 @@ class VoiceCommandEngine(
       }
     }
   }
+
+  /**
+   * Says that [legacyText] isn't understood, and counts [phrase], when it isn't null, for Phrases not
+   * understood, saying so when it is listed from now on.
+   */
+  private fun notUnderstood(legacyText: String, phrase: String?, locale: Locale) {
+    val listed =
+      phrase != null &&
+        try {
+          NotUnderstoodPhrases.record(service, phrase, locale)
+        } catch (e: RuntimeException) {
+          LogUtils.w(TAG, "Cannot count the phrase: %s", e)
+          false
+        }
+    val after = if (listed) service.getString(R.string.voice_phrases_not_understood_listed) else null
+    processor.sayNotRecognized(legacyText, after)
+  }
+
+  /** Whether the field with input focus is a password field. */
+  private fun inPasswordField(): Boolean =
+    try {
+      service.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.isPassword == true
+    } catch (e: RuntimeException) {
+      LogUtils.w(TAG, "Cannot find the input focus: %s", e)
+      // Unknown counts as a password field, so that nothing is counted.
+      true
+    }
 
   private fun say(text: String) {
     service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.requestedSpeech(text))

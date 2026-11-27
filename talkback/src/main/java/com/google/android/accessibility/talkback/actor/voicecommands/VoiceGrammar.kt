@@ -139,6 +139,9 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
   private val copy = phrases.copy.map(::template)
   private val wait = phrases.wait.map(::template)
   private val type = phrases.type.map(::template)
+  // The words before the text of the type patterns, such as "type" of "type {text}".
+  private val typeWords =
+    phrases.type.map { normalize(it.substringBefore('{').substringBefore('['), locale) }.filter { it.isNotEmpty() }
   private val run = phrases.run.map(::template)
   private val open = phrases.open.map(::template)
   private val tap = phrases.tap.map(::template)
@@ -202,6 +205,21 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
       }
     }
     return Result(steps, unparsed, parts.size, joined)
+  }
+
+  /**
+   * [said] as the phrase of a custom voice command: without the words such as "please" and the
+   * punctuation around it, which [parse] leaves out before it looks up custom voice commands. Null
+   * when nothing is left, when it is longer than [CustomVoiceCommands.MAX_PHRASE], or when it starts
+   * like a type pattern, as its words are text to type.
+   */
+  fun customPhrase(said: String): String? {
+    val text = trimPunctuation(stripFillers(trimText(said)))
+    if (text.isEmpty() || text.length > CustomVoiceCommands.MAX_PHRASE) return null
+    val normalized = normalize(text, locale)
+    if (normalized.isEmpty() || match(type, text) != null) return null
+    val typing = typeWords.any { normalized == it || normalized.startsWith(if (spaceless) it else "$it ") }
+    return if (typing) null else text
   }
 
   /**

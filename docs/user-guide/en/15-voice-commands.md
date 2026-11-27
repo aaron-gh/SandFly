@@ -1,6 +1,6 @@
 ## Voice commands {#voice-commands}
 
-Voice commands run SandFly commands from speech: moving focus, reading, editing text, opening apps, activating items on the screen, calling a contact, sending a message, or describing the screen. One voice command can hold several commands one after another. **Voice commands** in SandFly settings turns on AI for commands that SandFly doesn't understand, sets the time limit of voice editing, and holds the voice commands that you make. The **Voice commands** screen isn't shown on watches.
+Voice commands run SandFly commands from speech: moving focus, reading, editing text, opening apps, activating items on the screen, calling a contact, sending a message, or describing the screen. One voice command can hold several commands one after another. **Voice commands** in SandFly settings turns on AI for commands that SandFly doesn't understand, sets the time limit of voice editing, holds the voice commands that you make, and lists the phrases that SandFly doesn't understand. The **Voice commands** screen isn't shown on watches.
 
 For the full list of phrases, see [](#appendix-voice-commands).
 
@@ -31,7 +31,7 @@ SandFly reads what you say in this order:
 
 Case and the punctuation that the speech recognizer adds don't matter. Words such as "please", "can you", "could you", "I want to" and "now" at the start, and "please", "for me" and "now" at the end, are left out.
 
-When SandFly doesn't understand a command, it says "Can't recognize this command" and how to get the list of commands.
+When SandFly doesn't understand a command, it says "Can't recognize this command" and how to get the list of commands. The third time it doesn't understand the same phrase, it also says "Added to Phrases not understood". See [](#voice-commands-not-understood).
 
 #### Apps, items and text {#voice-commands-sandfly}
 
@@ -132,6 +132,30 @@ Choose a custom voice command for **Change phrase**, **Change command** and **De
 **Export to file** saves the custom voice commands to a file, and **Import from file** adds them from one. See [](#api-item-files).
 
 A custom voice command can run any command, including a macro or a custom menu. To run several steps from one phrase, make a macro and give the macro a phrase. See [](#macros).
+
+### Phrases not understood {#voice-commands-not-understood}
+
+SandFly counts the voice commands that it doesn't understand. A phrase that isn't understood three times is listed under **Voice commands** > **Phrases not understood**, and SandFly says "Added to Phrases not understood".
+
+To make a listed phrase a custom voice command:
+
+1. In SandFly settings, choose **Voice commands**.
+2. Under **Phrases not understood**, choose the phrase.
+3. Choose **Add voice command**.
+4. Choose a category, then the command.
+
+The phrase leaves the list. **Delete** removes a phrase from the list without a voice command.
+
+Phrases are counted as custom voice commands are matched: case, punctuation, and words such as "please" at the start or end don't matter. Only a whole voice command counts, not a part of a chain. Not counted:
+
+- Voice commands said while a password field has input focus.
+- Phrases that start with "type", "write" or "enter".
+- Phrases longer than 200 characters.
+- Commands said during voice editing.
+
+A count is forgotten 7 days after the phrase was last not understood, and a listed phrase after 30 days. SandFly keeps up to 50 phrases. The phrases stay on the device and aren't in settings files or settings profiles.
+
+**Save phrases not understood** turns the counting on and off. On by default. Turning it off deletes the counts and the list.
 
 ### Languages {#voice-commands-languages}
 

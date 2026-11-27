@@ -25,8 +25,8 @@ import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 
 /**
- * Voice commands: whether the AI service turns commands into steps, and the voice commands the user
- * made, each a phrase that runs a command.
+ * Voice commands: whether the AI service turns commands into steps, the voice commands the user
+ * made, each a phrase that runs a command, and the phrases not understood.
  */
 class VoiceCommandsFragment : NotificationCodeFragment(R.string.title_pref_voice_commands) {
 
@@ -53,6 +53,52 @@ class VoiceCommandsFragment : NotificationCodeFragment(R.string.title_pref_voice
     for (entry in entries) {
       val label = Commands.find(context, entry.value)?.label ?: entry.value
       custom.action(entry.phrase, label) { showActions(entry) }
+    }
+    notUnderstood(screen)
+  }
+
+  /**
+   * Phrases not understood: whether voice commands not understood are counted, and the phrases not
+   * understood [NotUnderstoodPhrases.TIMES] times, each of which can become a custom voice command.
+   */
+  private fun notUnderstood(screen: PreferenceGroup) {
+    val group = screen.category(R.string.voice_phrases_not_understood)
+    val key = getString(R.string.pref_voice_phrases_not_understood_key)
+    val context = requireContext()
+    val on = NotUnderstoodPhrases.isOn(context)
+    group.switch(getString(R.string.title_pref_voice_phrases_not_understood), on) {
+      prefs.edit().putBoolean(key, it).apply()
+      if (!it) NotUnderstoodPhrases.clear(context)
+      rebuild()
+    }
+    if (!on) return
+    for (entry in NotUnderstoodPhrases.listed(context)) {
+      group.action(entry.phrase) { showNotUnderstood(entry) }
+    }
+  }
+
+  private fun showNotUnderstood(entry: NotUnderstoodPhrases.Entry) {
+    val actions = listOf<CharSequence>(getString(R.string.voice_command_add), getString(R.string.menu_delete))
+    choose(entry.phrase, actions) { which ->
+      if (which == 0) {
+        chooseCommand { value ->
+          val all = CustomVoiceCommands.read(prefs)
+          val locale = resources.configuration.locales[0]
+          // A phrase that is a custom voice command already keeps its command.
+          val exists = CustomVoiceCommands.find(all, entry.phrase, locale) != null
+          if (exists || all.size < CustomVoiceCommands.MAX) {
+            if (!exists) {
+              val added = CustomVoiceCommands.Entry(CustomVoiceCommands.newId(), entry.phrase, value)
+              CustomVoiceCommands.write(prefs, all + added)
+            }
+            NotUnderstoodPhrases.remove(requireContext(), entry.key)
+          }
+          rebuild()
+        }
+      } else {
+        NotUnderstoodPhrases.remove(requireContext(), entry.key)
+        rebuild()
+      }
     }
   }
 
