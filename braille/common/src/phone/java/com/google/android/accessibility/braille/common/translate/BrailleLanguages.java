@@ -35,6 +35,7 @@ import java.util.Optional;
  * Code} and {@link TranslatorFactory}.
  */
 public class BrailleLanguages {
+  public static final Locale LOCALE_AF = Locale.forLanguageTag("af");
   public static final Locale LOCALE_AR = Locale.forLanguageTag("ar");
   public static final Locale LOCALE_BG = Locale.forLanguageTag("bg");
   public static final Locale LOCALE_CA = Locale.forLanguageTag("ca");
@@ -172,6 +173,23 @@ public class BrailleLanguages {
    */
   // LINT.IfChange(supported_languages)
   public enum Code {
+    AFRIKAANS(
+        LOCALE_AF,
+        R.string.code_user_facing_name_afrikaans,
+        /* supportedContracted= */ true,
+        /* eightDot= */ false) {
+      @Override
+      EditBuffer createEditBuffer(
+          Context context,
+          TalkBackSpeaker talkBack,
+          BrailleTranslator translator,
+          boolean contractedMode) {
+        if (contractedMode) {
+          return new EditBufferCommonContracted(context, translator, talkBack);
+        }
+        return new EditBufferUnContracted(context, translator, talkBack);
+      }
+    },
     ARABIC(
         LOCALE_AR,
         R.string.code_user_facing_name_arabic,
