@@ -22,6 +22,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.os.Build.VERSION_CODES;
 import android.os.Build;
+import android.text.TextUtils;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.annotation.VisibleForTesting;
@@ -185,6 +186,11 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
   /** A new one-finger touch may be the next flick, not direct scrolling of the app. */
   public static synchronized void onTouchInteractionStart() {
     if (!webNavigation) clearNavigation();
+  }
+
+  /** Whether touch since this action could have scrolled the app directly. */
+  public static synchronized boolean directTouchSince(long actionTime) {
+    return lastDirectTouchUptime >= actionTime;
   }
 
   /** Called before multi-finger or delegated motion can scroll the app directly. */
@@ -416,6 +422,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
   // Inputs
   private Supplier<ScrollActionRecord> scrollActorState;
   private Supplier<ScrollActionRecord> finishedScrollRecord = () -> null;
+  private Supplier<ScrollActionRecord> supersededScrollRecord = () -> null;
   private final @Nullable AudioPlaybackMonitor audioPlaybackMonitor;
   private final @NonNull TouchMonitor touchMonitor;
 
@@ -445,6 +452,10 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
    */
   public void setFinishedScrollActionRecord(Supplier<ScrollActionRecord> finishedScrollRecord) {
     this.finishedScrollRecord = finishedScrollRecord;
+  }
+
+  public void setSupersededScrollActionRecord(Supplier<ScrollActionRecord> supersededScrollRecord) {
+    this.supersededScrollRecord = supersededScrollRecord;
   }
 
   public void setScrollActorState(Supplier<ScrollActionRecord> scrollActorState) {
@@ -645,6 +656,9 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
         isFromNavigation = isNavigationScroll(finishedScrollRecord.get());
         isFromScrollAhead = isScrollAhead(finishedScrollRecord.get());
         LogUtils.i(TAG, "End of an auto scroll");
+      } else if (wasSupersededRecyclerNavigation(event, sourceNode)) {
+        userAction = ScrollActionRecord.ACTION_UNKNOWN;
+        isFromNavigation = true;
       } else if (followsCurrentNavigation(event.getWindowId(), event.getEventTime())) {
         // The app scrolled to show the item that moving to the next or previous item focused,
         // such as a web view showing a web element.
@@ -715,6 +729,38 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     return finished != null
         && isFromAutoScrollAction(event, finished)
         && finished.scrolledNodeMatches(AccessibilityEventUtils.sourceCompat(event));
+  }
+
+  private static boolean isFocusScroll(@Nullable ScrollActionRecord record) {
+    return record != null && record.userAction == ScrollActionRecord.ACTION_AUTO_SCROLL
+        && ScrollActionRecord.FOCUS.equals(record.scrollSource);
+  }
+
+  private static boolean isRecyclerScroll(AccessibilityEvent event, AccessibilityNodeInfo source) {
+    return event.getEventType() == TYPE_VIEW_SCROLLED
+        && TextUtils.equals(source.getClassName(), "androidx.recyclerview.widget.RecyclerView");
+  }
+
+  /** An event from the previous swipe can reach us after the next scroll starts. */
+  private boolean wasSupersededRecyclerNavigation(
+      AccessibilityEvent event, AccessibilityNodeInfo source) {
+    ScrollActionRecord prior = supersededScrollRecord.get();
+    if (!isFocusScroll(prior) || !isRecyclerScroll(event, source)) {
+      return false;
+    }
+    ScrollActionRecord latest = scrollActorState.get();
+    if (latest == null) {
+      latest = finishedScrollRecord.get();
+    }
+    long time = event.getEventTime();
+    if (!isFocusScroll(latest)
+        || time < prior.autoScrolledTime || time >= latest.autoScrolledTime
+        || directTouchSince(prior.autoScrolledTime) || !isFromAutoScrollAction(event, prior)) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat node = AccessibilityNodeInfoCompat.wrap(source);
+    // Classify the event without handing it to the callback of either swipe.
+    return prior.scrolledNodeMatches(node);
   }
 
   /** Whether {@code record} is of a scroll that moving to the next or previous item made. */
