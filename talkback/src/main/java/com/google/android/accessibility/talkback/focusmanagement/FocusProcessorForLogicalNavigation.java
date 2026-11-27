@@ -222,6 +222,7 @@ public class FocusProcessorForLogicalNavigation {
   // field rather than through the keys.
   @FocusProcessorForTapAndTouchExploration.TypingMethod
   private static int typingMethod = FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE;
+  private static boolean swipesThroughKeys = false;
 
   // Whether the current navigation action stopped at the first or last item because wrapping is
   // off, where it would otherwise have wrapped around.
@@ -649,6 +650,11 @@ public class FocusProcessorForLogicalNavigation {
     typingMethod = method;
   }
 
+  /** Sets whether swipes from a key move through the keys with every typing method. */
+  public static void setSwipesThroughKeys(boolean throughKeys) {
+    swipesThroughKeys = throughKeys;
+  }
+
   /**
    * Whether swipes from {@code fromWindow} can go to the keyboard's window. Swipes from other
    * windows never go into the keyboard; swipes from inside it, such as with double-tap typing,
@@ -659,11 +665,14 @@ public class FocusProcessorForLogicalNavigation {
     return AccessibilityWindowInfoUtils.isImeWindow(fromWindow);
   }
 
-  /** Whether swipes from a key go on in the app from the text field, rather than through keys. */
+  /**
+   * Whether swipes from a key go on in the app from the text field, rather than through keys:
+   * with any typing method but double-tap, unless {@code throughKeys} is set.
+   */
   @VisibleForTesting
   static boolean swipesFromKeysStayInApp(
-      @FocusProcessorForTapAndTouchExploration.TypingMethod int method) {
-    return method != FocusProcessorForTapAndTouchExploration.DOUBLE_TAP;
+      @FocusProcessorForTapAndTouchExploration.TypingMethod int method, boolean throughKeys) {
+    return !throughKeys && method != FocusProcessorForTapAndTouchExploration.DOUBLE_TAP;
   }
 
   /** Whether a swipe past the last or first item stops there, rather than wrapping around. */
@@ -4450,7 +4459,7 @@ public class FocusProcessorForLogicalNavigation {
    */
   private AccessibilityNodeInfoCompat textFieldForKeyAfterTyping(
       AccessibilityNodeInfoCompat pivot, NavigationAction navigationAction) {
-    if (!swipesFromKeysStayInApp(typingMethod)
+    if (!swipesFromKeysStayInApp(typingMethod, swipesThroughKeys)
         || navigationAction.actionType != NavigationAction.DIRECTIONAL_NAVIGATION
         || !TraversalStrategyUtils.isLogicalDirection(navigationAction.searchDirection)
         || !isInKeyboard(pivot)) {

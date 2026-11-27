@@ -4941,6 +4941,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     globalVariables.setTypingMethod(accessibilityFocusInterpreter.getTypingMethod());
     FocusProcessorForLogicalNavigation.setTypingMethod(
         accessibilityFocusInterpreter.getTypingMethod());
+    FocusProcessorForLogicalNavigation.setSwipesThroughKeys(
+        getBooleanPref(
+            R.string.pref_typing_swipes_through_keys_key,
+            R.bool.pref_typing_swipes_through_keys_default));
 
     applyTouchExplorationPreference();
 
