@@ -76,6 +76,11 @@ data class ScriptSetting(
     TEXT("text"),
     NUMBER("number"),
     BUTTON("button", hasValue = false),
+    /**
+     * A SandFly command that the user chooses as for a gesture, or one of the script's own
+     * [options], or an empty text for none.
+     */
+    COMMAND("command"),
   }
 }
 

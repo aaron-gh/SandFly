@@ -812,17 +812,30 @@ settings = {
   { key = 'name', type = 'text', title = 'Your name', summary = 'Used in greetings' },
   { key = 'count', type = 'number', title = 'How many' },
   { key = 'reset', type = 'button', title = 'Reset counts' },
+  { key = 'onUnlock', type = 'command', title = 'When unlocked', default = 'TOGGLE_TOUCH_LOCK',
+    options = { { value = 'vibrate', label = 'Vibrate the time' } } },
 },
 ```
 
 | Field | Meaning |
 |---|---|
 | `key` | Required. Letters, digits, `.`, `-` and `_`, up to 64 characters, unique in the script. |
-| `type` | `'switch'` (the default), `'list'`, `'text'`, `'number'` or `'button'`. |
+| `type` | `'switch'` (the default), `'list'`, `'text'`, `'number'`, `'button'` or `'command'` (*Version 7*). |
 | `title` | Required. |
-| `summary` | Text under the title. A list shows its chosen option instead. |
-| `default` | The value before the user changes it. If left out: `false` for a switch, the first option for a list, `''` for text, 0 for a number. |
-| `options` | For a list, required: values, or `{ value, label }` records. |
+| `summary` | Text under the title. A list shows its chosen option instead, and a command setting its chosen command. |
+| `default` | The value before the user changes it. If left out: `false` for a switch, the first option for a list, `''` for text, 0 for a number, `''` (no command) for a command setting. |
+| `options` | For a list, required: values, or `{ value, label }` records. For a command setting, the script's own choices, in the same form. |
+
+*Version 7.* A command setting lets the user choose a SandFly command in the list used to assign a command to a gesture or a volume key press, with its categories and its search. The list has the setting's own `options` first, then **Unassigned**, then the commands of [`sf.commands.list()`](#run-sandfly-commands). The value is the command's id, which [`sf.commands.run`](#run-sandfly-commands) takes, an option's value, or `''` for **Unassigned**, so an option's value can't be empty. `sf.commands.run` needs the `input` permission, and the permissions some commands need, such as `system`. A script handles its own options itself, as in this example:
+
+```lua
+local command = sf.settings.get('onUnlock')
+if command == 'vibrate' then
+  vibrateTime()
+elseif command ~= '' then
+  sf.commands.run(command)
+end
+```
 
 A button has no value. Pressing it calls [`sf.onButton`](#hooks) with its key; while the script is off, SandFly shows "Turn the script on first".
 

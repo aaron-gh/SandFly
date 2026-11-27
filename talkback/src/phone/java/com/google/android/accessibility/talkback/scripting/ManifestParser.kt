@@ -178,14 +178,21 @@ class ManifestParser(private val strict: Boolean) {
       manifestCheck(type != ScriptSetting.Type.LIST || options.isNotEmpty()) {
         "The list setting $key needs options"
       }
+      val command = type == ScriptSetting.Type.COMMAND
+      // A command setting's default is a text; null, like no default, is no command.
+      val default = setting.opt("default")?.takeUnless { command && it == JSONObject.NULL }
+      manifestCheck(!command || default == null || default is String) {
+        "The default of the command setting $key is a command id or an option's value"
+      }
+      manifestCheck(!command || options.none { it.first.isEmpty() }) {
+        "An option of the command setting $key needs a value: an empty one is Unassigned"
+      }
       ScriptSetting(
         key = key,
         type = type,
         title = setting.requiredString("title"),
         summary = setting.optionalString("summary"),
-        defaultJson =
-          if (setting.has("default")) jsonOf(setting.get("default"))
-          else defaultJson(type, options),
+        defaultJson = if (default != null) jsonOf(default) else defaultJson(type, options),
         options = options,
       )
     }
@@ -198,6 +205,7 @@ class ManifestParser(private val strict: Boolean) {
       ScriptSetting.Type.TEXT -> jsonOf("")
       ScriptSetting.Type.NUMBER -> "0"
       ScriptSetting.Type.BUTTON -> "null"
+      ScriptSetting.Type.COMMAND -> jsonOf("")
     }
 
   private fun rules(array: JSONArray?): List<ScriptRule> {

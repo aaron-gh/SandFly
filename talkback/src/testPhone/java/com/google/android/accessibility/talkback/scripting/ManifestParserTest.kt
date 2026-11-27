@@ -408,6 +408,35 @@ class ManifestParserTest {
   }
 
   @Test
+  fun aCommandSettingDefaultsToNoCommandAndTakesItsOwnOptions() {
+    val none = parse(""","settings":[{"key":"go","type":"command","title":"Go"}]""").settings[0]
+    assertEquals(ScriptSetting.Type.COMMAND, none.type)
+    assertEquals("\"\"", none.defaultJson)
+    assertTrue(none.options.isEmpty())
+
+    val chosen =
+      parse(
+          ""","settings":[{"key":"go","type":"command","title":"Go","default":"TOGGLE_TOUCH_LOCK",""" +
+            """"options":[{"value":"vibrate","label":"Vibrate the time"}]}]"""
+        )
+        .settings[0]
+    assertEquals("\"TOGGLE_TOUCH_LOCK\"", chosen.defaultJson)
+    assertEquals(listOf("vibrate" to "Vibrate the time"), chosen.options)
+
+    assertTrue(
+      "command id" in rejects(""","settings":[{"key":"go","type":"command","title":"Go","default":3}]""")
+    )
+    val nullDefault =
+      parse(""","settings":[{"key":"go","type":"command","title":"Go","default":null}]""")
+        .settings[0]
+    assertEquals("\"\"", nullDefault.defaultJson)
+    assertTrue(
+      "Unassigned" in
+        rejects(""","settings":[{"key":"go","type":"command","title":"Go","options":[""]}]""")
+    )
+  }
+
+  @Test
   fun aSwitchSettingDefaultsToOff() {
     val setting = parse(""","settings":[{"key":"loud","title":"Loud"}]""").settings[0]
 

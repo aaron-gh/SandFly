@@ -43,6 +43,7 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.gesture.AppShortcutActions;
 import com.google.android.accessibility.talkback.preference.base.GestureListPreference.ActionItem;
 import com.google.android.accessibility.talkback.preference.search.SettingsSearch;
+import com.google.android.accessibility.talkback.scripting.ScriptRuntime;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
@@ -61,11 +62,28 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
   private static final String GESTURE_TITLE = "GESTURE_TITLE";
   private static final String GESTURE_INITIAL_VALUE = "GESTURE_INITIAL_VALUE";
   private static final String GESTURE_DEFAULT_ROW_TEXT = "GESTURE_DEFAULT_ROW_TEXT";
+  private static final String COMMAND_SETTING_RESULT_KEY = "COMMAND_SETTING_RESULT_KEY";
+  private static final String COMMAND_SETTING_TAG = "COMMAND_SETTING_TAG";
+  private static final String COMMAND_SETTING_CHOICE_LABELS = "COMMAND_SETTING_CHOICE_LABELS";
+  private static final String COMMAND_SETTING_CHOICE_VALUES = "COMMAND_SETTING_CHOICE_VALUES";
+
+  /** The command chosen for a command setting, in the fragment result. */
+  public static final String RESULT_COMMAND = "command";
+
+  /** The tag given with {@link #commandSettingArguments}, in the fragment result. */
+  public static final String RESULT_TAG = "tag";
 
   private Parcelable[] items;
   private CharSequence title;
   private String initialValue;
   private String preferenceKey;
+
+  // For a script's command setting: the key of the fragment result that gets the chosen command,
+  // or null when the list assigns a command to a gesture.
+  @Nullable private String resultKey;
+  @Nullable private String resultTag;
+  private String[] choiceLabels = new String[0];
+  private String[] choiceValues = new String[0];
 
   private final OnPreferenceClickListener onPreferenceClickListener =
       new OnPreferenceClickListener() {
@@ -81,6 +99,16 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
    */
   private boolean choose(ActionItem item) {
     boolean checked = TextUtils.equals(item.value, initialValue);
+    if (resultKey != null) {
+      if (!checked) {
+        Bundle result = new Bundle();
+        result.putString(RESULT_COMMAND, item.value);
+        result.putString(RESULT_TAG, resultTag);
+        getParentFragmentManager().setFragmentResult(resultKey, result);
+      }
+      popBackStack();
+      return !checked;
+    }
     if (checked) {
       // The selected action is clicked again and it is going to be unchecked. We should
       // return false to ignore it and don't set the value to targetGestureListPreference.
@@ -137,6 +165,29 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
     return bundle;
   }
 
+  /**
+   * Returns the arguments that open the list for a script's command setting, titled {@code title},
+   * with {@code current} chosen. The list has the script's own choices first, then Unassigned, with
+   * an empty value, then the commands that scripts may run. Choosing one gives {@link
+   * #RESULT_COMMAND} and {@code tag} as the fragment result {@code resultKey}, and closes the list.
+   */
+  public static Bundle commandSettingArguments(
+      CharSequence title,
+      String current,
+      String resultKey,
+      String tag,
+      String[] choiceLabels,
+      String[] choiceValues) {
+    Bundle bundle = new Bundle();
+    bundle.putCharSequence(GESTURE_TITLE, title);
+    bundle.putString(GESTURE_INITIAL_VALUE, current);
+    bundle.putString(COMMAND_SETTING_RESULT_KEY, resultKey);
+    bundle.putString(COMMAND_SETTING_TAG, tag);
+    bundle.putStringArray(COMMAND_SETTING_CHOICE_LABELS, choiceLabels);
+    bundle.putStringArray(COMMAND_SETTING_CHOICE_VALUES, choiceValues);
+    return bundle;
+  }
+
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
@@ -185,6 +236,14 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
     title = bundle.getCharSequence(GESTURE_TITLE);
     initialValue = bundle.getString(GESTURE_INITIAL_VALUE);
     preferenceKey = rootKey;
+    resultKey = bundle.getString(COMMAND_SETTING_RESULT_KEY);
+    resultTag = bundle.getString(COMMAND_SETTING_TAG);
+    String[] labels = bundle.getStringArray(COMMAND_SETTING_CHOICE_LABELS);
+    String[] values = bundle.getStringArray(COMMAND_SETTING_CHOICE_VALUES);
+    if (labels != null && values != null) {
+      choiceLabels = labels;
+      choiceValues = values;
+    }
     String defaultRowText = bundle.getString(GESTURE_DEFAULT_ROW_TEXT);
     showCommands(defaultRowText);
     // Shizuku's app shortcuts can change the App shortcuts category.
@@ -198,8 +257,12 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
   }
 
   private void showCommands(@Nullable String defaultRowText) {
+    Context context = requireContext();
     items =
-        GestureListPreference.buildActionItems(requireContext(), defaultRowText)
+        (resultKey != null
+                ? GestureListPreference.buildCommandSettingItems(
+                    context, choiceLabels, choiceValues, ScriptRuntime.runnableCommands(context))
+                : GestureListPreference.buildActionItems(context, defaultRowText))
             .toArray(new ActionItem[0]);
     PreferenceSettingsUtils.setPreferenceScreen(this, createPreferenceScreen());
   }
