@@ -524,6 +524,7 @@ commands = {
 | `keys` | Keys, or a list of them. See [Keys](#keys). |
 | `menu` | `true` adds the command to the SandFly menu. |
 | `control` | `true` adds it to the reading controls. Swiping up or down with the control selected runs the command with `direction` set to `'previous'` or `'next'`. |
+| `overKeyboard` | `true` lets the command run while the on-screen braille keyboard, braille screen input or handwriting is shown. Without it SandFly only plays a sound there, because a window opened over the keyboard would hide it. Use it only for commands that open no dialog, such as pressing a button. |
 
 A command with `gesture`, `keys`, `menu` or `control` needs the `input` permission. *Version 6:* a command with only `id` and `title` needs no permission; before, every command needed `input`. A script that does a task when its command runs, such as turning on the flashlight, lists only the permissions of the task. A manifest can have up to 50 commands.
 

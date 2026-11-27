@@ -82,6 +82,15 @@ class ScriptStore private constructor(private val context: Context) {
   /** Whether any script stays loaded while the screen is off. */
   @Synchronized fun anyKeptWithScreenOff(): Boolean = scripts.any(ScriptLoading::keptWithScreenOff)
 
+  /** Whether the enabled script command saved as [value] has `overKeyboard`. */
+  fun runsOverKeyboard(value: String): Boolean =
+    all().any { script ->
+      script.enabled &&
+        script.manifest.commands.any {
+          it.overKeyboard && ScriptCommands.valueOf(script.id, it.id) == value
+        }
+    }
+
   /** Returns the turned on onDemand script with the command saved as [value], or null. */
   fun onDemandScriptOf(value: String): InstalledScript? =
     all().firstOrNull { script ->

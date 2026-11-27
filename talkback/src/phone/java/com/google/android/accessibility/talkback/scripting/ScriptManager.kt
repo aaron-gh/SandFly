@@ -321,6 +321,8 @@ class ScriptManager(
       ScriptMenuItem(bound.command.title) { node -> runCommand(bound, "menu", node = node) }
     }
 
+  override fun runsOverKeyboard(value: String): Boolean = store.runsOverKeyboard(value)
+
   override fun runScriptCommand(value: String): Boolean {
     activation.refresh()
     if (activation.inBacktalk) {

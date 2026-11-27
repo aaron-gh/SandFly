@@ -438,7 +438,8 @@ public class GestureController {
         || ReadingControlCommands.settingOf(action) != null
         || GestureProfiles.isAction(action)
         || VoiceProfileNames.isCommand(action)
-        || BrailleCommands.isAction(action);
+        || BrailleCommands.isAction(action)
+        || (ScriptCommands.isCommand(action) && Scripts.runsOverKeyboard(action));
   }
 
   /** Commands that open no window, so they run over the braille keyboard and handwriting. */

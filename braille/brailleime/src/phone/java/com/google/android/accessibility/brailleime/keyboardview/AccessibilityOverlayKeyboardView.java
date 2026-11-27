@@ -39,6 +39,26 @@ import com.google.android.accessibility.brailleime.tutorial.TutorialView.Tutoria
  */
 public class AccessibilityOverlayKeyboardView extends KeyboardView {
   private static final String TAG = "AccessibilityOverlayKeyboardView";
+
+  /** The keyboard whose window is on screen, for {@link #setTouchesPassThrough}. */
+  private static AccessibilityOverlayKeyboardView shownKeyboard;
+
+  private static boolean touchesPassThrough;
+
+  /**
+   * Lets touches through the braille keyboard to the window under it, or takes them again. A
+   * script's tap then reaches a button under the keyboard, such as the Wispr Flow bubble, without
+   * typing a dot. Called on the main thread.
+   */
+  public static void setTouchesPassThrough(boolean passThrough) {
+    if (touchesPassThrough == passThrough) {
+      return;
+    }
+    touchesPassThrough = passThrough;
+    if (shownKeyboard != null) {
+      shownKeyboard.updateViewContainerInternal();
+    }
+  }
   protected static final float SCREEN_HIDE_ALPHA = 0.001f;
   protected static final float SCREEN_SHOW_ALPHA = 1;
   private final ScreenOnOffReceiver screenOnOffReceiver;
@@ -96,11 +116,17 @@ public class AccessibilityOverlayKeyboardView extends KeyboardView {
       } else {
         imeInputView = new FrameLayout(context);
       }
-      // Ensure non-zero height to make sure framework considers the inputView significant enough to
-      // include in the info sent to TalkBack.
-      imeInputView.setMinimumHeight(1);
+      // The keyboard is drawn in the accessibility overlay. This empty view only gives the IME window
+      // the height of a usual keyboard, so that apps that look at the keyboard's window, such as
+      // Wispr Flow showing its dictation bubble, know a keyboard is open. It must be non-zero for
+      // the framework to include the inputView in the info sent to TalkBack.
+      imeInputView.setMinimumHeight(heightOfUsualKeyboard());
     }
     return imeInputView;
+  }
+
+  private int heightOfUsualKeyboard() {
+    return context.getResources().getDisplayMetrics().heightPixels / 3;
   }
 
   @Override
@@ -113,6 +139,7 @@ public class AccessibilityOverlayKeyboardView extends KeyboardView {
     }
 
     windowManager.addView(viewContainer, getWindowsLayoutParams());
+    shownKeyboard = this;
     return viewContainer;
   }
 
@@ -128,6 +155,9 @@ public class AccessibilityOverlayKeyboardView extends KeyboardView {
 
   @Override
   protected void tearDownInternal() {
+    if (shownKeyboard == this) {
+      shownKeyboard = null;
+    }
     if (windowManager != null) {
       windowManager.removeViewImmediate(viewContainer);
     }
@@ -162,6 +192,9 @@ public class AccessibilityOverlayKeyboardView extends KeyboardView {
     // A workaround for b/258382964, which only occurs in T.
     if (Build.VERSION.SDK_INT == VERSION_CODES.TIRAMISU) {
       params.flags |= WindowManager.LayoutParams.FLAG_SPLIT_TOUCH;
+    }
+    if (touchesPassThrough) {
+      params.flags |= WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE;
     }
     params.type = WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY;
     params.gravity = Gravity.TOP;

@@ -239,6 +239,8 @@ data class ScriptCommand(
   val keys: List<ScriptInput.Keys>,
   val menu: Boolean,
   val control: Boolean,
+  /** Whether the command runs while the braille keyboard or handwriting is shown: it opens no window. */
+  val overKeyboard: Boolean = false,
 ) {
   fun isDefault(binding: CommandBinding): Boolean = bindings.any { it.key == binding.key }
 
