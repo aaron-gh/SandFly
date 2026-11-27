@@ -1283,10 +1283,13 @@ object NotificationReader {
         commandSaid += request
         // A text whose voice hasn't started in time is said in SandFly's voice, in the queue, rather
         // than after the speech that followed it. Said over SandFly's speech, it is dropped. It is
-        // stopped only when it is alone in the engine, whose queue can't be stopped in part.
+        // stopped only when the engine hasn't taken it yet or it is alone in the engine, whose queue
+        // can't be stopped in part.
         val giveUp = Runnable {
           if (request.started || request.finished) return@Runnable
-          if (voice.hasRequestsOtherThan(listOf(request))) return@Runnable
+          if (!voice.isWaiting(request) && voice.hasRequestsOtherThan(listOf(request))) {
+            return@Runnable
+          }
           request.fallBack = !request.over
           voice.stop(request)
           if (request.finish()) {

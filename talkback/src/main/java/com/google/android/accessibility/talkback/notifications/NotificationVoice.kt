@@ -574,6 +574,10 @@ class NotificationVoice(private val context: Context) {
     releaseWhenIdle()
   }
 
+  /** Whether the request of [listener] waits for the engine, which hasn't taken it yet. */
+  @MainThread
+  fun isWaiting(listener: Listener): Boolean = pending.any { it.listener === listener }
+
   /**
    * Whether the voice has text of someone other than [ours], waiting, taken by the engine or being
    * said. Text without a listener, such as the summary and the time, is always another's. The
