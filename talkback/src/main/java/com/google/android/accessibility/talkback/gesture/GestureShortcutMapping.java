@@ -2709,6 +2709,8 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_value_system_quick_settings, R.string.shortcut_system_quick_settings),
     LOCK_SCREEN(R.string.shortcut_value_lock_screen, R.string.shortcut_lock_screen),
     POWER_MENU(R.string.shortcut_value_power_menu, R.string.shortcut_power_menu),
+    RESTART_PHONE(R.string.shortcut_value_restart_phone, R.string.shortcut_restart_phone),
+    POWER_OFF_PHONE(R.string.shortcut_value_power_off_phone, R.string.shortcut_power_off_phone),
     ALL_APPS(R.string.shortcut_value_all_apps, R.string.shortcut_all_apps),
     A11Y_BUTTON(R.string.shortcut_value_a11y_button, R.string.shortcut_a11y_button),
     A11Y_BUTTON_LONG_PRESS(

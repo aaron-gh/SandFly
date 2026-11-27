@@ -991,6 +991,8 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.systemAction(AccessibilityService.GLOBAL_ACTION_POWER_DIALOG));
+    } else if (PowerCommands.isAction(service, action)) {
+      PowerCommands.run(service, pipeline, action);
     } else if (action.equals(service.getString(R.string.shortcut_value_all_apps))) {
       result =
           pipeline.returnFeedback(

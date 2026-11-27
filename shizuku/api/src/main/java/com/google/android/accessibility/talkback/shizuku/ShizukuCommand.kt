@@ -65,7 +65,11 @@ enum class ShizukuCommand {
    * Sets the default display's density, as Android's Display size setting does: [RESET] for the
    * device's own, or a density in dpi from [MIN_DENSITY] to [MAX_DENSITY].
    */
-  DISPLAY_DENSITY;
+  DISPLAY_DENSITY,
+  /** Restarts the device, as the power menu's Restart does. It takes no argument. */
+  REBOOT,
+  /** Turns the device off, as the power menu's Power off does. It takes no argument. */
+  POWER_OFF;
 
   /**
    * The command, as adb would run it after `adb shell`, or null if [argument] isn't one it takes.
@@ -118,6 +122,8 @@ enum class ShizukuCommand {
         argument
           .takeIf { it == RESET || (DENSITY.matches(it) && it.toInt() in MIN_DENSITY..MAX_DENSITY) }
           ?.let { listOf("wm", "density", it) }
+      REBOOT -> argument.takeIf { it.isEmpty() }?.let { listOf("svc", "power", "reboot") }
+      POWER_OFF -> argument.takeIf { it.isEmpty() }?.let { listOf("svc", "power", "shutdown") }
     }
   }
 
