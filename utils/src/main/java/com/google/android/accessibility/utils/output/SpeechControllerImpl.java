@@ -727,7 +727,9 @@ public class SpeechControllerImpl implements SpeechController {
   public @Nullable Set<Voice> getVoices() {
     try {
       if (failoverTts.isReady()) {
-        return failoverTts.getEngineInstance().getVoices();
+        @Nullable Set<Voice> voices = failoverTts.getVoices();
+        // A copy, since callers may change it.
+        return voices == null ? null : new HashSet<>(voices);
       }
 
       LogUtils.w(TAG, "Attempted to get voices before TTS was initialized.");
