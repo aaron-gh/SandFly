@@ -76,6 +76,14 @@ class TouchInteractionMonitorTest {
     val fingerAtScreenEdge = mutableListOf<Boolean>()
     var tapActivatesAtOnce = false
     var tapExplorations = 0
+    val stationaryTouches = mutableListOf<Pair<Float, Float>>()
+    var stationaryTargetFound = true
+
+    override fun onStationaryContinuedTouch(displayId: Int, x: Float, y: Float, tap: Boolean): Boolean {
+      stationaryTouches.add(x to y)
+      if (stationaryTargetFound && tap) onTapExploration()
+      return stationaryTargetFound
+    }
     val touchExplorerResets = mutableListOf<String>()
     var mapping: GestureShortcutMapping? = null
 
@@ -447,6 +455,78 @@ class TouchInteractionMonitorTest {
     runUntil(90)
     assertEquals(listOf<Thread>(), reporter.requests)
     runUntil(150)
+    assertEquals(listOf(mainThread), reporter.requests)
+  }
+
+  /** Swipes, then puts a finger down before Android closes the swipe's interaction. */
+  private fun swipeThenTouch(y: Float = 230f) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 40f, 200f, 0)
+    touchAt(ACTION_MOVE, 110f, 200f, 20)
+    touchAt(ACTION_MOVE, 195f, 200f, 40)
+    touchAt(ACTION_UP, 255f, 200f, 65)
+    touchAt(ACTION_DOWN, 170f, y, 190)
+  }
+
+  @Test
+  fun continuedTouchIsReadWhileStillAndUsesAndroidOnTheFirstMove() {
+    swipeThenTouch()
+    runUntil(350)
+
+    assertEquals(listOf(GESTURE_SWIPE_RIGHT), service.gestures)
+    assertEquals(listOf(170f to 230f), service.stationaryTouches)
+    assertEquals(emptyList<Thread>(), reporter.requests)
+
+    touchAt(ACTION_MOVE, 175f, 230f, 365)
+    runUntil(400)
+
+    assertEquals(listOf(mainThread), reporter.requests)
+    assertEquals(listOf(170f to 230f), service.stationaryTouches)
+    assertEquals(0, service.tapExplorations)
+  }
+
+  @Test
+  fun whenTheStationaryLookupFindsNothingAndroidStillExploresTheTap() {
+    service.stationaryTargetFound = false
+    swipeThenTouch()
+    touchAt(ACTION_UP, 170f, 230f, 230)
+    runUntil(570)
+
+    assertEquals(listOf(170f to 230f), service.stationaryTouches)
+    assertEquals(listOf(mainThread), reporter.requests)
+    assertEquals(1, service.tapExplorations)
+  }
+
+  @Test
+  fun aContinuedTouchOnAnInputMethodWindowUsesNativeExploration() {
+    service.displayWindows =
+      listOf(
+        window(AccessibilityWindowInfo.TYPE_INPUT_METHOD, Rect(0, 1000, 1080, 1600)),
+        window(AccessibilityWindowInfo.TYPE_APPLICATION, Rect(0, 0, 1080, 2400)),
+      )
+    swipeThenTouch(y = 1200f)
+    runUntil(350)
+
+    assertEquals(listOf(mainThread), reporter.requests)
+    assertEquals(emptyList<Pair<Float, Float>>(), service.stationaryTouches)
+  }
+
+  @Test
+  fun aCancelledContinuedTouchDoesNotStartExplorationOnTheNextTouch() {
+    swipeThenTouch(y = 240f)
+    runUntil(350)
+    assertEquals(listOf(170f to 240f), service.stationaryTouches)
+
+    touchAt(MotionEvent.ACTION_CANCEL, 170f, 240f, 360)
+    stateChangeAt(STATE_CLEAR, 361)
+    stateChangeAt(STATE_TOUCH_INTERACTING, 420)
+    touchAt(ACTION_DOWN, 210f, 260f, 420)
+    touchAt(ACTION_MOVE, 215f, 260f, 440)
+
+    runUntil(465)
+    assertEquals(emptyList<Thread>(), reporter.requests)
+
+    runUntil(600)
     assertEquals(listOf(mainThread), reporter.requests)
   }
 

@@ -118,6 +118,7 @@ class TrackedGestureTest {
   class RecordingService : TalkBackService() {
     val gestures = mutableListOf<Int>()
     val commands = mutableListOf<String>()
+    val stationaryTouches = mutableListOf<Pair<Float, Float>>()
     var mapping: GestureShortcutMapping? = null
     var displayWindows = listOf<AccessibilityWindowInfo>()
 
@@ -134,6 +135,11 @@ class TrackedGestureTest {
     }
 
     override fun onGestureDetectionStarted() {}
+
+    override fun onStationaryContinuedTouch(displayId: Int, x: Float, y: Float, tap: Boolean): Boolean {
+      stationaryTouches.add(x to y)
+      return true
+    }
 
     override fun getGestureShortcutMapping(): GestureShortcutMapping? = mapping
   }
@@ -675,7 +681,7 @@ class TrackedGestureTest {
   }
 
   /** Two fingers 200 px apart turn clockwise by [degrees] around their middle. */
-  private fun twoFingerTurn(degrees: Double) {
+  private fun twoFingerTurn(degrees: Double): Long {
     stateChangeAt(STATE_TOUCH_INTERACTING, 0)
     val cx = 160f
     val cy = 300f
@@ -701,14 +707,15 @@ class TrackedGestureTest {
     val end = points(-degrees)
     time += 10
     touchAt(ACTION_POINTER_UP, time, *end, actionIndex = 1)
-    touchAt(ACTION_UP, time + 5, end[0], end[1])
-    runUntil(time + 500)
+    val lift = time + 5
+    touchAt(ACTION_UP, lift, end[0], end[1])
+    return lift
   }
 
   @Test
   fun rotationWorksWhileSandFlyHandlesTwoFingerSwipes() {
     monitor.setTwoFingerPassthroughEnabled(false)
-    twoFingerTurn(60.0)
+    runUntil(twoFingerTurn(60.0) + 500)
     assertEquals(true, service.gestures.isNotEmpty())
     assertEquals(
       true,
@@ -716,6 +723,23 @@ class TrackedGestureTest {
         it == GESTURE_2_FINGER_ROTATE_CLOCKWISE || it == GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE
       },
     )
+  }
+
+  @Test
+  fun touchAfterRotationIsExploredWhileAndroidContinuesTheInteraction() {
+    val down = twoFingerTurn(45.0) + 130
+    touchAt(ACTION_DOWN, down, 155f, 245f)
+    runUntil(down + 150)
+
+    assertEquals(true, service.gestures.isNotEmpty())
+    assertEquals(listOf(155f to 245f), service.stationaryTouches)
+    assertEquals(false, requestedState(STATE_TOUCH_EXPLORING))
+
+    touchAt(ACTION_MOVE, down + 165, 160f, 250f)
+    runUntil(down + 210)
+
+    assertEquals(true, requestedState(STATE_TOUCH_EXPLORING))
+    assertEquals(listOf(155f to 245f), service.stationaryTouches)
   }
 
   /** Four fingers tap together at [y]. */
@@ -1408,14 +1432,15 @@ class TrackedGestureTest {
   }
 
   @Test
-  fun heldSecondTapInACornerLiftedBeforeItsHoldIsExplored() {
+  fun releasingACornerHoldTooSoonOnlyExploresTheStationaryTouch() {
     assign(
       R.string.shortcut_value_home,
       R.string.pref_shortcut_corner_top_right_double_tap_hold_key,
     )
     tapsAt(310f, 10f, 0, 150, lastUpMs = 250)
     assertEquals(listOf<Int>(), service.gestures)
-    assertEquals(true, requestedState(STATE_TOUCH_EXPLORING))
+    assertEquals(listOf(310f to 10f), service.stationaryTouches)
+    assertEquals(false, requestedState(STATE_TOUCH_EXPLORING))
   }
 
   @Test

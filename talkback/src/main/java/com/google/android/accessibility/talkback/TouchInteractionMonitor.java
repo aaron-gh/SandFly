@@ -381,6 +381,10 @@ public class TouchInteractionMonitor
   // Whether this monitor is waiting for a state transition.
   // Motion events will be queued and sent to listeners after the transition has taken place.
   private boolean stateChangeRequested = false;
+  // Tracks Android's interaction, which can contain more than one physical touch.
+  private boolean receivedDownInInteraction;
+  private boolean continuedTouchWithoutMove;
+  private boolean explorationWaitingForMove;
   // This is used to monitor whether all 1-finger gesture detectors have failed(cancelled).
   // If the condition met, we can request touch control for touch explore state transition.
   // Before it happens, if
@@ -1042,15 +1046,34 @@ public class TouchInteractionMonitor
       return;
     }
     receivedPointerTracker.onMotionEvent(event);
-    if (event.getActionMasked() == ACTION_POINTER_DOWN
-        && event.getPointerCount() == 2
-        && oneFingerSwipeStarted
-        && !nonSwipeGestureStarted) {
-      // The swipe matchers cancel on a second finger. Let the two-finger movement be classified.
-      oneFingerSwipeInterrupted = true;
-      gestureStarted = false;
+    int action = event.getActionMasked();
+    if (action == ACTION_MOVE && continuedTouchWithoutMove) {
+      continuedTouchWithoutMove = false;
+      if (explorationWaitingForMove && event.getPointerCount() == 1) {
+        explorationWaitingForMove = false;
+        requestTouchExploration("firstMoveOfContinuedTouch");
+        return;
+      }
+    } else if (action == ACTION_POINTER_DOWN) {
+      continuedTouchWithoutMove = false;
+      explorationWaitingForMove = false;
+      if (event.getPointerCount() == 2 && oneFingerSwipeStarted && !nonSwipeGestureStarted) {
+        // The swipe matchers cancel on a second finger. Let the two-finger movement be classified.
+        oneFingerSwipeInterrupted = true;
+        gestureStarted = false;
+      }
+    } else if (action == MotionEvent.ACTION_CANCEL && continuedTouchWithoutMove) {
+      continuedTouchWithoutMove = false;
+      explorationWaitingForMove = false;
+      keepMonitorTouchExplore = false;
+      requestTouchExplorationDelayed.cancel();
     }
-    if (event.getActionMasked() == ACTION_DOWN) {
+    if (action == ACTION_DOWN) {
+      continuedTouchWithoutMove = state == STATE_TOUCH_INTERACTING && receivedDownInInteraction;
+      if (state == STATE_TOUCH_INTERACTING) {
+        receivedDownInInteraction = true;
+      }
+      explorationWaitingForMove = false;
       if (oneFingerSwipeInterrupted && !nonSwipeGestureStarted) {
         // Android can group separate touches. Only the interrupted swipe belongs to the old touch.
         gestureDetector.clearOneFingerSwipes();
@@ -1375,6 +1398,13 @@ public class TouchInteractionMonitor
       }
     }
 
+    if (state != STATE_TOUCH_INTERACTING) {
+      continuedTouchWithoutMove = false;
+      explorationWaitingForMove = false;
+    }
+    if (state == STATE_CLEAR) {
+      receivedDownInInteraction = false;
+    }
     previousState = this.state;
     this.state = state;
     requestTouchExplorationDelayed.cancel();
@@ -1473,6 +1503,8 @@ public class TouchInteractionMonitor
     lastExploredNode = null;
     skipLookupsInLastExploredBounds = false;
     stateChangeRequested = false;
+    continuedTouchWithoutMove = false;
+    explorationWaitingForMove = false;
     if (keepWaitingTaps) {
       gestureDetector.clearExceptWaitingTaps();
     } else {
@@ -2821,6 +2853,19 @@ public class TouchInteractionMonitor
     }
     if (gboardRoot != null && fingerDown && state == STATE_TOUCH_INTERACTING) {
       startExploringKeyboard(caller);
+      return;
+    }
+    if (explorationWaitingForMove) {
+      return;
+    }
+    // A second down in the same interaction clears Android's hover buffer. Until the finger
+    // moves, a native request can leave the controller waiting for a state change.
+    if (state == STATE_TOUCH_INTERACTING
+        && continuedTouchWithoutMove
+        && receivedPointerTracker.getReceivedPointerDownCount() <= 1
+        && !isOnKeyboard(lastFingerX, lastFingerY)
+        && service.onStationaryContinuedTouch(displayId, lastFingerX, lastFingerY, !fingerDown)) {
+      explorationWaitingForMove = true;
       return;
     }
     try {

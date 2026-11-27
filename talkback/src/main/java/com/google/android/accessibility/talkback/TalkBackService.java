@@ -225,6 +225,7 @@ import com.google.android.accessibility.talkback.gesture.GestureLayoutActivity;
 import com.google.android.accessibility.talkback.gesture.GestureHistory;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
+import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
 import com.google.android.accessibility.talkback.gesture.KeyboardHover;
 import com.google.android.accessibility.talkback.gesture.PowerCommands;
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
@@ -4639,6 +4640,24 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (touchExplorationInterpreter != null) {
       touchExplorationInterpreter.onNodeTouched(node, EVENT_ID_UNTRACKED);
     }
+  }
+
+  /** Tries to handle the item under a stationary finger while Android has no hover event for it. */
+  @RequiresApi(Build.VERSION_CODES.R)
+  public boolean onStationaryContinuedTouch(int displayId, float x, float y, boolean tap) {
+    if (touchExplorationInterpreter == null || PauseController.isPaused()) {
+      return false;
+    }
+    @Nullable AccessibilityNodeInfoCompat target =
+        KeyboardExploration.stationaryTouchTargetAt(this, displayId, x, y);
+    if (target == null) {
+      return false;
+    }
+    if (tap) {
+      onTapExploration();
+    }
+    touchExplorationInterpreter.onNodeTouched(target, EVENT_ID_UNTRACKED);
+    return true;
   }
 
   /** Types the key explored on Gboard when a second finger touches the screen: split tap. */
