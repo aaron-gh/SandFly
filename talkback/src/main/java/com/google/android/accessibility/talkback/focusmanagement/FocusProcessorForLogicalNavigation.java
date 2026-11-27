@@ -38,6 +38,7 @@ import static com.google.android.accessibility.utils.AccessibilityNodeInfoUtils.
 import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED;
 import static com.google.android.accessibility.utils.Role.ROLE_FLOATING_ACTION_BUTTON;
 import static com.google.android.accessibility.utils.monitor.InputModeTracker.INPUT_MODE_KEYBOARD;
+import static com.google.android.accessibility.utils.monitor.InputModeTracker.INPUT_MODE_TOUCH;
 import static com.google.android.accessibility.utils.output.ScrollActionRecord.AutoScrollSuccessChecker;
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_BACKWARD;
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_DOWN;
@@ -683,7 +684,29 @@ public class FocusProcessorForLogicalNavigation {
       LogUtils.w(TAG, "Cannot perform navigation action: action type undefined.");
       return false;
     }
-    AccessibilityNodeInfoCompat pivot = getPivotNodeForNavigationAction(navigationAction);
+    // A focused node held by the current reading order needs no extra round trip to the app.
+    AccessibilityNodeInfoCompat currentFocus =
+        accessibilityFocusMonitor.getAccessibilityFocus(
+            /* useInputFocusIfEmpty= */ false,
+            /* requireEditable= */ false,
+            /* isCurrent= */ Filter.node(TraversalTreeCache::holds));
+    if (currentFocus == null
+        && navigationAction.inputMode == INPUT_MODE_TOUCH
+        && isMoveToNextOrPreviousItem(navigationAction)
+        && service instanceof TalkBackService talkBack) {
+      @SearchDirection int direction =
+          goesForward(navigationAction) ? SEARCH_FOCUS_FORWARD : SEARCH_FOCUS_BACKWARD;
+      AccessibilityNodeInfoCompat item = talkBack.itemInRecentlyScrolledList(direction);
+      if (item != null && setAccessibilityFocusInternal(item, navigationAction, eventId)) {
+        stoppedAtEdge = false;
+        lastLogicalDirection = direction;
+        ScrollEventInterpreter.onNavigation(item.getWindowId());
+        LogUtils.d(TAG, "Focused an item in the list that was scrolled.");
+        return true;
+      }
+    }
+    AccessibilityNodeInfoCompat pivot =
+        getPivotNodeForNavigationAction(navigationAction, currentFocus);
     if (pivot == null) {
       // Ideally the pivot should never be null. Do the null check in case of exception.
       LogUtils.w(TAG, "Cannot find pivot node for %s", navigationAction);
@@ -986,15 +1009,7 @@ public class FocusProcessorForLogicalNavigation {
    * </ol>
    */
   private AccessibilityNodeInfoCompat getPivotNodeForNavigationAction(
-      NavigationAction navigationAction) {
-    // While the saved reading order holds the focused node, Android's cached copy of the node is
-    // current: nothing that could change the window has happened since the order was read from the
-    // app. So the focus monitor need not ask the app for the node again then.
-    AccessibilityNodeInfoCompat pivot =
-        accessibilityFocusMonitor.getAccessibilityFocus(
-            /* useInputFocusIfEmpty= */ false,
-            /* requireEditable= */ false,
-            /* isCurrent= */ Filter.node(TraversalTreeCache::holds));
+      NavigationAction navigationAction, @Nullable AccessibilityNodeInfoCompat pivot) {
     if (pivot != null
         && pivot.isScrollable()
         && isMoveToNextOrPreviousItem(navigationAction)

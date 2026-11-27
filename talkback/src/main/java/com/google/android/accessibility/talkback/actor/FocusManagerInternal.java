@@ -935,6 +935,21 @@ public class FocusManagerInternal {
       return false;
     }
 
+    // The remembered item is gone. Prefer the list that moved it to the first window control.
+    if (type.get() == FocusActionInfo.FIRST_FOCUSABLE_NODE
+        && service instanceof TalkBackService talkBack) {
+      AccessibilityNodeInfoCompat item =
+          talkBack.itemInRecentlyScrolledList(TraversalStrategy.SEARCH_FOCUS_UNKNOWN);
+      if (item != null
+          && setAccessibilityFocus(
+              item,
+              /* forceRefocusIfAlreadyFocused= */ false,
+              FocusActionInfo.builder().setSourceAction(FocusActionInfo.MANUAL_SCROLL).build(),
+              eventId)) {
+        return true;
+      }
+    }
+
     boolean firstTime =
         stableScreenState != null && stableScreenState.isInterpretFirstTimeWhenWakeUp();
     // Cell broadcast is an emergent announcement, so we don't mute it.

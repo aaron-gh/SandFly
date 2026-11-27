@@ -306,6 +306,7 @@ class AutoScrolledPivotSettleCheckTest {
     ReflectionHelpers.callInstanceMethod(
       processor, "getPivotNodeForNavigationAction",
       ReflectionHelpers.ClassParameter.from(NavigationAction::class.java, action()),
+      ReflectionHelpers.ClassParameter.from(AccessibilityNodeInfoCompat::class.java, focusedNode),
     )
 
   @Test

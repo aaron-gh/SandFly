@@ -283,6 +283,9 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     /** Whether the event comes from SandFly scrolling a list ahead of the focused item. */
     public final boolean isFromScrollAhead;
 
+    /** Whether a completed explicit scroll command is still moving the same view. */
+    public final boolean isFromFinishedScrollCommand;
+
     @VisibleForTesting
     public ScrollEventInterpretation(
         @UserAction int userAction,
@@ -314,8 +317,33 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
         int scrollInstanceId,
         boolean isFromNavigation,
         boolean isFromScrollAhead) {
+      this(
+          userAction,
+          scrollDirection,
+          hasValidIndex,
+          isDuplicateEvent,
+          isFromScrollable,
+          isMediaPlayerAutoScroll,
+          scrollInstanceId,
+          isFromNavigation,
+          isFromScrollAhead,
+          /* isFromFinishedScrollCommand= */ false);
+    }
+
+    public ScrollEventInterpretation(
+        @UserAction int userAction,
+        @SearchDirectionOrUnknown int scrollDirection,
+        boolean hasValidIndex,
+        boolean isDuplicateEvent,
+        boolean isFromScrollable,
+        boolean isMediaPlayerAutoScroll,
+        int scrollInstanceId,
+        boolean isFromNavigation,
+        boolean isFromScrollAhead,
+        boolean isFromFinishedScrollCommand) {
       this.isFromNavigation = isFromNavigation;
       this.isFromScrollAhead = isFromScrollAhead;
+      this.isFromFinishedScrollCommand = isFromFinishedScrollCommand;
       this.userAction = userAction;
       this.scrollDirection = scrollDirection;
       this.hasValidIndex = hasValidIndex;
@@ -339,6 +367,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
       sb.append(", scrollInstanceId=").append(scrollInstanceId);
       sb.append(", isFromNavigation=").append(isFromNavigation);
       sb.append(", isFromScrollAhead=").append(isFromScrollAhead);
+      sb.append(", isFromFinishedScrollCommand=").append(isFromFinishedScrollCommand);
       sb.append('}');
       return sb.toString();
     }
@@ -358,13 +387,15 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
           && (scrollDirection == that.scrollDirection)
           && (hasValidIndex == that.hasValidIndex)
           && (isDuplicateEvent == that.isDuplicateEvent)
-          && (scrollInstanceId == that.scrollInstanceId);
+          && (scrollInstanceId == that.scrollInstanceId)
+          && (isFromFinishedScrollCommand == that.isFromFinishedScrollCommand);
     }
 
     @Override
     public int hashCode() {
       return Objects.hash(
-          userAction, scrollDirection, hasValidIndex, isDuplicateEvent, scrollInstanceId);
+          userAction, scrollDirection, hasValidIndex, isDuplicateEvent, scrollInstanceId,
+          isFromFinishedScrollCommand);
     }
   }
 
@@ -636,10 +667,13 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     final int scrollInstanceId;
     boolean isFromNavigation = false;
     boolean isFromScrollAhead = false;
+    boolean isFromFinishedScrollCommand = false;
 
     @Nullable ScrollActionRecord autoScrollRecord = fromWebNavigation ? null : getAutoScrollRecordIfAvailable(event);
     if (autoScrollRecord == null) {
       scrollInstanceId = SCROLL_INSTANCE_ID_UNDEFINED;
+      @Nullable ScrollActionRecord finished =
+          fromWebNavigation ? null : getFinishedAutoScrollRecord(event);
       // Note that TYPE_WINDOW_CONTENT_CHANGED events can also be interpreted as manual scroll
       // action. TYPE_VIEW_SCROLLED events are filed at very coarse granularity. If we rely only on
       // TYPE_VIEW_SCROLLED events to detect manual scroll action, it happens when the user slightly
@@ -651,12 +685,13 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
       if (fromWebNavigation) {
         userAction = ScrollActionRecord.ACTION_UNKNOWN;
         isFromNavigation = true;
-      } else if (isFromFinishedAutoScroll(event)) {
+      } else if (finished != null) {
         // TalkBack's own scroll, still moving after it went far enough to count as complete. As a
         // manual scroll, it would move the focus that the scroll has just placed.
         userAction = ScrollActionRecord.ACTION_UNKNOWN;
-        isFromNavigation = isNavigationScroll(finishedScrollRecord.get());
-        isFromScrollAhead = isScrollAhead(finishedScrollRecord.get());
+        isFromNavigation = isNavigationScroll(finished);
+        isFromScrollAhead = isScrollAhead(finished);
+        isFromFinishedScrollCommand = finished.userAction == ScrollActionRecord.ACTION_SCROLL_COMMAND;
         LogUtils.i(TAG, "End of an auto scroll");
       } else if (followsCurrentNavigation(event.getWindowId(), event.getEventTime())) {
         // The app scrolled to show the item that moving to the next or previous item focused,
@@ -699,7 +734,8 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
             isMediaPlayerAutoScroll,
             scrollInstanceId,
             isFromNavigation,
-            isFromScrollAhead);
+            isFromScrollAhead,
+            isFromFinishedScrollCommand);
     LogUtils.d(TAG, "interpret ScrollEventInterpretation=%s", interpretation);
     return interpretation;
   }
@@ -720,14 +756,14 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
   }
 
   /**
-   * Whether the {@code event} comes from the last auto-scroll that was reset as complete, from the
-   * same node and within the time an auto-scroll record lasts.
+   * Returns the completed auto-scroll record if the event matches its node and time window.
    */
-  private boolean isFromFinishedAutoScroll(AccessibilityEvent event) {
+  private @Nullable ScrollActionRecord getFinishedAutoScrollRecord(AccessibilityEvent event) {
     @Nullable ScrollActionRecord finished = finishedScrollRecord.get();
     return finished != null
         && isFromAutoScrollAction(event, finished)
-        && finished.scrolledNodeMatches(AccessibilityEventUtils.sourceCompat(event));
+        && finished.scrolledNodeMatches(AccessibilityEventUtils.sourceCompat(event))
+        ? finished : null;
   }
 
   /** Whether {@code record} is of a scroll that moving to the next or previous item made. */

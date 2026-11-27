@@ -429,12 +429,12 @@ public final class Mappers {
       return directionID;
     }
 
-    public @Nullable AccessibilityNodeInfoCompat webItemInView(int depth) {
+    public @Nullable AccessibilityNodeInfoCompat itemInView(int depth) {
       AccessibilityNodeInfoCompat item =
           (interpretation instanceof Interpretation.ManualScroll)
-              ? ((Interpretation.ManualScroll) interpretation).webItemInView()
+              ? ((Interpretation.ManualScroll) interpretation).itemInView()
               : null;
-      LogDepth.logVar(LOG_TAG, ++depth, "webItemInView", item);
+      LogDepth.logVar(LOG_TAG, ++depth, "itemInView", item);
       return item;
     }
 
