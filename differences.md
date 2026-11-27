@@ -1105,7 +1105,7 @@ Gboard plays its key feedback, such as a vibration, only when a key receives hov
 
 ### Swipes and the on-screen keyboard
 
-Swipes from an app, the status bar or the navigation bar don't move focus into the on-screen keyboard. With any typing method except **Hold finger to select any key, then double-tap**, a swipe while focus is on a key goes on in the app, from the text field that you are typing in. With the double-tap method, swipes move through the keys. Swipes from inside the keyboard can still leave it.
+Swipes from an app, the status bar or the navigation bar don't move focus into the on-screen keyboard. With any typing method except **Hold finger to select any key, then double-tap**, a swipe while focus is on a key goes on in the app, from the text field that you are typing in. With the double-tap method, swipes move through the keys. With **Typing** > **Swipe from key to key with every typing method** on, swipes move through the keys with every typing method. Swipes from inside the keyboard can still leave it.
 
 ### Double-tap to move the cursor to the start or end
 
