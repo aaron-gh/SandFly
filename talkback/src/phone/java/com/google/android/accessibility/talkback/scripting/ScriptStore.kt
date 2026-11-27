@@ -120,6 +120,7 @@ class ScriptStore private constructor(private val context: Context) {
   ) {
     val id = pkg.manifest.id
     placeCode(id, pkg.files)
+    dropOptionsOfNonLists(id, pkg.manifest)
     updateScripts { list ->
       val existing = list.firstOrNull { it.id == id }
       val installed =
@@ -133,6 +134,18 @@ class ScriptStore private constructor(private val context: Context) {
         )
       if (existing == null) list + installed else list.map { if (it.id == id) installed else it }
     }
+  }
+
+  /**
+   * Removes the options that the script [id] set for settings that [manifest] doesn't have as
+   * lists, so that they don't come back when a later version makes the setting a list again.
+   */
+  private fun dropOptionsOfNonLists(id: String, manifest: ScriptManifest) {
+    val lists = manifest.settings.filter { it.type == ScriptSetting.Type.LIST }.map { it.key }
+    val prefs = dataPrefs(id)
+    val stale =
+      prefs.all.keys.filter { it.startsWith(OPTIONS) && it.removePrefix(OPTIONS) !in lists }
+    if (stale.isNotEmpty()) prefs.edit { stale.forEach { remove(it) } }
   }
 
   /** Writes [files] as the code of the script [id], replacing its code. */
@@ -280,9 +293,18 @@ class ScriptStore private constructor(private val context: Context) {
 
   fun pressButton(id: String, key: String) = notify { it.onButtonPressed(id, key) }
 
+  /**
+   * The options of [setting], as the script last set them, or the manifest's. Scripts set options
+   * only for a list, so options kept from a version in which the setting was a list don't apply
+   * once it is another type, such as a command setting. [install] removes them then.
+   */
   fun settingOptions(script: InstalledScript, setting: ScriptSetting): List<Pair<String, String>> =
-    dataPrefs(script.id).getString(OPTIONS + setting.key, null)?.let { JSONArray(it).options() }
-      ?: setting.options
+    if (setting.type != ScriptSetting.Type.LIST) {
+      setting.options
+    } else {
+      dataPrefs(script.id).getString(OPTIONS + setting.key, null)?.let { JSONArray(it).options() }
+        ?: setting.options
+    }
 
   /** The title of [setting], as the script last set it, or the manifest's. */
   fun settingTitle(script: InstalledScript, setting: ScriptSetting): String =
