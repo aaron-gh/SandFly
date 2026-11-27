@@ -22,7 +22,7 @@ The list holds only the commands that the device supports. For example, commands
 - **Navigate by text** and **Navigate by element**: next and previous character, word, line, sentence, paragraph, heading, link, control, button, list, table, landmark and other kinds of item.
 - **Tables**: next and previous row and column, the start and end of rows, columns and tables, and row and column headers.
 - **Web**: **Turn browse mode on or off**, lists of headings, landmarks, links, controls and tables, and the address of a link or page. See [](#web).
-- **Reading**: **Read from top**, **Read from focused item**, **Read from focused item by reading control**, repeat, spell and translate the last spoken phrase, **Speech history**, **Speak status**, **Speak position**, **Speak coordinates**, the date and time, the battery level and the window title.
+- **Reading**: **Read from top**, **Read from focused item**, **Read from focused item by reading control**, repeat, spell and translate the last spoken phrase, **Speech history**, **Speak status**, **Speak position**, **Speak coordinates**, the date and time, the battery level, **Say caller** and the window title.
 - **Speech**: **Pause or resume speech**, **Turn speech on or off**, speech rate, pitch and volume, spoken language, voice profiles, punctuation, keyboard echo, **Use voice effects**, **Audio ducking** and **Vibration feedback**.
 - **Reading controls**: next and previous reading control, **First reading control**, **Move reading control down or forward** and **Move reading control up or backward**, **Write the letter of a reading control**, next and previous reading control list, and a **Set reading control to** command for each reading control in the list. See [](#commands-reading-controls).
 - **Text editing**: selection mode, cursor movement, select all, copy, cut, paste, **Clipboard history**, **Editing menu**, **Submit text**, **New line**, **Clear text**, **Copy last spoken phrase**, **Copy text from screen**, **Continuous copy**, **Granular editing**, **Spelling / grammar suggestions**, **Search emoji**, **Choose a symbol**, **Turn editing mode on or off**, **Spell the password field**, **Next word suggestion**, **Previous word suggestion**, **Type word suggestion**, **Dictate**, **Start voice editing** and **Switch keyboard**. See [](#typing).
@@ -70,12 +70,13 @@ SandFly looks in the active window first, such as a dialog, then in the other ap
 
 To change the labels, choose the command in **Commands**, then **Button labels**, and enter one label per line. Your list replaces the built-in one. To use the built-in list again, delete every label.
 
-#### Answer call and End call {#commands-calls}
+#### Answer call, End call and Say caller {#commands-calls}
 
-**Answer call** and **End call**, in the **System actions** category and unassigned by default, act on phone calls and on the calls of apps such as WhatsApp.
+**Answer call** and **End call**, in the **System actions** category, and **Say caller**, in the **Reading** category, act on phone calls and on the calls of apps such as WhatsApp. They are unassigned by default.
 
 - **Answer call** answers the ringing call. SandFly says "No incoming call" when none rings.
 - **End call** declines the ringing call, or else ends the call in progress. SandFly says "No call" when there is none.
+- **Say caller** says the caller of the ringing call, also with **Verbosity** > **Announce caller** off. SandFly says "No incoming call" when none rings. See [](#verbosity-announcements).
 
 Phone calls are answered and ended through Android. The first time, SandFly requests permission to answer calls. The calls of apps are answered, declined and ended with the buttons of their call notification. Ending a call in progress needs notification access for SandFly. See [](#notifications-access).
 

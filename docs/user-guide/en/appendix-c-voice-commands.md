@@ -134,7 +134,7 @@ NAME is a contact name or a phone number. APP is the name of a messaging app, su
 | "Message NAME TEXT", or "text NAME TEXT" or "send (a) message to NAME TEXT" | Writes the message to the contact named at the start. |
 | "Message NAME on APP saying TEXT", or "send (a) message to NAME on APP saying TEXT", "send (a) message to NAME on APP that says TEXT", "send (a/an) APP message to NAME saying TEXT", "send (a/an) APP message to NAME that says TEXT" or "tell NAME on APP TEXT" | Writes the message in the app. |
 | "Send (a/an) APP message to NAME" | Records the text, then writes the message in the app. |
-| "Answer call" or "End call" | Runs the command of that name: answers the ringing call, or declines it or ends the call in progress. |
+| "Answer call", "End call" or "Say caller" | Runs the command of that name: answers the ringing call, declines it or ends the call in progress, or says the caller of the ringing call. |
 
 SandFly says "Send to NAME: TEXT?", or "Send to NAME?" for a description. Say "yes", "yeah", "yep", "send", "send it", "OK", "okay", "sure" or "do it" to press **Send**. Any other answer leaves the message unsent, and SandFly says "Message not sent".
 

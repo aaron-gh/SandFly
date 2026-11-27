@@ -160,6 +160,14 @@
         android:key="pref_battery_level_voice_profile"
         android:summary="%s"
         android:title="@string/title_pref_battery_level_voice" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_announce_caller_default"
+        android:dialogTitle="@string/title_pref_announce_caller"
+        android:entries="@array/pref_announce_caller_entries"
+        android:entryValues="@array/pref_announce_caller_values"
+        android:key="@string/pref_announce_caller_key"
+        android:summary="%s"
+        android:title="@string/title_pref_announce_caller" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_announce_call_length_default"
         android:key="@string/pref_announce_call_length_key"

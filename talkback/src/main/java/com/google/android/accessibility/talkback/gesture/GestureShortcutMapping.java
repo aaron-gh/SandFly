@@ -2884,6 +2884,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_value_announce_current_title, R.string.shortcut_announce_current_title),
     ANNOUNCE_BATTERY_STATE(
         R.string.shortcut_value_announce_battery_state, R.string.shortcut_announce_battery_state),
+    SAY_CALLER(R.string.shortcut_value_say_caller, R.string.shortcut_say_caller),
     ANNOUNCE_STATUS(R.string.shortcut_value_announce_status, R.string.shortcut_announce_status),
     SPEAK_POSITION(R.string.shortcut_value_speak_position, R.string.shortcut_speak_position),
     SPEAK_COORDINATES(

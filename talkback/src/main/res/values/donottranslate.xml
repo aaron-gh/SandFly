@@ -358,6 +358,8 @@
     <string name="pref_allow_frequent_content_change_announcement_key">pref_allow_frequent_content_change_announcement_key</string>
     <string name="pref_verbose_scroll_announcement_key">pref_verbose_scroll_announcement_key</string>
     <string name="pref_announce_full_charge_key">pref_announce_full_charge</string>
+    <string name="pref_announce_caller_key">pref_announce_caller</string>
+    <string name="pref_announce_caller_default" translatable="false">once</string>
     <string name="pref_announce_call_length_key">pref_announce_call_length</string>
     <string name="pref_announce_keyboard_shown_hidden_key">pref_announce_keyboard_shown_hidden</string>
     <string name="pref_explore_by_touch_key">pref_explore_by_touch</string>
@@ -546,6 +548,17 @@
         <item>@string/screen_on_low_battery_20</item>
         <item>@string/screen_on_low_battery_30</item>
         <item>@string/screen_on_low_battery_50</item>
+    </string-array>
+    <!-- Announce caller: the values CallerAnnouncer.parse reads. -->
+    <string-array name="pref_announce_caller_entries">
+        <item>@string/announce_caller_once</item>
+        <item>@string/announce_caller_repeat</item>
+        <item>@string/screen_on_battery_off</item>
+    </string-array>
+    <string-array name="pref_announce_caller_values" translatable="false">
+        <item>once</item>
+        <item>repeat</item>
+        <item>off</item>
     </string-array>
     <!-- Battery level at intervals: the values BatteryLevelAnnouncements.parse reads. -->
     <string-array name="pref_battery_level_interval_entries">
@@ -2884,6 +2897,7 @@
   <string name="shortcut_value_report_ai_response" translatable="false">REPORT_AI_RESPONSE</string>
   <string name="shortcut_value_announce_current_time_and_date" translatable="false">ANNOUNCE_CURRENT_TIME_AND_DATE</string>
   <string name="shortcut_value_announce_battery_state" translatable="false">ANNOUNCE_BATTERY_STATE</string>
+  <string name="shortcut_value_say_caller" translatable="false">SAY_CALLER</string>
   <string name="shortcut_value_announce_status" translatable="false">ANNOUNCE_STATUS</string>
   <string name="shortcut_value_speak_position" translatable="false">SPEAK_POSITION</string>
   <string name="shortcut_value_speak_coordinates" translatable="false">SPEAK_COORDINATES</string>
