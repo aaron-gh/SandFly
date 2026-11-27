@@ -147,6 +147,7 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     pendingWebActionTime = -1;
     pendingDirectTouchTime = -1;
     completedWebNavigation.clear();
+    latestNativeScrollPosition = null;
   }
 
   /**
