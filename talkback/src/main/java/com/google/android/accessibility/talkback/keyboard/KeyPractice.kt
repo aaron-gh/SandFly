@@ -413,7 +413,7 @@ class KeyPractice(
     val text = manager.getKeyComboStringRepresentation(combo)
     if (text.isNotEmpty()) return text
     // A key the list doesn't name, such as Num.
-    return KeyEvent.keyCodeToString(combo.keyCode).removePrefix("KEYCODE_").replace('_', ' ')
+    return KeyNames.orAndroidName(context, combo.keyCode)
   }
 
   /** The name of the modifier key, or held SandFly key, that [event] presses. */
@@ -437,7 +437,7 @@ class KeyPractice(
     return if (res != 0) {
       context.getString(res)
     } else {
-      KeyEvent.keyCodeToString(event.keyCode).removePrefix("KEYCODE_").replace('_', ' ')
+      KeyNames.orAndroidName(context, event.keyCode)
     }
   }
 

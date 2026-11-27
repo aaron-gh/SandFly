@@ -1933,8 +1933,11 @@ public class KeyComboManager
           sb.append(context.getString(R.string.keycombo_key_arrow_down));
       case KeyEvent.KEYCODE_DEL -> sb.append(context.getString(R.string.keycombo_key_backspace));
       default -> {
-        String keyCodeString = KeyEvent.keyCodeToString(keyCode);
-        if (keyCodeString != null) {
+        @Nullable String keyName = KeyNames.of(context, keyCode);
+        String keyCodeString = keyName == null ? KeyEvent.keyCodeToString(keyCode) : null;
+        if (keyName != null) {
+          sb.append(keyName);
+        } else if (keyCodeString != null) {
           String keyCodeNoPrefix;
           if (keyCodeString.startsWith(KEYCODE_PREFIX)) {
             keyCodeNoPrefix = keyCodeString.substring(KEYCODE_PREFIX.length());

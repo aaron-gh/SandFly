@@ -410,9 +410,13 @@ class SandFlyKeyTest {
     assertEquals(emptyList<String?>(), keys)
   }
 
-  /** A key's name as shortcuts are spoken, which Robolectric gives as its number. */
+  /**
+   * A key's name as shortcuts are spoken: [KeyNames]' name where it has one, otherwise Android's,
+   * which Robolectric gives as its number.
+   */
   private fun name(keyCode: Int) =
-    KeyEvent.keyCodeToString(keyCode).removePrefix("KEYCODE_").replace('_', ' ')
+    KeyNames.of(context, keyCode)
+      ?: KeyEvent.keyCodeToString(keyCode).removePrefix("KEYCODE_").replace('_', ' ')
 
   @Test
   fun keyboardPhoneSymAloneMovesAndShiftSymMovesBack() {
