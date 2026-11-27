@@ -56,8 +56,8 @@
   <string name="title_pref_category_feedback">Informacje zwrotne</string>
   <string name="title_pref_category_typing_and_braille">Pisanie i brajl</string>
   <string name="title_pref_category_more">Więcej</string>
-  <string name="title_pref_reserve_vibration_watch_gestures">Zarezerwuj gesty dla Vibration Watch</string>
-  <string name="summary_pref_reserve_vibration_watch_gestures">SandFly nie obsługuje pojedynczego ani dwukrotnego kliknięcia dwoma palcami, aby mogła ich używać funkcja Vibration Watch firmy Samsung. Włącz Vibration Watch w ustawieniach ułatwień dostępu zegarka.</string>
+  <string name="title_pref_reserve_vibration_watch_gestures">Zarezerwuj gesty dla zegara wibracyjnego</string>
+  <string name="summary_pref_reserve_vibration_watch_gestures">SandFly nie obsługuje pojedynczego ani dwukrotnego kliknięcia dwoma palcami, aby mogła ich używać funkcja „Zegar wibracyjny” firmy Samsung. Włącz ją w ustawieniach ułatwień dostępu zegarka.</string>
   <string name="title_pref_speakerphone_away_from_ear">Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha</string>
   <string name="summary_pref_speakerphone_away_from_ear">Podczas rozmowy włącza tryb głośnomówiący po odsunięciu telefonu od ucha i wyłącza go po ponownym przyłożeniu.</string>
   <string name="summary_pref_speakerphone_needs_permission">Wymaga uprawnienia, którego Android nie przyznaje czytnikom ekranu. Aby je przyznać, wykonaj poniższe polecenie za pomocą adb lub Shizuku, a następnie wróć do tego ekranu: %1$s</string>
@@ -210,7 +210,7 @@
   <string name="direct_touch_restore_done">Ustawienia przywrócone</string>
   <string name="direct_touch_restore_failed">Nie udało się odczytać tego pliku</string>
   <string name="title_pref_gemini_api_key">Klucz API Gemini</string>
-  <string name="summary_pref_gemini_api_key_built_in">Używany jest klucz wbudowany w tę aplikację</string>
+  <string name="summary_pref_gemini_api_key_built_in">Korzystanie z klucza wbudowanego w aplikację</string>
   <string name="gemini_api_key_hint">Klucz API</string>
   <string name="gemini_api_key_save">Zapisz</string>
   <string name="gemini_api_key_get">Uzyskaj klucz</string>
@@ -252,7 +252,7 @@
   <string name="pref_on_device_ai_importing">Sprawdzanie pliku modelu</string>
   <string name="pref_on_device_ai_manage">Zarządzaj modelami</string>
   <string name="pref_on_device_ai_manage_none">Brak pobranych modeli</string>
-  <string name="title_pref_manage_models">Zarządzanie modelami</string>
+  <string name="title_pref_manage_models">Zarządzaj modelami</string>
   <string name="manage_models_storage_used">Modele zajmują %1$s miejsca na urządzeniu.</string>
   <string name="manage_models_empty">Nie pobrano żadnych modeli.</string>
   <string name="manage_models_unfinished">%1$s, nieukończone pobieranie</string>
@@ -265,7 +265,7 @@
   <string name="on_device_ai_import_done">Model zainstalowany</string>
   <string name="on_device_ai_import_failed">Wybrany plik nie jest obsługiwanym plikiem modelu.</string>
   <string name="pref_on_device_ai_timeout">Limit czasu oczekiwania na odpowiedź</string>
-  <string name="pref_on_device_ai_timeout_summary">%1$s. Po upływie tego czasu SandFly przestaje czekać. „Opisz ekran” trwa dłużej niż „Opisz obraz”.</string>
+  <string name="pref_on_device_ai_timeout_summary">%1$s. Po upływie tego czasu SandFly przestaje czekać. Opisywanie ekranu trwa dłużej niż opisywanie obrazu.</string>
   <string name="on_device_ai_choose_timeout">Limit czasu oczekiwania na odpowiedź</string>
   <string name="pref_on_device_ai_processor">Procesor</string>
   <string name="pref_on_device_ai_short_prompts">Krótsze opisy ekranu</string>
@@ -275,15 +275,15 @@
   <string name="on_device_ai_error_corrupt">Pobrany plik nie odpowiadał oczekiwanemu modelowi i został usunięty. Spróbuj ponownie.</string>
   <string name="on_device_ai_error_storage">Nie udało się zapisać pliku.</string>
   <string name="on_device_ai_error_low_space">Brak wystarczającej ilości wolnego miejsca na ten model.</string>
-  <string name="on_device_ai_metered_title">Pobrać przez komórkową transmisję danych?</string>
+  <string name="on_device_ai_metered_title">Pobrać przez sieć z limitem danych?</string>
   <string name="gemini_api_key_dialog_message">Uzyskaj bezpłatny klucz API w Google AI Studio na stronie aistudio.google.com/apikey i wklej go tutaj. Aby usunąć klucz, wyczyść pole i zapisz zmiany.\n\nObrazy i ekrany, które opisujesz, są wysyłane do Google. Jeśli korzystasz z bezpłatnej wersji usługi, Google może używać ich do ulepszania swoich produktów.</string>
   <string name="update_move_title">Backtalk Aaron to teraz SandFly</string>
   <string name="update_move_notification_text">Zainstaluj SandFly. Ustawienia i etykiety niestandardowe zostaną do niego skopiowane. Kliknij, aby zainstalować.</string>
-  <string name="update_move_dialog_message">Backtalk Aaron jest teraz osobnym czytnikiem ekranu, SandFly, i nie będzie już aktualizowany. Zainstaluj SandFly; ustawienia i etykiety niestandardowe zostaną do niego skopiowane. Następnie włącz SandFly, a Backtalk Aaron się wyłączy.</string>
+  <string name="update_move_dialog_message">Dotychczasowy Backtalk Aaron jest teraz rozwijany jako osobny czytnik ekranu — SandFly. Backtalk Aaron nie otrzymuje już aktualizacji. Zainstaluj SandFly; ustawienia i etykiety niestandardowe zostaną do niego skopiowane. Następnie włącz SandFly, a Backtalk Aaron się wyłączy.</string>
   <string name="update_move_installing">Instalowanie SandFly. Ustawienia i etykiety niestandardowe zostaną do niego skopiowane.</string>
   <string name="update_move_turn_on">Włącz SandFly. Backtalk Aaron się wtedy wyłączy.</string>
-  <string name="update_wrong_package">Pobrany plik nie jest kompilacją tej aplikacji, więc nie został zainstalowany</string>
-  <string name="migration_moved_title">Ustawienia skopiowane z Backtalk Aaron</string>
+  <string name="update_wrong_package">Pobrany plik nie jest wersją tej aplikacji, więc go nie zainstalowano</string>
+  <string name="migration_moved_title">Skopiowano ustawienia z aplikacji Backtalk Aaron</string>
   <string name="migration_moved_text">Kliknij, aby odinstalować Backtalk Aaron.</string>
   <plurals name="on_device_ai_models_downloaded">
     <item quantity="one">Pobrano %1$d model</item>
@@ -310,7 +310,7 @@
   <string name="backtalk_paused">Wstrzymano działanie SandFly</string>
   <string name="backtalk_resumed">Wznowiono działanie SandFly</string>
   <string name="notification_title_backtalk_paused">SandFly jest wstrzymany</string>
-  <string name="notification_message_backtalk_paused">Dotknij, aby wznowić</string>
+  <string name="notification_message_backtalk_paused">Kliknij, aby wznowić</string>
   <string name="notification_channel_backtalk_paused">Wstrzymanie SandFly</string>
   <string name="dialog_title_pause_backtalk">Wstrzymać SandFly?</string>
   <string name="dialog_button_pause_backtalk">Wstrzymaj</string>
@@ -324,7 +324,7 @@
   <string name="value_resume_screen_on">Po włączeniu ekranu</string>
   <string name="value_resume_manual">Tylko przez powiadomienie lub skrót</string>
   <string name="title_pref_scripts">Skrypty</string>
-  <string name="summary_pref_scripts">Zmiana działania SandFly w aplikacjach</string>
+  <string name="summary_pref_scripts">Zmieniaj sposób działania SandFly w aplikacjach</string>
   <string name="script_import">Importuj skrypt</string>
   <string name="script_install_label">Zainstaluj skrypt SandFly</string>
   <string name="script_import_nothing">Brak pliku skryptu do zainstalowania.</string>
@@ -368,7 +368,7 @@
   <string name="script_permission_input">Dodawanie gestów, skrótów klawiszowych, pozycji menu i opcji sterowania czytaniem oraz uruchamianie poleceń SandFly</string>
   <string name="script_permission_network">Korzystanie z internetu</string>
   <string name="script_permission_clipboard">Odczytywanie i zmienianie zawartości schowka</string>
-    <string name="script_permission_system">Cofanie, przechodzenie do ekranu głównego, otwieranie powiadomień, wyświetlanie listy aplikacji, otwieranie aplikacji, ustawień i linków, wysyłanie intencji do aplikacji, zmiana głośności, trybu dzwonka i ustawień urządzenia, takich jak Wi-Fi i latarka, sterowanie multimediami, ustawianie timerów i alarmów oraz rozpoczynanie połączeń i wiadomości</string>
+    <string name="script_permission_system">Cofanie, przechodzenie do ekranu głównego, otwieranie powiadomień, wyświetlanie listy aplikacji, otwieranie aplikacji, ustawień i linków, wysyłanie intencji do aplikacji, zmiana głośności, trybu dzwonka i ustawień urządzenia, takich jak Wi-Fi i latarka, sterowanie multimediami, ustawianie minutników i alarmów oraz rozpoczynanie połączeń i przygotowywanie wiadomości</string>
   <string name="script_permission_notifications">Odczytywanie i zmienianie treści odczytywanych powiadomień</string>
   <string name="script_permission_events">Śledzenie wszystkich zdarzeń w każdej aplikacji, w tym wpisywania tekstu</string>
   <string name="script_permission_dialogs">Wyświetlanie okien dialogowych nad dowolną aplikacją</string>
@@ -445,7 +445,7 @@
   <string name="script_binding_assign">Przypisz</string>
   <string name="script_binding_choose_gesture">Wybierz gest</string>
   <string name="script_binding_type_keys">Wpisz skrót klawiszowy</string>
-  <string name="script_binding_type_keys_summary">Np. sf+shift+n lub sf+t, s</string>
+  <string name="script_binding_type_keys_summary">Na przykład „sf+shift+n”, „sf+t, s” lub „shift+n”</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_binding_bad_keys">Nie można użyć tej kombinacji klawiszy. <xliff:g id="reason">%1$s</xliff:g></string>
   <string name="script_install_adds">Dodawane polecenia:</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
@@ -572,6 +572,6 @@
   <string xmlns:tools="http://schemas.android.com/tools" name="alternate_help" tools:ignore="HardCodedNumber">Możesz też otworzyć stronę https://support.google.com/accessibility/android/answer/6283677?hl=pl</string>
   <string name="title_pref_mute_speech_while_recording">Wyłączaj mowę podczas nagrywania</string>
   <string name="summary_pref_mute_speech_while_recording">Gdy aplikacja nagrywa bez podłączonych słuchawek, SandFly mówi tylko w odpowiedzi na Twoje gesty, klawisze i pisanie, a w przypadku np. powiadomień milczy, aby nie trafiły do nagrania.</string>
-    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> używa wycofanych nazw interfejsu API SandFly</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> używa przestarzałych nazw API SandFly</string>
     <string name="deprecated_api_replace">Zastąp <xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> nazwą <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g>.</string>
 </resources>

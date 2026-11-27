@@ -2,25 +2,25 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="item_file_import">Importuj z pliku</string>
     <string name="item_file_export">Eksportuj do pliku</string>
-    <string name="title_pref_export_item_file_reference">Opis formatu pliku eksportu</string>
+    <string name="title_pref_export_item_file_reference">Eksportuj opis formatu plików elementów</string>
     <string name="item_file_keymaps">Mapy klawiszy</string>
     <string name="item_file_exported">Wyeksportowano</string>
-    <string name="item_file_export_failed">Nie można wyeksportować</string>
+    <string name="item_file_export_failed">Nie udało się zapisać eksportowanego pliku.</string>
     <string name="item_file_not_read">To nie jest plik elementów SandFly albo nie można go odczytać</string>
-    <string name="item_file_settings_file">To jest plik ustawień. Zaimportuj go przez Kopia zapasowa i przywracanie &gt; Importuj ustawienia</string>
-    <string name="item_file_newer">Ten plik pochodzi z nowszej wersji SandFly</string>
+    <string name="item_file_settings_file">To jest plik z kopią ustawień. Zaimportuj go w sekcji „Kopia zapasowa i przywracanie”, wybierając „Importuj ustawienia”.</string>
+    <string name="item_file_newer">Ten plik używa nowszej wersji formatu, której SandFly nie obsługuje.</string>
     <string name="item_file_nothing_imported">Nic nie zaimportowano</string>
-    <string name="item_file_imported">Zaimportowano: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
+    <string name="item_file_imported">Zaimportowane elementy: <xliff:g id="items" example="2 macros, 1 gesture profile">%1$s</xliff:g></string>
     <string name="item_file_left_out">Pominięto:</string>
-    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, element <xliff:g id="number" example="3">%2$d</xliff:g>: nie odczytano</string>
+    <string name="item_file_problem_not_read"><xliff:g id="kind" example="Macros">%1$s</xliff:g>, pozycja <xliff:g id="number" example="3">%2$d</xliff:g>: nie udało się odczytać danych.</string>
     <string name="item_file_problem_command"><xliff:g id="item" example="Open mail">%1$s</xliff:g>: nieznane polecenie <xliff:g id="command" example="READ_ALL">%2$s</xliff:g></string>
     <string name="item_file_problem_gesture"><xliff:g id="item" example="Reading">%1$s</xliff:g>: nieznany gest <xliff:g id="gesture" example="pref_shortcut_spin">%2$s</xliff:g></string>
-    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: nierozpoznane klawisze: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
-    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: klawisze są już używane: <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g></string>
-    <string name="item_file_problem_setting"><xliff:g id="item" example="Reading">%1$s</xliff:g>: ustawienie <xliff:g id="key" example="pref_vibration">%2$s</xliff:g> jest nieznane, nie może być w profilu albo ma wartość niewłaściwego typu</string>
+    <string name="item_file_problem_keys"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: nie rozpoznano skrótu klawiszowego: <xliff:g id="keys" example="SandFly+Foo">%2$s</xliff:g></string>
+    <string name="item_file_problem_keys_taken"><xliff:g id="item" example="My keymap">%1$s</xliff:g>: skrót <xliff:g id="keys" example="SandFly+H">%2$s</xliff:g> jest już przypisany do innego polecenia w tej mapie klawiszy.</string>
+    <string name="item_file_problem_setting">Profil „<xliff:g id="item" example="Reading">%1$s</xliff:g>”, ustawienie „<xliff:g id="key" example="pref_vibration">%2$s</xliff:g>”: nieznane, niedozwolone w profilu lub z wartością niewłaściwego typu.</string>
     <string name="item_file_problem_regex"><xliff:g id="dictionary" example="Speech dictionary">%1$s</xliff:g>: odrzucone wyrażenie regularne: <xliff:g id="expression" example="(a+)+">%2$s</xliff:g></string>
-    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: co najwyżej <xliff:g id="number" example="500">%2$d</xliff:g> elementów</string>
-    <string name="item_file_problem_more">Pominięto więcej</string>
+    <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: limit <xliff:g id="number" example="500">%2$d</xliff:g> pozycji. Nadmiar pominięto.</string>
+    <string name="item_file_problem_more">Nie wyświetlono wszystkich pominiętych pozycji.</string>
     <plurals name="item_file_count_macros">
         <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> makro</item>
         <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> makra</item>
