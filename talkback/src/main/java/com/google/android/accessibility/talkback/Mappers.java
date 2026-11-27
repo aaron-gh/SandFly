@@ -171,7 +171,7 @@ public final class Mappers {
           case ACCESSIBILITY_FOCUSED -> {
             // do nothing
           }
-          case SUBTREE_CHANGED, ACCESSIBILITY_EVENT_IDLE -> {
+          case SUBTREE_CHANGED, ACCESSIBILITY_EVENT_IDLE, FOCUS_KEPT_AFTER_BACK -> {
             return Feedback.create(
                 eventId,
                 Feedback.part()

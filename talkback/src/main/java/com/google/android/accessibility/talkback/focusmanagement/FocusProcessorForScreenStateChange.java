@@ -161,6 +161,7 @@ public class FocusProcessorForScreenStateChange {
       }
 
       if (hasValidAccessibilityFocusInWindow(currentActiveWindow)) {
+        returnToActivatedItemAfterBack(currentActiveWindow, history, eventId);
         return FocusResult.FAIL_HAS_VALID_FOCUS;
       }
 
@@ -182,6 +183,26 @@ public class FocusProcessorForScreenStateChange {
        * instead.
        */
       handledOverrideFocusRestoreUptimeMs = actorState.getOverrideFocusRestoreUptimeMs();
+    }
+  }
+
+  /**
+   * A Back that shows the screen before in the same window, as SandFly's settings do, can leave
+   * focus on a control that both screens show, such as Navigate up. Focus then still goes to the
+   * list item activated before, as when the Back takes focus away.
+   */
+  private void returnToActivatedItemAfterBack(
+      AccessibilityWindowInfo window,
+      AccessibilityFocusActionHistory.Reader history,
+      EventId eventId) {
+    if (!focusNewWindows) {
+      return;
+    }
+    AccessibilityNodeInfoCompat focus =
+        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    if (focus != null
+        && history.isBackPendingAtFocus(SystemClock.uptimeMillis(), window.getId(), focus)) {
+      pipeline.input(eventId, new Interpretation.ID(Interpretation.ID.Value.FOCUS_KEPT_AFTER_BACK));
     }
   }
 

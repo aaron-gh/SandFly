@@ -58,6 +58,7 @@ public abstract class Interpretation {
       SUBTREE_CHANGED,
       ACCESSIBILITY_EVENT_IDLE,
       SPELLING_SUGGESTION_HINT,
+      FOCUS_KEPT_AFTER_BACK,
     }
 
     public final Value value;
