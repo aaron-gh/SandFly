@@ -33,8 +33,9 @@ import com.google.android.accessibility.talkback.preference.base.positionText
 import com.google.android.accessibility.talkback.preference.base.setMoveActions
 
 /**
- * Gestures > Edges > Left edge menu or Right edge menu: the switch that makes the edge a menu, and
- * the menu's commands in order, each with Change command, Move up, Move down and Remove.
+ * Gestures > Edges > Left edge menu or Right edge menu: the switch that makes the edge a menu, the
+ * switch that makes the menu go across the screen, and the menu's commands in order, each with
+ * Change command, Move up, Move down and Remove.
  */
 class EdgeMenuFragment : NotificationCodeFragment(R.string.title_pref_edge_menu_left) {
 
@@ -57,6 +58,8 @@ class EdgeMenuFragment : NotificationCodeFragment(R.string.title_pref_edge_menu_
     // Closes the gap left by a command changed to none.
     EdgeMenus.setItems(prefs, edge, items)
     val switchKey = EdgeMenus.switchKey(edge)
+    // Which way the menu goes can only be changed while the edge is a menu.
+    lateinit var horizontalSwitch: Preference
     screen.switch(
       getString(
         if (edge == MenuEdge.LEFT) R.string.title_pref_edge_menu_left_switch
@@ -65,7 +68,17 @@ class EdgeMenuFragment : NotificationCodeFragment(R.string.title_pref_edge_menu_
       prefs.getBoolean(switchKey, false),
     ) {
       prefs.edit { putBoolean(switchKey, it) }
+      horizontalSwitch.isEnabled = it
     }
+    val horizontalKey = EdgeMenus.horizontalKey(edge)
+    horizontalSwitch =
+      screen.switch(
+        getString(R.string.title_pref_edge_menu_horizontal),
+        prefs.getBoolean(horizontalKey, false),
+      ) {
+        prefs.edit { putBoolean(horizontalKey, it) }
+      }
+    horizontalSwitch.isEnabled = prefs.getBoolean(switchKey, false)
     val category = screen.category(R.string.item_list_current)
     val names = Commands.labels(context, items)
     items.forEachIndexed { index, command ->

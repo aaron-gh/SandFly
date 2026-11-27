@@ -629,7 +629,8 @@ public class TouchInteractionMonitor
             this::edgeStages,
             this::edgeScrolls,
             edgeSwipeListener,
-            this::edgeMenuItemCount);
+            this::edgeMenuItemCount,
+            this::edgeMenuHorizontal);
     systemTapTimeoutMs =
         ViewConfiguration.getTapTimeout()
             + context
@@ -877,6 +878,14 @@ public class TouchInteractionMonitor
     }
     touchEdgeMenu = menu;
     return menu.getSize();
+  }
+
+  /**
+   * Returns whether the menu that {@link #edgeMenuItemCount} has just given for the touch goes across
+   * the screen instead of along the edge. The trainer's sample menu goes along it.
+   */
+  private boolean edgeMenuHorizontal(MenuEdge edge) {
+    return touchEdgeMenu.getHorizontal();
   }
 
   /** Returns whether a slide along an edge, such as {@code ALONG_LEFT_UP}, scrolls the app. */
