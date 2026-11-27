@@ -167,6 +167,8 @@ The same screen has the gestures of each app. For gestures in apps, see [](#gest
 
 While keyboard practice is on, SandFly says each key that you press and the command that it runs, and runs nothing. Keys don't reach apps. Use it to learn the keys of a keyboard and the shortcuts of your keymap.
 
+Keys are named in the language of SandFly, such as Space, Search and Period. The names of the keys in the list of keyboard shortcuts are the same. Letters, digits and function keys are named as on the keyboard. A key without a name in SandFly is said with its name in Android, in English.
+
 - Keys are said as the keyboard shortcuts list names them, followed by their command, such as "Right Shift + W, Speak window title". Keys without a command are said alone.
 - A modifier key is said when you press it, with the command of the modifier keys pressed alone. The SandFly key pressed alone is also said as the SandFly key, such as "Right Shift, SandFly key, Next item".
 - Keys pressed twice, keys held down and the second key of a shortcut of two keys in a row are said with their command, such as "Alt twice" or "Alt + Shift held".
