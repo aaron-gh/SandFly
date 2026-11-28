@@ -21,6 +21,7 @@ import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_RIGHT
 import android.content.Context
 import android.os.SystemClock
 import android.view.MotionEvent
+import com.google.android.accessibility.utils.R
 import com.google.android.accessibility.utils.gestures.GestureManifold.GestureConfigProvider
 import com.google.common.collect.ImmutableList
 import java.util.concurrent.TimeUnit
@@ -99,6 +100,20 @@ class GestureStartTimeTest {
     GestureConfiguration.setSwipeStartTimeMs(300)
     assertEquals(300, GestureConfiguration.scaleSwipeStartThresholdMs(150))
     assertEquals(340, GestureConfiguration.scaleSwipeStartThresholdMs(170))
+  }
+
+  @Test
+  @Config(qualifiers = "watch")
+  fun wearUsesTheSelectedTimeAtItsConfirmationDistance() {
+    val distance = context.resources.getFloat(R.dimen.config_gesture_confirm_distance_cm)
+    val timePerCm =
+      context.resources.getInteger(R.integer.config_max_time_to_start_swipe_ms_per_cm)
+    val threshold = (distance * timePerCm).toInt()
+    assertEquals(0.85f, distance, 0f)
+    for (timeMs in listOf(150, 200, 250, 300, 500, 750, 1_000, 1_500, 2_000)) {
+      GestureConfiguration.setSwipeStartTimeMs(timeMs)
+      assertEquals(timeMs, GestureConfiguration.scaleSwipeStartThresholdMs(threshold))
+    }
   }
 
   @Test
