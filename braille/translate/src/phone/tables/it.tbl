@@ -14,5 +14,20 @@
 # the implemented braille code. Preferably submit the documents
 # to https://github.com/liblouis/braille-specs.
 
+# SandFly: dot 3 at the end of the input outside numbers is an apostrophe
+# (po'). it-it-comp6.utb holds a dot 3 until the next cell and drops a final
+# one. These rules come before the include so that they are tried first.
+nofor pass2 #1=0#6=0@3~ @3e
+nofor pass2 #1=0#6=1@3~ #6=0@3e-3e
+
 include it-it-comp6.utb
 include braille-patterns.cti
+
+# SandFly: capital accented vowels (capital sign 46 before the letter).
+base uppercase \x00C0 \x00E0
+base uppercase \x00C9 \x00E9
+base uppercase \x00CC \x00EC
+base uppercase \x00D2 \x00F2
+base uppercase \x00D9 \x00F9
+# it-it-comp6.utb reads 34 in a word as a literal ì, without the capital sign.
+nofor context @46-34a "\x00CC"
