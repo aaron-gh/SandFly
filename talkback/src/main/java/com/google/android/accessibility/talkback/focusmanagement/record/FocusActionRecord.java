@@ -72,8 +72,11 @@ public class FocusActionRecord {
   private final @Nullable NodePathDescription nodePathDescription;
   /** For a node in web content, the node path with positions among siblings. Shared by copies. */
   private final @Nullable PathWithSiblingContext siblingContext;
-  /** The complete path is independent of the action metadata used to speak the focus event. */
-  private final @Nullable DeferredWebPath deferredWebPath;
+  /**
+   * The path read on a worker thread, on Android 13 and later. It is independent of the action
+   * metadata used to speak the focus event. Shared by copies.
+   */
+  private final @Nullable DeferredPath deferredPath;
   /** Extra information about source focus action. */
   private final @NonNull FocusActionInfo extraInfo;
   /** Unique id for the node */
@@ -114,23 +117,31 @@ public class FocusActionRecord {
       @Nullable Executor executor,
       @Nullable Supplier<NodePathDescription> pathReader) {
     this.focusedNode = focusedNode;
+    // Web content is where the path is deepest, and where swipes are answered by the page itself,
+    // without a reading order that would make the app's nodes ready for the path. Its ancestors'
+    // positions among their siblings are read when the path is needed.
+    boolean web = WebInterfaceUtils.supportsWebActions(focusedNode);
     if (executor != null) {
+      // Reading the path asks the app for every ancestor's children, which in a keyboard row or a
+      // long list holds up the main thread on every focus change.
       AccessibilityNodeInfoCompat copy = AccessibilityNodeInfoCompat.obtain(focusedNode);
-      deferredWebPath = new DeferredWebPath(
-          executor, pathReader != null ? pathReader
-              : () -> NodePathDescription.obtainWithoutSiblingContext(copy));
+      Supplier<NodePathDescription> reader = pathReader;
+      if (reader == null) {
+        reader = web
+            ? () -> NodePathDescription.obtainWithoutSiblingContext(copy)
+            : () -> NodePathDescription.obtain(copy);
+      }
+      deferredPath = new DeferredPath(executor, reader, /* addSiblingContext= */ web);
       nodePathDescription = null;
       siblingContext = null;
-    } else if (WebInterfaceUtils.supportsWebActions(focusedNode)) {
-      // Web content is where the path is deepest, and where swipes are answered by the page itself,
-      // without a reading order that would make the app's nodes ready for the path.
+    } else if (web) {
       nodePathDescription = NodePathDescription.obtainWithoutSiblingContext(focusedNode);
       siblingContext = new PathWithSiblingContext(nodePathDescription);
-      deferredWebPath = null;
+      deferredPath = null;
     } else {
       nodePathDescription = NodePathDescription.obtain(focusedNode);
       siblingContext = null;
-      deferredWebPath = null;
+      deferredPath = null;
     }
     this.extraInfo = extraInfo;
     this.actionTime = actionTime;
@@ -142,14 +153,14 @@ public class FocusActionRecord {
       @NonNull AccessibilityNodeInfoCompat focusedNode,
       @Nullable NodePathDescription nodePathDescription,
       @Nullable PathWithSiblingContext siblingContext,
-      @Nullable DeferredWebPath deferredWebPath,
+      @Nullable DeferredPath deferredPath,
       @NonNull FocusActionInfo extraInfo,
       long actionTime,
       String uniqueId) {
     this.focusedNode = focusedNode;
     this.nodePathDescription = nodePathDescription == null ? null : new NodePathDescription(nodePathDescription);
     this.siblingContext = siblingContext;
-    this.deferredWebPath = deferredWebPath;
+    this.deferredPath = deferredPath;
     this.extraInfo = extraInfo;
     this.actionTime = actionTime;
     this.uniqueId = uniqueId;
@@ -178,28 +189,32 @@ public class FocusActionRecord {
 
   private @NonNull NodePathDescription getNodePathDescription(
       Deadline deadline, NodePathDescription.Recovery recovery) {
-    if (deferredWebPath != null) return deferredWebPath.get(deadline).withSiblings.get(deadline, recovery);
+    if (deferredPath != null) {
+      RecordedPath recorded = deferredPath.get(deadline);
+      return recorded.withSiblings == null ? recorded.base
+          : recorded.withSiblings.get(deadline, recovery);
+    }
     return siblingContext == null ? Objects.requireNonNull(nodePathDescription)
         : siblingContext.get(deadline, recovery);
   }
 
   /**
    * Returns the focused node and its ancestors, which is enough to find whether a node is one of
-   * them with {@link NodePathDescription#containsNodeByHashAndIdentity}. Waits for a web snapshot
-   * that is still being captured; optional cache warming uses {@link #getReadyAncestorNodes}.
+   * them with {@link NodePathDescription#containsNodeByHashAndIdentity}. Waits for a path that is
+   * still being read on a worker thread; optional cache warming uses {@link #getReadyAncestorNodes}.
    */
   public @NonNull NodePathDescription getAncestorIdentityPath() {
     return getAncestorIdentityPath(Deadline.afterSearchTimeLimit());
   }
 
   private @NonNull NodePathDescription getAncestorIdentityPath(Deadline deadline) {
-    return deferredWebPath != null ? deferredWebPath.get(deadline).base
+    return deferredPath != null ? deferredPath.get(deadline).base
         : Objects.requireNonNull(nodePathDescription);
   }
 
   /** Cache warming is optional: it must never wait for an independent history snapshot. */
   public List<AccessibilityNodeInfoCompat> getReadyAncestorNodes() {
-    if (deferredWebPath != null && !deferredWebPath.task.isDone()) return Collections.emptyList();
+    if (deferredPath != null && !deferredPath.task.isDone()) return Collections.emptyList();
     return getAncestorIdentityPath().getSavedAncestorNodes();
   }
 
@@ -257,17 +272,22 @@ public class FocusActionRecord {
     return uniqueId;
   }
 
-  /** Whether this record and {@code other} share one web path capture. */
-  boolean sharesWebPathCapture(@Nullable FocusActionRecord other) {
-    return deferredWebPath != null && other != null && other.deferredWebPath == deferredWebPath;
+  /** Whether this record and {@code other} share one path capture on a worker thread. */
+  boolean sharesPathCapture(@Nullable FocusActionRecord other) {
+    return deferredPath != null && other != null && other.deferredPath == deferredPath;
+  }
+
+  /** Whether the path of this record is still being read, or waits to be read, on a worker thread. */
+  boolean isPathCapturePending() {
+    return deferredPath != null && !deferredPath.task.isDone();
   }
 
   /**
-   * Stops the web path capture that no record in the history uses any more. A later read of the
-   * path gets an empty path.
+   * Stops the path capture that no record in the history uses any more. A later read of the path
+   * gets an empty path.
    */
-  void cancelWebPathCapture() {
-    if (deferredWebPath != null) deferredWebPath.cancel();
+  void cancelPathCapture() {
+    if (deferredPath != null) deferredPath.cancel();
   }
 
   /** Returns a copied instance of another FocusActionRecord. */
@@ -279,7 +299,7 @@ public class FocusActionRecord {
         record.focusedNode,
         record.nodePathDescription,
         record.siblingContext,
-        record.deferredWebPath,
+        record.deferredPath,
         record.extraInfo,
         record.actionTime,
         record.uniqueId);
@@ -515,15 +535,18 @@ public class FocusActionRecord {
     }
   }
 
+  /**
+   * Whether the path can be read on a worker thread: on Android 13 and later, and not in SandFly's
+   * own windows, whose requests are answered on the main thread.
+   */
   private static boolean canReadPathInBackground(AccessibilityNodeInfoCompat node) {
     return Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
         && node.getWindowId() >= 0
-        && WebInterfaceUtils.supportsWebActions(node)
         && !PackageManagerUtils.isTalkBackPackage(node.getPackageName());
   }
 
   // Path reads may themselves use the independent query workers, so they have a separate pool.
-  private static final NodeQueryExecutor PATH_EXECUTOR = new NodeQueryExecutor("WebFocusPath", 4, 16);
+  private static final NodeQueryExecutor PATH_EXECUTOR = new NodeQueryExecutor("FocusPath", 4, 16);
 
   public static void startNodeQueries() { PATH_EXECUTOR.start(); }
 
@@ -532,24 +555,27 @@ public class FocusActionRecord {
     NodeDescription.clearWebPositions();
   }
 
-  private static final class RecordedWebPath {
+  private static final class RecordedPath {
     final NodePathDescription base;
-    final PathWithSiblingContext withSiblings;
-    RecordedWebPath(NodePathDescription base) {
+    /** For web content, adds the ancestors' positions among their siblings. Null when read whole. */
+    final @Nullable PathWithSiblingContext withSiblings;
+    RecordedPath(NodePathDescription base, boolean addSiblingContext) {
       this.base = base;
-      withSiblings = new PathWithSiblingContext(base);
+      withSiblings = addSiblingContext ? new PathWithSiblingContext(base) : null;
     }
   }
 
-  /** Copies share one completed snapshot and its original deferred sibling context. */
-  private static final class DeferredWebPath {
-    final FutureTask<RecordedWebPath> task;
+  /** Copies share one completed snapshot and, for web content, its deferred sibling context. */
+  private static final class DeferredPath {
+    final FutureTask<RecordedPath> task;
     final Executor executor;
-    DeferredWebPath(Executor executor, Supplier<NodePathDescription> reader) {
+    final boolean addSiblingContext;
+    DeferredPath(Executor executor, Supplier<NodePathDescription> reader, boolean addSiblingContext) {
       this.executor = executor;
+      this.addSiblingContext = addSiblingContext;
       task = new FutureTask<>(() -> {
-        Trace.beginSection("WebFocusPath.capture");
-        try { return new RecordedWebPath(reader.get()); }
+        Trace.beginSection("FocusPath.capture");
+        try { return new RecordedPath(reader.get(), addSiblingContext); }
         finally { Trace.endSection(); }
       });
       try { executor.execute(task); }
@@ -558,17 +584,17 @@ public class FocusActionRecord {
         else task.run();
       }
     }
-    private final AtomicReference<RecordedWebPath> resolved = new AtomicReference<>();
+    private final AtomicReference<RecordedPath> resolved = new AtomicReference<>();
 
     void cancel() {
       if (executor instanceof NodeQueryExecutor queries) queries.cancel(task);
       else task.cancel(false);
     }
 
-    RecordedWebPath get(Deadline deadline) {
-      RecordedWebPath existing = resolved.get();
+    RecordedPath get(Deadline deadline) {
+      RecordedPath existing = resolved.get();
       if (existing != null) return existing;
-      RecordedWebPath result;
+      RecordedPath result;
       try {
         result = task.get(Math.min(NodePathDescription.SEARCH_TIME_LIMIT_MS,
             deadline.remainingMs()), TimeUnit.MILLISECONDS);
@@ -576,12 +602,12 @@ public class FocusActionRecord {
         if (e instanceof InterruptedException) Thread.currentThread().interrupt();
         // The capture keeps running for a later caller with a longer budget, such as a
         // restoration started right after a swipe. Only this caller goes without a path.
-        LogUtils.w(TAG, "Web focus path was not available within its budget: %s", e);
-        return new RecordedWebPath(NodePathDescription.empty());
+        LogUtils.w(TAG, "Focus path was not available within its budget: %s", e);
+        return new RecordedPath(NodePathDescription.empty(), addSiblingContext);
       } catch (ExecutionException | CancellationException e) {
-        LogUtils.w(TAG, "Web focus path could not be captured: %s", e);
+        LogUtils.w(TAG, "Focus path could not be captured: %s", e);
         // Pin the fallback for copies and future callers: the capture cannot complete.
-        result = new RecordedWebPath(NodePathDescription.empty());
+        result = new RecordedPath(NodePathDescription.empty(), addSiblingContext);
       }
       resolved.compareAndSet(null, result);
       return resolved.get();
@@ -608,7 +634,7 @@ public class FocusActionRecord {
         || actionTime != otherRecord.actionTime || !Objects.equals(uniqueId, otherRecord.uniqueId)) {
       return false;
     }
-    if (deferredWebPath != null && deferredWebPath == otherRecord.deferredWebPath) return true;
+    if (deferredPath != null && deferredPath == otherRecord.deferredPath) return true;
     Deadline deadline = Deadline.afterSearchTimeLimit();
     return getAncestorIdentityPath(deadline).equals(otherRecord.getAncestorIdentityPath(deadline));
   }
