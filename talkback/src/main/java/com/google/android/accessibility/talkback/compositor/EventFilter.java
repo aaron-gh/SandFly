@@ -30,6 +30,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.calls.CallNotifications;
 import com.google.android.accessibility.talkback.calls.CallerAnnouncer;
 import com.google.android.accessibility.talkback.compositor.rule.EventTypeViewAccessibilityFocusedFeedbackRule;
+import com.google.android.accessibility.talkback.controlsounds.ControlSounds;
 import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.ColumnWrap;
@@ -52,6 +53,7 @@ import com.google.android.accessibility.utils.output.SpeechHistory;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy.SearchDirection;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.BooleanSupplier;
 import java.util.function.IntSupplier;
@@ -231,7 +233,7 @@ public class EventFilter {
 
     if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
       // The focus moved without being spoken early, so the prepared announcements are of no use.
-      PreparedFocusSpeech.clear();
+      PreparedFocusSpeech.clear("focus event");
       @Nullable AccessibilityNodeInfoCompat focused = AccessibilityEventUtils.sourceCompat(event);
       if (focused != null) {
         onFocusMoved(focused);
@@ -440,8 +442,7 @@ public class EventFilter {
       return false;
     }
     // Only looked at: if nothing is spoken here, it is used after the action.
-    PreparedFocusSpeech.@Nullable Prepared prepared =
-        (info.columnWrap == ColumnWrap.NONE) ? PreparedFocusSpeech.peek(focusedNode) : null;
+    PreparedFocusSpeech.@Nullable Prepared prepared = preparedFor(focusedNode, info);
     AccessibilityNodeInfoCompat node;
     if (prepared != null) {
       node = prepared.getNode();
@@ -468,7 +469,7 @@ public class EventFilter {
       globalVariables.updateStateFromFocusedNode(node);
       globalVariables.updateCollectionStateFromFocusedNode(node, event);
       if (prepared != null) {
-        feedback = prepared.getFeedback();
+        feedback = preparedFeedback(prepared);
         EventTypeViewAccessibilityFocusedFeedbackRule.currentContainerTitle =
             prepared.getContainerTitle();
       } else {
@@ -485,7 +486,7 @@ public class EventFilter {
       return false;
     }
     // The focus is moving, so the prepared announcements are used now or not at all.
-    PreparedFocusSpeech.clear();
+    PreparedFocusSpeech.clear("focus moved");
     lastHoverEnteredNode = null;
     // The speech history must know whether the node is a password before the speech starts; the
     // action, and the app's focus event, come after.
@@ -537,19 +538,21 @@ public class EventFilter {
       @Nullable EventId eventId,
       long actionTime) {
     // The focus is moving, so the prepared announcements are used now or not at all.
-    PreparedFocusSpeech.@Nullable Prepared prepared = PreparedFocusSpeech.take(focusedNode);
+    PreparedFocusSpeech.@Nullable Prepared prepared =
+        shouldSpeakFocusEarly(info) ? preparedFor(focusedNode, info) : null;
+    PreparedFocusSpeech.clear("focus moved");
     if (!shouldSpeakFocusEarly(info)) {
       return false;
     }
     AccessibilityNodeInfoCompat node;
     @Nullable EventFeedback preparedFeedback;
     @Nullable CharSequence preparedContainerTitle = null;
-    if (prepared != null && info.columnWrap == ColumnWrap.NONE) {
-      // Prepared from the node read again from the app, and thrown away had anything in its
-      // window changed since, even its text or state. So it needs no second read, which would
-      // wait for the app to finish drawing the focus it was just given.
+    if (prepared != null) {
+      // Prepared from the node read again from the app, and either nothing in its window has
+      // changed since, or the node, read again after the change, still says the same. So it needs
+      // no second read, which would wait for the app to finish drawing the focus it was just given.
       node = prepared.getNode();
-      preparedFeedback = prepared.getFeedback();
+      preparedFeedback = preparedFeedback(prepared);
       preparedContainerTitle = prepared.getContainerTitle();
     } else if (TraversalTreeCache.holdsCurrent(focusedNode)) {
       // Read from the app with the saved order, and nothing in its window has changed since, so a
@@ -611,6 +614,36 @@ public class EventFilter {
     earlyFocusSpeech.addSpoken(node, actionTime);
     onFocusMoved(node);
     return true;
+  }
+
+  /**
+   * The announcement prepared for focusing {@code focusedNode} with {@code info} that may be used
+   * now, or null if there is none.
+   */
+  private static PreparedFocusSpeech.@Nullable Prepared preparedFor(
+      AccessibilityNodeInfoCompat focusedNode, FocusActionInfo info) {
+    if (info.columnWrap != ColumnWrap.NONE) {
+      // The sound of moving to another row was not prepared.
+      PreparedFocusSpeech.noteNotUsed(focusedNode, "moved to another row");
+      return null;
+    }
+    return PreparedFocusSpeech.peek(focusedNode);
+  }
+
+  /**
+   * The feedback of {@code prepared}. When its node was read again after a change, its sound is
+   * placed where the node is now, as a scroll since may have moved it.
+   */
+  private EventFeedback preparedFeedback(PreparedFocusSpeech.Prepared prepared) {
+    EventFeedback feedback = prepared.getFeedback();
+    if (!prepared.isCheckedAfterChange() || feedback.earconX() < 0) {
+      return feedback;
+    }
+    float[] position = ControlSounds.screenPosition(prepared.getNode(), context);
+    return feedback.toBuilder()
+        .setEarconX(position == null ? -1 : position[0])
+        .setEarconY(position == null ? -1 : position[1])
+        .build();
   }
 
   /** Sets whether items are spoken before a swipe scrolls them into view; see the field. */
@@ -804,9 +837,19 @@ public class EventFilter {
     } finally {
       globalVariables.restoreFocusState(saved);
     }
-    if (hasSpeech(feedback)) {
-      PreparedFocusSpeech.put(node, feedback, containerTitle);
+    if (!hasSpeech(feedback)) {
+      return;
     }
+    // Kept to check, should anything in the window change before a swipe, that the node still
+    // says the same.
+    @Nullable List<Object> fingerprint;
+    try {
+      fingerprint = NodeFingerprint.of(node);
+    } catch (RuntimeException e) {
+      LogUtils.e(TAG, "Cannot read focus speech fingerprint: %s", e);
+      fingerprint = null;
+    }
+    PreparedFocusSpeech.put(node, feedback, containerTitle, fingerprint);
   }
 
   /** Whether {@code feedback} says anything. */
