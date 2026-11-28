@@ -40,8 +40,17 @@ class SplitScreen(private val service: AccessibilityService) {
   private var touching = false
   private var lastAppWindowId = NO_WINDOW
 
+  // Whether the screen is split and which windows are apps', from the window list read at the
+  // first focus after the windows last changed. Focus moves at every swipe, and each read of the
+  // window list is an IPC call.
+  private var splitKnown = false
+  private var split = false
+  private var appWindowIds: Set<Int> = emptySet()
+
   fun onAccessibilityEvent(event: AccessibilityEvent) {
     when (event.eventType) {
+      AccessibilityEvent.TYPE_WINDOWS_CHANGED,
+      AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED -> splitKnown = false
       AccessibilityEvent.TYPE_TOUCH_INTERACTION_START -> {
         touching = true
         handler.removeCallbacks(focusTextField)
@@ -55,12 +64,17 @@ class SplitScreen(private val service: AccessibilityService) {
   }
 
   private fun onAccessibilityFocused(event: AccessibilityEvent) {
-    val windows = windows()
-    if (!isSplit(windows)) {
+    if (!splitKnown) {
+      val windows = windows()
+      split = isSplit(windows)
+      appWindowIds = if (split) windows.filter { it.type == TYPE_APP }.map { it.id }.toSet() else emptySet()
+      splitKnown = true
+    }
+    if (!split) {
       lastAppWindowId = NO_WINDOW
       return
     }
-    if (windows.firstOrNull { it.id == event.windowId }?.type == TYPE_APP) {
+    if (event.windowId in appWindowIds) {
       lastAppWindowId = event.windowId
     }
     scheduleFocusTextField()
