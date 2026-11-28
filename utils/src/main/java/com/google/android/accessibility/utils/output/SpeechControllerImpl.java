@@ -1893,21 +1893,53 @@ public class SpeechControllerImpl implements SpeechController {
       boolean stopTtsSpeechCompletely,
       boolean notifyObserver,
       boolean interruptItemsThatCanIgnoreInterrupts) {
+    interrupt(
+        stopTtsSpeechCompletely,
+        notifyObserver,
+        interruptItemsThatCanIgnoreInterrupts,
+        /* holdForPause= */ false);
+  }
+
+  /**
+   * Interrupts SandFly's speech as {@link #interrupt(boolean)} does, but holds low-latency speech
+   * mid-word rather than stopping the engine, for a pause that may follow, such as at the start of
+   * a touch that may be the pause gesture, or for the pause gesture itself.
+   */
+  public void interruptHoldingForPause() {
+    interrupt(
+        /* stopTtsSpeechCompletely= */ false,
+        /* notifyObserver= */ true,
+        /* interruptItemsThatCanIgnoreInterrupts= */ true,
+        /* holdForPause= */ true);
+  }
+
+  private void interrupt(
+      boolean stopTtsSpeechCompletely,
+      boolean notifyObserver,
+      boolean interruptItemsThatCanIgnoreInterrupts,
+      boolean holdForPause) {
     if (mHandler.getLooper().isCurrentThread()) {
       interruptFromHandlerThread(
-          stopTtsSpeechCompletely, notifyObserver, interruptItemsThatCanIgnoreInterrupts);
+          stopTtsSpeechCompletely,
+          notifyObserver,
+          interruptItemsThatCanIgnoreInterrupts,
+          holdForPause);
     } else {
       mHandler.post(
           () ->
               interruptFromHandlerThread(
-                  stopTtsSpeechCompletely, notifyObserver, interruptItemsThatCanIgnoreInterrupts));
+                  stopTtsSpeechCompletely,
+                  notifyObserver,
+                  interruptItemsThatCanIgnoreInterrupts,
+                  holdForPause));
     }
   }
 
   private void interruptFromHandlerThread(
       boolean stopTtsSpeechCompletely,
       boolean notifyObserver,
-      boolean interruptItemsThatCanIgnoreInterrupts) {
+      boolean interruptItemsThatCanIgnoreInterrupts,
+      boolean holdForPause) {
     if (!interruptItemsThatCanIgnoreInterrupts) {
       if (!clearCurrentAndQueuedUtterancesThatDontIgnoreInterrupts(notifyObserver)) {
         // If there are speech items that are not removed from the speech queue, or the currently
@@ -1933,7 +1965,7 @@ public class SpeechControllerImpl implements SpeechController {
       failoverTts.stopAll();
     } else {
       // Stop TTS audio from TalkBack.
-      failoverTts.stopFromTalkBack();
+      failoverTts.stopFromTalkBack(holdForPause);
     }
   }
 
@@ -2045,7 +2077,7 @@ public class SpeechControllerImpl implements SpeechController {
   @Override
   public void pause() {
     if (FormFactorUtils.isAndroidXr() && !requestPause) {
-      failoverTts.stopFromTalkBack();
+      failoverTts.stopFromTalkBack(/* holdForPause= */ true);
     }
     long delta = SystemClock.uptimeMillis() - feedbackSavedTime;
     // The savedFeedbackQueue was copied for the last interrupted speech content. If the delta
@@ -2054,7 +2086,7 @@ public class SpeechControllerImpl implements SpeechController {
     if (savedFeedbackQueue != null && delta <= SAVED_FEEDBACK_FOR_PAUSE_TIME) {
       currentFeedbackItem = null;
       requestPause = true;
-      failoverTts.stopFromTalkBack();
+      failoverTts.stopFromTalkBack(/* holdForPause= */ true);
       // Low-latency speech held at the touch stays held, to carry on mid-word when resumed.
       failoverTts.keepHeldSpeech();
     }

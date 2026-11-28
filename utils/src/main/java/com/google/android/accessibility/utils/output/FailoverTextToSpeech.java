@@ -105,6 +105,7 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.BooleanSupplier;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -798,6 +799,12 @@ public class FailoverTextToSpeech {
   private final Deque<String> recentUtteranceIds =
       new ConcurrentLinkedDeque<>(); // may contain nulls
 
+  /** How many times speech was given to {@link #tts}, including empty speech that flushes it. */
+  private final AtomicLong engineRequests = new AtomicLong();
+
+  /** {@link #engineRequests} when {@link #tts} was last stopped, or -1. */
+  private volatile long engineRequestsAtStop = -1;
+
   private final @Nullable SpeechCacheManager speechCacheManager;
 
   public FailoverTextToSpeech(Context context) {
@@ -1220,6 +1227,7 @@ public class FailoverTextToSpeech {
     if (flushGlobalTtsQueue && tts != null) {
       stopLowLatencySpeech();
       try {
+        engineRequests.incrementAndGet();
         tts.speak("", SPEECH_FLUSH_ALL, null);
         unfinishedUtterances.clear();
       } catch (Exception e) {
@@ -1281,6 +1289,7 @@ public class FailoverTextToSpeech {
       if (tts != null) {
         stopLowLatencySpeech();
         try {
+          engineRequests.incrementAndGet();
           tts.speak("", SPEECH_FLUSH_ALL, null);
           unfinishedUtterances.clear();
         } catch (Exception e) {
@@ -1495,6 +1504,7 @@ public class FailoverTextToSpeech {
     try {
       allowDeviceSleep();
       ensureQueueFlush();
+      engineRequests.incrementAndGet();
       tts.speak("", SPEECH_FLUSH_ALL, null);
       unfinishedUtterances.clear();
     } catch (Exception e) {
@@ -1502,12 +1512,27 @@ public class FailoverTextToSpeech {
     }
   }
 
-  /** Stops all speech that originated from TalkBack. No utterance callbacks will be sent. */
+  /**
+   * Stops all speech that originated from TalkBack at once. No utterance callbacks will be sent.
+   */
   public void stopFromTalkBack() {
+    stopFromTalkBack(/* holdForPause= */ false);
+  }
+
+  /**
+   * Stops all speech that originated from TalkBack. No utterance callbacks will be sent.
+   *
+   * @param holdForPause whether a pause may follow, such as at the start of a touch that may be
+   *     the pause gesture. Then low-latency speech playing now is held mid-word instead, and the
+   *     engine goes on making it, so that a pause can carry on from where it stopped. Otherwise the
+   *     engine stops at once, and has stopped by the time the next speech is given to it.
+   */
+  public void stopFromTalkBack(boolean holdForPause) {
     emojiVoice.stop();
     stopLanguageVoices();
     dropAfterCallSpeech();
-    if (holdLowLatencySpeech()) {
+    // Speech held already stays held, for a pause that may still follow.
+    if (holdForPause ? holdLowLatencySpeech() : heldUtteranceId != null) {
       // The engine keeps making the held speech, so it can carry on if speech is paused.
       allowDeviceSleep();
       return;
@@ -1515,11 +1540,28 @@ public class FailoverTextToSpeech {
     stopLowLatencySpeech();
     try {
       allowDeviceSleep();
+      engineRequests.incrementAndGet();
       tts.speak("", TextToSpeech.QUEUE_FLUSH, null);
       unfinishedUtterances.clear();
     } catch (Exception e) {
       // Don't care, we're not speaking.
     }
+  }
+
+  /**
+   * Stops {@link #tts}'s speech, and notes that it has none until speech is given to it again.
+   * Throws what the engine throws.
+   */
+  private void stopEngine() {
+    // Read first: speech given while the engine stops may not be stopped.
+    long requests = engineRequests.get();
+    tts.stop();
+    engineRequestsAtStop = requests;
+  }
+
+  /** Whether {@link #tts} was stopped and given no speech since, so stopping it again does nothing. */
+  private boolean engineStoppedAndIdle() {
+    return engineRequestsAtStop == engineRequests.get();
   }
 
   /**
@@ -1595,6 +1637,7 @@ public class FailoverTextToSpeech {
     try {
       File tempFile = File.createTempFile("tmpsynthesize", null, context.getCacheDir());
       // The engine has its own descriptor for the file once synthesizeToFile returns.
+      engineRequests.incrementAndGet();
       tts.synthesizeToFile("1 2 3", null, tempFile, "tmpsynthesize");
       tempFile.delete();
     } catch (IOException e) {
@@ -2222,6 +2265,7 @@ public class FailoverTextToSpeech {
         // speak next speech immediately
         if (speechCacheManager.speakWithSpeechCachePlayer(
             utteranceId, queueMode, text, bundle, playbackStateListener, locale)) {
+          engineRequests.incrementAndGet();
           tts.speak("", SPEECH_FLUSH_ALL, null);
           return TextToSpeech.SUCCESS;
         }
@@ -2231,6 +2275,7 @@ public class FailoverTextToSpeech {
     } else {
       if (speechCacheManager.speakWithSpeechCachePlayer(
           utteranceId, queueMode, text, bundle, playbackStateListener, locale)) {
+        engineRequests.incrementAndGet();
         tts.speak("", SPEECH_FLUSH_ALL, null);
         return TextToSpeech.SUCCESS;
       }
@@ -2325,6 +2370,7 @@ public class FailoverTextToSpeech {
       CharSequence text, int queueMode, Bundle bundle, @Nullable String utteranceId) {
     @Nullable LowLatencyAudio player = lowLatencyPlayer();
     if (player == null || utteranceId == null || TextUtils.isEmpty(text)) {
+      engineRequests.incrementAndGet();
       return tts.speak(text, queueMode, bundle, utteranceId);
     }
     watchForEngineHang(queueMode, utteranceId);
@@ -2363,10 +2409,13 @@ public class FailoverTextToSpeech {
       Bundle unplayed = new Bundle(bundle);
       unplayed.putFloat(SpeechParam.VOLUME, 1f);
       unplayed.putFloat(Engine.KEY_PARAM_PAN, 0f);
-      if (queueMode != QUEUE_ADD) {
-        // Making speech has no queue mode: it always waits for the engine's earlier speech.
-        tts.stop();
+      if (queueMode != QUEUE_ADD && !engineStoppedAndIdle()) {
+        // Making speech has no queue mode: it always waits for the engine's earlier speech. An
+        // engine stopped with nothing given to it since, as by the interrupt before this speech,
+        // has none.
+        stopEngine();
       }
+      engineRequests.incrementAndGet();
       // Text with no letters or digits, such as a line break, may have no audio at all, which
       // leaves nothing to say again.
       if (hasLetterOrDigit(text)) {
@@ -2380,12 +2429,14 @@ public class FailoverTextToSpeech {
       // The engine speaks as usual but at no volume, and Backtalk plays the copy of its audio.
       Bundle silent = new Bundle(bundle);
       silent.putFloat(SpeechParam.VOLUME, 0f);
+      engineRequests.incrementAndGet();
       result = tts.speak(text, queueMode, silent, utteranceId);
     }
     if (result != TextToSpeech.SUCCESS) {
       stream.discard();
       lowLatencyStreams.remove(utteranceId);
       lowLatencyRequests.remove(utteranceId);
+      engineRequests.incrementAndGet();
       return tts.speak(text, queueMode, bundle, utteranceId);
     }
     return result;
@@ -2570,7 +2621,7 @@ public class FailoverTextToSpeech {
     stopLowLatencySpeech();
     try {
       // Stopping rather than speaking nothing, which would queue ahead of new speech.
-      tts.stop();
+      stopEngine();
       unfinishedUtterances.clear();
     } catch (Exception e) {
       // Not speaking.
@@ -2618,7 +2669,7 @@ public class FailoverTextToSpeech {
     if (speaking && tts != null) {
       try {
         // The engine is still making that speech, at no volume.
-        tts.stop();
+        stopEngine();
       } catch (Exception e) {
         // Not speaking.
       }
@@ -3063,11 +3114,12 @@ public class FailoverTextToSpeech {
           // stopping would lose.
           boolean onlyThese = ids.containsAll(unfinishedUtterances);
           if (onlyThese) {
-            tts.stop();
+            stopEngine();
             unfinishedUtterances.removeAll(ids);
           }
           for (int i = 0; i < ids.size(); i++) {
             Pair<CharSequence, Bundle> said = requests.get(i);
+            engineRequests.incrementAndGet();
             tts.speak(said.first, QUEUE_ADD, said.second, RESPOKEN_ID_PREFIX + ids.get(i));
           }
         });
@@ -3302,6 +3354,7 @@ public class FailoverTextToSpeech {
    */
   private void ensureQueueFlush() {
     if (BuildVersionUtils.isM()) {
+      engineRequests.incrementAndGet();
       tts.speak("", TextToSpeech.QUEUE_FLUSH, null, null);
     }
   }
@@ -3469,6 +3522,7 @@ public class FailoverTextToSpeech {
     engineQuietSince = 0;
     unansweredSpeech.reset();
     unfinishedUtterances.clear();
+    engineRequestsAtStop = -1;
 
     tts = newTts;
     tts.setOnUtteranceProgressListener(lowLatencyRouter);
@@ -4056,6 +4110,7 @@ public class FailoverTextToSpeech {
         mLastUtteranceLocale = actualLocale;
       }
       // Use getter to override it in testing.
+      engineRequests.incrementAndGet();
       if (getEngineInstance().synthesizeToFile(text, params, file, utteranceId)
           == TextToSpeech.SUCCESS) {
         return true;

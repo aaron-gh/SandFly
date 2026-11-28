@@ -603,6 +603,12 @@ public class Pipeline implements AccessibilityEventListener, AccessibilityEventI
     actors.interruptAllFeedback(stopTtsSpeechCompletely);
   }
 
+  /** Interrupts all feedback, holding low-latency speech mid-word for a pause that follows. */
+  public void interruptAllFeedbackHoldingForPause() {
+    cancelAllDelays();
+    actors.interruptAllFeedbackHoldingForPause();
+  }
+
   public void shutdown() {
     cancelAllDelays();
     actors.shutdown();

@@ -2744,6 +2744,20 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
   }
 
+  /**
+   * Interrupts all SandFly feedback for the pause command, holding low-latency speech mid-word so
+   * that the pause carries on from where it stopped.
+   */
+  public void interruptAllFeedbackHoldingForPause() {
+    if (fullScreenReadActor != null) {
+      fullScreenReadActor.interrupt();
+    }
+
+    if (pipeline != null) {
+      pipeline.interruptAllFeedbackHoldingForPause();
+    }
+  }
+
   public void interruptFullScreenReadActor() {
     if (fullScreenReadActor != null) {
       fullScreenReadActor.stopContinuousReadingMode();
