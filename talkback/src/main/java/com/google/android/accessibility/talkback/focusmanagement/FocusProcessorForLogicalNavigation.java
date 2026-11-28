@@ -697,6 +697,17 @@ public class FocusProcessorForLogicalNavigation {
   }
 
   private boolean runNavigationAction(NavigationAction navigationAction, EventId eventId) {
+    return runNavigationAction(navigationAction, eventId, /* batchWaiting= */ false);
+  }
+
+  /**
+   * Runs {@code navigationAction}. With {@code batchWaiting}, the same moves waiting in {@link
+   * #deferredNavigations} after it go with it, as long as each of them only focuses an item: the
+   * items before the last one are passed without focusing or speaking them, and only the last move
+   * focuses its item.
+   */
+  private boolean runNavigationAction(
+      NavigationAction navigationAction, EventId eventId, boolean batchWaiting) {
     if (navigationAction == null || navigationAction.actionType == NavigationAction.UNKNOWN) {
       LogUtils.w(TAG, "Cannot perform navigation action: action type undefined.");
       return false;
@@ -741,6 +752,42 @@ public class FocusProcessorForLogicalNavigation {
       return false;
     }
     pivot = textFieldForKeyAfterTyping(pivot, navigationAction);
+    if (batchWaiting) {
+      // The move run after the items passed starts from an item that isn't focused, so it must
+      // also be one that only focuses its item. Anything else, such as a scroll or the end sound,
+      // can depend on the focused item, so such a move runs on its own from the focused item.
+      int passed = 0;
+      @Nullable AccessibilityNodeInfoCompat item = null;
+      @Nullable Pair<NavigationAction, EventId> waiting;
+      while ((waiting = deferredNavigations.peek()) != null
+          && navigationAction.equals(waiting.first)) {
+        if (passed == 0) {
+          item = itemPassedInBatch(pivot, navigationAction);
+        }
+        if (item == null) {
+          break;
+        }
+        @Nullable AccessibilityNodeInfoCompat nextItem = itemPassedInBatch(item, waiting.first);
+        if (nextItem == null) {
+          break;
+        }
+        deferredNavigations.poll();
+        pivot = item;
+        navigationAction = waiting.first;
+        eventId = waiting.second;
+        item = nextItem;
+        passed++;
+      }
+      if (passed > 0) {
+        LogUtils.d(
+            TAG,
+            "Batched %d waiting moves: passed %d items without focusing them.",
+            passed + 1,
+            passed);
+        // As focusing the items passed would have.
+        reachEdge = false;
+      }
+    }
     if (navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION) {
       ScrollEventInterpreter.onNavigation(pivot.getWindowId());
     }
@@ -766,6 +813,8 @@ public class FocusProcessorForLogicalNavigation {
   // A swipe that comes while an earlier swipe's scroll hasn't yet focused the next item waits for
   // it, and then moves on from that item. Otherwise it would start from the item the scroll moved
   // off screen, or from the window, and skip items. Waits at most MAX_DEFER_MS after the scroll.
+  // Waiting moves of the same kind run together: the items before the last one's are passed
+  // without being focused or spoken, see runNavigationAction.
   private static final long MAX_DEFER_MS = 1500;
   private static final int MAX_DEFERRED_NAVIGATIONS = 4;
   private final ArrayDeque<Pair<NavigationAction, EventId>> deferredNavigations =
@@ -860,10 +909,129 @@ public class FocusProcessorForLogicalNavigation {
     Pair<NavigationAction, EventId> next = deferredNavigations.poll();
     LogUtils.d(TAG, "Running a swipe that waited for the list.");
     navigationSerial++;
-    runNavigationAction(next.first, next.second);
+    runNavigationAction(next.first, next.second, /* batchWaiting= */ true);
     if (!deferredNavigations.isEmpty()) {
       earlyScrollCheckHandler.postDelayed(this::runDeferredNavigations, FRAME_MS);
     }
+  }
+
+  /**
+   * The item that {@code navigationAction}, a move to the next or previous item, focuses from
+   * {@code pivot}, when the move does nothing but focus it: the item is native, on screen in the
+   * same window, and the move scrolls nothing, is at no edge of a list, scroll view or window, and
+   * leaves no text field, grid, web content or picture-in-picture window. Null otherwise, or when
+   * the move does something this doesn't check for. Searches the same order with the same filter
+   * as the move, and focuses nothing.
+   */
+  private @Nullable AccessibilityNodeInfoCompat itemPassedInBatch(
+      AccessibilityNodeInfoCompat pivot, NavigationAction navigationAction) {
+    if (!isMoveToNextOrPreviousItem(navigationAction)
+        || revealingOffscreen
+        || ScreenElements.isShowing()
+        || WebInterfaceUtils.supportsWebActions(pivot)
+        // A text field can lead into the window of its suggestions.
+        || Role.getRole(pivot) == Role.ROLE_EDIT_TEXT
+        // A grid can be scrolled to a cell after the search.
+        || AccessibilityNodeInfoUtils.getMatchingAncestor(pivot, FILTER_SCROLLABLE_GRID) != null
+        || (isWindowNavigationSupported && pictureInPictureOf(pivot) != null)) {
+      return null;
+    }
+    @Nullable LocalTraversalOrder outerLocalOrder = localOrder;
+    localOrder = null;
+    try {
+      return itemPassedInBatchInternal(pivot, navigationAction);
+    } catch (LocalTraversalOrder.MismatchException e) {
+      // The move itself searches again with the whole order.
+      return null;
+    } finally {
+      if (localOrder != null) {
+        localOrder.finish();
+      }
+      localOrder = outerLocalOrder;
+    }
+  }
+
+  private @Nullable AccessibilityNodeInfoCompat itemPassedInBatchInternal(
+      AccessibilityNodeInfoCompat pivot, NavigationAction navigationAction) {
+    int searchDirection = navigationAction.searchDirection;
+    boolean rtl = WindowUtils.isScreenLayoutRTL(service);
+    @SearchDirection
+    int logicalDirection = TraversalStrategyUtils.getLogicalDirection(searchDirection, rtl);
+    if (listEndedByPivot(pivot, navigationAction, logicalDirection) != null) {
+      return null;
+    }
+    @Nullable SearchOrder searchOrder = searchOrderFor(pivot, navigationAction);
+    if (searchOrder == null) {
+      return null;
+    }
+    TraversalStrategy traversalStrategy = searchOrder.strategy();
+    @Nullable
+    OrderedTraversalStrategy pivotOrder =
+        reusableOrderedStrategy(traversalStrategy, searchOrder.root(), pivot);
+    TraversalStrategyUtils.EdgeSearch edgeSearch =
+        new TraversalStrategyUtils.EdgeSearch(
+            Filter.node(node -> isWebViewToEnter(node, navigationAction)));
+    if (navigationAction.shouldScroll) {
+      if (scrollViewEndedByPivot(
+              pivot,
+              /* ignoreDescendantsOfPivot= */ false,
+              navigationAction,
+              logicalDirection,
+              pivotOrder)
+          != null) {
+        return null;
+      }
+      // The container that autoScrollAtEdge would scroll, with the pivot at its edge.
+      @Nullable
+      ScrollableNodeInfo scrollableNodeInfo =
+          ScrollableNodeInfo.findScrollableNodeForDirection(
+              searchDirection, pivot, /* includeSelf= */ true, rtl);
+      if (scrollableNodeInfo == null) {
+        scrollableNodeInfo =
+            findAnyRoleScrollable(
+                pivot, /* ignoreDescendantsOfPivot= */ false, navigationAction, rtl);
+      }
+      if (scrollableNodeInfo != null
+          && TraversalStrategyUtils.isAutoScrollEdgeListItem(
+              pivot,
+              scrollableNodeInfo,
+              /* ignoreDescendantsOfPivot= */ false,
+              searchDirection,
+              focusFinder,
+              pivotOrder,
+              edgeSearch)) {
+        return null;
+      }
+    }
+    Filter<AccessibilityNodeInfoCompat> nodeFilter =
+        NavigationTarget.createNodeFilter(
+            navigationAction.targetType, traversalStrategy.getSpeakingNodesCache());
+    @Nullable
+    AccessibilityNodeInfoCompat target =
+        searchNativeTarget(
+            pivot,
+            /* ignoreDescendantsOfPivot= */ false,
+            navigationAction,
+            nodeFilter,
+            traversalStrategy,
+            edgeSearch);
+    if (target == null
+        || target.getWindowId() != pivot.getWindowId()
+        || WebInterfaceUtils.supportsWebActions(target)
+        || !target.isVisibleToUser()
+        // The next move from a focused list or scroll view can start from elsewhere.
+        || target.isScrollable()) {
+      return null;
+    }
+    if (navigationAction.shouldScroll
+        && scrollableToShow(
+                target,
+                searchDirection,
+                reusableOrderedStrategy(traversalStrategy, searchOrder.root(), target))
+            != null) {
+      return null;
+    }
+    return target;
   }
 
   /**
