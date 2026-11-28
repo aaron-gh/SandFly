@@ -4990,6 +4990,10 @@ public class FocusProcessorForLogicalNavigation {
       @SearchDirection int logicalDirection,
       @Nullable OrderedTraversalStrategy windowOrderedStrategy,
       EventId eventId) {
+    // scrollViewEndedByPivot checks this too; here it also covers the cache clearing below.
+    if (!BuildVersionUtils.isAtLeastU()) {
+      return REVEAL_NONE;
+    }
     @Nullable
     AccessibilityNodeInfoCompat scrollable =
         scrollViewEndedByPivot(
