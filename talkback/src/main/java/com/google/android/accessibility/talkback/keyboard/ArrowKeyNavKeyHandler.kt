@@ -109,13 +109,22 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
     if (!canAct) {
       return false
     }
+    val modifiers = event.modifiers and KeyCombo.KEY_EVENT_MODIFIER_MASK
+    // Keys that are no arrow key command alone or with the other key held, such as Space, go on
+    // before the keymap and settings lookups below, which every key press made.
+    if (
+      ArrowKeyNav.arrowKeysFor(ArrowKeyNav.keys(modifiers, keyCode)) == null &&
+        (otherKey == null ||
+          ArrowKeyNav.arrowKeysFor(ArrowKeyNav.keys(modifiers, otherKey, keyCode)) == null)
+    ) {
+      return false
+    }
 
     // Keymaps whose arrow keys move SandFly focus, such as NVDA's, don't have it.
     if (!ArrowKeyNav.isAvailable(context)) {
       return false
     }
     val on = ArrowKeyNav.isOn(context)
-    val modifiers = event.modifiers and KeyCombo.KEY_EVENT_MODIFIER_MASK
     if (otherKey != null) {
       val command = commandFor(ArrowKeyNav.keys(modifiers, otherKey, keyCode))
       if (command == ArrowKeyNav.TOGGLE && callbacks.isEditingText()) {

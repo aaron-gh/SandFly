@@ -233,6 +233,7 @@ class FlutterPageViewTest {
         OrderedTraversalStrategy::class.java,
         OrderedTraversalStrategy(root),
       ),
+      ReflectionHelpers.ClassParameter.from(TraversalStrategyUtils.EdgeSearch::class.java, null),
       ReflectionHelpers.ClassParameter.from(EventId::class.java, EVENT_ID_UNTRACKED),
     )
 
