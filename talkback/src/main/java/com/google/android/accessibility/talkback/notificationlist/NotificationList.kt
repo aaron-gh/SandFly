@@ -27,6 +27,7 @@ import androidx.core.app.NotificationManagerCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notifications.NotificationInfo
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
  * The notifications that [NotificationListService] reports, in the order the system ranks them.
@@ -135,6 +136,7 @@ object NotificationList {
     isConnected = false
     notifications.clear()
     ranking = null
+    lastLoggedKeys = emptyList()
     changed()
   }
 
@@ -176,15 +178,21 @@ object NotificationList {
    * Orders the notifications as the system ranks them. A group is shown where its first member
    * ranks, as one item when it has two or more members, and its summary only when it has no other
    * members, as the summary repeats them. As in the system's shade, the members of an app's group
-   * without a summary are shown one by one. Media players are left out when [leaveOutMedia].
+   * without a summary are shown one by one. Media players are left out when [leaveOutMedia], and
+   * notifications the shade hides, as [isHiddenInShade] tells, are left out.
    */
   private fun build(context: Context, leaveOutMedia: Boolean): List<NotificationItem> {
     val order = ranking?.orderedKeys?.toList() ?: notifications.keys.toList()
     val orderSet = order.toSet()
+    val all =
+      order.mapNotNull { notifications[it] } + notifications.values.filter { it.key !in orderSet }
     val ranked =
-      (order.mapNotNull { notifications[it] } +
-          notifications.values.filter { it.key !in orderSet })
-        .filter { !isPlaceholder(it) && !(leaveOutMedia && NotificationInfo.isMedia(it.notification)) }
+      all.filter {
+        !isPlaceholder(it) &&
+          !(leaveOutMedia && NotificationInfo.isMedia(it.notification)) &&
+          !isHiddenInShade(it)
+      }
+    logContents(all, ranked.size)
     val groups = ranked.groupBy { it.groupKey }
     val shownGroups = HashSet<String>()
     val result = ArrayList<NotificationItem>()
@@ -224,6 +232,68 @@ object NotificationList {
   private fun isPlaceholder(notification: StatusBarNotification): Boolean =
     (notification.packageName == "com.android.systemui" && notification.tag == "INSIGNIFICANT") ||
       NotificationInfo.isSamsungMediaActivity(notification.packageName, notification.notification)
+
+  /**
+   * Whether the system's shade hides [notification]: that of a suspended app, one that Do Not
+   * Disturb hides from the notification list, or one on a blocked channel.
+   */
+  private fun isHiddenInShade(notification: StatusBarNotification): Boolean {
+    val map = ranking ?: return false
+    val notificationRanking = Ranking()
+    if (!map.getRanking(notification.key, notificationRanking)) return false
+    val suspended =
+      Build.VERSION.SDK_INT >= Build.VERSION_CODES.P && notificationRanking.isSuspended
+    return isHiddenInShade(
+      notificationRanking.importance,
+      suspended,
+      notificationRanking.suppressedVisualEffects,
+    )
+  }
+
+  /** [isHiddenInShade] for a notification with the ranking's [importance], [suspended] and [suppressedEffects]. */
+  internal fun isHiddenInShade(importance: Int, suspended: Boolean, suppressedEffects: Int): Boolean =
+    suspended ||
+      importance == NotificationManager.IMPORTANCE_NONE ||
+      (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P &&
+        suppressedEffects and NotificationManager.Policy.SUPPRESSED_EFFECT_NOTIFICATION_LIST != 0)
+
+  /**
+   * Logs what the list is built from, without the notifications' text: for each notification its
+   * app, channel, importance, flags, whether it has a title and text, and the names of extras that
+   * aren't Android's own, which some systems use to hide notifications from the shade. Logged
+   * only when the notifications differ from those last logged, as updates such as progress
+   * rebuild the list often.
+   */
+  private fun logContents(all: List<StatusBarNotification>, shown: Int) {
+    if (LogUtils.getLogLevel() > android.util.Log.DEBUG) return
+    val keys = all.map { it.key }
+    if (keys == lastLoggedKeys) return
+    lastLoggedKeys = keys
+    LogUtils.d(TAG, "%d notifications, %d shown before grouping", all.size, shown)
+    val notificationRanking = Ranking()
+    all.take(MAX_LOGGED).forEach {
+      val posted = it.notification
+      val extras = posted.extras
+      val importance =
+        if (ranking?.getRanking(it.key, notificationRanking) == true) notificationRanking.importance else null
+      val other = extras?.keySet()?.filterNot { key -> key.startsWith("android.") }?.sorted().orEmpty()
+      LogUtils.d(
+        TAG,
+        "%s",
+        "${it.packageName} channel=${posted.channelId} importance=$importance" +
+          " flags=0x${Integer.toHexString(posted.flags)} ongoing=${it.isOngoing}" +
+          " title=${!extras?.getCharSequence(android.app.Notification.EXTRA_TITLE).isNullOrBlank()}" +
+          " text=${!extras?.getCharSequence(android.app.Notification.EXTRA_TEXT).isNullOrBlank()}" +
+          " custom=${posted.contentView != null || posted.bigContentView != null}" +
+          " hidden=${isHiddenInShade(it)} extras=$other",
+      )
+    }
+  }
+
+  private const val TAG = "NotificationList"
+  /** The keys of the notifications [logContents] last logged. */
+  private var lastLoggedKeys: List<String> = emptyList()
+  private const val MAX_LOGGED = 100
 
   private fun entry(context: Context, notification: StatusBarNotification): NotificationEntry =
     NotificationEntry.from(notification, appName(context, notification.packageName)) { skip ->
