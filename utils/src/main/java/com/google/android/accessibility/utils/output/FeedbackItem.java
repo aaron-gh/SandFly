@@ -118,6 +118,12 @@ public class FeedbackItem {
    */
   public static final int FLAG_COMMAND_FEEDBACK = 0x20000;
 
+  /**
+   * Flag to indicate that the speech is a popup, a toast. It can be said in the voice profile
+   * chosen for popups, over the speech that is playing.
+   */
+  public static final int FLAG_POPUP_FEEDBACK = 0x40000;
+
   /** Unique ID defining this generated feedback */
   private String mUtteranceId = "";
 
@@ -507,6 +513,7 @@ public class FeedbackItem {
       case FLAG_INLINE_FORMATTING -> "FLAG_INLINE_FORMATTING";
       case FLAG_RATE_IS_ABSOLUTE -> "FLAG_RATE_IS_ABSOLUTE";
       case FLAG_COMMAND_FEEDBACK -> "FLAG_COMMAND_FEEDBACK";
+      case FLAG_POPUP_FEEDBACK -> "FLAG_POPUP_FEEDBACK";
       default -> null;
     };
   }
