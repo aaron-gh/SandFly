@@ -37,10 +37,13 @@ import android.view.ViewTreeObserver
 import android.view.WindowManager
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.CheckedTextView
 import android.widget.Checkable
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.TextView
@@ -49,16 +52,20 @@ import androidx.appcompat.widget.SwitchCompat
 import androidx.core.os.HandlerCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.doAfterTextChanged
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.actor.SystemActionPerformer
 import com.google.android.accessibility.talkback.backup.ItemFileLauncher
+import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils
+import com.google.android.accessibility.talkback.preference.search.SettingsSearch
 import com.google.android.accessibility.talkback.shizuku.ShizukuClipboard
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import com.google.android.accessibility.utils.ClipboardHistory
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.monitor.ScreenMonitor
+import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
@@ -68,13 +75,17 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  * file or removed, and the whole history exported to a text file. Opened for an edit box, a click
  * on a text pastes it; otherwise, and on a long click, it shows the text's actions, which are also
  * the row's accessibility actions. Select shows the texts as check boxes, and removes or exports
- * the checked ones. The list shows long texts shortened, and the actions use the whole text. Edit
+ * the checked ones. The search field at the top lists only the texts that contain its text,
+ * ignoring case; Select, Export to file and the count spoken after a search use the texts found.
+ * The list shows long texts shortened, and the actions use the whole text. Edit
  * and Export to file take place in [ClipboardHistoryActivity], while the window is closed; it shows
  * again when they end, without the checked texts.
  *
  * Opened for an edit box, the window doesn't take input focus, so that the edit box's window keeps
  * it and its app can read the clipboard for Paste. Opened without one, the window takes input
- * focus, as SandFly can read the clipboard only then.
+ * focus, as SandFly can read the clipboard only then. A click on the search field gives the window
+ * input focus, for the keyboard; the edit box's app gets it back when the window closes, which
+ * the paste waits for.
  *
  * Back closes the actions of a text or Select, then the window. Another app's screen, such as an incoming
  * call, an alarm or an app opened from a notification, closes the window, as does a call ringing
@@ -103,6 +114,9 @@ object ClipboardHistoryOverlay {
   // once it is laid out.
   private const val WINDOW_FOCUS_DELAY_MS = 300L
   private const val PAGE_FOCUS_DELAY_MS = 100L
+
+  /** How long after the last change to the search field the list shows the texts found. */
+  private const val SEARCH_DELAY_MS = 400L
 
   /** Configuration changes that rebuild the window. */
   private const val REBUILD_CHANGES =
@@ -133,9 +147,11 @@ object ClipboardHistoryOverlay {
 
   private val handler = Handler(Looper.getMainLooper())
   private val focusToken = Any()
+  private val searchToken = Any()
 
   private var service: AccessibilityService? = null
   private var root: LinearLayout? = null
+  private var windowParams: WindowManager.LayoutParams? = null
   private var shownConfig: Configuration? = null
 
   /** The edit box the history was opened from, which Paste pastes into. */
@@ -147,6 +163,12 @@ object ClipboardHistoryOverlay {
   /** The package of the screen the history was opened over, or null if not known. */
   private var openedOver: CharSequence? = null
 
+  /** The text of the search field; the list shows the texts that contain it. */
+  private var query = ""
+
+  /** Whether the keyboard shows for the search field once the window has input focus. */
+  private var keyboardWanted = false
+
   /** The text whose actions are shown, or null while the list is shown. */
   private var chosen: String? = null
 
@@ -157,13 +179,17 @@ object ClipboardHistoryOverlay {
     val over: CharSequence?,
     val entry: String?,
     val exported: List<String>?,
+    val query: String,
   )
 
   private var suspended: Suspended? = null
 
   // The list's parts, while it is shown.
   private var entries: List<String> = emptyList()
+  private var historyEmpty = true
   private var listAdapter: ArrayAdapter<String>? = null
+  private var searchField: EditText? = null
+  private var emptyView: TextView? = null
   private var exportButton: View? = null
   private var selectButton: View? = null
   private var clearButton: View? = null
@@ -182,7 +208,15 @@ object ClipboardHistoryOverlay {
   // The clipboard can be read once the window has input focus, which it doesn't have yet when it
   // is added. While Shizuku adds each copy, the history has the clipboard's text already.
   private val onWindowFocus =
-    ViewTreeObserver.OnWindowFocusChangeListener { hasFocus -> if (hasFocus) recordClipboard() }
+    ViewTreeObserver.OnWindowFocusChangeListener { hasFocus ->
+      if (hasFocus) {
+        recordClipboard()
+        if (keyboardWanted) {
+          keyboardWanted = false
+          searchField?.let(::showKeyboard)
+        }
+      }
+    }
 
   @JvmStatic
   val isShowing: Boolean
@@ -215,8 +249,9 @@ object ClipboardHistoryOverlay {
       } else {
         target?.packageName ?: before?.packageName ?: service.rootInActiveWindow?.packageName
       }
+    val search = if (wasShowing) query else ""
     close(restoreFocus = false)
-    return show(service, target, before, over)
+    return show(service, target, before, over, search = search)
   }
 
   /**
@@ -254,7 +289,7 @@ object ClipboardHistoryOverlay {
     val service = TalkBackService.getInstance() ?: return
     if (isShowing || ScreenMonitor.isDeviceLocked(service)) return
     val target = state.target?.takeIf { it.refresh() }
-    show(service, target, state.before, state.over, focusText)
+    show(service, target, state.before, state.over, state.query, focusText)
   }
 
   /** Forgets the window, which doesn't show again after [ClipboardHistoryActivity]. */
@@ -270,6 +305,7 @@ object ClipboardHistoryOverlay {
     val text = chosen
     when {
       text != null -> showList(focusText = text)
+      !selecting && hideKeyboard() -> {}
       selecting -> showList(focusText = null)
       else -> close(restoreFocus = true)
     }
@@ -354,8 +390,9 @@ object ClipboardHistoryOverlay {
     val target = pasteTarget
     val before = focusBefore
     val over = openedOver
+    val search = query
     close(restoreFocus = false)
-    show(service, target, before, over)
+    show(service, target, before, over, search)
   }
 
   /**
@@ -388,6 +425,7 @@ object ClipboardHistoryOverlay {
     target: AccessibilityNodeInfo?,
     before: AccessibilityNodeInfo?,
     over: CharSequence?,
+    search: String,
     focusText: String? = null,
   ): Boolean {
     val context = ContextThemeWrapper(service, R.style.TalkBackSettings)
@@ -404,7 +442,9 @@ object ClipboardHistoryOverlay {
         insets.getInsets(
           WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
         )
-      view.setPadding(padding + bars.left, padding + bars.top, padding + bars.right, padding + bars.bottom)
+      // Clear of the keyboard too, while it shows for the search field.
+      val bottom = maxOf(bars.bottom, insets.getInsets(WindowInsetsCompat.Type.ime()).bottom)
+      view.setPadding(padding + bars.left, padding + bars.top, padding + bars.right, padding + bottom)
       insets
     }
     val params =
@@ -413,6 +453,10 @@ object ClipboardHistoryOverlay {
         format = PixelFormat.TRANSLUCENT
         // Without input focus, the edit box's window keeps it, and its app can paste.
         flags = if (target != null) WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE else 0
+        // The keyboard shows only when the search field is clicked.
+        softInputMode =
+          WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE or
+            WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN
         width = WindowManager.LayoutParams.MATCH_PARENT
         height = WindowManager.LayoutParams.MATCH_PARENT
         title = service.getString(R.string.title_clipboard_history)
@@ -425,6 +469,8 @@ object ClipboardHistoryOverlay {
     }
     this.service = service
     root = content
+    windowParams = params
+    query = search
     pasteTarget = target
     focusBefore = before
     openedOver = over
@@ -442,9 +488,13 @@ object ClipboardHistoryOverlay {
     val target = pasteTarget
     val before = focusBefore
     handler.removeCallbacksAndMessages(focusToken)
+    handler.removeCallbacksAndMessages(searchToken)
     ClipboardHistory.removeListener(onChange)
     view.viewTreeObserver.removeOnWindowFocusChangeListener(onWindowFocus)
     root = null
+    windowParams = null
+    query = ""
+    keyboardWanted = false
     this.service = null
     shownConfig = null
     pasteTarget = null
@@ -452,6 +502,7 @@ object ClipboardHistoryOverlay {
     openedOver = null
     chosen = null
     entries = emptyList()
+    historyEmpty = true
     listAdapter = null
     forgetButtons()
     selecting = false
@@ -486,12 +537,15 @@ object ClipboardHistoryOverlay {
   ) {
     val page = root ?: return
     val context = page.context
+    // Select has no search field.
+    if (select) hideKeyboard()
     chosen = null
     selecting = select
     selection.clear()
     forgetButtons()
     page.removeAllViews()
     val title = heading(page, context.getString(R.string.title_clipboard_history))
+    if (!select) searchField = addSearchField(page)
     if (!select && ShizukuShell.isAllowed()) {
       page.addView(
         SwitchCompat(context).apply {
@@ -543,6 +597,7 @@ object ClipboardHistoryOverlay {
     page.addView(list, fillHeight())
     page.addView(empty, fillHeight())
     list.emptyView = empty
+    emptyView = empty
     listAdapter = adapter
     if (select) {
       removeCheckedButton =
@@ -568,7 +623,12 @@ object ClipboardHistoryOverlay {
       if (ItemFileLauncher.isAvailable) {
         exportButton =
           button(page, R.string.item_file_export) {
-            openActivity(ClipboardHistoryActivity.MODE_EXPORT, entry = null)
+            // With a search, the texts found.
+            openActivity(
+              ClipboardHistoryActivity.MODE_EXPORT,
+              entry = null,
+              exported = entries.takeIf { isSearching() },
+            )
           }
       }
       clearButton =
@@ -590,33 +650,61 @@ object ClipboardHistoryOverlay {
     }
   }
 
-  private fun refreshList() {
+  /**
+   * Shows the texts that contain the search field's text. With [announce], says how many are
+   * found, while the field has text.
+   */
+  private fun refreshList(announce: Boolean = false) {
     val service = service ?: return
     val adapter = listAdapter ?: return
-    entries = ClipboardHistory.entries(service)
+    val all = ClipboardHistory.entries(service)
+    historyEmpty = all.isEmpty()
+    entries = matching(all, query)
     selection.retain(entries)
     adapter.setNotifyOnChange(false)
     adapter.clear()
     adapter.addAll(entries.map(::shortened))
     adapter.notifyDataSetChanged()
+    emptyView?.setText(if (historyEmpty) R.string.clipboard_history_empty else R.string.keyboard_shortcuts_no_results)
     updateButtons()
+    if (announce && isSearching()) {
+      PreferencesActivityUtils.announceText(
+        if (entries.isEmpty()) {
+          service.getString(R.string.keyboard_shortcuts_no_results)
+        } else {
+          service.resources.getQuantityString(
+            R.plurals.clipboard_history_search_results,
+            entries.size,
+            entries.size,
+          )
+        },
+        service,
+      )
+    }
   }
 
+  private fun isSearching() = query.isNotBlank()
+
   /**
-   * Shows the list's buttons only when there are texts, and enables Select's buttons only when a
-   * text is checked.
+   * Shows the list's buttons only when there are texts, and the search field also while it has
+   * text. Clear history, which removes every text, is hidden during a search. Enables Select's
+   * buttons only when a text is checked.
    */
   private fun updateButtons() {
     val visibility = if (entries.isEmpty()) View.GONE else View.VISIBLE
     selectButton?.visibility = visibility
     exportButton?.visibility = visibility
-    clearButton?.visibility = visibility
+    clearButton?.visibility = if (isSearching()) View.GONE else visibility
+    searchField?.visibility = if (historyEmpty && !isSearching()) View.GONE else View.VISIBLE
     val anyChecked = selection.count > 0
     removeCheckedButton?.isEnabled = anyChecked
     exportCheckedButton?.isEnabled = anyChecked
   }
 
   private fun forgetButtons() {
+    handler.removeCallbacksAndMessages(searchToken)
+    searchField = null
+    emptyView = null
     exportButton = null
     selectButton = null
     clearButton = null
@@ -628,6 +716,7 @@ object ClipboardHistoryOverlay {
   private fun showActions(text: String) {
     val page = root ?: return
     val context = page.context
+    hideKeyboard()
     chosen = text
     listAdapter = null
     forgetButtons()
@@ -677,7 +766,7 @@ object ClipboardHistoryOverlay {
    */
   private fun openActivity(mode: String, entry: String?, exported: List<String>? = null) {
     val service = service ?: return
-    val state = Suspended(pasteTarget, focusBefore, openedOver, entry, exported)
+    val state = Suspended(pasteTarget, focusBefore, openedOver, entry, exported, query)
     close(restoreFocus = false)
     suspended = state
     try {
@@ -724,6 +813,86 @@ object ClipboardHistoryOverlay {
     if (!target.refresh()) return false
     if (!target.isFocused) target.performAction(AccessibilityNodeInfo.ACTION_FOCUS)
     return target.performAction(AccessibilityNodeInfo.ACTION_PASTE)
+  }
+
+  /**
+   * Adds the search field to [page]. Its text, once it stops changing, filters the list. A click
+   * gives the window input focus, when it doesn't have it, and shows the keyboard.
+   */
+  private fun addSearchField(page: LinearLayout): EditText =
+    KeyboardSafeEditText(page.context).also { field ->
+      field.hint = page.context.getString(R.string.clipboard_history_search_hint)
+      field.inputType = android.text.InputType.TYPE_CLASS_TEXT
+      field.imeOptions = EditorInfo.IME_ACTION_SEARCH
+      field.isSingleLine = true
+      field.isSaveEnabled = false
+      // Takes input focus only when clicked, not when the window opens, so that accessibility
+      // focus stays where the window puts it.
+      field.isFocusableInTouchMode = false
+      field.setText(query)
+      field.doAfterTextChanged { text ->
+        query = text?.toString().orEmpty()
+        handler.removeCallbacksAndMessages(searchToken)
+        HandlerCompat.postDelayed(handler, { refreshList(announce = true) }, searchToken, SEARCH_DELAY_MS)
+      }
+      field.setOnEditorActionListener { _, actionId, event ->
+        when (SettingsSearch.editorAction(actionId, event?.action, event?.repeatCount ?: 0)) {
+          SettingsSearch.EditorAction.SEARCH -> {
+            handler.removeCallbacksAndMessages(searchToken)
+            refreshList(announce = true)
+            hideKeyboard()
+            true
+          }
+          SettingsSearch.EditorAction.CONSUME -> true
+          SettingsSearch.EditorAction.IGNORE -> false
+        }
+      }
+      field.setOnClickListener { takeInputFocus(field) }
+      page.addView(field, wrapHeight())
+    }
+
+  /**
+   * Gives the window input focus for [field], if it was opened without it, and shows the keyboard
+   * once it has it.
+   */
+  private fun takeInputFocus(field: EditText) {
+    val view = root ?: return
+    val params = windowParams ?: return
+    field.isFocusableInTouchMode = true
+    field.requestFocus()
+    if ((params.flags and WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE) == 0) {
+      if (view.hasWindowFocus()) showKeyboard(field) else keyboardWanted = true
+      return
+    }
+    params.flags = params.flags and WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE.inv()
+    try {
+      service?.getSystemService(WindowManager::class.java)?.updateViewLayout(view, params)
+      keyboardWanted = true
+    } catch (e: IllegalArgumentException) {
+      LogUtils.w(TAG, "Could not give the clipboard history input focus: %s", e)
+    }
+  }
+
+  private fun showKeyboard(field: EditText) {
+    if (!field.isAttachedToWindow) return
+    field.requestFocus()
+    field.context.getSystemService(InputMethodManager::class.java)?.showSoftInput(field, 0)
+  }
+
+  /**
+   * Hides the keyboard, if it shows for the search field, which has input focus. Returns whether it
+   * showed.
+   */
+  private fun hideKeyboard(): Boolean {
+    keyboardWanted = false
+    val view = root ?: return false
+    if (searchField?.isFocused != true || !view.hasWindowFocus()) return false
+    val shown = ViewCompat.getRootWindowInsets(view)?.isVisible(WindowInsetsCompat.Type.ime()) == true
+    if (!shown) return false
+    view.context
+      .getSystemService(InputMethodManager::class.java)
+      ?.hideSoftInputFromWindow(view.windowToken, 0)
+    return true
   }
 
   private fun focusLater(delayMs: Long, view: () -> View?) {
@@ -827,6 +996,17 @@ object ClipboardHistoryOverlay {
       rowAction.second()
       return true
     }
+  }
+
+  /**
+   * The [entries] that contain [query], trimmed, ignoring case, in their order; all of them when
+   * it is blank.
+   */
+  @JvmStatic
+  fun matching(entries: List<String>, query: String): List<String> {
+    val words = query.trim()
+    if (words.isEmpty()) return entries
+    return entries.filter { it.contains(words, ignoreCase = true) }
   }
 
   /** [text], cut to [TITLE_LENGTH] characters, as the list shows and reads it. */
