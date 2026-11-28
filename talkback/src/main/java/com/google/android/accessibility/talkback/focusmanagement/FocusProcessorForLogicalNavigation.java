@@ -2576,6 +2576,63 @@ public class FocusProcessorForLogicalNavigation {
     return traversalStrategy;
   }
 
+  /**
+   * The root of a window, the reading order of that window to search, and whether that order is the
+   * saved one of an earlier navigation.
+   */
+  private record SearchOrder(
+      AccessibilityNodeInfoCompat root, TraversalStrategy strategy, boolean saved) {}
+
+  /**
+   * The root of the window of {@code pivot} and the reading order that {@code navigationAction}
+   * searches from it: the saved order, an order worked out around the pivot, kept in {@link
+   * #localOrder} for the caller to finish, or else a new order of the whole window. Null when the
+   * window's root can't be found.
+   */
+  private @Nullable SearchOrder searchOrderFor(
+      AccessibilityNodeInfoCompat pivot, NavigationAction navigationAction) {
+    int searchDirection = navigationAction.searchDirection;
+    // Asking the window for its root waits for the app on every swipe, so take the root of the
+    // saved reading order when that holds the pivot.
+    AccessibilityNodeInfoCompat rootNode = TraversalTreeCache.rootFor(pivot);
+    // Without a saved order, work out the next item around the pivot, as long as the answer is the
+    // same as the whole order's. The root kept for that is checked to be the pivot's.
+    if (rootNode == null && !localOrderOff && mayUseLocalOrder(pivot, navigationAction)) {
+      @Nullable AccessibilityNodeInfoCompat localRoot = TraversalTreeCache.localRootFor(pivot);
+      if (localRoot != null) {
+        TraversalTreeCache.rememberPivot(pivot);
+        localOrder =
+            LocalTraversalOrder.start(
+                pivot,
+                localRoot,
+                // A logical direction, which always gives an ordered strategy.
+                () -> (OrderedTraversalStrategy) buildWindowOrder(localRoot, searchDirection));
+        if (localOrder != null) {
+          rootNode = localRoot;
+        }
+      }
+    }
+    if (rootNode == null) {
+      rootNode = AccessibilityNodeInfoUtils.getRoot(pivot);
+    }
+    if (rootNode == null) {
+      return null;
+    }
+
+    // Build the window's traversal tree once and share it with the edge checks, which would
+    // otherwise each build their own copy of the same tree. Reuse the tree of the last swipe if
+    // nothing in the window has changed since.
+    TraversalStrategy traversalStrategy = localOrder;
+    if (traversalStrategy == null && TraversalStrategyUtils.isLogicalDirection(searchDirection)) {
+      traversalStrategy = TraversalTreeCache.get(rootNode, pivot);
+    }
+    boolean usedSavedTree = traversalStrategy != null && traversalStrategy != localOrder;
+    if (traversalStrategy == null) {
+      traversalStrategy = buildWindowOrder(rootNode, searchDirection);
+    }
+    return new SearchOrder(rootNode, traversalStrategy, usedSavedTree);
+  }
+
   private boolean navigateToDefaultOrMacroGranularityTargetInternal(
       @NonNull AccessibilityNodeInfoCompat pivot,
       boolean ignoreDescendantsOfPivot,
@@ -2636,45 +2693,14 @@ public class FocusProcessorForLogicalNavigation {
       return true;
     }
 
-    // Asking the window for its root waits for the app on every swipe, so take the root of the
-    // saved reading order when that holds the pivot.
-    AccessibilityNodeInfoCompat rootNode = TraversalTreeCache.rootFor(pivot);
-    // Without a saved order, work out the next item around the pivot, as long as the answer is the
-    // same as the whole order's. The root kept for that is checked to be the pivot's.
-    if (rootNode == null && !localOrderOff && mayUseLocalOrder(pivot, navigationAction)) {
-      @Nullable AccessibilityNodeInfoCompat localRoot = TraversalTreeCache.localRootFor(pivot);
-      if (localRoot != null) {
-        TraversalTreeCache.rememberPivot(pivot);
-        localOrder =
-            LocalTraversalOrder.start(
-                pivot,
-                localRoot,
-                // A logical direction, which always gives an ordered strategy.
-                () -> (OrderedTraversalStrategy) buildWindowOrder(localRoot, searchDirection));
-        if (localOrder != null) {
-          rootNode = localRoot;
-        }
-      }
-    }
-    if (rootNode == null) {
-      rootNode = AccessibilityNodeInfoUtils.getRoot(pivot);
-    }
-    if (rootNode == null) {
+    @Nullable SearchOrder searchOrder = searchOrderFor(pivot, navigationAction);
+    if (searchOrder == null) {
       LogUtils.w(TAG, "Cannot perform navigation action: unable to find root node.");
       return false;
     }
-
-    // Build the window's traversal tree once and share it with the edge checks below, which would
-    // otherwise each build their own copy of the same tree. Reuse the tree of the last swipe if
-    // nothing in the window has changed since.
-    TraversalStrategy traversalStrategy = localOrder;
-    if (traversalStrategy == null && TraversalStrategyUtils.isLogicalDirection(searchDirection)) {
-      traversalStrategy = TraversalTreeCache.get(rootNode, pivot);
-    }
-    boolean usedSavedTree = traversalStrategy != null && traversalStrategy != localOrder;
-    if (traversalStrategy == null) {
-      traversalStrategy = buildWindowOrder(rootNode, searchDirection);
-    }
+    AccessibilityNodeInfoCompat rootNode = searchOrder.root();
+    TraversalStrategy traversalStrategy = searchOrder.strategy();
+    boolean usedSavedTree = searchOrder.saved();
 
     // In a scroll view the next item is already in the tree, just off screen. Show the next screen
     // at once and search again, rather than scrolling a page and waiting for the scroll event.
@@ -4283,13 +4309,43 @@ public class FocusProcessorForLogicalNavigation {
       @Nullable OrderedTraversalStrategy windowOrderedStrategy,
       EventId eventId,
       boolean afterFocus) {
+    @Nullable
+    AccessibilityNodeInfoCompat scrollableNode =
+        scrollableToShow(node, searchDirection, windowOrderedStrategy);
+    boolean scrolled = false;
+    if (scrollableNode != null) {
+      // ScrollableNode may not be the one actually scrolled to move node onto screen. Refer to
+      // requestRectangleOnScreen() in View.java fore more details.
+      FocusedRowReveal reveal = afterFocus ? prepareFocusedRowReveal(scrollableNode, node) : null;
+      scrolled = ensureOnScreenInternal(scrollableNode, node, eventId);
+      if (scrolled && reveal != null && actorState != null && actorState.getScrollerState() != null) {
+        ScrollActionRecord record = actorState.getScrollerState().get();
+        if (record != null && record.scrolledNodeMatches(scrollableNode)
+            && record.getAutoScrollSuccessChecker() instanceof EnsureOnScreenSuccessChecker) {
+          reveal.record = record;
+          focusedRowReveal = reveal;
+        }
+      }
+    }
+
+    return scrolled;
+  }
+
+  /**
+   * The scrollable ancestor of {@code node} that {@link #ensureOnScreen} scrolls to show it, or
+   * null when it needs no scroll.
+   */
+  private @Nullable AccessibilityNodeInfoCompat scrollableToShow(
+      @NonNull AccessibilityNodeInfoCompat node,
+      @SearchDirection int searchDirection,
+      @Nullable OrderedTraversalStrategy windowOrderedStrategy) {
     boolean isRtl = WindowUtils.isScreenLayoutRTL(service);
     ScrollableNodeInfo scrollableNodeInfo =
         ScrollableNodeInfo.findScrollableNodeForDirection(
             searchDirection, /* pivot= */ node, /* includeSelf= */ false, isRtl);
 
     if (scrollableNodeInfo == null) {
-      return false;
+      return null;
     }
     AccessibilityNodeInfoCompat scrollableNode = scrollableNodeInfo.getNode();
 
@@ -4316,28 +4372,12 @@ public class FocusProcessorForLogicalNavigation {
               searchDirection, /* pivot= */ scrollableNode, /* includeSelf= */ false, isRtl);
 
       if (outerScrollableNodeInfo == null) {
-        return false;
+        return null;
       }
       needToEnsureOnScreen =
           isPositionAtEdge(service, node, outerScrollableNodeInfo.getNode(), searchDirection);
     }
-    boolean scrolled = false;
-    if (needToEnsureOnScreen) {
-      // ScrollableNode may not be the one actually scrolled to move node onto screen. Refer to
-      // requestRectangleOnScreen() in View.java fore more details.
-      FocusedRowReveal reveal = afterFocus ? prepareFocusedRowReveal(scrollableNode, node) : null;
-      scrolled = ensureOnScreenInternal(scrollableNode, node, eventId);
-      if (scrolled && reveal != null && actorState != null && actorState.getScrollerState() != null) {
-        ScrollActionRecord record = actorState.getScrollerState().get();
-        if (record != null && record.scrolledNodeMatches(scrollableNode)
-            && record.getAutoScrollSuccessChecker() instanceof EnsureOnScreenSuccessChecker) {
-          reveal.record = record;
-          focusedRowReveal = reveal;
-        }
-      }
-    }
-
-    return scrolled;
+    return needToEnsureOnScreen ? scrollableNode : null;
   }
 
   /**
@@ -4782,33 +4822,17 @@ public class FocusProcessorForLogicalNavigation {
       @SearchDirection int logicalDirection,
       @Nullable OrderedTraversalStrategy windowOrderedStrategy,
       EventId eventId) {
-    if (!BuildVersionUtils.isAtLeastU()
-        || !navigationAction.shouldScroll
-        || navigationAction.actionType != NavigationAction.DIRECTIONAL_NAVIGATION
-        // A heading or button can be many screens away, which only auto-scrolling reaches.
-        || navigationAction.targetType != NavigationTarget.TARGET_DEFAULT
-        || (logicalDirection != SEARCH_FOCUS_FORWARD && logicalDirection != SEARCH_FOCUS_BACKWARD)
-        || WebInterfaceUtils.supportsWebActions(pivot)) {
-      return REVEAL_NONE;
-    }
-    ScrollableNodeInfo scrollableNodeInfo =
-        ScrollableNodeInfo.findScrollableNodeForDirection(
-            navigationAction.searchDirection,
+    @Nullable
+    AccessibilityNodeInfoCompat scrollable =
+        scrollViewEndedByPivot(
             pivot,
-            /* includeSelf= */ false,
-            WindowUtils.isScreenLayoutRTL(service));
-    if (scrollableNodeInfo == null
-        || !OffscreenContent.keepsAllContent(scrollableNodeInfo.getNode())
-        || !TraversalStrategyUtils.isAutoScrollEdgeListItem(
-            pivot,
-            scrollableNodeInfo,
             ignoreDescendantsOfPivot,
-            navigationAction.searchDirection,
-            focusFinder,
-            windowOrderedStrategy)) {
+            navigationAction,
+            logicalDirection,
+            windowOrderedStrategy);
+    if (scrollable == null) {
       return REVEAL_NONE;
     }
-    AccessibilityNodeInfoCompat scrollable = scrollableNodeInfo.getNode();
     OffscreenContent.Ahead ahead =
         OffscreenContent.findAhead(scrollable, pivot, logicalDirection == SEARCH_FOCUS_FORWARD);
     if (ahead == null) {
@@ -4841,6 +4865,45 @@ public class FocusProcessorForLogicalNavigation {
     boolean shown = next.refresh() && next.isVisibleToUser();
     LogUtils.d(TAG, "revealNextOffscreenItem shown=%s next=%s", shown, next);
     return shown ? REVEAL_SHOWN : REVEAL_MOVED;
+  }
+
+  /**
+   * The scroll view that {@link #revealNextOffscreenItem} can show the next screen of: the one
+   * holding {@code pivot}, which is its last item on screen. Null when there is none.
+   */
+  private @Nullable AccessibilityNodeInfoCompat scrollViewEndedByPivot(
+      @NonNull AccessibilityNodeInfoCompat pivot,
+      boolean ignoreDescendantsOfPivot,
+      NavigationAction navigationAction,
+      @SearchDirection int logicalDirection,
+      @Nullable OrderedTraversalStrategy windowOrderedStrategy) {
+    if (!BuildVersionUtils.isAtLeastU()
+        || !navigationAction.shouldScroll
+        || navigationAction.actionType != NavigationAction.DIRECTIONAL_NAVIGATION
+        // A heading or button can be many screens away, which only auto-scrolling reaches.
+        || navigationAction.targetType != NavigationTarget.TARGET_DEFAULT
+        || (logicalDirection != SEARCH_FOCUS_FORWARD && logicalDirection != SEARCH_FOCUS_BACKWARD)
+        || WebInterfaceUtils.supportsWebActions(pivot)) {
+      return null;
+    }
+    ScrollableNodeInfo scrollableNodeInfo =
+        ScrollableNodeInfo.findScrollableNodeForDirection(
+            navigationAction.searchDirection,
+            pivot,
+            /* includeSelf= */ false,
+            WindowUtils.isScreenLayoutRTL(service));
+    if (scrollableNodeInfo == null
+        || !OffscreenContent.keepsAllContent(scrollableNodeInfo.getNode())
+        || !TraversalStrategyUtils.isAutoScrollEdgeListItem(
+            pivot,
+            scrollableNodeInfo,
+            ignoreDescendantsOfPivot,
+            navigationAction.searchDirection,
+            focusFinder,
+            windowOrderedStrategy)) {
+      return null;
+    }
+    return scrollableNodeInfo.getNode();
   }
 
   private boolean showOnScreen(AccessibilityNodeInfoCompat node, EventId eventId) {
@@ -7114,6 +7177,25 @@ public class FocusProcessorForLogicalNavigation {
       NavigationAction navigationAction,
       @SearchDirection int logicalDirection,
       EventId eventId) {
+    @Nullable
+    ScrollableNodeInfo scrollableNodeInfo =
+        listEndedByPivot(pivot, navigationAction, logicalDirection);
+    if (scrollableNodeInfo == null
+        || !autoScroll(scrollableNodeInfo, pivot, navigationAction, eventId)) {
+      return false;
+    }
+    LogUtils.d(TAG, "The focused item ends the list on screen; scrolled without building the order.");
+    return true;
+  }
+
+  /**
+   * The list that {@link #scrollFromListEndAtOnce} scrolls for {@code navigationAction} from {@code
+   * pivot}, or null when it scrolls nothing.
+   */
+  private @Nullable ScrollableNodeInfo listEndedByPivot(
+      AccessibilityNodeInfoCompat pivot,
+      NavigationAction navigationAction,
+      @SearchDirection int logicalDirection) {
     if (navigationAction.actionType != NavigationAction.DIRECTIONAL_NAVIGATION
         || navigationAction.targetType != NavigationTarget.TARGET_DEFAULT
         || !navigationAction.shouldScroll
@@ -7122,7 +7204,7 @@ public class FocusProcessorForLogicalNavigation {
             && logicalDirection != TraversalStrategy.SEARCH_FOCUS_BACKWARD)
         || ScreenElements.isShowing()
         || WebInterfaceUtils.supportsWebActions(pivot)) {
-      return false;
+      return null;
     }
     ScrollableNodeInfo scrollableNodeInfo =
         ScrollableNodeInfo.findScrollableNodeForDirection(
@@ -7131,23 +7213,23 @@ public class FocusProcessorForLogicalNavigation {
             /* includeSelf= */ false,
             WindowUtils.isScreenLayoutRTL(service));
     if (scrollableNodeInfo == null) {
-      return false;
+      return null;
     }
     AccessibilityNodeInfoCompat list = scrollableNodeInfo.getNode();
     if (!isItemList(list)) {
-      return false;
+      return null;
     }
     AccessibilityNodeInfoCompat item = pivot;
     AccessibilityNodeInfoCompat parent = pivot.getParent();
     for (int depth = 0; parent != null && !parent.equals(list); depth++) {
       if (depth >= MAX_ITEM_DEPTH) {
-        return false;
+        return null;
       }
       item = parent;
       parent = parent.getParent();
     }
     if (parent == null) {
-      return false;
+      return null;
     }
     Rect listBounds = new Rect();
     list.getBoundsInScreen(listBounds);
@@ -7169,13 +7251,9 @@ public class FocusProcessorForLogicalNavigation {
         || (!forward
             && !item.equals(pivot)
             && AccessibilityNodeInfoUtils.takesFocusWhenVisible(item))) {
-      return false;
+      return null;
     }
-    if (!autoScroll(scrollableNodeInfo, pivot, navigationAction, eventId)) {
-      return false;
-    }
-    LogUtils.d(TAG, "The focused item ends the list on screen; scrolled without building the order.");
-    return true;
+    return scrollableNodeInfo;
   }
 
   /**
