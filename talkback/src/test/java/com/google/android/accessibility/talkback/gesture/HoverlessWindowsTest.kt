@@ -312,6 +312,35 @@ class HoverlessWindowsTest {
   }
 
   @Test
+  fun silentLayer_isNotThePageThatHoldsTheCover() {
+    val pager =
+      node(SCREEN).apply {
+        className = "androidx.viewpager.widget.ViewPager"
+        isScrollable = true
+        addAction(AccessibilityNodeInfo.ACTION_SCROLL_FORWARD)
+      }
+    shadowOf(root).addChild(pager)
+    val page = clickable(node(SCREEN)).apply { contentDescription = "Page" }
+    shadowOf(pager).addChild(page)
+    val frame = clickable(node(SCREEN))
+    shadowOf(page).addChild(frame)
+    val framePath = listOf(frame, page, pager, root).map { AccessibilityNodeInfoCompat.wrap(it) }
+    assertFalse(HoverlessWindows.isSilentLayerOf(AccessibilityNodeInfoCompat.wrap(page), framePath))
+  }
+
+  @Test
+  fun labelledScrollingViewOverTheWindow_isNoSilentCover() {
+    val article =
+      node(SCREEN).apply {
+        isScrollable = true
+        addAction(AccessibilityNodeInfo.ACTION_SCROLL_FORWARD)
+        contentDescription = "Article"
+      }
+    shadowOf(root).addChild(article)
+    assertFalse(HoverlessWindows.coversWindowSilently(AccessibilityNodeInfoCompat.wrap(article)))
+  }
+
+  @Test
   fun windowFirstItemIsASilentCover_focusGoesToTheFirstItemRead() {
     val (frame, like, _) = tikTokPage()
     val rootCompat = AccessibilityNodeInfoCompat.wrap(root)
@@ -323,7 +352,7 @@ class HoverlessWindowsTest {
       }
     val first = AccessibilityNodeInfoCompat.wrap(frame)
     val focused = HoverlessWindows.firstSpokenItemAfterSilentCover(first, strategy, filter)
-    assertTrue(focused != first)
+    assertEquals(AccessibilityNodeInfoCompat.wrap(like), focused)
     assertTrue(HoverlessWindows.coversWindowSilently(first))
     assertFalse(HoverlessWindows.coversWindowSilently(AccessibilityNodeInfoCompat.wrap(like)))
   }

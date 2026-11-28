@@ -206,7 +206,11 @@ object HoverlessWindows {
    */
   @JvmStatic
   fun coversWindowSilently(node: AccessibilityNodeInfoCompat): Boolean {
-    if (!node.isScrollable && AccessibilityNodeInfoUtils.isSpeakingNode(node, null)) {
+    // A pager or list is read as its role even with nothing else to say; one with a label isn't
+    // silent.
+    val readOnlyAsRole =
+      node.isScrollable && TextUtils.isEmpty(node.text) && TextUtils.isEmpty(node.contentDescription)
+    if (!readOnlyAsRole && AccessibilityNodeInfoUtils.isSpeakingNode(node, null)) {
       return false
     }
     val window = AccessibilityNodeInfoUtils.getWindow(node) ?: return false
@@ -325,6 +329,8 @@ object HoverlessWindows {
     node: AccessibilityNodeInfoCompat,
     coverPath: List<AccessibilityNodeInfoCompat>,
   ): Boolean {
+    // A node that holds the cover, such as the page itself, isn't under it.
+    if (coverPath.indexOf(node) > 0) return false
     var parent: AccessibilityNodeInfoCompat? = node.parent
     var depth = 0
     while (parent != null && depth <= MAX_DEPTH) {
