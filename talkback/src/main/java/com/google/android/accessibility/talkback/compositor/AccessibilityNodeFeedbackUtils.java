@@ -292,6 +292,7 @@ public class AccessibilityNodeFeedbackUtils {
    * <li>The content should be non-copyable text for "copy last spoken phrase".
    * <li>Returns EditText role description even if TalkBack doesn't speak roles.
    * <li>Returns nothing when the node's control sound plays for the focus instead.
+   * <li>Returns nothing when the node's item type is unchecked in Item types to speak.
    */
   public static CharSequence defaultRoleDescription(
       AccessibilityNodeInfoCompat node, Context context, GlobalVariables globalVariables) {
@@ -302,10 +303,15 @@ public class AccessibilityNodeFeedbackUtils {
       return "";
     }
     CharSequence nodeRoleDescription = getNodeRoleDescription(node, context, globalVariables);
-    if (!TextUtils.isEmpty(nodeRoleDescription)) {
-      return nodeRoleDescription;
+    CharSequence role =
+        TextUtils.isEmpty(nodeRoleDescription)
+            ? getNodeRoleName(node, context)
+            : nodeRoleDescription;
+    // Only an item with a type to say is looked at, which can mean reading its parent.
+    if (!TextUtils.isEmpty(role) && !globalVariables.isItemTypeSpoken(node)) {
+      return "";
     }
-    return getNodeRoleName(node, context);
+    return role;
   }
 
   /**
@@ -419,7 +425,7 @@ public class AccessibilityNodeFeedbackUtils {
    */
   public static CharSequence getPagerPageRoleDescription(
       AccessibilityNodeInfoCompat node, Context context, GlobalVariables globalVariables) {
-    if (globalVariables.getSpeakRoles()) {
+    if (globalVariables.getSpeakRoles() && globalVariables.isItemTypeSpoken(ItemTypes.PAGE)) {
       CharSequence roleDescription = getNodeRoleDescription(node, context, globalVariables);
       if (!TextUtils.isEmpty(roleDescription)) {
         return roleDescription;

@@ -160,12 +160,7 @@ object ControlSounds {
     val parentClassName = parent?.let { className(it) } ?: ""
     val parentRole = Role.getRole(parent)
     return when {
-      Role.getRole(node) == Role.ROLE_ACTION_BAR_TAB ||
-        className.contains("TabView") ||
-        parentRole == Role.ROLE_TAB_BAR ||
-        parentClassName.contains("TabLayout") ||
-        // Compose describes its tabs only by this role description.
-        node.roleDescription?.toString().equals("tab", ignoreCase = true) -> R.raw.control_tab
+      isTab(node, parent) -> R.raw.control_tab
       className.contains("ListMenuItemView") ||
         parentClassName.contains("MenuDropDownListView") -> R.raw.control_menu_item
       node.collectionItemInfo != null ||
@@ -175,6 +170,16 @@ object ControlSounds {
       else -> 0
     }
   }
+
+  /** Whether [node], with the parent [parent], is a tab of a native tab bar. */
+  @JvmStatic
+  fun isTab(node: AccessibilityNodeInfoCompat, parent: AccessibilityNodeInfoCompat?): Boolean =
+    Role.getRole(node) == Role.ROLE_ACTION_BAR_TAB ||
+      className(node).contains("TabView") ||
+      Role.getRole(parent) == Role.ROLE_TAB_BAR ||
+      (parent?.let { className(it) } ?: "").contains("TabLayout") ||
+      // Compose describes its tabs only by this role description.
+      node.roleDescription?.toString().equals("tab", ignoreCase = true)
 
   private fun chromeRole(node: AccessibilityNodeInfoCompat): String? =
     AccessibilityNodeInfoUtils.getChromeRole(node)?.toString()
