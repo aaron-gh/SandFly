@@ -26,9 +26,11 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.utils.WebInterfaceUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.CountDownLatch
 import java.util.concurrent.Executors
 import java.util.concurrent.RejectedExecutionException
 import java.util.concurrent.TimeUnit
+import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.locks.ReentrantLock
 import kotlin.concurrent.withLock
@@ -123,6 +125,58 @@ object WindowNodePrefetcher {
     if (LogUtils.shouldLog(Log.DEBUG)) {
       Log.d(TAG, "Read ${walk.nodes.get()} nodes in ${SystemClock.uptimeMillis() - start} ms")
     }
+  }
+
+  /** The most parents whose children [prefetchChildren] reads. */
+  private const val MAX_PARENTS = 32
+
+  private const val CHILDREN_FLAGS =
+    AccessibilityNodeInfo.FLAG_PREFETCH_SIBLINGS or AccessibilityNodeInfo.FLAG_PREFETCH_UNINTERRUPTIBLE
+
+  /**
+   * Reads the children of each of [parents] into Android's node cache, with one request per parent,
+   * all at once, waiting at most [MAX_WAIT_MS]. A request reads up to 50 nodes. Null entries and
+   * parents of fewer than two children are passed over. The caller makes sure that the nodes are
+   * not in SandFly's own windows, whose requests are answered on the main thread.
+   */
+  @JvmStatic
+  fun prefetchChildren(parents: List<AccessibilityNodeInfoCompat?>) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU || running.get() >= THREADS) {
+      return
+    }
+    val read =
+      parents.asSequence().filterNotNull().distinct().filter { it.childCount > 1 }.take(MAX_PARENTS)
+        .map { it.unwrap() }.toList()
+    if (read.isEmpty()) {
+      return
+    }
+    val done = CountDownLatch(read.size)
+    val stopped = AtomicBoolean()
+    for (parent in read) {
+      try {
+        executor.execute {
+          running.incrementAndGet()
+          try {
+            if (!stopped.get()) {
+              parent.getChild(0, CHILDREN_FLAGS)
+            }
+          } catch (e: RuntimeException) {
+            Log.w(TAG, "Could not read children", e)
+          } finally {
+            running.decrementAndGet()
+            done.countDown()
+          }
+        }
+      } catch (e: RejectedExecutionException) {
+        done.countDown()
+      }
+    }
+    try {
+      done.await(MAX_WAIT_MS, TimeUnit.MILLISECONDS)
+    } catch (e: InterruptedException) {
+      Thread.currentThread().interrupt()
+    }
+    stopped.set(true)
   }
 
   @RequiresApi(Build.VERSION_CODES.TIRAMISU)
