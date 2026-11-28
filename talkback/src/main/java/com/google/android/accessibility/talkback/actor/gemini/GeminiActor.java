@@ -143,6 +143,11 @@ public class GeminiActor {
 
     void cancelCommand();
 
+    /** Cancels the running command when the actor's wait timeout expires. */
+    default void cancelOnTimeout() {
+      cancelCommand();
+    }
+
     /**
      * In general, TalkBack will maintain at most one outstanding Gemini transaction at all time. It
      * will abort the pending request before requesting a new one. One exception is when a manual
@@ -672,6 +677,9 @@ public class GeminiActor {
 
   public void onUnbind() {
     progressTonePlayer.stop();
+    if (geminiEndpoint != null) {
+      geminiEndpoint.cancelCommand();
+    }
     if (aiCoreEndpoint != null) {
       aiCoreEndpoint.onUnbind();
     }
@@ -1034,7 +1042,7 @@ public class GeminiActor {
   }
 
   private void onTimeout() {
-    geminiEndpoint.cancelCommand();
+    geminiEndpoint.cancelOnTimeout();
     aiCoreEndpoint.cancelCommand();
   }
 }

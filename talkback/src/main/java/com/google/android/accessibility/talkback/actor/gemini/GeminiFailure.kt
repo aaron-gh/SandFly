@@ -107,6 +107,8 @@ class GeminiFailure(
 
   companion object {
     private const val MAX_SPOKEN_DETAILS = 200
+    private const val MAX_RETRY_AFTER_MS = 8_000L
+    private const val MAX_RETRY_AFTER_SECONDS = MAX_RETRY_AFTER_MS / 1_000L
 
     /** A failure on the phone, such as an answer that could not be read. */
     @JvmStatic
@@ -143,12 +145,34 @@ class GeminiFailure(
       val kind =
         when {
           isApiKeyError(statusCode, error, message) -> Kind.API_KEY
-          statusCode == 429 -> Kind.QUOTA
           statusCode == 504 -> Kind.TIMEOUT
-          statusCode >= 500 -> Kind.BUSY
+          isBusyError(statusCode, status, message) -> Kind.BUSY
+          statusCode == 429 -> Kind.QUOTA
           else -> Kind.OTHER
         }
       return GeminiFailure(kind, statusCode, status, message)
+    }
+
+    /** Whether [headers] includes a non-blank `Retry-After` HTTP header. */
+    @JvmStatic
+    fun hasRetryAfter(headers: Map<String, String>?): Boolean =
+      headers?.entries?.any {
+        it.key.equals("Retry-After", ignoreCase = true) && it.value.isNotBlank()
+      } == true
+
+    /**
+     * Parses a numeric `Retry-After` HTTP header (in seconds) into milliseconds, clamped to
+     * [MAX_RETRY_AFTER_MS], or returns 0 when absent or unparseable.
+     */
+    @JvmStatic
+    fun parseRetryAfterMs(headers: Map<String, String>?): Long {
+      if (headers.isNullOrEmpty()) return 0L
+      val value =
+        headers.entries.firstOrNull { it.key.equals("Retry-After", ignoreCase = true) }?.value
+          ?: return 0L
+      val seconds = value.trim().toLongOrNull() ?: return 0L
+      if (seconds <= 0L) return 0L
+      return minOf(seconds, MAX_RETRY_AFTER_SECONDS) * 1_000L
     }
 
     /**
@@ -185,6 +209,25 @@ class GeminiFailure(
       }
       return message.contains("API key", ignoreCase = true)
     }
+
+    private fun isBusyError(statusCode: Int, status: String, message: String): Boolean {
+      if (statusCode >= 500) return true
+      if (status.equals("UNAVAILABLE", ignoreCase = true)) return true
+      if (statusCode == 429) {
+        val mentionsQuota =
+          message.contains("quota", ignoreCase = true) ||
+            message.contains("billing", ignoreCase = true)
+        if (!mentionsQuota && isHighDemandMessage(message)) {
+          return true
+        }
+      }
+      return false
+    }
+
+    private fun isHighDemandMessage(message: String): Boolean =
+      message.contains("high demand", ignoreCase = true) ||
+        message.contains("overloaded", ignoreCase = true) ||
+        message.contains("temporarily unavailable", ignoreCase = true)
 
     /** Google sends {"error": {...}}, and sometimes a list holding that object. */
     private fun errorObject(body: String?): JSONObject? {

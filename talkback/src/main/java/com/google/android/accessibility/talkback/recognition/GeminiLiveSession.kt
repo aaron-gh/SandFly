@@ -78,8 +78,7 @@ internal class GeminiLiveSession(
       override fun onMessage(webSocket: WebSocket, bytes: ByteString) { receive(bytes.utf8()) }
       override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
         LogUtils.w(TAG, "Connection failed: %s, HTTP %s", t.javaClass.simpleName, response?.code)
-        handler.post { fail(if (response?.code in listOf(401, 403))
-          R.string.gemini_error_api_key else R.string.live_recognition_connection_error) }
+        handler.post { fail(failureMessage(response?.code)) }
       }
       override fun onClosing(webSocket: WebSocket, code: Int, reason: String) {
         LogUtils.w(TAG, "Closed by Gemini: %d %s", code, reason)
@@ -180,11 +179,23 @@ internal class GeminiLiveSession(
     }
   }
 
-  /** The Live API closes the session with a reason that names a rejected key or the quota. */
+  /** The Live API closes the session with a reason that names a rejected key, quota, or busy server. */
   private fun closeMessage(code: Int, reason: String): Int = when {
     code == NORMAL_CLOSURE -> R.string.live_recognition_session_ended
     reason.contains("API key", ignoreCase = true) -> R.string.gemini_error_api_key
     reason.contains("quota", ignoreCase = true) -> R.string.gemini_error_quota
+    reason.contains("high demand", ignoreCase = true) ||
+      reason.contains("overloaded", ignoreCase = true) ||
+      reason.contains("unavailable", ignoreCase = true) ||
+      reason.contains("busy", ignoreCase = true) -> R.string.gemini_error_busy
+    else -> R.string.live_recognition_connection_error
+  }
+
+  private fun failureMessage(httpCode: Int?): Int = when (httpCode) {
+    401, 403 -> R.string.gemini_error_api_key
+    429 -> R.string.gemini_error_quota
+    504 -> R.string.gemini_error_timeout
+    in 500..599 -> R.string.gemini_error_busy
     else -> R.string.live_recognition_connection_error
   }
 

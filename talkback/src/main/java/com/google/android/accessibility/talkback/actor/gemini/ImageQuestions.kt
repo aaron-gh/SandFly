@@ -28,7 +28,7 @@ import org.json.JSONObject
  * @param announce speaks why the on-device model could not answer, such as low memory
  */
 class ImageQuestions(context: Context, announce: Consumer<String>) {
-  private val performer = LocalGemmaRequestPerformer(context.applicationContext, announce)
+  private val performer = LocalGemmaRequestPerformer(context.applicationContext, announce, false)
 
   /**
    * Asks [prompt] about [jpeg], base64 JPEG. [done] gets the answer, or the failure, which is null

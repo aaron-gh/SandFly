@@ -144,7 +144,7 @@ class VoiceCommandEngine(
           say(service.getString(R.string.voice_commands_error))
           return@post
         }
-        val requests = ai ?: AiTextRequests(service) { say(it) }.also { ai = it }
+        val requests = ai ?: AiTextRequests(service, retryWhenBusy = false) { say(it) }.also { ai = it }
         requests.ask(prompt, json = true) { answer, failure ->
           if (id != generation) return@ask
           if (answer == null) {

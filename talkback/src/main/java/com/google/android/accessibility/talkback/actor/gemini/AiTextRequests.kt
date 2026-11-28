@@ -31,10 +31,14 @@ import org.json.JSONObject
  *
  * @param announce speaks why the on-device model could not answer, such as low memory
  */
-class AiTextRequests(context: Context, announce: Consumer<String>) {
+class AiTextRequests(
+  context: Context,
+  retryWhenBusy: Boolean = true,
+  announce: Consumer<String>,
+) {
   private val appContext = context.applicationContext
   private val prefs = SharedPreferencesUtils.getSharedPreferences(appContext)
-  private val performer = LocalGemmaRequestPerformer(appContext, announce)
+  private val performer = LocalGemmaRequestPerformer(appContext, announce, retryWhenBusy)
 
   /**
    * Asks [prompt], for a JSON answer when [json]. [done] gets the answer or the failure, which is

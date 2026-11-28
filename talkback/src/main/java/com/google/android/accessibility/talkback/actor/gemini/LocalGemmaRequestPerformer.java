@@ -47,7 +47,16 @@ public class LocalGemmaRequestPerformer extends GeminiRestRequestPerformer {
    * @param announce speaks why the model on the phone could not answer, such as low memory
    */
   public LocalGemmaRequestPerformer(Context context, Consumer<String> announce) {
-    super(context);
+    this(context, announce, /* retryWhenBusy= */ true);
+  }
+
+  /**
+   * @param announce speaks why the model on the phone could not answer, such as low memory
+   * @param retryWhenBusy whether transient busy responses are retried after a pause
+   */
+  public LocalGemmaRequestPerformer(
+      Context context, Consumer<String> announce, boolean retryWhenBusy) {
+    super(context, retryWhenBusy);
     this.context = context.getApplicationContext();
     this.prefs = SharedPreferencesUtils.getSharedPreferences(context);
     ExecutorService worker =
@@ -73,7 +82,7 @@ public class LocalGemmaRequestPerformer extends GeminiRestRequestPerformer {
             canceller,
             mainHandler::post,
             announce);
-    this.aiService = new AiServiceRequestPerformer(this.context);
+    this.aiService = new AiServiceRequestPerformer(this.context, retryWhenBusy);
   }
 
   /**
@@ -115,7 +124,16 @@ public class LocalGemmaRequestPerformer extends GeminiRestRequestPerformer {
   @Override
   public void cancelExistingRequestIfNeeded() {
     runner.cancel();
+    aiService.cancel();
     super.cancelExistingRequestIfNeeded();
+  }
+
+  @Override
+  public void cancelOnTimeout() {
+    runner.cancel();
+    // An AI service may take up to 60 s on its first attempt; stop retries without dropping it.
+    aiService.cancelRetries();
+    super.cancelOnTimeout();
   }
 
   @Override
