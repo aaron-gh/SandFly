@@ -1883,6 +1883,15 @@ public class FailoverTextToSpeech {
     mHandler.removeCallbacks(retryProfileVoice);
   }
 
+  /**
+   * Whether the engine in use is the one the voice profile asks for. After a failover to another
+   * engine, the profile's voice isn't that engine's, so setting it again only lists the engine's
+   * voices on the main thread each time.
+   */
+  private boolean isProfileEngineInUse() {
+    return ttsEngine != null && ttsEngine.equals(getTargetEngine());
+  }
+
   private void scheduleProfileVoiceRetry() {
     mHandler.postDelayed(
         retryProfileVoice, profileVoiceRetries < PROFILE_VOICE_FAST_RETRIES ? 250 : 1000);
@@ -1895,7 +1904,10 @@ public class FailoverTextToSpeech {
       if (unsetProfileVoice == null) {
         return;
       }
-      if (tts == null || profile == null || !unsetProfileVoice.equals(profile.voice())) {
+      if (tts == null
+          || profile == null
+          || !unsetProfileVoice.equals(profile.voice())
+          || !isProfileEngineInUse()) {
         clearUnsetProfileVoice();
         return;
       }
@@ -2029,7 +2041,9 @@ public class FailoverTextToSpeech {
           cachedTtsLocale = voice.getLocale();
           return cachedTtsLocale;
         }
-        if (!profile.voice().isEmpty() && !profile.voice().equals(unsetProfileVoice)) {
+        if (!profile.voice().isEmpty()
+            && !profile.voice().equals(unsetProfileVoice)
+            && isProfileEngineInUse()) {
           clearUnsetProfileVoice();
           unsetProfileVoice = profile.voice();
           scheduleProfileVoiceRetry();
