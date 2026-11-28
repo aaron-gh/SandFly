@@ -23,6 +23,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
@@ -34,6 +35,11 @@ import java.util.Locale
  * pause, its text is kept and it starts again. [onDone] gets all the text, on the main thread, once
  * [stop] is called and the last part is recognized; [onFailed] gets the error that ended it early.
  * With [once], recognition ends when the recognizer ends after a pause, and [onDone] gets its text.
+ *
+ * A restarted part begins with the recognizer's own start sound, which some recognizers report as
+ * the beginning of speech. With [filtersOwnSound], [onSpeech] is not called for the start and end of
+ * speech that fall within [OWN_SOUND_MS] of a restart, so those sounds don't restart the caller's
+ * silence timeout. The first part is never filtered, because the caller starts it on purpose.
  */
 internal class ContinuousRecognition(
   private val context: Context,
@@ -45,6 +51,8 @@ internal class ContinuousRecognition(
   private val onSpeech: () -> Unit = {},
   /** Whether recognition ends at the first pause instead of starting again. */
   private val once: Boolean = false,
+  /** Whether to ignore a restarted recognizer's own start sound as speech. */
+  private val filtersOwnSound: Boolean = false,
   /** Whether [service] adds punctuation and capital letters. */
   private val punctuation: Boolean = true,
   /** Whether [service] masks offensive words. */
@@ -59,10 +67,12 @@ internal class ContinuousRecognition(
   private val parts = mutableListOf<String>()
   private var stopping = false
   private var finished = false
+  /** When the part being recognized was started, to tell its own sounds from speech. */
+  private var partStartedAt = 0L
   private val handler = Handler(Looper.getMainLooper())
   /** Errors since the last result, so that a recognizer that keeps failing isn't restarted forever. */
   private var errors = 0
-  private val listenAgain = Runnable { if (!finished && !stopping) listen() }
+  private val listenAgain = Runnable { if (!finished && !stopping) listen(newPart = false) }
 
   /** Starts recognizing. Returns false when Android has no speech recognition. */
   fun start(): Boolean {
@@ -74,11 +84,16 @@ internal class ContinuousRecognition(
         LogUtils.w(TAG, "No speech recognizer: %s", e)
         return false
       }.also { it.setRecognitionListener(this) }
-    listen()
+    listen(newPart = false)
     return true
   }
 
-  private fun listen() {
+  /**
+   * Starts listening. Only a new part, [newPart] true, opens its own-sound window; the first part
+   * and a retry over a running part don't, so their speech events are reported as they are.
+   */
+  private fun listen(newPart: Boolean) {
+    if (newPart) partStartedAt = SystemClock.elapsedRealtime()
     val pause = if (once) ONCE_PAUSE_MS else PAUSE_MS
     val intent =
       Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
@@ -162,7 +177,7 @@ internal class ContinuousRecognition(
       parts.add(text)
       onSpeech()
     }
-    if (stopping || once) finish() else listen()
+    if (stopping || once) finish() else listen(newPart = true)
   }
 
   override fun onSegmentResults(segmentResults: Bundle) {
@@ -181,7 +196,7 @@ internal class ContinuousRecognition(
     if (finished) return
     if (partial.isNotBlank()) parts.add(partial.trim())
     partial = ""
-    if (stopping || once) finish() else listen()
+    if (stopping || once) finish() else listen(newPart = true)
   }
 
   override fun onPartialResults(partialResults: Bundle?) {
@@ -201,7 +216,7 @@ internal class ContinuousRecognition(
       SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> {
         if (partial.isNotBlank()) parts.add(partial.trim())
         partial = ""
-        if (stopping || once) finish() else listen()
+        if (stopping || once) finish() else listen(newPart = true)
       }
       SpeechRecognizer.ERROR_RECOGNIZER_BUSY,
       SpeechRecognizer.ERROR_CLIENT ->
@@ -227,13 +242,23 @@ internal class ContinuousRecognition(
 
   override fun onReadyForSpeech(params: Bundle?) {}
 
-  override fun onBeginningOfSpeech() = onSpeech()
+  /** Whether a speech event now belongs to the start sound of a restarted part. */
+  private fun hearsItsOwnSound(): Boolean =
+    filtersOwnSound &&
+      partStartedAt != 0L &&
+      SystemClock.elapsedRealtime() - partStartedAt < OWN_SOUND_MS
+
+  override fun onBeginningOfSpeech() {
+    if (!hearsItsOwnSound()) onSpeech()
+  }
 
   override fun onRmsChanged(rmsdB: Float) {}
 
   override fun onBufferReceived(buffer: ByteArray?) {}
 
-  override fun onEndOfSpeech() = onSpeech()
+  override fun onEndOfSpeech() {
+    if (!hearsItsOwnSound()) onSpeech()
+  }
 
   override fun onEvent(eventType: Int, params: Bundle?) {}
 
@@ -247,5 +272,11 @@ internal class ContinuousRecognition(
     const val STOP_WAIT_MS = 5_000L
     const val RETRY_DELAY_MS = 300L
     const val MAX_ERRORS = 5
+    /**
+     * A start or end of speech reported this soon after a part is restarted is the recognizer's own
+     * start sound rather than the user's voice: Google's recognizer reports that as speech, and it
+     * would restart the caller's silence timeout forever.
+     */
+    const val OWN_SOUND_MS = 1_000L
   }
 }

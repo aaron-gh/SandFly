@@ -321,6 +321,8 @@ class AiDictation(
           onSpeech = ::heardSpeech,
           // Listening ends at a pause; starting again would play the recognizer's start sound.
           once = onText != null,
+          // Google on-device reports that sound as speech, so its restarted parts are filtered.
+          filtersOwnSound = used == Recognition.GOOGLE,
           punctuation = DictationSettings.punctuation(prefs),
           blockOffensiveWords = DictationSettings.blocksOffensiveWords(prefs),
           language = language,
