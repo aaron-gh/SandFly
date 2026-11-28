@@ -167,9 +167,8 @@ public class NodeMenuRuleProcessor implements NodeMenuProvider {
           || !nodeMenuRule.hasHint(service, node)) {
         continue;
       }
-      List<ContextMenuItem> ruleResults =
-          nodeMenuRule.getMenuItemsForNode(service, node, /* includeAncestors= */ false);
-      if (ruleResults == null || ruleResults.isEmpty()) {
+      if (!menuItemCreator.hasNodeMenuByRule(
+          rule, service, node, /* includeAncestors= */ false)) {
         continue;
       }
       menuTypes.add(nodeMenuRule.getUserFriendlyMenuName(service).toString());

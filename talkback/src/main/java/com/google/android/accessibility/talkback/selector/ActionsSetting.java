@@ -57,7 +57,10 @@ public class ActionsSetting implements SelectorController.ContextualSetting {
 
   @Override
   public boolean isNodeSupportSetting(Context context, AccessibilityNodeInfoCompat node) {
-    return node != null && isSettingEnabled(context) && !actionsOf(context, node).isEmpty();
+    return node != null
+        && isSettingEnabled(context)
+        && nodeMenuCreator.hasNodeMenuByRule(
+            MenuRules.RULE_CUSTOM_ACTION, context, node, /* includeAncestors= */ true);
   }
 
   @Override

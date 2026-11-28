@@ -17,6 +17,7 @@ package com.google.android.accessibility.talkback.compositor.rule;
 
 import static com.google.android.accessibility.talkback.compositor.Compositor.EVENT_SPEAK_HINT;
 import static com.google.android.accessibility.talkback.compositor.HintEventInterpretation.HINT_TYPE_ACCESSIBILITY_FOCUS;
+import static com.google.android.accessibility.talkback.compositor.HintEventInterpretation.HINT_TYPE_FOCUS_TYPO;
 import static com.google.android.accessibility.talkback.compositor.HintEventInterpretation.HINT_TYPE_INPUT_FOCUS;
 import static com.google.android.accessibility.talkback.compositor.HintEventInterpretation.HINT_TYPE_LINK;
 import static com.google.android.accessibility.talkback.compositor.HintEventInterpretation.HINT_TYPE_SCREEN;
@@ -35,6 +36,7 @@ import com.google.android.accessibility.talkback.compositor.EventInterpretation;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.compositor.HintEventInterpretation;
 import com.google.android.accessibility.talkback.compositor.hint.AccessibilityFocusHint;
+import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.Map;
 import java.util.Optional;
@@ -121,6 +123,11 @@ public final class HintFeedbackRule {
           case HINT_TYPE_TEXT_SUGGESTION -> getTextSuggestionHint(context, globalVariables);
           case HINT_TYPE_LINK ->
               accessibilityFocusHint.getClickableHint().getOpenLinkHint(context, globalVariables);
+          case HINT_TYPE_FOCUS_TYPO ->
+              globalVariables.getUsageHintEnabled()
+                      && (node == null || Scripts.ruleHint(node) == null)
+                  ? globalVariables.getTypoHint(hintEventInterpretation.getTypoCount())
+                  : "";
           default -> "";
         };
 

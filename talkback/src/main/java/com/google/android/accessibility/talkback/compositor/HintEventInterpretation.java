@@ -38,7 +38,8 @@ public class HintEventInterpretation extends ReadOnly {
     HINT_TYPE_SELECTOR,
     HINT_TYPE_TEXT_SUGGESTION,
     HINT_TYPE_TYPO,
-    HINT_TYPE_LINK
+    HINT_TYPE_LINK,
+    HINT_TYPE_FOCUS_TYPO
   })
   @Retention(RetentionPolicy.SOURCE)
   public @interface HintType {}
@@ -51,6 +52,7 @@ public class HintEventInterpretation extends ReadOnly {
   public static final int HINT_TYPE_TEXT_SUGGESTION = 5;
   public static final int HINT_TYPE_TYPO = 6;
   public static final int HINT_TYPE_LINK = 7;
+  public static final int HINT_TYPE_FOCUS_TYPO = 8;
 
   //////////////////////////////////////////////////////////////////////////////////////////
   // Member variables
@@ -59,6 +61,7 @@ public class HintEventInterpretation extends ReadOnly {
   private boolean forceFeedbackEvenIfAudioPlaybackActive = false;
   private boolean forceFeedbackEvenIfMicrophoneActive = false;
   @Nullable private CharSequence mText;
+  private int typoCount = 0;
 
   //////////////////////////////////////////////////////////////////////////////////////////
   // Construction
@@ -98,6 +101,15 @@ public class HintEventInterpretation extends ReadOnly {
     mText = text;
   }
 
+  public void setTypoCount(int typoCount) {
+    checkIsWritable();
+    this.typoCount = typoCount;
+  }
+
+  public int getTypoCount() {
+    return typoCount;
+  }
+
   @Nullable
   public CharSequence getText() {
     return mText;
@@ -124,6 +136,7 @@ public class HintEventInterpretation extends ReadOnly {
       case HINT_TYPE_TEXT_SUGGESTION -> "HINT_TYPE_TEXT_SUGGESTION";
       case HINT_TYPE_TYPO -> "HINT_TYPE_TYPO";
       case HINT_TYPE_LINK -> "HINT_TYPE_LINK";
+      case HINT_TYPE_FOCUS_TYPO -> "HINT_TYPE_FOCUS_TYPO";
       default -> "(unhandled)";
     };
   }

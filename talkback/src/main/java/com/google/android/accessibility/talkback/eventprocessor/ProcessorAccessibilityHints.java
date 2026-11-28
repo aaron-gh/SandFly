@@ -415,6 +415,48 @@ public class ProcessorAccessibilityHints {
   }
 
   /**
+   * Returns delayed speech for an edit field typo count discovered asynchronously after focus was
+   * announced.
+   */
+  public static Feedback.Part.@Nullable Builder focusTypoToFeedback(
+      @Nullable AccessibilityNodeInfoCompat node,
+      int typoCount,
+      boolean forceFeedbackEvenIfAudioPlaybackActive,
+      boolean forceFeedbackEvenIfMicrophoneActive,
+      @NonNull TextComposer compositor) {
+    HintEventInterpretation hintInterp =
+        new HintEventInterpretation(HintEventInterpretation.HINT_TYPE_FOCUS_TYPO);
+    hintInterp.setTypoCount(typoCount);
+    hintInterp.setForceFeedbackEvenIfAudioPlaybackActive(forceFeedbackEvenIfAudioPlaybackActive);
+    hintInterp.setForceFeedbackEvenIfMicrophoneActive(forceFeedbackEvenIfMicrophoneActive);
+    EventInterpretation eventInterp = new EventInterpretation(Compositor.EVENT_SPEAK_HINT);
+    eventInterp.setHint(hintInterp);
+    CharSequence hintTTSOutput =
+        compositor.parseTTSText(node, eventInterp.getEvent(), eventInterp);
+    if (TextUtils.isEmpty(hintTTSOutput)) {
+      return null;
+    }
+    int hintFlags = FLAG_NO_HISTORY;
+    if (forceFeedbackEvenIfAudioPlaybackActive) {
+      hintFlags |= FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE;
+    }
+    if (forceFeedbackEvenIfMicrophoneActive) {
+      hintFlags |= FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE;
+    }
+    // Use level 1 so a pending level-2 focus hint stays intact, while focus moves cancel both.
+    return Feedback.Part.builder()
+        .setDelayMs((int) DELAY_HINT)
+        .setInterruptGroup(HINT)
+        .setInterruptLevel(1)
+        .speech(
+            hintTTSOutput,
+            SpeechController.SpeakOptions.create()
+                .setQueueMode(SpeechController.QUEUE_MODE_QUEUE)
+                .setFlags(hintFlags)
+                .setUtteranceGroup(SpeechController.UTTERANCE_GROUP_DEFAULT));
+  }
+
+  /**
    * Returns a hint about opening a single link. The hint will be spoken after the next utterance is
    * completed.
    */

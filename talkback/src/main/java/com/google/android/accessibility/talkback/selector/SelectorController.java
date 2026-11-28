@@ -1913,6 +1913,7 @@ public class SelectorController implements UserInputEventListener {
     applyPendingSwitch();
     @Nullable AccessibilityNodeInfoCompat node =
         accessibilityFocusMonitor.getAccessibilityFocus(false);
+    NodeAvailability availability = new NodeAvailability(node);
     Map<String, Setting> byKey = new HashMap<>();
     for (Setting setting : SELECTOR_SETTINGS) {
       byKey.put(context.getString(setting.prefKeyResId), setting);
@@ -1923,7 +1924,7 @@ public class SelectorController implements UserInputEventListener {
       if (setting != null
           && !settings.contains(setting)
           && !hiddenSettings.contains(setting)
-          && availableHere(setting, node)) {
+          && availableHere(setting, node, availability)) {
         settings.add(setting);
       }
     }
@@ -2109,12 +2110,13 @@ public class SelectorController implements UserInputEventListener {
    * scripts come last.
    */
   private List<Object> rotorEntries() {
-    @Nullable List<Setting> inList =
-        listInUseSettings(accessibilityFocusMonitor.getAccessibilityFocus(false));
+    @Nullable AccessibilityNodeInfoCompat node =
+        accessibilityFocusMonitor.getAccessibilityFocus(false);
+    @Nullable List<Setting> inList = listInUseSettings(node);
     if (inList != null && !inList.isEmpty()) {
       return new ArrayList<>(inList);
     }
-    List<Setting> settings = getFilteredSettings();
+    List<Setting> settings = getFilteredSettings(node);
     List<ScriptReadingControl> custom = customControls();
     List<Object> entries = new ArrayList<>();
     if (custom.isEmpty()) {
@@ -2208,8 +2210,9 @@ public class SelectorController implements UserInputEventListener {
    * setting.
    */
   private void selectFirstAvailableSetting() {
-    @Nullable List<Setting> inList =
-        listInUseSettings(accessibilityFocusMonitor.getAccessibilityFocus(false));
+    @Nullable AccessibilityNodeInfoCompat node =
+        accessibilityFocusMonitor.getAccessibilityFocus(false);
+    @Nullable List<Setting> inList = listInUseSettings(node);
     if (inList != null && !inList.isEmpty()) {
       applyPendingSwitch();
       setCurrentSetting(
@@ -2219,7 +2222,7 @@ public class SelectorController implements UserInputEventListener {
           /* showOverlay= */ false);
       return;
     }
-    List<Setting> settings = getFilteredSettings();
+    List<Setting> settings = getFilteredSettings(node);
     if (!settings.isEmpty()) {
       selectSetting(firstAutomaticSetting(settings), AnnounceType.SILENCE, false);
     } else {
@@ -2320,6 +2323,13 @@ public class SelectorController implements UserInputEventListener {
 
   /** Returns whether the {@link Setting} is available or not. */
   private boolean allowedSetting(Setting setting, @Nullable AccessibilityNodeInfoCompat node) {
+    return allowedSetting(setting, node, /* availability= */ null);
+  }
+
+  private boolean allowedSetting(
+      Setting setting,
+      @Nullable AccessibilityNodeInfoCompat node,
+      @Nullable NodeAvailability availability) {
     String preferenceKey = context.getString(setting.prefKeyResId);
 
     // Check if the SwitchPreference is on for this setting.
@@ -2327,11 +2337,53 @@ public class SelectorController implements UserInputEventListener {
         preferenceKey, context.getResources().getBoolean(setting.defaultValueResId))) {
       return false;
     }
-    return availableHere(setting, node);
+    return availableHere(setting, node, availability);
   }
 
   /** Returns whether {@code setting} can be used now, whether or not the main list includes it. */
   private boolean availableHere(Setting setting, @Nullable AccessibilityNodeInfoCompat node) {
+    return availableHere(setting, node, /* availability= */ null);
+  }
+
+  /** Per-pass memoization of node checks so one rotor build does not repeat binder walks. */
+  private final class NodeAvailability {
+    private final @Nullable AccessibilityNodeInfoCompat node;
+    private @Nullable Boolean hasTableContent;
+    private @Nullable Boolean hasWebContent;
+    private boolean editingNodeChecked;
+    private @Nullable AccessibilityNodeInfoCompat editingNode;
+
+    NodeAvailability(@Nullable AccessibilityNodeInfoCompat node) {
+      this.node = node;
+    }
+
+    boolean hasTableContent() {
+      if (hasTableContent == null) {
+        hasTableContent = actorState.getDirectionNavigation().hasNavigableTableContent(node);
+      }
+      return hasTableContent;
+    }
+
+    boolean hasWebContent() {
+      if (hasWebContent == null) {
+        hasWebContent = WebInterfaceUtils.hasNavigableWebContent(node);
+      }
+      return hasWebContent;
+    }
+
+    @Nullable AccessibilityNodeInfoCompat editingNode() {
+      if (!editingNodeChecked) {
+        editingNodeChecked = true;
+        editingNode = accessibilityFocusMonitor.getNodeForEditingActions(node);
+      }
+      return editingNode;
+    }
+  }
+
+  private boolean availableHere(
+      Setting setting,
+      @Nullable AccessibilityNodeInfoCompat node,
+      @Nullable NodeAvailability availability) {
     switch (setting) {
       case LANGUAGE -> {
         return actorState.getLanguageState().allowSelectLanguage();
@@ -2393,9 +2445,14 @@ public class SelectorController implements UserInputEventListener {
       }
       case CLIPBOARD_HISTORY -> {
         // The history can hold private text.
-        return FeatureSupport.doesServiceHandleDoubleTap()
-            && !ScreenMonitor.isDeviceLocked(context)
-            && clipboardHistorySetting.isNodeSupportSetting(context, node);
+        if (!FeatureSupport.doesServiceHandleDoubleTap() || ScreenMonitor.isDeviceLocked(context)) {
+          return false;
+        }
+        if (availability != null) {
+          AccessibilityNodeInfoCompat editingNode = availability.editingNode();
+          return editingNode != null && editingNode.isEditable();
+        }
+        return clipboardHistorySetting.isNodeSupportSetting(context, node);
       }
       case ACTIONS -> {
         Optional<ContextualSetting> actions = findContextualSetting(ACTIONS);
@@ -2403,7 +2460,7 @@ public class SelectorController implements UserInputEventListener {
           return false;
         }
 
-        if (node == null) {
+        if (node == null && availability == null) {
           node = accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
         }
         return actions.get().isNodeSupportSetting(context, node);
@@ -2424,6 +2481,9 @@ public class SelectorController implements UserInputEventListener {
             context.getResources().getBoolean(R.bool.pref_selector_links_controls_web_only_default))) {
           return true;
         }
+        if (availability != null) {
+          return availability.hasWebContent();
+        }
         if (node == null) {
           node = accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
         }
@@ -2431,11 +2491,15 @@ public class SelectorController implements UserInputEventListener {
       }
       case GRANULARITY_ROW_COLUMN -> {
         return FeatureFlagReader.enableRowAndColumnOneGranularity(context)
-            && actorState.getDirectionNavigation().hasNavigableTableContent();
+            && (availability != null
+                ? availability.hasTableContent()
+                : actorState.getDirectionNavigation().hasNavigableTableContent());
       }
       case GRANULARITY_ROW, GRANULARITY_COLUMN -> {
         return FeatureFlagReader.enableRowColumnTwoGranularities(context)
-            && actorState.getDirectionNavigation().hasNavigableTableContent();
+            && (availability != null
+                ? availability.hasTableContent()
+                : actorState.getDirectionNavigation().hasNavigableTableContent());
       }
       case GRANULARITY_WEB_LANDMARKS,
           GRANULARITY_WEB_BUTTONS,
@@ -2464,12 +2528,15 @@ public class SelectorController implements UserInputEventListener {
           return false;
         }
 
-        if (node == null) {
+        if (node == null && availability == null) {
           node = accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
         }
         return adjustableWidget.get().isNodeSupportSetting(context, node);
       }
       case GRANULARITY_TYPO -> {
+        if (availability != null && node != null) {
+          return availability.editingNode() != null;
+        }
         Optional<ContextualSetting> typoGranularity = findContextualSetting(GRANULARITY_TYPO);
         if (typoGranularity.isEmpty()) {
           return false;
@@ -2491,6 +2558,7 @@ public class SelectorController implements UserInputEventListener {
     if (inUse == null) {
       return null;
     }
+    NodeAvailability availability = new NodeAvailability(node);
     Map<String, Setting> byKey = new HashMap<>();
     for (Setting setting : SELECTOR_SETTINGS) {
       byKey.put(context.getString(setting.prefKeyResId), setting);
@@ -2503,7 +2571,7 @@ public class SelectorController implements UserInputEventListener {
       if (setting != null
           && !settings.contains(setting)
           && !hiddenSettings.contains(setting)
-          && availableHere(setting, node)) {
+          && availableHere(setting, node, availability)) {
         settings.add(setting);
       }
     }
@@ -2588,15 +2656,18 @@ public class SelectorController implements UserInputEventListener {
    */
   @VisibleForTesting
   ImmutableList<Setting> getFilteredSettings() {
+    return getFilteredSettings(accessibilityFocusMonitor.getAccessibilityFocus(false));
+  }
+
+  private ImmutableList<Setting> getFilteredSettings(@Nullable AccessibilityNodeInfoCompat node) {
     ImmutableList.Builder<Setting> filteredSettingsBuilder = ImmutableList.builder();
-    @Nullable AccessibilityNodeInfoCompat node =
-        accessibilityFocusMonitor.getAccessibilityFocus(false);
+    NodeAvailability availability = new NodeAvailability(node);
 
     for (Setting setting : orderedSettings()) {
       if (hiddenSettings.contains(setting)) {
         continue;
       }
-      if (allowedSetting(setting, node)) {
+      if (allowedSetting(setting, node, availability)) {
         filteredSettingsBuilder.add(setting);
       }
     }

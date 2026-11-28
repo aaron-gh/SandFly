@@ -47,8 +47,10 @@ import com.google.common.collect.ImmutableList;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -72,8 +74,9 @@ public class SpellChecker {
   private static final String TAG = "SpellChecker";
   private static final int FLAG_UNKNOWN_RESULT = 0;
   private static final long SPELL_CHECKING_MAX_WAITING_TIME_MS = 500;
-  private static final long BACKGROUND_CHECK_MAX_WAITING_TIME_MS = 2000;
+  @VisibleForTesting static final long BACKGROUND_CHECK_MAX_WAITING_TIME_MS = 2000;
   private static final int MISSPELLED_WORD_SUGGESTIONS_MAX_NUM = 5;
+  @VisibleForTesting static final int MAX_CACHE_ENTRIES = 16;
   // Without a spell checker service, creating a session fails. A text field reporting cursor moves
   // many times a second would otherwise try again on every move.
   @VisibleForTesting static final long NO_SESSION_RETRY_DELAY_MS = 10_000;
@@ -92,15 +95,21 @@ public class SpellChecker {
   private final TextServicesManager textServicesManager;
   private final SpellCheckingListener listener;
   private @Nullable SpellCheckerSession session;
+  private @Nullable Runnable closeSession;
+  private @Nullable Runnable onChecked;
 
   private static final Cache resultCache = new Cache();
   private static final Handler mainHandler = new Handler(Looper.getMainLooper());
   private static @Nullable SpellChecker backgroundCheck;
+  private static @Nullable SessionStarter sessionStarter;
   // Uptime until which no new session is tried, after one couldn't be created.
   private static volatile long noSessionUntilMs;
+  // Timeout backoff applies only to automatic background warm-ups, never explicit synchronous checks.
+  private static volatile long backgroundTimeoutUntilMs;
   private static final Runnable backgroundCheckTimeout =
       () -> {
         LogUtils.e(TAG, "Spell checking timeout.");
+        markBackgroundTimeout();
         cancelBackgroundCheck();
       };
 
@@ -154,6 +163,37 @@ public class SpellChecker {
   }
 
   /**
+   * Returns cached spell-check results for {@code node} without blocking the caller, warming the
+   * cache in the background on the main thread when needed.
+   */
+  public static @Nullable CharSequence getCachedTextWithSuggestionSpans(
+      Context context, @Nullable AccessibilityNodeInfoCompat node) {
+    return node == null ? null : getCachedTextWithSuggestionSpans(context, node.getText());
+  }
+
+  /**
+   * Returns cached spell-check results for {@code text} without blocking the caller, warming the
+   * cache in the background on the main thread when needed.
+   */
+  public static @Nullable CharSequence getCachedTextWithSuggestionSpans(
+      Context context, @Nullable CharSequence text) {
+    if (!enabled) {
+      return text;
+    }
+    if (TextUtils.isEmpty(text)) {
+      return new SpannableString("");
+    }
+    @Nullable CharSequence cached = resultCache.get(text);
+    if (cached != null) {
+      return cached;
+    }
+    if (Looper.myLooper() == Looper.getMainLooper()) {
+      checkInBackground(context, text, /* onChecked= */ null);
+    }
+    return text;
+  }
+
+  /**
    * Returns a {@link CharSequence} whose misspelled words are wrapped around {@link
    * SuggestionSpan}s. Misspelled words and suggestions found out by the spell checker.
    */
@@ -173,9 +213,10 @@ public class SpellChecker {
       return new SpannableString("");
     }
 
-    if (hasCachedResult(text)) {
+    @Nullable CharSequence cached = resultCache.get(text);
+    if (cached != null) {
       LogUtils.v(TAG, "Get result from the cache.");
-      return getResultFromCache();
+      return cached;
     }
 
     if (isSessionUnavailable()) {
@@ -195,7 +236,9 @@ public class SpellChecker {
                   LogUtils.e(TAG, "Fail to perform spell checker.");
                   return;
                 }
-                Looper.loop();
+                if (!spellChecker.listener.isFinished()) {
+                  Looper.loop();
+                }
               } finally {
                 spellChecker.close();
               }
@@ -210,7 +253,6 @@ public class SpellChecker {
 
     if (!spellChecker.listener.isFinished()) {
       LogUtils.e(TAG, "Spell checking timeout.");
-      // Ends the thread, which closes the session.
       Looper looper = threadLooper.get();
       if (looper != null) {
         looper.quitSafely();
@@ -230,14 +272,35 @@ public class SpellChecker {
    * cancels one still running. {@code onChecked} doesn't run if the spell checker doesn't answer.
    * Call on the main thread.
    */
-  public static void checkInBackground(Context context, CharSequence text, Runnable onChecked) {
+  public static void checkInBackground(
+      Context context, CharSequence text, @Nullable Runnable onChecked) {
     if (!enabled || TextUtils.isEmpty(text) || hasCachedResult(text)) {
-      onChecked.run();
+      if (onChecked != null) {
+        onChecked.run();
+      }
+      return;
+    }
+    if (isSessionUnavailable() || isBackgroundTimeoutActive()) {
+      return;
+    }
+    // Reuse an identical in-flight check and attach any callback instead of restarting the session.
+    if (backgroundCheck != null && TextUtils.equals(backgroundCheck.text, text)) {
+      if (onChecked != null) {
+        Runnable previous = backgroundCheck.onChecked;
+        backgroundCheck.onChecked =
+            previous == null
+                ? onChecked
+                : () -> {
+                  previous.run();
+                  onChecked.run();
+                };
+      }
       return;
     }
     cancelBackgroundCheck();
     SpellCheckingListener listener = new SpellCheckingListener();
     SpellChecker check = new SpellChecker(context, text, listener);
+    check.onChecked = onChecked;
     listener.onFinishedCallback =
         () -> {
           if (backgroundCheck != check) {
@@ -246,15 +309,23 @@ public class SpellChecker {
           cancelBackgroundCheck();
           updateCachedResult(
               wrapSuggestionSpansForAllMisspelledWords(context, text, listener.getResult()));
-          onChecked.run();
+          if (check.onChecked != null) {
+            check.onChecked.run();
+          }
         };
+    backgroundCheck = check;
     // The session answers on the looper of the thread that creates it, here the main thread.
     if (!check.perform()) {
-      check.close();
+      if (backgroundCheck == check) {
+        cancelBackgroundCheck();
+      } else {
+        check.close();
+      }
       return;
     }
-    backgroundCheck = check;
-    mainHandler.postDelayed(backgroundCheckTimeout, BACKGROUND_CHECK_MAX_WAITING_TIME_MS);
+    if (backgroundCheck == check) {
+      mainHandler.postDelayed(backgroundCheckTimeout, BACKGROUND_CHECK_MAX_WAITING_TIME_MS);
+    }
   }
 
   /** Whether a session couldn't be created a short time ago, so none is tried yet. */
@@ -264,8 +335,33 @@ public class SpellChecker {
   }
 
   @VisibleForTesting
+  static boolean isBackgroundTimeoutActive() {
+    return SystemClock.uptimeMillis() < backgroundTimeoutUntilMs;
+  }
+
+  private static void markSessionUnavailable() {
+    noSessionUntilMs = SystemClock.uptimeMillis() + NO_SESSION_RETRY_DELAY_MS;
+  }
+
+  private static void markBackgroundTimeout() {
+    backgroundTimeoutUntilMs = SystemClock.uptimeMillis() + NO_SESSION_RETRY_DELAY_MS;
+  }
+
+  @VisibleForTesting
   static void resetSessionUnavailable() {
     noSessionUntilMs = 0;
+    backgroundTimeoutUntilMs = 0;
+    cancelBackgroundCheck();
+  }
+
+  @VisibleForTesting
+  static void setSessionStarterForTesting(@Nullable SessionStarter starter) {
+    sessionStarter = starter;
+  }
+
+  @VisibleForTesting
+  static void clearCache() {
+    resultCache.clear();
   }
 
   private static void cancelBackgroundCheck() {
@@ -281,6 +377,10 @@ public class SpellChecker {
       session.close();
       session = null;
     }
+    if (closeSession != null) {
+      closeSession.run();
+      closeSession = null;
+    }
   }
 
   /**
@@ -295,12 +395,22 @@ public class SpellChecker {
       return false;
     }
 
-    if (textServicesManager == null) {
-      LogUtils.e(TAG, "TextServicesManager is null.");
+    if (isSessionUnavailable()) {
       return false;
     }
 
-    if (isSessionUnavailable()) {
+    SessionStarter starter = sessionStarter;
+    if (starter != null) {
+      closeSession = starter.start(text, listener);
+      if (closeSession == null) {
+        markSessionUnavailable();
+        return false;
+      }
+      return true;
+    }
+
+    if (textServicesManager == null) {
+      LogUtils.e(TAG, "TextServicesManager is null.");
       return false;
     }
 
@@ -312,7 +422,7 @@ public class SpellChecker {
             /* referToSpellCheckerLanguageSettings= */ true);
     if (session == null) {
       LogUtils.e(TAG, "Fail to create a SpellingCheckerSession.");
-      noSessionUntilMs = SystemClock.uptimeMillis() + NO_SESSION_RETRY_DELAY_MS;
+      markSessionUnavailable();
       return false;
     }
 
@@ -501,15 +611,17 @@ public class SpellChecker {
 
   @VisibleForTesting
   static void updateCachedResult(CharSequence textWithSuggestionSpans) {
-    resultCache.textWithSuggestionSpans = textWithSuggestionSpans;
+    resultCache.put(textWithSuggestionSpans);
   }
 
-  private static boolean hasCachedResult(CharSequence text) {
-    return resultCache.isSameText(text);
+  /** Returns whether a spell-check result for {@code text} is currently cached. */
+  public static boolean hasCachedResult(@Nullable CharSequence text) {
+    return enabled && resultCache.contains(text);
   }
 
-  private static CharSequence getResultFromCache() {
-    return resultCache.textWithSuggestionSpans;
+  @VisibleForTesting
+  interface SessionStarter {
+    @Nullable Runnable start(CharSequence text, SpellCheckingListener listener);
   }
 
   /**
@@ -688,21 +800,42 @@ public class SpellChecker {
     }
   }
 
-  /** A class to store the result of the spell checker. */
+  /** Bounded LRU cache mapping raw text to spell-checked text with SuggestionSpans. */
   private static class Cache {
 
-    /**
-     * Typo or grammar errors in {@code text} found by the spell checker are wrapped around {@link
-     * SuggestionSpan}s.
-     */
-    @Nullable private CharSequence textWithSuggestionSpans;
+    private final LinkedHashMap<String, CharSequence> entries =
+        new LinkedHashMap<String, CharSequence>(MAX_CACHE_ENTRIES, 0.75f, /* accessOrder= */ true) {
+          @Override
+          protected boolean removeEldestEntry(Map.Entry<String, CharSequence> eldest) {
+            return size() > MAX_CACHE_ENTRIES;
+          }
+        };
 
     private Cache() {}
 
-    /** Returns {@code true}, if the result in the cache is for the given text. */
-    private boolean isSameText(CharSequence newText) {
-      return !TextUtils.isEmpty(textWithSuggestionSpans)
-          && TextUtils.equals(textWithSuggestionSpans, newText);
+    private synchronized void put(@Nullable CharSequence textWithSuggestionSpans) {
+      if (TextUtils.isEmpty(textWithSuggestionSpans)) {
+        return;
+      }
+      entries.put(textWithSuggestionSpans.toString(), textWithSuggestionSpans);
+    }
+
+    private synchronized @Nullable CharSequence get(@Nullable CharSequence text) {
+      if (TextUtils.isEmpty(text)) {
+        return null;
+      }
+      return entries.get(text.toString());
+    }
+
+    private synchronized boolean contains(@Nullable CharSequence text) {
+      if (TextUtils.isEmpty(text)) {
+        return false;
+      }
+      return entries.containsKey(text.toString());
+    }
+
+    private synchronized void clear() {
+      entries.clear();
     }
   }
 }

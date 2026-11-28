@@ -22,6 +22,7 @@ import static com.google.android.accessibility.utils.input.TextEventInterpretati
 import static com.google.android.accessibility.utils.input.TextEventInterpretation.TEXT_ADD;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.core.view.accessibility.AccessibilityEventCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -35,6 +36,7 @@ import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
+import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SpellChecker;
 import com.google.android.accessibility.utils.input.TextEventInterpretation;
 import com.google.android.accessibility.utils.input.TextEventInterpretation.TextEvent;
@@ -68,6 +70,7 @@ public class HintEventInterpreter implements AccessibilityEventListener, Interpr
   private @Nullable String lastHintedTypo;
   // Whether Proofread is in the reading controls in use; spelling hints are off without it.
   private BooleanSupplier typoHintOn = () -> true;
+  private int focusHintGeneration;
 
   ///////////////////////////////////////////////////////////////////////////////////////
   // Construction
@@ -104,6 +107,10 @@ public class HintEventInterpreter implements AccessibilityEventListener, Interpr
     boolean forceFeedbackEvenIfMicrophoneActive = false;
 
     final int eventType = event.getEventType();
+    if (eventType == AccessibilityEvent.TYPE_VIEW_CLICKED
+        || eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
+      focusHintGeneration++;
+    }
     if (eventType == TYPE_VIEW_FOCUSED) {
       if (FormFactorUtils.isAndroidTv()) {
         // On TV, we will always sync accessibility-focus to input-focus, so it is sufficient to
@@ -116,8 +123,12 @@ public class HintEventInterpreter implements AccessibilityEventListener, Interpr
       }
     }
 
+    AccessibilityNodeInfoCompat focusSource = null;
+    int generation = 0;
+    boolean needsAsyncTypoHint = false;
     // Schedule delayed hint for accessibility-focus event.
     if (eventType == AccessibilityEventCompat.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
+      generation = ++focusHintGeneration;
       FocusActionInfo focusActionInfo =
           actorState.getFocusHistory().getFocusActionInfoFromEvent(event);
 
@@ -143,6 +154,8 @@ public class HintEventInterpreter implements AccessibilityEventListener, Interpr
       if (source == null) {
         return;
       }
+      focusSource = source;
+      needsAsyncTypoHint = needsAsyncFocusTypoHint(source);
     }
 
     pipelineInterpretationReceiver.input(
@@ -150,6 +163,67 @@ public class HintEventInterpreter implements AccessibilityEventListener, Interpr
         event,
         new Interpretation.HintableEvent(
             forceFeedbackEvenIfAudioPlaybackActive, forceFeedbackEvenIfMicrophoneActive));
+
+    if (needsAsyncTypoHint && focusSource != null) {
+      scheduleFocusTypoHint(
+          eventId,
+          focusSource,
+          generation,
+          forceFeedbackEvenIfAudioPlaybackActive,
+          forceFeedbackEvenIfMicrophoneActive);
+    }
+  }
+
+  private boolean needsAsyncFocusTypoHint(AccessibilityNodeInfoCompat source) {
+    if (!TalkbackFeatureSupport.supportTextSuggestion()
+        || !typoHintOn.getAsBoolean()
+        || Role.getRole(source) != Role.ROLE_EDIT_TEXT
+        || !source.isEnabled()) {
+      return false;
+    }
+    CharSequence text = source.getText();
+    return !TextUtils.isEmpty(text)
+        && !AccessibilityNodeInfoUtils.hasNoSuggestionsNeed(source.getInputType())
+        && !SpellChecker.hasCachedResult(text)
+        && !AccessibilityNodeInfoUtils.hasExistingSuggestionSpans(source);
+  }
+
+  private void scheduleFocusTypoHint(
+      @Nullable EventId eventId,
+      AccessibilityNodeInfoCompat source,
+      int generation,
+      boolean forceFeedbackEvenIfAudioPlaybackActive,
+      boolean forceFeedbackEvenIfMicrophoneActive) {
+    CharSequence text = source.getText();
+    if (TextUtils.isEmpty(text)) {
+      return;
+    }
+    SpellChecker.checkInBackground(
+        context,
+        text,
+        () -> {
+          if (generation != focusHintGeneration || !typoHintOn.getAsBoolean()) {
+            return;
+          }
+          if (!source.refresh()
+              || !source.isAccessibilityFocused()
+              || !source.isEnabled()
+              || !TextUtils.equals(source.getText(), text)) {
+            return;
+          }
+          int typoCount = AccessibilityNodeInfoUtils.getTypoCount(context, source);
+          if (typoCount <= 0) {
+            return;
+          }
+          pipelineInterpretationReceiver.input(
+              eventId,
+              /* event= */ null,
+              new Interpretation.FocusTypoHint(
+                  typoCount,
+                  forceFeedbackEvenIfAudioPlaybackActive,
+                  forceFeedbackEvenIfMicrophoneActive),
+              source);
+        });
   }
 
   /** Handles the interpreted text-change event. */

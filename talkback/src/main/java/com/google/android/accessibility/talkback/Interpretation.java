@@ -86,6 +86,44 @@ public abstract class Interpretation {
     }
   }
 
+  /** Interpretation for an edit box typo count found asynchronously after focus. */
+  public static final class FocusTypoHint extends Interpretation {
+    public final int typoCount;
+    public final boolean forceFeedbackEvenIfAudioPlaybackActive;
+    public final boolean forceFeedbackEvenIfMicrophoneActive;
+
+    public FocusTypoHint(
+        int typoCount,
+        boolean forceFeedbackEvenIfAudioPlaybackActive,
+        boolean forceFeedbackEvenIfMicrophoneActive) {
+      this.typoCount = typoCount;
+      this.forceFeedbackEvenIfAudioPlaybackActive = forceFeedbackEvenIfAudioPlaybackActive;
+      this.forceFeedbackEvenIfMicrophoneActive = forceFeedbackEvenIfMicrophoneActive;
+    }
+
+    @Override
+    public boolean equals(Object otherObject) {
+      @Nullable FocusTypoHint other = castOrNull(otherObject, FocusTypoHint.class);
+      return other != null
+          && typoCount == other.typoCount
+          && forceFeedbackEvenIfAudioPlaybackActive == other.forceFeedbackEvenIfAudioPlaybackActive
+          && forceFeedbackEvenIfMicrophoneActive == other.forceFeedbackEvenIfMicrophoneActive;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(
+          typoCount,
+          forceFeedbackEvenIfAudioPlaybackActive,
+          forceFeedbackEvenIfMicrophoneActive);
+    }
+
+    @Override
+    public String toString() {
+      return "FocusTypoHint{typoCount=" + typoCount + "}";
+    }
+  }
+
   /** Interpretation sub-type for power-events. */
   public static final class Power extends Interpretation {
     public final boolean connected;
