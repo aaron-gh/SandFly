@@ -59,6 +59,19 @@ class NotificationListTest {
   }
 
   @Test
+  fun notificationsTheShadeHidesAreLeftOut() {
+    val default = android.app.NotificationManager.IMPORTANCE_DEFAULT
+    val hiddenInList = android.app.NotificationManager.Policy.SUPPRESSED_EFFECT_NOTIFICATION_LIST
+    val noPeeking = android.app.NotificationManager.Policy.SUPPRESSED_EFFECT_PEEK
+    assertEquals(false, NotificationList.isHiddenInShade(default, false, 0))
+    assertEquals(false, NotificationList.isHiddenInShade(android.app.NotificationManager.IMPORTANCE_MIN, false, 0))
+    assertEquals(false, NotificationList.isHiddenInShade(default, false, noPeeking))
+    assertEquals(true, NotificationList.isHiddenInShade(default, true, 0))
+    assertEquals(true, NotificationList.isHiddenInShade(default, false, hiddenInList or noPeeking))
+    assertEquals(true, NotificationList.isHiddenInShade(android.app.NotificationManager.IMPORTANCE_NONE, false, 0))
+  }
+
+  @Test
   fun oneUiMediaActivityIsLeftOut() {
     val player = posted("com.example.player", 2, Notification.Builder(context, "playing").setContentTitle("Episode").build())
     NotificationList.onConnected(arrayOf(posted("com.android.systemui", 1, mediaActivity()), player), null)
