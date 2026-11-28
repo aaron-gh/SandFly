@@ -1568,8 +1568,11 @@ public class FailoverTextToSpeech {
     stopLowLatencySpeech();
     try {
       allowDeviceSleep();
-      engineRequests.incrementAndGet();
-      tts.speak("", TextToSpeech.QUEUE_FLUSH, null);
+      // Stopping rather than speaking nothing, which flushes as much but queues the empty speech
+      // ahead of the next. Then the next speech doesn't stop the engine again.
+      if (!engineStoppedAndIdle()) {
+        stopEngine();
+      }
       unfinishedUtterances.clear();
     } catch (Exception e) {
       // Don't care, we're not speaking.
