@@ -1454,10 +1454,32 @@ public class FailoverTextToSpeech {
    * through {@link KeepScreenOn}, as the wake lock doesn't keep the screen on on some phones.
    */
   private void preventDeviceSleep() {
+    // The lock kept from speech just before is still held.
+    mHandler.removeCallbacks(releaseWakeLock);
     if (wakeLock != null && !wakeLock.isHeld()) {
       wakeLock.acquire(KeepScreenOn.LIMIT_MS);
     }
     KeepScreenOn.request(KeepScreenOn.SPEECH);
+  }
+
+  /**
+   * How long the {@link WakeLock} is kept after speech stops or ends, for speech that follows at
+   * once, as when moving to the next item. Releasing and acquiring it are calls to Android each.
+   */
+  private static final long WAKE_LOCK_RELEASE_DELAY_MS = 2000;
+
+  private final Runnable releaseWakeLock = this::releaseWakeLock;
+
+  /** Releases the {@link WakeLock} now, if it is held. */
+  private void releaseWakeLock() {
+    mHandler.removeCallbacks(releaseWakeLock);
+    if (wakeLock != null && wakeLock.isHeld()) {
+      try {
+        wakeLock.release();
+      } catch (RuntimeException unused) {
+        // Ignore: already released by timeout.
+      }
+    }
   }
 
   /** Releases the {@link WakeLock} and the {@link KeepScreenOn} request of speech. */
@@ -1473,12 +1495,10 @@ public class FailoverTextToSpeech {
     }
     KeepScreenOn.release(KeepScreenOn.SPEECH);
     if (wakeLock != null && wakeLock.isHeld()) {
-      try {
-        wakeLock.release();
-      } catch (RuntimeException unused) {
-        // Ignore: already released by timeout.
-        // TODO: Log this exception from GoogleLogger.
-      }
+      // Released later, unless speech starts again first. Posted, as this can be called on a
+      // binder thread.
+      mHandler.removeCallbacks(releaseWakeLock);
+      mHandler.postDelayed(releaseWakeLock, WAKE_LOCK_RELEASE_DELAY_MS);
     }
   }
 
@@ -1578,6 +1598,8 @@ public class FailoverTextToSpeech {
     }
     languageVoices.clear();
     allowDeviceSleep();
+    // Now, as the delayed release is removed with the handler's other messages below.
+    releaseWakeLock();
     context.unregisterReceiver(mediaStateMonitor);
     context.unregisterReceiver(screenReceiver);
     unregisterGoogleTtsFixCallbacks();
