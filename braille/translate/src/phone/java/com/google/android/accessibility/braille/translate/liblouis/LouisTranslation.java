@@ -19,6 +19,7 @@ package com.google.android.accessibility.braille.translate.liblouis;
 import static com.google.common.base.Strings.nullToEmpty;
 
 import android.util.Log;
+import androidx.annotation.Nullable;
 import com.google.android.accessibility.braille.interfaces.BrailleCharacter;
 import com.google.android.accessibility.braille.interfaces.BrailleWord;
 import com.google.android.accessibility.braille.translate.TranslationResult;
@@ -126,6 +127,17 @@ public class LouisTranslation {
     }
   }
 
+  /**
+   * Whether [tableName] defines each UTF-16 unit of [text], that is, gives at least one cell for it
+   * alone, or null if the table doesn't compile.
+   */
+  @Nullable
+  static boolean[] definedCharacters(String text, String tableName) {
+    synchronized (LOCK) {
+      return definedCharactersNative(text, tableName);
+    }
+  }
+
   /** Frees the compiled tables, so that tables changed on disk are read again when next used. */
   static void freeTables() {
     synchronized (LOCK) {
@@ -142,6 +154,8 @@ public class LouisTranslation {
       byte[] dotPatterns, String tableName, int mode, int[] range);
 
   private static native boolean checkTableNative(String tableName);
+
+  private static native boolean[] definedCharactersNative(String text, String tableName);
 
   private static native boolean setTablesDirNative(String path);
 

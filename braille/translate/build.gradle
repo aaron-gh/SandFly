@@ -20,6 +20,7 @@ dependencies {
     implementation project(':utils')
     testImplementation libs.junit
     testImplementation libs.json
+    testImplementation libs.robolectric
 }
 
 def createTranslationTablesZip = tasks.register("createTranslationTablesZip", Zip) {

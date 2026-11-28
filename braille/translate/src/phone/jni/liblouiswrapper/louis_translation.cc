@@ -266,6 +266,54 @@ JNIEXPORT jstring JNICALL JNI_METHOD(backTranslateNative)(
   return env->NewString(out_buf.data(), out_used);
 }
 
+// Returns whether the table list defines each UTF-16 unit of the text: a unit
+// is defined if translating it alone, with undefined characters left out,
+// gives at least one cell. Returns null if the table list doesn't compile.
+// The caller holds the lock of all liblouis calls.
+JNIEXPORT jbooleanArray JNICALL JNI_METHOD(definedCharactersNative)(
+    JNIEnv* env, jclass clazz, jstring text, jstring tableName) {
+  const char* table_name_utf8 = env->GetStringUTFChars(tableName, nullptr);
+  if (!table_name_utf8) {
+    return nullptr;
+  }
+  TranslationTableHeader* table = const_cast<TranslationTableHeader*>(
+      _lou_getTranslationTable(table_name_utf8));
+  if (!table) {
+    env->ReleaseStringUTFChars(tableName, table_name_utf8);
+    return nullptr;
+  }
+  // The "undefined" rule of a table, such as "undefined 0", gives cells for
+  // every character it doesn't define; it is left out while checking.
+  const TranslationTableOffset undefined_rule = table->undefined;
+  table->undefined = 0;
+  const int in_len = env->GetStringLength(text);
+  std::vector<jchar> chars(in_len);
+  env->GetStringRegion(text, 0, in_len, chars.data());
+  std::vector<jboolean> defined(in_len, JNI_FALSE);
+  // One character can give many cells, such as a word sign with its
+  // indicators.
+  widechar out_buf[64];
+  for (int i = 0; i < in_len; ++i) {
+    widechar in = chars[i];
+    int in_used = 1;
+    int out_used = sizeof(out_buf) / sizeof(out_buf[0]);
+    int result = lou_translate(table_name_utf8, &in, &in_used, out_buf,
+                               &out_used, /* typeform= */ nullptr,
+                               /* spacing= */ nullptr, /* outputPos= */ nullptr,
+                               /* inputPos= */ nullptr, /* cursorPos= */ nullptr,
+                               dotsIO | noUndefined);
+    defined[i] = result != 0 && out_used > 0 ? JNI_TRUE : JNI_FALSE;
+  }
+  table->undefined = undefined_rule;
+  env->ReleaseStringUTFChars(tableName, table_name_utf8);
+  jbooleanArray array = env->NewBooleanArray(in_len);
+  if (array == nullptr) {
+    return nullptr;
+  }
+  env->SetBooleanArrayRegion(array, 0, in_len, defined.data());
+  return array;
+}
+
 // Frees the compiled tables, so that tables changed on disk are compiled again
 // when next used.
 JNIEXPORT void JNICALL JNI_METHOD(freeTablesNative)(JNIEnv* env,

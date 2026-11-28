@@ -114,6 +114,28 @@ public class LibLouisTranslator implements BrailleTranslator {
         text, CustomCharacterTables.tableList(code, tableName), cursorPosition);
   }
 
+  /**
+   * Whether the table, with its custom characters, defines each UTF-16 unit of [text], or null if
+   * the tables aren't extracted or don't compile.
+   */
+  @Nullable
+  boolean[] definedCharacters(String text) {
+    if (!loader.isExtracted()) {
+      return null;
+    }
+    return LouisTranslation.definedCharacters(text, CustomCharacterTables.tableList(code, tableName));
+  }
+
+  /** Whether the table compiles. */
+  boolean compiles() {
+    return loader.isExtracted() && LouisTranslation.checkTable(tableName);
+  }
+
+  /** The liblouis table, such as "en-ueb-g2.ctb". */
+  String tableName() {
+    return tableName;
+  }
+
   @Override
   public boolean equals(@Nullable Object o) {
     if (this == o) {

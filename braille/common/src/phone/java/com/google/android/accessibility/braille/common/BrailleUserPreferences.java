@@ -921,6 +921,39 @@ public class BrailleUserPreferences {
         .apply();
   }
 
+  /**
+   * Reads the secondary output {@link Code}, for characters that the output table doesn't define,
+   * or null if there is none, or it isn't one of the available preferred output codes or is the
+   * current output code.
+   */
+  @Nullable
+  public static Code readSecondaryOutputCode(Context context) {
+    String codeName =
+        getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+            .getString(context.getString(R.string.pref_bd_secondary_output_code), "");
+    Code code;
+    try {
+      code = Code.valueOf(codeName);
+    } catch (IllegalArgumentException e) {
+      return null;
+    }
+    if (!readAvailablePreferredOutputCodes(context).contains(code)
+        || code == readCurrentActiveOutputCodeAndCorrect(context)) {
+      return null;
+    }
+    return code;
+  }
+
+  /** Writes the secondary output {@link Code}, or none if null. */
+  public static void writeSecondaryOutputCode(Context context, @Nullable Code code) {
+    getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .edit()
+        .putString(
+            context.getString(R.string.pref_bd_secondary_output_code),
+            code == null ? "" : code.name())
+        .apply();
+  }
+
   /** Reads word wrapping preference. */
   public static boolean readWordWrapping(Context context) {
     return SharedPreferencesUtils.getBooleanPref(

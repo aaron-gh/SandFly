@@ -51,6 +51,16 @@ public class ExpandableContractedTranslator implements BrailleTranslator {
     this.g2Translator = g2Translator;
   }
 
+  /** The translator of uncontracted braille, for the word at the cursor. */
+  BrailleTranslator uncontracted() {
+    return g1Translator;
+  }
+
+  /** The translator of contracted braille. */
+  LibLouisTranslator contracted() {
+    return g2Translator;
+  }
+
   @Override
   public String translateToPrint(BrailleWord brailleWord) {
     return g2Translator.translateToPrint(brailleWord);

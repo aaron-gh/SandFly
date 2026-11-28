@@ -17,12 +17,17 @@
 package com.google.android.accessibility.braille.translate.liblouis;
 
 import android.content.Context;
+import androidx.annotation.Nullable;
 import com.google.android.accessibility.braille.translate.BrailleTranslator;
 import com.google.android.accessibility.braille.translate.TranslatorFactory;
 import com.google.android.accessibility.braille.translate.japanese.JapaneseBrailleTranslator;
+import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import java.util.ArrayList;
+import java.util.List;
 
 /** Creates Translator instances that delegate to the LibLouis braille translation library. */
 public class LibLouis implements TranslatorFactory {
+  private static final String TAG = "LibLouis";
 
   @Override
   public BrailleTranslator create(Context context, String codeName, boolean contractedMode) {
@@ -349,6 +354,67 @@ public class LibLouis implements TranslatorFactory {
       default -> {}
     }
     throw new IllegalArgumentException("unrecognized code " + codeName);
+  }
+
+  @Override
+  public BrailleTranslator create(
+      Context context, String codeName, boolean contractedMode, @Nullable String secondaryCodeName) {
+    BrailleTranslator main = create(context, codeName, contractedMode);
+    if (secondaryCodeName == null || secondaryCodeName.equals(codeName)) {
+      return main;
+    }
+    List<LibLouisTranslator> mainTables = tablesOf(main);
+    if (mainTables.isEmpty()) {
+      // Japanese braille, which reads kanji with its dictionary.
+      return main;
+    }
+    BrailleTranslator secondary;
+    try {
+      secondary = create(context, secondaryCodeName, contractedMode);
+    } catch (IllegalArgumentException e) {
+      LogUtils.w(TAG, "Secondary table left out: %s", e.getMessage());
+      return main;
+    }
+    // Contracted braille defines the same characters as uncontracted braille.
+    LibLouisTranslator mainDefinitions = mainTables.get(mainTables.size() - 1);
+    List<LibLouisTranslator> secondaryTables = tablesOf(secondary);
+    return new SecondaryTableTranslator(
+        main,
+        secondary,
+        new SecondaryTableTranslator.CharacterDefinitions() {
+          @Override
+          public boolean[] defined(String text) {
+            return mainDefinitions.definedCharacters(text);
+          }
+
+          @Override
+          public int generation() {
+            return CustomCharacterTables.generation();
+          }
+        },
+        () -> {
+          for (LibLouisTranslator table : secondaryTables) {
+            if (!table.compiles()) {
+              return false;
+            }
+          }
+          return true;
+        },
+        mainDefinitions.tableName() + " with " + secondaryCodeName);
+  }
+
+  /** The liblouis translators of [translator], or none if it doesn't translate with liblouis. */
+  private static List<LibLouisTranslator> tablesOf(BrailleTranslator translator) {
+    List<LibLouisTranslator> tables = new ArrayList<>();
+    if (translator instanceof LibLouisTranslator libLouisTranslator) {
+      tables.add(libLouisTranslator);
+    } else if (translator instanceof ExpandableContractedTranslator expandable) {
+      if (expandable.uncontracted() instanceof LibLouisTranslator uncontracted) {
+        tables.add(uncontracted);
+      }
+      tables.add(expandable.contracted());
+    }
+    return tables;
   }
 
   @Override

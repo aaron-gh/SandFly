@@ -37,6 +37,9 @@ JNIEXPORT jstring JNICALL JNI_METHOD(backTranslateNative)(
     JNIEnv* env, jclass clazz, jbyteArray cells, jstring tableName, jint mode,
     jintArray range);
 
+JNIEXPORT jbooleanArray JNICALL JNI_METHOD(definedCharactersNative)(
+    JNIEnv* env, jclass clazz, jstring text, jstring tableName);
+
 JNIEXPORT jboolean JNICALL JNI_METHOD(setTablesDirNative)(JNIEnv* env,
                                                           jclass clazz,
                                                           jstring pat);
