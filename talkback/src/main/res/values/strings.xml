@@ -4412,6 +4412,10 @@
     <string name="title_pref_swipes_before_lift">Recognize swipes before lifting</string>
     <!-- Summary of the switch that runs one-finger swipes before the finger lifts: the gestures that it turns off. [CHAR_LIMIT=NONE] -->
     <string name="summary_pref_swipes_before_lift">Turns off back-and-forth and angle gestures.</string>
+    <!-- Title of the switch that passes touches starting in Android's gesture navigation areas at the bottom, left and right edges of the screen to Android, so that Android's own navigation gestures (swipe up for Home, swipe up and hold for Recent apps, swipe in from a side for Back) work while SandFly is on. [CHAR_LIMIT=60] -->
+    <string name="title_pref_android_gesture_navigation">Use Android navigation gestures</string>
+    <!-- Summary of the switch that passes swipes from the screen edges to Android's gesture navigation: what it does and the gestures that it turns off. [CHAR_LIMIT=NONE] -->
+    <string name="summary_pref_android_gesture_navigation">Passes swipes from the bottom, left and right edges to Android. Turns off edge and corner gestures.</string>
     <!-- Title of the setting for how long after a one-finger swipe a second swipe may start, for a gesture of two swipes with the finger lifted between them. [CHAR_LIMIT=60] -->
     <string name="title_pref_two_stroke_swipe_time">Time between two-stroke swipes</string>
     <!-- Value of the setting Time between two-stroke swipes that turns two-stroke swipes off. [CHAR_LIMIT=30] -->

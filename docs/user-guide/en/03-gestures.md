@@ -77,7 +77,7 @@ The scrub, pinch and spread aren't on watches.
 
 ### Edge gestures {#gestures-edges}
 
-Edge gestures start at the very edge of the screen, such as on the gesture navigation bar or the status bar. They are in the **Edges** category of the **Gestures** screen and aren't on watches.
+Edge gestures start at the very edge of the screen, such as on the gesture navigation bar or the status bar. They are in the **Edges** category of the **Gestures** screen and aren't on watches. **Use Android navigation gestures** turns them off and hides them; see [](#gestures-android-navigation).
 
 #### Slide in from an edge {#gestures-edges-slide-in}
 
@@ -132,7 +132,7 @@ Under **Edges** on the **Gestures** screen:
 
 ### Corner gestures {#gestures-corners}
 
-Each corner of the screen has five one-finger gestures, under **Corners**: tap, double-tap, triple-tap, double-tap and hold, and triple-tap and hold, such as **Double-tap top left corner**. They do nothing by default.
+Each corner of the screen has five one-finger gestures, under **Corners**: tap, double-tap, triple-tap, double-tap and hold, and triple-tap and hold, such as **Double-tap top left corner**. They do nothing by default. **Use Android navigation gestures** turns them off and hides them; see [](#gestures-android-navigation).
 
 A corner with no command assigned works as usual. In a corner with a command assigned, taps that SandFly doesn't use are ordinary taps: a double-tap still activates. A double-tap waits for a third tap only while the corner has a triple-tap command. A touch that moves, adds a finger, or rests without a hold gesture is an ordinary touch, so swipes and edge gestures from the corner still work. Corner gestures don't start on the keyboard.
 
@@ -177,6 +177,7 @@ On phones whose fingerprint sensor reports swipes, the **Fingerprint gestures** 
 - **Gesture layout** and **Handle two-finger swipes in SandFly**: see [](#gestures-layout) and [](#gestures-two-finger-swipes).
 - The timing settings: see [](#gestures-timing).
 - **Recognize swipes before lifting**: see [](#gestures-swipes-before-lift).
+- **Use Android navigation gestures**: see [](#gestures-android-navigation).
 - **Gestures in apps**, **Gesture profiles** and **App shortcuts**: see [](#gestures-in-apps), [](#gestures-profiles) and [](#gestures-app-shortcuts).
 - The gesture categories: **1 finger**, **1 finger back-and-forth**, **1 finger angle**, **Edges**, **Corners**, **2 fingers**, **2 finger angle**, **3 fingers**, **4 fingers**, **Tap, then swipe** (with **2 fingers**, **3 fingers**, **4 fingers** and **2-finger tap, 1-finger swipe** inside it), **Fingerprint gestures**, **Back tap**, **Shake**, **Three-part swipes**, **Two-stroke swipes**, **Two-stroke swipes ending with back-and-forth or angle** and a **Two-stroke swipes starting with** category for each back-and-forth and angle swipe.
 
@@ -228,6 +229,12 @@ With **Recognize swipes before lifting** on, a one-finger swipe runs its command
 With it off, a swipe also runs before the lift when no gesture that starts in its direction has a command: no back-and-forth or angle gesture, no swipe and hold of either, and no three-part swipe. With **SandFly gestures**, the back-and-forth gestures have commands; with **VoiceOver gestures**, none of these gestures do.
 
 Each gesture profile can turn this setting on or off for itself; see [](#gestures-profiles). Not on watches.
+
+#### Use Android navigation gestures {#gestures-android-navigation}
+
+With **Use Android navigation gestures** on, touches that start in Android's gesture navigation areas at the bottom, left and right edges of the screen go to Android without touch exploration. Android's navigation gestures then work in every app, SandFly included: swipe up from the bottom for **Home**, swipe up from the bottom and hold for **Recent apps**, and swipe in from the left or right edge for **Back**. A tap in these areas can activate what is under the finger without focusing it first. Android sets the size of the areas.
+
+The setting turns off and hides the **Edges** and **Corners** categories, and the edge and corner groups of the gesture trainer. It applies only while Android uses gesture navigation, and the switch is hidden with other navigation modes. It's off by default. Needs Android 11 or later. Not on watches or TVs.
 
 ### Change what a gesture does {#gestures-change}
 

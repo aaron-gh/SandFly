@@ -3333,6 +3333,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     // We initialize the list in the first run and later only update its elements.
     boolean isFirstRun = actionToGesture.isEmpty();
     boolean swipesBeforeLift = SwipesBeforeLift.isOn(context);
+    boolean androidGestureNavigation = AndroidGestureNavigation.isOn(context);
 
     HashMap<Integer, String> newFingerPrintGestureIdToActionKey = new HashMap<>();
     for (int index = 0; index < NUMBER_OF_GESTURE_SET; index++) {
@@ -3390,6 +3391,11 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         }
 
         String baseKey = context.getString(gesture.keyId);
+        // Edge and corner gestures are off while their touches pass through to Android's gesture
+        // navigation.
+        if (androidGestureNavigation && AndroidGestureNavigation.isEdgeOrCornerGesture(baseKey)) {
+          continue;
+        }
         String defaultAction =
             GestureLayout.defaultValue(
                 context, prefs, baseKey, context.getString(gesture.defaultActionId));

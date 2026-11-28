@@ -25,6 +25,7 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.gesture.AndroidGestureNavigation;
 import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift;
 import com.google.android.accessibility.talkback.trainingcommon.tv.TvTutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.tv.VendorConfigReader;
@@ -621,7 +622,8 @@ public class TalkBackPreferenceFilter {
     for (int i = 0; i < preferenceGroup.getPreferenceCount(); ++i) {
       Preference preference = preferenceGroup.getPreference(i);
       // Hidden rather than removed, so that the Gestures screen can show them again.
-      if (SwipesBeforeLift.hidesCategory(context, preference.getKey())) {
+      if (SwipesBeforeLift.hidesCategory(context, preference.getKey())
+          || AndroidGestureNavigation.hidesCategory(context, preference.getKey())) {
         preference.setVisible(false);
       }
       if (hide(preference)) {

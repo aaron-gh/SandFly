@@ -36,6 +36,7 @@ import androidx.preference.PreferenceGroup;
 import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity.TalkBackSubSettings;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.gesture.AndroidGestureNavigation;
 import com.google.android.accessibility.talkback.gesture.GestureLayout;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift;
@@ -155,6 +156,7 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
     resetGesturePreferenceScreen.setOnPreferenceClickListener(resetGesturePreferenceClickListener);
 
     updateTwoFingerSwipeRows();
+    updateAndroidGestureNavigation();
     if (!FormFactorUtils.isAndroidWear()) {
       Preference vibrationWatch =
           findPreference(getString(R.string.pref_reserve_vibration_watch_gestures_key));
@@ -210,6 +212,8 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
     prefs.registerOnSharedPreferenceChangeListener(onSharedPreferenceChangeListener);
     updatePreferencesOnResume();
     updatePreferencesForVibrationWatchIfNeeded();
+    // Android's navigation mode can change while the screen is in the background.
+    updateAndroidGestureNavigation();
   }
 
   private void updatePreferencesOnResume() {
@@ -289,8 +293,31 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
         } else if (TextUtils.equals(key, getString(R.string.pref_swipes_before_lift_key))
             || TextUtils.equals(key, getString(R.string.pref_two_stroke_swipe_time_key))) {
           updateTwoDirectionCategories();
+        } else if (TextUtils.equals(key, getString(R.string.pref_android_gesture_navigation_key))) {
+          updateAndroidGestureNavigation();
         }
       };
+
+  /**
+   * Use Android navigation gestures shows only while Android uses gesture navigation, and edge and
+   * corner gestures are hidden while it applies.
+   */
+  private void updateAndroidGestureNavigation() {
+    Context context = requireContext();
+    TwoStatePreference toggle = findPreference(getString(R.string.pref_android_gesture_navigation_key));
+    if (toggle != null) {
+      toggle.setVisible(
+          AndroidGestureNavigation.isSupported()
+              && AndroidGestureNavigation.isGestureNavigation(context));
+      toggle.setChecked(AndroidGestureNavigation.isSwitchedOn(context));
+    }
+    for (String key : AndroidGestureNavigation.categoryKeys(context)) {
+      Preference category = findPreference(key);
+      if (category != null) {
+        category.setVisible(!AndroidGestureNavigation.hidesCategory(context, key));
+      }
+    }
+  }
 
   /**
    * Back-and-forth and angle gestures are hidden while swipes run before the finger lifts,
