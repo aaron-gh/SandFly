@@ -213,6 +213,7 @@ import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages
 import com.google.android.accessibility.talkback.focusmanagement.LiftCancelStrip;
 import com.google.android.accessibility.talkback.focusmanagement.LiftToActivateMode;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
+import com.google.android.accessibility.talkback.focusmanagement.WindowNodePrefetcher;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.TouchExplorationInterpreter;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
@@ -1562,6 +1563,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       clearCache();
     }
     TraversalTreeCache.onAccessibilityEvent(event);
+    WindowNodePrefetcher.onAccessibilityEvent(event);
     PreparedFocusSpeech.onAccessibilityEvent(event);
     if (directTouchController != null) {
       directTouchController.onAccessibilityEvent(event);
