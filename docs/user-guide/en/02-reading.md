@@ -95,7 +95,7 @@ These reading controls move through the text of the focused item, and then on to
 
 In a text field that is being edited, these reading controls move the cursor, and swipes stay in the field. For editing text, see [](#typing).
 
-SandFly also moves through text that an app draws itself and doesn't let screen readers move through, such as messages in Telegram.
+SandFly also moves through text that an app draws itself and doesn't let screen readers move through, such as messages in Telegram. In that text, a line ends at a line break.
 
 #### Move by kind of item {#reading-kinds}
 

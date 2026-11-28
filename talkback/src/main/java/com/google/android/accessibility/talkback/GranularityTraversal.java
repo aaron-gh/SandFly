@@ -48,18 +48,19 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Performs granularity traversal within Talkback. Supports only character, word and paragraph
- * granularity.
+ * Performs granularity traversal within Talkback. Supports character, word, line and paragraph
+ * granularity, and sentences through {@link #traverseAtSentenceGranularity}.
  */
 public final class GranularityTraversal {
   /**
    * Granularities supported within talkback if the conditions in {@link
    * GranularityTraversal#shouldHandleGranularityTraversalInTalkback(AccessibilityNodeInfoCompat)}
-   * are satisfied.
+   * are satisfied. The text has no layout here, so a line is the text between two line breaks.
    */
   static final int TALKBACK_SUPPORTED_GRANULARITIES =
       AccessibilityNodeInfo.MOVEMENT_GRANULARITY_CHARACTER
           | AccessibilityNodeInfo.MOVEMENT_GRANULARITY_WORD
+          | AccessibilityNodeInfo.MOVEMENT_GRANULARITY_LINE
           | AccessibilityNodeInfo.MOVEMENT_GRANULARITY_PARAGRAPH;
 
   private static final int ACCESSIBILITY_CURSOR_POSITION_UNDEFINED = -1;
@@ -436,7 +437,7 @@ public final class GranularityTraversal {
   }
 
   /**
-   * Gets the iterator for granularity traversal. Talkback can handle only character, word and
+   * Gets the iterator for granularity traversal. Talkback can handle character, word, line and
    * paragraph granularity movements. If the granularity is not supported by Talkback or the text is
    * null, it returns {@code null}.
    *
@@ -454,6 +455,10 @@ public final class GranularityTraversal {
       return null;
     }
 
+    // Without the text's layout, a line ends at a line break, as a paragraph does.
+    if (granularity == AccessibilityNodeInfo.MOVEMENT_GRANULARITY_LINE) {
+      granularity = AccessibilityNodeInfo.MOVEMENT_GRANULARITY_PARAGRAPH;
+    }
     return GranularityIterator.getIteratorForGranularity(text, granularity);
   }
 

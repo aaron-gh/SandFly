@@ -95,7 +95,7 @@ Deze leesinstellingen bewegen door de tekst van het gefocuste item, en dan door 
 
 In een tekstveld dat wordt bewerkt, bewegen deze leesinstellingen de cursor, en blijven swipes in het veld. Voor het bewerken van tekst, zie [](#typing).
 
-SandFly beweegt ook door tekst die een app zelf tekent en niet door schermlezers laat bewegen, zoals berichten in Telegram.
+SandFly beweegt ook door tekst die een app zelf tekent en niet door schermlezers laat bewegen, zoals berichten in Telegram. In die tekst eindigt een regel bij een regeleinde.
 
 #### Op type item bewegen {#reading-kinds}
 

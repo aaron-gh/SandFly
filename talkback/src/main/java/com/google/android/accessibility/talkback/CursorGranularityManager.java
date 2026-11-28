@@ -224,15 +224,17 @@ public class CursorGranularityManager {
    * should be used when users explicitly choose a granularity (e.g. in Reading Controls). See the
    * comments of {@link #savedGranularity} and {@link #currentGranularity} for more details.
    *
+   * <p>The requested granularity is saved even when the node doesn't support it, so that moves
+   * from this node go from item to item and continue at that granularity in the next item that
+   * supports it, rather than at the granularity chosen before it.
+   *
    * @param granularity The requested granularity.
    * @return {@code true} if successful, {@code false} otherwise.
    */
   public boolean setGranularityAt(
       AccessibilityNodeInfoCompat node, CursorGranularity granularity, EventId eventId) {
     boolean result = setCurrentGranularityAt(node, granularity, eventId);
-    if (result) {
-      savedGranularity = granularity;
-    }
+    savedGranularity = granularity;
     return result;
   }
 
