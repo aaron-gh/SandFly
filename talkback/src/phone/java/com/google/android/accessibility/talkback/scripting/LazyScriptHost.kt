@@ -212,6 +212,8 @@ class LazyScriptHost(
     return manager?.runScriptCommand(value) == true
   }
 
+  override fun runsOverKeyboard(value: String): Boolean = store.runsOverKeyboard(value)
+
   override fun readingControls(): List<ScriptReadingControl> =
     manager?.readingControls().orEmpty()
 

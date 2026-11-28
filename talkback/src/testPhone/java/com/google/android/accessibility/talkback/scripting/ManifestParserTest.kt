@@ -387,6 +387,19 @@ class ManifestParserTest {
   }
 
   @Test
+  fun aCommandRunsOverTheKeyboardOnlyWhenItAsks() {
+    val commands =
+      parse(
+          ""","commands":[{"id":"plain","title":"Plain"},""" +
+            """{"id":"dictate","title":"Dictate","overKeyboard":true}]"""
+        )
+        .commands
+
+    assertFalse(commands[0].overKeyboard)
+    assertTrue(commands[1].overKeyboard)
+  }
+
+  @Test
   fun commandIdsAreUnique() {
     val twice =
       """"commands":[{"id":"go","title":"Go","menu":true},{"id":"go","title":"Again","menu":true}]"""

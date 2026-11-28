@@ -26,6 +26,7 @@ import android.os.Looper
 import android.view.KeyEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.brailleime.keyboardview.AccessibilityOverlayKeyboardView
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches
 import com.google.android.accessibility.talkback.shizuku.ShizukuCommand
 import com.google.android.accessibility.talkback.touchlock.TouchLock
@@ -83,10 +84,13 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
       // apps until the gesture ends. A lock the person or another SandFly screen holds stays theirs.
       if (gestures++ == 0) ownsPassThrough = !feedback.services.isPassThroughActive()
       if (gestures == 1 && ownsPassThrough) feedback.passThrough(true)
+      // The script's touch goes to the app under the braille keyboard instead of typing a dot.
+      if (gestures == 1) AccessibilityOverlayKeyboardView.setTouchesPassThrough(true)
       val ended = injecting()
       val finish = { performed: Boolean ->
         if (--gestures == 0) SyntheticTouches.stopExpectingAll()
         if (gestures == 0 && ownsPassThrough) feedback.passThrough(false)
+        if (gestures == 0) AccessibilityOverlayKeyboardView.setTouchesPassThrough(false)
         ended()
         done(performed)
       }

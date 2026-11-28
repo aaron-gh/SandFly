@@ -71,6 +71,9 @@ interface ScriptHost {
    */
   fun runScriptCommand(value: String): Boolean = false
 
+  /** Whether the script command saved as [value] has `overKeyboard`, so it runs over the braille keyboard. */
+  fun runsOverKeyboard(value: String): Boolean = false
+
   fun readingControls(): List<ScriptReadingControl>
 
   fun itemActions(node: AccessibilityNodeInfoCompat): List<ScriptItemAction>
@@ -319,6 +322,8 @@ object Scripts {
 
   /** Runs the script command saved as {@code value}. Returns false if its script is not running. */
   @JvmStatic fun runCommand(value: String): Boolean = host?.runScriptCommand(value) == true
+
+  @JvmStatic fun runsOverKeyboard(value: String): Boolean = host?.runsOverKeyboard(value) == true
 
   @JvmStatic
   fun readingControls(): List<ScriptReadingControl> = host?.readingControls().orEmpty()

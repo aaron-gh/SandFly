@@ -413,6 +413,7 @@ class ManifestParser(private val strict: Boolean) {
             },
           menu = command.optBoolean("menu", false),
           control = command.optBoolean("control", false),
+          overKeyboard = command.optBoolean("overKeyboard", false),
         )
     }
   }
