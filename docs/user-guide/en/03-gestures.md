@@ -309,4 +309,6 @@ The shortcut is added to the list, where you can rename or delete it. See [](#co
 
 While the tries are taken, each touch is a try, and gestures run no commands. After the last try, the screen lists the measurements of each try, what to change, and the settings that change the limits, with a button for each. **Repeat** takes the tries again, **Next exercise** goes to the next gesture, and **Contents** lists the exercises of the group.
 
+**Statistics**, on the results and the list of groups, lists the tries made since the trainer opened, by kind of gesture and number of fingers: the number of tries and recognized tries, and the shortest, median and longest time from the first finger landing to the last lifting. For gestures of several touches, such as a double tap, it also gives the time of each touch. The statistics are cleared when the trainer closes.
+
 A group leaves out gestures that your settings turn off, and says which setting. An edge without an edge menu is practised with sample items, which run no commands. An edge menu with **Slide in from the edge** on is practised by sliding in from the edge, and **Swipes from the edges** leaves out the swipes in from that edge.
