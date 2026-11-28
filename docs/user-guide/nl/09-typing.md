@@ -179,7 +179,7 @@ Gedetailleerde bewerking opent de tekst van het tekstveld met focus, of van elk 
 - **Splitsen op** kiest de stukken: **Tekens**, **Woorden**, **Zinnen**, **Regels** of **Alinea's**. De standaardwaarde is **Woorden**, en SandFly houdt je laatste keuze aan.
 - Dubbeltik op een stuk om het te bewerken. Het leeg maken ervan verwijdert het.
 - De acties van een stuk zijn **Selecteren**, **Invoegen voor**, **Invoegen na** en **Verwijderen**. Dubbeltik en houd een stuk vast om ze in een dialoogvenster te openen. **Selectie starten** en **Selectie beëindigen** selecteren elk stuk tussen twee stukken.
-- Spaties, tabs en regeleinden tussen stukken zijn eigen stukken, zoals "2 spaties" of "Nieuwe regel", en een lege regel wordt voorgelezen als "Lege regel".
+- Spaties, tabs en regeleinden tussen stukken zijn eigen stukken, zoals "2 spaties" of "Nieuwe regel", en een lege regel wordt voorgelezen als "Lege regel". Eén spatie tussen twee woorden of zinnen en één lege regel tussen twee alinea's zijn geen eigen stukken; ze worden verwijderd met het stuk ervoor.
 - **Kopiëren** kopieert de geselecteerde stukken, of alle tekst wanneer geen stuk is geselecteerd.
 - **Meer** heeft **Ongedaan maken**, **Opnieuw**, **Zoeken**, **Volgende zoeken**, **Vorige zoeken**, **Vervangen**, **Tekst toevoegen aan het einde**, **Alles selecteren**, **Selectie wissen**, **Geselecteerde tekst knippen** en **Geselecteerde verwijderen**. **Vervangen** vervangt alle overeenkomsten, zonder onderscheid tussen hoofd- en kleine letters.
 - **Opslaan** schrijft de tekst terug naar het tekstveld en sluit het scherm. Als het tekstveld er niet meer is, wordt de tekst in plaats daarvan gekopieerd.

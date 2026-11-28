@@ -179,7 +179,7 @@ Pengeditan terperinci membuka teks dari kolom teks yang difokuskan, atau dari it
 - **Bagi berdasarkan** memilih bagiannya: **Karakter**, **Kata**, **Kalimat**, **Baris**, atau **Paragraf**. Defaultnya adalah **Kata**, dan SandFly menyimpan pilihan terakhir Anda.
 - Ketuk dua kali sebuah bagian untuk mengeditnya. Mengosongkannya akan menghapusnya.
 - Tindakan untuk sebuah bagian adalah **Pilih**, **Sisipkan sebelum**, **Sisipkan setelah**, dan **Hapus**. Ketuk dua kali lalu tahan sebuah bagian untuk membukanya dalam dialog. **Mulai pemilihan** dan **Akhiri pemilihan** memilih setiap bagian di antara dua bagian.
-- Spasi, tab, dan jeda baris di antara bagian menjadi bagian tersendiri, seperti "2 spasi" atau "Baris baru", dan baris kosong dibacakan sebagai "Baris kosong".
+- Spasi, tab, dan jeda baris di antara bagian menjadi bagian tersendiri, seperti "2 spasi" atau "Baris baru", dan baris kosong dibacakan sebagai "Baris kosong". Satu spasi di antara dua kata atau kalimat, dan satu baris kosong di antara dua paragraf, bukan bagian tersendiri; keduanya dihapus bersama bagian sebelumnya.
 - **Salin** menyalin bagian yang dipilih, atau seluruh teks saat tidak ada bagian yang dipilih.
 - **Lainnya** berisi **Urungkan**, **Ulangi**, **Cari**, **Temukan selanjutnya**, **Temukan sebelumnya**, **Ganti**, **Tambahkan teks di akhir**, **Pilih semua**, **Hapus pilihan**, **Potong teks yang dipilih**, dan **Hapus yang dipilih**. **Ganti** mengganti semua kecocokan, tanpa membedakan huruf besar/kecil.
 - **Simpan** menuliskan teks kembali ke kolom teks dan menutup layar. Jika kolom teks sudah tidak ada, teks akan disalin sebagai gantinya.
