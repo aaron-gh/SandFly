@@ -43,6 +43,7 @@ import android.os.Bundle;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
+import android.os.ParcelFileDescriptor;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.os.Process;
@@ -520,6 +521,13 @@ public class FailoverTextToSpeech {
 
   /** Where the engine writes speech that it makes without playing. */
   private static final File DISCARDED_AUDIO = new File("/dev/null");
+
+  /**
+   * {@link #DISCARDED_AUDIO} opened for writing, kept open for all speech made without playing, as
+   * giving the engine the file opens and checks it each time. Null until needed, or if it can't be
+   * opened. Closed on shutdown. Main thread only.
+   */
+  private @Nullable ParcelFileDescriptor discardedAudioDescriptor;
 
   /**
    * Low-latency utterances being said again the usual way, by ID. The engine can still report on
@@ -1614,6 +1622,7 @@ public class FailoverTextToSpeech {
 
     TextToSpeechUtils.attemptTtsShutdown(tts);
     tts = null;
+    closeDiscardedAudio();
 
     TextToSpeechUtils.attemptTtsShutdown(tempTts);
     tempTts = null;
@@ -2443,7 +2452,7 @@ public class FailoverTextToSpeech {
       if (hasLetterOrDigit(text)) {
         unplayedByEngine.add(utteranceId);
       }
-      result = tts.synthesizeToFile(text, unplayed, DISCARDED_AUDIO, utteranceId);
+      result = synthesizeToDiscard(text, unplayed, utteranceId);
       if (result != TextToSpeech.SUCCESS) {
         unplayedByEngine.remove(utteranceId);
       }
@@ -2462,6 +2471,44 @@ public class FailoverTextToSpeech {
       return tts.speak(text, queueMode, bundle, utteranceId);
     }
     return result;
+  }
+
+  /** Has the engine make speech into {@link #DISCARDED_AUDIO}, and returns the engine's result. */
+  private int synthesizeToDiscard(CharSequence text, Bundle params, String utteranceId) {
+    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
+      @Nullable ParcelFileDescriptor descriptor = discardedAudioDescriptor;
+      if (descriptor != null && !descriptor.getFileDescriptor().valid()) {
+        // Taken by an engine in this process, which gets the same descriptor.
+        closeDiscardedAudio();
+        descriptor = null;
+      }
+      if (descriptor == null) {
+        try {
+          descriptor =
+              ParcelFileDescriptor.open(DISCARDED_AUDIO, ParcelFileDescriptor.MODE_WRITE_ONLY);
+          discardedAudioDescriptor = descriptor;
+        } catch (IOException | RuntimeException e) {
+          LogUtils.w(TAG, "Couldn't open %s: %s", DISCARDED_AUDIO, e.toString());
+        }
+      }
+      if (descriptor != null) {
+        return tts.synthesizeToFile(text, params, descriptor, utteranceId);
+      }
+    }
+    return tts.synthesizeToFile(text, params, DISCARDED_AUDIO, utteranceId);
+  }
+
+  /** Closes {@link #discardedAudioDescriptor}, if open. */
+  private void closeDiscardedAudio() {
+    @Nullable ParcelFileDescriptor descriptor = discardedAudioDescriptor;
+    discardedAudioDescriptor = null;
+    if (descriptor != null) {
+      try {
+        descriptor.close();
+      } catch (IOException | RuntimeException e) {
+        // Closed already.
+      }
+    }
   }
 
   /** Whether {@code text} has a letter or a digit. */
