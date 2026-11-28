@@ -158,6 +158,7 @@ object KeyboardExploration {
     return topmostWindowIn(service, windows, x, y, withOverlays)
   }
 
+  @RequiresApi(Build.VERSION_CODES.R)
   private fun topmostWindowIn(
     service: AccessibilityService,
     windows: List<AccessibilityWindowInfo>,
