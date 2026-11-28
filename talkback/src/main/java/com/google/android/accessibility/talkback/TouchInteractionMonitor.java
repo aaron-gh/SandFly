@@ -107,6 +107,7 @@ import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverl
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration;
+import com.google.android.accessibility.talkback.gesture.AndroidGestureNavigation;
 import com.google.android.accessibility.talkback.gesture.CornerTapTracker;
 import com.google.android.accessibility.talkback.gesture.CornerTapTracker.Corner;
 import com.google.android.accessibility.talkback.gesture.CornerTapTracker.Kind;
@@ -325,7 +326,10 @@ public class TouchInteractionMonitor
   // Taps in the corners of the screen, when a corner gesture has an action.
   private final CornerTapTracker cornerTapTracker;
   // Watches have their own edge swipes, so SandFly's edge and corner gestures are off there.
-  private final boolean edgeGesturesOff = FormFactorUtils.isAndroidWear();
+  private final boolean isWatch = FormFactorUtils.isAndroidWear();
+  // Whether Use Android navigation gestures is on, which turns edge and corner gestures off while
+  // Android uses gesture navigation.
+  private boolean androidGestureNavigationSwitchedOn;
   // The system tap timeout, the default corner tap time limit.
   private final long systemTapTimeoutMs;
   private final Runnable cornerTapTimeout = this::onCornerTapTimeout;
@@ -655,6 +659,8 @@ public class TouchInteractionMonitor
     readCornerSettings(prefs);
     readEdgeScrolls(prefs);
     readEdgeMenus(prefs);
+    androidGestureNavigationSwitchedOn =
+        AndroidGestureNavigation.isSupported() && AndroidGestureNavigation.isSwitchedOn(context);
     // While SandFly takes two-finger swipes, up and down strokes have no other use, so a scrub may
     // go any way. Otherwise they scroll the app.
     scrubTracker =
@@ -876,7 +882,7 @@ public class TouchInteractionMonitor
         menu = EdgeMenus.Menu.sample(practiceItems);
       }
     }
-    if (edgeGesturesOff || menu.getSize() == 0 || isOnKeyboard(lastFingerX, lastFingerY)) {
+    if (edgeGesturesOff() || menu.getSize() == 0 || isOnKeyboard(lastFingerX, lastFingerY)) {
       touchEdgeMenu = EdgeMenus.Menu.NONE;
       return 0;
     }
@@ -892,9 +898,19 @@ public class TouchInteractionMonitor
     return touchEdgeMenu.getHorizontal();
   }
 
+  /**
+   * Returns whether edge and corner gestures are off: on a watch, and while the gesture navigation
+   * areas pass through to Android.
+   */
+  private boolean edgeGesturesOff() {
+    return isWatch
+        || (androidGestureNavigationSwitchedOn
+            && AndroidGestureNavigation.isGestureNavigation(context));
+  }
+
   /** Returns whether a slide along an edge, such as {@code ALONG_LEFT_UP}, scrolls the app. */
   private boolean edgeScrolls(Edge slide) {
-    if (edgeGesturesOff) {
+    if (edgeGesturesOff()) {
       return false;
     }
     return switch (slide) {
@@ -920,6 +936,10 @@ public class TouchInteractionMonitor
           readEdgeScrolls(prefs);
         } else if (EdgeMenus.isKey(key)) {
           readEdgeMenus(prefs);
+        } else if (context.getString(R.string.pref_android_gesture_navigation_key).equals(key)) {
+          androidGestureNavigationSwitchedOn =
+              AndroidGestureNavigation.isSupported()
+                  && AndroidGestureNavigation.isSwitchedOn(context);
         } else if (context.getString(R.string.pref_typing_focus_time_out_key).equals(key)) {
           typingFocusUserIntentTimeout =
               SharedPreferencesUtils.getIntFromStringPref(
@@ -2167,7 +2187,7 @@ public class TouchInteractionMonitor
    */
   private List<Integer> edgeStages(Edge edge) {
     List<Integer> stages = new ArrayList<>(2);
-    if (edgeGesturesOff) {
+    if (edgeGesturesOff()) {
       return stages;
     }
     int lastStage = edge.getAlong() ? 1 : 2;
@@ -2353,7 +2373,7 @@ public class TouchInteractionMonitor
 
   /** Returns whether the corner gesture runs a command, or a running script binds it. */
   private boolean isCornerGestureAssigned(Corner corner, Kind kind) {
-    return !edgeGesturesOff && isGestureAssigned(cornerGestureId(corner, kind));
+    return !edgeGesturesOff() && isGestureAssigned(cornerGestureId(corner, kind));
   }
 
   /** Returns the gesture of the taps {@code kind} in {@code corner}. */

@@ -322,11 +322,19 @@ public final class FeatureSupport {
             != null;
   }
 
+  // The framework resource of the navigation mode, looked up once; 0 before the lookup.
+  private static int navBarInteractionModeId;
+
   /** Returns {@code true} if the gesture navigation enabled. */
   public static boolean isGestureNavigateEnabled(Context context) {
     final int navBarModeGestural = 2;
     Resources resources = context.getResources();
-    int resourceId = resources.getIdentifier("config_navBarInteractionMode", "integer", "android");
+    int resourceId = navBarInteractionModeId;
+    if (resourceId == 0) {
+      resourceId = resources.getIdentifier("config_navBarInteractionMode", "integer", "android");
+      // Framework resource IDs are the same in every context; -1 records that there is none.
+      navBarInteractionModeId = resourceId > 0 ? resourceId : -1;
+    }
     if (resourceId > 0) {
       return resources.getInteger(resourceId) == navBarModeGestural;
     }

@@ -1925,7 +1925,9 @@ public abstract class Feedback {
       // Direct touch region: lower priority than the gesture and the braille lock.
       DIRECT_TOUCH_REGION,
       // The accessibility overlays of a keyboard whose own accessibility service sets the region.
-      KEYBOARD_REGION
+      KEYBOARD_REGION,
+      // Android's gesture navigation areas, while Use Android navigation gestures applies.
+      SYSTEM_NAVIGATION_REGION
     }
 
     /**

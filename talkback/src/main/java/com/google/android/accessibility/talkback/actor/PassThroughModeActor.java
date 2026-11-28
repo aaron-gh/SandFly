@@ -61,6 +61,9 @@ public class PassThroughModeActor {
   // them, such as Advanced Braille Keyboard's. The system keeps one region for all services, so
   // every region set here includes them, except while a feature holds the pass-through lock.
   private Region keyboardRegion = new Region();
+  // Android's gesture navigation areas while Use Android navigation gestures applies, included in
+  // every region like the keyboard's.
+  private Region systemNavigationRegion = new Region();
   // The region given to the system last, to log changes. Null before the first.
   @Nullable private Region appliedRegion;
   private PassThroughModeDialog passThroughDialog;
@@ -174,6 +177,21 @@ public class PassThroughModeActor {
   }
 
   /**
+   * Sets Android's gesture navigation areas, or clears them with null. Every region set afterwards
+   * includes them, so that Android's navigation gestures get the touches that start there.
+   */
+  public void setSystemNavigationRegion(@Nullable Region region) {
+    Region next = region == null ? new Region() : new Region(region);
+    if (next.equals(systemNavigationRegion)) {
+      return;
+    }
+    systemNavigationRegion = next;
+    if (FeatureSupport.supportPassthrough()) {
+      applyRegion(Display.DEFAULT_DISPLAY);
+    }
+  }
+
+  /**
    * Sets the pass-through region. While touch is locked it waits until touch unlocks, unless a
    * feature holds the pass-through lock: the touches SandFly sends itself, such as Activate with a
    * tap and held touches, need it to reach the app, as touch exploration drops locked touches.
@@ -192,9 +210,10 @@ public class PassThroughModeActor {
     if (!region.equals(appliedRegion)) {
       LogUtils.i(
           TAG,
-          "Passthrough region %s, keyboard overlay %s",
+          "Passthrough region %s, keyboard overlay %s, navigation gestures %s",
           describe(region),
-          describe(keyboardRegion));
+          describe(keyboardRegion),
+          describe(systemNavigationRegion));
     }
     appliedRegion = region;
     service.setTouchExplorationPassthroughRegion(displayId, region);
@@ -202,17 +221,19 @@ public class PassThroughModeActor {
 
   /**
    * The region that applies now: none while touch is locked and no feature holds the lock, the
-   * lock's own while a feature holds it, and otherwise the region wanted with the keyboard's.
+   * lock's own while a feature holds it, and otherwise the region wanted with the keyboard's and
+   * Android's gesture navigation areas.
    */
   private Region appliedRegion() {
     if (touchLocked && !locked) {
       return new Region();
     }
-    if (locked || keyboardRegion.isEmpty()) {
+    if (locked || (keyboardRegion.isEmpty() && systemNavigationRegion.isEmpty())) {
       return wantedRegion;
     }
     Region region = new Region(wantedRegion);
     region.op(keyboardRegion, Region.Op.UNION);
+    region.op(systemNavigationRegion, Region.Op.UNION);
     return region;
   }
 
