@@ -25,6 +25,9 @@ import android.media.MediaRecorder
 import android.os.Build
 import androidx.annotation.VisibleForTesting
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.util.concurrent.ArrayBlockingQueue
+import java.util.concurrent.ThreadPoolExecutor
+import java.util.concurrent.TimeUnit
 
 /**
  * Notes for problem reports what plays and records each time that changes: the usage and output of
@@ -37,6 +40,40 @@ object AudioNotes {
 
   /** The player state in [AudioPlaybackConfiguration.toString], which has no public getter. */
   private val STATE = Regex("""state:(\w+)""")
+
+  /**
+   * Writes the notes of the audio callbacks. Reading the audio mode and the recordings and
+   * describing every player takes IPC calls and string work on each change, which happens for each
+   * utterance and sound, so it is done here rather than on the main thread. One thread, so the notes
+   * stay in order; it ends when idle, and when notes come faster than it writes them the oldest
+   * waiting ones are dropped.
+   */
+  private val writer =
+    ThreadPoolExecutor(
+        1,
+        1,
+        WRITER_IDLE_SECONDS,
+        TimeUnit.SECONDS,
+        ArrayBlockingQueue(MAX_WAITING_NOTES),
+        { runnable -> Thread(runnable, TAG).apply { isDaemon = true } },
+        ThreadPoolExecutor.DiscardOldestPolicy(),
+      )
+      .apply { allowCoreThreadTimeOut(true) }
+
+  private const val WRITER_IDLE_SECONDS = 5L
+  private const val MAX_WAITING_NOTES = 8
+
+  /** [note] on a background thread, for the audio callbacks. */
+  @JvmStatic
+  fun noteLater(
+    audio: AudioManager,
+    playing: List<AudioPlaybackConfiguration>? = null,
+    recording: List<AudioRecordingConfiguration>? = null,
+  ) {
+    val playingCopy = playing?.toList()
+    val recordingCopy = recording?.toList()
+    writer.execute { note(audio, playingCopy, recordingCopy) }
+  }
 
   /**
    * Notes what plays and records now. [playing] and [recording] are the configurations a callback

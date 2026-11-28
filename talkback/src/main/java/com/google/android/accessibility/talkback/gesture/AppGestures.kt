@@ -109,9 +109,40 @@ object AppGestures {
   /** The keyboard shortcuts of the app shown, with the command each runs there. */
   @JvmStatic
   fun keys(): List<Pair<KeyCombo, String>> {
+    val appKeys = appKeys
     if (appKeys.isEmpty()) return emptyList()
+    if (keysHeld && Looper.myLooper() == Looper.getMainLooper()) {
+      val held = heldKeysApp ?: refreshedApp(appKeys).also { heldKeysApp = it }
+      return appKeys[held].orEmpty()
+    }
+    return appKeys[refreshedApp(appKeys)].orEmpty()
+  }
+
+  private fun refreshedApp(configured: Map<String, *>): String {
     refreshFrontApp()
-    return appKeys[appInUse(appKeys)].orEmpty()
+    return appInUse(configured)
+  }
+
+  // Whether a key event is being handled in [withKeysApp], and the app whose keyboard shortcuts
+  // apply to it, once looked up. Main thread only.
+  private var keysHeld = false
+  private var heldKeysApp: String? = null
+
+  /**
+   * Runs [handle], the handling of one key event on the main thread, with the app whose keyboard
+   * shortcuts apply taken from the window list at most once, so that its lookups don't each read
+   * it.
+   */
+  @JvmStatic
+  fun withKeysApp(handle: BooleanSupplier): Boolean {
+    if (keysHeld || Looper.myLooper() != Looper.getMainLooper()) return handle.asBoolean
+    keysHeld = true
+    try {
+      return handle.asBoolean
+    } finally {
+      keysHeld = false
+      heldKeysApp = null
+    }
   }
 
   /** The name a keyboard shortcut is kept under. */

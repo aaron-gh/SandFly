@@ -203,13 +203,39 @@ public class SharedPreferencesUtils {
    * backed by a standard credential-protected storage context.
    */
   public static SharedPreferences getSharedPreferences(Context context) {
+    // Android keeps one instance per preferences file, so the one found last for the same
+    // application is the same instance. Finding it again creates a device-protected context and
+    // works out the file's path, on every call, which SandFly makes for most events and keys.
+    Context app = context.getApplicationContext();
+    DefaultPreferences cached = defaultPreferences;
+    if (app != null && cached != null && cached.app == app) {
+      return cached.prefs;
+    }
+    SharedPreferences prefs;
     Context deContext = ContextCompat.createDeviceProtectedStorageContext(context);
     if (deContext != null) {
-      return PreferenceManager.getDefaultSharedPreferences(deContext);
+      prefs = PreferenceManager.getDefaultSharedPreferences(deContext);
     } else {
-      return PreferenceManager.getDefaultSharedPreferences(context);
+      prefs = PreferenceManager.getDefaultSharedPreferences(context);
+    }
+    if (app != null) {
+      defaultPreferences = new DefaultPreferences(app, prefs);
+    }
+    return prefs;
+  }
+
+  /** The default preferences that {@link #getSharedPreferences(Context)} found last, and their app. */
+  private static final class DefaultPreferences {
+    final Context app;
+    final SharedPreferences prefs;
+
+    DefaultPreferences(Context app, SharedPreferences prefs) {
+      this.app = app;
+      this.prefs = prefs;
     }
   }
+
+  private static volatile DefaultPreferences defaultPreferences;
 
   /**
    * Gets the appropriate SharedPreferences depending on the device capabilities by {@code name}. On
@@ -235,6 +261,8 @@ public class SharedPreferencesUtils {
       Context deContext = ContextCompat.createDeviceProtectedStorageContext(context);
       deContext.moveSharedPreferencesFrom(
           context, PreferenceManager.getDefaultSharedPreferencesName(context));
+      // Android drops its instance of a moved file, so the one kept here goes too.
+      defaultPreferences = null;
     }
   }
 

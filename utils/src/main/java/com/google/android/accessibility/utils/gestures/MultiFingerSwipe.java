@@ -293,8 +293,10 @@ class MultiFingerSwipe extends GestureMatcher {
         // those who have.
         continue;
       }
-      gestureMotionEventLog(
-          VERBOSE, getGestureName(), "Processing move on finger %d", pointerIndex);
+      if (logMotionEvent) {
+        gestureMotionEventLog(
+            VERBOSE, getGestureName(), "Processing move on finger %d", pointerIndex);
+      }
       int index = event.findPointerIndex(pointerIds[pointerIndex]);
       if (index < 0) {
         // This finger is not present in this event. It could have gone up just before this
@@ -410,7 +412,7 @@ class MultiFingerSwipe extends GestureMatcher {
       }
       List<PointF> path = strokeBuffers.get(i);
 
-      gestureMotionEventLog(VERBOSE, "path= %s", path.toString());
+      gestureMotionEventLog(VERBOSE, "path= %s", path);
       // Classify line segments, and call Listener callbacks.
       if (!recognizeGesturePath(path)) {
         cancelGesture(event);

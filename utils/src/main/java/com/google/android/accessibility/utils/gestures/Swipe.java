@@ -536,7 +536,7 @@ class Swipe extends GestureMatcher {
       return false;
     }
     ArrayList<PointF> path = segments(stroke);
-    gestureMotionEventLog(VERBOSE, "path = %s", path.toString());
+    gestureMotionEventLog(VERBOSE, "path = %s", path);
     return pathMatches(path);
   }
 

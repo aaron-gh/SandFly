@@ -579,7 +579,11 @@ public class KeyComboManager
     @Nullable KeyEvent outer = handlingKeyEvent;
     handlingKeyEvent = event;
     try {
-      return handleKeyEvent(event, eventId);
+      // The app's keyboard shortcuts are looked up several times for a key press; the window list
+      // is read for them once.
+      return event.getAction() == KeyEvent.ACTION_DOWN
+          ? AppGestures.withKeysApp(() -> handleKeyEvent(event, eventId))
+          : handleKeyEvent(event, eventId);
     } finally {
       handlingKeyEvent = outer;
     }

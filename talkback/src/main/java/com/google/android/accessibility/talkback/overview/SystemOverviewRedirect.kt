@@ -25,6 +25,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityNodeInfo
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
@@ -143,7 +144,7 @@ object SystemOverviewRedirect {
     event: AccessibilityEvent,
     isAppWindow: Boolean,
   ): Boolean {
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P || !RecentTasks.isEnabled(service)) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
       return false
     }
     val recents = recents(service) ?: return false
@@ -158,12 +159,20 @@ object SystemOverviewRedirect {
           event.windowChanges and WINDOW_CHANGES != 0
         else -> false
       }
+    // The setting is read only for window events: reading it opens the preferences, which every
+    // event of fast typing or swiping would otherwise do. Events are dropped only for a while after
+    // the overview was redirected, which needs the setting on.
     if (!windowEvent) {
       return dropped
     }
-    val overview = isOverview(service, event, recents)
+    if (!RecentTasks.isEnabled(service)) {
+      return false
+    }
+    // Each read of the active window's root is an IPC call, so this event reads it once.
+    val activeRoot = service.rootInActiveWindow
+    val overview = isOverview(service, event, recents, activeRoot)
     if (!overview) {
-      if (!keep && !OverviewActivity.isShown() && looksLikeOverview(service, recents) && canOpen(service)) {
+      if (!keep && !OverviewActivity.isShown() && looksLikeOverview(activeRoot, recents) && canOpen(service)) {
         dropUntil = now + OPEN_WAIT_MS
         return true
       }
@@ -176,7 +185,7 @@ object SystemOverviewRedirect {
           packageName != service.packageName &&
           !dropped &&
           !OverviewActivity.isShown() &&
-          service.rootInActiveWindow?.packageName?.toString() == packageName
+          activeRoot?.packageName?.toString() == packageName
       ) {
         homeSince =
           when {
@@ -290,8 +299,9 @@ object SystemOverviewRedirect {
     service: AccessibilityService,
     event: AccessibilityEvent?,
     recents: ComponentName,
+    activeRoot: AccessibilityNodeInfo? = service.rootInActiveWindow,
   ): Boolean {
-    if (service.rootInActiveWindow?.packageName?.toString() != recents.packageName) {
+    if (activeRoot?.packageName?.toString() != recents.packageName) {
       return false
     }
     if (event?.className?.toString() == recents.className) {
@@ -301,8 +311,8 @@ object SystemOverviewRedirect {
     return title in overviewTitles(service, recents.packageName)
   }
 
-  private fun looksLikeOverview(service: AccessibilityService, recents: ComponentName): Boolean {
-    val root = service.rootInActiveWindow ?: return false
+  private fun looksLikeOverview(activeRoot: AccessibilityNodeInfo?, recents: ComponentName): Boolean {
+    val root = activeRoot ?: return false
     return root.packageName?.toString() == recents.packageName &&
       OVERVIEW_VIEW_IDS.any {
         root.findAccessibilityNodeInfosByViewId("${recents.packageName}:id/$it").isNotEmpty()
