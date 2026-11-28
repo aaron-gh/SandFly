@@ -62,7 +62,7 @@ Untuk menonaktifkan SandFly dari dalam SandFly:
 1. Pilih **Nonaktifkan SandFly** di menu SandFly, atau gunakan perintah **Nonaktifkan SandFly** dengan gerakan. Item menu ini tersedia secara default.
 2. Di dialog **Nonaktifkan SandFly?**, pilih **Nonaktifkan**. **Biarkan aktif** akan menutup dialog.
 
-Anda juga dapat menonaktifkan SandFly dengan pintasan aksesibilitas, ubin Setelan Cepat, atau sakelar di setelan aksesibilitas Android. Lihat [](#getting-started-shortcut).
+Anda juga dapat menonaktifkan SandFly dengan pintasan aksesibilitas, ubin Setelan Cepat, atau tombol beralih di setelan aksesibilitas Android. Lihat [](#getting-started-shortcut).
 
 Saat SandFly dinonaktifkan dengan salah satu cara tersebut, SandFly mengembalikan penanganan sentuhan ke Android, sehingga pembaca layar berikutnya yang Anda aktifkan dapat menerima sentuhan dan gerakan. Setelah SandFly nonaktif, prosesnya berhenti dalam beberapa detik, kecuali jika layar SandFly sedang terbuka, keyboard SandFly sedang digunakan, atau unduhan pembaruan maupun pengiriman laporan masukan sedang berlangsung.
 

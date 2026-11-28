@@ -19,7 +19,7 @@ Setiap skrip menampilkan status aktifnya, tempat berjalannya, dan versinya. Pili
 
 Layar **Skrip** juga memiliki:
 
-- **Nonaktifkan semua skrip**: menghentikan semua skrip. Skrip tetap terinstal dan mempertahankan sakelar masing-masing.
+- **Nonaktifkan semua skrip**: menghentikan semua skrip. Skrip tetap terinstal dan mempertahankan tombol beralih masing-masing.
 - **Skrip baru**: membuat skrip di pembuat skrip. Lihat [](#scripts-builder).
 - **Skrip baru dari kode**: menginstal skrip yang Anda masukkan sebagai kode. Lihat [](#scripts-code).
 - **Buat skrip dengan SandFly Pro**: SandFly Pro menulis skrip berdasarkan deskripsi Anda. Lihat [](#scripts-builder-pro).
@@ -89,7 +89,7 @@ Buka **Skrip** lalu pilih skripnya. Halamannya berisi:
 - **Kompatibilitas**: ditampilkan jika skrip dibuat untuk versi SandFly yang berbeda.
 - **Buka halaman beranda**: membuka halaman web skrip setelah Anda mengonfirmasi alamatnya.
 - **Setelan**: setelan milik skrip, jika ada.
-- **Izin**: sakelar untuk setiap izin yang dibutuhkan skrip. Lihat [](#scripts-permissions).
+- **Izin**: tombol beralih untuk setiap izin yang dibutuhkan skrip. Lihat [](#scripts-permissions).
 - **Perintah**: perintah milik skrip beserta gerakan dan tombolnya. Lihat [](#scripts-commands).
 - **Jalankan lebih awal** dan **Jalankan lebih akhir**: urutan skrip yang mengubah ucapan yang sama. Skrip aplikasi selalu dijalankan lebih dulu.
 - **Log**: output dan error skrip sejak SandFly mulai berjalan. Lihat [](#scripts-log).
@@ -100,7 +100,7 @@ Buka **Skrip** lalu pilih skripnya. Halamannya berisi:
 
 **Lihat kode**, di halaman skrip, menampilkan file `main.lua`-nya, dengan manifes di awal, sebagai teks yang dapat Anda baca per baris, kata, dan karakter, serta dapat Anda pilih.
 
-**Edit kode**, di halaman skrip yang tidak dibuat di pembuat skrip, membuka file yang sama di kolom teks. **Simpan** memeriksa kode seperti **Impor skrip** memeriksa file skrip, lalu mengganti kode skrip yang terinstal. Skrip tetap mempertahankan sakelar, izin, gerakan, tombol, setelan, dan data tersimpannya, lalu berjalan lagi dengan kode baru. `id` di manifes harus tetap sama. Jika kode meminta izin yang sebelumnya tidak diminta skrip, dialog instalasi mencantumkannya terlebih dahulu. Lihat [](#scripts-install-dialog). File lain dari skrip yang berasal dari file `.zip` tetap seperti semula.
+**Edit kode**, di halaman skrip yang tidak dibuat di pembuat skrip, membuka file yang sama di kolom teks. **Simpan** memeriksa kode seperti **Impor skrip** memeriksa file skrip, lalu mengganti kode skrip yang terinstal. Skrip tetap mempertahankan tombol beralih, izin, gerakan, tombol, setelan, dan data tersimpannya, lalu berjalan lagi dengan kode baru. `id` di manifes harus tetap sama. Jika kode meminta izin yang sebelumnya tidak diminta skrip, dialog instalasi mencantumkannya terlebih dahulu. Lihat [](#scripts-install-dialog). File lain dari skrip yang berasal dari file `.zip` tetap seperti semula.
 
 **Skrip baru dari kode**, di layar **Skrip**, membuka kolom teks kosong. Masukkan seluruh file `main.lua`, dengan `local manifest = { ... }` sebelum kodenya, lalu pilih **Simpan**. SandFly memeriksa kode seperti saat memeriksa file skrip dan menampilkan dialog instalasi. Manifes dengan `id` skrip yang sudah terinstal akan memperbarui skrip tersebut.
 
@@ -156,7 +156,7 @@ Skrip yang mengalami error berulang akan dinonaktifkan secara otomatis, dan Sand
 ### Menonaktifkan skrip {#scripts-turn-off}
 
 - Untuk menonaktifkan satu skrip, matikan **Aktifkan** di halamannya.
-- Untuk menonaktifkan semua skrip, aktifkan **Skrip** > **Nonaktifkan semua skrip**. Setiap skrip mempertahankan sakelarnya masing-masing untuk saat Anda mengaktifkan kembali skrip.
+- Untuk menonaktifkan semua skrip, aktifkan **Skrip** > **Nonaktifkan semua skrip**. Setiap skrip mempertahankan tombol beralihnya masing-masing untuk saat Anda mengaktifkan kembali skrip.
 
 Perintah **Aktifkan atau nonaktifkan semua skrip**, di kelompok perintah **SandFly**, berfungsi sama dengan **Nonaktifkan semua skrip**, dan mengucapkan "Skrip nonaktif" atau "Skrip aktif". Gunakan perintah ini jika ada skrip yang membuat Anda tidak bisa menggunakan aplikasi. Lihat [](#commands).
 
@@ -179,7 +179,7 @@ Pembuat skrip akan terbuka. Setiap perubahan langsung disimpan dan berlaku. Bagi
 - **Setelan**, **Tentang**, dan **Kode**. Lihat [](#scripts-builder-settings).
 - **Skrip**: **Ekspor skrip** dan **Gandakan skrip**. Lihat [](#scripts-builder-manage).
 
-**Halaman skrip** membuka halaman skrip berisi sakelar, izin, dan log-nya. Bagian yang belum selesai menampilkan apa yang masih diperlukan, misalnya "Tidak digunakan: tetapkan item", dan tidak disertakan dalam skrip hingga selesai diatur.
+**Halaman skrip** membuka halaman skrip berisi tombol beralih, izin, dan log-nya. Bagian yang belum selesai menampilkan apa yang masih diperlukan, misalnya "Tidak digunakan: tetapkan item", dan tidak disertakan dalam skrip hingga selesai diatur.
 
 #### Aturan {#scripts-builder-rules}
 
@@ -242,7 +242,7 @@ Pemicu berwaktu hanya berjalan saat skrip sedang berjalan.
 
 #### Setelan, Tentang, dan Kode {#scripts-builder-settings}
 
-- **Setelan** > **Tambahkan setelan**: menambahkan **Sakelar**, **Daftar**, **Teks**, **Angka**, atau **Tombol** ke halaman skrip. Langkah-langkah dapat membaca nilai setelan, dan tombol menjalankan pemicu.
+- **Setelan** > **Tambahkan setelan**: menambahkan **Beralih**, **Daftar**, **Teks**, **Angka**, atau **Tombol** ke halaman skrip. Langkah-langkah dapat membaca nilai setelan, dan tombol menjalankan pemicu.
 - **Tentang**: **Deskripsi**, **Versi**, **Halaman beranda**, **Muat hanya untuk menjalankan perintah**, dan **Tetap berjalan saat layar mati**.
 - **Kode**: **Kode Lua** yang ditambahkan di akhir skrip, serta **Izin tambahan** yang dibutuhkan kode tersebut. SandFly memeriksa error pada kode Lua sebelum menyimpannya.
 

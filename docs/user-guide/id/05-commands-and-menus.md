@@ -157,7 +157,7 @@ Beberapa item memiliki opsi, yang muncul setelah item tersebut di **Saat ini** d
 
 Secara default, menu SandFly berisi **Saran ejaan/tata bahasa**, item skrip, **Deskripsikan gambar**, **Deskripsikan layar**, **Baca dari item yang difokuskan**, **Profil gerakan**, **Gerakan untuk aplikasi ini**, **Sembunyikan atau tampilkan layar**, **Jeda SandFly**, **Nonaktifkan SandFly**, **Setelan SandFly**, **Kirim masukan**, **Text-to-speech**, dan **Layar terpisah**. Dengan SandFly Pro, menu ini juga berisi item pengenalan layar. Item seperti **Tindakan**, **Penelusuran layar**, **Navigasi**, **Baca dari atas**, **Salin frasa yang terakhir diucapkan**, **Perintah suara**, **Panjang respons**, **Bahasa lisan**, **Periksa item yang difokuskan**, dan **Salin detail item** tidak ada di menu secara default. Tambahkan item tersebut melalui **Tambahkan perintah**.
 
-Pada jam tangan, setelan menu SandFly berupa daftar tombol alih dalam urutan tetap. Lihat [](#devices).
+Pada jam tangan, setelan menu SandFly berupa daftar tombol beralih dalam urutan tetap. Lihat [](#devices).
 
 ### Menu kustom {#commands-custom-menus}
 

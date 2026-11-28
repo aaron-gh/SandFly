@@ -99,17 +99,17 @@ Saat Anda menggulir daftar dengan dua jari, SandFly memutar ketukan ringan untuk
 
 ### Menonaktifkan suara dan getaran satu per satu {#sound-individual}
 
-**Suara dan getaran** > **Suara dan getaran satu per satu** memiliki tombol alih untuk setiap suara di bawah **Suara**, dan untuk setiap getaran di bawah **Getaran**. Semua tombol alih aktif secara default. Menonaktifkan suara tidak mematikan getarannya, dan menonaktifkan getaran tidak mematikan suaranya. **Respons suara** dan **Respons getar** tetap dapat menonaktifkan semua suara atau semua getaran sekaligus.
+**Suara dan getaran** > **Suara dan getaran satu per satu** memiliki tombol beralih untuk setiap suara di bawah **Suara**, dan untuk setiap getaran di bawah **Getaran**. Semua tombol beralih aktif secara default. Menonaktifkan suara tidak mematikan getarannya, dan menonaktifkan getaran tidak mematikan suaranya. **Respons suara** dan **Respons getar** tetap dapat menonaktifkan semua suara atau semua getaran sekaligus.
 
-Untuk mendengarkan suara atau merasakan getaran sebelum mengubah tombol alihnya:
+Untuk mendengarkan suara atau merasakan getaran sebelum mengubah tombol beralihnya:
 
-1. Pindahkan fokus ke tombol alih tersebut.
+1. Pindahkan fokus ke tombol beralih tersebut.
 2. Buka menu tindakan.
 3. Pilih **Pratinjau**.
 
-Mengubah tombol alih tidak memutar suara atau getaran.
+Mengubah tombol beralih tidak memutar suara atau getaran.
 
-Daftar **Getaran** juga memiliki tombol alih untuk getaran tanpa suara: **Pengumuman**, **Gerakan tepi bergeser kembali**, serta getaran keyboard braille, seperti **Keyboard braille: mengetik karakter** dan **Keyboard braille: tidak ada yang bisa dihapus**. Tombol alih getaran juga menonaktifkan getaran pengganti yang disediakan oleh tema suara.
+Daftar **Getaran** juga memiliki tombol beralih untuk getaran tanpa suara: **Pengumuman**, **Gerakan tepi bergeser kembali**, serta getaran keyboard braille, seperti **Keyboard braille: mengetik karakter** dan **Keyboard braille: tidak ada yang bisa dihapus**. Tombol beralih getaran juga menonaktifkan getaran pengganti yang disediakan oleh tema suara.
 
 ### Tema suara {#sound-themes}
 
@@ -200,7 +200,7 @@ Untuk format file lengkap beserta seluruh nama suara dan getaran, lihat [Tema su
 
 ### Suara dan getaran kontrol {#sound-control-sounds}
 
-Saat suara kontrol aktif, memfokuskan sebuah kontrol akan memutar suara dan getaran sesuai jenis kontrolnya sebagai pengganti suara dan getaran fokus, dan SandFly tidak menyebutkan jenis kontrol tersebut, seperti "tombol". Tersedia suara untuk tombol, kotak centang (termasuk tombol alih dan tombol pengalih), tombol pilihan, kolom teks, daftar tarik-turun, penggeser, gambar, jam, tab, item menu, dan item daftar, serta, di halaman web, tautan dan item hierarki.
+Saat suara kontrol aktif, memfokuskan sebuah kontrol akan memutar suara dan getaran sesuai jenis kontrolnya sebagai pengganti suara dan getaran fokus, dan SandFly tidak menyebutkan jenis kontrol tersebut, seperti "tombol". Tersedia suara untuk tombol, kotak centang (termasuk tombol beralih dan tombol pengalih), tombol pilihan, kolom teks, daftar tarik-turun, penggeser, gambar, jam, tab, item menu, dan item daftar, serta, di halaman web, tautan dan item hierarki.
 
 Untuk mengaktifkan suara kontrol:
 
@@ -213,7 +213,7 @@ Setelan di bawah tema yang sedang digunakan:
 - **Audio 3D**: kapan suara kontrol diputar sesuai posisi kontrol di layar. Lihat [](#sound-3d-audio).
 - **Tetap ucapkan jenis kontrol**: tetap mengucapkan jenis kontrol setelah suaranya diputar. Aktif secara default untuk tema **SandFly**, dan nonaktif untuk tema lain kecuali ditentukan oleh tema tersebut.
 
-Item yang bukan kontrol itu sendiri, seperti satu baris di Setelan, memutar suara dari kontrol pertama di dalamnya, seperti tombol alihnya, atau suara sesuai jenis itemnya, seperti item daftar. Tombol keyboard di layar tetap menggunakan suara fokus. Getaran kontrol tetap bergetar meski **Respons suara** nonaktif, sehingga Anda dapat membedakan kontrol lewat getaran. Jenis kontrol yang suaranya dinonaktifkan di **Suara dan getaran satu per satu**, atau disetel tanpa suara oleh tema, akan memutar suara fokus dan SandFly tetap mengucapkan jenis kontrol tersebut.
+Item yang bukan kontrol itu sendiri, seperti satu baris di Setelan, memutar suara dari kontrol pertama di dalamnya, seperti tombol beralihnya, atau suara sesuai jenis itemnya, seperti item daftar. Tombol keyboard di layar tetap menggunakan suara fokus. Getaran kontrol tetap bergetar meski **Respons suara** nonaktif, sehingga Anda dapat membedakan kontrol lewat getaran. Jenis kontrol yang suaranya dinonaktifkan di **Suara dan getaran satu per satu**, atau disetel tanpa suara oleh tema, akan memutar suara fokus dan SandFly tetap mengucapkan jenis kontrol tersebut.
 
 Setiap tema menyimpan setelan suara kontrolnya sendiri. Mengganti tema akan ikut mengganti setelan tersebut.
 
@@ -301,7 +301,7 @@ Kontrol pembacaan **Volume ucapan** beralih di antara volume-volume ini, dan kon
 Setelan ini memerlukan izin yang tidak diberikan Android kepada pembaca layar. Hingga izin diberikan, ringkasannya menampilkan perintah untuk memberikannya. Untuk memberikan izin, lakukan salah satu langkah berikut:
 
 - Saat Shizuku berjalan, aktifkan setelan ini. SandFly memberikan izin melalui Shizuku. Lihat [](#updates).
-- Jalankan perintah tersebut dengan adb. Untuk menyalin perintah, buka menu tindakan pada setelan ini lalu pilih **Salin perintah**. Setelah itu kembali ke **Output audio**. Tanpa Shizuku, tombol alih tidak tersedia hingga izin diberikan.
+- Jalankan perintah tersebut dengan adb. Untuk menyalin perintah, buka menu tindakan pada setelan ini lalu pilih **Salin perintah**. Setelah itu kembali ke **Output audio**. Tanpa Shizuku, tombol beralih tidak tersedia hingga izin diberikan.
 
 SandFly menggunakan sensor kedekatan untuk mendeteksi ponsel di dekat telinga Anda.
 
