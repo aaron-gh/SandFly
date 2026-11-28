@@ -40,6 +40,8 @@ import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
+import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration
 import com.google.android.accessibility.utils.input.WindowEventInterpreter
 import com.google.android.accessibility.utils.monitor.DisplayMonitor
 import java.time.Duration
@@ -543,6 +545,49 @@ class DirectTouchControllerTest {
     assertEquals(listOf("region [0,80][1080,1500] complex=false"), transcript.distinct())
   }
 
+  @Test
+  fun keyboardDirectTouchTypingMethodGivesEveryKeyboardItsTouches() {
+    useKeyboardDirectTouch()
+
+    windowsChange(
+      KEYBOARD,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(GBOARD_PACKAGE, Rect(0, 1500, 1080, 2220)),
+    )
+    windowsChange(KEYBOARD, WINDOWS_CHANGE_REMOVED, statusBar(), navigationBar(), game())
+
+    assertEquals(listOf(KEYBOARD_ONLY_REGION, "region none"), transcript.distinct())
+  }
+
+  @Test
+  fun keyboardDirectTouchTypingMethodLeavesSandFlysOwnKeyboard() {
+    useKeyboardDirectTouch()
+
+    windowsChange(
+      KEYBOARD,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(service.packageName, Rect(0, 1500, 1080, 2220)),
+    )
+
+    assertTranscript()
+  }
+
+  private fun useKeyboardDirectTouch() {
+    prefs
+      .edit()
+      .putString(
+        service.getString(R.string.pref_typing_confirmation_key),
+        FocusProcessorForTapAndTouchExploration.KEYBOARD_DIRECT_TOUCH.toString(),
+      )
+      .apply()
+  }
+
   // Screens
 
   private fun statusBar() =
@@ -734,6 +779,8 @@ class DirectTouchControllerTest {
     const val INPUT_METHOD = AccessibilityWindowInfo.TYPE_INPUT_METHOD
     const val ACCESSIBILITY_OVERLAY = AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY
     const val BRAILLE_KEYBOARD_PACKAGE = "com.example.braillekeyboard"
+    const val GBOARD_PACKAGE = "com.google.android.inputmethod.latin"
+    const val KEYBOARD_ONLY_REGION = "region [0,1500][1080,2220] complex=false"
     const val MAGNIFIER_PACKAGE = "com.example.magnifier"
     const val NAVIGATION_BAR_REGION = "region [0,2220][1080,2340] complex=false"
     const val GAME_REGION = "region [0,80][1080,2220] complex=false"

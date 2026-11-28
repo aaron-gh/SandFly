@@ -1355,6 +1355,7 @@
     <string name="title_pref_shortcut_edge_top_left_down">Přejetí dolů z levého horního rohu</string>
     <string name="title_pref_shortcut_edge_top_right_down">Přejetí dolů z pravého horního rohu</string>
     <string name="value_type_confirmation_tap_to_type">Klepnutím na libovolnou klávesu ji napište, nebo podržením prstu vyberte libovolnou klávesu, pak prst zvedněte</string>
+    <string name="value_type_confirmation_keyboard_direct_touch">Klepnutím na libovolnou klávesu nebo zvednutím prstu z ní ji napište, bez prozkoumání dotykem na klávesnici</string>
     <string name="title_pref_fix_stuck_touch_exploration">Opravovat zaseknuté prozkoumání dotykem</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Bez oprávnění DUMP může SandFly pouze oznámit, že se prozkoumání dotykem mohlo zaseknout. Aby ho SandFly mohl opravit, spusťte: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Opravuje se prozkoumání dotykem</string>

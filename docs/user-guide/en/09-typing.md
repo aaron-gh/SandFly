@@ -27,10 +27,11 @@ Touch the keyboard and slide your finger over the keys. SandFly reads each key u
    - **Hold finger to select any key, then lift**: lifting your finger types any key. This method has the lowest delay.
    - **Hold finger to select any key, then lift. Double-tap for Enter, Done, or Send.**: lifting your finger types any key except the key that sends or submits, such as Enter, Done, Send, Search or Go, which needs a double-tap. SandFly recognizes this key in Gboard. In other keyboards, every key types when you lift your finger.
    - **Tap any key to type it, or hold finger to select any key, then lift**: a quick tap on a key types it at once, so quick double letters type twice. Holding a finger on the keyboard explores the keys, and lifting types the key under the finger. This method is available on Android 13 and later.
+   - **Tap or lift on any key to type it, without touch exploration on the keyboard**: the keyboard gets touches directly, as with SandFly off. A tap on a key types it, and so does lifting your finger on a key after sliding to it. Keys under your finger aren't read; typed characters are spoken as set in **Typing** > **Keyboard echo**. Gestures and touch exploration work on the rest of the screen. SandFly's own keyboards keep touch exploration. This method is available on Android 11 and later.
 
 With any method, you can also use split-tap: hold one finger on a key, and tap the screen with another finger to type it.
 
-On Android 13 and later, choosing one of the last three methods sets **Typing focus delay** to 0.15 seconds. See [](#typing-focus-delay).
+On Android 13 and later, choosing **Hold finger to select any key, then lift**, **Hold finger to select any key, then lift. Double-tap for Enter, Done, or Send.** or **Tap any key to type it, or hold finger to select any key, then lift** sets **Typing focus delay** to 0.15 seconds. See [](#typing-focus-delay).
 
 #### Touch and hold a key {#typing-touch-and-hold}
 
