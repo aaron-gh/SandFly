@@ -948,7 +948,7 @@ public class SelectorController implements UserInputEventListener {
     this.pipeline = pipeline;
     this.actorState = actorState;
     this.accessibilityFocusMonitor = accessibilityFocusMonitor;
-    verticalNavigator = new VerticalNavigator(pipeline, accessibilityFocusMonitor);
+    verticalNavigator = new VerticalNavigator(pipeline, accessibilityFocusMonitor, context.getPackageName());
     pageScroller =
         context instanceof AccessibilityService accessibilityService
             ? new PageScroller(accessibilityService, pipeline, accessibilityFocusMonitor)
