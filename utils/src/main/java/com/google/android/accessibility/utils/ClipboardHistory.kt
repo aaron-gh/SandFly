@@ -29,11 +29,23 @@ import org.json.JSONException
  * own windows had focus: since Android 10, apps can't read the clipboard from the background, so
  * texts other apps copy are only seen that way, unless Shizuku reads them (ShizukuClipboard).
  *
- * Kept in a file of its own, apart from the settings, so that it is not exported with them.
+ * Kept in a file of its own, apart from the settings, so that it is not exported with them. The
+ * history keeps at most [maxEntries] texts, and, when [days] is set, deletes texts copied longer
+ * ago than that when it is next read or changed.
  */
 object ClipboardHistory {
 
-  const val MAX_ENTRIES = 50
+  /** How many texts the history keeps unless set otherwise. */
+  const val DEFAULT_MAX_ENTRIES = 50
+
+  /** The most texts the history can be set to keep. */
+  const val MAX_ENTRIES = 5000
+
+  /** The setting of how many texts the history keeps, an Int. */
+  const val KEY_MAX_ENTRIES = "pref_clipboard_history_max_entries"
+
+  /** The setting of how many days the history keeps a text, an Int; 0 keeps texts for ever. */
+  const val KEY_DAYS = "pref_clipboard_history_days"
 
   /**
    * Longer texts are kept, and appended texts put on the clipboard, cut to this length: as many
@@ -47,6 +59,9 @@ object ClipboardHistory {
 
   private const val FILE = "clipboard_history"
   private const val KEY = "entries"
+  /** When each entry was copied, in milliseconds, in the order of the entries. */
+  private const val KEY_TIMES = "times"
+  private const val DAY_MS = 24L * 60 * 60 * 1000
   /** ClipDescription.EXTRA_IS_SENSITIVE, which apps set before Android 13 too. */
   private const val EXTRA_IS_SENSITIVE = "android.content.extra.IS_SENSITIVE"
 
@@ -74,8 +89,7 @@ object ClipboardHistory {
     if (text.isNullOrBlank()) return
     val entry = text.toString().take(MAX_LENGTH)
     synchronized(this) {
-      val entries = listOf(entry) + read(context).filter { it != entry }
-      write(context, entries.take(MAX_ENTRIES))
+      write(context, listOf(Entry(entry, now())) + read(context).filter { it.text != entry })
     }
   }
 
@@ -107,8 +121,8 @@ object ClipboardHistory {
     synchronized(this) {
       write(
         context,
-        (listOf(combined) + read(context).filter { it != combined && it != before })
-          .take(MAX_ENTRIES),
+        listOf(Entry(combined, now())) +
+          read(context).filter { it.text != combined && it.text != before },
       )
     }
     return combined
@@ -145,11 +159,11 @@ object ClipboardHistory {
     }
 
   @JvmStatic
-  fun entries(context: Context): List<String> = synchronized(this) { read(context) }
+  fun entries(context: Context): List<String> = synchronized(this) { read(context).map { it.text } }
 
   @JvmStatic
   fun remove(context: Context, text: String) {
-    synchronized(this) { write(context, read(context).filter { it != text }) }
+    synchronized(this) { write(context, read(context).filter { it.text != text }) }
   }
 
   /** Removes the entries [texts]. */
@@ -157,7 +171,7 @@ object ClipboardHistory {
   fun removeAll(context: Context, texts: Collection<String>) {
     if (texts.isEmpty()) return
     val removed = texts.toHashSet()
-    synchronized(this) { write(context, read(context).filter { it !in removed }) }
+    synchronized(this) { write(context, read(context).filter { it.text !in removed }) }
   }
 
   @JvmStatic
@@ -176,10 +190,16 @@ object ClipboardHistory {
     val entry = edited.toString().take(MAX_LENGTH)
     synchronized(this) {
       val entries = read(context)
-      if (original !in entries) {
-        write(context, (listOf(entry) + entries.filter { it != entry }).take(MAX_ENTRIES))
+      if (entries.none { it.text == original }) {
+        write(context, listOf(Entry(entry, now())) + entries.filter { it.text != entry })
       } else if (entry != original) {
-        write(context, entries.filter { it != entry }.map { if (it == original) entry else it })
+        // The edited text keeps the time the original was copied.
+        write(
+          context,
+          entries
+            .filter { it.text != entry }
+            .map { if (it.text == original) Entry(entry, it.time) else it },
+        )
       }
     }
     return true
@@ -200,6 +220,37 @@ object ClipboardHistory {
   @JvmStatic
   fun exportText(entries: List<String>): String =
     if (entries.isEmpty()) "" else entries.joinToString("\n\n$EXPORT_SEPARATOR\n\n", postfix = "\n")
+
+  /** How many texts the history keeps, from 1 to [MAX_ENTRIES]. */
+  @JvmStatic
+  fun maxEntries(context: Context): Int =
+    intSetting(context, KEY_MAX_ENTRIES, DEFAULT_MAX_ENTRIES).coerceIn(1, MAX_ENTRIES)
+
+  /** How many days the history keeps a text after it is copied; 0 keeps texts for ever. */
+  @JvmStatic
+  fun days(context: Context): Int = intSetting(context, KEY_DAYS, 0).coerceAtLeast(0)
+
+  /**
+   * Keeps at most [maxEntries] texts, from 1 to [MAX_ENTRIES], each for [days] after it is copied,
+   * or for ever when [days] is 0, and deletes the texts past them now.
+   */
+  @JvmStatic
+  fun setLimits(context: Context, maxEntries: Int, days: Int) {
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .edit()
+      .putInt(KEY_MAX_ENTRIES, maxEntries.coerceIn(1, MAX_ENTRIES))
+      .putInt(KEY_DAYS, days.coerceAtLeast(0))
+      .apply()
+    // Reading deletes what is past the limits.
+    synchronized(this) { read(context) }
+  }
+
+  private fun intSetting(context: Context, key: String, default: Int): Int =
+    try {
+      SharedPreferencesUtils.getSharedPreferences(context).getInt(key, default)
+    } catch (e: ClassCastException) {
+      default
+    }
 
   /** Calls [listener] on the main thread each time the history changes. */
   fun addListener(listener: () -> Unit) {
@@ -228,29 +279,60 @@ object ClipboardHistory {
     return app.getSharedPreferences(FILE, Context.MODE_PRIVATE)
   }
 
-  /** The first of [entries] whose lengths add up to [MAX_TOTAL_LENGTH] at most, and the first. */
-  private fun withinTotal(entries: List<String>): List<String> {
+  /** A text of the history, and when it was copied, in milliseconds. */
+  private class Entry(val text: String, val time: Long)
+
+  private fun now() = System.currentTimeMillis()
+
+  /**
+   * [entries] within the limits: the first [maxEntries], copied within [days], whose lengths add up
+   * to [MAX_TOTAL_LENGTH] at most, and else the first of them.
+   */
+  private fun withinLimits(context: Context, entries: List<Entry>): List<Entry> {
+    val days = days(context)
+    val oldest = if (days == 0) Long.MIN_VALUE else now() - days * DAY_MS
+    val recent = entries.filter { it.time >= oldest }.take(maxEntries(context))
     var total = 0
-    val kept = entries.takeWhile {
-      total += it.length
+    val kept = recent.takeWhile {
+      total += it.text.length
       total <= MAX_TOTAL_LENGTH
     }
-    return if (kept.isEmpty()) entries.take(1) else kept
+    return if (kept.isEmpty()) recent.take(1) else kept
   }
 
-  private fun read(context: Context): List<String> {
-    val json = prefs(context)?.getString(KEY, null) ?: return emptyList()
-    return try {
-      val array = JSONArray(json)
-      (0 until array.length()).mapNotNull { array.optString(it).takeIf(String::isNotEmpty) }
-    } catch (e: JSONException) {
-      emptyList()
-    }
+  /**
+   * The entries within the limits. Deletes the others from the file, and gives the time now to
+   * entries stored without a time, by versions that kept no times.
+   */
+  private fun read(context: Context): List<Entry> {
+    val prefs = prefs(context) ?: return emptyList()
+    val json = prefs.getString(KEY, null) ?: return emptyList()
+    val stored =
+      try {
+        val array = JSONArray(json)
+        val times = prefs.getString(KEY_TIMES, null)?.let(::JSONArray)
+        val missingTime = now()
+        (0 until array.length()).mapNotNull { index ->
+          array.optString(index).takeIf(String::isNotEmpty)?.let {
+            Entry(it, times?.optLong(index, missingTime) ?: missingTime)
+          }
+        }
+      } catch (e: JSONException) {
+        emptyList()
+      }
+    val kept = withinLimits(context, stored)
+    if (kept.size != stored.size || !prefs.contains(KEY_TIMES)) write(context, kept)
+    return kept
   }
 
-  private fun write(context: Context, entries: List<String>) {
+  private fun write(context: Context, entries: List<Entry>) {
     val prefs = prefs(context) ?: return
-    prefs.edit().putString(KEY, JSONArray(withinTotal(entries)).toString()).apply()
+    val kept = withinLimits(context, entries)
+    prefs
+      .edit()
+      .putString(KEY, JSONArray(kept.map { it.text }).toString())
+      .putString(KEY_TIMES, JSONArray(kept.map { it.time }).toString())
+      .apply()
     val copy = synchronized(listeners) { listeners.toList() }
     android.os.Handler(android.os.Looper.getMainLooper()).post { copy.forEach { it() } }
   }

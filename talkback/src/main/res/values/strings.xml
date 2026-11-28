@@ -3149,6 +3149,14 @@
     <string name="clipboard_history_select">Select</string>
     <!-- Hint of the search field at the top of the clipboard history, which lists only the texts that contain what is typed in it. [CHAR_LIMIT=NONE] -->
     <string name="clipboard_history_search_hint">Search clipboard history</string>
+    <!-- Button in the clipboard history, and title of its dialog, that sets how many texts the history keeps and for how many days. [CHAR_LIMIT=40] -->
+    <string name="clipboard_history_limits">Limits</string>
+    <!-- Label of the number field in the clipboard history's Limits dialog for the most texts the history keeps. %1$d is the highest number allowed, 5000. [CHAR_LIMIT=NONE] -->
+    <string name="clipboard_history_max_entries">Maximum texts, 1 to <xliff:g id="max" example="5000">%1$d</xliff:g></string>
+    <!-- Label of the number field in the clipboard history's Limits dialog for how many days after it is copied a text is deleted. [CHAR_LIMIT=NONE] -->
+    <string name="clipboard_history_days">Days kept</string>
+    <!-- Hint of the empty Days kept field in the clipboard history's Limits dialog: texts are kept until removed. [CHAR_LIMIT=NONE] -->
+    <string name="clipboard_history_days_unlimited">Unlimited</string>
     <!-- Spoken after the search field of the clipboard history lists the texts found. [CHAR_LIMIT=NONE] -->
     <plurals name="clipboard_history_search_results">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> text</item>

@@ -25,6 +25,7 @@ import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
+import org.json.JSONArray
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
@@ -38,7 +39,15 @@ class ClipboardHistoryTest {
 
   @Before
   fun clear() {
+    ClipboardHistory.setLimits(context, ClipboardHistory.DEFAULT_MAX_ENTRIES, 0)
     ClipboardHistory.clear(context)
+  }
+
+  private fun historyFile() = context.getSharedPreferences("clipboard_history", Context.MODE_PRIVATE)
+
+  /** Sets when each entry, newest first, was copied, as stored in the history's file. */
+  private fun setTimes(vararg times: Long) {
+    historyFile().edit().putString("times", JSONArray(times.toList()).toString()).commit()
   }
 
   private fun clip(): String? =
@@ -55,10 +64,76 @@ class ClipboardHistoryTest {
 
   @Test
   fun historyKeepsOnlyTheNewestEntries() {
-    repeat(ClipboardHistory.MAX_ENTRIES + 5) { ClipboardHistory.record(context, "text $it") }
+    repeat(ClipboardHistory.DEFAULT_MAX_ENTRIES + 5) { ClipboardHistory.record(context, "text $it") }
     val entries = ClipboardHistory.entries(context)
-    assertEquals(ClipboardHistory.MAX_ENTRIES, entries.size)
-    assertEquals("text ${ClipboardHistory.MAX_ENTRIES + 4}", entries.first())
+    assertEquals(ClipboardHistory.DEFAULT_MAX_ENTRIES, entries.size)
+    assertEquals("text ${ClipboardHistory.DEFAULT_MAX_ENTRIES + 4}", entries.first())
+  }
+
+  @Test
+  fun historyKeepsUpToTheSetNumberOfEntries() {
+    ClipboardHistory.setLimits(context, ClipboardHistory.MAX_ENTRIES + 100, 0)
+    assertEquals(ClipboardHistory.MAX_ENTRIES, ClipboardHistory.maxEntries(context))
+    repeat(ClipboardHistory.MAX_ENTRIES + 5) { ClipboardHistory.record(context, "$it") }
+    assertEquals(ClipboardHistory.MAX_ENTRIES, ClipboardHistory.entries(context).size)
+    ClipboardHistory.setLimits(context, 3, 0)
+    val last = ClipboardHistory.MAX_ENTRIES + 4
+    assertEquals(listOf("$last", "${last - 1}", "${last - 2}"), ClipboardHistory.entries(context))
+    ClipboardHistory.setLimits(context, 0, 0)
+    assertEquals(1, ClipboardHistory.maxEntries(context))
+  }
+
+  @Test
+  fun entriesOlderThanTheSetDaysAreDeletedUnderTheLimit() {
+    ClipboardHistory.record(context, "old")
+    ClipboardHistory.record(context, "new")
+    val day = 24L * 60 * 60 * 1000
+    val now = System.currentTimeMillis()
+    setTimes(now, now - 3 * day)
+    ClipboardHistory.setLimits(context, ClipboardHistory.DEFAULT_MAX_ENTRIES, 0)
+    assertEquals(listOf("new", "old"), ClipboardHistory.entries(context))
+    ClipboardHistory.setLimits(context, ClipboardHistory.DEFAULT_MAX_ENTRIES, 2)
+    assertEquals(2, ClipboardHistory.days(context))
+    assertEquals(listOf("new"), ClipboardHistory.entries(context))
+    // Deleted from the file, not only left out.
+    ClipboardHistory.setLimits(context, ClipboardHistory.DEFAULT_MAX_ENTRIES, 0)
+    assertEquals(listOf("new"), ClipboardHistory.entries(context))
+  }
+
+  @Test
+  fun copyingAgainRenewsTheTime() {
+    ClipboardHistory.record(context, "a")
+    ClipboardHistory.record(context, "b")
+    val day = 24L * 60 * 60 * 1000
+    val now = System.currentTimeMillis()
+    setTimes(now - 5 * day, now - 5 * day)
+    ClipboardHistory.record(context, "a")
+    ClipboardHistory.setLimits(context, ClipboardHistory.DEFAULT_MAX_ENTRIES, 1)
+    assertEquals(listOf("a"), ClipboardHistory.entries(context))
+  }
+
+  @Test
+  fun editedEntryKeepsItsTime() {
+    ClipboardHistory.record(context, "a")
+    ClipboardHistory.record(context, "b")
+    val day = 24L * 60 * 60 * 1000
+    val now = System.currentTimeMillis()
+    setTimes(now, now - 5 * day)
+    ClipboardHistory.replace(context, "a", "a edited")
+    ClipboardHistory.setLimits(context, ClipboardHistory.DEFAULT_MAX_ENTRIES, 1)
+    assertEquals(listOf("b"), ClipboardHistory.entries(context))
+  }
+
+  @Test
+  fun entriesStoredWithoutTimesAreKeptFromNow() {
+    historyFile()
+      .edit()
+      .putString("entries", JSONArray(listOf("b", "a")).toString())
+      .remove("times")
+      .commit()
+    ClipboardHistory.setLimits(context, ClipboardHistory.DEFAULT_MAX_ENTRIES, 1)
+    assertEquals(listOf("b", "a"), ClipboardHistory.entries(context))
+    assertEquals(2, JSONArray(historyFile().getString("times", null)).length())
   }
 
   @Test
