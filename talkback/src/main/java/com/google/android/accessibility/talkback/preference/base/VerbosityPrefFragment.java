@@ -65,15 +65,6 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     setupPunctuationNonePreference();
     setupBatteryLevelVoicePreference();
     setupCallerVoicePreference();
-    updateCallerStreamPreference();
-  }
-
-  /** Caller volume is available while a voice profile is chosen for the caller. */
-  private void updateCallerStreamPreference() {
-    Preference stream = findPreference(NotificationReader.KEY_CALLER_STREAM);
-    if (stream != null && preferences != null) {
-      stream.setEnabled(!preferences.getString(NotificationReader.KEY_CALLER_VOICE, "").isEmpty());
-    }
   }
 
   @Override
@@ -223,10 +214,6 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
         if (!isAdded() || (getActivity() == null)) {
           LogUtils.w(
               TAG, "Fragment is not attached to activity, do not update verbosity setting page.");
-          return;
-        }
-        if (TextUtils.equals(key, NotificationReader.KEY_CALLER_VOICE)) {
-          updateCallerStreamPreference();
           return;
         }
         if (TextUtils.equals(key, getString(R.string.pref_punctuation_key))) {

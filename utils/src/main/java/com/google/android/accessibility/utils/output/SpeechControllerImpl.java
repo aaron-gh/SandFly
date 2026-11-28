@@ -1649,7 +1649,8 @@ public class SpeechControllerImpl implements SpeechController {
         // Always flush if current item interrupted.
         item.setFlushGlobalTtsQueue(true);
         if (currentFeedbackItem.hasFlag(FeedbackItem.FLAG_COMMAND_FEEDBACK)
-            || currentFeedbackItem.hasFlag(FeedbackItem.FLAG_POPUP_FEEDBACK)) {
+            || currentFeedbackItem.hasFlag(FeedbackItem.FLAG_POPUP_FEEDBACK)
+            || currentFeedbackItem.hasFlag(FeedbackItem.FLAG_CALLER_FEEDBACK)) {
           stopCommandVoice(/* includingOverSpeech= */ false);
         }
         notifyItemInterrupted(currentFeedbackItem);
@@ -2344,9 +2345,22 @@ public class SpeechControllerImpl implements SpeechController {
     final float volume = speechVolume * parseFloatParam(params, SpeechParam.VOLUME, 1);
 
     // Utterance ID, stream, and volume override item params.
-    final int stream = FailoverTextToSpeech.getSpeechAudioStream(mContext);
+    // The caller of a call can have a volume of its own, in SandFly's voice and in its fallback.
+    final @Nullable String callerStream =
+        feedbackItem.hasFlag(FeedbackItem.FLAG_CALLER_FEEDBACK)
+            ? FailoverTextToSpeech.callerStream(mContext)
+            : null;
+    final int stream =
+        callerStream == null
+            ? FailoverTextToSpeech.getSpeechAudioStream(mContext)
+            : FailoverTextToSpeech.audioStreamOf(callerStream);
     params.put(Engine.KEY_PARAM_UTTERANCE_ID, feedbackItem.getUtteranceId());
     params.put(Engine.KEY_PARAM_STREAM, String.valueOf(stream));
+    if (callerStream != null) {
+      params.put(
+          FailoverTextToSpeech.SPEECH_PARAM_USAGE,
+          String.valueOf(FailoverTextToSpeech.usageForStream(callerStream)));
+    }
     params.put(Engine.KEY_PARAM_VOLUME, String.valueOf(volume));
     HashMap<String, Integer> customFlags = new HashMap<>();
 

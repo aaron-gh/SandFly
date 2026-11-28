@@ -83,7 +83,7 @@ object NotificationReader {
   /** The voice profile the caller of an incoming call is said with; empty for SandFly's. */
   const val KEY_CALLER_VOICE = "pref_caller_voice_profile"
   /** The volume the caller is said at in that voice: one of the speech volumes, or "speech" for the speech volume. */
-  const val KEY_CALLER_STREAM = "pref_caller_stream"
+  const val KEY_CALLER_STREAM = FailoverTextToSpeech.PREF_CALLER_STREAM_KEY
   /** Whether that voice talks over SandFly's speech instead of waiting for it to end. */
   const val KEY_POPUP_OVER_SPEECH = "pref_popup_over_speech"
   /** Whether a popup waits for the one before it, or replaces it. On by default. */
@@ -1326,7 +1326,11 @@ object NotificationReader {
       val context = context ?: return null
       val key = streamKey ?: return null
       val stream = SharedPreferencesUtils.getSharedPreferences(context).getString(key, null)
-      return if (stream == null || stream !in FailoverTextToSpeech.STREAM_VALUES) null
+      // The call volume plays on the earpiece when no headset is connected: it isn't offered.
+      return if (stream == null ||
+          stream !in FailoverTextToSpeech.STREAM_VALUES ||
+          stream == FailoverTextToSpeech.STREAM_VALUE_CALL
+      ) null
       else FailoverTextToSpeech.usageForStream(stream)
     }
 
