@@ -26,6 +26,7 @@ import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Rule for generating the action menu for a {@link AccessibilityNodeInfoCompat}.
@@ -42,6 +43,8 @@ public class RuleAction extends NodeMenuRule {
   private final TelegramShareMenu telegramShareMenu;
   private final SheetsEditMenu sheetsEditMenu = new SheetsEditMenu();
   private final SliderValueMenu sliderValueMenu;
+  // The menus in the order that getMenuItemsForNode lists their items.
+  private final NodeMenu[] menusInOrder;
 
   public RuleAction(
       Pipeline.FeedbackReturner pipeline,
@@ -59,6 +62,17 @@ public class RuleAction extends NodeMenuRule {
     quotedMessageMenu = new QuotedMessageMenu(pipeline);
     telegramShareMenu = new TelegramShareMenu(pipeline);
     sliderValueMenu = new SliderValueMenu(pipeline);
+    menusInOrder =
+        new NodeMenu[] {
+          typoSuggestionMenu,
+          customActionMenu,
+          editingAndSelectingMenu,
+          linkMenu,
+          quotedMessageMenu,
+          telegramShareMenu,
+          sheetsEditMenu,
+          sliderValueMenu
+        };
   }
 
   @Override
@@ -96,44 +110,36 @@ public class RuleAction extends NodeMenuRule {
     return SliderValueMenu.isItem(item);
   }
 
+  /**
+   * Returns whether {@link #getMenuItemsForNode} would list an item matching {@code wanted}. The
+   * menus are read in the same order, and the menus after the first match aren't read.
+   */
+  public boolean hasMenuItem(
+      Context context,
+      AccessibilityNodeInfoCompat node,
+      boolean includeAncestors,
+      Predicate<ContextMenuItem> wanted) {
+    for (NodeMenu menu : menusInOrder) {
+      if (menu.accept(context, node)) {
+        for (ContextMenuItem item : menu.getMenuItemsForNode(context, node, includeAncestors)) {
+          if (wanted.test(item)) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
   @Override
   public List<ContextMenuItem> getMenuItemsForNode(
       Context context, AccessibilityNodeInfoCompat node, boolean includeAncestors) {
     List<ContextMenuItem> actionItems = new ArrayList<>();
-
-    if (typoSuggestionMenu.accept(context, node)) {
-      actionItems.addAll(typoSuggestionMenu.getMenuItemsForNode(context, node, includeAncestors));
+    for (NodeMenu menu : menusInOrder) {
+      if (menu.accept(context, node)) {
+        actionItems.addAll(menu.getMenuItemsForNode(context, node, includeAncestors));
+      }
     }
-
-    if (customActionMenu.accept(context, node)) {
-      actionItems.addAll(customActionMenu.getMenuItemsForNode(context, node, includeAncestors));
-    }
-
-    if (editingAndSelectingMenu.accept(context, node)) {
-      actionItems.addAll(
-          editingAndSelectingMenu.getMenuItemsForNode(context, node, includeAncestors));
-    }
-
-    if (linkMenu.accept(context, node)) {
-      actionItems.addAll(linkMenu.getMenuItemsForNode(context, node, includeAncestors));
-    }
-
-    if (quotedMessageMenu.accept(context, node)) {
-      actionItems.addAll(quotedMessageMenu.getMenuItemsForNode(context, node, includeAncestors));
-    }
-
-    if (telegramShareMenu.accept(context, node)) {
-      actionItems.addAll(telegramShareMenu.getMenuItemsForNode(context, node, includeAncestors));
-    }
-
-    if (sheetsEditMenu.accept(context, node)) {
-      actionItems.addAll(sheetsEditMenu.getMenuItemsForNode(context, node, includeAncestors));
-    }
-
-    if (sliderValueMenu.accept(context, node)) {
-      actionItems.addAll(sliderValueMenu.getMenuItemsForNode(context, node, includeAncestors));
-    }
-
     return actionItems;
   }
 

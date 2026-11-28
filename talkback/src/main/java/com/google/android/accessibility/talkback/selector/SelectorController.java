@@ -65,6 +65,7 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Resources;
 import android.media.AudioManager;
 import android.os.Handler;
+import android.os.LocaleList;
 import android.os.Looper;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -590,12 +591,22 @@ public class SelectorController implements UserInputEventListener {
 
     /** Returns a Setting associated with the given preference value. */
     public static @Nullable Setting getSettingFromPrefValue(Context context, String prefValue) {
+      // The values are read from resources, and Formatting's is translated, so the last match is
+      // kept with the locales it was found in.
+      LocaleList locales = context.getResources().getConfiguration().getLocales();
+      PrefValueMatch last = lastPrefValueMatch;
+      if (last != null && TextUtils.equals(last.prefValue, prefValue) && last.locales.equals(locales)) {
+        return last.setting;
+      }
+      Setting found = null;
       for (Setting setting : values()) {
         if (TextUtils.equals(context.getString(setting.prefValueResId), prefValue)) {
-          return setting;
+          found = setting;
+          break;
         }
       }
-      return null;
+      lastPrefValueMatch = new PrefValueMatch(prefValue, locales, found);
+      return found;
     }
 
     /** Class wraps the {@link Setting} description and hint. */
@@ -609,6 +620,22 @@ public class SelectorController implements UserInputEventListener {
       }
     }
   }
+
+  /** A preference value of a reading control, and the reading control it named. */
+  private static final class PrefValueMatch {
+    final @Nullable String prefValue;
+    final LocaleList locales;
+    final @Nullable Setting setting;
+
+    PrefValueMatch(@Nullable String prefValue, LocaleList locales, @Nullable Setting setting) {
+      this.prefValue = prefValue;
+      this.locales = locales;
+      this.setting = setting;
+    }
+  }
+
+  // The last reading control looked up by its preference value.
+  private static volatile @Nullable PrefValueMatch lastPrefValueMatch;
 
   /** Granularities are provided by the selector. */
   public enum Granularity {
@@ -892,6 +919,10 @@ public class SelectorController implements UserInputEventListener {
 
   private Setting settingToRestore;
 
+  // Change reading control automatically: its preference key and default.
+  private final String autoSwitchKey;
+  private final boolean autoSwitchDefault;
+
   /** The reading control last chosen from a Reading control list, which the main list can omit. */
   private @Nullable Setting settingFromReadingControlList;
   // Whether focus switched the reading control to Actions, rather than the user choosing it.
@@ -945,6 +976,8 @@ public class SelectorController implements UserInputEventListener {
       VolumeMonitor volumeMonitor,
       CollectionState collectionState) {
     this.context = context;
+    autoSwitchKey = context.getString(R.string.pref_selector_auto_switch_key);
+    autoSwitchDefault = context.getResources().getBoolean(R.bool.pref_selector_auto_switch_default);
     this.pipeline = pipeline;
     this.actorState = actorState;
     this.accessibilityFocusMonitor = accessibilityFocusMonitor;
@@ -1755,9 +1788,7 @@ public class SelectorController implements UserInputEventListener {
   }
 
   private boolean autoSwitchEnabled() {
-    return prefs.getBoolean(
-        context.getString(R.string.pref_selector_auto_switch_key),
-        context.getResources().getBoolean(R.bool.pref_selector_auto_switch_default));
+    return prefs.getBoolean(autoSwitchKey, autoSwitchDefault);
   }
 
   /**
