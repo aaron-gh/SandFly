@@ -27,6 +27,7 @@ import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -60,7 +61,7 @@ public class NodeMenuRuleCreator {
   }
 
   private final NodeMenuRule ruleUnlabeledNode;
-  private final NodeMenuRule ruleAction;
+  private final RuleAction ruleAction;
   private final NodeMenuRule ruleTextEntities;
   private final NodeMenuRule ruleViewPager;
   private final NodeMenuRule ruleGranularity;
@@ -98,6 +99,19 @@ public class NodeMenuRuleCreator {
       AccessibilityNodeInfoCompat node,
       boolean includeAncestors) {
     return getMenuRule(rule).getMenuItemsForNode(context, node, includeAncestors);
+  }
+
+  /**
+   * Returns whether the Actions menu of {@code node}, as {@link #getNodeMenuByRule} lists it for
+   * {@link MenuRules#RULE_CUSTOM_ACTION}, has an item matching {@code wanted}, without listing the
+   * whole menu.
+   */
+  public boolean hasActionMenuItem(
+      Context context,
+      AccessibilityNodeInfoCompat node,
+      boolean includeAncestors,
+      Predicate<ContextMenuItem> wanted) {
+    return ruleAction.hasMenuItem(context, node, includeAncestors, wanted);
   }
 
   @Nullable NodeMenuRule getMenuRuleById(int ruleId) {

@@ -57,7 +57,10 @@ public class ActionsSetting implements SelectorController.ContextualSetting {
 
   @Override
   public boolean isNodeSupportSetting(Context context, AccessibilityNodeInfoCompat node) {
-    return node != null && isSettingEnabled(context) && !actionsOf(context, node).isEmpty();
+    return node != null
+        && isSettingEnabled(context)
+        && nodeMenuCreator.hasActionMenuItem(
+            context, node, /* includeAncestors= */ true, (action) -> true);
   }
 
   @Override
@@ -77,16 +80,18 @@ public class ActionsSetting implements SelectorController.ContextualSetting {
       // Text on web pages keeps it, as in TalkBack. Other web items switch for their own actions
       // only: not for actions of the page or of the browser's views around it.
       return !selectableText
-          && hasOtherThanEditingOptions(
-              nodeMenuCreator.getNodeMenuByRule(
-                  MenuRules.RULE_CUSTOM_ACTION, context, node, /* includeAncestors= */ false));
+          && nodeMenuCreator.hasActionMenuItem(
+              context,
+              node,
+              /* includeAncestors= */ false,
+              ActionsSetting::isOtherThanEditingOption);
     }
-    List<ContextMenuItem> actions = actionsOf(context, node);
     // Other selectable text keeps it where its only actions are editing options.
-    if (selectableText) {
-      return hasOtherThanEditingOptions(actions);
-    }
-    return hasOtherThanMacros(actions);
+    return nodeMenuCreator.hasActionMenuItem(
+        context,
+        node,
+        /* includeAncestors= */ true,
+        selectableText ? ActionsSetting::isOtherThanEditingOption : ActionsSetting::isOtherThanMacro);
   }
 
   /**
@@ -108,22 +113,19 @@ public class ActionsSetting implements SelectorController.ContextualSetting {
    */
   private static boolean hasOtherThanMacros(List<ContextMenuItem> actions) {
     for (ContextMenuItem action : actions) {
-      if (!CustomActionMenu.isMacroItem(action) && !RuleAction.isSliderValueItem(action)) {
+      if (isOtherThanMacro(action)) {
         return true;
       }
     }
     return false;
   }
 
-  private static boolean hasOtherThanEditingOptions(List<ContextMenuItem> actions) {
-    for (ContextMenuItem action : actions) {
-      if (!isEditingOption(action)
-          && !CustomActionMenu.isMacroItem(action)
-          && !RuleAction.isSliderValueItem(action)) {
-        return true;
-      }
-    }
-    return false;
+  private static boolean isOtherThanMacro(ContextMenuItem action) {
+    return !CustomActionMenu.isMacroItem(action) && !RuleAction.isSliderValueItem(action);
+  }
+
+  private static boolean isOtherThanEditingOption(ContextMenuItem action) {
+    return !isEditingOption(action) && isOtherThanMacro(action);
   }
 
   private static boolean isSettingEnabled(Context context) {
