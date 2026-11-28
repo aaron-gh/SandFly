@@ -35,7 +35,7 @@ Nonaktifkan pembaca layar lain sebelum Anda mengaktifkan SandFly. Dua pembaca la
 1. Buka aplikasi **Setelan** Android.
 2. Buka **Aksesibilitas**. Di beberapa ponsel, SandFly berada di subbagian seperti **Aplikasi terinstal** atau **Aplikasi yang didownload**.
 3. Pilih **SandFly**.
-4. Aktifkan tombol pengalihnya, lalu konfirmasi.
+4. Aktifkan tombol beralihnya, lalu konfirmasi.
 
 SandFly mengucapkan "SandFly aktif". Pada saat pertama kali, SandFly membuka dialog tata letak gerakan dan tutorial. Lihat [](#getting-started-first-start).
 
