@@ -36,7 +36,11 @@ import org.json.JSONObject
 /** Sends Gemini requests to the [AiService] the user set up, as chat requests. */
 internal class AiServiceRequestPerformer
 @JvmOverloads
-constructor(context: Context, queueOverride: RequestQueue? = null) {
+constructor(
+  context: Context,
+  private val retryWhenBusy: Boolean = true,
+  queueOverride: RequestQueue? = null,
+) {
   private val appContext = context.applicationContext
   private val requestQueue: RequestQueue by lazy {
     queueOverride ?: GeminiRestRequestPerformer.sharedQueue(appContext)
@@ -45,6 +49,7 @@ constructor(context: Context, queueOverride: RequestQueue? = null) {
   private val retryToken = Any()
   private val requestTag = Any()
   private val cancelGeneration = AtomicLong()
+  private val retryGeneration = AtomicLong()
 
   /**
    * Reports a failure found before sending, after [performRequest] returns, as Volley reports its
@@ -67,6 +72,7 @@ constructor(context: Context, queueOverride: RequestQueue? = null) {
     callback: GeminiRestResponseCallback,
   ) {
     val gen = cancelGeneration.get()
+    val retryGen = retryGeneration.get()
     if (!AiService.isValidAddress(address)) {
       failLater(callback, GeminiFailure.other("The AI service address must start with https"), gen)
       return
@@ -87,7 +93,19 @@ constructor(context: Context, queueOverride: RequestQueue? = null) {
         return
       }
     val wantsJson = AiService.wantsJson(geminiRequest)
-    send(address, model, apiKey, chatRequest, wantsJson, sandflyPro, callback, 0, SystemClock.uptimeMillis(), gen)
+    send(
+      address,
+      model,
+      apiKey,
+      chatRequest,
+      wantsJson,
+      sandflyPro,
+      callback,
+      0,
+      SystemClock.uptimeMillis(),
+      gen,
+      retryGen,
+    )
   }
 
   private fun send(
@@ -101,6 +119,7 @@ constructor(context: Context, queueOverride: RequestQueue? = null) {
     round: Int,
     firstAt: Long,
     gen: Long,
+    retryGen: Long,
   ) {
     if (gen != cancelGeneration.get()) return
     val request =
@@ -133,7 +152,9 @@ constructor(context: Context, queueOverride: RequestQueue? = null) {
                 }
               val nextStartElapsedMs = elapsedMs + delayMs
               if (
-                !sandflyPro &&
+                retryWhenBusy &&
+                  retryGen == retryGeneration.get() &&
+                  !sandflyPro &&
                   isRetryable(failure.statusCode, headers) &&
                   round < BUSY_RETRY_DELAYS_MS.size &&
                   nextStartElapsedMs <= RETRY_WINDOW_MS &&
@@ -142,7 +163,7 @@ constructor(context: Context, queueOverride: RequestQueue? = null) {
                 LogUtils.w(TAG, "AI service busy, retrying in %d ms: %s", delayMs, failure.logMessage)
                 mainHandler.postAtTime(
                   {
-                    if (gen == cancelGeneration.get()) {
+                    if (gen == cancelGeneration.get() && retryGen == retryGeneration.get()) {
                       send(
                         address,
                         model,
@@ -154,6 +175,7 @@ constructor(context: Context, queueOverride: RequestQueue? = null) {
                         round + 1,
                         firstAt,
                         gen,
+                        retryGen,
                       )
                     }
                   },
@@ -188,17 +210,20 @@ constructor(context: Context, queueOverride: RequestQueue? = null) {
 
   fun cancel() {
     cancelGeneration.incrementAndGet()
+    retryGeneration.incrementAndGet()
     mainHandler.removeCallbacksAndMessages(retryToken)
     requestQueue.cancelAll(requestTag)
   }
 
+  /** Stops pending and future retries while letting an already-sent initial request finish. */
+  fun cancelRetries() {
+    retryGeneration.incrementAndGet()
+    mainHandler.removeCallbacksAndMessages(retryToken)
+  }
+
   private fun isRetryable(statusCode: Int, headers: Map<String, String>?): Boolean {
     if (statusCode == 502 || statusCode == 503 || statusCode == 529) return true
-    val hasRetryAfter =
-      headers?.entries?.any {
-        it.key.equals("Retry-After", ignoreCase = true) && it.value.isNotBlank()
-      } == true
-    return hasRetryAfter && (statusCode == 429 || statusCode >= 500)
+    return GeminiFailure.hasRetryAfter(headers) && (statusCode == 429 || statusCode >= 500)
   }
 
   /**

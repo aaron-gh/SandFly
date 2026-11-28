@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.actor.gemini
 
 import android.os.Looper
 import com.android.volley.ClientError
+import com.android.volley.Header
 import com.android.volley.Network
 import com.android.volley.NetworkResponse
 import com.android.volley.Request
@@ -27,6 +28,7 @@ import com.android.volley.toolbox.NoCache
 import com.google.android.accessibility.talkback.actor.gemini.DataFieldUtils.GeminiResponse
 import com.google.android.accessibility.talkback.actor.gemini.GeminiRestRequestPerformer.GeminiRestResponseCallback
 import java.time.Duration
+import org.json.JSONArray
 import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -37,6 +39,8 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
+import org.robolectric.util.ReflectionHelpers
+import org.robolectric.util.ReflectionHelpers.ClassParameter
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
@@ -208,6 +212,166 @@ class GeminiRestRequestPerformerTest {
     assertEquals(1, failures.size)
     assertEquals(GeminiFailure.Kind.BUSY, failures.single().kind)
   }
+
+  @Test
+  fun cancelDuringInFlightRequestDropsLateSuccess() {
+    val queue = RecordingRequestQueue()
+    val performer = GeminiRestRequestPerformer(queue)
+    val failures = mutableListOf<GeminiFailure>()
+    val responses = mutableListOf<GeminiResponse>()
+    performer.performRequest(
+      listOf(url("gemini-2.5-flash")),
+      "key",
+      postData,
+      recordingCallback(responses, failures),
+    )
+
+    val inFlight = queue.requests.single()
+    performer.cancelExistingRequestIfNeeded()
+    assertTrue(inFlight.isCanceled)
+
+    ReflectionHelpers.callInstanceMethod<Any>(
+      inFlight,
+      "deliverResponse",
+      ClassParameter.from(Any::class.java, geminiSuccessJson()),
+    )
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(10))
+
+    assertTrue(responses.isEmpty())
+    assertTrue(failures.isEmpty())
+  }
+
+  @Test
+  fun cancelWhileRetryIsPostedDropsPendingRetry() {
+    val queue = RecordingRequestQueue()
+    val performer = GeminiRestRequestPerformer(queue)
+    val failures = mutableListOf<GeminiFailure>()
+    performer.performRequest(
+      listOf(url("gemini-2.5-flash")),
+      "key",
+      postData,
+      recordingCallback(mutableListOf(), failures),
+    )
+
+    queue.requests.single().deliverError(
+      ServerError(NetworkResponse(503, ByteArray(0), false, 0L, emptyList()))
+    )
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(500))
+    assertEquals(1, queue.requests.size)
+
+    performer.cancelExistingRequestIfNeeded()
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(10))
+
+    assertEquals(1, queue.requests.size)
+    assertTrue(failures.isEmpty())
+  }
+
+  @Test
+  fun quotaWithoutBusyModelOrRetryAfterIsNotRetried() {
+    val queue = RecordingRequestQueue()
+    val performer = GeminiRestRequestPerformer(queue)
+    val failures = mutableListOf<GeminiFailure>()
+    val quotaBody =
+      """{"error":{"code":429,"status":"RESOURCE_EXHAUSTED","message":"You exceeded your quota."}}"""
+        .toByteArray()
+
+    performer.performRequest(
+      listOf(url("gemini-2.5-pro"), url("gemini-2.5-flash")),
+      "key",
+      postData,
+      recordingCallback(mutableListOf(), failures),
+    )
+    queue.requests[0].deliverError(
+      ClientError(NetworkResponse(429, quotaBody, false, 0L, emptyList()))
+    )
+    assertEquals(2, queue.requests.size)
+    queue.requests[1].deliverError(
+      ClientError(NetworkResponse(429, quotaBody, false, 0L, emptyList()))
+    )
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(10))
+
+    assertEquals(2, queue.requests.size)
+    assertEquals(1, failures.size)
+    assertEquals(GeminiFailure.Kind.QUOTA, failures.single().kind)
+  }
+
+  @Test
+  fun quotaIsRetriedWhenPrecededByBusyOrWithRetryAfter() {
+    val queue = RecordingRequestQueue()
+    val performer = GeminiRestRequestPerformer(queue)
+    val quotaBody =
+      """{"error":{"code":429,"status":"RESOURCE_EXHAUSTED","message":"You exceeded your quota."}}"""
+        .toByteArray()
+
+    // Case 1: first model was 503 BUSY, second returned 429 QUOTA -> retried after 1 s.
+    performer.performRequest(
+      listOf(url("gemini-2.5-pro"), url("gemini-2.5-flash")),
+      "key",
+      postData,
+      recordingCallback(mutableListOf(), mutableListOf()),
+    )
+    queue.requests[0].deliverError(
+      ServerError(NetworkResponse(503, ByteArray(0), false, 0L, emptyList()))
+    )
+    queue.requests[1].deliverError(
+      ClientError(NetworkResponse(429, quotaBody, false, 0L, emptyList()))
+    )
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(1))
+    assertEquals(3, queue.requests.size)
+
+    // Case 2: single model returns 429 QUOTA with Retry-After: 2 -> retried after 2 s.
+    performer.cancelExistingRequestIfNeeded()
+    val singleFailures = mutableListOf<GeminiFailure>()
+    performer.performRequest(
+      listOf(url("gemini-2.5-flash")),
+      "key",
+      postData,
+      recordingCallback(mutableListOf(), singleFailures),
+    )
+    queue.requests[3].deliverError(
+      ClientError(NetworkResponse(429, quotaBody, false, 0L, listOf(Header("Retry-After", "2"))))
+    )
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(1_999))
+    assertEquals(4, queue.requests.size)
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(1))
+    assertEquals(5, queue.requests.size)
+  }
+
+  @Test
+  fun nonRetryablePerformerDoesNotRetry503Round() {
+    val queue = RecordingRequestQueue()
+    val performer = GeminiRestRequestPerformer(queue, false)
+    val failures = mutableListOf<GeminiFailure>()
+    performer.performRequest(
+      listOf(url("gemini-2.5-flash")),
+      "key",
+      postData,
+      recordingCallback(mutableListOf(), failures),
+    )
+
+    queue.requests.single().deliverError(
+      ServerError(NetworkResponse(503, ByteArray(0), false, 0L, emptyList()))
+    )
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(10))
+
+    assertEquals(1, queue.requests.size)
+    assertEquals(1, failures.size)
+  }
+
+  private fun geminiSuccessJson(): JSONObject =
+    JSONObject()
+      .put(
+        "candidates",
+        JSONArray()
+          .put(
+            JSONObject()
+              .put("finishReason", "STOP")
+              .put(
+                "content",
+                JSONObject().put("parts", JSONArray().put(JSONObject().put("text", "ok"))),
+              )
+          ),
+      )
 
   private fun url(model: String) =
     "https://generativelanguage.googleapis.com/v1beta/models/$model:generateContent"

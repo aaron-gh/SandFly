@@ -153,6 +153,13 @@ class GeminiFailure(
       return GeminiFailure(kind, statusCode, status, message)
     }
 
+    /** Whether [headers] includes a non-blank `Retry-After` HTTP header. */
+    @JvmStatic
+    fun hasRetryAfter(headers: Map<String, String>?): Boolean =
+      headers?.entries?.any {
+        it.key.equals("Retry-After", ignoreCase = true) && it.value.isNotBlank()
+      } == true
+
     /**
      * Parses a numeric `Retry-After` HTTP header (in seconds) into milliseconds, clamped to
      * [MAX_RETRY_AFTER_MS], or returns 0 when absent or unparseable.

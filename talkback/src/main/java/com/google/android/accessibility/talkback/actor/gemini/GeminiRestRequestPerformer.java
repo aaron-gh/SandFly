@@ -93,13 +93,23 @@ public class GeminiRestRequestPerformer {
   private final Object retryToken = new Object();
   private final Object requestTag = new Object();
   private final AtomicLong cancelGeneration = new AtomicLong();
+  private final boolean retryWhenBusy;
 
   public GeminiRestRequestPerformer(Context context) {
-    this(sharedQueue(context));
+    this(sharedQueue(context), /* retryWhenBusy= */ true);
+  }
+
+  public GeminiRestRequestPerformer(Context context, boolean retryWhenBusy) {
+    this(sharedQueue(context), retryWhenBusy);
   }
 
   GeminiRestRequestPerformer(RequestQueue requestQueue) {
+    this(requestQueue, /* retryWhenBusy= */ true);
+  }
+
+  GeminiRestRequestPerformer(RequestQueue requestQueue, boolean retryWhenBusy) {
     this.requestQueue = requestQueue;
+    this.retryWhenBusy = retryWhenBusy;
   }
 
   private static @Nullable RequestQueue sharedQueue;
@@ -170,7 +180,8 @@ public class GeminiRestRequestPerformer {
         0,
         0,
         SystemClock.uptimeMillis(),
-        cancelGeneration.get());
+        cancelGeneration.get(),
+        /* sawBusy= */ false);
   }
 
   private void send(
@@ -181,7 +192,8 @@ public class GeminiRestRequestPerformer {
       int model,
       int round,
       long firstAt,
-      long gen) {
+      long gen,
+      boolean sawBusy) {
     if (gen != cancelGeneration.get()) {
       return;
     }
@@ -227,10 +239,11 @@ public class GeminiRestRequestPerformer {
                     modelName,
                     failure.getLogMessage());
                 modelsWithoutThinkingSetting.add(modelName);
-                send(urls, apiKey, postData, callback, model, round, firstAt, gen);
+                send(urls, apiKey, postData, callback, model, round, firstAt, gen, sawBusy);
                 return;
               }
               boolean busy = kind == GeminiFailure.Kind.BUSY;
+              boolean nextSawBusy = sawBusy || busy;
               boolean another =
                   busy
                       || kind == GeminiFailure.Kind.QUOTA
@@ -238,17 +251,22 @@ public class GeminiRestRequestPerformer {
               if (another && model + 1 < urls.size() && now - firstAt < RETRY_WINDOW_MS) {
                 LogUtils.w(
                     TAG, "%s, asking the next model: %s", modelName, failure.getLogMessage());
-                send(urls, apiKey, postData, callback, model + 1, round, firstAt, gen);
+                send(urls, apiKey, postData, callback, model + 1, round, firstAt, gen, nextSawBusy);
                 return;
               }
-              boolean retryable = busy || kind == GeminiFailure.Kind.QUOTA;
+              boolean hasRetryAfter =
+                  error.networkResponse != null
+                      && GeminiFailure.hasRetryAfter(error.networkResponse.headers);
+              boolean retryable =
+                  busy || (kind == GeminiFailure.Kind.QUOTA && (nextSawBusy || hasRetryAfter));
               long retryAfterMs =
                   error.networkResponse == null
                       ? 0L
                       : GeminiFailure.parseRetryAfterMs(error.networkResponse.headers);
               long delayMs = busyRetryDelayMs(round, retryAfterMs);
               long elapsedMs = Math.max(0L, now - firstAt);
-              if (retryable
+              if (retryWhenBusy
+                  && retryable
                   && round < BUSY_RETRY_DELAYS_MS.length
                   && elapsedMs + delayMs <= RETRY_WINDOW_MS) {
                 LogUtils.w(
@@ -259,7 +277,7 @@ public class GeminiRestRequestPerformer {
                 handler.postAtTime(
                     () -> {
                       if (gen == cancelGeneration.get()) {
-                        send(urls, apiKey, postData, callback, 0, round + 1, firstAt, gen);
+                        send(urls, apiKey, postData, callback, 0, round + 1, firstAt, gen, false);
                       }
                     },
                     retryToken,
@@ -374,6 +392,15 @@ public class GeminiRestRequestPerformer {
 
   /** Cancels any in-flight request and drops retries waiting to be sent. */
   public void cancelExistingRequestIfNeeded() {
+    cancelGeminiRequests();
+  }
+
+  /** Cancels any in-flight Gemini request and pending retries when the actor's timeout expires. */
+  public void cancelOnTimeout() {
+    cancelGeminiRequests();
+  }
+
+  private void cancelGeminiRequests() {
     cancelGeneration.incrementAndGet();
     handler.removeCallbacksAndMessages(retryToken);
     requestQueue.cancelAll(requestTag);

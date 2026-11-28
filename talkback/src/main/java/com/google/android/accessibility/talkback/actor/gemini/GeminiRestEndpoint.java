@@ -342,6 +342,11 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
   }
 
   @Override
+  public void cancelOnTimeout() {
+    requestPerformer.cancelOnTimeout();
+  }
+
+  @Override
   public boolean hasPendingTransaction() {
     return requestPerformer.hasPendingTransaction();
   }
