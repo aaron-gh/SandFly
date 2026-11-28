@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">두 번째 스와이프 <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">전체 동작 <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">사이에 <xliff:g id="ms">%1$d</xliff:g> ms 동안 손가락을 뗌</string>
+    <string name="gesture_trainer_how_menu_horizontal"><xliff:g id="edge">%1$s</xliff:g> 한 손가락을 대고 화면 가운데 쪽으로 <xliff:g id="distance">%2$d</xliff:g>mm 이상 밀어 메뉴를 여세요. 메뉴에는 가장자리부터 화면을 가로질러 항목이 <xliff:g id="count">%3$d</xliff:g>개 있으며, 각 항목의 너비는 약 <xliff:g id="size">%6$s</xliff:g>cm입니다. <xliff:g id="number">%4$d</xliff:g>번 항목인 <xliff:g id="item">%5$s</xliff:g>은(는) 가장자리에서 <xliff:g id="from">%7$s</xliff:g>~<xliff:g id="to">%8$s</xliff:g>cm 위치에 있습니다. 손가락을 같은 높이로 유지하고, 항목이 음성으로 출력되면 손가락을 떼세요.</string>
+    <string name="gesture_trainer_finding_menu_left_line">손가락을 뗀 위치가 메뉴가 열린 높이에서 위나 아래로 <xliff:g id="mm">%1$.0f</xliff:g>mm였으며, <xliff:g id="limit">%2$.0f</xliff:g>mm를 넘으면 메뉴가 닫힙니다.</string>
+    <string name="gesture_trainer_tip_menu_left_line">안쪽으로 미는 동안 손가락을 같은 높이로 유지하고, 그 높이에서 떼세요.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">각 항목은 가장자리부터 화면을 가로질러 정해진 위치에 있으며, 손가락을 뗀 위치의 항목이 선택됩니다. 항목이 음성으로 출력되면 손가락을 떼세요.</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g>에서 안쪽으로 미는 동작은 제외됩니다: 이 가장자리의 메뉴는 화면을 가로질러 있어 안쪽으로 밀면 동작 대신 메뉴가 열립니다.</string>
+    <string name="gesture_trainer_statistics">통계</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. 시도: <xliff:g id="tries">%2$d</xliff:g>번, 인식: <xliff:g id="recognized">%3$d</xliff:g>번. 최단: <xliff:g id="shortest">%4$d</xliff:g> ms, 중앙값: <xliff:g id="median">%5$d</xliff:g> ms, 최장: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">각 터치: 최단 <xliff:g id="shortest">%1$d</xliff:g> ms, 중앙값 <xliff:g id="median">%2$d</xliff:g> ms, 최장 <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">탭</string>
+    <string name="gesture_trainer_kind_double_tap">두 번 탭</string>
+    <string name="gesture_trainer_kind_triple_tap">세 번 탭</string>
+    <string name="gesture_trainer_kind_quadruple_tap">네 번 탭</string>
+    <string name="gesture_trainer_kind_tap_hold">길게 탭하기</string>
+    <string name="gesture_trainer_kind_double_tap_hold">두 번 탭한 후 길게 누르기</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">세 번 탭한 후 길게 누르기</string>
+    <string name="gesture_trainer_kind_swipe">스와이프</string>
+    <string name="gesture_trainer_kind_swipe_hold">스와이프 후 유지</string>
+    <string name="gesture_trainer_kind_two_part_swipe">왕복 및 연속 동작 스와이프</string>
+    <string name="gesture_trainer_kind_pinch">핀치</string>
+    <string name="gesture_trainer_kind_spread">펼치기</string>
+    <string name="gesture_trainer_kind_rotate">회전</string>
+    <string name="gesture_trainer_kind_scrub">문지르기</string>
 </resources>

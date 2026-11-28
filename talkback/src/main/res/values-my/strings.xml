@@ -2853,4 +2853,108 @@
     <string name="title_pref_cyrillic_text_recognition">စီရီလစ်စာ ဖော်ထုတ်ခြင်း</string>
     <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> အတွက် စာသားဖော်ထုတ်မော်ဒယ် မရှိပါ။ ပုံနှင့် စခရင် ရှင်းလင်းချက်များ၊ စီရီလစ်စာ ဖော်ထုတ်ခြင်း တွင် ဒေါင်းလုဒ်လုပ်ပါ။</string>
     <string name="cyrillic_text_model_error_http">ဒေါင်းလုဒ်ဆာဗာက တောင်းဆိုချက်ကို လက်မခံပါ။ နောက်မှ ထပ်စမ်းပါ။</string>
+    <string name="title_pref_announce_caller">ခေါ်ဆိုသူကို ကြေညာရန်</string>
+    <string name="announce_caller_once">တစ်ကြိမ်</string>
+    <string name="announce_caller_repeat">မြည်နေစဉ် ထပ်ခါပြောရန်</string>
+    <string name="title_pref_command_feedback_voice">ကွန်မန်း တုံ့ပြန်ချက်နှင့် စာသားတည်းဖြတ်ခြင်းအတွက် အသံ</string>
+    <string name="title_pref_command_feedback_over_speech">ကွန်မန်း တုံ့ပြန်ချက်ကို SandFly ၏ စကားပြောနှင့် တပြိုင်နက် ဖတ်ရန်</string>
+    <string name="title_pref_item_types_spoken">ပြောမည့် အရာ အမျိုးအစားများ</string>
+    <string name="item_type_link">လင့်ခ်</string>
+    <string name="item_type_tab">တဘ်</string>
+    <string name="item_type_other">အခြား အမျိုးအစားများ</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">လက် ၂ ချောင်း တို့၊ လက် ၁ ချောင်း ပွတ်ဆွဲ</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">စပေ့စ်ကီး</string>
+    <string name="keycombo_key_escape">Escape</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">စာမျက်နှာ အပေါ်</string>
+    <string name="keycombo_key_page_down">စာမျက်နှာ အောက်</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">ဖျက်ရန်ကီး</string>
+    <string name="keycombo_key_menu">မီနူး</string>
+    <string name="keycombo_key_search">ရှာရန်</string>
+    <string name="keycombo_key_grave">ဂရေ့ဗ် အက်ဆင့်</string>
+    <string name="keycombo_key_minus">အနုတ်</string>
+    <string name="keycombo_key_equals">ညီမျှခြင်း</string>
+    <string name="keycombo_key_left_bracket">ဘယ် ထောင့်ကွင်း</string>
+    <string name="keycombo_key_right_bracket">ညာ ထောင့်ကွင်း</string>
+    <string name="keycombo_key_backslash">နောက်ပြန် မျဉ်းစောင်း</string>
+    <string name="keycombo_key_semicolon">ဆီမီကိုလန်</string>
+    <string name="keycombo_key_apostrophe">အပိုစထရိုဖီ</string>
+    <string name="keycombo_key_comma">ကော်မာ</string>
+    <string name="keycombo_key_period">အစက်</string>
+    <string name="keycombo_key_slash">မျဉ်းစောင်း</string>
+    <string name="keycombo_key_plus">အပေါင်း</string>
+    <string name="keycombo_key_at">အက် သင်္ကေတ</string>
+    <string name="keycombo_key_star">ကြယ်</string>
+    <string name="keycombo_key_pound">ဟက်ရှ်</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">နံပါတ်ကွက် အပေါင်း</string>
+    <string name="keycombo_key_numpad_subtract">နံပါတ်ကွက် အနုတ်</string>
+    <string name="keycombo_key_numpad_multiply">နံပါတ်ကွက် အမြှောက်</string>
+    <string name="keycombo_key_numpad_divide">နံပါတ်ကွက် အစား</string>
+    <string name="keycombo_key_numpad_dot">နံပါတ်ကွက် အစက်</string>
+    <string name="keycombo_key_numpad_comma">နံပါတ်ကွက် ကော်မာ</string>
+    <string name="keycombo_key_numpad_equals">နံပါတ်ကွက် ညီမျှခြင်း</string>
+    <string name="keycombo_key_numpad_enter">နံပါတ်ကွက် Enter</string>
+    <string name="keycombo_key_volume_up">အသံချဲ့</string>
+    <string name="keycombo_key_volume_down">အသံချုံ့</string>
+    <string name="keycombo_key_volume_mute">အသံပိတ်</string>
+    <string name="keycombo_key_media_play_pause">ဖွင့်ရန် သို့မဟုတ် ခဏရပ်ရန်</string>
+    <string name="keycombo_key_media_next">နောက်တစ်ပုဒ်</string>
+    <string name="keycombo_key_media_previous">ယခင်တစ်ပုဒ်</string>
+    <string name="keycombo_key_media_stop">ရပ်ရန်</string>
+    <string name="keycombo_key_back">နောက်သို့</string>
+    <string name="keycombo_key_numpad">နံပါတ်ကွက် <xliff:g id="digit" example="5">%1$s</xliff:g></string>
+    <string name="title_pref_typing_swipes_through_keys">စာရိုက်နည်းတိုင်းတွင် ကီးတစ်ခုမှ တစ်ခုသို့ ပွတ်ဆွဲရန်</string>
+    <string name="shortcut_say_caller">ခေါ်ဆိုသူကို ပြောရန်</string>
+    <string name="say_caller_unknown">အဝင်ခေါ်ဆိုမှု</string>
+    <string name="shortcut_restart_phone">ဖုန်းကို ပြန်စရန်</string>
+    <string name="shortcut_power_off_phone">ဖုန်းကို ပိတ်ရန်</string>
+    <string name="restart_phone_confirm_title">ဖုန်းကို ပြန်စမလား။</string>
+    <string name="restart_phone_confirm_button">ပြန်စရန်</string>
+    <string name="power_off_phone_confirm_title">ဖုန်းကို ပိတ်မလား။</string>
+    <string name="power_off_phone_confirm_button">ပိတ်ရန်</string>
+    <string name="power_command_failed">မအောင်မြင်ပါ၊ ပါဝါမီနူး ဖွင့်ထားသည်</string>
+    <string name="clipboard_history_search_hint">ကလစ်ဘုတ် မှတ်တမ်းကို ရှာရန်</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="other">စာသား <xliff:g id="count" example="12">%d</xliff:g> ခု</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">အစွန်းမှ အတွင်းသို့ ဆွဲရန်</string>
+    <string name="title_pref_category_sliders">ရွှေ့တုံးများ</string>
+    <string name="title_pref_slider_step">ရွှေ့တုံး အဆင့်</string>
+    <string name="value_slider_step_app">အက်ပ်က သတ်မှတ်သည့်အတိုင်း</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">အပိုင်းအခြား၏ အငယ်ဆုံး အဆင့်</string>
+    <string name="title_pref_slider_skip_unchanged">တန်ဖိုး မပြောင်းသော အဆင့်များကို ကျော်ရန်</string>
+    <string name="title_slider_enter_value">တန်ဖိုး ထည့်ရန်</string>
+    <string name="slider_value_range"><xliff:g id="min" example="0">%1$s</xliff:g> မှ <xliff:g id="max" example="100">%2$s</xliff:g> အထိ</string>
+    <string name="voice_phrases_not_understood">နားမလည်သော စကားစုများ</string>
+    <string name="title_pref_voice_phrases_not_understood">နားမလည်သော စကားစုများကို သိမ်းရန်</string>
+    <string name="voice_phrases_not_understood_listed">“နားမလည်သော စကားစုများ” သို့ ထည့်ပြီးပါပြီ။</string>
 </resources>

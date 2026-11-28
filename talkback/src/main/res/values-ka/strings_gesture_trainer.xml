@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">მეორე გადაფურცვლა <xliff:g id="ms">%1$d</xliff:g> მწ</string>
     <string name="gesture_trainer_measure_whole_gesture">მთელი ჟესტი <xliff:g id="ms">%1$d</xliff:g> მწ</string>
     <string name="gesture_trainer_measure_stroke_gap">მათ შორის აწეული <xliff:g id="ms">%1$d</xliff:g> მწ</string>
+    <string name="gesture_trainer_how_menu_horizontal">დაადეთ ერთი თითი <xliff:g id="edge">%1$s</xliff:g> და გაასრიალეთ შიგნით, ეკრანის შუისკენ, სულ მცირე <xliff:g id="distance">%2$d</xliff:g> მმ, რომ მენიუ გაიხსნას. მასში <xliff:g id="count">%3$d</xliff:g> ელემენტია ეკრანზე განივად, კიდიდან დაწყებული, თითოეული დაახლოებით <xliff:g id="size">%6$s</xliff:g> სმ სიგანის. ელემენტი <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, კიდიდან <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> სმ-ზეა. თითი ერთსა და იმავე სიმაღლეზე შეინარჩუნეთ და აწიეთ, როცა ელემენტი წარმოითქმება.</string>
+    <string name="gesture_trainer_finding_menu_left_line">თითი იმ ადგილის ზემოთ ან ქვემოთ <xliff:g id="mm">%1$.0f</xliff:g> მმ-ზე აიწია, სადაც მენიუ გაიხსნა, მენიუ კი <xliff:g id="limit">%2$.0f</xliff:g> მმ-ის მიღმა იხურება.</string>
+    <string name="gesture_trainer_tip_menu_left_line">შიგნით გასრიალებისას თითი ერთსა და იმავე სიმაღლეზე შეინარჩუნეთ და იქვე აწიეთ.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">თითოეულ ელემენტს ეკრანზე განივად, კიდიდან, ფიქსირებული ადგილი აქვს და აირჩევა ის ელემენტი, სადაც თითი აიწევა. აწიეთ, როცა ელემენტი წარმოითქმება.</string>
+    <string name="gesture_trainer_left_out_in_menu">შიგნით გასრიალებები <xliff:g id="edge">%1$s</xliff:g> მხრიდან გამოტოვებულია: მისი კიდის მენიუ ეკრანზე განივადაა, ამიტომ მისგან შიგნით გასრიალება ჟესტის გაშვების ნაცვლად მენიუს ხსნის.</string>
+    <string name="gesture_trainer_statistics">სტატისტიკა</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. ცდები: <xliff:g id="tries">%2$d</xliff:g>, ამოცნობილი: <xliff:g id="recognized">%3$d</xliff:g>. უმოკლესი: <xliff:g id="shortest">%4$d</xliff:g> მწ, მედიანა: <xliff:g id="median">%5$d</xliff:g> მწ, უგრძესი: <xliff:g id="longest">%6$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_statistics_touches">თითოეული შეხება: უმოკლესი <xliff:g id="shortest">%1$d</xliff:g> მწ, მედიანა <xliff:g id="median">%2$d</xliff:g> მწ, უგრძესი <xliff:g id="longest">%3$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_kind_tap">შეხებები</string>
+    <string name="gesture_trainer_kind_double_tap">ორმაგი შეხებები</string>
+    <string name="gesture_trainer_kind_triple_tap">სამმაგი შეხებები</string>
+    <string name="gesture_trainer_kind_quadruple_tap">ოთხმაგი შეხებები</string>
+    <string name="gesture_trainer_kind_tap_hold">შეხება და დაყოვნება</string>
+    <string name="gesture_trainer_kind_double_tap_hold">ორმაგი შეხება და დაყოვნება</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">სამმაგი შეხება და დაყოვნება</string>
+    <string name="gesture_trainer_kind_swipe">გადაფურცვლები</string>
+    <string name="gesture_trainer_kind_swipe_hold">გადაფურცვლა და დაყოვნება</string>
+    <string name="gesture_trainer_kind_two_part_swipe">წინ-უკან და კუთხოვანი გადაფურცვლები</string>
+    <string name="gesture_trainer_kind_pinch">შეკუმშვები</string>
+    <string name="gesture_trainer_kind_spread">გაშლები</string>
+    <string name="gesture_trainer_kind_rotate">დატრიალებები</string>
+    <string name="gesture_trainer_kind_scrub">წინ-უკან გასმები</string>
 </resources>

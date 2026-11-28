@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">a doua glisare <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">întregul gest <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">ridicat <xliff:g id="ms">%1$d</xliff:g> ms între ele</string>
+    <string name="gesture_trainer_how_menu_horizontal">Pune un deget <xliff:g id="edge">%1$s</xliff:g> și glisează-l spre mijlocul ecranului cel puțin <xliff:g id="distance">%2$d</xliff:g> mm pentru a deschide meniul. Are <xliff:g id="count">%3$d</xliff:g> elemente de-a latul ecranului, de la margine, fiecare de aproximativ <xliff:g id="size">%6$s</xliff:g> cm lățime. Elementul <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, se află între <xliff:g id="from">%7$s</xliff:g> și <xliff:g id="to">%8$s</xliff:g> cm de margine. Ține degetul la aceeași înălțime și ridică-l când elementul este rostit.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Degetul s-a ridicat la <xliff:g id="mm">%1$.0f</xliff:g> mm deasupra sau dedesubtul locului unde s-a deschis meniul, iar meniul se închide dincolo de <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Ține degetul la aceeași înălțime în timp ce glisezi spre interior și ridică-l acolo.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Fiecare element are un loc fix de-a latul ecranului, de la margine, iar elementul unde se ridică degetul este ales. Ridică atunci când elementul este rostit.</string>
+    <string name="gesture_trainer_left_out_in_menu">Glisările spre interior din direcția <xliff:g id="edge">%1$s</xliff:g> sunt omise: meniul acestei margini se întinde de-a latul ecranului, așa că o glisare spre interior de la ea deschide meniul în loc să ruleze un gest.</string>
+    <string name="gesture_trainer_statistics">Statistici</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Încercări: <xliff:g id="tries">%2$d</xliff:g>, recunoscute: <xliff:g id="recognized">%3$d</xliff:g>. Cea mai scurtă: <xliff:g id="shortest">%4$d</xliff:g> ms, mediana: <xliff:g id="median">%5$d</xliff:g> ms, cea mai lungă: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Fiecare atingere: cea mai scurtă <xliff:g id="shortest">%1$d</xliff:g> ms, mediana <xliff:g id="median">%2$d</xliff:g> ms, cea mai lungă <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Atingeri</string>
+    <string name="gesture_trainer_kind_double_tap">Atingeri duble</string>
+    <string name="gesture_trainer_kind_triple_tap">Atingeri triple</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Atingeri cvadruple</string>
+    <string name="gesture_trainer_kind_tap_hold">Atingere și menținere</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Atingere dublă și menținere</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Atingere triplă și menținere</string>
+    <string name="gesture_trainer_kind_swipe">Glisări</string>
+    <string name="gesture_trainer_kind_swipe_hold">Glisare și menținere</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Glisări înainte și înapoi și în unghi</string>
+    <string name="gesture_trainer_kind_pinch">Apropieri</string>
+    <string name="gesture_trainer_kind_spread">Depărtări</string>
+    <string name="gesture_trainer_kind_rotate">Rotiri</string>
+    <string name="gesture_trainer_kind_scrub">Frecări</string>
 </resources>

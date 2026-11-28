@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">การปัดครั้งที่สอง <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">ทั้งท่าทางสัมผัส <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">ยกนิ้วระหว่างกัน <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_how_menu_horizontal">วางนิ้วเดียว<xliff:g id="edge">%1$s</xliff:g>แล้วเลื่อนเข้าไปทางกลางหน้าจออย่างน้อย <xliff:g id="distance">%2$d</xliff:g> มม เพื่อเปิดเมนู เมนูมี <xliff:g id="count">%3$d</xliff:g> รายการ เรียงขวางหน้าจอจากขอบ แต่ละรายการกว้างประมาณ <xliff:g id="item">%5$s</xliff:g> ซม รายการที่ <xliff:g id="size">%6$s</xliff:g> <xliff:g id="number">%4$d</xliff:g> อยู่ห่างจากขอบ <xliff:g id="from">%7$s</xliff:g> ถึง <xliff:g id="to">%8$s</xliff:g> ซม ให้นิ้วอยู่ที่ความสูงเดิม และยกนิ้วเมื่อได้ยินชื่อรายการ</string>
+    <string name="gesture_trainer_finding_menu_left_line">นิ้วยกขึ้นเหนือหรือใต้ความสูงที่เมนูเปิด <xliff:g id="mm">%1$.0f</xliff:g> มม และเมนูจะปิดเมื่อห่างเกิน <xliff:g id="limit">%2$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_tip_menu_left_line">ให้นิ้วอยู่ที่ความสูงเดิมขณะเลื่อนเข้า และยกนิ้วที่ตรงนั้น</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">แต่ละรายการมีตำแหน่งคงที่ขวางหน้าจอจากขอบ และรายการที่ยกนิ้วจะถูกเลือก ยกนิ้วเมื่อได้ยินชื่อรายการ</string>
+    <string name="gesture_trainer_left_out_in_menu">ไม่รวมการเลื่อนเข้าจาก<xliff:g id="edge">%1$s</xliff:g>: เมนูขอบของขอบนี้เรียงขวางหน้าจอ การเลื่อนเข้าจากขอบนี้จึงเปิดเมนูแทนการเรียกใช้ท่าทางสัมผัส</string>
+    <string name="gesture_trainer_statistics">สถิติ</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g> จำนวนครั้งที่ลอง: <xliff:g id="tries">%2$d</xliff:g> จดจำได้: <xliff:g id="recognized">%3$d</xliff:g> สั้นที่สุด: <xliff:g id="shortest">%4$d</xliff:g> มิลลิวินาที มัธยฐาน: <xliff:g id="median">%5$d</xliff:g> มิลลิวินาที นานที่สุด: <xliff:g id="longest">%6$d</xliff:g> มิลลิวินาที</string>
+    <string name="gesture_trainer_statistics_touches">การสัมผัสแต่ละครั้ง: สั้นที่สุด <xliff:g id="shortest">%1$d</xliff:g> มิลลิวินาที มัธยฐาน <xliff:g id="median">%2$d</xliff:g> มิลลิวินาที นานที่สุด <xliff:g id="longest">%3$d</xliff:g> มิลลิวินาที</string>
+    <string name="gesture_trainer_kind_tap">การแตะ</string>
+    <string name="gesture_trainer_kind_double_tap">การแตะสองครั้ง</string>
+    <string name="gesture_trainer_kind_triple_tap">การแตะสามครั้ง</string>
+    <string name="gesture_trainer_kind_quadruple_tap">การแตะ 4 ครั้ง</string>
+    <string name="gesture_trainer_kind_tap_hold">แตะค้างไว้</string>
+    <string name="gesture_trainer_kind_double_tap_hold">แตะสองครั้งแล้วค้างไว้</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">แตะสามครั้งแล้วค้างไว้</string>
+    <string name="gesture_trainer_kind_swipe">การปัด</string>
+    <string name="gesture_trainer_kind_swipe_hold">ปัดแล้วค้างไว้</string>
+    <string name="gesture_trainer_kind_two_part_swipe">การปัดกลับไปกลับมาและการปัดทำมุม</string>
+    <string name="gesture_trainer_kind_pinch">การบีบ</string>
+    <string name="gesture_trainer_kind_spread">การกาง</string>
+    <string name="gesture_trainer_kind_rotate">การหมุน</string>
+    <string name="gesture_trainer_kind_scrub">การขัด</string>
 </resources>

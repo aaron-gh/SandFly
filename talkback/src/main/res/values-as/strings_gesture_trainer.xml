@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">দ্বিতীয় ছোৱাইপ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">সম্পূৰ্ণ নিৰ্দেশ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">সেইবোৰৰ মাজত <xliff:g id="ms">%1$d</xliff:g> ms উঠাই ৰখা হ’ল</string>
+    <string name="gesture_trainer_how_menu_horizontal">মেনু খুলিবলৈ এটা আঙুলি <xliff:g id="edge">%1$s</xliff:g> ৰাখক আৰু অতি কমেও <xliff:g id="distance">%2$d</xliff:g> মিমি স্ক্ৰীণৰ মাজভাগলৈ ভিতৰলৈ চলাওক। ইয়াত কাষৰ পৰা স্ক্ৰীণৰ বহলি ফালে <xliff:g id="count">%3$d</xliff:g>টা বস্তু আছে, প্ৰতিটো প্ৰায় <xliff:g id="size">%6$s</xliff:g> ছেমি বহল। বস্তু <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, কাষৰ পৰা <xliff:g id="from">%7$s</xliff:g>ৰ পৰা <xliff:g id="to">%8$s</xliff:g> ছেমি দূৰত আছে। আঙুলিটো একে উচ্চতাত ৰাখক, আৰু বস্তুটো কোৱাৰ সময়ত উঠাওক।</string>
+    <string name="gesture_trainer_finding_menu_left_line">মেনু খোলা উচ্চতাৰ পৰা আঙুলিটো <xliff:g id="mm">%1$.0f</xliff:g> মিমি ওপৰত বা তলত উঠিল, আৰু <xliff:g id="limit">%2$.0f</xliff:g> মিমিৰ বাহিৰত মেনু বন্ধ হয়।</string>
+    <string name="gesture_trainer_tip_menu_left_line">ভিতৰলৈ চলাওঁতে আঙুলিটো একে উচ্চতাত ৰাখক, আৰু তাতেই উঠাওক।</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">কাষৰ পৰা স্ক্ৰীণৰ বহলি ফালে প্ৰতিটো বস্তুৰ এটা নিৰ্দিষ্ট ঠাই আছে, আৰু আঙুলি উঠোৱা ঠাইৰ বস্তুটো বাছনি কৰা হয়। বস্তুটো কোৱাৰ সময়ত উঠাওক।</string>
+    <string name="gesture_trainer_left_out_in_menu">কাষৰ পৰা ভিতৰলৈ চলোৱা নিৰ্দেশ বাদ দিয়া হৈছে: <xliff:g id="edge">%1$s</xliff:g> থকা মেনু স্ক্ৰীণৰ বহলি ফালে যায়, সেয়ে সেই কাষৰ পৰা ভিতৰলৈ চলালে নিৰ্দেশ চলোৱাৰ সলনি মেনু খোল খায়।</string>
+    <string name="gesture_trainer_statistics">পৰিসংখ্যা</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>। প্ৰচেষ্টা: <xliff:g id="tries">%2$d</xliff:g>, চিনাক্ত হোৱা: <xliff:g id="recognized">%3$d</xliff:g>। আটাইতকৈ কম: <xliff:g id="shortest">%4$d</xliff:g> ms, মধ্যমা: <xliff:g id="median">%5$d</xliff:g> ms, আটাইতকৈ বেছি: <xliff:g id="longest">%6$d</xliff:g> ms।</string>
+    <string name="gesture_trainer_statistics_touches">প্ৰতিটো স্পৰ্শ: আটাইতকৈ কম <xliff:g id="shortest">%1$d</xliff:g> ms, মধ্যমা <xliff:g id="median">%2$d</xliff:g> ms, আটাইতকৈ বেছি <xliff:g id="longest">%3$d</xliff:g> ms।</string>
+    <string name="gesture_trainer_kind_tap">টিপা</string>
+    <string name="gesture_trainer_kind_double_tap">দুবাৰ টিপা</string>
+    <string name="gesture_trainer_kind_triple_tap">তিনিবাৰ টিপা</string>
+    <string name="gesture_trainer_kind_quadruple_tap">চাৰিবাৰ টিপা</string>
+    <string name="gesture_trainer_kind_tap_hold">টিপি ধৰি ৰখা</string>
+    <string name="gesture_trainer_kind_double_tap_hold">দুবাৰ টিপি ধৰি ৰখা</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">তিনিবাৰ টিপি ধৰি ৰখা</string>
+    <string name="gesture_trainer_kind_swipe">ছোৱাইপ</string>
+    <string name="gesture_trainer_kind_swipe_hold">ছোৱাইপ কৰি ধৰি ৰখা</string>
+    <string name="gesture_trainer_kind_two_part_swipe">আগপিছ আৰু কোণৰ ছোৱাইপ</string>
+    <string name="gesture_trainer_kind_pinch">পিঞ্চ</string>
+    <string name="gesture_trainer_kind_spread">মেলি দিয়া</string>
+    <string name="gesture_trainer_kind_rotate">ঘূৰোৱা</string>
+    <string name="gesture_trainer_kind_scrub">ঘঁহা</string>
 </resources>

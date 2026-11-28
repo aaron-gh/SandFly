@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">ukuswayipha kwesibili ama-ms angu-<xliff:g id="ms">%1$d</xliff:g></string>
     <string name="gesture_trainer_measure_whole_gesture">ukunyakaza konke ama-ms angu-<xliff:g id="ms">%1$d</xliff:g></string>
     <string name="gesture_trainer_measure_stroke_gap">kuphakanyisiwe ama-ms angu-<xliff:g id="ms">%1$d</xliff:g> phakathi kwakho</string>
+    <string name="gesture_trainer_how_menu_horizontal">Beka umunwe owodwa <xliff:g id="edge">%1$s</xliff:g> bese uwushelelisela phakathi ubheke maphakathi nesikrini okungenani ama-mm angu-<xliff:g id="distance">%2$d</xliff:g> ukuze uvule imenyu. Inezinto ezingu-<xliff:g id="count">%3$d</xliff:g> ezinqamula isikrini, kusuka onqenqemeni, ngayinye ibanzi cishe ngama-cm angu-<xliff:g id="size">%6$s</xliff:g>. Into <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, ikude ngama-cm angu-<xliff:g id="from">%7$s</xliff:g> kuya ku-<xliff:g id="to">%8$s</xliff:g> ukusuka onqenqemeni. Gcina umunwe ekuphakameni okufanayo, bese uwuphakamisa lapho into ishiwo.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Umunwe uphakanyiswe ama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g> ngaphezulu noma ngaphansi kwalapho imenyu ivuleke khona, futhi imenyu iyavaleka ngaphezu kwama-mm angu-<xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Gcina umunwe ekuphakameni okufanayo ngesikhathi ushelela ungena, bese uwuphakamisa lapho.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Into ngayinye inendawo engaguquki enqamula isikrini, kusuka onqenqemeni, futhi kukhethwa into lapho umunwe uphakanyiswa khona. Phakamisa lapho into ishiwo.</string>
+    <string name="gesture_trainer_left_out_in_menu">Ukushelela ungena usuka ku-<xliff:g id="edge">%1$s</xliff:g> kushiyiwe: imenyu yalo nqenqema inqamula isikrini, ngakho ukushelela ungena usuka kulo kuvula imenyu esikhundleni sokuqalisa ukunyakaza.</string>
+    <string name="gesture_trainer_statistics">Izibalo</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Imizamo: <xliff:g id="tries">%2$d</xliff:g>, okubonakele: <xliff:g id="recognized">%3$d</xliff:g>. Okufushane kakhulu: <xliff:g id="shortest">%4$d</xliff:g> ms, okuphakathi: <xliff:g id="median">%5$d</xliff:g> ms, okude kakhulu: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Ukuthinta ngakunye: okufushane kakhulu <xliff:g id="shortest">%1$d</xliff:g> ms, okuphakathi <xliff:g id="median">%2$d</xliff:g> ms, okude kakhulu <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Ukuthepha</string>
+    <string name="gesture_trainer_kind_double_tap">Ukuthepha kabili</string>
+    <string name="gesture_trainer_kind_triple_tap">Ukuthepha kathathu</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Ukuthepha kane</string>
+    <string name="gesture_trainer_kind_tap_hold">Thepha futhi ubambe</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Thepha kabili futhi ubambe</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Thepha kathathu futhi ubambe</string>
+    <string name="gesture_trainer_kind_swipe">Ukuswayipha</string>
+    <string name="gesture_trainer_kind_swipe_hold">Swayipha futhi ubambe</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Ukuswayipha emuva naphambili nokwe-engeli</string>
+    <string name="gesture_trainer_kind_pinch">Ukuncinza</string>
+    <string name="gesture_trainer_kind_spread">Ukunweba</string>
+    <string name="gesture_trainer_kind_rotate">Ukuzungezisa</string>
+    <string name="gesture_trainer_kind_scrub">Ukukhuhla</string>
 </resources>

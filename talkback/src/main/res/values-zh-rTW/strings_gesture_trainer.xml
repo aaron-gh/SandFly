@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">第二次滑動 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
     <string name="gesture_trainer_measure_whole_gesture">整個手勢 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
     <string name="gesture_trainer_measure_stroke_gap">中間抬起 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
+    <string name="gesture_trainer_how_menu_horizontal">用一根手指<xliff:g id="edge">%1$s</xliff:g>朝螢幕中央向內滑動至少 <xliff:g id="distance">%2$d</xliff:g> 公釐以開啟選單。選單從邊緣開始橫跨螢幕有 <xliff:g id="count">%3$d</xliff:g> 個項目，每個寬約 <xliff:g id="size">%6$s</xliff:g> 公分。第 <xliff:g id="number">%4$d</xliff:g> 個項目「<xliff:g id="item">%5$s</xliff:g>」位於距離邊緣 <xliff:g id="from">%7$s</xliff:g> 到 <xliff:g id="to">%8$s</xliff:g> 公分處。讓手指保持在相同高度，讀出該項目時放開手指。</string>
+    <string name="gesture_trainer_finding_menu_left_line">手指在選單開啟位置上方或下方 <xliff:g id="mm">%1$.0f</xliff:g> 公釐處放開，超過 <xliff:g id="limit">%2$.0f</xliff:g> 公釐選單就會關閉。</string>
+    <string name="gesture_trainer_tip_menu_left_line">向內滑動時讓手指保持在相同高度，並在那裡放開。</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">每個項目從邊緣開始橫跨螢幕都有固定位置，手指放開處的項目會被選擇。讀出該項目時放開手指。</string>
+    <string name="gesture_trainer_left_out_in_menu">已略過從<xliff:g id="edge">%1$s</xliff:g>向內滑動：該邊緣的選單橫跨螢幕，因此從它向內滑動會開啟選單，而不會執行手勢。</string>
+    <string name="gesture_trainer_statistics">統計資料</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>。嘗試次數：<xliff:g id="tries">%2$d</xliff:g>，已辨識：<xliff:g id="recognized">%3$d</xliff:g>。最短：<xliff:g id="shortest">%4$d</xliff:g> 毫秒，中位數：<xliff:g id="median">%5$d</xliff:g> 毫秒，最長：<xliff:g id="longest">%6$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_statistics_touches">每次觸控：最短 <xliff:g id="shortest">%1$d</xliff:g> 毫秒，中位數 <xliff:g id="median">%2$d</xliff:g> 毫秒，最長 <xliff:g id="longest">%3$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_kind_tap">輕觸</string>
+    <string name="gesture_trainer_kind_double_tap">輕觸兩下</string>
+    <string name="gesture_trainer_kind_triple_tap">輕觸三下</string>
+    <string name="gesture_trainer_kind_quadruple_tap">輕觸四下</string>
+    <string name="gesture_trainer_kind_tap_hold">按住</string>
+    <string name="gesture_trainer_kind_double_tap_hold">輕觸兩下並按住</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">輕觸三下並按住</string>
+    <string name="gesture_trainer_kind_swipe">滑動</string>
+    <string name="gesture_trainer_kind_swipe_hold">滑動並按住</string>
+    <string name="gesture_trainer_kind_two_part_swipe">往返手勢和角度手勢</string>
+    <string name="gesture_trainer_kind_pinch">捏合</string>
+    <string name="gesture_trainer_kind_spread">展開</string>
+    <string name="gesture_trainer_kind_rotate">旋轉</string>
+    <string name="gesture_trainer_kind_scrub">來回滑動</string>
 </resources>

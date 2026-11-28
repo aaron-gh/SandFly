@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">segundo deslize <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">gesto inteiro <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">levantado por <xliff:g id="ms">%1$d</xliff:g> ms entre eles</string>
+    <string name="gesture_trainer_how_menu_horizontal">Coloque um dedo <xliff:g id="edge">%1$s</xliff:g> e deslize-o em direção ao meio da tela por pelo menos <xliff:g id="distance">%2$d</xliff:g> mm para abrir o menu. Ele tem <xliff:g id="count">%3$d</xliff:g> itens ao longo da largura da tela, a partir da borda, cada um com cerca de <xliff:g id="size">%6$s</xliff:g> cm de largura. O item <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, fica de <xliff:g id="from">%7$s</xliff:g> a <xliff:g id="to">%8$s</xliff:g> cm da borda. Mantenha o dedo na mesma altura e levante-o quando o item for falado.</string>
+    <string name="gesture_trainer_finding_menu_left_line">O dedo foi levantado <xliff:g id="mm">%1$.0f</xliff:g> mm acima ou abaixo de onde o menu abriu, e o menu fecha além de <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Mantenha o dedo na mesma altura enquanto desliza para dentro e levante-o ali.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Cada item tem um lugar fixo ao longo da largura da tela, a partir da borda, e o item onde o dedo é levantado é escolhido. Levante quando o item for falado.</string>
+    <string name="gesture_trainer_left_out_in_menu">Os deslizes para dentro a partir <xliff:g id="edge">%1$s</xliff:g> foram omitidos: o menu dessa borda atravessa a tela, então um deslize para dentro a partir dela abre o menu em vez de executar um gesto.</string>
+    <string name="gesture_trainer_statistics">Estatísticas</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Tentativas: <xliff:g id="tries">%2$d</xliff:g>, reconhecidas: <xliff:g id="recognized">%3$d</xliff:g>. Mais curta: <xliff:g id="shortest">%4$d</xliff:g> ms, mediana: <xliff:g id="median">%5$d</xliff:g> ms, mais longa: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Cada toque: mais curto <xliff:g id="shortest">%1$d</xliff:g> ms, mediana <xliff:g id="median">%2$d</xliff:g> ms, mais longo <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Toques</string>
+    <string name="gesture_trainer_kind_double_tap">Toques duplos</string>
+    <string name="gesture_trainer_kind_triple_tap">Toques triplos</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Toques quádruplos</string>
+    <string name="gesture_trainer_kind_tap_hold">Tocar e pressionar</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Tocar duas vezes e pressionar</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Tocar três vezes e pressionar</string>
+    <string name="gesture_trainer_kind_swipe">Deslizes</string>
+    <string name="gesture_trainer_kind_swipe_hold">Deslizar e segurar</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Deslizes de vai-e-vem e em ângulo</string>
+    <string name="gesture_trainer_kind_pinch">Gestos de pinça</string>
+    <string name="gesture_trainer_kind_spread">Afastar os dedos</string>
+    <string name="gesture_trainer_kind_rotate">Rotações</string>
+    <string name="gesture_trainer_kind_scrub">Esfregar</string>
 </resources>

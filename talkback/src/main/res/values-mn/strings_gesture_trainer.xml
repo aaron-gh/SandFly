@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">хоёр дахь шудралт <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">бүх зангаа <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">хооронд нь <xliff:g id="ms">%1$d</xliff:g> ms өргөсөн</string>
+    <string name="gesture_trainer_how_menu_horizontal">Цэсийг нээхийн тулд нэг хуруугаа <xliff:g id="edge">%1$s</xliff:g> тавиад, дэлгэцийн дунд руу дор хаяж <xliff:g id="distance">%2$d</xliff:g> мм дотогш гулсуулна уу. Цэс ирмэгээс эхлэн дэлгэцийн хөндлөн <xliff:g id="count">%3$d</xliff:g> зүйлтэй, тус бүр ойролцоогоор <xliff:g id="size">%6$s</xliff:g> см өргөн. <xliff:g id="number">%4$d</xliff:g>-р зүйл, <xliff:g id="item">%5$s</xliff:g>, ирмэгээс <xliff:g id="from">%7$s</xliff:g>-<xliff:g id="to">%8$s</xliff:g> см зайд байна. Хуруугаа ижил өндөрт байлгаж, зүйлийг хэлэх үед өргөнө үү.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Хуруу цэс нээгдсэн өндрөөс <xliff:g id="mm">%1$.0f</xliff:g> мм дээш эсвэл доош өргөгдсөн бөгөөд <xliff:g id="limit">%2$.0f</xliff:g> мм-ээс цааш цэс хаагдана.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Дотогш гулсуулахдаа хуруугаа ижил өндөрт байлгаж, тэнд нь өргөнө үү.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Зүйл бүр ирмэгээс эхлэн дэлгэцийн хөндлөн тогтсон байрлалтай бөгөөд хуруу өргөгдсөн газрын зүйл сонгогдоно. Зүйлийг хэлэх үед өргөнө үү.</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g> талаас дотогш шудралтыг оруулаагүй: энэ ирмэгийн цэс дэлгэцийн хөндлөн байрладаг тул дотогш шудрахад зангаа ажиллахын оронд цэс нээгдэнэ.</string>
+    <string name="gesture_trainer_statistics">Статистик</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Оролдлого: <xliff:g id="tries">%2$d</xliff:g>, танигдсан: <xliff:g id="recognized">%3$d</xliff:g>. Хамгийн богино: <xliff:g id="shortest">%4$d</xliff:g> мс, медиан: <xliff:g id="median">%5$d</xliff:g> мс, хамгийн урт: <xliff:g id="longest">%6$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_statistics_touches">Хүрэлт бүр: хамгийн богино <xliff:g id="shortest">%1$d</xliff:g> мс, медиан <xliff:g id="median">%2$d</xliff:g> мс, хамгийн урт <xliff:g id="longest">%3$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_kind_tap">Товших</string>
+    <string name="gesture_trainer_kind_double_tap">Хоёр товших</string>
+    <string name="gesture_trainer_kind_triple_tap">Гурав товших</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Дөрөв товших</string>
+    <string name="gesture_trainer_kind_tap_hold">Товшоод удаан дарах</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Хоёр товшоод удаан дарах</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Гурав товшоод удаан дарах</string>
+    <string name="gesture_trainer_kind_swipe">Шудралт</string>
+    <string name="gesture_trainer_kind_swipe_hold">Шудраад барих</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Урагш хойш болон өнцгийн шудралт</string>
+    <string name="gesture_trainer_kind_pinch">Чимхэх</string>
+    <string name="gesture_trainer_kind_spread">Тэлэх</string>
+    <string name="gesture_trainer_kind_rotate">Эргүүлэх</string>
+    <string name="gesture_trainer_kind_scrub">Нааш цааш хурдан шудрах</string>
 </resources>

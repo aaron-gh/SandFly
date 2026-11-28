@@ -2860,4 +2860,109 @@
     <string name="title_pref_cyrillic_text_recognition">சிரிலிக் உரை அறிதல்</string>
     <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> மொழிக்கு உரை அறிதல் மாடல் இல்லை. படம் மற்றும் திரை விளக்கங்கள், சிரிலிக் உரை அறிதல் என்பதில் பதிவிறக்கவும்.</string>
     <string name="cyrillic_text_model_error_http">பதிவிறக்க சேவையகம் கோரிக்கையை ஏற்கவில்லை. பிறகு மீண்டும் முயலவும்.</string>
+    <string name="title_pref_announce_caller">அழைப்பவரை அறிவித்தல்</string>
+    <string name="announce_caller_once">ஒருமுறை</string>
+    <string name="announce_caller_repeat">ரிங் ஆகும்போது மீண்டும் சொல்</string>
+    <string name="title_pref_command_feedback_voice">கட்டளைக் கருத்து மற்றும் உரைத் திருத்தத்திற்கான குரல்</string>
+    <string name="title_pref_command_feedback_over_speech">SandFly பேச்சின் மேல் கட்டளைக் கருத்தைப் படி</string>
+    <string name="title_pref_item_types_spoken">படிக்க வேண்டிய உருப்படி வகைகள்</string>
+    <string name="item_type_link">இணைப்பு</string>
+    <string name="item_type_tab">தாவல்</string>
+    <string name="item_type_other">பிற வகைகள்</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">2 விரல் தட்டுதல், 1 விரல் ஸ்வைப்</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">Space</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">மெனு</string>
+    <string name="keycombo_key_search">தேடல்</string>
+    <string name="keycombo_key_grave">கிரேவ் உச்சரிப்புக்குறி</string>
+    <string name="keycombo_key_minus">கழித்தல்</string>
+    <string name="keycombo_key_equals">சமக்குறி</string>
+    <string name="keycombo_key_left_bracket">இடது சதுர அடைப்புக்குறி</string>
+    <string name="keycombo_key_right_bracket">வலது சதுர அடைப்புக்குறி</string>
+    <string name="keycombo_key_backslash">பின்சாய்வு</string>
+    <string name="keycombo_key_semicolon">அரைப்புள்ளி</string>
+    <string name="keycombo_key_apostrophe">அபாஸ்ட்ரஃபி</string>
+    <string name="keycombo_key_comma">காற்புள்ளி</string>
+    <string name="keycombo_key_period">முற்றுப்புள்ளி</string>
+    <string name="keycombo_key_slash">சாய்வு</string>
+    <string name="keycombo_key_plus">கூட்டல்</string>
+    <string name="keycombo_key_at">அட் குறி</string>
+    <string name="keycombo_key_star">நட்சத்திரக்குறி</string>
+    <string name="keycombo_key_pound">ஹேஷ்</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">Numpad கூட்டல்</string>
+    <string name="keycombo_key_numpad_subtract">Numpad கழித்தல்</string>
+    <string name="keycombo_key_numpad_multiply">Numpad பெருக்கல்</string>
+    <string name="keycombo_key_numpad_divide">Numpad வகுத்தல்</string>
+    <string name="keycombo_key_numpad_dot">Numpad முற்றுப்புள்ளி</string>
+    <string name="keycombo_key_numpad_comma">Numpad காற்புள்ளி</string>
+    <string name="keycombo_key_numpad_equals">Numpad சமக்குறி</string>
+    <string name="keycombo_key_numpad_enter">Numpad Enter</string>
+    <string name="keycombo_key_volume_up">ஒலியளவை அதிகரி</string>
+    <string name="keycombo_key_volume_down">ஒலியளவைக் குறை</string>
+    <string name="keycombo_key_volume_mute">ஒலியை முடக்கு</string>
+    <string name="keycombo_key_media_play_pause">இயக்கு அல்லது இடைநிறுத்து</string>
+    <string name="keycombo_key_media_next">அடுத்த டிராக்</string>
+    <string name="keycombo_key_media_previous">முந்தைய டிராக்</string>
+    <string name="keycombo_key_media_stop">நிறுத்து</string>
+    <string name="keycombo_key_back">முந்தையது</string>
+    <string name="keycombo_key_numpad">Numpad <xliff:g id="digit" example="5">%1$s</xliff:g></string>
+    <string name="title_pref_typing_swipes_through_keys">ஒவ்வொரு தட்டச்சு முறையிலும் விசையிலிருந்து விசைக்கு ஸ்வைப் செய்தல்</string>
+    <string name="shortcut_say_caller">அழைப்பவரைச் சொல்</string>
+    <string name="say_caller_unknown">உள்வரும் அழைப்பு</string>
+    <string name="shortcut_restart_phone">மொபைலை மீண்டும் தொடங்கு</string>
+    <string name="shortcut_power_off_phone">மொபைலை அணை</string>
+    <string name="restart_phone_confirm_title">மொபைலை மீண்டும் தொடங்கவா?</string>
+    <string name="restart_phone_confirm_button">மீண்டும் தொடங்கு</string>
+    <string name="power_off_phone_confirm_title">மொபைலை அணைக்கவா?</string>
+    <string name="power_off_phone_confirm_button">அணை</string>
+    <string name="power_command_failed">தோல்வியடைந்தது, பவர் மெனு திறக்கப்பட்டது</string>
+    <string name="clipboard_history_search_hint">கிளிப்போர்டு வரலாற்றில் தேடு</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> உரை</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> உரைகள்</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">விளிம்பிலிருந்து உள்ளே நகர்த்துதல்</string>
+    <string name="title_pref_category_sliders">ஸ்லைடர்கள்</string>
+    <string name="title_pref_slider_step">ஸ்லைடர் படி</string>
+    <string name="value_slider_step_app">ஆப்ஸ் அமைத்தபடி</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">வரம்பின் மிகச் சிறிய படி</string>
+    <string name="title_pref_slider_skip_unchanged">மதிப்பை மாற்றாத படிகளைத் தவிர்</string>
+    <string name="title_slider_enter_value">மதிப்பை உள்ளிடு</string>
+    <string name="slider_value_range"><xliff:g id="min" example="0">%1$s</xliff:g> முதல் <xliff:g id="max" example="100">%2$s</xliff:g> வரை</string>
+    <string name="voice_phrases_not_understood">புரியாத சொற்றொடர்கள்</string>
+    <string name="title_pref_voice_phrases_not_understood">புரியாத சொற்றொடர்களைச் சேமி</string>
+    <string name="voice_phrases_not_understood_listed">புரியாத சொற்றொடர்களில் சேர்க்கப்பட்டது.</string>
 </resources>

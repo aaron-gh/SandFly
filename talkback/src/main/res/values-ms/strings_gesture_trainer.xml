@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">leretan kedua <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">seluruh gerak isyarat <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">diangkat selama <xliff:g id="ms">%1$d</xliff:g> ms di antaranya</string>
+    <string name="gesture_trainer_how_menu_horizontal">Letakkan satu jari <xliff:g id="edge">%1$s</xliff:g> dan gelongsorkannya masuk ke arah tengah skrin sekurang-kurangnya <xliff:g id="distance">%2$d</xliff:g> mm untuk membuka menu. Menu ini mempunyai <xliff:g id="count">%3$d</xliff:g> item merentasi skrin, dari tepi, setiap satu kira-kira <xliff:g id="size">%6$s</xliff:g> sm lebar. Item <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, berada <xliff:g id="from">%7$s</xliff:g> hingga <xliff:g id="to">%8$s</xliff:g> sm dari tepi. Kekalkan jari pada ketinggian yang sama, dan angkat apabila item itu disebut.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Jari diangkat <xliff:g id="mm">%1$.0f</xliff:g> mm di atas atau di bawah tempat menu dibuka, dan menu ditutup melepasi <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Kekalkan jari pada ketinggian yang sama semasa menggelongsor masuk, dan angkat di situ.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Setiap item mempunyai tempat tetap merentasi skrin, dari tepi, dan item tempat jari diangkat akan dipilih. Angkat apabila item itu disebut.</string>
+    <string name="gesture_trainer_left_out_in_menu">Gelongsoran masuk dari <xliff:g id="edge">%1$s</xliff:g> dikecualikan: menu tepinya merentasi skrin, jadi gelongsoran masuk dari tepi itu membuka menu dan tidak menjalankan gerak isyarat.</string>
+    <string name="gesture_trainer_statistics">Statistik</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Cubaan: <xliff:g id="tries">%2$d</xliff:g>, dikenali: <xliff:g id="recognized">%3$d</xliff:g>. Terpendek: <xliff:g id="shortest">%4$d</xliff:g> ms, median: <xliff:g id="median">%5$d</xliff:g> ms, terpanjang: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Setiap sentuhan: terpendek <xliff:g id="shortest">%1$d</xliff:g> ms, median <xliff:g id="median">%2$d</xliff:g> ms, terpanjang <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Ketikan</string>
+    <string name="gesture_trainer_kind_double_tap">Ketik dua kali</string>
+    <string name="gesture_trainer_kind_triple_tap">Ketik tiga kali</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Ketik empat kali</string>
+    <string name="gesture_trainer_kind_tap_hold">Ketik dan tahan</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Ketik dua kali dan tahan</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Ketik tiga kali dan tahan</string>
+    <string name="gesture_trainer_kind_swipe">Leretan</string>
+    <string name="gesture_trainer_kind_swipe_hold">Leret dan tahan</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Leretan ulang-alik dan sudut</string>
+    <string name="gesture_trainer_kind_pinch">Cubitan</string>
+    <string name="gesture_trainer_kind_spread">Rentangan</string>
+    <string name="gesture_trainer_kind_rotate">Putaran</string>
+    <string name="gesture_trainer_kind_scrub">Gosokan</string>
 </resources>

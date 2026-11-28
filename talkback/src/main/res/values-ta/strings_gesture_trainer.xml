@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">இரண்டாவது ஸ்வைப் <xliff:g id="ms">%1$d</xliff:g> மி.வி</string>
     <string name="gesture_trainer_measure_whole_gesture">முழுச் சைகை <xliff:g id="ms">%1$d</xliff:g> மி.வி</string>
     <string name="gesture_trainer_measure_stroke_gap">இடையே <xliff:g id="ms">%1$d</xliff:g> மி.வி விரல் எடுக்கப்பட்டது</string>
+    <string name="gesture_trainer_how_menu_horizontal">ஒரு விரலை <xliff:g id="edge">%1$s</xliff:g> வைத்து, மெனுவைத் திறக்க அதைத் திரையின் நடுப்பகுதியை நோக்கிக் குறைந்தது <xliff:g id="distance">%2$d</xliff:g> மி.மீ உள்ளே நகர்த்துங்கள். அதில் விளிம்பிலிருந்து திரையின் குறுக்கே <xliff:g id="count">%3$d</xliff:g> உருப்படிகள் உள்ளன, ஒவ்வொன்றும் சுமார் <xliff:g id="item">%5$s</xliff:g> செ.மீ அகலம். உருப்படி <xliff:g id="size">%6$s</xliff:g>, <xliff:g id="number">%4$d</xliff:g>, விளிம்பிலிருந்து <xliff:g id="from">%7$s</xliff:g> முதல் <xliff:g id="to">%8$s</xliff:g> செ.மீ தொலைவில் உள்ளது. விரலை அதே உயரத்தில் வைத்து, உருப்படி சொல்லப்படும்போது எடுங்கள்.</string>
+    <string name="gesture_trainer_finding_menu_left_line">மெனு திறந்த உயரத்திலிருந்து <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ மேலே அல்லது கீழே விரல் எடுக்கப்பட்டது, <xliff:g id="limit">%2$.0f</xliff:g> மி.மீ-க்கு அப்பால் மெனு மூடும்.</string>
+    <string name="gesture_trainer_tip_menu_left_line">உள்ளே நகர்த்தும்போது விரலை அதே உயரத்தில் வைத்து, அங்கேயே எடுங்கள்.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">ஒவ்வொரு உருப்படிக்கும் விளிம்பிலிருந்து திரையின் குறுக்கே ஒரு நிலையான இடம் உள்ளது, விரல் எடுக்கப்படும் இடத்தில் உள்ள உருப்படி தேர்ந்தெடுக்கப்படும். உருப்படி சொல்லப்படும்போது விரலை எடுங்கள்.</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g> பக்கத்திலிருந்து உள்ளே நகர்த்தல்கள் சேர்க்கப்படவில்லை: அதன் விளிம்பு மெனு திரையின் குறுக்கே செல்கிறது, எனவே அதிலிருந்து உள்ளே நகர்த்துவது சைகையை இயக்குவதற்குப் பதிலாக மெனுவைத் திறக்கும்.</string>
+    <string name="gesture_trainer_statistics">புள்ளிவிவரங்கள்</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. முயற்சிகள்: <xliff:g id="tries">%2$d</xliff:g>, அடையாளம் காணப்பட்டவை: <xliff:g id="recognized">%3$d</xliff:g>. மிகக் குறைவு: <xliff:g id="shortest">%4$d</xliff:g> மி.வி, இடைநிலை: <xliff:g id="median">%5$d</xliff:g> மி.வி, மிக அதிகம்: <xliff:g id="longest">%6$d</xliff:g> மி.வி.</string>
+    <string name="gesture_trainer_statistics_touches">ஒவ்வொரு தொடுதலும்: மிகக் குறைவு <xliff:g id="shortest">%1$d</xliff:g> மி.வி, இடைநிலை <xliff:g id="median">%2$d</xliff:g> மி.வி, மிக அதிகம் <xliff:g id="longest">%3$d</xliff:g> மி.வி.</string>
+    <string name="gesture_trainer_kind_tap">தட்டுதல்கள்</string>
+    <string name="gesture_trainer_kind_double_tap">இருமுறை தட்டுதல்கள்</string>
+    <string name="gesture_trainer_kind_triple_tap">மும்முறை தட்டுதல்கள்</string>
+    <string name="gesture_trainer_kind_quadruple_tap">நான்கு முறை தட்டுதல்கள்</string>
+    <string name="gesture_trainer_kind_tap_hold">தட்டிப் பிடித்தல்</string>
+    <string name="gesture_trainer_kind_double_tap_hold">இருமுறை தட்டிப் பிடித்தல்</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">மும்முறை தட்டிப் பிடித்தல்</string>
+    <string name="gesture_trainer_kind_swipe">ஸ்வைப்கள்</string>
+    <string name="gesture_trainer_kind_swipe_hold">ஸ்வைப் செய்து பிடித்திருத்தல்</string>
+    <string name="gesture_trainer_kind_two_part_swipe">முன்னும் பின்னும் மற்றும் கோண ஸ்வைப்கள்</string>
+    <string name="gesture_trainer_kind_pinch">கிள்ளுதல்கள்</string>
+    <string name="gesture_trainer_kind_spread">பரப்புதல்கள்</string>
+    <string name="gesture_trainer_kind_rotate">சுழற்றுதல்கள்</string>
+    <string name="gesture_trainer_kind_scrub">தேய்த்தல்கள்</string>
 </resources>

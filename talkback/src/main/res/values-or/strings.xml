@@ -2859,4 +2859,109 @@
     <string name="title_pref_cyrillic_text_recognition">ସିରିଲିକ ଟେକ୍ସଟ ଚିହ୍ନଟ</string>
     <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> ପାଇଁ ଟେକ୍ସଟ ଚିହ୍ନଟ ମଡେଲ ନାହିଁ। ଇମେଜ ଓ ସ୍କ୍ରିନ ବର୍ଣ୍ଣନା, ସିରିଲିକ ଟେକ୍ସଟ ଚିହ୍ନଟରେ ଏହାକୁ ଡାଉନଲୋଡ କରନ୍ତୁ।</string>
     <string name="cyrillic_text_model_error_http">ଡାଉନଲୋଡ ସର୍ଭର ଅନୁରୋଧ ଗ୍ରହଣ କଲା ନାହିଁ। ପରେ ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।</string>
+    <string name="title_pref_announce_caller">କଲ କରୁଥିବା ବ୍ୟକ୍ତିଙ୍କୁ ଘୋଷଣା କରନ୍ତୁ</string>
+    <string name="announce_caller_once">ଥରେ</string>
+    <string name="announce_caller_repeat">ରିଙ୍ଗ ହେଉଥିବା ସମୟରେ ଦୋହରାନ୍ତୁ</string>
+    <string name="title_pref_command_feedback_voice">କମାଣ୍ଡ ଫିଡବ୍ୟାକ ଏବଂ ଟେକ୍ସଟ ଏଡିଟିଂ ପାଇଁ ସ୍ୱର</string>
+    <string name="title_pref_command_feedback_over_speech">SandFlyର ସ୍ପିଚ ସମୟରେ କମାଣ୍ଡ ଫିଡବ୍ୟାକ ପଢ଼ନ୍ତୁ</string>
+    <string name="title_pref_item_types_spoken">କୁହାଯିବା ପାଇଁ ଏଲିମେଣ୍ଟ ପ୍ରକାର</string>
+    <string name="item_type_link">ଲିଙ୍କ</string>
+    <string name="item_type_tab">ଟାବ୍</string>
+    <string name="item_type_other">ଅନ୍ୟ ପ୍ରକାର</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">2ଟି ଆଙ୍ଗୁଠିରେ ଟାପ୍, 1ଟି ଆଙ୍ଗୁଠିରେ ସ୍ୱାଇପ୍</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">ସ୍ପେସ୍</string>
+    <string name="keycombo_key_escape">Escape</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">ମେନୁ</string>
+    <string name="keycombo_key_search">ସର୍ଚ୍ଚ</string>
+    <string name="keycombo_key_grave">ଗ୍ରେଭ ଆକ୍ସେଣ୍ଟ</string>
+    <string name="keycombo_key_minus">ମାଇନସ</string>
+    <string name="keycombo_key_equals">ସମାନ</string>
+    <string name="keycombo_key_left_bracket">ବାମ ବର୍ଗ ବନ୍ଧନୀ</string>
+    <string name="keycombo_key_right_bracket">ଡାହାଣ ବର୍ଗ ବନ୍ଧନୀ</string>
+    <string name="keycombo_key_backslash">ବ୍ୟାକସ୍ଲାସ୍</string>
+    <string name="keycombo_key_semicolon">ସେମିକୋଲନ</string>
+    <string name="keycombo_key_apostrophe">ଆପୋଷ୍ଟ୍ରଫି</string>
+    <string name="keycombo_key_comma">କମା</string>
+    <string name="keycombo_key_period">ପୂର୍ଣ୍ଣଚ୍ଛେଦ</string>
+    <string name="keycombo_key_slash">ସ୍ଲାସ୍</string>
+    <string name="keycombo_key_plus">ପ୍ଲସ</string>
+    <string name="keycombo_key_at">ଆଟ ଚିହ୍ନ</string>
+    <string name="keycombo_key_star">ତାରକା</string>
+    <string name="keycombo_key_pound">ହ୍ୟାସ</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">ନମପେଡ ପ୍ଲସ</string>
+    <string name="keycombo_key_numpad_subtract">ନମପେଡ ମାଇନସ</string>
+    <string name="keycombo_key_numpad_multiply">ନମପେଡ ଗୁଣନ</string>
+    <string name="keycombo_key_numpad_divide">ନମପେଡ ହରଣ</string>
+    <string name="keycombo_key_numpad_dot">ନମପେଡ ପୂର୍ଣ୍ଣଚ୍ଛେଦ</string>
+    <string name="keycombo_key_numpad_comma">ନମପେଡ କମା</string>
+    <string name="keycombo_key_numpad_equals">ନମପେଡ ସମାନ</string>
+    <string name="keycombo_key_numpad_enter">ନମପେଡ Enter</string>
+    <string name="keycombo_key_volume_up">ଭଲ୍ୟୁମ ଅପ</string>
+    <string name="keycombo_key_volume_down">ଭଲ୍ୟୁମ ଡାଉନ</string>
+    <string name="keycombo_key_volume_mute">ଭଲ୍ୟୁମ ମ୍ୟୁଟ</string>
+    <string name="keycombo_key_media_play_pause">ପ୍ଲେ କିମ୍ବା ପଜ୍</string>
+    <string name="keycombo_key_media_next">ପରବର୍ତ୍ତୀ ଟ୍ରାକ</string>
+    <string name="keycombo_key_media_previous">ପୂର୍ବବର୍ତ୍ତୀ ଟ୍ରାକ</string>
+    <string name="keycombo_key_media_stop">ଷ୍ଟପ</string>
+    <string name="keycombo_key_back">ପଛକୁ</string>
+    <string name="keycombo_key_numpad">ନମପେଡ <xliff:g id="digit" example="5">%1$s</xliff:g></string>
+    <string name="title_pref_typing_swipes_through_keys">ପ୍ରତ୍ୟେକ ଟାଇପିଂ ପଦ୍ଧତିରେ ଗୋଟିଏ କୀରୁ ଅନ୍ୟ କୀକୁ ସ୍ୱାଇପ୍ କରନ୍ତୁ</string>
+    <string name="shortcut_say_caller">କଲ କରୁଥିବା ବ୍ୟକ୍ତିଙ୍କ ନାମ କୁହନ୍ତୁ</string>
+    <string name="say_caller_unknown">ଇନକମିଙ୍ଗ କଲ</string>
+    <string name="shortcut_restart_phone">ଫୋନ ରିଷ୍ଟାର୍ଟ କରନ୍ତୁ</string>
+    <string name="shortcut_power_off_phone">ଫୋନ ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="restart_phone_confirm_title">ଫୋନ ରିଷ୍ଟାର୍ଟ କରିବେ?</string>
+    <string name="restart_phone_confirm_button">ରିଷ୍ଟାର୍ଟ କରନ୍ତୁ</string>
+    <string name="power_off_phone_confirm_title">ଫୋନ ବନ୍ଦ କରିବେ?</string>
+    <string name="power_off_phone_confirm_button">ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="power_command_failed">ବିଫଳ ହେଲା, ପାୱାର୍ ମେନୁ ଖୋଲିଲା</string>
+    <string name="clipboard_history_search_hint">କ୍ଲିପବୋର୍ଡ ଇତିହାସରେ ସର୍ଚ୍ଚ କରନ୍ତୁ</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>ଟି ଟେକ୍ସଟ</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g>ଟି ଟେକ୍ସଟ</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">ଧାରରୁ ଭିତରକୁ ସ୍ଲାଇଡ୍ କରନ୍ତୁ</string>
+    <string name="title_pref_category_sliders">ସ୍ଲାଇଡର୍</string>
+    <string name="title_pref_slider_step">ସ୍ଲାଇଡର୍ ଷ୍ଟେପ୍</string>
+    <string name="value_slider_step_app">ଆପ୍ ଯେପରି ସେଟ୍ କରେ</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">ରେଞ୍ଜର ସବୁଠାରୁ ଛୋଟ ଷ୍ଟେପ୍</string>
+    <string name="title_pref_slider_skip_unchanged">ମୂଲ୍ୟ ବଦଳାଉ ନଥିବା ଷ୍ଟେପ୍ ବାଦ ଦିଅନ୍ତୁ</string>
+    <string name="title_slider_enter_value">ମୂଲ୍ୟ ଲେଖନ୍ତୁ</string>
+    <string name="slider_value_range"><xliff:g id="min" example="0">%1$s</xliff:g>ରୁ <xliff:g id="max" example="100">%2$s</xliff:g> ପର୍ଯ୍ୟନ୍ତ</string>
+    <string name="voice_phrases_not_understood">ବୁଝାଯାଇନଥିବା ବାକ୍ୟାଂଶ</string>
+    <string name="title_pref_voice_phrases_not_understood">ବୁଝାଯାଇନଥିବା ବାକ୍ୟାଂଶ ସେଭ କରନ୍ତୁ</string>
+    <string name="voice_phrases_not_understood_listed">ବୁଝାଯାଇନଥିବା ବାକ୍ୟାଂଶରେ ଯୋଡ଼ାଗଲା।</string>
 </resources>

@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">دوسرا سوائپ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">پورا اشارہ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">ان کے درمیان <xliff:g id="ms">%1$d</xliff:g> ms اٹھائی رہی</string>
+    <string name="gesture_trainer_how_menu_horizontal">ایک انگلی <xliff:g id="edge">%1$s</xliff:g> رکھیں اور مینو کھولنے کے لیے اسے اسکرین کے درمیان کی طرف کم از کم <xliff:g id="distance">%2$d</xliff:g> ملی میٹر اندر سلائیڈ کریں۔ اس میں کنارے سے شروع ہو کر اسکرین کے آر پار <xliff:g id="count">%3$d</xliff:g> آئٹمز ہیں، ہر ایک تقریباً <xliff:g id="size">%6$s</xliff:g> سینٹی میٹر چوڑا۔ آئٹم <xliff:g id="number">%4$d</xliff:g>، <xliff:g id="item">%5$s</xliff:g>، کنارے سے <xliff:g id="from">%7$s</xliff:g> سے <xliff:g id="to">%8$s</xliff:g> سینٹی میٹر پر ہے۔ انگلی کو ایک ہی اونچائی پر رکھیں، اور آئٹم بولے جانے پر اسے اٹھائیں۔</string>
+    <string name="gesture_trainer_finding_menu_left_line">انگلی مینو کھلنے کی جگہ سے <xliff:g id="mm">%1$.0f</xliff:g> ملی میٹر اوپر یا نیچے اٹھی، اور <xliff:g id="limit">%2$.0f</xliff:g> ملی میٹر سے آگے مینو بند ہو جاتا ہے۔</string>
+    <string name="gesture_trainer_tip_menu_left_line">اندر سلائیڈ کرتے وقت انگلی ایک ہی اونچائی پر رکھیں، اور وہیں اٹھائیں۔</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">ہر آئٹم کی کنارے سے اسکرین کے آر پار ایک مقررہ جگہ ہے، اور جس آئٹم پر انگلی اٹھتی ہے وہ منتخب ہوتا ہے۔ آئٹم بولے جانے پر اٹھائیں۔</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g> سے اندر کی طرف سلائیڈز شامل نہیں: اس کا کنارے کا مینو اسکرین کے آر پار ہے، اس لیے اس سے اندر کی طرف سلائیڈ اشارہ چلانے کے بجائے مینو کھولتی ہے۔</string>
+    <string name="gesture_trainer_statistics">اعداد و شمار</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>۔ کوششیں: <xliff:g id="tries">%2$d</xliff:g>، پہچانی گئیں: <xliff:g id="recognized">%3$d</xliff:g>۔ مختصر ترین: <xliff:g id="shortest">%4$d</xliff:g> ملی سیکنڈ، وسطانیہ: <xliff:g id="median">%5$d</xliff:g> ملی سیکنڈ، طویل ترین: <xliff:g id="longest">%6$d</xliff:g> ملی سیکنڈ۔</string>
+    <string name="gesture_trainer_statistics_touches">ہر ٹچ: مختصر ترین <xliff:g id="shortest">%1$d</xliff:g> ملی سیکنڈ، وسطانیہ <xliff:g id="median">%2$d</xliff:g> ملی سیکنڈ، طویل ترین <xliff:g id="longest">%3$d</xliff:g> ملی سیکنڈ۔</string>
+    <string name="gesture_trainer_kind_tap">تھپتھپاہٹیں</string>
+    <string name="gesture_trainer_kind_double_tap">دو بار تھپتھپانا</string>
+    <string name="gesture_trainer_kind_triple_tap">تین بار تھپتھپانا</string>
+    <string name="gesture_trainer_kind_quadruple_tap">چار بار تھپتھپانا</string>
+    <string name="gesture_trainer_kind_tap_hold">تھپتھپائیں اور دبائے رکھیں</string>
+    <string name="gesture_trainer_kind_double_tap_hold">دو بار تھپتھپائیں اور دبائے رکھیں</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">تین بار تھپتھپائیں اور دبائے رکھیں</string>
+    <string name="gesture_trainer_kind_swipe">سوائپس</string>
+    <string name="gesture_trainer_kind_swipe_hold">سوائپ کریں اور دبائے رکھیں</string>
+    <string name="gesture_trainer_kind_two_part_swipe">آگے پیچھے اور زاویے والے سوائپس</string>
+    <string name="gesture_trainer_kind_pinch">پنچ</string>
+    <string name="gesture_trainer_kind_spread">پھیلانا</string>
+    <string name="gesture_trainer_kind_rotate">گھمانا</string>
+    <string name="gesture_trainer_kind_scrub">رگڑنا</string>
 </resources>

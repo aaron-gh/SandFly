@@ -2860,4 +2860,109 @@
     <string name="title_pref_cyrillic_text_recognition">સિરિલિક ટેક્સ્ટની ઓળખ</string>
     <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> માટે ટેક્સ્ટ ઓળખનું મૉડલ નથી. તેને છબી અને સ્ક્રીનના વર્ણનો, સિરિલિક ટેક્સ્ટની ઓળખમાં ડાઉનલોડ કરો.</string>
     <string name="cyrillic_text_model_error_http">ડાઉનલોડ સર્વરે વિનંતી સ્વીકારી નહીં. પછીથી ફરી પ્રયાસ કરો.</string>
+    <string name="title_pref_announce_caller">કૉલ કરનારની જાહેરાત કરો</string>
+    <string name="announce_caller_once">એક વાર</string>
+    <string name="announce_caller_repeat">રિંગ વાગે ત્યાં સુધી પુનરાવર્તન કરો</string>
+    <string name="title_pref_command_feedback_voice">આદેશના પ્રતિસાદ અને ટેક્સ્ટ એડિટિંગ માટેનો અવાજ</string>
+    <string name="title_pref_command_feedback_over_speech">SandFlyની સ્પીચ દરમિયાન આદેશનો પ્રતિસાદ વાંચો</string>
+    <string name="title_pref_item_types_spoken">બોલવાના આઇટમના પ્રકારો</string>
+    <string name="item_type_link">લિંક</string>
+    <string name="item_type_tab">ટેબ</string>
+    <string name="item_type_other">અન્ય પ્રકારો</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">2 આંગળી વડે ટૅપ, 1 આંગળી વડે સ્વાઇપ</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">સ્પેસ</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">મેનૂ</string>
+    <string name="keycombo_key_search">શોધ</string>
+    <string name="keycombo_key_grave">ગ્રેવ ઍક્સેંટ</string>
+    <string name="keycombo_key_minus">માઇનસ</string>
+    <string name="keycombo_key_equals">બરાબર</string>
+    <string name="keycombo_key_left_bracket">ડાબો કૌંસ</string>
+    <string name="keycombo_key_right_bracket">જમણો કૌંસ</string>
+    <string name="keycombo_key_backslash">બૅકસ્લૅશ</string>
+    <string name="keycombo_key_semicolon">અર્ધવિરામ</string>
+    <string name="keycombo_key_apostrophe">ઍપોસ્ટ્રોફી</string>
+    <string name="keycombo_key_comma">અલ્પવિરામ</string>
+    <string name="keycombo_key_period">પૂર્ણવિરામ</string>
+    <string name="keycombo_key_slash">સ્લૅશ</string>
+    <string name="keycombo_key_plus">પ્લસ</string>
+    <string name="keycombo_key_at">ઍટ ચિહ્ન</string>
+    <string name="keycombo_key_star">સ્ટાર</string>
+    <string name="keycombo_key_pound">હેશ</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">નમપૅડ પ્લસ</string>
+    <string name="keycombo_key_numpad_subtract">નમપૅડ માઇનસ</string>
+    <string name="keycombo_key_numpad_multiply">નમપૅડ ગુણાકાર</string>
+    <string name="keycombo_key_numpad_divide">નમપૅડ ભાગાકાર</string>
+    <string name="keycombo_key_numpad_dot">નમપૅડ પૂર્ણવિરામ</string>
+    <string name="keycombo_key_numpad_comma">નમપૅડ અલ્પવિરામ</string>
+    <string name="keycombo_key_numpad_equals">નમપૅડ બરાબર</string>
+    <string name="keycombo_key_numpad_enter">નમપૅડ Enter</string>
+    <string name="keycombo_key_volume_up">વૉલ્યૂમ વધારો</string>
+    <string name="keycombo_key_volume_down">વૉલ્યૂમ ઘટાડો</string>
+    <string name="keycombo_key_volume_mute">વૉલ્યૂમ મ્યૂટ</string>
+    <string name="keycombo_key_media_play_pause">ચલાવો અથવા થોભાવો</string>
+    <string name="keycombo_key_media_next">આગલો ટ્રૅક</string>
+    <string name="keycombo_key_media_previous">પાછલો ટ્રૅક</string>
+    <string name="keycombo_key_media_stop">રોકો</string>
+    <string name="keycombo_key_back">પાછળ</string>
+    <string name="keycombo_key_numpad">નમપૅડ <xliff:g id="digit" example="5">%1$s</xliff:g></string>
+    <string name="title_pref_typing_swipes_through_keys">દરેક ટાઇપિંગ પદ્ધતિમાં એક કીથી બીજી કી પર સ્વાઇપ કરો</string>
+    <string name="shortcut_say_caller">કૉલ કરનારનું નામ બોલો</string>
+    <string name="say_caller_unknown">ઇનકમિંગ કૉલ</string>
+    <string name="shortcut_restart_phone">ફોન રીસ્ટાર્ટ કરો</string>
+    <string name="shortcut_power_off_phone">ફોન બંધ કરો</string>
+    <string name="restart_phone_confirm_title">ફોન રીસ્ટાર્ટ કરીએ?</string>
+    <string name="restart_phone_confirm_button">રીસ્ટાર્ટ કરો</string>
+    <string name="power_off_phone_confirm_title">ફોન બંધ કરીએ?</string>
+    <string name="power_off_phone_confirm_button">બંધ કરો</string>
+    <string name="power_command_failed">નિષ્ફળ, પાવર મેનુ ખોલ્યું</string>
+    <string name="clipboard_history_search_hint">ક્લિપબોર્ડ ઇતિહાસ શોધો</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ટેક્સ્ટ</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> ટેક્સ્ટ</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">ધાર પરથી અંદર સ્લાઇડ કરો</string>
+    <string name="title_pref_category_sliders">સ્લાઇડર</string>
+    <string name="title_pref_slider_step">સ્લાઇડરનું પગલું</string>
+    <string name="value_slider_step_app">ઍપ સેટ કરે તે મુજબ</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">રેન્જનું સૌથી નાનું પગલું</string>
+    <string name="title_pref_slider_skip_unchanged">મૂલ્ય ન બદલતાં પગલાં છોડો</string>
+    <string name="title_slider_enter_value">મૂલ્ય દાખલ કરો</string>
+    <string name="slider_value_range"><xliff:g id="min" example="0">%1$s</xliff:g> થી <xliff:g id="max" example="100">%2$s</xliff:g> સુધી</string>
+    <string name="voice_phrases_not_understood">ન સમજાયેલા શબ્દસમૂહો</string>
+    <string name="title_pref_voice_phrases_not_understood">ન સમજાયેલા શબ્દસમૂહો સાચવો</string>
+    <string name="voice_phrases_not_understood_listed">ન સમજાયેલા શબ્દસમૂહોમાં ઉમેર્યું.</string>
 </resources>

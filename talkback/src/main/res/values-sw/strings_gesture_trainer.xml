@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">kutelezesha kwa pili ms <xliff:g id="ms">%1$d</xliff:g></string>
     <string name="gesture_trainer_measure_whole_gesture">ishara nzima ms <xliff:g id="ms">%1$d</xliff:g></string>
     <string name="gesture_trainer_measure_stroke_gap">kiliinuliwa kwa ms <xliff:g id="ms">%1$d</xliff:g> kati yake</string>
+    <string name="gesture_trainer_how_menu_horizontal">Weka kidole kimoja <xliff:g id="edge">%1$s</xliff:g> na ukitelezeshe kuingia kuelekea katikati ya skrini kwa angalau mm <xliff:g id="distance">%2$d</xliff:g> ili kufungua menyu. Ina vipengee <xliff:g id="count">%3$d</xliff:g> kwenye upana wa skrini, kuanzia ukingoni, kila kimoja kikiwa na upana wa takriban sentimita <xliff:g id="item">%5$s</xliff:g>. Kipengee <xliff:g id="size">%6$s</xliff:g>, <xliff:g id="number">%4$d</xliff:g>, kiko sentimita <xliff:g id="from">%7$s</xliff:g> hadi <xliff:g id="to">%8$s</xliff:g> kutoka ukingoni. Weka kidole kwenye kimo kilekile, na ukiinue kipengee kinapotamkwa.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Kidole kiliinuliwa mm <xliff:g id="mm">%1$.0f</xliff:g> juu au chini ya kimo ambapo menyu ilifunguka, na menyu hufungwa zaidi ya mm <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Weka kidole kwenye kimo kilekile unapotelezesha kuingia, na ukiinue hapo.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Kila kipengee kina nafasi maalum kwenye upana wa skrini, kuanzia ukingoni, na kipengee ambapo kidole kinainuliwa ndicho huchaguliwa. Inua kipengee kinapotamkwa.</string>
+    <string name="gesture_trainer_left_out_in_menu">Kutelezesha kuingia kutoka <xliff:g id="edge">%1$s</xliff:g> kumeachwa: menyu yake ya ukingo inapita kwenye upana wa skrini, kwa hivyo kutelezesha kuingia kutoka kwake hufungua menyu badala ya kutekeleza ishara.</string>
+    <string name="gesture_trainer_statistics">Takwimu</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Majaribio: <xliff:g id="tries">%2$d</xliff:g>, yaliyotambuliwa: <xliff:g id="recognized">%3$d</xliff:g>. Mfupi zaidi: ms <xliff:g id="shortest">%4$d</xliff:g>, wastani wa kati: ms <xliff:g id="median">%5$d</xliff:g>, mrefu zaidi: ms <xliff:g id="longest">%6$d</xliff:g>.</string>
+    <string name="gesture_trainer_statistics_touches">Kila mguso: mfupi zaidi ms <xliff:g id="shortest">%1$d</xliff:g>, wastani wa kati ms <xliff:g id="median">%2$d</xliff:g>, mrefu zaidi ms <xliff:g id="longest">%3$d</xliff:g>.</string>
+    <string name="gesture_trainer_kind_tap">Kugusa</string>
+    <string name="gesture_trainer_kind_double_tap">Kugusa mara mbili</string>
+    <string name="gesture_trainer_kind_triple_tap">Kugusa mara tatu</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Kugusa mara nne</string>
+    <string name="gesture_trainer_kind_tap_hold">Gusa na ushikilie</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Gusa mara mbili na ushikilie</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Gusa mara tatu na ushikilie</string>
+    <string name="gesture_trainer_kind_swipe">Kutelezesha</string>
+    <string name="gesture_trainer_kind_swipe_hold">Telezesha na ushikilie</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Kutelezesha nyuma na mbele na kwa pembe</string>
+    <string name="gesture_trainer_kind_pinch">Kubana</string>
+    <string name="gesture_trainer_kind_spread">Kutanua</string>
+    <string name="gesture_trainer_kind_rotate">Kuzungusha</string>
+    <string name="gesture_trainer_kind_scrub">Kusugua</string>
 </resources>

@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">ikkinchi surish <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">butun imo-ishora <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">ular orasida <xliff:g id="ms">%1$d</xliff:g> ms koʻtarilgan</string>
+    <string name="gesture_trainer_how_menu_horizontal">Menyuni ochish uchun bir barmoqni <xliff:g id="edge">%1$s</xliff:g> qoʻying va uni ekran oʻrtasi tomon kamida <xliff:g id="distance">%2$d</xliff:g> mm ichkariga suring. Menyuda chetdan boshlab ekran boʻylab <xliff:g id="count">%3$d</xliff:g> ta element bor, har birining kengligi taxminan <xliff:g id="size">%6$s</xliff:g> sm. <xliff:g id="number">%4$d</xliff:g>-element, <xliff:g id="item">%5$s</xliff:g>, chetdan <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> sm uzoqlikda joylashgan. Barmoqni bir xil balandlikda tuting va element aytilganda koʻtaring.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Barmoq menyu ochilgan joydan <xliff:g id="mm">%1$.0f</xliff:g> mm yuqorida yoki pastda koʻtarildi, menyu esa <xliff:g id="limit">%2$.0f</xliff:g> mm dan uzoqda yopiladi.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Ichkariga surayotganda barmoqni bir xil balandlikda tuting va oʻsha yerda koʻtaring.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Har bir element chetdan boshlab ekran boʻylab qatʼiy joyga ega va barmoq koʻtarilgan joydagi element tanlanadi. Element aytilganda koʻtaring.</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g>dan ichkariga surishlar chiqarib tashlandi: uning chet menyusi ekran boʻylab joylashgan, shuning uchun undan ichkariga surish imo-ishorani bajarish oʻrniga menyuni ochadi.</string>
+    <string name="gesture_trainer_statistics">Statistika</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Urinishlar: <xliff:g id="tries">%2$d</xliff:g>, tanilgan: <xliff:g id="recognized">%3$d</xliff:g>. Eng qisqa: <xliff:g id="shortest">%4$d</xliff:g> ms, mediana: <xliff:g id="median">%5$d</xliff:g> ms, eng uzun: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Har bir teginish: eng qisqa <xliff:g id="shortest">%1$d</xliff:g> ms, mediana <xliff:g id="median">%2$d</xliff:g> ms, eng uzun <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Teginishlar</string>
+    <string name="gesture_trainer_kind_double_tap">Ikki marta teginishlar</string>
+    <string name="gesture_trainer_kind_triple_tap">Uch marta teginishlar</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Toʻrt marta teginishlar</string>
+    <string name="gesture_trainer_kind_tap_hold">Teginish va ushlab turish</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Ikki marta teginish va ushlab turish</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Uch marta teginish va ushlab turish</string>
+    <string name="gesture_trainer_kind_swipe">Surishlar</string>
+    <string name="gesture_trainer_kind_swipe_hold">Surish va ushlab turish</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Oldinga-orqaga va burchakli surishlar</string>
+    <string name="gesture_trainer_kind_pinch">Chimchilashlar</string>
+    <string name="gesture_trainer_kind_spread">Yoyishlar</string>
+    <string name="gesture_trainer_kind_rotate">Aylantirishlar</string>
+    <string name="gesture_trainer_kind_scrub">Ishqalashlar</string>
 </resources>

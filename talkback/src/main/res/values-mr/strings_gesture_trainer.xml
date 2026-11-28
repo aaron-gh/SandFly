@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">दुसरा स्वाइप <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">संपूर्ण जेश्चर <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">त्यांच्या दरम्यान <xliff:g id="ms">%1$d</xliff:g> ms उचलले</string>
+    <string name="gesture_trainer_how_menu_horizontal">मेनू उघडण्यासाठी एक बोट <xliff:g id="edge">%1$s</xliff:g> ठेवा आणि ते स्क्रीनच्या मध्याकडे किमान <xliff:g id="distance">%2$d</xliff:g> मिमी आत सरकवा. मेनूमध्ये काठापासून स्क्रीनच्या आडव्या दिशेने <xliff:g id="count">%3$d</xliff:g> आयटम आहेत, प्रत्येक सुमारे <xliff:g id="size">%6$s</xliff:g> सेमी रुंद. आयटम <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, काठापासून <xliff:g id="from">%7$s</xliff:g> ते <xliff:g id="to">%8$s</xliff:g> सेमी अंतरावर आहे. बोट त्याच उंचीवर ठेवा आणि आयटम बोलला गेल्यावर ते उचला.</string>
+    <string name="gesture_trainer_finding_menu_left_line">मेनू उघडला त्या उंचीपेक्षा <xliff:g id="mm">%1$.0f</xliff:g> मिमी वर किंवा खाली बोट उचलले गेले, आणि <xliff:g id="limit">%2$.0f</xliff:g> मिमीच्या पुढे मेनू बंद होतो.</string>
+    <string name="gesture_trainer_tip_menu_left_line">आत सरकवताना बोट त्याच उंचीवर ठेवा आणि तिथेच उचला.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">प्रत्येक आयटमची काठापासून स्क्रीनच्या आडव्या दिशेने ठरलेली जागा असते, आणि बोट जिथे उचलले जाते तो आयटम निवडला जातो. आयटम बोलला गेल्यावर उचला.</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g> पासून आत सरकवणे वगळले आहे: त्या काठाचा मेनू स्क्रीनच्या आडव्या दिशेने जातो, त्यामुळे तिथून आत सरकवल्यास जेश्चर चालण्याऐवजी मेनू उघडतो.</string>
+    <string name="gesture_trainer_statistics">आकडेवारी</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. प्रयत्न: <xliff:g id="tries">%2$d</xliff:g>, ओळखले गेले: <xliff:g id="recognized">%3$d</xliff:g>. सर्वात कमी: <xliff:g id="shortest">%4$d</xliff:g> ms, मध्यक: <xliff:g id="median">%5$d</xliff:g> ms, सर्वात जास्त: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">प्रत्येक स्पर्श: सर्वात कमी <xliff:g id="shortest">%1$d</xliff:g> ms, मध्यक <xliff:g id="median">%2$d</xliff:g> ms, सर्वात जास्त <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">टॅप</string>
+    <string name="gesture_trainer_kind_double_tap">डबल-टॅप</string>
+    <string name="gesture_trainer_kind_triple_tap">तीनदा टॅप</string>
+    <string name="gesture_trainer_kind_quadruple_tap">चार वेळा टॅप</string>
+    <string name="gesture_trainer_kind_tap_hold">टॅप करून धरून ठेवा</string>
+    <string name="gesture_trainer_kind_double_tap_hold">दोनदा टॅप करून धरून ठेवा</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">तीनदा टॅप करून धरून ठेवा</string>
+    <string name="gesture_trainer_kind_swipe">स्वाइप</string>
+    <string name="gesture_trainer_kind_swipe_hold">स्वाइप करून धरून ठेवा</string>
+    <string name="gesture_trainer_kind_two_part_swipe">मागे-पुढे आणि कोनाचे स्वाइप</string>
+    <string name="gesture_trainer_kind_pinch">पिंच</string>
+    <string name="gesture_trainer_kind_spread">बोटे पसरवणे</string>
+    <string name="gesture_trainer_kind_rotate">फिरवणे</string>
+    <string name="gesture_trainer_kind_scrub">घासणे</string>
 </resources>

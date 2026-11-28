@@ -296,4 +296,26 @@
     <string name="gesture_trainer_advice_two_stroke_time">Drugie przesunięcie zaczyna się późno. Dłuższa wartość opcji <xliff:g id="setting">%1$s</xliff:g> pozwala na późniejsze drugie przesunięcie, a pojedyncze przesunięcie czeka wtedy dłużej, zanim się wykona.</string>
     <string name="gesture_trainer_scrub_two_finger_on">Opcja <xliff:g id="setting">%1$s</xliff:g> jest włączona.</string>
     <string name="gesture_trainer_scrub_two_finger_off">Opcja <xliff:g id="setting">%1$s</xliff:g> jest wyłączona: przesunięcia dwoma palcami przewijają aplikację, a wycieranie przeważnie też przewija. Gdy opcja jest włączona, przesunięcia dwoma palcami uruchamiają polecenia SandFly zamiast przewijania.</string>
+    <string name="gesture_trainer_how_menu_horizontal">Połóż jeden palec <xliff:g id="edge">%1$s</xliff:g> i przesuń go w stronę środka ekranu o co najmniej <xliff:g id="distance">%2$d</xliff:g> mm, aby otworzyć menu. Liczba pozycji: <xliff:g id="count">%3$d</xliff:g>, w poprzek ekranu, od krawędzi, każda o szerokości około <xliff:g id="size">%6$s</xliff:g> cm. Pozycja <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, jest od <xliff:g id="from">%7$s</xliff:g> do <xliff:g id="to">%8$s</xliff:g> cm od krawędzi. Trzymaj palec na tej samej wysokości i podnieś go, gdy pozycja zostanie odczytana.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Palec podniósł się <xliff:g id="mm">%1$.0f</xliff:g> mm powyżej lub poniżej miejsca, w którym otworzyło się menu, a menu zamyka się dalej niż <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Podczas przesuwania do środka trzymaj palec na tej samej wysokości i tam go podnieś.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Każda pozycja ma stałe miejsce w poprzek ekranu, od krawędzi, a wybierana jest ta, na której palec się podnosi. Podnieś, gdy pozycja zostanie odczytana.</string>
+    <string name="gesture_trainer_left_out_in_menu">Pominięto przesunięcia od <xliff:g id="edge">%1$s</xliff:g> do środka: menu tej krawędzi biegnie w poprzek ekranu, więc przesunięcie od niej do środka otwiera menu, a nie uruchamia gestu.</string>
+    <string name="gesture_trainer_statistics">Statystyki</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Próby: <xliff:g id="tries">%2$d</xliff:g>, rozpoznane: <xliff:g id="recognized">%3$d</xliff:g>. Najkrótsza: <xliff:g id="shortest">%4$d</xliff:g> ms, mediana: <xliff:g id="median">%5$d</xliff:g> ms, najdłuższa: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Każdy dotyk: najkrótszy <xliff:g id="shortest">%1$d</xliff:g> ms, mediana <xliff:g id="median">%2$d</xliff:g> ms, najdłuższy <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Kliknięcia</string>
+    <string name="gesture_trainer_kind_double_tap">Dwukrotne kliknięcia</string>
+    <string name="gesture_trainer_kind_triple_tap">Trzykrotne kliknięcia</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Czterokrotne kliknięcia</string>
+    <string name="gesture_trainer_kind_tap_hold">Kliknięcie i przytrzymanie</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Dwukrotne kliknięcie i przytrzymanie</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Trzykrotne kliknięcie i przytrzymanie</string>
+    <string name="gesture_trainer_kind_swipe">Przesunięcia</string>
+    <string name="gesture_trainer_kind_swipe_hold">Przesunięcie i przytrzymanie</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Przesunięcia tam i z powrotem oraz pod kątem</string>
+    <string name="gesture_trainer_kind_pinch">Zsunięcia palców</string>
+    <string name="gesture_trainer_kind_spread">Rozsunięcia palców</string>
+    <string name="gesture_trainer_kind_rotate">Obroty</string>
+    <string name="gesture_trainer_kind_scrub">Wycieranie</string>
 </resources>

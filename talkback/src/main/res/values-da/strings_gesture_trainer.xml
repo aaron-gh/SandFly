@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">anden strygning <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">hele bevægelsen <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">løftet i <xliff:g id="ms">%1$d</xliff:g> ms mellem dem</string>
+    <string name="gesture_trainer_how_menu_horizontal">Placer én finger <xliff:g id="edge">%1$s</xliff:g>, og lad den glide ind mod midten af skærmen i mindst <xliff:g id="distance">%2$d</xliff:g> mm for at åbne menuen. Den har <xliff:g id="count">%3$d</xliff:g> elementer på tværs af skærmen fra kanten, hver ca. <xliff:g id="size">%6$s</xliff:g> cm bred. Element <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, er <xliff:g id="from">%7$s</xliff:g> til <xliff:g id="to">%8$s</xliff:g> cm fra kanten. Hold fingeren i samme højde, og løft den, når elementet læses op.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Fingeren blev løftet <xliff:g id="mm">%1$.0f</xliff:g> mm over eller under det sted, hvor menuen åbnede, og menuen lukker ud over <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Hold fingeren i samme højde, mens du glider ind, og løft den der.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Hvert element har en fast placering på tværs af skærmen fra kanten, og det element, hvor fingeren løftes, vælges. Løft, når elementet læses op.</string>
+    <string name="gesture_trainer_left_out_in_menu">Glidninger ind fra <xliff:g id="edge">%1$s</xliff:g> er udeladt: kantens menu går på tværs af skærmen, så en glidning ind fra den åbner menuen i stedet for at udføre en bevægelse.</string>
+    <string name="gesture_trainer_statistics">Statistik</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Forsøg: <xliff:g id="tries">%2$d</xliff:g>, genkendt: <xliff:g id="recognized">%3$d</xliff:g>. Korteste: <xliff:g id="shortest">%4$d</xliff:g> ms, median: <xliff:g id="median">%5$d</xliff:g> ms, længste: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Hver berøring: korteste <xliff:g id="shortest">%1$d</xliff:g> ms, median <xliff:g id="median">%2$d</xliff:g> ms, længste <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Tryk</string>
+    <string name="gesture_trainer_kind_double_tap">Tryk to gange</string>
+    <string name="gesture_trainer_kind_triple_tap">Tryk tre gange</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Tryk fire gange</string>
+    <string name="gesture_trainer_kind_tap_hold">Tryk og hold</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Tryk to gange og hold</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Tryk tre gange og hold</string>
+    <string name="gesture_trainer_kind_swipe">Strygninger</string>
+    <string name="gesture_trainer_kind_swipe_hold">Stryg og hold</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Frem-og-tilbage- og vinkelstrygninger</string>
+    <string name="gesture_trainer_kind_pinch">Knib sammen</string>
+    <string name="gesture_trainer_kind_spread">Spred fra hinanden</string>
+    <string name="gesture_trainer_kind_rotate">Drejninger</string>
+    <string name="gesture_trainer_kind_scrub">Hurtigt frem og tilbage</string>
 </resources>

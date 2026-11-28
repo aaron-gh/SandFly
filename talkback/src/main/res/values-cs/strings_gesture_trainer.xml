@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">druhé přejetí <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">celé gesto <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">zvednuto na <xliff:g id="ms">%1$d</xliff:g> ms mezi nimi</string>
+    <string name="gesture_trainer_how_menu_horizontal">Položte jeden prst <xliff:g id="edge">%1$s</xliff:g> a přejeďte jím dovnitř ke středu obrazovky alespoň <xliff:g id="distance">%2$d</xliff:g> mm, tím otevřete nabídku. Počet položek napříč obrazovkou od okraje: <xliff:g id="count">%3$d</xliff:g>, každá je široká asi <xliff:g id="size">%6$s</xliff:g> cm. Položka <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, je <xliff:g id="from">%7$s</xliff:g> až <xliff:g id="to">%8$s</xliff:g> cm od okraje. Držte prst ve stejné výšce a zvedněte ho, když zazní položka.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Prst se zvedl <xliff:g id="mm">%1$.0f</xliff:g> mm nad nebo pod místem, kde se otevřela nabídka, a nabídka se zavírá za hranicí <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Při přejíždění dovnitř držte prst ve stejné výšce a tam ho zvedněte.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Každá položka má pevné místo napříč obrazovkou od okraje a vybere se položka, u které se prst zvedne. Zvedněte prst, když zazní položka.</string>
+    <string name="gesture_trainer_left_out_in_menu">Přejetí dovnitř od <xliff:g id="edge">%1$s</xliff:g> jsou vynechána: nabídka tohoto okraje vede napříč obrazovkou, takže přejetí dovnitř od něj otevře nabídku místo spuštění gesta.</string>
+    <string name="gesture_trainer_statistics">Statistiky</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Pokusy: <xliff:g id="tries">%2$d</xliff:g>, rozpoznáno: <xliff:g id="recognized">%3$d</xliff:g>. Nejkratší: <xliff:g id="shortest">%4$d</xliff:g> ms, medián: <xliff:g id="median">%5$d</xliff:g> ms, nejdelší: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Každý dotyk: nejkratší <xliff:g id="shortest">%1$d</xliff:g> ms, medián <xliff:g id="median">%2$d</xliff:g> ms, nejdelší <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Klepnutí</string>
+    <string name="gesture_trainer_kind_double_tap">Dvojitá klepnutí</string>
+    <string name="gesture_trainer_kind_triple_tap">Trojitá klepnutí</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Čtyřnásobná klepnutí</string>
+    <string name="gesture_trainer_kind_tap_hold">Klepnutí a podržení</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Dvojité klepnutí a podržení</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Trojité klepnutí a podržení</string>
+    <string name="gesture_trainer_kind_swipe">Přejetí</string>
+    <string name="gesture_trainer_kind_swipe_hold">Přejetí s podržením</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Přejetí tam a zpět a pod úhlem</string>
+    <string name="gesture_trainer_kind_pinch">Stažení prstů</string>
+    <string name="gesture_trainer_kind_spread">Roztažení prstů</string>
+    <string name="gesture_trainer_kind_rotate">Otočení</string>
+    <string name="gesture_trainer_kind_scrub">Drhnutí (přejetí tam a zpět více prsty)</string>
 </resources>

@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">teine pühkimine <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">kogu liigutus <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">tõstetud <xliff:g id="ms">%1$d</xliff:g> ms nende vahel</string>
+    <string name="gesture_trainer_how_menu_horizontal">Asetage üks sõrm <xliff:g id="edge">%1$s</xliff:g> ja libistage seda vähemalt <xliff:g id="distance">%2$d</xliff:g> mm ekraani keskosa poole, et menüü avada. Menüüs on <xliff:g id="count">%3$d</xliff:g> üksust üle ekraani, alates servast, igaüks umbes <xliff:g id="size">%6$s</xliff:g> cm lai. Üksus <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, on servast <xliff:g id="from">%7$s</xliff:g> kuni <xliff:g id="to">%8$s</xliff:g> cm kaugusel. Hoidke sõrme samal kõrgusel ja tõstke see üles, kui üksus öeldakse.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Sõrm tõsteti <xliff:g id="mm">%1$.0f</xliff:g> mm kõrgemal või madalamal kohast, kus menüü avanes, ja menüü sulgub, kui see kaugus ületab <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Hoidke sõrme sissepoole libistades samal kõrgusel ja tõstke see seal üles.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Igal üksusel on ekraanil servast alates kindel koht ja valitakse üksus, kus sõrm üles tõstetakse. Tõstke sõrm, kui üksus öeldakse.</string>
+    <string name="gesture_trainer_left_out_in_menu">Libistused servast sissepoole jäetakse välja (<xliff:g id="edge">%1$s</xliff:g>): selle serva menüü kulgeb üle ekraani, seega avab sissepoole libistus menüü, mitte ei käivita liigutust.</string>
+    <string name="gesture_trainer_statistics">Statistika</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Katseid: <xliff:g id="tries">%2$d</xliff:g>, tuvastatud: <xliff:g id="recognized">%3$d</xliff:g>. Lühim: <xliff:g id="shortest">%4$d</xliff:g> ms, mediaan: <xliff:g id="median">%5$d</xliff:g> ms, pikim: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Iga puudutus: lühim <xliff:g id="shortest">%1$d</xliff:g> ms, mediaan <xliff:g id="median">%2$d</xliff:g> ms, pikim <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Puudutused</string>
+    <string name="gesture_trainer_kind_double_tap">Topeltpuudutused</string>
+    <string name="gesture_trainer_kind_triple_tap">Kolmikpuudutused</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Neljakordsed puudutused</string>
+    <string name="gesture_trainer_kind_tap_hold">Puudutamine ja hoidmine</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Topeltpuudutamine ja hoidmine</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Kolmikpuudutamine ja hoidmine</string>
+    <string name="gesture_trainer_kind_swipe">Pühkimised</string>
+    <string name="gesture_trainer_kind_swipe_hold">Pühkimine ja hoidmine</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Edasi-tagasi ja nurgaga pühkimised</string>
+    <string name="gesture_trainer_kind_pinch">Kokkusurumised</string>
+    <string name="gesture_trainer_kind_spread">Laiali liigutamised</string>
+    <string name="gesture_trainer_kind_rotate">Pööramised</string>
+    <string name="gesture_trainer_kind_scrub">Hõõrumised</string>
 </resources>

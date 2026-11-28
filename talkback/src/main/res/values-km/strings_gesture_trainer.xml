@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">ការអូសលើកទីពីរ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">ចលនាទាំងមូល <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">បានលើក <xliff:g id="ms">%1$d</xliff:g> ms រវាងការអូសទាំងពីរ</string>
+    <string name="gesture_trainer_how_menu_horizontal">ដាក់ម្រាមដៃមួយ<xliff:g id="edge">%1$s</xliff:g> ហើយរុញវាចូលទៅកណ្ដាលអេក្រង់យ៉ាងហោចណាស់ <xliff:g id="distance">%2$d</xliff:g> មីលីម៉ែត្រ ដើម្បីបើកម៉ឺនុយ។ វាមានធាតុ <xliff:g id="count">%3$d</xliff:g> ឆ្លងកាត់អេក្រង់ ចាប់ពីគែម ធាតុនីមួយៗទទឹងប្រហែល <xliff:g id="size">%6$s</xliff:g> សង់ទីម៉ែត្រ។ ធាតុ <xliff:g id="number">%4$d</xliff:g> <xliff:g id="item">%5$s</xliff:g> នៅចម្ងាយ <xliff:g id="from">%7$s</xliff:g> ដល់ <xliff:g id="to">%8$s</xliff:g> សង់ទីម៉ែត្រពីគែម។ រក្សាម្រាមដៃនៅកម្ពស់ដដែល ហើយលើកវាពេលធាតុត្រូវបាននិយាយ។</string>
+    <string name="gesture_trainer_finding_menu_left_line">ម្រាមដៃបានលើក <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រពីលើ ឬពីក្រោមកន្លែងដែលម៉ឺនុយបានបើក ហើយម៉ឺនុយបិទនៅពេលហួស <xliff:g id="limit">%2$.0f</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_tip_menu_left_line">រក្សាម្រាមដៃនៅកម្ពស់ដដែលពេលអ្នករុញចូល ហើយលើកវានៅទីនោះ។</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">ធាតុនីមួយៗមានទីតាំងថេរឆ្លងកាត់អេក្រង់ ចាប់ពីគែម ហើយធាតុដែលម្រាមដៃលើកត្រូវបានជ្រើសរើស។ លើកពេលធាតុត្រូវបាននិយាយ។</string>
+    <string name="gesture_trainer_left_out_in_menu">ការរុញចូលពី<xliff:g id="edge">%1$s</xliff:g> ត្រូវបានរំលង៖ ម៉ឺនុយគែមរបស់វាឆ្លងកាត់អេក្រង់ ដូច្នេះការរុញចូលពីវាបើកម៉ឺនុយ ជំនួសឱ្យការដំណើរការចលនា។</string>
+    <string name="gesture_trainer_statistics">ស្ថិតិ</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>។ ការសាកល្បង៖ <xliff:g id="tries">%2$d</xliff:g> បានស្គាល់៖ <xliff:g id="recognized">%3$d</xliff:g>។ ខ្លីបំផុត៖ <xliff:g id="shortest">%4$d</xliff:g> ms មេដ្យាន៖ <xliff:g id="median">%5$d</xliff:g> ms វែងបំផុត៖ <xliff:g id="longest">%6$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_statistics_touches">ការប៉ះនីមួយៗ៖ ខ្លីបំផុត <xliff:g id="shortest">%1$d</xliff:g> ms មេដ្យាន <xliff:g id="median">%2$d</xliff:g> ms វែងបំផុត <xliff:g id="longest">%3$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_kind_tap">ការចុច</string>
+    <string name="gesture_trainer_kind_double_tap">ការចុចពីរដង</string>
+    <string name="gesture_trainer_kind_triple_tap">ការចុចបីដង</string>
+    <string name="gesture_trainer_kind_quadruple_tap">ការចុចបួនដង</string>
+    <string name="gesture_trainer_kind_tap_hold">ចុចឱ្យជាប់</string>
+    <string name="gesture_trainer_kind_double_tap_hold">ចុចពីរដងឱ្យជាប់</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">ចុចបីដងឱ្យជាប់</string>
+    <string name="gesture_trainer_kind_swipe">ការអូស</string>
+    <string name="gesture_trainer_kind_swipe_hold">អូស ហើយចុចឱ្យជាប់</string>
+    <string name="gesture_trainer_kind_two_part_swipe">ការអូសទៅមក និងការអូសមុំ</string>
+    <string name="gesture_trainer_kind_pinch">ការច្របាច់</string>
+    <string name="gesture_trainer_kind_spread">ការលាត</string>
+    <string name="gesture_trainer_kind_rotate">ការបង្វិល</string>
+    <string name="gesture_trainer_kind_scrub">ការជូត</string>
 </resources>

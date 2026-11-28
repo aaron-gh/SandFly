@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">second swipe <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">whole gesture <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">lifted for <xliff:g id="ms">%1$d</xliff:g> ms between them</string>
+    <string name="gesture_trainer_how_menu_horizontal">Put one finger <xliff:g id="edge">%1$s</xliff:g> and slide it in towards the middle of the screen for at least <xliff:g id="distance">%2$d</xliff:g> mm to open the menu. It has <xliff:g id="count">%3$d</xliff:g> items across the screen, from the edge, each about <xliff:g id="size">%6$s</xliff:g> cm wide. Item <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, is <xliff:g id="from">%7$s</xliff:g> to <xliff:g id="to">%8$s</xliff:g> cm from the edge. Keep the finger at the same height, and lift it when the item is spoken.</string>
+    <string name="gesture_trainer_finding_menu_left_line">The finger lifted <xliff:g id="mm">%1$.0f</xliff:g> mm above or below where the menu opened, and the menu closes beyond <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Keep the finger at the same height while you slide in, and lift it there.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Each item has a fixed place across the screen, from the edge, and the item where the finger lifts is chosen. Lift when the item is spoken.</string>
+    <string name="gesture_trainer_left_out_in_menu">Slides in from <xliff:g id="edge">%1$s</xliff:g> are left out: its edge menu goes across the screen, so a slide in from it opens the menu instead of running a gesture.</string>
+    <string name="gesture_trainer_statistics">Statistics</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Tries: <xliff:g id="tries">%2$d</xliff:g>, recognised: <xliff:g id="recognized">%3$d</xliff:g>. Shortest: <xliff:g id="shortest">%4$d</xliff:g> ms, median: <xliff:g id="median">%5$d</xliff:g> ms, longest: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Each touch: shortest <xliff:g id="shortest">%1$d</xliff:g> ms, median <xliff:g id="median">%2$d</xliff:g> ms, longest <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Taps</string>
+    <string name="gesture_trainer_kind_double_tap">Double taps</string>
+    <string name="gesture_trainer_kind_triple_tap">Triple taps</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Quadruple taps</string>
+    <string name="gesture_trainer_kind_tap_hold">Tap and hold</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Double tap and hold</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Triple tap and hold</string>
+    <string name="gesture_trainer_kind_swipe">Swipes</string>
+    <string name="gesture_trainer_kind_swipe_hold">Swipe and hold</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Back-and-forth and angle swipes</string>
+    <string name="gesture_trainer_kind_pinch">Pinches</string>
+    <string name="gesture_trainer_kind_spread">Spreads</string>
+    <string name="gesture_trainer_kind_rotate">Rotations</string>
+    <string name="gesture_trainer_kind_scrub">Scrubs</string>
 </resources>

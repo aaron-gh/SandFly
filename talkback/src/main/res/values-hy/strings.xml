@@ -2860,4 +2860,109 @@
     <string name="title_pref_cyrillic_text_recognition">Կիրիլյան տեքստի ճանաչում</string>
     <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> լեզվի համար տեքստի ճանաչման մոդել չկա։ Ներբեռնեք այն «Պատկերների և էկրանի նկարագրություններ», «Կիրիլյան տեքստի ճանաչում» բաժնում։</string>
     <string name="cyrillic_text_model_error_http">Ներբեռնման սերվերը չընդունեց հարցումը։ Փորձեք ավելի ուշ։</string>
+    <string name="title_pref_announce_caller">Հայտարարել զանգողին</string>
+    <string name="announce_caller_once">Մեկ անգամ</string>
+    <string name="announce_caller_repeat">Կրկնել զանգի ընթացքում</string>
+    <string name="title_pref_command_feedback_voice">Ձայն հրամանների արձագանքի և տեքստի խմբագրման համար</string>
+    <string name="title_pref_command_feedback_over_speech">Կարդալ հրամանների արձագանքը SandFly-ի խոսքի վրայով</string>
+    <string name="title_pref_item_types_spoken">Հնչեցվող տարրերի տեսակներ</string>
+    <string name="item_type_link">Հղում</string>
+    <string name="item_type_tab">Ներդիր</string>
+    <string name="item_type_other">Այլ տեսակներ</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">Երկու մատով հպում, մեկ մատով սահեցում</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">Բացատ</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">Ընտրացանկ</string>
+    <string name="keycombo_key_search">Որոնում</string>
+    <string name="keycombo_key_grave">Ծանր շեշտ</string>
+    <string name="keycombo_key_minus">Մինուս</string>
+    <string name="keycombo_key_equals">Հավասար</string>
+    <string name="keycombo_key_left_bracket">Ձախ քառակուսի փակագիծ</string>
+    <string name="keycombo_key_right_bracket">Աջ քառակուսի փակագիծ</string>
+    <string name="keycombo_key_backslash">Հետշեղ</string>
+    <string name="keycombo_key_semicolon">Կետ-ստորակետ</string>
+    <string name="keycombo_key_apostrophe">Ապաթարց</string>
+    <string name="keycombo_key_comma">Ստորակետ</string>
+    <string name="keycombo_key_period">Կետ</string>
+    <string name="keycombo_key_slash">Շեղ</string>
+    <string name="keycombo_key_plus">Պլյուս</string>
+    <string name="keycombo_key_at">Շնիկ</string>
+    <string name="keycombo_key_star">Աստղանիշ</string>
+    <string name="keycombo_key_pound">Վանդականիշ</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">Թվաշարի պլյուս</string>
+    <string name="keycombo_key_numpad_subtract">Թվաշարի մինուս</string>
+    <string name="keycombo_key_numpad_multiply">Թվաշարի բազմապատկում</string>
+    <string name="keycombo_key_numpad_divide">Թվաշարի բաժանում</string>
+    <string name="keycombo_key_numpad_dot">Թվաշարի կետ</string>
+    <string name="keycombo_key_numpad_comma">Թվաշարի ստորակետ</string>
+    <string name="keycombo_key_numpad_equals">Թվաշարի հավասար</string>
+    <string name="keycombo_key_numpad_enter">Թվաշարի Enter</string>
+    <string name="keycombo_key_volume_up">Ձայնի բարձրացում</string>
+    <string name="keycombo_key_volume_down">Ձայնի իջեցում</string>
+    <string name="keycombo_key_volume_mute">Ձայնի անջատում</string>
+    <string name="keycombo_key_media_play_pause">Նվագարկել կամ դադարեցնել</string>
+    <string name="keycombo_key_media_next">Հաջորդ հետք</string>
+    <string name="keycombo_key_media_previous">Նախորդ հետք</string>
+    <string name="keycombo_key_media_stop">Կանգնեցնել</string>
+    <string name="keycombo_key_back">Հետ</string>
+    <string name="keycombo_key_numpad">Թվաշարի <xliff:g id="digit" example="5">%1$s</xliff:g></string>
+    <string name="title_pref_typing_swipes_through_keys">Սահեցնել ստեղնից ստեղն մուտքագրման բոլոր մեթոդներով</string>
+    <string name="shortcut_say_caller">Հնչեցնել զանգողին</string>
+    <string name="say_caller_unknown">Մուտքային զանգ</string>
+    <string name="shortcut_restart_phone">Վերագործարկել հեռախոսը</string>
+    <string name="shortcut_power_off_phone">Անջատել հեռախոսը</string>
+    <string name="restart_phone_confirm_title">Վերագործարկե՞լ հեռախոսը</string>
+    <string name="restart_phone_confirm_button">Վերագործարկել</string>
+    <string name="power_off_phone_confirm_title">Անջատե՞լ հեռախոսը</string>
+    <string name="power_off_phone_confirm_button">Անջատել</string>
+    <string name="power_command_failed">Չհաջողվեց, բացվեց սնուցման ընտրացանկը</string>
+    <string name="clipboard_history_search_hint">Որոնել սեղմատախտակի պատմությունում</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> տեքստ</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> տեքստ</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Սահեցնել եզրից դեպի ներս</string>
+    <string name="title_pref_category_sliders">Սահիչներ</string>
+    <string name="title_pref_slider_step">Սահիչի քայլ</string>
+    <string name="value_slider_step_app">Ինչպես սահմանում է հավելվածը</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">Միջակայքի ամենափոքր քայլը</string>
+    <string name="title_pref_slider_skip_unchanged">Բաց թողնել արժեքը չփոխող քայլերը</string>
+    <string name="title_slider_enter_value">Մուտքագրել արժեքը</string>
+    <string name="slider_value_range"><xliff:g id="min" example="0">%1$s</xliff:g>-ից մինչև <xliff:g id="max" example="100">%2$s</xliff:g></string>
+    <string name="voice_phrases_not_understood">Չհասկացված արտահայտություններ</string>
+    <string name="title_pref_voice_phrases_not_understood">Պահել չհասկացված արտահայտությունները</string>
+    <string name="voice_phrases_not_understood_listed">Ավելացվեց «Չհասկացված արտահայտություններ» ցանկին։</string>
 </resources>

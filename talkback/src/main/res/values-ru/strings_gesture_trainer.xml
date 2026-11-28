@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">второй свайп <xliff:g id="ms">%1$d</xliff:g> мс</string>
     <string name="gesture_trainer_measure_whole_gesture">весь жест <xliff:g id="ms">%1$d</xliff:g> мс</string>
     <string name="gesture_trainer_measure_stroke_gap">палец оторван на <xliff:g id="ms">%1$d</xliff:g> мс между ними</string>
+    <string name="gesture_trainer_how_menu_horizontal">Поставьте один палец <xliff:g id="edge">%1$s</xliff:g> и проведите им к середине экрана не менее <xliff:g id="distance">%2$d</xliff:g> мм, чтобы открыть меню. Пунктов: <xliff:g id="count">%3$d</xliff:g>, поперёк экрана от края, ширина каждого около <xliff:g id="size">%6$s</xliff:g> см. Пункт <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, находится на расстоянии <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> см от края. Держите палец на одной высоте и оторвите его, когда пункт будет озвучен.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Палец оторвался на <xliff:g id="mm">%1$.0f</xliff:g> мм выше или ниже места, где открылось меню, а меню закрывается дальше <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Ведите палец к центру на одной высоте и отрывайте его там же.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">У каждого пункта постоянное место поперёк экрана от края, и выбирается пункт, на котором палец отрывается. Оторвите палец, когда пункт будет озвучен.</string>
+    <string name="gesture_trainer_left_out_in_menu">Свайпы от <xliff:g id="edge">%1$s</xliff:g> к центру пропущены: меню этого края идёт поперёк экрана, поэтому свайп от него к центру открывает меню, а не выполняет жест.</string>
+    <string name="gesture_trainer_statistics">Статистика</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Попыток: <xliff:g id="tries">%2$d</xliff:g>, распознано: <xliff:g id="recognized">%3$d</xliff:g>. Минимум: <xliff:g id="shortest">%4$d</xliff:g> мс, медиана: <xliff:g id="median">%5$d</xliff:g> мс, максимум: <xliff:g id="longest">%6$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_statistics_touches">Каждое касание: минимум <xliff:g id="shortest">%1$d</xliff:g> мс, медиана <xliff:g id="median">%2$d</xliff:g> мс, максимум <xliff:g id="longest">%3$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_kind_tap">Нажатия</string>
+    <string name="gesture_trainer_kind_double_tap">Двойные нажатия</string>
+    <string name="gesture_trainer_kind_triple_tap">Тройные нажатия</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Четырёхкратные нажатия</string>
+    <string name="gesture_trainer_kind_tap_hold">Нажатие с удержанием</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Двойное нажатие с удержанием</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Тройное нажатие с удержанием</string>
+    <string name="gesture_trainer_kind_swipe">Свайпы</string>
+    <string name="gesture_trainer_kind_swipe_hold">Свайп с удержанием</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Свайпы вперёд-назад и под углом</string>
+    <string name="gesture_trainer_kind_pinch">Сведения</string>
+    <string name="gesture_trainer_kind_spread">Разведения</string>
+    <string name="gesture_trainer_kind_rotate">Вращения</string>
+    <string name="gesture_trainer_kind_scrub">Потирания</string>
 </resources>

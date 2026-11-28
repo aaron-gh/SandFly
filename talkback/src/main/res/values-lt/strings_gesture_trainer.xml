@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">antrasis perbraukimas <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">visas gestas <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">pakelta <xliff:g id="ms">%1$d</xliff:g> ms tarp jų</string>
+    <string name="gesture_trainer_how_menu_horizontal">Padėkite vieną pirštą <xliff:g id="edge">%1$s</xliff:g> ir braukite į ekrano vidurį bent <xliff:g id="distance">%2$d</xliff:g> mm, kad atidarytumėte meniu. Meniu elementai išdėstyti skersai ekrano nuo krašto, jų skaičius: <xliff:g id="count">%3$d</xliff:g>, kiekvienas maždaug <xliff:g id="size">%6$s</xliff:g> cm pločio. Elementas <xliff:g id="number">%4$d</xliff:g>, „<xliff:g id="item">%5$s</xliff:g>“, yra nuo <xliff:g id="from">%7$s</xliff:g> iki <xliff:g id="to">%8$s</xliff:g> cm nuo krašto. Laikykite pirštą tame pačiame aukštyje ir pakelkite, kai elementas ištariamas.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Pirštas pakeltas <xliff:g id="mm">%1$.0f</xliff:g> mm aukščiau arba žemiau vietos, kur atsidarė meniu, o meniu užsidaro už <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Braukdami į vidų laikykite pirštą tame pačiame aukštyje ir ten jį pakelkite.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Kiekvienas elementas turi fiksuotą vietą skersai ekrano, nuo krašto, ir pasirenkamas elementas, kuriame pirštas pakeliamas. Pakelkite, kai elementas ištariamas.</string>
+    <string name="gesture_trainer_left_out_in_menu">Braukimai nuo <xliff:g id="edge">%1$s</xliff:g> į vidų praleidžiami: to krašto meniu eina skersai ekrano, todėl braukimas nuo jo į vidų atidaro meniu, o ne vykdo gestą.</string>
+    <string name="gesture_trainer_statistics">Statistika</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Bandymai: <xliff:g id="tries">%2$d</xliff:g>, atpažinta: <xliff:g id="recognized">%3$d</xliff:g>. Trumpiausias: <xliff:g id="shortest">%4$d</xliff:g> ms, mediana: <xliff:g id="median">%5$d</xliff:g> ms, ilgiausias: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Kiekvienas prisilietimas: trumpiausias <xliff:g id="shortest">%1$d</xliff:g> ms, mediana <xliff:g id="median">%2$d</xliff:g> ms, ilgiausias <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Palietimai</string>
+    <string name="gesture_trainer_kind_double_tap">Dvigubi palietimai</string>
+    <string name="gesture_trainer_kind_triple_tap">Trigubi palietimai</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Keturgubi palietimai</string>
+    <string name="gesture_trainer_kind_tap_hold">Palietimas ir palaikymas</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Palietimas du kartus ir palaikymas</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Palietimas tris kartus ir palaikymas</string>
+    <string name="gesture_trainer_kind_swipe">Perbraukimai</string>
+    <string name="gesture_trainer_kind_swipe_hold">Perbraukimas ir palaikymas</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Perbraukimai pirmyn ir atgal bei kampu</string>
+    <string name="gesture_trainer_kind_pinch">Suspaudimai</string>
+    <string name="gesture_trainer_kind_spread">Išskleidimai</string>
+    <string name="gesture_trainer_kind_rotate">Pasukimai</string>
+    <string name="gesture_trainer_kind_scrub">Greiti braukimai pirmyn ir atgal</string>
 </resources>

@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">deuxième balayage <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">geste entier <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">doigt levé <xliff:g id="ms">%1$d</xliff:g> ms entre les deux</string>
+    <string name="gesture_trainer_how_menu_horizontal">Posez un doigt <xliff:g id="edge">%1$s</xliff:g> et faites-le glisser vers le milieu de l\'écran sur au moins <xliff:g id="distance">%2$d</xliff:g> mm pour ouvrir le menu. Il contient <xliff:g id="count">%3$d</xliff:g> éléments en travers de l\'écran, à partir du bord, chacun d\'environ <xliff:g id="size">%6$s</xliff:g> cm de large. L\'élément <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, se trouve entre <xliff:g id="from">%7$s</xliff:g> et <xliff:g id="to">%8$s</xliff:g> cm du bord. Gardez le doigt à la même hauteur et levez-le quand l\'élément est énoncé.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Le doigt s\'est levé à <xliff:g id="mm">%1$.0f</xliff:g> mm au-dessus ou au-dessous de l\'endroit où le menu s\'est ouvert, et le menu se ferme au-delà de <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Gardez le doigt à la même hauteur pendant le glissement vers l\'intérieur, et levez-le à cet endroit.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Chaque élément a une place fixe en travers de l\'écran, à partir du bord, et l\'élément où le doigt se lève est choisi. Levez quand l\'élément est énoncé.</string>
+    <string name="gesture_trainer_left_out_in_menu">Les glissements depuis le <xliff:g id="edge">%1$s</xliff:g> sont exclus : le menu de ce bord traverse l\'écran, donc un glissement depuis ce bord ouvre le menu au lieu d\'exécuter un geste.</string>
+    <string name="gesture_trainer_statistics">Statistiques</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Essais : <xliff:g id="tries">%2$d</xliff:g>, reconnus : <xliff:g id="recognized">%3$d</xliff:g>. Minimum : <xliff:g id="shortest">%4$d</xliff:g> ms, médiane : <xliff:g id="median">%5$d</xliff:g> ms, maximum : <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Chaque contact : minimum <xliff:g id="shortest">%1$d</xliff:g> ms, médiane <xliff:g id="median">%2$d</xliff:g> ms, maximum <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Appuis</string>
+    <string name="gesture_trainer_kind_double_tap">Doubles appuis</string>
+    <string name="gesture_trainer_kind_triple_tap">Triples appuis</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Quadruples appuis</string>
+    <string name="gesture_trainer_kind_tap_hold">Appui maintenu</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Double appui maintenu</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Triple appui maintenu</string>
+    <string name="gesture_trainer_kind_swipe">Balayages</string>
+    <string name="gesture_trainer_kind_swipe_hold">Balayage maintenu</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Balayages de va-et-vient et d\'angle</string>
+    <string name="gesture_trainer_kind_pinch">Pincements</string>
+    <string name="gesture_trainer_kind_spread">Écartements</string>
+    <string name="gesture_trainer_kind_rotate">Rotations</string>
+    <string name="gesture_trainer_kind_scrub">Frottements</string>
 </resources>

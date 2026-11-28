@@ -2860,4 +2860,109 @@
     <string name="title_pref_cyrillic_text_recognition">සිරිලික් පෙළ හඳුනාගැනීම</string>
     <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> සඳහා පෙළ හඳුනාගැනීමේ මාදිලියක් නැත. රූප සහ තිර විස්තර, සිරිලික් පෙළ හඳුනාගැනීම යටතේ එය බාගන්න.</string>
     <string name="cyrillic_text_model_error_http">බාගැනීමේ සේවාදායකය ඉල්ලීම පිළිගත්තේ නැත. පසුව නැවත උත්සාහ කරන්න.</string>
+    <string name="title_pref_announce_caller">අමතන්නා නිවේදනය කරන්න</string>
+    <string name="announce_caller_once">එක් වරක්</string>
+    <string name="announce_caller_repeat">නාද වන අතරතුර නැවත කියන්න</string>
+    <string name="title_pref_command_feedback_voice">විධාන ප්‍රතිචාර සහ පෙළ සංස්කරණය සඳහා හඬ</string>
+    <string name="title_pref_command_feedback_over_speech">SandFly කථනයට ඉහළින් විධාන ප්‍රතිචාර කියවන්න</string>
+    <string name="title_pref_item_types_spoken">කියවිය යුතු අයිතම වර්ග</string>
+    <string name="item_type_link">සබැඳිය</string>
+    <string name="item_type_tab">ටැබය</string>
+    <string name="item_type_other">වෙනත් වර්ග</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">ඇඟිලි 2 තට්ටුව, ඇඟිලි 1 ස්වයිප්</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">හිස්තැන</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">මෙනුව</string>
+    <string name="keycombo_key_search">සෙවීම</string>
+    <string name="keycombo_key_grave">ග්‍රේව් උච්චාරණ ලකුණ</string>
+    <string name="keycombo_key_minus">අඩු ලකුණ</string>
+    <string name="keycombo_key_equals">සමාන ලකුණ</string>
+    <string name="keycombo_key_left_bracket">වම් කොටු වරහන</string>
+    <string name="keycombo_key_right_bracket">දකුණු කොටු වරහන</string>
+    <string name="keycombo_key_backslash">පසු ඇල ඉර</string>
+    <string name="keycombo_key_semicolon">තිත් කොමාව</string>
+    <string name="keycombo_key_apostrophe">උඩු කොමාව</string>
+    <string name="keycombo_key_comma">කොමාව</string>
+    <string name="keycombo_key_period">තිත</string>
+    <string name="keycombo_key_slash">ඇල ඉර</string>
+    <string name="keycombo_key_plus">එකතු ලකුණ</string>
+    <string name="keycombo_key_at">ඇට් ලකුණ</string>
+    <string name="keycombo_key_star">තරු ලකුණ</string>
+    <string name="keycombo_key_pound">හෑෂ් ලකුණ</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">අංක පෑඩ් එකතු ලකුණ</string>
+    <string name="keycombo_key_numpad_subtract">අංක පෑඩ් අඩු ලකුණ</string>
+    <string name="keycombo_key_numpad_multiply">අංක පෑඩ් ගුණ ලකුණ</string>
+    <string name="keycombo_key_numpad_divide">අංක පෑඩ් බෙදීම් ලකුණ</string>
+    <string name="keycombo_key_numpad_dot">අංක පෑඩ් තිත</string>
+    <string name="keycombo_key_numpad_comma">අංක පෑඩ් කොමාව</string>
+    <string name="keycombo_key_numpad_equals">අංක පෑඩ් සමාන ලකුණ</string>
+    <string name="keycombo_key_numpad_enter">අංක පෑඩ් Enter</string>
+    <string name="keycombo_key_volume_up">ශබ්දය වැඩි කරන්න</string>
+    <string name="keycombo_key_volume_down">ශබ්දය අඩු කරන්න</string>
+    <string name="keycombo_key_volume_mute">ශබ්දය නිහඬ කරන්න</string>
+    <string name="keycombo_key_media_play_pause">වාදනය හෝ විරාමය</string>
+    <string name="keycombo_key_media_next">ඊළඟ ගීතය</string>
+    <string name="keycombo_key_media_previous">පෙර ගීතය</string>
+    <string name="keycombo_key_media_stop">නවත්වන්න</string>
+    <string name="keycombo_key_back">ආපසු</string>
+    <string name="keycombo_key_numpad">අංක පෑඩ් <xliff:g id="digit" example="5">%1$s</xliff:g></string>
+    <string name="title_pref_typing_swipes_through_keys">සෑම ටයිප් කිරීමේ ක්‍රමයකදීම යතුරෙන් යතුරට ස්වයිප් කරන්න</string>
+    <string name="shortcut_say_caller">අමතන්නා කියන්න</string>
+    <string name="say_caller_unknown">පැමිණෙන ඇමතුම</string>
+    <string name="shortcut_restart_phone">දුරකථනය යළි අරඹන්න</string>
+    <string name="shortcut_power_off_phone">දුරකථනය ක්‍රියාවිරහිත කරන්න</string>
+    <string name="restart_phone_confirm_title">දුරකථනය යළි අරඹන්නද?</string>
+    <string name="restart_phone_confirm_button">යළි අරඹන්න</string>
+    <string name="power_off_phone_confirm_title">දුරකථනය ක්‍රියාවිරහිත කරන්නද?</string>
+    <string name="power_off_phone_confirm_button">ක්‍රියාවිරහිත කරන්න</string>
+    <string name="power_command_failed">අසාර්ථකයි, බල මෙනුව විවෘත විය</string>
+    <string name="clipboard_history_search_hint">පසුරු පුවරු ඉතිහාසය සොයන්න</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one">පෙළ <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">පෙළ <xliff:g id="count" example="12">%d</xliff:g></item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">දාරයේ සිට ඇතුළට ලිස්සා යවන්න</string>
+    <string name="title_pref_category_sliders">ස්ලයිඩර</string>
+    <string name="title_pref_slider_step">ස්ලයිඩර පියවර</string>
+    <string name="value_slider_step_app">යෙදුම සකසන පරිදි</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">පරාසයේ කුඩාම පියවර</string>
+    <string name="title_pref_slider_skip_unchanged">අගය වෙනස් නොකරන පියවර මඟ හරින්න</string>
+    <string name="title_slider_enter_value">අගය ඇතුළු කරන්න</string>
+    <string name="slider_value_range"><xliff:g id="min" example="0">%1$s</xliff:g> සිට <xliff:g id="max" example="100">%2$s</xliff:g> දක්වා</string>
+    <string name="voice_phrases_not_understood">නොතේරුණු වාක්‍ය ඛණ්ඩ</string>
+    <string name="title_pref_voice_phrases_not_understood">නොතේරුණු වාක්‍ය ඛණ්ඩ සුරකින්න</string>
+    <string name="voice_phrases_not_understood_listed">නොතේරුණු වාක්‍ය ඛණ්ඩ වෙත එක් කරන ලදී.</string>
 </resources>

@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">экинчи сүрүү <xliff:g id="ms">%1$d</xliff:g> мс</string>
     <string name="gesture_trainer_measure_whole_gesture">бүт жаңсоо <xliff:g id="ms">%1$d</xliff:g> мс</string>
     <string name="gesture_trainer_measure_stroke_gap">алардын ортосунда <xliff:g id="ms">%1$d</xliff:g> мс көтөрүлүп турду</string>
+    <string name="gesture_trainer_how_menu_horizontal">Бир манжаны <xliff:g id="edge">%1$s</xliff:g> коюп, менюну ачуу үчүн аны экрандын ортосун көздөй кеминде <xliff:g id="distance">%2$d</xliff:g> мм ичкери сүрүңүз. Анда четтен баштап экран боюнча туурасынан <xliff:g id="count">%3$d</xliff:g> элемент бар, ар биринин туурасы болжол менен <xliff:g id="size">%6$s</xliff:g> см. <xliff:g id="number">%4$d</xliff:g>-элемент, <xliff:g id="item">%5$s</xliff:g>, четтен <xliff:g id="from">%7$s</xliff:g> – <xliff:g id="to">%8$s</xliff:g> см аралыкта. Манжаны ошол эле бийиктикте кармап, элемент айтылганда көтөрүңүз.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Манжа меню ачылган жерден <xliff:g id="mm">%1$.0f</xliff:g> мм өйдө же ылдый көтөрүлдү, ал эми меню <xliff:g id="limit">%2$.0f</xliff:g> ммден ары жабылат.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Ичкери сүрүп жатканда манжаны ошол эле бийиктикте кармап, ошол жерде көтөрүңүз.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Ар бир элементтин четтен баштап экран боюнча туурасынан туруктуу орду бар, манжа көтөрүлгөн жердеги элемент тандалат. Элемент айтылганда көтөрүңүз.</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g> ичкери сүрүүлөр калтырылды: анын чет менюсу экран боюнча туурасынан ачылат, ошондуктан андан ичкери сүрүү жаңсоону аткаруунун ордуна менюну ачат.</string>
+    <string name="gesture_trainer_statistics">Статистика</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Аракеттер: <xliff:g id="tries">%2$d</xliff:g>, таанылганы: <xliff:g id="recognized">%3$d</xliff:g>. Эң кыскасы: <xliff:g id="shortest">%4$d</xliff:g> мс, медиана: <xliff:g id="median">%5$d</xliff:g> мс, эң узуну: <xliff:g id="longest">%6$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_statistics_touches">Ар бир тийүү: эң кыскасы <xliff:g id="shortest">%1$d</xliff:g> мс, медиана <xliff:g id="median">%2$d</xliff:g> мс, эң узуну <xliff:g id="longest">%3$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_kind_tap">Таптоолор</string>
+    <string name="gesture_trainer_kind_double_tap">Эки жолу таптоолор</string>
+    <string name="gesture_trainer_kind_triple_tap">Үч жолу таптоолор</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Төрт жолу таптоолор</string>
+    <string name="gesture_trainer_kind_tap_hold">Басып, кое бербей туруу</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Эки жолу басып, кое бербей туруу</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Үч жолу басып, кое бербей туруу</string>
+    <string name="gesture_trainer_kind_swipe">Сүрүүлөр</string>
+    <string name="gesture_trainer_kind_swipe_hold">Сүрүп кармап туруу</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Ары-бери жана бурчтук сүрүүлөр</string>
+    <string name="gesture_trainer_kind_pinch">Кысуулар</string>
+    <string name="gesture_trainer_kind_spread">Жайуулар</string>
+    <string name="gesture_trainer_kind_rotate">Айлантуулар</string>
+    <string name="gesture_trainer_kind_scrub">Сүртүүлөр</string>
 </resources>

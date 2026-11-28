@@ -2861,4 +2861,109 @@
     <string name="title_pref_cyrillic_text_recognition">Texterkennung für kyrillische Schrift</string>
     <string name="cyrillic_text_model_missing">Kein Texterkennungsmodell für <xliff:g id="language" example="Russian">%1$s</xliff:g>. Lade es unter Bild- und Bildschirmbeschreibungen, Texterkennung für kyrillische Schrift herunter.</string>
     <string name="cyrillic_text_model_error_http">Der Download-Server hat die Anfrage nicht akzeptiert. Versuche es später erneut.</string>
+    <string name="title_pref_announce_caller">Anruferansage</string>
+    <string name="announce_caller_once">Einmal</string>
+    <string name="announce_caller_repeat">Während des Klingelns wiederholen</string>
+    <string name="title_pref_command_feedback_voice">Stimme für Befehlsrückmeldungen und Textbearbeitung</string>
+    <string name="title_pref_command_feedback_over_speech">Befehlsrückmeldungen über die Sprachausgabe von SandFly vorlesen</string>
+    <string name="title_pref_item_types_spoken">Vorzulesende Elementtypen</string>
+    <string name="item_type_link">Link</string>
+    <string name="item_type_tab">Tab</string>
+    <string name="item_type_other">Andere Typen</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">2 Finger tippen, 1 Finger wischen</string>
+    <string name="keycombo_key_enter">Eingabe</string>
+    <string name="keycombo_key_space">Leertaste</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Bild auf</string>
+    <string name="keycombo_key_page_down">Bild ab</string>
+    <string name="keycombo_key_home">Pos1</string>
+    <string name="keycombo_key_end">Ende</string>
+    <string name="keycombo_key_delete">Entf</string>
+    <string name="keycombo_key_menu">Menü</string>
+    <string name="keycombo_key_search">Suche</string>
+    <string name="keycombo_key_grave">Gravis</string>
+    <string name="keycombo_key_minus">Minus</string>
+    <string name="keycombo_key_equals">Gleich</string>
+    <string name="keycombo_key_left_bracket">Eckige Klammer auf</string>
+    <string name="keycombo_key_right_bracket">Eckige Klammer zu</string>
+    <string name="keycombo_key_backslash">Backslash</string>
+    <string name="keycombo_key_semicolon">Semikolon</string>
+    <string name="keycombo_key_apostrophe">Apostroph</string>
+    <string name="keycombo_key_comma">Komma</string>
+    <string name="keycombo_key_period">Punkt</string>
+    <string name="keycombo_key_slash">Schrägstrich</string>
+    <string name="keycombo_key_plus">Plus</string>
+    <string name="keycombo_key_at">At-Zeichen</string>
+    <string name="keycombo_key_star">Stern</string>
+    <string name="keycombo_key_pound">Raute</string>
+    <string name="keycombo_key_caps_lock">Feststelltaste</string>
+    <string name="keycombo_key_scroll_lock">Rollen</string>
+    <string name="keycombo_key_num_lock">Num</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Druck</string>
+    <string name="keycombo_key_numpad_add">Plus auf Ziffernblock</string>
+    <string name="keycombo_key_numpad_subtract">Minus auf Ziffernblock</string>
+    <string name="keycombo_key_numpad_multiply">Mal auf Ziffernblock</string>
+    <string name="keycombo_key_numpad_divide">Geteilt auf Ziffernblock</string>
+    <string name="keycombo_key_numpad_dot">Punkt auf Ziffernblock</string>
+    <string name="keycombo_key_numpad_comma">Komma auf Ziffernblock</string>
+    <string name="keycombo_key_numpad_equals">Gleich auf Ziffernblock</string>
+    <string name="keycombo_key_numpad_enter">Eingabe auf Ziffernblock</string>
+    <string name="keycombo_key_volume_up">Lauter</string>
+    <string name="keycombo_key_volume_down">Leiser</string>
+    <string name="keycombo_key_volume_mute">Stumm</string>
+    <string name="keycombo_key_media_play_pause">Wiedergabe oder Pause</string>
+    <string name="keycombo_key_media_next">Nächster Titel</string>
+    <string name="keycombo_key_media_previous">Vorheriger Titel</string>
+    <string name="keycombo_key_media_stop">Stopp</string>
+    <string name="keycombo_key_back">Zurück</string>
+    <string name="keycombo_key_numpad"><xliff:g id="digit" example="5">%1$s</xliff:g> auf Ziffernblock</string>
+    <string name="title_pref_typing_swipes_through_keys">Bei jeder Tippmethode von Taste zu Taste wischen</string>
+    <string name="shortcut_say_caller">Anrufer ansagen</string>
+    <string name="say_caller_unknown">Eingehender Anruf</string>
+    <string name="shortcut_restart_phone">Telefon neu starten</string>
+    <string name="shortcut_power_off_phone">Telefon ausschalten</string>
+    <string name="restart_phone_confirm_title">Telefon neu starten?</string>
+    <string name="restart_phone_confirm_button">Neu starten</string>
+    <string name="power_off_phone_confirm_title">Telefon ausschalten?</string>
+    <string name="power_off_phone_confirm_button">Ausschalten</string>
+    <string name="power_command_failed">Fehlgeschlagen, Ausschaltmenü geöffnet</string>
+    <string name="clipboard_history_search_hint">Zwischenablageverlauf durchsuchen</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> Text</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> Texte</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Vom Rand nach innen wischen</string>
+    <string name="title_pref_category_sliders">Schieberegler</string>
+    <string name="title_pref_slider_step">Schrittweite für Schieberegler</string>
+    <string name="value_slider_step_app">Wie von der App festgelegt</string>
+    <string name="value_slider_step_percent">1 %</string>
+    <string name="value_slider_step_smallest">Kleinster Schritt des Bereichs</string>
+    <string name="title_pref_slider_skip_unchanged">Schritte überspringen, die den Wert nicht ändern</string>
+    <string name="title_slider_enter_value">Wert eingeben</string>
+    <string name="slider_value_range">Von <xliff:g id="min" example="0">%1$s</xliff:g> bis <xliff:g id="max" example="100">%2$s</xliff:g></string>
+    <string name="voice_phrases_not_understood">Nicht verstandene Sätze</string>
+    <string name="title_pref_voice_phrases_not_understood">Nicht verstandene Sätze speichern</string>
+    <string name="voice_phrases_not_understood_listed">Zu „Nicht verstandene Sätze“ hinzugefügt.</string>
 </resources>

@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">druhé potiahnutie <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">celé gesto <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">zdvihnuté <xliff:g id="ms">%1$d</xliff:g> ms medzi nimi</string>
+    <string name="gesture_trainer_how_menu_horizontal">Položte jeden prst <xliff:g id="edge">%1$s</xliff:g> a posuňte ho dovnútra smerom k stredu obrazovky aspoň o <xliff:g id="distance">%2$d</xliff:g> mm, aby sa otvorila ponuka. Položky ponuky (<xliff:g id="count">%3$d</xliff:g>) sú zoradené naprieč obrazovkou od okraja, každá je široká asi <xliff:g id="item">%5$s</xliff:g> cm. Položka <xliff:g id="size">%6$s</xliff:g>, <xliff:g id="number">%4$d</xliff:g>, je <xliff:g id="from">%7$s</xliff:g> až <xliff:g id="to">%8$s</xliff:g> cm od okraja. Držte prst v rovnakej výške a zdvihnite ho, keď sa položka oznámi.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Prst sa zdvihol <xliff:g id="mm">%1$.0f</xliff:g> mm nad alebo pod výškou, v ktorej sa ponuka otvorila, a ponuka sa zavrie za hranicou <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Pri posúvaní dovnútra držte prst v rovnakej výške a tam ho aj zdvihnite.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Každá položka má pevné miesto naprieč obrazovkou od okraja a vyberie sa položka, na ktorej sa prst zdvihne. Zdvihnite prst, keď sa položka oznámi.</string>
+    <string name="gesture_trainer_left_out_in_menu">Posúvania dovnútra od <xliff:g id="edge">%1$s</xliff:g> sú vynechané: ponuka tohto okraja ide naprieč obrazovkou, takže posunutie dovnútra od neho otvorí ponuku namiesto spustenia gesta.</string>
+    <string name="gesture_trainer_statistics">Štatistiky</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Pokusy: <xliff:g id="tries">%2$d</xliff:g>, rozpoznané: <xliff:g id="recognized">%3$d</xliff:g>. Najkratší: <xliff:g id="shortest">%4$d</xliff:g> ms, medián: <xliff:g id="median">%5$d</xliff:g> ms, najdlhší: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Každý dotyk: najkratší <xliff:g id="shortest">%1$d</xliff:g> ms, medián <xliff:g id="median">%2$d</xliff:g> ms, najdlhší <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Klepnutia</string>
+    <string name="gesture_trainer_kind_double_tap">Dvojité klepnutia</string>
+    <string name="gesture_trainer_kind_triple_tap">Trojité klepnutia</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Štvorité klepnutia</string>
+    <string name="gesture_trainer_kind_tap_hold">Pridržanie</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Dvojité klepnutie a pridržanie</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Trojité klepnutie a pridržanie</string>
+    <string name="gesture_trainer_kind_swipe">Potiahnutia</string>
+    <string name="gesture_trainer_kind_swipe_hold">Potiahnutie a pridržanie</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Potiahnutia tam a späť a do pravého uhla</string>
+    <string name="gesture_trainer_kind_pinch">Stiahnutia</string>
+    <string name="gesture_trainer_kind_spread">Roztiahnutia</string>
+    <string name="gesture_trainer_kind_rotate">Otočenia</string>
+    <string name="gesture_trainer_kind_scrub">Rýchle prejdenia tam a späť</string>
 </resources>

@@ -2398,18 +2398,18 @@
     <string name="title_pref_shortcut_4finger_3tap_swipe_down">Гурав товшоод, 4 хуруугаар доош шудрах</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_left">Гурав товшоод, 4 хуруугаар зүүн тийш шудрах</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_right">Гурав товшоод, 4 хуруугаар баруун тийш шудрах</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">2 хуруугаар товшоод, дээш шудрах</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">2 хуруугаар товшоод, доош шудрах</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">2 хуруугаар товшоод, зүүн тийш шудрах</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">2 хуруугаар товшоод, баруун тийш шудрах</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">2 хуруугаар хоёр товшоод, дээш шудрах</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">2 хуруугаар хоёр товшоод, доош шудрах</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">2 хуруугаар хоёр товшоод, зүүн тийш шудрах</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">2 хуруугаар хоёр товшоод, баруун тийш шудрах</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">2 хуруугаар гурав товшоод, дээш шудрах</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">2 хуруугаар гурав товшоод, доош шудрах</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">2 хуруугаар гурав товшоод, зүүн тийш шудрах</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">2 хуруугаар гурав товшоод, баруун тийш шудрах</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">2 хуруугаар товшоод, 1 хуруугаар дээш шудрах</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">2 хуруугаар товшоод, 1 хуруугаар доош шудрах</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">2 хуруугаар товшоод, 1 хуруугаар зүүн тийш шудрах</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">2 хуруугаар товшоод, 1 хуруугаар баруун тийш шудрах</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">2 хуруугаар хоёр товшоод, 1 хуруугаар дээш шудрах</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">2 хуруугаар хоёр товшоод, 1 хуруугаар доош шудрах</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">2 хуруугаар хоёр товшоод, 1 хуруугаар зүүн тийш шудрах</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">2 хуруугаар хоёр товшоод, 1 хуруугаар баруун тийш шудрах</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">2 хуруугаар гурав товшоод, 1 хуруугаар дээш шудрах</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">2 хуруугаар гурав товшоод, 1 хуруугаар доош шудрах</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">2 хуруугаар гурав товшоод, 1 хуруугаар зүүн тийш шудрах</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">2 хуруугаар гурав товшоод, 1 хуруугаар баруун тийш шудрах</string>
     <string name="title_pref_shortcut_up_and_down_and_up">Дээш, доош, дараа нь дээш шудрах</string>
     <string name="title_pref_shortcut_up_and_down_and_left">Дээш, доош, дараа нь зүүн тийш шудрах</string>
     <string name="title_pref_shortcut_up_and_down_and_right">Дээш, доош, дараа нь баруун тийш шудрах</string>
@@ -2860,4 +2860,109 @@
     <string name="title_pref_cyrillic_text_recognition">Кирилл бичвэр таних</string>
     <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> хэлний бичвэр таних загвар алга. Зураг ба дэлгэцийн тайлбар, Кирилл бичвэр таних хэсгээс татаж аваарай.</string>
     <string name="cyrillic_text_model_error_http">Татах сервер хүсэлтийг хүлээж авсангүй. Дараа дахин оролдоно уу.</string>
+    <string name="title_pref_announce_caller">Дуудлага хийгчийг хэлэх</string>
+    <string name="announce_caller_once">Нэг удаа</string>
+    <string name="announce_caller_repeat">Дуугарах хооронд давтах</string>
+    <string name="title_pref_command_feedback_voice">Тушаалын хариу ба текст засварлалтын дуу хоолой</string>
+    <string name="title_pref_command_feedback_over_speech">Тушаалын хариуг SandFly-н ярианы дээгүүр унших</string>
+    <string name="title_pref_item_types_spoken">Хэлэх элементийн төрөл</string>
+    <string name="item_type_link">Холбоос</string>
+    <string name="item_type_tab">Таб</string>
+    <string name="item_type_other">Бусад төрөл</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">2 хуруугаар товших, 1 хуруугаар шудрах</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">Хоосон зай</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">Цэс</string>
+    <string name="keycombo_key_search">Хайх</string>
+    <string name="keycombo_key_grave">Урвуу өргөлт</string>
+    <string name="keycombo_key_minus">Хасах</string>
+    <string name="keycombo_key_equals">Тэнцүү</string>
+    <string name="keycombo_key_left_bracket">Зүүн дөрвөлжин хаалт</string>
+    <string name="keycombo_key_right_bracket">Баруун дөрвөлжин хаалт</string>
+    <string name="keycombo_key_backslash">Урвуу налуу зураас</string>
+    <string name="keycombo_key_semicolon">Цэг таслал</string>
+    <string name="keycombo_key_apostrophe">Апостроф</string>
+    <string name="keycombo_key_comma">Таслал</string>
+    <string name="keycombo_key_period">Цэг</string>
+    <string name="keycombo_key_slash">Налуу зураас</string>
+    <string name="keycombo_key_plus">Нэмэх</string>
+    <string name="keycombo_key_at">\@ тэмдэг</string>
+    <string name="keycombo_key_star">Од</string>
+    <string name="keycombo_key_pound">Тор тэмдэг</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">Тооны гарын нэмэх</string>
+    <string name="keycombo_key_numpad_subtract">Тооны гарын хасах</string>
+    <string name="keycombo_key_numpad_multiply">Тооны гарын үржих</string>
+    <string name="keycombo_key_numpad_divide">Тооны гарын хуваах</string>
+    <string name="keycombo_key_numpad_dot">Тооны гарын цэг</string>
+    <string name="keycombo_key_numpad_comma">Тооны гарын таслал</string>
+    <string name="keycombo_key_numpad_equals">Тооны гарын тэнцүү</string>
+    <string name="keycombo_key_numpad_enter">Тооны гарын Enter</string>
+    <string name="keycombo_key_volume_up">Дууг нэмэх</string>
+    <string name="keycombo_key_volume_down">Дууг багасгах</string>
+    <string name="keycombo_key_volume_mute">Дууг хаах</string>
+    <string name="keycombo_key_media_play_pause">Тоглуулах эсвэл түр зогсоох</string>
+    <string name="keycombo_key_media_next">Дараагийн дуу</string>
+    <string name="keycombo_key_media_previous">Өмнөх дуу</string>
+    <string name="keycombo_key_media_stop">Зогсоох</string>
+    <string name="keycombo_key_back">Буцах</string>
+    <string name="keycombo_key_numpad">Тооны гарын <xliff:g id="digit" example="5">%1$s</xliff:g></string>
+    <string name="title_pref_typing_swipes_through_keys">Бичих бүх аргаар товчоос товч руу шудрах</string>
+    <string name="shortcut_say_caller">Дуудлага хийгчийг хэлэх</string>
+    <string name="say_caller_unknown">Ирж буй дуудлага</string>
+    <string name="shortcut_restart_phone">Утсыг дахин асаах</string>
+    <string name="shortcut_power_off_phone">Утсыг унтраах</string>
+    <string name="restart_phone_confirm_title">Утсыг дахин асаах уу?</string>
+    <string name="restart_phone_confirm_button">Дахин асаах</string>
+    <string name="power_off_phone_confirm_title">Утсыг унтраах уу?</string>
+    <string name="power_off_phone_confirm_button">Унтраах</string>
+    <string name="power_command_failed">Амжилтгүй, асаах/унтраах цэс нээгдлээ</string>
+    <string name="clipboard_history_search_hint">Санах ойн түүхээс хайх</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> текст</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> текст</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Ирмэгээс дотогш шудрах</string>
+    <string name="title_pref_category_sliders">Гулсуулагч</string>
+    <string name="title_pref_slider_step">Гулсуулагчийн алхам</string>
+    <string name="value_slider_step_app">Аппын тохируулснаар</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">Хүрээний хамгийн бага алхам</string>
+    <string name="title_pref_slider_skip_unchanged">Утгыг өөрчлөхгүй алхмыг алгасах</string>
+    <string name="title_slider_enter_value">Утга оруулах</string>
+    <string name="slider_value_range"><xliff:g id="min" example="0">%1$s</xliff:g>-с <xliff:g id="max" example="100">%2$s</xliff:g> хүртэл</string>
+    <string name="voice_phrases_not_understood">Ойлгогдоогүй хэллэг</string>
+    <string name="title_pref_voice_phrases_not_understood">Ойлгогдоогүй хэллэгийг хадгалах</string>
+    <string name="voice_phrases_not_understood_listed">«Ойлгогдоогүй хэллэг»-т нэмсэн.</string>
 </resources>

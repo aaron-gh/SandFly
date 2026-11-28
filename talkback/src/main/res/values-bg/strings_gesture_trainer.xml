@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">второ прекарване <xliff:g id="ms">%1$d</xliff:g> мс</string>
     <string name="gesture_trainer_measure_whole_gesture">целият жест <xliff:g id="ms">%1$d</xliff:g> мс</string>
     <string name="gesture_trainer_measure_stroke_gap">вдигнат за <xliff:g id="ms">%1$d</xliff:g> мс между тях</string>
+    <string name="gesture_trainer_how_menu_horizontal">Поставете един пръст <xliff:g id="edge">%1$s</xliff:g> и го плъзнете навътре към средата на екрана поне <xliff:g id="distance">%2$d</xliff:g> мм, за да отворите менюто. То има <xliff:g id="count">%3$d</xliff:g> елемента по ширината на екрана, започвайки от ръба, всеки с ширина около <xliff:g id="size">%6$s</xliff:g> см. Елемент <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, е на <xliff:g id="from">%7$s</xliff:g> до <xliff:g id="to">%8$s</xliff:g> см от ръба. Дръжте пръста на същата височина и го вдигнете, когато елементът бъде изговорен.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Пръстът беше вдигнат на <xliff:g id="mm">%1$.0f</xliff:g> мм над или под мястото, където се отвори менюто, а менюто се затваря след <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Дръжте пръста на същата височина, докато плъзгате навътре, и го вдигнете там.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Всеки елемент има фиксирано място по ширината на екрана, започвайки от ръба, и се избира елементът, на който пръстът се вдигне. Вдигнете, когато елементът бъде изговорен.</string>
+    <string name="gesture_trainer_left_out_in_menu">Плъзганията навътре от <xliff:g id="edge">%1$s</xliff:g> са пропуснати: менюто на този ръб е по ширината на екрана, затова плъзгане навътре от него отваря менюто, вместо да изпълни жест.</string>
+    <string name="gesture_trainer_statistics">Статистика</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Опити: <xliff:g id="tries">%2$d</xliff:g>, разпознати: <xliff:g id="recognized">%3$d</xliff:g>. Най-кратко: <xliff:g id="shortest">%4$d</xliff:g> мс, медиана: <xliff:g id="median">%5$d</xliff:g> мс, най-дълго: <xliff:g id="longest">%6$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_statistics_touches">Всяко докосване: най-кратко <xliff:g id="shortest">%1$d</xliff:g> мс, медиана <xliff:g id="median">%2$d</xliff:g> мс, най-дълго <xliff:g id="longest">%3$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_kind_tap">Докосвания</string>
+    <string name="gesture_trainer_kind_double_tap">Двукратни докосвания</string>
+    <string name="gesture_trainer_kind_triple_tap">Трикратни докосвания</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Четирикратни докосвания</string>
+    <string name="gesture_trainer_kind_tap_hold">Докосване и задържане</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Двукратно докосване и задържане</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Трикратно докосване и задържане</string>
+    <string name="gesture_trainer_kind_swipe">Плъзвания с пръст</string>
+    <string name="gesture_trainer_kind_swipe_hold">Плъзване с пръст и задържане</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Плъзвания напред-назад и под ъгъл</string>
+    <string name="gesture_trainer_kind_pinch">Събирания</string>
+    <string name="gesture_trainer_kind_spread">Разтваряния</string>
+    <string name="gesture_trainer_kind_rotate">Завъртания</string>
+    <string name="gesture_trainer_kind_scrub">Бързи движения напред-назад</string>
 </resources>

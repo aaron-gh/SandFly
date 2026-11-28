@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">bigarren pasatzea: <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">keinu osoa: <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap"><xliff:g id="ms">%1$d</xliff:g> ms altxatuta haien artean</string>
+    <string name="gesture_trainer_how_menu_horizontal">Jarri hatz bat <xliff:g id="edge">%1$s</xliff:g> eta irristatu pantailaren erdialderantz gutxienez <xliff:g id="distance">%2$d</xliff:g> mm menua irekitzeko. <xliff:g id="count">%3$d</xliff:g> elementu ditu pantailan zehar, ertzetik hasita, eta bakoitzak <xliff:g id="size">%6$s</xliff:g> cm inguruko zabalera du. <xliff:g id="number">%4$d</xliff:g>. elementua, <xliff:g id="item">%5$s</xliff:g>, ertzetik <xliff:g id="from">%7$s</xliff:g> eta <xliff:g id="to">%8$s</xliff:g> cm artean dago. Eduki hatza altuera berean, eta altxatu elementua esaten denean.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Hatza menua ireki zen lekutik <xliff:g id="mm">%1$.0f</xliff:g> mm gorago edo beherago altxatu da, eta menua <xliff:g id="limit">%2$.0f</xliff:g> mm-tik aurrera ixten da.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Eduki hatza altuera berean barrurantz irristatzen duzun bitartean, eta altxatu han bertan.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Elementu bakoitzak leku finko bat du pantailan zehar, ertzetik hasita, eta hatza altxatzen den elementua aukeratzen da. Altxatu elementua esaten denean.</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g> hasi eta barrurantz egindako irristatzeak kanpoan utzi dira: ertz horretako menua pantailan zehar doa, eta, beraz, handik barrurantz irristatzean menua irekitzen da keinu bat exekutatu beharrean.</string>
+    <string name="gesture_trainer_statistics">Estatistikak</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Saiakerak: <xliff:g id="tries">%2$d</xliff:g>; hautemanak: <xliff:g id="recognized">%3$d</xliff:g>. Laburrena: <xliff:g id="shortest">%4$d</xliff:g> ms; mediana: <xliff:g id="median">%5$d</xliff:g> ms; luzeena: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Ukitze bakoitza: laburrena <xliff:g id="shortest">%1$d</xliff:g> ms, mediana <xliff:g id="median">%2$d</xliff:g> ms, luzeena <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Sakatzeak</string>
+    <string name="gesture_trainer_kind_double_tap">Birritan sakatzeak</string>
+    <string name="gesture_trainer_kind_triple_tap">Hirutan sakatzeak</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Lau aldiz sakatzeak</string>
+    <string name="gesture_trainer_kind_tap_hold">Sakatu eta eduki</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Sakatu birritan eta eduki</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Sakatu hirutan eta eduki</string>
+    <string name="gesture_trainer_kind_swipe">Hatza pasatzeak</string>
+    <string name="gesture_trainer_kind_swipe_hold">Pasatu hatza eta eduki</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Joan-etorriko eta angeluzko pasatzeak</string>
+    <string name="gesture_trainer_kind_pinch">Atximurkatzeak</string>
+    <string name="gesture_trainer_kind_spread">Bereizteak</string>
+    <string name="gesture_trainer_kind_rotate">Biraketak</string>
+    <string name="gesture_trainer_kind_scrub">Igurtziak</string>
 </resources>

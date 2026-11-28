@@ -2398,18 +2398,18 @@
     <string name="title_pref_shortcut_4finger_3tap_swipe_down">Trokit tri herë, pastaj rrëshqit poshtë me 4 gishta</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_left">Trokit tri herë, pastaj rrëshqit majtas me 4 gishta</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_right">Trokit tri herë, pastaj rrëshqit djathtas me 4 gishta</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Trokit me 2 gishta, pastaj rrëshqit lart</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Trokit me 2 gishta, pastaj rrëshqit poshtë</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Trokit me 2 gishta, pastaj rrëshqit majtas</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Trokit me 2 gishta, pastaj rrëshqit djathtas</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Trokit dy herë me 2 gishta, pastaj rrëshqit lart</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Trokit dy herë me 2 gishta, pastaj rrëshqit poshtë</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Trokit dy herë me 2 gishta, pastaj rrëshqit majtas</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Trokit dy herë me 2 gishta, pastaj rrëshqit djathtas</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Trokit tri herë me 2 gishta, pastaj rrëshqit lart</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Trokit tri herë me 2 gishta, pastaj rrëshqit poshtë</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Trokit tri herë me 2 gishta, pastaj rrëshqit majtas</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Trokit tri herë me 2 gishta, pastaj rrëshqit djathtas</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Trokit me 2 gishta, pastaj rrëshqit lart me 1 gisht</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Trokit me 2 gishta, pastaj rrëshqit poshtë me 1 gisht</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Trokit me 2 gishta, pastaj rrëshqit majtas me 1 gisht</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Trokit me 2 gishta, pastaj rrëshqit djathtas me 1 gisht</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Trokit dy herë me 2 gishta, pastaj rrëshqit lart me 1 gisht</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Trokit dy herë me 2 gishta, pastaj rrëshqit poshtë me 1 gisht</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Trokit dy herë me 2 gishta, pastaj rrëshqit majtas me 1 gisht</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Trokit dy herë me 2 gishta, pastaj rrëshqit djathtas me 1 gisht</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Trokit tri herë me 2 gishta, pastaj rrëshqit lart me 1 gisht</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Trokit tri herë me 2 gishta, pastaj rrëshqit poshtë me 1 gisht</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Trokit tri herë me 2 gishta, pastaj rrëshqit majtas me 1 gisht</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Trokit tri herë me 2 gishta, pastaj rrëshqit djathtas me 1 gisht</string>
     <string name="title_pref_shortcut_up_and_down_and_up">Rrëshqit lart, poshtë, pastaj lart</string>
     <string name="title_pref_shortcut_up_and_down_and_left">Rrëshqit lart, poshtë, pastaj majtas</string>
     <string name="title_pref_shortcut_up_and_down_and_right">Rrëshqit lart, poshtë, pastaj djathtas</string>
@@ -2860,4 +2860,109 @@
     <string name="title_pref_cyrillic_text_recognition">Njohja e tekstit cirilik</string>
     <string name="cyrillic_text_model_missing">Nuk ka model njohjeje teksti për <xliff:g id="language" example="Russian">%1$s</xliff:g>. Shkarkoje te Përshkrimet e imazheve dhe ekranit, Njohja e tekstit cirilik.</string>
     <string name="cyrillic_text_model_error_http">Serveri i shkarkimit nuk e pranoi kërkesën. Provo përsëri më vonë.</string>
+    <string name="title_pref_announce_caller">Njoftimi i telefonuesit</string>
+    <string name="announce_caller_once">Një herë</string>
+    <string name="announce_caller_repeat">Përsërit ndërsa bie zilja</string>
+    <string name="title_pref_command_feedback_voice">Zëri për reagimin e komandave dhe redaktimin e tekstit</string>
+    <string name="title_pref_command_feedback_over_speech">Lexo reagimin e komandave mbi ligjërimin e SandFly</string>
+    <string name="title_pref_item_types_spoken">Llojet e artikujve për t\'u lexuar me zë</string>
+    <string name="item_type_link">Lidhje</string>
+    <string name="item_type_tab">Skedë</string>
+    <string name="item_type_other">Lloje të tjera</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">Trokitje me 2 gishta, rrëshqitje me 1 gisht</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">Hapësirë</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">Menyja</string>
+    <string name="keycombo_key_search">Kërko</string>
+    <string name="keycombo_key_grave">Theks i rëndë</string>
+    <string name="keycombo_key_minus">Minus</string>
+    <string name="keycombo_key_equals">Baras</string>
+    <string name="keycombo_key_left_bracket">Kllapë katrore e majtë</string>
+    <string name="keycombo_key_right_bracket">Kllapë katrore e djathtë</string>
+    <string name="keycombo_key_backslash">Vijë e pjerrët mbrapsht</string>
+    <string name="keycombo_key_semicolon">Pikëpresje</string>
+    <string name="keycombo_key_apostrophe">Apostrof</string>
+    <string name="keycombo_key_comma">Presje</string>
+    <string name="keycombo_key_period">Pikë</string>
+    <string name="keycombo_key_slash">Vijë e pjerrët</string>
+    <string name="keycombo_key_plus">Plus</string>
+    <string name="keycombo_key_at">Shenja et</string>
+    <string name="keycombo_key_star">Yll</string>
+    <string name="keycombo_key_pound">Diez</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">Plus në tastierën numerike</string>
+    <string name="keycombo_key_numpad_subtract">Minus në tastierën numerike</string>
+    <string name="keycombo_key_numpad_multiply">Shumëzim në tastierën numerike</string>
+    <string name="keycombo_key_numpad_divide">Pjesëtim në tastierën numerike</string>
+    <string name="keycombo_key_numpad_dot">Pikë në tastierën numerike</string>
+    <string name="keycombo_key_numpad_comma">Presje në tastierën numerike</string>
+    <string name="keycombo_key_numpad_equals">Baras në tastierën numerike</string>
+    <string name="keycombo_key_numpad_enter">Enter në tastierën numerike</string>
+    <string name="keycombo_key_volume_up">Volumi lart</string>
+    <string name="keycombo_key_volume_down">Volumi poshtë</string>
+    <string name="keycombo_key_volume_mute">Hesht</string>
+    <string name="keycombo_key_media_play_pause">Luaj ose ndalo përkohësisht</string>
+    <string name="keycombo_key_media_next">Pjesa tjetër</string>
+    <string name="keycombo_key_media_previous">Pjesa e mëparshme</string>
+    <string name="keycombo_key_media_stop">Ndalo</string>
+    <string name="keycombo_key_back">Prapa</string>
+    <string name="keycombo_key_numpad"><xliff:g id="digit" example="5">%1$s</xliff:g> në tastierën numerike</string>
+    <string name="title_pref_typing_swipes_through_keys">Rrëshqit nga tasti në tast me çdo metodë shtypjeje</string>
+    <string name="shortcut_say_caller">Thuaj telefonuesin</string>
+    <string name="say_caller_unknown">Thirrje hyrëse</string>
+    <string name="shortcut_restart_phone">Rinis telefonin</string>
+    <string name="shortcut_power_off_phone">Fik telefonin</string>
+    <string name="restart_phone_confirm_title">Të riniset telefoni?</string>
+    <string name="restart_phone_confirm_button">Rinis</string>
+    <string name="power_off_phone_confirm_title">Të fiket telefoni?</string>
+    <string name="power_off_phone_confirm_button">Fik</string>
+    <string name="power_command_failed">Dështoi, u hap menyja e fikjes</string>
+    <string name="clipboard_history_search_hint">Kërko në historikun e kujtesës së fragmenteve</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tekst</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> tekste</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Rrëshqit brenda nga buza</string>
+    <string name="title_pref_category_sliders">Rrëshqitësit</string>
+    <string name="title_pref_slider_step">Hapi i rrëshqitësit</string>
+    <string name="value_slider_step_app">Siç e cakton aplikacioni</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">Hapi më i vogël i diapazonit</string>
+    <string name="title_pref_slider_skip_unchanged">Kapërce hapat që nuk e ndryshojnë vlerën</string>
+    <string name="title_slider_enter_value">Fut vlerën</string>
+    <string name="slider_value_range">Nga <xliff:g id="min" example="0">%1$s</xliff:g> deri në <xliff:g id="max" example="100">%2$s</xliff:g></string>
+    <string name="voice_phrases_not_understood">Fraza të pakuptuara</string>
+    <string name="title_pref_voice_phrases_not_understood">Ruaj frazat e pakuptuara</string>
+    <string name="voice_phrases_not_understood_listed">U shtua te Fraza të pakuptuara.</string>
 </resources>
