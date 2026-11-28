@@ -125,6 +125,11 @@ public final class AccessibilityFocusActionHistory {
     public boolean focusOnTalkBackUiBeforeWindowTransition() {
       return AccessibilityFocusActionHistory.this.focusOnTalkBackUiBeforeWindowTransition();
     }
+
+    public boolean isBackPendingAtFocus(
+        long now, int windowId, @NonNull AccessibilityNodeInfoCompat focus) {
+      return AccessibilityFocusActionHistory.this.isBackPendingAtFocus(now, windowId, focus);
+    }
   }
 
   /** Restricted-access interface for reading focus state. */
@@ -619,6 +624,19 @@ public final class AccessibilityFocusActionHistory {
       return false;
     }
     return true;
+  }
+
+  /**
+   * Returns whether a Back in {@code windowId} within {@link #RESTORE_AFTER_BACK_MS} waits for its
+   * list while accessibility focus is still on {@code focus}, the node focused at the Back. Unlike
+   * {@link #isBackPending}, it doesn't end an expired Back, so that {@link Reader} only reads.
+   */
+  public boolean isBackPendingAtFocus(
+      long now, int windowId, @NonNull AccessibilityNodeInfoCompat focus) {
+    return backTime >= 0
+        && now - backTime <= RESTORE_AFTER_BACK_MS
+        && backWindowId == windowId
+        && focus.equals(focusAtBack);
   }
 
   public long getBackTime() {
