@@ -416,6 +416,9 @@ public class TouchInteractionMonitor
   // Whether the touch went down on the keyboard with the Tap to type typing method, which types
   // without focusing keys, so the typing focus delay applies whatever has focus.
   private boolean downOnKeyboard;
+  // Whether this touch went down on the keyboard with the typing method without gestures on the
+  // keyboard: touch exploration starts as the finger goes down, and only split taps are gestures.
+  private boolean keyboardTouchWithoutGestures;
   // The root of Gboard's window, if the touch went down on Gboard with a typing method other than
   // Double-tap to type, so it is kept from touch exploration and explored here; see
   // KeyboardExploration. It is fetched once for the touch, since fetching it waits for Gboard.
@@ -1101,9 +1104,15 @@ public class TouchInteractionMonitor
       }
       oneFingerSwipeStarted = false;
       oneFingerSwipeInterrupted = false;
-      downOnKeyboard =
-          typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
+      boolean withoutGestures =
+          typingMethod == FocusProcessorForTapAndTouchExploration.KEYBOARD_WITHOUT_GESTURES;
+      boolean onKeyboard =
+          (typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE || withoutGestures)
               && isOnKeyboard(event.getX(), event.getY());
+      downOnKeyboard =
+          typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE && onKeyboard;
+      keyboardTouchWithoutGestures =
+          withoutGestures && onKeyboard && state == STATE_TOUCH_INTERACTING;
       long rootStartMs = SystemClock.uptimeMillis();
       gboardRoot =
           typingMethod != FocusProcessorForTapAndTouchExploration.DOUBLE_TAP
@@ -1124,6 +1133,10 @@ public class TouchInteractionMonitor
             rootStartMs - touchDownTimeMs);
       }
       HoverlessWindows.clearStart();
+    }
+    if (keyboardTouchWithoutGestures) {
+      handleKeyboardTouchWithoutGestures(event);
+      return;
     }
     if (handleEdgeSwipe(event)) {
       return;
@@ -1817,6 +1830,12 @@ public class TouchInteractionMonitor
       return;
     }
     int gestureId = gestureEvent.getGestureId();
+    if (keyboardTouchWithoutGestures
+        && gestureId != GESTURE_FAKED_SPLIT_TYPING
+        && gestureId != GESTURE_FAKED_SPLIT_TYPING_AND_HOLD) {
+      LogUtils.v(LOG_TAG, "Gesture dropped: no gestures on the keyboard with this typing method");
+      return;
+    }
     if (gestureId == GESTURE_TOUCH_EXPLORE || gestureId == GESTURE_TAP_UP_TOUCH_EXPLORE) {
       requestTouchExplorationDelayed.cancel();
       requestTouchExploration("onGestureCompleted");
@@ -2002,6 +2021,31 @@ public class TouchInteractionMonitor
       }
     }
     return count == 0 ? 0 : sum / count;
+  }
+
+  /**
+   * Handles a touch that went down on the keyboard with the typing method without gestures on the
+   * keyboard. Touch exploration starts at once, without waiting to tell a gesture from exploring.
+   * The gesture matchers still see the touch, for split taps; {@link #onGestureCompleted} drops
+   * every other gesture.
+   */
+  private void handleKeyboardTouchWithoutGestures(MotionEvent event) {
+    if (event.getActionMasked() == ACTION_DOWN) {
+      keepMonitorTouchExplore = false;
+      requestTouchExplorationDelayed.cancel();
+      gestureDetector.clear();
+      // A tap here and a tap after it elsewhere make no double tap.
+      clearGestureDetectorOnNextDown = true;
+      eventId = Performance.getInstance().onGestureEventReceived(displayId, event);
+      waitFirstMotionEvent = false;
+    }
+    if (shouldPerformGestureDetection()) {
+      trackLatestTouchDown(event);
+      gestureDetector.onMotionEvent(eventId, event);
+    }
+    if (event.getActionMasked() == ACTION_DOWN) {
+      requestTouchExploration("keyboardWithoutGestures");
+    }
   }
 
   /**

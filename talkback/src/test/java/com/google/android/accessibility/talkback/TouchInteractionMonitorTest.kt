@@ -40,6 +40,7 @@ import android.view.MotionEvent.ACTION_UP
 import android.view.ViewConfiguration
 import android.view.accessibility.AccessibilityWindowInfo
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -509,6 +510,52 @@ class TouchInteractionMonitorTest {
 
     assertEquals(listOf(mainThread), reporter.requests)
     assertEquals(emptyList<Pair<Float, Float>>(), service.stationaryTouches)
+  }
+
+  private fun typeWithoutGesturesOnTheKeyboard() {
+    service.displayWindows =
+      listOf(
+        window(AccessibilityWindowInfo.TYPE_INPUT_METHOD, Rect(0, 1000, 1080, 1600)),
+        window(AccessibilityWindowInfo.TYPE_APPLICATION, Rect(0, 0, 1080, 2400)),
+      )
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putString(
+        service.getString(R.string.pref_typing_confirmation_key),
+        FocusProcessorForTapAndTouchExploration.KEYBOARD_WITHOUT_GESTURES.toString(),
+      )
+      .commit()
+  }
+
+  private fun swipeRightAt(y: Float) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 40f, y, 0)
+    for (step in 1..6) {
+      touchAt(ACTION_MOVE, 40f + 40f * step, y, 10 + 15L * step)
+    }
+    touchAt(ACTION_UP, 280f, y, 110)
+    stateChangeAt(STATE_CLEAR, 400)
+  }
+
+  @Test
+  fun withoutGesturesOnTheKeyboardATouchThereExploresAtOnceAndIsNoGesture() {
+    typeWithoutGesturesOnTheKeyboard()
+    swipeRightAt(1200f)
+
+    runUntil(5)
+    assertEquals(listOf(mainThread), reporter.requests)
+    runUntil(500)
+    assertEquals(emptyList<Int>(), service.gestures)
+  }
+
+  @Test
+  fun withoutGesturesOnTheKeyboardASwipeOutsideTheKeyboardIsAGesture() {
+    typeWithoutGesturesOnTheKeyboard()
+    swipeRightAt(500f)
+    runUntil(500)
+
+    assertEquals(listOf<Thread>(), reporter.requests)
+    assertEquals(listOf(GESTURE_SWIPE_RIGHT), service.gestures)
   }
 
   @Test

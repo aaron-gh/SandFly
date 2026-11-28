@@ -4399,6 +4399,8 @@
     <string name="value_type_confirmation_lift_to_type_except_action_key">Hold finger to select any key, then lift. Double-tap for Enter, Done, or Send.</string>
     <!-- Typing method where a tap on the keyboard types the key under the finger without speaking it first, and holding or dragging a finger explores the keys, which type when the finger lifts. [CHAR LIMIT=NONE] -->
     <string name="value_type_confirmation_tap_to_type">Tap any key to type it, or hold finger to select any key, then lift</string>
+    <!-- Typing method: a touch on the keyboard is never a gesture, so touch exploration starts at once and keys are read without delay. [CHAR LIMIT=NONE] -->
+    <string name="value_type_confirmation_keyboard_without_gestures">Tap or lift on any key to type it, without gestures on the keyboard</string>
     <!-- Typing method: the keyboard is in the touch exploration passthrough region, so keys type as with the screen reader off, and keys under the finger aren't spoken. [CHAR LIMIT=NONE] -->
     <string name="value_type_confirmation_keyboard_direct_touch">Tap or lift on any key to type it, without touch exploration on the keyboard</string>
 
