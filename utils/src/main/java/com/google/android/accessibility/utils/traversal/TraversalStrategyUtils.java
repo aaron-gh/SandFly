@@ -22,6 +22,7 @@ import com.google.android.accessibility.utils.ScrollableNodeInfo;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -310,8 +311,18 @@ public class TraversalStrategyUtils {
       return false;
     }
 
+    // With the strategy's cache of which nodes speak, as the strategy's own search uses: without
+    // it, each candidate's children were examined again at every swipe near a list's edge.
+    @Nullable Map<AccessibilityNodeInfoCompat, Boolean> speakingNodesCache =
+        traversalStrategy == null ? null : traversalStrategy.getSpeakingNodesCache();
     Filter<AccessibilityNodeInfoCompat> focusNodeFilter =
-        AccessibilityNodeInfoUtils.FILTER_SHOULD_FOCUS;
+        new Filter<AccessibilityNodeInfoCompat>() {
+          @Override
+          public boolean accept(AccessibilityNodeInfoCompat node) {
+            return node != null
+                && AccessibilityNodeInfoUtils.shouldFocusNode(node, speakingNodesCache);
+          }
+        };
     if (ignoreDescendantsOfCursor) {
       focusNodeFilter =
           focusNodeFilter.and(
