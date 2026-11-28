@@ -46,11 +46,13 @@ import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action
 import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.KEYBOARD_REGION
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils.WINDOW_ID_NONE
 import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.Performance
 import com.google.android.accessibility.utils.Performance.EventId
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.input.WindowEventInterpreter
 import com.google.android.accessibility.utils.input.WindowEventInterpreter.EventInterpretation
 import com.google.android.accessibility.utils.monitor.DisplayMonitor
@@ -152,11 +154,15 @@ constructor(
     SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
       if (
         key != null &&
-          (key.startsWith("pref_direct_touch") || key == DirectTouchSettings.PREF_NAV_BAR_TAP)
+          (key.startsWith("pref_direct_touch") ||
+            key == DirectTouchSettings.PREF_NAV_BAR_TAP ||
+            key == typingMethodKey)
       ) {
         evaluate()
       }
     }
+
+  private val typingMethodKey = service.getString(R.string.pref_typing_confirmation_key)
 
   // The last navigation bar button spoken, so that the same tap reported twice is said once.
   private var lastNavBarButton: CharSequence? = null
@@ -268,7 +274,7 @@ constructor(
       reportTouchesDirect()
       return
     }
-    if (isNavBarDirect() || DirectTouchSettings.hasEnabledApps(prefs)) {
+    if (isNavBarDirect() || DirectTouchSettings.hasEnabledApps(prefs) || isKeyboardDirect()) {
       scheduleEvaluate()
     }
   }
@@ -572,19 +578,32 @@ constructor(
   }
 
   /**
-   * The keyboards on screen that are in the direct touch list, such as a self-voicing braille
-   * keyboard. They take touches directly in every app, since a keyboard is never the app in front.
-   * Their apps are asked for only while some app is in the list.
+   * The keyboards on screen that take touches directly: every keyboard but SandFly's own with the
+   * keyboard direct touch typing method, and otherwise those in the direct touch list, such as a
+   * self-voicing braille keyboard. They take touches directly in every app, since a keyboard is
+   * never the app in front. Their apps are asked for only while some app is in the list.
    */
   private fun directKeyboards(windows: List<AccessibilityWindowInfo>): List<AccessibilityWindowInfo> {
-    if (!DirectTouchSettings.hasEnabledApps(prefs)) {
+    val allKeyboards = isKeyboardDirect()
+    if (!allKeyboards && !DirectTouchSettings.hasEnabledApps(prefs)) {
       return emptyList()
     }
     return windows.filter { window ->
       window.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD &&
-        rootPackage(window)?.let { DirectTouchSettings.isAppEnabled(prefs, it) } == true
+        rootPackage(window)?.let {
+          if (allKeyboards) it != service.packageName else DirectTouchSettings.isAppEnabled(prefs, it)
+        } == true
     }
   }
+
+  /** Whether the typing method is keyboard direct touch, which every keyboard shown takes. */
+  private fun isKeyboardDirect(): Boolean =
+    SharedPreferencesUtils.getIntFromStringPref(
+      prefs,
+      service.resources,
+      R.string.pref_typing_confirmation_key,
+      R.string.pref_typing_confirmation_default,
+    ) == FocusProcessorForTapAndTouchExploration.KEYBOARD_DIRECT_TOUCH
 
   private fun boundsOf(window: AccessibilityWindowInfo): Rect =
     Rect().also { window.getBoundsInScreen(it) }

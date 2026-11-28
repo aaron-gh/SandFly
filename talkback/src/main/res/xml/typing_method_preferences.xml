@@ -25,6 +25,10 @@
         android:title="@string/value_type_confirmation_tap_to_type"
         app:singleLineTitle="false"
         app:isPreferenceVisible="@bool/supports_tap_to_type"/>
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
+        android:title="@string/value_type_confirmation_keyboard_direct_touch"
+        app:singleLineTitle="false"
+        app:isPreferenceVisible="@bool/supports_keyboard_direct_touch"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference

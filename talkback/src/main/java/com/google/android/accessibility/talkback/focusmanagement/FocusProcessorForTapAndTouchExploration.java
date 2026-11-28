@@ -81,17 +81,22 @@ public class FocusProcessorForTapAndTouchExploration {
   // Like FORCE_LIFT_TO_TYPE_ON_IME, and a tap on the keyboard types the key under it without
   // focusing or speaking it first.
   public static final int TAP_TO_TYPE = 4;
+  // The keyboard window is in the touch exploration passthrough region, so the keyboard gets
+  // touches as with SandFly off: a tap types, and so does lifting on a key. Keys outside the
+  // region lift to type, as with FORCE_LIFT_TO_TYPE_ON_IME.
+  public static final int KEYBOARD_DIRECT_TOUCH = 5;
 
   /**
    * Typing method options: can be DOUBLE_TAP, LIFT_TO_TYPE, FORCE_LIFT_TO_TYPE_ON_IME,
-   * LIFT_TO_TYPE_EXCEPT_ACTION_KEY, or TAP_TO_TYPE.
+   * LIFT_TO_TYPE_EXCEPT_ACTION_KEY, TAP_TO_TYPE, or KEYBOARD_DIRECT_TOUCH.
    */
   @IntDef({
     DOUBLE_TAP,
     LIFT_TO_TYPE,
     FORCE_LIFT_TO_TYPE_ON_IME,
     LIFT_TO_TYPE_EXCEPT_ACTION_KEY,
-    TAP_TO_TYPE
+    TAP_TO_TYPE,
+    KEYBOARD_DIRECT_TOUCH
   })
   @Retention(RetentionPolicy.SOURCE)
   public @interface TypingMethod {}
@@ -106,7 +111,8 @@ public class FocusProcessorForTapAndTouchExploration {
   public static boolean liftsToTypeAnyKey(@TypingMethod int typingMethod) {
     return typingMethod == FORCE_LIFT_TO_TYPE_ON_IME
         || typingMethod == LIFT_TO_TYPE_EXCEPT_ACTION_KEY
-        || typingMethod == TAP_TO_TYPE;
+        || typingMethod == TAP_TO_TYPE
+        || typingMethod == KEYBOARD_DIRECT_TOUCH;
   }
 
   /**
@@ -126,6 +132,7 @@ public class FocusProcessorForTapAndTouchExploration {
     }
     return typingMethod == FORCE_LIFT_TO_TYPE_ON_IME
         || typingMethod == TAP_TO_TYPE
+        || typingMethod == KEYBOARD_DIRECT_TOUCH
         || (typingMethod == LIFT_TO_TYPE && Role.getRole(key) == Role.ROLE_TEXT_ENTRY_KEY);
   }
 
