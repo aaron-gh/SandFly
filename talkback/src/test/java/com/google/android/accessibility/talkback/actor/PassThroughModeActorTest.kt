@@ -47,11 +47,13 @@ class PassThroughModeActorTest {
   /** Records the pass-through regions set, and the threads that set them. */
   class RecordingService : AccessibilityService() {
     val regions = mutableListOf<Rect>()
+    val fullRegions = mutableListOf<Region>()
     val threads = mutableSetOf<Thread>()
 
     override fun setTouchExplorationPassthroughRegion(displayId: Int, region: Region) {
       threads.add(Thread.currentThread())
       regions.add(region.bounds)
+      fullRegions.add(Region(region))
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent) {}
@@ -167,6 +169,40 @@ class PassThroughModeActorTest {
 
     actor.setTouchLocked(false)
     assertEquals(keyboard, service.regions.last())
+  }
+
+  @Test
+  fun everyRegionIncludesTheNavigationGestureAreasExceptALocksAndLockedTouch() {
+    val left = Rect(0, 0, 60, 2340)
+    val right = Rect(1020, 0, 1080, 2340)
+    val bottom = Rect(0, 2260, 1080, 2340)
+    val areas = Region(left).apply {
+      op(right, Region.Op.UNION)
+      op(bottom, Region.Op.UNION)
+    }
+    actor.setSystemNavigationRegion(areas)
+    assertEquals(areas, service.fullRegions.last())
+
+    // Direct touch's region joins the areas.
+    val button = Rect(400, 1000, 600, 1100)
+    actor.setDirectTouchRegion(Region(button))
+    val expected = Region(areas).apply { op(button, Region.Op.UNION) }
+    assertEquals(expected, service.fullRegions.last())
+
+    // A lock holds its own region only.
+    val menu = Rect(100, 1300, 900, 2000)
+    actor.lockTouchExplorePassThrough(Region(menu))
+    assertEquals(Region(menu), service.fullRegions.last())
+    actor.lockTouchExplorePassThrough(null)
+    assertEquals(expected, service.fullRegions.last())
+
+    actor.setTouchLocked(true)
+    assertTrue(service.fullRegions.last().isEmpty)
+    actor.setTouchLocked(false)
+    assertEquals(expected, service.fullRegions.last())
+
+    actor.setSystemNavigationRegion(null)
+    assertEquals(Region(button), service.fullRegions.last())
   }
 
   @Test

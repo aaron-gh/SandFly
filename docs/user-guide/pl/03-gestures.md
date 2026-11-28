@@ -108,7 +108,7 @@ Na zegarku te gesty są niedostępne.
 
 ### Gesty od krawędzi i wzdłuż krawędzi {#gestures-edges}
 
-Te gesty zaczynasz przy samym brzegu ekranu, na przykład na pasku stanu lub na pasku nawigacji. Żeby zmienić przypisania, przejdź do **Gesty** > **Krawędzie**. Gesty przy krawędziach są niedostępne na zegarku.
+Te gesty zaczynasz przy samym brzegu ekranu, na przykład na pasku stanu lub na pasku nawigacji. Żeby zmienić przypisania, przejdź do **Gesty** > **Krawędzie**. Gesty przy krawędziach są niedostępne na zegarku. Włączenie opcji **Używaj gestów nawigacyjnych Androida** wyłącza i ukrywa te gesty. Zobacz [](#gestures-android-navigation).
 
 #### Przesuń palec od krawędzi {#gestures-edges-slide-in}
 
@@ -173,7 +173,7 @@ W kategorii **Krawędzie** na ekranie **Gesty** możesz dostosować odległości
 
 ### Gesty w rogach ekranu {#gestures-corners}
 
-Wybierz **Gesty** > **Rogi**, aby przypisać polecenia do stuknięć w rogach ekranu. W każdym rogu możesz stuknąć jednym palcem raz, dwa lub trzy razy. Po drugim albo trzecim stuknięciu możesz też przytrzymać palec. To pięć gestów na róg, w tym na przykład **Kliknij dwukrotnie lewy górny róg**. SandFly domyślnie nie przypisuje im poleceń.
+Wybierz **Gesty** > **Rogi**, aby przypisać polecenia do stuknięć w rogach ekranu. W każdym rogu możesz stuknąć jednym palcem raz, dwa lub trzy razy. Po drugim albo trzecim stuknięciu możesz też przytrzymać palec. To pięć gestów na róg, w tym na przykład **Kliknij dwukrotnie lewy górny róg**. SandFly domyślnie nie przypisuje im poleceń. Włączenie opcji **Używaj gestów nawigacyjnych Androida** wyłącza i ukrywa te gesty. Zobacz [](#gestures-android-navigation).
 
 Jeśli nie przypiszesz polecenia do dwukrotnego stuknięcia w danym rogu, gest aktywuje element, na którym jest fokus. Po drugim stuknięciu SandFly czeka na następne tylko wtedy, gdy w tym rogu jest przypisane polecenie do trzech stuknięć.
 
@@ -234,6 +234,7 @@ W głównych ustawieniach SandFly wybierz **Gesty**. Opcje u góry ekranu są w 
 - **Resetowanie ustawień gestów** [przywraca domyślne przypisania](#gestures-reset).
 - Opcja **Układ gestów** pozwala [wybrać zestaw przypisań](#gestures-layout). Przełącznik **Obsługuj przesunięcia dwoma palcami w SandFly** [zmienia działanie przesunięć](#gestures-two-finger-swipes).
 - Dalej są [ustawienia czasu](#gestures-timing) oraz opcja **Rozpoznawaj przesunięcia przed uniesieniem palca**. Zobacz [](#gestures-swipes-before-lift).
+- **Używaj gestów nawigacyjnych Androida**: zobacz [](#gestures-android-navigation).
 - **Gesty w aplikacjach**, **Profile gestów** i **Skróty aplikacji** otwierają ustawienia [dla poszczególnych aplikacji](#gestures-in-apps), [profili](#gestures-profiles) i [skrótów](#gestures-app-shortcuts).
 
 Poniżej znajdziesz zwinięte kategorie. Rozwiń wybraną kategorię, aby zobaczyć gesty wraz z przypisanymi poleceniami.
@@ -295,6 +296,18 @@ Po włączeniu opcji znikają kategorie **1 palec, tam i z powrotem**, **1 p
 Opcja jest domyślnie wyłączona. W tym ustawieniu SandFly sprawdza, czy ruch może być początkiem przypisanego gestu z przytrzymaniem, tam i z powrotem, po linii łamanej lub trzyczęściowego. Jeśli pasuje tylko do prostego przesunięcia, SandFly może wykonać polecenie jeszcze przed uniesieniem palca. Układ **Gesty SandFly** ma domyślne polecenia dla gestów tam i z powrotem. W układzie **Gesty VoiceOver** powyższe kombinacje wymagają własnych przypisań.
 
 Możesz włączyć lub wyłączyć tę opcję osobno dla każdego [profilu gestów](#gestures-profiles). Na zegarku opcja jest niedostępna.
+
+#### Używaj gestów nawigacyjnych Androida {#gestures-android-navigation}
+
+Po włączeniu opcji **Używaj gestów nawigacyjnych Androida** dotknięcia rozpoczynające się w systemowych obszarach nawigacji gestami przy dolnej, lewej i prawej krawędzi ekranu trafiają bezpośrednio do Androida, z pominięciem czytania dotykiem. Gesty nawigacyjne Androida działają wtedy we wszystkich aplikacjach, także w SandFly:
+
+- Przesuń palec od dolnej krawędzi w górę, aby przejść do ekranu głównego.
+- Przesuń palec od dolnej krawędzi w górę i przytrzymaj go, aby otworzyć ostatnie aplikacje.
+- Przesuń palec od lewej lub prawej krawędzi do środka ekranu, aby cofnąć.
+
+Dotknięcie w tych obszarach może aktywować element pod palcem bez wcześniejszego przenoszenia na niego fokusu. Wielkość obszarów określa Android.
+
+Włączenie tej opcji wyłącza i ukrywa kategorie **Krawędzie** i **Rogi** oraz odpowiadające im grupy w trenerze gestów. Opcja działa tylko wtedy, gdy w Androidzie włączono nawigację gestami. Przy innych sposobach nawigacji przełącznik jest ukryty. Domyślnie opcja jest wyłączona. Wymaga Androida 11 lub nowszego i jest niedostępna na zegarkach oraz telewizorach.
 
 ### Zmień polecenie przypisane do gestu {#gestures-change}
 

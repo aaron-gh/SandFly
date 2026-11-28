@@ -661,6 +661,8 @@ class Actors {
             passThroughModeActor.setDirectTouchRegion(passThroughMode.region());
         case KEYBOARD_REGION ->
             passThroughModeActor.setKeyboardRegion(passThroughMode.region());
+        case SYSTEM_NAVIGATION_REGION ->
+            passThroughModeActor.setSystemNavigationRegion(passThroughMode.region());
         default -> {}
       }
     }

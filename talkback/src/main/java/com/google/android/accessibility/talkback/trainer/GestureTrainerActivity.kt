@@ -401,6 +401,7 @@ class GestureTrainerActivity : AppCompatActivity() {
     } else {
       content.addView(text(getString(R.string.gesture_trainer_intro, TRIES)))
       for (group in TrainerGroup.entries) {
+        if (TrainerExercises.isOff(this, group)) continue
         val list = TrainerExercises.of(this, group)
         content.addView(
           button(getString(R.string.gesture_trainer_group_count, getString(group.title), list.exercises.size)) {

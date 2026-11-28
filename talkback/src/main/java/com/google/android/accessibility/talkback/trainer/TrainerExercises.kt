@@ -23,6 +23,7 @@ import android.view.ViewConfiguration
 import androidx.annotation.RequiresApi
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader
+import com.google.android.accessibility.talkback.gesture.AndroidGestureNavigation
 import com.google.android.accessibility.talkback.gesture.CornerTapTracker
 import com.google.android.accessibility.talkback.gesture.CornerTapTracker.Corner
 import com.google.android.accessibility.talkback.gesture.EdgeMenus
@@ -149,10 +150,21 @@ enum class TrainerGroup(val title: Int) {
 class ExerciseList(val exercises: List<Exercise>, val leftOut: List<String>)
 
 object TrainerExercises {
+  /**
+   * Returns whether [group] is off with the settings in use: edge and corner gestures while their
+   * touches pass through to Android's gesture navigation.
+   */
+  fun isOff(context: Context, group: TrainerGroup): Boolean =
+    group in EDGE_AND_CORNER_GROUPS && AndroidGestureNavigation.isOn(context)
+
+  private val EDGE_AND_CORNER_GROUPS =
+    setOf(TrainerGroup.EDGE_SWIPES, TrainerGroup.ALONG_EDGES, TrainerGroup.EDGE_MENUS, TrainerGroup.CORNERS)
+
   /** The exercises of [group] that SandFly recognizes with the settings in use. */
   fun of(context: Context, group: TrainerGroup): ExerciseList {
     // SandFly recognizes gestures itself from Android 13.
     if (!BuildVersionUtils.isAtLeastT()) return ExerciseList(emptyList(), emptyList())
+    if (isOff(context, group)) return ExerciseList(emptyList(), emptyList())
     val prefs = SharedPreferencesUtils.getSharedPreferences(context)
     val twoDirectionSwipes = !SwipesBeforeLift.isOn(context)
     val twoFingerSwipes = GestureLayout.handlesTwoFingerSwipes(prefs)

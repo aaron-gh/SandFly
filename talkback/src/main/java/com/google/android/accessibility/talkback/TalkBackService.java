@@ -212,6 +212,7 @@ import com.google.android.accessibility.talkback.focusmanagement.ScrollAhead;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
 import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages;
 import com.google.android.accessibility.talkback.focusmanagement.LiftCancelStrip;
+import com.google.android.accessibility.talkback.gesture.AndroidGestureNavigation;
 import com.google.android.accessibility.talkback.focusmanagement.LiftToActivateMode;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
 import com.google.android.accessibility.talkback.focusmanagement.WindowNodePrefetcher;
@@ -919,6 +920,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   private ScrollPositionInterpreter scrollPositionInterpreter;
   private ScreenStateMonitor screenStateMonitor;
   private DirectTouchController directTouchController;
+  private AndroidGestureNavigation.@Nullable RegionUpdater androidGestureNavigation;
   private StuckTouchController stuckTouchController;
   private @Nullable TouchExplorerReset touchExplorerReset;
   private PauseController pauseController;
@@ -1174,6 +1176,10 @@ public class TalkBackService extends AccessibilityServiceCompat
       directTouchController.shutdown();
       directTouchController = null;
     }
+    if (androidGestureNavigation != null) {
+      androidGestureNavigation.shutdown();
+      androidGestureNavigation = null;
+    }
 
     if (splitScreen != null) {
       splitScreen.shutdown();
@@ -1308,6 +1314,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (pipeline != null) {
       updateSpeechOverlayOnConfigChange(newConfig);
       resetTouchExplorePassThrough();
+      if (androidGestureNavigation != null) {
+        androidGestureNavigation.onConfigurationChanged();
+      }
       pipeline
           .getFeedbackReturner()
           .returnFeedback(
@@ -3842,6 +3851,22 @@ public class TalkBackService extends AccessibilityServiceCompat
       windowEventInterpreter.addListener(directTouchController);
       ringerModeAndScreenMonitor.addScreenChangedListener(directTouchController);
       displayMonitor.addDisplayStateChangedListener(directTouchController);
+    }
+    if (AndroidGestureNavigation.isSupported()) {
+      androidGestureNavigation =
+          new AndroidGestureNavigation.RegionUpdater(
+              this,
+              prefs,
+              region -> {
+                pipeline
+                    .getFeedbackReturner()
+                    .returnFeedback(
+                        EVENT_ID_UNTRACKED,
+                        Feedback.passThroughMode(
+                            Feedback.PassThroughMode.Action.SYSTEM_NAVIGATION_REGION, region));
+                return Unit.INSTANCE;
+              });
+      androidGestureNavigation.start();
     }
 
     StuckTouchController.TouchExploration touchExploration =
