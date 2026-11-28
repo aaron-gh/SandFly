@@ -31,6 +31,7 @@ import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.Performance.EventId
 import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy
 import com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_FORWARD
+import com.google.android.accessibility.utils.traversal.TraversalStrategyUtils
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -157,6 +158,7 @@ class AnyRoleAutoScrollTest {
         OrderedTraversalStrategy::class.java,
         OrderedTraversalStrategy(root),
       ),
+      ReflectionHelpers.ClassParameter.from(TraversalStrategyUtils.EdgeSearch::class.java, null),
       ReflectionHelpers.ClassParameter.from(EventId::class.java, EVENT_ID_UNTRACKED),
     )
 

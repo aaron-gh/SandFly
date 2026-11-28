@@ -2710,12 +2710,18 @@ public class FocusProcessorForLogicalNavigation {
     // Perform auto-scroll action if necessary. Not after showing the next item, which has already
     // scrolled the view: a page scroll on top would pass content that never came on screen.
     edgeScrollNote = revealingOffscreen ? "afterReveal" : "notTried";
+    // The edge check searches for the next item from the pivot, which the search for the target
+    // below can take rather than search again.
+    TraversalStrategyUtils.EdgeSearch edgeSearch =
+        new TraversalStrategyUtils.EdgeSearch(
+            Filter.node(node -> isWebViewToEnter(node, navigationAction)));
     if (!revealingOffscreen
         && autoScrollAtEdge(
             pivot,
             ignoreDescendantsOfPivot,
             navigationAction,
             reusableOrderedStrategy(traversalStrategy, rootNode, pivot),
+            edgeSearch,
             eventId)) {
       return true;
     }
@@ -2773,7 +2779,13 @@ public class FocusProcessorForLogicalNavigation {
       } else {
         navigationResult =
             findTargetFromNativeElement(
-                pivot, navigationAction, nodeFilter, traversalStrategy, eventId);
+                pivot,
+                ignoreDescendantsOfPivot,
+                navigationAction,
+                nodeFilter,
+                traversalStrategy,
+                edgeSearch,
+                eventId);
       }
     }
     if (navigationResult.shouldSkipNavigation()) {
@@ -3170,18 +3182,40 @@ public class FocusProcessorForLogicalNavigation {
       Filter<AccessibilityNodeInfoCompat> nodeFilter,
       TraversalStrategy traversalStrategy,
       EventId eventId) {
-    // Filter to find the native node with target type or WebView, returns WebView if find it first.
-    Filter<AccessibilityNodeInfoCompat> nodeFilterOrWebView =
-        new Filter<AccessibilityNodeInfoCompat>() {
-          @Override
-          public boolean accept(AccessibilityNodeInfoCompat node) {
-            return isWebViewToEnter(node, navigationAction);
-          }
-        }.or(nodeFilter);
+    return findTargetFromNativeElement(
+        nativePivot,
+        /* ignoreDescendantsOfPivot= */ false,
+        navigationAction,
+        nodeFilter,
+        traversalStrategy,
+        /* edgeSearch= */ null,
+        eventId);
+  }
 
+  /**
+   * Same as {@link #findTargetFromNativeElement(AccessibilityNodeInfoCompat, NavigationAction,
+   * Filter, TraversalStrategy, EventId)}, but takes the node that the edge check found in {@code
+   * edgeSearch} when that search was the same as this one. {@code nodeFilter} must accept only
+   * nodes that {@link AccessibilityNodeInfoUtils#shouldFocusNode} accepts, as those of {@link
+   * NavigationTarget#createNodeFilter} do, and leave out the descendants of {@code nativePivot}
+   * when {@code ignoreDescendantsOfPivot}.
+   */
+  private @NonNull NavigationResult findTargetFromNativeElement(
+      AccessibilityNodeInfoCompat nativePivot,
+      boolean ignoreDescendantsOfPivot,
+      NavigationAction navigationAction,
+      Filter<AccessibilityNodeInfoCompat> nodeFilter,
+      TraversalStrategy traversalStrategy,
+      TraversalStrategyUtils.@Nullable EdgeSearch edgeSearch,
+      EventId eventId) {
     AccessibilityNodeInfoCompat middlePivot =
-        TraversalStrategyUtils.searchFocus(
-            traversalStrategy, nativePivot, navigationAction.searchDirection, nodeFilterOrWebView);
+        searchNativeTarget(
+            nativePivot,
+            ignoreDescendantsOfPivot,
+            navigationAction,
+            nodeFilter,
+            traversalStrategy,
+            edgeSearch);
     // A view that recognised screen elements cover, such as a game's view or a WebView with only a
     // canvas, is passed over for its elements, before a WebView would take over navigation.
     if (middlePivot != null
@@ -3203,6 +3237,44 @@ public class FocusProcessorForLogicalNavigation {
     }
     return findTargetFromMiddlePivot(
         middlePivot, navigationAction, nodeFilter, traversalStrategy, eventId);
+  }
+
+  /**
+   * Searches from {@code nativePivot} for the next node that {@code nodeFilter} accepts, or a
+   * WebView to enter, whichever comes first. Takes the node that the edge check found instead, when
+   * {@code edgeSearch} holds the same search: the edge check accepts every node that can take
+   * focus, which includes all that {@code nodeFilter} accepts, and passed no WebView to enter, so
+   * the first node of this search is the node it found, if {@code nodeFilter} accepts that one too,
+   * or none when it found none.
+   */
+  private @Nullable AccessibilityNodeInfoCompat searchNativeTarget(
+      AccessibilityNodeInfoCompat nativePivot,
+      boolean ignoreDescendantsOfPivot,
+      NavigationAction navigationAction,
+      Filter<AccessibilityNodeInfoCompat> nodeFilter,
+      TraversalStrategy traversalStrategy,
+      TraversalStrategyUtils.@Nullable EdgeSearch edgeSearch) {
+    // Filter to find the native node with target type or WebView, returns WebView if find it first.
+    Filter<AccessibilityNodeInfoCompat> nodeFilterOrWebView =
+        new Filter<AccessibilityNodeInfoCompat>() {
+          @Override
+          public boolean accept(AccessibilityNodeInfoCompat node) {
+            return isWebViewToEnter(node, navigationAction);
+          }
+        }.or(nodeFilter);
+    if (edgeSearch != null
+        && edgeSearch.holds(
+            traversalStrategy,
+            nativePivot,
+            navigationAction.searchDirection,
+            ignoreDescendantsOfPivot)) {
+      @Nullable AccessibilityNodeInfoCompat found = edgeSearch.found();
+      if (found == null || nodeFilterOrWebView.accept(found)) {
+        return found;
+      }
+    }
+    return TraversalStrategyUtils.searchFocus(
+        traversalStrategy, nativePivot, navigationAction.searchDirection, nodeFilterOrWebView);
   }
 
   /**
@@ -4786,6 +4858,7 @@ public class FocusProcessorForLogicalNavigation {
       boolean ignoreDescendantsOfPivot,
       NavigationAction navigationAction,
       @Nullable OrderedTraversalStrategy windowOrderedStrategy,
+      TraversalStrategyUtils.@Nullable EdgeSearch edgeSearch,
       EventId eventId) {
     if (!navigationAction.shouldScroll) {
       edgeScrollNote = "shouldScroll=false";
@@ -4831,7 +4904,8 @@ public class FocusProcessorForLogicalNavigation {
         ignoreDescendantsOfPivot,
         navigationAction.searchDirection,
         focusFinder,
-        windowOrderedStrategy)) {
+        windowOrderedStrategy,
+        edgeSearch)) {
       edgeScrollNote = kind + ":notAtEdge";
       return false;
     }
@@ -4861,6 +4935,10 @@ public class FocusProcessorForLogicalNavigation {
       return false;
     }
 
+    if (edgeSearch != null) {
+      // A scroll, even one that reports failure, can move what the edge check found.
+      edgeSearch.clear();
+    }
     boolean scrolled = autoScroll(scrollableNodeInfo, pivot, navigationAction, eventId);
     edgeScrollNote = kind + ":result=" + scrolled;
     if (scrollableNodeInfo.isAnyRole()) {
