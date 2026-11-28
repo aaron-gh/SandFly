@@ -511,18 +511,24 @@ public abstract class GestureMatcher {
     private static final String LOG_TAG = "GestureMatcher.DelayedTransition";
     int targetState;
     MotionEvent event;
+    // Whether this is posted and hasn't run or been canceled: asking the handler searches the main
+    // thread's message queue, which every matcher did at every lift.
+    private boolean posted;
 
     public void cancel() {
       // Avoid meaningless debug messages.
       synchronized (GestureMatcher.this) {
-        if (isPending()) {
-          LogUtils.v(
-              LOG_TAG,
-              "%s: canceling delayed transition to %s",
-              getGestureName(),
-              getStateSymbolicName(targetState));
+        if (posted) {
+          if (LogUtils.shouldLog(VERBOSE)) {
+            LogUtils.v(
+                LOG_TAG,
+                "%s: canceling delayed transition to %s",
+                getGestureName(),
+                getStateSymbolicName(targetState));
+          }
+          handler.removeCallbacks(this);
+          posted = false;
         }
-        handler.removeCallbacks(this);
         recycleEvent();
       }
     }
@@ -534,16 +540,19 @@ public abstract class GestureMatcher {
         recycleEvent();
         this.event = MotionEvent.obtain(event);
         handler.postDelayed(this, delay);
-        LogUtils.v(
-            LOG_TAG,
-            "%s: posting delayed transition to %s",
-            getGestureName(),
-            getStateSymbolicName(targetState));
+        posted = true;
+        if (LogUtils.shouldLog(VERBOSE)) {
+          LogUtils.v(
+              LOG_TAG,
+              "%s: posting delayed transition to %s",
+              getGestureName(),
+              getStateSymbolicName(targetState));
+        }
       }
     }
 
     public boolean isPending() {
-      return handler.hasCallbacks(this);
+      return posted;
     }
 
     public void forceSendAndRemove() {
@@ -556,14 +565,17 @@ public abstract class GestureMatcher {
     @Override
     public void run() {
       synchronized (GestureMatcher.this) {
+        posted = false;
         if (event == null) {
           return;
         }
-        LogUtils.v(
-            LOG_TAG,
-            "%s: executing delayed transition to %s",
-            getGestureName(),
-            getStateSymbolicName(targetState));
+        if (LogUtils.shouldLog(VERBOSE)) {
+          LogUtils.v(
+              LOG_TAG,
+              "%s: executing delayed transition to %s",
+              getGestureName(),
+              getStateSymbolicName(targetState));
+        }
         setState(targetState, event);
         recycleEvent();
       }
