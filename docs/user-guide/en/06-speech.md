@@ -120,9 +120,9 @@ If the engine of the voice profile doesn't start within 2 seconds, SandFly's own
 
 It works as **Voice for command feedback and text editing** does: speech that is off or muted, the speech filter, the dictionary and the speech history apply, a touch or a gesture that stops SandFly's speech stops this voice too, and notifications read in the same profile go on.
 
-**Read popups over SandFly's speech** is available while a voice profile is chosen. With it off, the popup waits in SandFly's speech queue. With it on, it is said at once, over what SandFly is saying. It's off by default.
+**Read popups over SandFly's speech** is available while a voice profile is chosen. With it off, the popup waits in SandFly's speech queue, after what SandFly is saying and what is queued before it, and what comes after it waits for the popup to end. With it on, the popup still waits for its turn in the queue, but its voice says it over what comes after it, which doesn't wait for it. It's off by default.
 
-**Queue popups** sets what happens when a popup comes while another is being said. On, the default, the new popup waits for the one before it. Off, it replaces the one before it.
+**Queue popups** sets what happens when a popup comes while another is being said. On, the default, the new popup waits for the one before it. Off, it replaces the one before it, also with **Read popups over SandFly's speech** on, where the voice stops saying the old one. Only popups are replaced.
 
 ### Voice effects {#voice-effects}
 

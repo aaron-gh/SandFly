@@ -27,12 +27,12 @@ import com.google.android.accessibility.talkback.compositor.Compositor.HandleEve
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.EventFeedback;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.Role;
-import com.google.android.accessibility.utils.StringBuilderUtils;
-import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;

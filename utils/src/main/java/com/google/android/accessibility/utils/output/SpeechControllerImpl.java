@@ -754,7 +754,9 @@ public class SpeechControllerImpl implements SpeechController {
   public @Nullable Set<Voice> getVoices() {
     try {
       if (failoverTts.isReady()) {
-        return failoverTts.getEngineInstance().getVoices();
+        @Nullable Set<Voice> voices = failoverTts.getVoices();
+        // A copy, since callers may change it.
+        return voices == null ? null : new HashSet<>(voices);
       }
 
       LogUtils.w(TAG, "Attempted to get voices before TTS was initialized.");
@@ -2430,6 +2432,7 @@ public class SpeechControllerImpl implements SpeechController {
           feedbackItem.getUtteranceId(),
           commandText,
           feedbackItem.shouldFlushGlobalTtsQueue(),
+          feedbackItem.hasFlag(FeedbackItem.FLAG_INTERRUPT_CURRENT_UTTERANCE_WITH_SAME_UTTERANCE_GROUP),
           () ->
               failoverTts.speak(
                   commandText,
@@ -2493,11 +2496,17 @@ public class SpeechControllerImpl implements SpeechController {
       String utteranceId,
       CharSequence text,
       boolean flush,
+      boolean replacesEarlier,
       Runnable fallback) {
     if (voice == null || !voice.isActive()) {
       return false;
     }
     final boolean over = voice.isOverSpeech();
+    if (over && replacesEarlier) {
+      // Said over SandFly's speech, the item before it has ended in the speech queue already, so
+      // there is nothing there for the group to interrupt: the voice stops what it says of it.
+      voice.stop(/* includingOverSpeech= */ true);
+    }
     if (flush) {
       // The speech engine would have stopped what SandFly is saying, and its emoji and language
       // voices, before saying this: the old speech must not play on under the command voice.
