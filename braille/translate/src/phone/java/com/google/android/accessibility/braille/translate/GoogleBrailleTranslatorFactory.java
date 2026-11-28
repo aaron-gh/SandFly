@@ -17,6 +17,7 @@
 package com.google.android.accessibility.braille.translate;
 
 import android.content.Context;
+import androidx.annotation.Nullable;
 
 /** Creates Translator instances that delegate to the Google braille translation library. */
 public class GoogleBrailleTranslatorFactory implements TranslatorFactory {
@@ -33,6 +34,13 @@ public class GoogleBrailleTranslatorFactory implements TranslatorFactory {
   public BrailleTranslator create(Context context, String codeName, boolean contractedMode) {
     return new GoogleBrailleTranslator(
         translatorFactory.create(context, codeName, contractedMode), customizer);
+  }
+
+  @Override
+  public BrailleTranslator create(
+      Context context, String codeName, boolean contractedMode, @Nullable String secondaryCodeName) {
+    return new GoogleBrailleTranslator(
+        translatorFactory.create(context, codeName, contractedMode, secondaryCodeName), customizer);
   }
 
   @Override

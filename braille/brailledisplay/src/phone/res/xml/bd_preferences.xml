@@ -37,6 +37,11 @@
         android:title="@string/pref_preferred_output_codes_title" />
 
     <ListPreference
+        android:key="@string/pref_bd_secondary_output_code"
+        android:persistent="false"
+        android:title="@string/pref_secondary_output_code_title" />
+
+    <ListPreference
         android:key="@string/pref_brailleime_translator_code"
         android:summary="%s"
         android:title="@string/pref_preferred_input_codes_title" />

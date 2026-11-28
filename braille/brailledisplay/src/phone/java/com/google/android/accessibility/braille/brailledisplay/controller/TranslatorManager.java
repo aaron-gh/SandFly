@@ -138,13 +138,23 @@ public class TranslatorManager implements SharedPreferences.OnSharedPreferenceCh
     } else if (context.getString(R.string.pref_braille_contracted_mode).equals(key)) {
       updateOutputTranslators();
       updateInputTranslator();
+    } else if (context.getString(R.string.pref_bd_secondary_output_code).equals(key)
+        || context.getString(R.string.pref_brailleime_translator_codes_preferred).equals(key)) {
+      // The secondary table is one of the preferred tables.
+      updateOutputTranslators();
     }
   }
 
   private void updateOutputTranslators() {
     Code code = BrailleUserPreferences.readCurrentActiveOutputCodeAndCorrect(context);
     boolean contracted = BrailleUserPreferences.readContractedMode(context);
-    BrailleTranslator newTranslator = translatorFactory.create(context, code.name(), contracted);
+    Code secondaryCode = BrailleUserPreferences.readSecondaryOutputCode(context);
+    BrailleTranslator newTranslator =
+        translatorFactory.create(
+            context,
+            code.name(),
+            contracted,
+            secondaryCode == null ? null : secondaryCode.name());
     boolean changed = !newTranslator.equals(outputTranslator);
     outputTranslator = newTranslator;
     if (changed) {

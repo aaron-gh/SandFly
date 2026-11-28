@@ -100,6 +100,10 @@
   <string name="pref_codes_title">Languages</string>
   <!-- Label for the preferred output codes preference. [CHAR_LIMIT=45] -->
   <string name="pref_preferred_output_codes_title">Preferred reading language</string>
+  <!-- Label for the braille display preference that chooses a second braille table, used for the characters that the preferred reading language's table doesn't define, such as Chinese characters in English braille. [CHAR_LIMIT=45] -->
+  <string name="pref_secondary_output_code_title">Secondary braille table</string>
+  <!-- Choice of the secondary braille table preference for no secondary table. [CHAR_LIMIT=45] -->
+  <string name="pref_secondary_output_code_none">None</string>
   <!-- Label for the preferred input codes preference. [CHAR_LIMIT=45] -->
   <string name="pref_preferred_input_codes_title">Preferred typing language</string>
   <!-- Label for the preferred braille grade preference. [CHAR_LIMIT=45] -->
