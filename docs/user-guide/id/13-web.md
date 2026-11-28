@@ -63,10 +63,10 @@ Setiap kontrol pembacaan elemen, gerakan, dan pintasan keyboard juga berfungsi d
 | --- | --- |
 | Judul, serta Judul 1 hingga Judul 6 | Item yang ditandai aplikasi sebagai judul. Aplikasi tidak melaporkan level judul, sehingga setiap level berpindah melalui semua judul. |
 | Tautan | Tautan di dalam teks. |
-| Kontrol | Tombol, kotak centang, sakelar, kolom teks, penggeser, dan item lain yang dapat Anda gunakan. |
+| Kontrol | Tombol, kotak centang, tombol beralih, kolom teks, penggeser, dan item lain yang dapat Anda gunakan. |
 | Penunjuk | Toolbar, bilah tab, bilah navigasi, bilah penelusuran, panel dengan judul, dan penampung dengan judul. |
 | Tombol | Tombol, tombol gambar, dan tombol tindakan mengambang. |
-| Kotak centang | Kotak centang, sakelar, dan tombol alih. |
+| Kotak centang | Kotak centang, tombol beralih, dan tombol pengalih. |
 | Tombol pilihan | Tombol pilihan. |
 | Kolom teks | Kolom teks. |
 | Kotak kombinasi | Daftar drop-down. |

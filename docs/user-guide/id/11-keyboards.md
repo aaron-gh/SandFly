@@ -244,7 +244,7 @@ Jika sebuah tombol juga menjadi bagian dari kombinasi dua tombol, tombol itu men
 
 Saat navigasi tombol panah aktif dan Anda berpindah ke kolom teks, SandFly membacakan kolom itu tanpa memberinya fokus input. Tombol panah tetap berpindah melewatinya, bahkan jika aplikasi sudah memberi kolom tersebut fokus input. Kolom mulai diedit setelah Anda mengaktifkannya, misalnya dengan Panah Atas + Panah Bawah, atau setelah Anda mengetik di dalamnya. Pada peta tombol ponsel berkeyboard, Enter juga mengaktifkannya. Jika layar baru terbuka dengan fokus SandFly pada kolom teks yang memiliki fokus input, kolom itu langsung dalam keadaan diedit. Pada peta tombol ponsel berkeyboard, jika fokus SandFly berada di item lain pada layar baru, huruf yang Anda ketik masuk ke kolom teks yang memiliki fokus input. Setelah Anda mengetik, tombol panah berpindah ke kolom tersebut.
 
-Setiap peta tombol memiliki perintah tombol panah dan tombol alihnya sendiri. Peta tombol NVDA, JAWS, dan Orca tidak memiliki navigasi tombol panah, karena tombol panahnya langsung memindahkan fokus SandFly. Pada peta tombol tersebut, perintah ini mengucapkan "Tidak ada navigasi tombol panah di peta tombol ini".
+Setiap peta tombol memiliki perintah tombol panah dan tombol beralihnya sendiri. Peta tombol NVDA, JAWS, dan Orca tidak memiliki navigasi tombol panah, karena tombol panahnya langsung memindahkan fokus SandFly. Pada peta tombol tersebut, perintah ini mengucapkan "Tidak ada navigasi tombol panah di peta tombol ini".
 
 ### Navigasi desktop {#keyboards-desktop}
 
@@ -465,7 +465,7 @@ Keyboard SandFly dapat mengoreksi kata yang Anda ketik dan menyarankan kata untu
 
 Setelan ini berlaku saat **Koreksi otomatis** atau **Saran kata** aktif.
 
-**Enter mengetik saran yang diucapkan**, nonaktif secara default: setelah koreksi atau saran diucapkan, Enter mengetikkannya disertai spasi, hingga Anda melanjutkan mengetik atau memindahkan kursor. Di Zinwa Q25, klik trackpad mengirim Enter, sehingga klik mengetikkan saran tersebut. Enter kedua diteruskan ke aplikasi, misalnya untuk mengirim pesan. Panah Bawah kemudian membuka daftar pada saran setelah saran yang diucapkan. Jika sakelar nonaktif, Enter diteruskan ke aplikasi seperti sebelumnya, Panah Bawah pertama membuka daftar pada saran pertama, dan Panah Atas pertama pada saran terakhir.
+**Enter mengetik saran yang diucapkan**, nonaktif secara default: setelah koreksi atau saran diucapkan, Enter mengetikkannya disertai spasi, hingga Anda melanjutkan mengetik atau memindahkan kursor. Di Zinwa Q25, klik trackpad mengirim Enter, sehingga klik mengetikkan saran tersebut. Enter kedua diteruskan ke aplikasi, misalnya untuk mengirim pesan. Panah Bawah kemudian membuka daftar pada saran setelah saran yang diucapkan. Jika tombol beralih nonaktif, Enter diteruskan ke aplikasi seperti sebelumnya, Panah Bawah pertama membuka daftar pada saran pertama, dan Panah Atas pertama pada saran terakhir.
 
 Geseran trackpad mengirim dua tekanan tombol panah atau lebih; di dalam daftar, tekanan ke arah yang sama dengan selang kurang dari 0,1 detik hanya berpindah satu kali.
 

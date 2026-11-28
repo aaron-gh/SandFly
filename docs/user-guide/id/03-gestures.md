@@ -255,7 +255,7 @@ Untuk menambahkan gerakan bagi suatu aplikasi:
 
 Setiap gerakan pada layar aplikasi menampilkan perintahnya di aplikasi itu. Aktifkan untuk memilih **Pilih perintah** dan **Hapus**. Di bawah **Pintasan keyboard**, **Tambahkan pintasan keyboard** merekam tombol untuk aplikasi tersebut dengan cara yang sama. Lihat [](#keyboards). **Hapus aplikasi** menghapus semua gerakan dan pintasan keyboard untuk aplikasi tersebut.
 
-Perintah **Gerakan untuk aplikasi ini** membuka layar untuk aplikasi yang sedang berada di depan, sehingga Anda dapat menambahkan gerakan sambil menggunakan aplikasi.
+Perintah **Atur gerakan aplikasi saat ini** membuka layar untuk aplikasi yang sedang berada di depan, sehingga Anda dapat menambahkan gerakan sambil menggunakan aplikasi.
 
 **Ekspor ke file** dan **Impor dari file** menyimpan gerakan aplikasi ke file dan membacanya kembali. Lihat [](#api-item-files). Profil gerakan diprioritaskan sebelum gerakan di aplikasi. Lihat [](#gestures-profiles).
 

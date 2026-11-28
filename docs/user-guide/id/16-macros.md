@@ -91,7 +91,7 @@ Untuk melihat isi setiap kolom suatu item dan jenis item yang dimilikinya, gunak
 - **Bagikan teks**: membuka layar berbagi dengan sebuah teks.
 - **Setel volume**: menyetel volume suatu aliran audio dalam persen, seperti media, dering, atau aksesibilitas.
 - **Setel mode pendering**: normal, getar, atau senyap.
-- **Setelan perangkat**: mengubah kontrol pada panel setelan cepat SandFly, seperti Wi-Fi, senter, Jangan Ganggu, atau kecerahan. Untuk sakelar, gunakan **Aktifkan**, **Nonaktifkan**, atau **Aktifkan atau nonaktifkan**. Untuk penggeser, gunakan angka, persentase seperti 50%, atau +1 atau -1. Untuk pilihan, gunakan salah satu opsi atau `next`. Lihat [](#display).
+- **Setelan perangkat**: mengubah kontrol pada panel setelan cepat SandFly, seperti Wi-Fi, senter, Jangan Ganggu, atau kecerahan. Untuk tombol beralih, gunakan **Aktifkan**, **Nonaktifkan**, atau **Aktifkan atau nonaktifkan**. Untuk penggeser, gunakan angka, persentase seperti 50%, atau +1 atau -1. Untuk pilihan, gunakan salah satu opsi atau `next`. Lihat [](#display).
 - **Tombol media**: **Putar atau jeda**, **Putar**, **Jeda**, **Berikutnya**, **Sebelumnya**, **Berhenti**, **Mundur**, atau **Maju cepat**.
 - **Setel pengatur waktu**: jumlah detik, hingga 86.400, dengan label opsional.
 - **Setel alarm**: waktu seperti 08:30, dengan label opsional.
@@ -172,7 +172,7 @@ Langkah yang direkam juga menangkap maksud tindakan Anda:
 
 - Pengguliran dalam daftar yang diikuti ketukan pada salah satu itemnya menjadi **Ulangi selama** yang menggulir hingga item ada di layar, lalu ketukan tersebut.
 - Satu tindakan, atau rangkaian tindakan, yang dilakukan beberapa kali berturut-turut menjadi **Ulangi**. Jika item pertama yang ditekan sudah hilang setelah tekanan terakhir, tindakan itu menjadi **Ulangi selama** item tersebut ada di layar.
-- Ketukan yang mengaktifkan sakelar atau kotak centang hanya dijalankan saat statusnya nonaktif. Ketukan yang menonaktifkannya hanya dijalankan saat statusnya aktif.
+- Ketukan yang mengaktifkan tombol beralih atau kotak centang hanya dijalankan saat statusnya nonaktif. Ketukan yang menonaktifkannya hanya dijalankan saat statusnya aktif.
 - Ketukan di peluncur yang membuka aplikasi menjadi **Buka aplikasi**.
 - Jika tindakan pertama dilakukan di aplikasi yang sedang tampil saat perekaman dimulai, makro membuka aplikasi tersebut lebih dulu jika aplikasi itu belum tampil.
 

@@ -112,7 +112,7 @@ Saat layar terpisah ditampilkan, Menu SandFly memiliki item **Layar terpisah**, 
 
 ### Panel setelan cepat SandFly {#display-quick-settings}
 
-Panel setelan cepat SandFly adalah kisi berisi sakelar, penggeser, dan tombol yang dapat Anda pilih dan atur susunannya. Panel ini terbuka menggantikan setelan cepat sistem saat Anda mengaktifkan **Setelan cepat** > **Gunakan setelan cepat SandFly**. Setelan ini nonaktif secara default.
+Panel setelan cepat SandFly adalah kisi berisi tombol beralih, penggeser, dan tombol yang dapat Anda pilih dan atur susunannya. Panel ini terbuka menggantikan setelan cepat sistem saat Anda mengaktifkan **Setelan cepat** > **Gunakan setelan cepat SandFly**. Setelan ini nonaktif secara default.
 
 #### Menggunakan panel setelan cepat {#display-quick-settings-use}
 
@@ -121,7 +121,7 @@ Perintah **Setelan Cepat**, di **Tindakan sistem**, membuka panel ini. Tombol **
 Di dalam panel:
 
 - SandFly menyebutkan baris dan kolom setiap item, namanya, dan statusnya, seperti jaringan Wi-Fi yang terhubung.
-- Ketuk dua kali sakelar untuk mengaktifkan atau menonaktifkannya. Ketuk dua kali item dengan beberapa pilihan nilai, seperti **Mode suara** atau **Batas waktu layar**, untuk berpindah ke nilai berikutnya.
+- Ketuk dua kali tombol beralih untuk mengaktifkan atau menonaktifkannya. Ketuk dua kali item dengan beberapa pilihan nilai, seperti **Mode suara** atau **Batas waktu layar**, untuk berpindah ke nilai berikutnya.
 - Geser ke atas atau ke bawah pada penggeser, seperti **Kecerahan** atau **Volume media**, untuk menggerakkannya satu langkah.
 - Ketuk dua kali lalu tahan sebuah item, atau gunakan tindakan **Buka setelan**, untuk membuka setelan Android yang terkait.
 - **Edit** membuka layar untuk memilih item. Lihat [](#display-quick-settings-edit).
@@ -129,7 +129,7 @@ Di dalam panel:
 
 Perintah **Setelan cepat sistem** membuka setelan cepat sistem meskipun **Gunakan setelan cepat SandFly** aktif.
 
-Android hanya mengizinkan sistem dan shell mengubah beberapa setelan tertentu. Saat Shizuku berjalan, SandFly dapat mengaktifkan dan menonaktifkan sendiri Wi-Fi, Bluetooth, data seluler, hotspot, mode pesawat, lokasi, NFC, penghemat baterai, tema gelap, penghemat data, serta akses mikrofon dan kamera, dan memberi dirinya sendiri izin yang diperlukan untuk kontrol lainnya. Tanpa Shizuku, sakelar-sakelar ini akan membuka halaman setelan Android terkait. Lihat [](#updates).
+Android hanya mengizinkan sistem dan shell mengubah beberapa setelan tertentu. Saat Shizuku berjalan, SandFly dapat mengaktifkan dan menonaktifkan sendiri Wi-Fi, Bluetooth, data seluler, hotspot, mode pesawat, lokasi, NFC, penghemat baterai, tema gelap, penghemat data, serta akses mikrofon dan kamera, dan memberi dirinya sendiri izin yang diperlukan untuk kontrol lainnya. Tanpa Shizuku, tombol beralih ini akan membuka halaman setelan Android terkait. Lihat [](#updates).
 
 SandFly mengaktifkan kotak aplikasi dan kotak sistem di setelan cepat sistem: SandFly membuka setelan cepat sistem, mengaktifkan kotak tersebut, menutupnya tanpa membacakannya, lalu menyebutkan status baru kotak itu. Tanpa Shizuku, kotak hanya berfungsi jika ada di setelan cepat sistem, dan SandFly mengucapkan "<nama> tidak ada dalam setelan cepat sistem" jika tidak dapat menemukan kotaknya. Saat Shizuku berjalan, SandFly terlebih dahulu menambahkan kotak aplikasi ke setelan cepat sistem jika belum ada di sana, dan mengaktifkannya melalui Shizuku jika kotak tersebut tidak ditemukan di sana.
 

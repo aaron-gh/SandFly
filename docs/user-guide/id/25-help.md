@@ -49,13 +49,13 @@ Layar **Kirim masukan** memiliki:
 
 SandFly akan mengucapkan "Masukan terkirim." dan laporan berpindah ke **Kotak masuk**. Jika laporan tidak dapat dikirim, SandFly menyebutkan alasannya, seperti "Masukan tidak terkirim. Periksa koneksi internet.", dan laporan tetap tersimpan sebagai draf.
 
-Apa yang Anda ketik disimpan sebagai draf sampai Anda mengirimnya. **Hapus draf** menghapus draf tersebut. Alamat email dan kedua sakelar **Sertakan** tetap disimpan untuk laporan berikutnya.
+Apa yang Anda ketik disimpan sebagai draf sampai Anda mengirimnya. **Hapus draf** menghapus draf tersebut. Alamat email dan kedua tombol beralih **Sertakan** tetap disimpan untuk laporan berikutnya.
 
 #### Isi laporan {#help-feedback-contents}
 
 Laporan selalu menyertakan kolom yang Anda isi serta versi dan nomor build SandFly.
 
-**Sertakan informasi perangkat** menambahkan versi Android serta produsen dan model perangkat. Sakelar ini menampilkan informasi yang akan ditambahkan.
+**Sertakan informasi perangkat** menambahkan versi Android serta produsen dan model perangkat. Tombol beralih ini menampilkan informasi yang akan ditambahkan.
 
 **Sertakan log SandFly** menambahkan log terbaru SandFly yang membantu pengembang menemukan penyebab masalah. Log ini dapat berisi teks dari layar. Isinya mencakup:
 

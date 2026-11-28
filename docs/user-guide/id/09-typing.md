@@ -149,7 +149,7 @@ Tidak satu pun perintah ini memiliki gerakan secara default. Untuk menetapkan ge
 
 ### Histori papan klip {#typing-clipboard-history}
 
-SandFly menyimpan histori hingga 50 teks yang disalin, dari yang terbaru. Setiap teks disimpan hingga 200.000 karakter, dan histori secara keseluruhan hingga 1.000.000 karakter: teks lama yang melebihi batas itu dihapus. **Tambahkan ke papan klip** juga berhenti pada 200.000 karakter. Histori ini menyimpan teks yang disalin SandFly, dan teks yang disalin aplikasi lain saat jendela SandFly memiliki fokus. Android tidak mengizinkan aplikasi membaca papan klip di latar belakang, jadi dengan Shizuku atau root, tombol alih **Tambahkan salinan dari aplikasi lain** di bagian atas histori akan menambahkan setiap teks yang disalin oleh aplikasi lain. Histori disimpan terpisah dari setelan dan tidak disertakan dalam cadangan setelan.
+SandFly menyimpan histori hingga 50 teks yang disalin, dari yang terbaru. Setiap teks disimpan hingga 200.000 karakter, dan histori secara keseluruhan hingga 1.000.000 karakter: teks lama yang melebihi batas itu dihapus. **Tambahkan ke papan klip** juga berhenti pada 200.000 karakter. Histori ini menyimpan teks yang disalin SandFly, dan teks yang disalin aplikasi lain saat jendela SandFly memiliki fokus. Android tidak mengizinkan aplikasi membaca papan klip di latar belakang, jadi dengan Shizuku atau root, tombol beralih **Tambahkan salinan dari aplikasi lain** di bagian atas histori akan menambahkan setiap teks yang disalin oleh aplikasi lain. Histori disimpan terpisah dari setelan dan tidak disertakan dalam cadangan setelan.
 
 Untuk membuka histori, jalankan **Histori papan klip**, dari perintah **Pengeditan teks** atau **Menu pengeditan**. Histori terbuka di atas layar saat ini.
 

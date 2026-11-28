@@ -30,7 +30,7 @@ Untuk memindahkan satu detail, lakukan salah satu langkah berikut:
 
 SandFly mengumumkan posisi detail saat Anda mengambil, memindahkan, dan melepasnya.
 
-Urutan ini juga berlaku untuk baris yang kotak centang atau tombol alihnya tidak memiliki teks sendiri. SandFly membaca baris seperti itu sebagai satu kontrol, dengan teks baris sebagai namanya. Urutan ini juga berlaku untuk tombol dan tab yang labelnya merupakan item terpisah di dalamnya.
+Urutan ini juga berlaku untuk baris yang kotak centang atau tombol beralihnya tidak memiliki teks sendiri. SandFly membaca baris seperti itu sebagai satu kontrol, dengan teks baris sebagai namanya. Urutan ini juga berlaku untuk tombol dan tab yang labelnya merupakan item terpisah di dalamnya.
 
 ### Teks dan simbol {#verbosity-text}
 
