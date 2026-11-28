@@ -156,12 +156,14 @@ object DictationSettings {
       languageTag?.takeIf { it.isNotEmpty() }?.let(Locale::forLanguageTag)
         ?: locale?.takeIf { it.isNotEmpty() }?.let { Locale.forLanguageTag(it.replace('_', '-')) }
         ?: return null
-    // "zz" is the subtype of keyboards for no particular language, such as emoji.
-    if (language.language.isEmpty() || language.language == "zz" || language.language == "und") {
-      return null
-    }
+    // "zz" is the subtype of keyboards for no particular language, such as emoji; "mul" of
+    // keyboards for several languages at once, such as Yandex Keyboard's Russian/English layout.
+    if (language.language.isEmpty() || language.language in NO_SINGLE_LANGUAGE) return null
     return language.takeIf { it.language != phone.language }
   }
+
+  /** Subtype language codes that name no single language a recognizer can be set to. */
+  private val NO_SINGLE_LANGUAGE = setOf("zz", "und", "mul", "mis", "zxx")
 
   /** Whether Rambler recognizes [locale]'s language. */
   fun ramblerSupports(locale: Locale): Boolean = locale.language in RAMBLER_LANGUAGES

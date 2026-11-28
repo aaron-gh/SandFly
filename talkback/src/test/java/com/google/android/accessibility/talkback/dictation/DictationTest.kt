@@ -105,6 +105,8 @@ class DictationTest {
     assertNull(DictationSettings.subtypeLanguage("en-GB", "en_GB", "keyboard", phone))
     assertNull(DictationSettings.subtypeLanguage("", "", "keyboard", phone))
     assertNull(DictationSettings.subtypeLanguage("", "zz", "keyboard", phone))
+    // A layout for several languages, such as Yandex Keyboard's Russian/English one.
+    assertNull(DictationSettings.subtypeLanguage("mul", "mul", "keyboard", phone))
     assertNull(DictationSettings.subtypeLanguage("uk-UA", "uk_UA", "voice", phone))
   }
 
