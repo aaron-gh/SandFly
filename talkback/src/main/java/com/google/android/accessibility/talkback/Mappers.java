@@ -212,6 +212,15 @@ public final class Mappers {
           ProcessorAccessibilityHints.toFeedback(
               variables, depth, context, compositor.getTextComposer());
       return (feedback == null) ? null : Feedback.create(eventId, feedback.build());
+    } else if (interpretation instanceof Interpretation.FocusTypoHint focusTypoHint) {
+      Feedback.Part.@Nullable Builder feedback =
+          ProcessorAccessibilityHints.focusTypoToFeedback(
+              eventSourceNode,
+              focusTypoHint.typoCount,
+              focusTypoHint.forceFeedbackEvenIfAudioPlaybackActive,
+              focusTypoHint.forceFeedbackEvenIfMicrophoneActive,
+              compositor.getTextComposer());
+      return (feedback == null) ? null : Feedback.create(eventId, feedback.build());
     } else if (interpretation instanceof Interpretation.Key) {
       if (variables.keyAction(depth) == KeyEvent.ACTION_DOWN) {
         // Cancel all delayed hints.

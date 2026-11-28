@@ -3702,13 +3702,22 @@ public class AccessibilityNodeInfoUtils {
   }
 
   /**
-   * Returns the total number of typos which are in the edit field.
+   * Returns the total number of typos which are in the edit field from cached spell-check results
+   * or spans already attached to the node text.
    *
    * @return 0, there is no typo or the input method for the node won't display spelling
    *     suggestions.
    */
   public static int getTypoCount(Context context, AccessibilityNodeInfoCompat node) {
-    return getSuggestionSpans(context, node).size();
+    return getCachedSuggestionSpans(context, node).size();
+  }
+
+  /** Returns whether {@code node}'s text already carries SuggestionSpans before spell checking. */
+  public static boolean hasExistingSuggestionSpans(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null || hasNoSuggestionsNeed(node.getInputType())) {
+      return false;
+    }
+    return !extractSuggestionSpans(node.getText()).isEmpty();
   }
 
   /**
@@ -3800,6 +3809,18 @@ public class AccessibilityNodeInfoUtils {
     return getSuggestionSpans(context, node.getText(), node.getInputType());
   }
 
+  private static ImmutableList<SuggestionSpan> getCachedSuggestionSpans(
+      Context context, @Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null || hasNoSuggestionsNeed(node.getInputType())) {
+      return ImmutableList.of();
+    }
+    CharSequence text = node.getText();
+    if (TextUtils.isEmpty(text)) {
+      return ImmutableList.of();
+    }
+    return extractSuggestionSpans(SpellChecker.getCachedTextWithSuggestionSpans(context, text));
+  }
+
   /**
    * Returns a list of {@link SuggestionSpan} in the given text or an empty list if the input type
    * is no suggestion.
@@ -3810,15 +3831,15 @@ public class AccessibilityNodeInfoUtils {
       return ImmutableList.of();
     }
 
-    @Nullable CharSequence textWithSuggestionSpans =
-        SpellChecker.getCachedTextWithSuggestionSpans(context, text);
-    if (TextUtils.isEmpty(textWithSuggestionSpans)
-        || !(textWithSuggestionSpans instanceof Spannable spannedText)) {
+    return extractSuggestionSpans(SpellChecker.getTextWithSuggestionSpans(context, text));
+  }
+
+  private static ImmutableList<SuggestionSpan> extractSuggestionSpans(@Nullable CharSequence text) {
+    if (TextUtils.isEmpty(text) || !(text instanceof Spannable spannedText)) {
       return ImmutableList.of();
     }
 
-    SuggestionSpan[] spans =
-        spannedText.getSpans(0, textWithSuggestionSpans.length(), SuggestionSpan.class);
+    SuggestionSpan[] spans = spannedText.getSpans(0, text.length(), SuggestionSpan.class);
     if (spans.length == 0) {
       return ImmutableList.of();
     }
@@ -3830,7 +3851,7 @@ public class AccessibilityNodeInfoUtils {
    * Returns {@code true}, if the input method for the {@code node} won't display spelling
    * suggestions.
    */
-  private static boolean hasNoSuggestionsNeed(int input) {
+  public static boolean hasNoSuggestionsNeed(int input) {
     return input == TYPE_TEXT_FLAG_NO_SUGGESTIONS;
   }
 

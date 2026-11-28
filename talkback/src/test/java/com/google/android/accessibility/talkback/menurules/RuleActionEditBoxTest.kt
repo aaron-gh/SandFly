@@ -29,6 +29,7 @@ import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFo
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.input.TextCursorTracker
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Before
@@ -39,7 +40,7 @@ import org.robolectric.RuntimeEnvironment
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 
-/** Short-circuit action availability checks on edit fields and regular text items. */
+/** Verifies RuleAction.hasMenuItemsForNode matches getMenuItemsForNode across node types. */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
 class RuleActionEditBoxTest {
@@ -76,27 +77,42 @@ class RuleActionEditBoxTest {
     ruleAction = RuleAction(null, actorState, focusMonitor, null)
   }
 
+  private fun assertHasItemsMatchesGetItems(
+    node: AccessibilityNodeInfoCompat,
+    includeAncestors: Boolean,
+  ): Boolean {
+    val hasItems = ruleAction.hasMenuItemsForNode(context, node, includeAncestors)
+    val gotItems = ruleAction.getMenuItemsForNode(context, node, includeAncestors).isNotEmpty()
+    assertEquals(gotItems, hasItems)
+    return hasItems
+  }
+
   @Test
-  fun editBoxReportsActionsAvailableImmediately() {
+  fun editBoxMatchesGetMenuItemsForNode() {
     @Suppress("DEPRECATION") val editBox = AccessibilityNodeInfoCompat.obtain()
     editBox.className = EditText::class.java.name
     editBox.isEditable = true
     editBox.text = "helo wrld"
 
-    assertTrue(ruleAction.hasMenuItemsForNode(context, editBox, /* includeAncestors= */ true))
+    assertTrue(assertHasItemsMatchesGetItems(editBox, includeAncestors = true))
+    assertTrue(assertHasItemsMatchesGetItems(editBox, includeAncestors = false))
   }
 
   @Test
-  fun plainTextWithoutActionsReturnsFalse() {
+  fun selectableTextMatchesGetMenuItemsForNode() {
     @Suppress("DEPRECATION") val textView = AccessibilityNodeInfoCompat.obtain()
     textView.className = TextView::class.java.name
-    textView.text = "Hello"
+    textView.isEditable = false
+    textView.unwrap().isTextSelectable = true
+    textView.text = "Selectable text"
+    textView.addAction(AccessibilityNodeInfoCompat.ACTION_COPY)
 
-    assertFalse(ruleAction.hasMenuItemsForNode(context, textView, /* includeAncestors= */ true))
+    assertTrue(assertHasItemsMatchesGetItems(textView, includeAncestors = true))
+    assertTrue(assertHasItemsMatchesGetItems(textView, includeAncestors = false))
   }
 
   @Test
-  fun plainTextInsideRowWithCustomActionReturnsTrue() {
+  fun customActionNodeAndAncestorMatchGetMenuItemsForNode() {
     @Suppress("DEPRECATION") val row = AccessibilityNodeInfoCompat.obtain()
     row.addAction(AccessibilityActionCompat(0x7f0a0001, "Archive"))
     @Suppress("DEPRECATION") val textView = AccessibilityNodeInfoCompat.obtain()
@@ -104,6 +120,19 @@ class RuleActionEditBoxTest {
     textView.addAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS)
     shadowOf(row.unwrap()).addChild(textView.unwrap())
 
-    assertTrue(ruleAction.hasMenuItemsForNode(context, textView, /* includeAncestors= */ true))
+    assertTrue(assertHasItemsMatchesGetItems(row, includeAncestors = true))
+    assertTrue(assertHasItemsMatchesGetItems(row, includeAncestors = false))
+    assertTrue(assertHasItemsMatchesGetItems(textView, includeAncestors = true))
+    assertFalse(assertHasItemsMatchesGetItems(textView, includeAncestors = false))
+  }
+
+  @Test
+  fun plainTextMatchesGetMenuItemsForNode() {
+    @Suppress("DEPRECATION") val textView = AccessibilityNodeInfoCompat.obtain()
+    textView.className = TextView::class.java.name
+    textView.text = "Hello"
+
+    assertFalse(assertHasItemsMatchesGetItems(textView, includeAncestors = true))
+    assertFalse(assertHasItemsMatchesGetItems(textView, includeAncestors = false))
   }
 }

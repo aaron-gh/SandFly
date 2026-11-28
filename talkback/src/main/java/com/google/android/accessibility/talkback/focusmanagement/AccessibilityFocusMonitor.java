@@ -186,8 +186,7 @@ public class AccessibilityFocusMonitor {
    */
   public @Nullable AccessibilityNodeInfoCompat getEditingNodeFromFocusedKeyboard(
       AccessibilityNodeInfoCompat accessibilityFocusNode) {
-    if (accessibilityFocusNode == null
-        || AccessibilityNodeInfoUtils.isEditField(accessibilityFocusNode)) {
+    if (accessibilityFocusNode == null) {
       return null;
     }
 

@@ -104,7 +104,8 @@ public class RuleAction extends NodeMenuRule {
       Context context, AccessibilityNodeInfoCompat node, boolean includeAncestors) {
     List<ContextMenuItem> actionItems = new ArrayList<>();
 
-    if (typoSuggestionMenu.accept(context, node)) {
+    // Check eligibility rather than cache-only accept so opening Actions still runs spell check.
+    if (typoSuggestionMenu.isEnabledForNode(context, node)) {
       actionItems.addAll(typoSuggestionMenu.getMenuItemsForNode(context, node, includeAncestors));
     }
 

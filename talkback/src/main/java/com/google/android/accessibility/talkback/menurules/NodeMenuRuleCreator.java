@@ -110,7 +110,9 @@ public class NodeMenuRuleCreator {
     if (menuRule instanceof RuleAction actionRule) {
       return actionRule.hasMenuItemsForNode(context, node, includeAncestors);
     }
-    return !menuRule.getMenuItemsForNode(context, node, includeAncestors).isEmpty();
+    List<ContextMenuItem> menuItems =
+        menuRule.getMenuItemsForNode(context, node, includeAncestors);
+    return menuItems != null && !menuItems.isEmpty();
   }
 
   @Nullable NodeMenuRule getMenuRuleById(int ruleId) {

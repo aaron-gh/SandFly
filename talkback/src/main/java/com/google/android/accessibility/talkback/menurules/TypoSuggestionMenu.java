@@ -74,8 +74,7 @@ public class TypoSuggestionMenu implements NodeMenu {
     this.accessibilityFocusMonitor = accessibilityFocusMonitor;
   }
 
-  @Override
-  public boolean accept(Context context, AccessibilityNodeInfoCompat node) {
+  boolean isEnabledForNode(Context context, AccessibilityNodeInfoCompat node) {
     boolean isEnabled =
         SharedPreferencesUtils.getSharedPreferences(context)
             .getBoolean(
@@ -83,16 +82,16 @@ public class TypoSuggestionMenu implements NodeMenu {
                 context
                     .getResources()
                     .getBoolean(R.bool.pref_show_context_menu_typo_suggestions_default));
+    return isEnabled && Role.getRole(getEditingNode(node)) == Role.ROLE_EDIT_TEXT;
+  }
 
-    if (!isEnabled) {
+  @Override
+  public boolean accept(Context context, AccessibilityNodeInfoCompat node) {
+    if (!isEnabledForNode(context, node)) {
       return false;
     }
 
     AccessibilityNodeInfoCompat editingNode = getEditingNode(node);
-    if (Role.getRole(editingNode) != Role.ROLE_EDIT_TEXT) {
-      return false;
-    }
-
     int currentCursorPosition = actorState.getEditState().getCurrentCursorPosition();
     return currentCursorPosition == NO_POSITION
         ? !AccessibilityNodeInfoUtils.getCachedSpellingSuggestions(context, editingNode).isEmpty()
@@ -202,8 +201,8 @@ public class TypoSuggestionMenu implements NodeMenu {
 
     List<SpellingSuggestion> spellingSuggestions =
         currentCursorPosition == NO_POSITION
-            ? AccessibilityNodeInfoUtils.getCachedSpellingSuggestions(context, node)
-            : AccessibilityNodeInfoUtils.getCachedSpellingSuggestions(
+            ? AccessibilityNodeInfoUtils.getSpellingSuggestions(context, node)
+            : AccessibilityNodeInfoUtils.getSpellingSuggestions(
                 context, node, currentCursorPosition);
 
     return spellingSuggestions.isEmpty() ? null : spellingSuggestions.get(0);
