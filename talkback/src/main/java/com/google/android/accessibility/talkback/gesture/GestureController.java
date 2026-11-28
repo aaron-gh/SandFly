@@ -596,11 +596,25 @@ public class GestureController {
         || action.equals(service.getString(R.string.shortcut_value_add_to_clipboard));
   }
 
+  /**
+   * Whether {@code action} says something the user asked for, such as the time, the battery level
+   * or the position: its result is command feedback too.
+   */
+  private boolean isAnswerAction(String action) {
+    return action.equals(service.getString(R.string.shortcut_value_announce_current_time_and_date))
+        || action.equals(service.getString(R.string.shortcut_value_announce_battery_state))
+        || action.equals(service.getString(R.string.shortcut_value_announce_status))
+        || action.equals(service.getString(R.string.shortcut_value_speak_position))
+        || action.equals(service.getString(R.string.shortcut_value_speak_coordinates))
+        || action.equals(service.getString(R.string.shortcut_value_announce_current_title))
+        || action.equals(service.getString(R.string.shortcut_value_say_caller));
+  }
+
   /** Runs {@code action}, over an input overlay as well. */
   private void runAction(String action, EventId eventId) {
     RecentUserInput.mark();
     MacroRecorder.onCommand(service, action);
-    NotificationReader.onUserAction(isTextEditingAction(action));
+    NotificationReader.onUserAction(isTextEditingAction(action), isAnswerAction(action));
     boolean defaultItemNavigation =
         action.equals(service.getString(R.string.shortcut_value_next))
             || action.equals(service.getString(R.string.shortcut_value_previous));

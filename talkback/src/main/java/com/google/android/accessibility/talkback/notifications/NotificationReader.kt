@@ -891,13 +891,15 @@ object NotificationReader {
    *
    * With [textEditing] true, for the commands that copy, paste or select text, they go on while
    * a voice profile is chosen for command feedback: the result is said in SandFly's voice if the
-   * profile is reading, so that the notification isn't cut off by a command.
+   * profile is reading, so that the notification isn't cut off by a command. With [answer] true,
+   * for the commands that say something, such as the time or the battery level, they go on
+   * whatever the command feedback voice is: the answer is said in SandFly's voice meanwhile.
    */
   @JvmStatic
   @MainThread
-  fun onUserAction(textEditing: Boolean) {
+  fun onUserAction(textEditing: Boolean, answer: Boolean) {
     stopSummary()
-    if (textEditing && hasCommandVoice()) return
+    if (answer || (textEditing && hasCommandVoice())) return
     val handed = (listOfNotNull(reading) + queued).filter { it.voiceKey.isNotEmpty() }
     if (handed.isEmpty()) return
     LogUtils.d(TAG, "User action; stopping %d notifications in voice profiles", handed.size)
