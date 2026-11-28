@@ -153,6 +153,7 @@ SandFly keeps a history of up to 50 texts copied, newest first. Each text is kep
 
 To open the history, run **Clipboard history**, from the **Text editing** commands or the **Editing menu**. The history opens over the current screen.
 
+- The search field at the top lists only the texts that contain what is typed in it, ignoring case, and SandFly reads how many are found. Clear the field to list every text again. During a search, **Select** and **Export to file** use the texts found, and **Clear history** isn't shown.
 - Double-tap a text to paste it into the text field that the history was opened from. When the history was opened without a text field, double-tap opens the actions of the text.
 - Double-tap and hold a text to open its actions: **Paste**, **Copy** it again, **Add to clipboard**, **Edit** its text, **Export to file**, or **Remove** it. The actions are also in the **Actions** of each text.
 - **Select** shows the texts as check boxes. Double-tap texts to check them, then choose **Remove** or **Export to file** for the checked texts.

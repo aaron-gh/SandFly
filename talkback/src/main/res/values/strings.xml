@@ -3117,6 +3117,13 @@
     <string name="clipboard_history_clear">Clear history</string>
     <!-- Button in the clipboard history that shows the texts as check boxes, with Remove and Export to file for the checked texts. [CHAR_LIMIT=40] -->
     <string name="clipboard_history_select">Select</string>
+    <!-- Hint of the search field at the top of the clipboard history, which lists only the texts that contain what is typed in it. [CHAR_LIMIT=NONE] -->
+    <string name="clipboard_history_search_hint">Search clipboard history</string>
+    <!-- Spoken after the search field of the clipboard history lists the texts found. [CHAR_LIMIT=NONE] -->
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> text</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> texts</item>
+    </plurals>
     <!-- Title of the screen and command listing the texts SandFly spoke lately, newest first. [CHAR_LIMIT=40] -->
     <string name="title_speech_history">Speech history</string>
     <!-- Shown in the speech history when it has no texts. [CHAR_LIMIT=NONE] -->
