@@ -1061,6 +1061,15 @@ class Actors {
     soundAndVibration.interrupt();
   }
 
+  /**
+   * Interrupts all feedback, holding low-latency speech mid-word for a pause that may follow. See
+   * {@link SpeechControllerImpl#interruptHoldingForPause}.
+   */
+  public void interruptAllFeedbackHoldingForPause() {
+    speaker.interruptHoldingForPause();
+    soundAndVibration.interrupt();
+  }
+
   public void interruptSoundAndVibration() {
     soundAndVibration.interrupt();
   }
@@ -1099,7 +1108,8 @@ class Actors {
     if (actorState.continuousRead.isActive()) {
       interruptSoundAndVibration();
     } else {
-      interruptAllFeedback(/* stopTtsSpeechCompletely= */ false);
+      // Such as at the start of a touch, which may be the pause gesture.
+      interruptAllFeedbackHoldingForPause();
     }
   }
 

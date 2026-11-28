@@ -30,8 +30,10 @@ import androidx.annotation.Nullable;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.report.ReportNotes;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import java.util.Locale;
 
 /**
  * This class support the enable/disable Touch Explore Pass Through mode. Once the system enters the
@@ -208,12 +210,19 @@ public class PassThroughModeActor {
   private void applyRegion(int displayId) {
     Region region = appliedRegion();
     if (!region.equals(appliedRegion)) {
-      LogUtils.i(
-          TAG,
-          "Passthrough region %s, keyboard overlay %s, navigation gestures %s",
-          describe(region),
-          describe(keyboardRegion),
-          describe(systemNavigationRegion));
+      String note =
+          String.format(
+              Locale.ROOT,
+              "Passthrough region %s, set by %s, keyboard overlay %s, navigation gestures %s%s",
+              describe(region),
+              locked
+                  ? "a feature's lock"
+                  : touchExplorePassThroughActive ? "pass-through" : "direct touch",
+              describe(keyboardRegion),
+              describe(systemNavigationRegion),
+              touchLocked ? ", touch locked" : "");
+      LogUtils.i(TAG, "%s", note);
+      ReportNotes.passthrough.add(note);
     }
     appliedRegion = region;
     service.setTouchExplorationPassthroughRegion(displayId, region);

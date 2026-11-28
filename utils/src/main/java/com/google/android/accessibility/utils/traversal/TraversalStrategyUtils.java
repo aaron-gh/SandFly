@@ -22,6 +22,7 @@ import com.google.android.accessibility.utils.ScrollableNodeInfo;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -258,6 +259,32 @@ public class TraversalStrategyUtils {
       @TraversalStrategy.SearchDirection int searchDirection,
       FocusFinder focusFinder,
       @Nullable OrderedTraversalStrategy windowOrderedStrategy) {
+    return isAutoScrollEdgeListItem(
+        pivot,
+        scrollableNodeInfo,
+        ignoreDescendantsOfPivot,
+        searchDirection,
+        focusFinder,
+        windowOrderedStrategy,
+        /* edgeSearch= */ null);
+  }
+
+  /**
+   * Same as {@link #isAutoScrollEdgeListItem(AccessibilityNodeInfoCompat, ScrollableNodeInfo,
+   * boolean, int, FocusFinder, OrderedTraversalStrategy)}, and keeps the node that its search found
+   * in {@code edgeSearch}, if not null. It is cleared first, and stays empty when no search ran.
+   */
+  public static boolean isAutoScrollEdgeListItem(
+      AccessibilityNodeInfoCompat pivot,
+      @NonNull ScrollableNodeInfo scrollableNodeInfo,
+      boolean ignoreDescendantsOfPivot,
+      @TraversalStrategy.SearchDirection int searchDirection,
+      FocusFinder focusFinder,
+      @Nullable OrderedTraversalStrategy windowOrderedStrategy,
+      @Nullable EdgeSearch edgeSearch) {
+    if (edgeSearch != null) {
+      edgeSearch.clear();
+    }
 
     Integer supportedDirection = scrollableNodeInfo.getSupportedScrollDirection(searchDirection);
     if (supportedDirection == null) {
@@ -274,7 +301,95 @@ public class TraversalStrategyUtils {
         ignoreDescendantsOfPivot,
         supportedDirection,
         scrollableNodeInfo.getContainerFilter(),
-        traversalStrategy);
+        traversalStrategy,
+        edgeSearch);
+  }
+
+  /**
+   * The node that the search of {@link #isAutoScrollEdgeListItem} found: the first node after or
+   * before the pivot, in the order searched, that {@link AccessibilityNodeInfoUtils#shouldFocusNode}
+   * accepts, or null when there was none. A caller about to search the same way can take it rather
+   * than searching again.
+   */
+  public static final class EdgeSearch {
+    private final @Nullable Filter<AccessibilityNodeInfoCompat> alsoAccepted;
+    private @Nullable TraversalStrategy strategy;
+    private @Nullable AccessibilityNodeInfoCompat cursor;
+    private int direction;
+    private boolean ignoreDescendants;
+    private @Nullable AccessibilityNodeInfoCompat found;
+    private boolean passedAlsoAccepted;
+
+    /**
+     * @param alsoAccepted Nodes that the caller's search accepts even when they can't take focus,
+     *     such as a WebView to enter. When the search passed one, {@link #holds} is false, as the
+     *     caller's search would have stopped there.
+     */
+    public EdgeSearch(@Nullable Filter<AccessibilityNodeInfoCompat> alsoAccepted) {
+      this.alsoAccepted = alsoAccepted;
+    }
+
+    /** Forgets the search, such as after a scroll, which can move what it found. */
+    public void clear() {
+      strategy = null;
+      cursor = null;
+      found = null;
+      passedAlsoAccepted = false;
+    }
+
+    /**
+     * Whether this holds the result of a search from {@code cursor} in {@code direction} through
+     * {@code strategy}, the same object, with descendants of {@code cursor} left out when {@code
+     * ignoreDescendants}, that passed no node of {@code alsoAccepted}.
+     */
+    public boolean holds(
+        TraversalStrategy strategy,
+        AccessibilityNodeInfoCompat cursor,
+        @TraversalStrategy.SearchDirection int direction,
+        boolean ignoreDescendants) {
+      return this.strategy != null
+          && this.strategy == strategy
+          && this.direction == direction
+          && this.ignoreDescendants == ignoreDescendants
+          && !passedAlsoAccepted
+          && cursor.equals(this.cursor);
+    }
+
+    /** The node the search found, or null when it found none. */
+    public @Nullable AccessibilityNodeInfoCompat found() {
+      return found;
+    }
+
+    private Filter<AccessibilityNodeInfoCompat> watching(
+        Filter<AccessibilityNodeInfoCompat> filter) {
+      Filter<AccessibilityNodeInfoCompat> also = alsoAccepted;
+      if (also == null) {
+        return filter;
+      }
+      return Filter.node(
+          node -> {
+            if (filter.accept(node)) {
+              return true;
+            }
+            if (!passedAlsoAccepted && node != null && also.accept(node)) {
+              passedAlsoAccepted = true;
+            }
+            return false;
+          });
+    }
+
+    private void set(
+        TraversalStrategy strategy,
+        AccessibilityNodeInfoCompat cursor,
+        @TraversalStrategy.SearchDirection int direction,
+        boolean ignoreDescendants,
+        @Nullable AccessibilityNodeInfoCompat found) {
+      this.strategy = strategy;
+      this.cursor = cursor;
+      this.direction = direction;
+      this.ignoreDescendants = ignoreDescendants;
+      this.found = found;
+    }
   }
 
   /**
@@ -289,6 +404,7 @@ public class TraversalStrategyUtils {
    * @param direction The direction in which to move from the cursor.
    * @param filter Filter used to validate list-type ancestors.
    * @param traversalStrategy - traversal strategy that is used to define order of node
+   * @param edgeSearch Where to keep the node that the search found, or null.
    * @return {@code true} if focusing search in the specified direction will fall off the edge of
    *     the container.
    */
@@ -298,7 +414,8 @@ public class TraversalStrategyUtils {
       boolean ignoreDescendantsOfCursor,
       @TraversalStrategy.SearchDirection int direction,
       Filter<AccessibilityNodeInfoCompat> filter,
-      TraversalStrategy traversalStrategy) {
+      TraversalStrategy traversalStrategy,
+      @Nullable EdgeSearch edgeSearch) {
     AccessibilityNodeInfoCompat webViewNode = null;
 
     boolean cursorNodeNotContainedInScrollableList =
@@ -310,8 +427,18 @@ public class TraversalStrategyUtils {
       return false;
     }
 
+    // With the strategy's cache of which nodes speak, as the strategy's own search uses: without
+    // it, each candidate's children were examined again at every swipe near a list's edge.
+    @Nullable Map<AccessibilityNodeInfoCompat, Boolean> speakingNodesCache =
+        traversalStrategy == null ? null : traversalStrategy.getSpeakingNodesCache();
     Filter<AccessibilityNodeInfoCompat> focusNodeFilter =
-        AccessibilityNodeInfoUtils.FILTER_SHOULD_FOCUS;
+        new Filter<AccessibilityNodeInfoCompat>() {
+          @Override
+          public boolean accept(AccessibilityNodeInfoCompat node) {
+            return node != null
+                && AccessibilityNodeInfoUtils.shouldFocusNode(node, speakingNodesCache);
+          }
+        };
     if (ignoreDescendantsOfCursor) {
       focusNodeFilter =
           focusNodeFilter.and(
@@ -322,8 +449,15 @@ public class TraversalStrategyUtils {
                 }
               });
     }
+    if (edgeSearch != null && traversalStrategy != null) {
+      focusNodeFilter = edgeSearch.watching(focusNodeFilter);
+    }
     AccessibilityNodeInfoCompat nextFocusNode =
         searchFocus(traversalStrategy, cursor, direction, focusNodeFilter);
+    if (edgeSearch != null && traversalStrategy != null) {
+      edgeSearch.set(
+          traversalStrategy, cursor, direction, ignoreDescendantsOfCursor, nextFocusNode);
+    }
 
     if ((nextFocusNode == null) || nextFocusNode.equals(scrollableNode)) {
       // Can't move from this position.

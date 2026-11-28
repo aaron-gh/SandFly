@@ -30,6 +30,7 @@ import androidx.core.content.edit
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
+import com.google.android.accessibility.utils.AudioModes
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils
 import com.google.android.accessibility.utils.KeyboardUtils
@@ -483,7 +484,7 @@ object AppSpeechFilter {
     private fun update(configs: List<AudioPlaybackConfiguration>) {
       val manager = audioManager ?: return
       val usages = configs.map { it.audioAttributes.usage }
-      onChange(othersPlayAssistantOrCall(usages, ownUsage(), manager.mode))
+      onChange(othersPlayAssistantOrCall(usages, ownUsage(), AudioModes.current(manager)))
     }
   }
 }

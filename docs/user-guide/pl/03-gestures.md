@@ -244,7 +244,7 @@ Poniżej znajdziesz zwinięte kategorie. Rozwiń wybraną kategorię, aby zobacz
 - **Gesty związane z odciskiem palca**, **Stuknięcie w tył urządzenia**, **Potrząśnięcie** i **Przesunięcia trzyczęściowe**.
 - **Przesunięcia dwuetapowe** i **Przesunięcia dwuetapowe zakończone gestem tam i z powrotem lub pod kątem**. Osobne kategorie grupują kombinacje według pierwszego ruchu. Zobacz [](#gestures-two-stroke).
 
-Na zegarku znajdziesz też opcję **Zarezerwuj gesty dla Vibration Watch**. Szczegóły opisano w [rozdziale o zegarkach i telewizorach](#devices).
+Na zegarku znajdziesz też opcję **Zarezerwuj gesty dla funkcji Zegarek z wibracją**. Szczegóły opisano w [rozdziale o zegarkach i telewizorach](#devices).
 
 #### Układ gestów {#gestures-layout}
 

@@ -294,7 +294,8 @@ class WebFocusPathTest {
     root.add(group)
     group.add(first, leaf, last)
 
-    val path = descriptions(record(leaf).nodePathDescription)
+    // A record reads this path on a worker thread, from a copy of the focused node.
+    val path = descriptions(NodePathDescription.obtain(leaf))
 
     assertEquals(listOf<Int?>(ancestorsAndUninterruptible), leaf.parentReads)
     assertEquals(listOf<Int?>(null), group.parentReads)

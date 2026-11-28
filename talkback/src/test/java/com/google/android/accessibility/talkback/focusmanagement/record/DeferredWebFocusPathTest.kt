@@ -154,9 +154,9 @@ class DeferredWebFocusPathTest {
     val record = FocusActionRecord(focused, FocusActionInfo.builder().build(), 1000,
       { work.add(it) }) { reads++; NodePathDescription.obtainWithoutSiblingContext(focused) }
     val copy = FocusActionRecord.copy(record)!!
-    assertTrue(record.sharesWebPathCapture(copy))
-    assertFalse(record.sharesWebPathCapture(null))
-    record.cancelWebPathCapture()
+    assertTrue(record.sharesPathCapture(copy))
+    assertFalse(record.sharesPathCapture(null))
+    record.cancelPathCapture()
     work.single().run()
     assertEquals(0, reads)
     assertEquals(0, copy.ancestorIdentityPath.size())

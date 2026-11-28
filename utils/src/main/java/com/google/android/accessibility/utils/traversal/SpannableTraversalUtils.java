@@ -159,6 +159,20 @@ public final class SpannableTraversalUtils {
       LogUtils.v(TAG, "Root has content description, skipping searching the children nodes.");
       return hasSpannableString;
     }
+    if (result == null) {
+      // Whether any descendant has a span doesn't depend on the order of the children, so the
+      // children are read in their own order, without the bounds that reordering them reads.
+      for (int i = 0; i < root.getChildCount(); i++) {
+        AccessibilityNodeInfoCompat child = root.getChild(i);
+        if (child != null
+            && AccessibilityNodeInfoUtils.FILTER_NON_FOCUSABLE_VISIBLE_NODE.accept(child)
+            && searchSpannableStringsForCharacterStyleInNodeTree(
+                child, visitedNodes, currentOffset, /* result= */ null, spanClasses)) {
+          return true;
+        }
+      }
+      return hasSpannableString;
+    }
     ReorderedChildrenIterator iterator = ReorderedChildrenIterator.createAscendingIterator(root);
     boolean containsSpannableDescendants = false;
     while (iterator.hasNext()) {

@@ -40,6 +40,9 @@ import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
+import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration
+import com.google.android.accessibility.talkback.focusmanagement.LiftCancelStrip
 import com.google.android.accessibility.utils.input.WindowEventInterpreter
 import com.google.android.accessibility.utils.monitor.DisplayMonitor
 import java.time.Duration
@@ -543,6 +546,128 @@ class DirectTouchControllerTest {
     assertEquals(listOf("region [0,80][1080,1500] complex=false"), transcript.distinct())
   }
 
+  @Test
+  fun keyboardDirectTouchTypingMethodGivesEveryKeyboardItsTouches() {
+    useKeyboardDirectTouch()
+
+    windowsChange(
+      KEYBOARD,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(GBOARD_PACKAGE, Rect(0, 1500, 1080, 2220)),
+    )
+    windowsChange(KEYBOARD, WINDOWS_CHANGE_REMOVED, statusBar(), navigationBar(), game())
+
+    assertEquals(listOf(KEYBOARD_ONLY_REGION, "region none"), transcript.distinct())
+  }
+
+  @Test
+  fun keyboardDirectTouchTypingMethodLeavesSandFlysOwnKeyboard() {
+    useKeyboardDirectTouch()
+
+    windowsChange(
+      KEYBOARD,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(service.packageName, Rect(0, 1500, 1080, 2220)),
+    )
+
+    assertTranscript()
+  }
+
+  @Test
+  fun keyboardDirectTouchTypingMethodLeavesTheKeyboardToSandFlysOverlays() {
+    useKeyboardDirectTouch()
+
+    windowsChange(
+      KEYBOARD,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(GBOARD_PACKAGE, Rect(0, 1500, 1080, 2220)),
+    )
+    transcript.clear()
+    // A SandFly menu opens over the keyboard: touches on it are SandFly's.
+    windowsChange(
+      OVERLAY,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(GBOARD_PACKAGE, Rect(0, 1500, 1080, 2220)),
+      overlay(service.packageName),
+    )
+    assertEquals(listOf("region none"), transcript.distinct())
+
+    transcript.clear()
+    windowsChange(
+      OVERLAY,
+      WINDOWS_CHANGE_REMOVED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(GBOARD_PACKAGE, Rect(0, 1500, 1080, 2220)),
+    )
+    assertEquals(listOf(KEYBOARD_ONLY_REGION), transcript.distinct())
+  }
+
+  @Test
+  fun keyboardDirectTouchTypingMethodKeepsTheKeyboardUnderTheLiftCancelStrip() {
+    useKeyboardDirectTouch()
+
+    windowsChange(
+      KEYBOARD,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(GBOARD_PACKAGE, Rect(0, 1500, 1080, 2220)),
+      overlay(service.packageName, LiftCancelStrip.TITLE, Rect(0, 2300, 1080, 2340)),
+    )
+
+    assertEquals(listOf(KEYBOARD_ONLY_REGION), transcript.distinct())
+  }
+
+  @Test
+  fun keyboardWithItsOwnServiceLeavesNoRegionBehindWhenItCloses() {
+    useKeyboard(BRAILLE_KEYBOARD_PACKAGE)
+    enableServiceOf(BRAILLE_KEYBOARD_PACKAGE)
+
+    windowsChange(
+      KEYBOARD,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(BRAILLE_KEYBOARD_PACKAGE),
+    )
+    // The keyboard's service sets the region for it.
+    assertTranscript()
+
+    windowsChange(KEYBOARD, WINDOWS_CHANGE_REMOVED, statusBar(), navigationBar(), game())
+    // The region it set doesn't stay.
+    assertTranscript("region none")
+
+    transcript.clear()
+    windowsChange(TOAST, WINDOWS_CHANGE_ADDED, statusBar(), navigationBar(), game(), toast())
+    assertTranscript()
+  }
+
+  private fun useKeyboardDirectTouch() {
+    prefs
+      .edit()
+      .putString(
+        service.getString(R.string.pref_typing_confirmation_key),
+        FocusProcessorForTapAndTouchExploration.KEYBOARD_DIRECT_TOUCH.toString(),
+      )
+      .apply()
+  }
+
   // Screens
 
   private fun statusBar() =
@@ -561,8 +686,8 @@ class DirectTouchControllerTest {
   private fun keyboard(rootPackage: String, bounds: Rect = Rect(0, 80, 1080, 2220)) =
     window(KEYBOARD, INPUT_METHOD, "Keyboard", bounds, rootPackage, layer = 3)
 
-  private fun overlay(rootPackage: String) =
-    window(OVERLAY, ACCESSIBILITY_OVERLAY, "Overlay", SCREEN, rootPackage, layer = 10)
+  private fun overlay(rootPackage: String, title: String = "Overlay", bounds: Rect = SCREEN) =
+    window(OVERLAY, ACCESSIBILITY_OVERLAY, title, bounds, rootPackage, layer = 10)
 
   private fun shade() =
     window(SHADE, SYSTEM, "Notification shade", SCREEN, SYSTEM_UI, active = true, layer = 9)
@@ -734,6 +859,8 @@ class DirectTouchControllerTest {
     const val INPUT_METHOD = AccessibilityWindowInfo.TYPE_INPUT_METHOD
     const val ACCESSIBILITY_OVERLAY = AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY
     const val BRAILLE_KEYBOARD_PACKAGE = "com.example.braillekeyboard"
+    const val GBOARD_PACKAGE = "com.google.android.inputmethod.latin"
+    const val KEYBOARD_ONLY_REGION = "region [0,1500][1080,2220] complex=false"
     const val MAGNIFIER_PACKAGE = "com.example.magnifier"
     const val NAVIGATION_BAR_REGION = "region [0,2220][1080,2340] complex=false"
     const val GAME_REGION = "region [0,80][1080,2220] complex=false"

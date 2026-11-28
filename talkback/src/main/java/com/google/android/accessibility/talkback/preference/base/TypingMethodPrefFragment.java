@@ -18,6 +18,8 @@ package com.google.android.accessibility.talkback.preference.base;
 
 import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.DOUBLE_TAP;
 import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.FORCE_LIFT_TO_TYPE_ON_IME;
+import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.KEYBOARD_DIRECT_TOUCH;
+import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.KEYBOARD_WITHOUT_GESTURES;
 import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE;
 import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE_EXCEPT_ACTION_KEY;
 import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE;
@@ -51,7 +53,11 @@ public class TypingMethodPrefFragment extends TalkbackBaseFragment {
     METHOD_LIFT_TO_TYPE_EXCEPT_ACTION_KEY(
         R.string.value_type_confirmation_lift_to_type_except_action_key,
         LIFT_TO_TYPE_EXCEPT_ACTION_KEY),
-    METHOD_TAP_TO_TYPE(R.string.value_type_confirmation_tap_to_type, TAP_TO_TYPE);
+    METHOD_TAP_TO_TYPE(R.string.value_type_confirmation_tap_to_type, TAP_TO_TYPE),
+    METHOD_KEYBOARD_WITHOUT_GESTURES(
+        R.string.value_type_confirmation_keyboard_without_gestures, KEYBOARD_WITHOUT_GESTURES),
+    METHOD_KEYBOARD_DIRECT_TOUCH(
+        R.string.value_type_confirmation_keyboard_direct_touch, KEYBOARD_DIRECT_TOUCH);
 
     @StringRes private final int titleId;
     private final int method;

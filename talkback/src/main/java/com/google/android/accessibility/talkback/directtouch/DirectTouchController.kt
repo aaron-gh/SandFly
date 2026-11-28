@@ -35,6 +35,7 @@ import android.os.SystemClock
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.provider.Settings
+import android.text.TextUtils
 import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityManager
@@ -46,11 +47,14 @@ import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action
 import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.KEYBOARD_REGION
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration
+import com.google.android.accessibility.talkback.focusmanagement.LiftCancelStrip
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils.WINDOW_ID_NONE
 import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.Performance
 import com.google.android.accessibility.utils.Performance.EventId
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.input.WindowEventInterpreter
 import com.google.android.accessibility.utils.input.WindowEventInterpreter.EventInterpretation
 import com.google.android.accessibility.utils.monitor.DisplayMonitor
@@ -112,6 +116,8 @@ constructor(
   private var partRegionSent = false
   // The accessibility overlays of a keyboard with its own accessibility service, last sent.
   private var keyboardOverlay = Region()
+  // Whether the last look left the region to a keyboard's own accessibility service.
+  private var keyboardRegionKept = false
   private var paused = false
   // The value of takesTouchesDirectly() last reported to onTouchesDirectChanged.
   private var reportedTouchesDirect = false
@@ -152,11 +158,15 @@ constructor(
     SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
       if (
         key != null &&
-          (key.startsWith("pref_direct_touch") || key == DirectTouchSettings.PREF_NAV_BAR_TAP)
+          (key.startsWith("pref_direct_touch") ||
+            key == DirectTouchSettings.PREF_NAV_BAR_TAP ||
+            key == typingMethodKey)
       ) {
         evaluate()
       }
     }
+
+  private val typingMethodKey = service.getString(R.string.pref_typing_confirmation_key)
 
   // The last navigation bar button spoken, so that the same tap reported twice is said once.
   private var lastNavBarButton: CharSequence? = null
@@ -268,7 +278,7 @@ constructor(
       reportTouchesDirect()
       return
     }
-    if (isNavBarDirect() || DirectTouchSettings.hasEnabledApps(prefs)) {
+    if (isNavBarDirect() || DirectTouchSettings.hasEnabledApps(prefs) || isKeyboardDirect()) {
       scheduleEvaluate()
     }
   }
@@ -431,8 +441,14 @@ constructor(
       announce(active)
     }
     if (!active) {
-      updatePartRegion(windows, navBarDirect, keyboards, keepsKeyboardRegion)
+      val sent = updatePartRegion(windows, navBarDirect, keyboards, keepsKeyboardRegion)
+      if (keyboardRegionKept && !keepsKeyboardRegion && !sent) {
+        // The keyboard's service may leave its region behind when the keyboard closes, and nothing
+        // else would replace it.
+        clearRegion()
+      }
     }
+    keyboardRegionKept = keepsKeyboardRegion
     reportTouchesDirect()
   }
 
@@ -498,19 +514,20 @@ constructor(
    * activate navigation bar buttons is on, and a keyboard in the direct touch list while it shows,
    * and takes them out again once they aren't. The region is sent again on every look, because
    * other services can clear the shared one, except with [keepsKeyboardRegion] and tap to activate
-   * navigation bar buttons on: then nothing is sent, and the region already sent stays.
+   * navigation bar buttons on: then nothing is sent, and the region already sent stays. Returns
+   * whether a region was sent.
    */
   private fun updatePartRegion(
     windows: List<AccessibilityWindowInfo>,
     navBarDirect: Boolean,
     keyboards: List<AccessibilityWindowInfo>,
     keepsKeyboardRegion: Boolean,
-  ) {
+  ): Boolean {
     if (navBarDirect && keepsKeyboardRegion) {
       // The system keeps one passthrough region for all services. The keyboard's own accessibility
       // service may have set one so that the keyboard gets touches directly, as some braille
       // keyboards do, and the navigation bar's would replace it. The region already sent stays.
-      return
+      return false
     }
     val parts = (if (navBarDirect) navigationBarBounds(windows) else emptyList()) + keyboards.map(::boundsOf)
     if (parts.isNotEmpty()) {
@@ -518,10 +535,14 @@ constructor(
       parts.forEach { region.union(it) }
       sendRegion(region)
       partRegionSent = true
-    } else if (partRegionSent) {
+      return true
+    }
+    if (partRegionSent) {
       clearRegion()
       partRegionSent = false
+      return true
     }
+    return false
   }
 
   /** A keyboard whose app has an accessibility service of its own, and its overlays' bounds. */
@@ -572,19 +593,46 @@ constructor(
   }
 
   /**
-   * The keyboards on screen that are in the direct touch list, such as a self-voicing braille
-   * keyboard. They take touches directly in every app, since a keyboard is never the app in front.
-   * Their apps are asked for only while some app is in the list.
+   * The keyboards on screen that take touches directly: every keyboard but SandFly's own with the
+   * keyboard direct touch typing method, and otherwise those in the direct touch list, such as a
+   * self-voicing braille keyboard. They take touches directly in every app, since a keyboard is
+   * never the app in front. Their apps are asked for only while some app is in the list. None do
+   * while a window of SandFly's own, such as a menu, is over them: touches there go to SandFly.
    */
   private fun directKeyboards(windows: List<AccessibilityWindowInfo>): List<AccessibilityWindowInfo> {
-    if (!DirectTouchSettings.hasEnabledApps(prefs)) {
+    val allKeyboards = isKeyboardDirect()
+    if (!allKeyboards && !DirectTouchSettings.hasEnabledApps(prefs)) {
+      return emptyList()
+    }
+    if (windows.any(::isOwnOverlay)) {
       return emptyList()
     }
     return windows.filter { window ->
       window.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD &&
-        rootPackage(window)?.let { DirectTouchSettings.isAppEnabled(prefs, it) } == true
+        rootPackage(window)?.let {
+          if (allKeyboards) it != service.packageName else DirectTouchSettings.isAppEnabled(prefs, it)
+        } == true
     }
   }
+
+  /**
+   * Whether [window] is an accessibility overlay of SandFly's own that touches explore, which is
+   * every one but the lift cancel strip. Android doesn't list overlays that take no touches, such as
+   * the focus highlight.
+   */
+  private fun isOwnOverlay(window: AccessibilityWindowInfo): Boolean =
+    window.type == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY &&
+      !TextUtils.equals(window.title, LiftCancelStrip.TITLE) &&
+      rootPackage(window) == service.packageName
+
+  /** Whether the typing method is keyboard direct touch, which every keyboard shown takes. */
+  private fun isKeyboardDirect(): Boolean =
+    SharedPreferencesUtils.getIntFromStringPref(
+      prefs,
+      service.resources,
+      R.string.pref_typing_confirmation_key,
+      R.string.pref_typing_confirmation_default,
+    ) == FocusProcessorForTapAndTouchExploration.KEYBOARD_DIRECT_TOUCH
 
   private fun boundsOf(window: AccessibilityWindowInfo): Rect =
     Rect().also { window.getBoundsInScreen(it) }

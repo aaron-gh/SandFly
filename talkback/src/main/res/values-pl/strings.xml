@@ -354,7 +354,7 @@
   <string name="shortcut_title_special_features">Inne</string>
     <string name="shortcut_unassigned">Nieprzypisany</string>
   <string name="shortcut_not_customizable">%1$s, nie można dostosować</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Niedostępne, gdy funkcja Vibration Watch jest włączona</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Niedostępne, gdy funkcja Zegarek z wibracją jest włączona</string>
   <string name="shortcut_next">Następny element</string>
   <string name="shortcut_previous">Poprzedni element</string>
   <string name="shortcut_scroll_forward">Przewiń do przodu</string>
@@ -1540,6 +1540,8 @@
     <string name="title_pref_shortcut_edge_right_bottom_left">Przesuń palcem w lewo od prawej krawędzi, w dolnej połowie</string>
     <string name="title_pref_shortcut_edge_right_bottom_long_left">Przesuń palcem daleko w lewo od prawej krawędzi, w dolnej połowie</string>
     <string name="value_type_confirmation_tap_to_type">Dotknij przycisku klawiatury, aby wpisać znak. Możesz też przytrzymać palec na ekranie, wybrać przycisk i podnieść palec.</string>
+    <string name="value_type_confirmation_keyboard_without_gestures">Stuknij dowolny klawisz lub podnieś z niego palec, aby go wpisać, bez gestów na klawiaturze</string>
+    <string name="value_type_confirmation_keyboard_direct_touch">Stuknij dowolny klawisz lub podnieś z niego palec, aby go wpisać, bez eksploracji dotykowej na klawiaturze</string>
     <string name="title_pref_edge_first_click_mm">Odległość do pierwszego sygnału kliknięcia</string>
     <string name="title_pref_edge_second_click_mm">Odległość między pierwszym a drugim sygnałem kliknięcia</string>
     <string name="value_distance_5mm">0,5 cm</string>
@@ -1640,7 +1642,7 @@
     <string name="dictation_ai_same">Jak w sekcji „Usługi AI”</string>
     <string name="navigation_settings_link">Ustawienia SandFly > Nawigacja</string>
     <string name="navigation_settings_link_tts">Ustawienia SandFly, a następnie Nawigacja</string>
-    <string name="shortcut_reserved_for_vibration_watch">Zarezerwowane dla funkcji Vibration Watch w sekcji „Gesty”</string>
+    <string name="shortcut_reserved_for_vibration_watch">Zarezerwowane dla funkcji Zegarek z wibracją w sekcji „Gesty”</string>
     <string name="speech_control_ask_text">Może odczytywać tekst głosem używanym w SandFly. Możesz to zmienić w sekcji Ustawienia, Mowa, Zezwalaj innym aplikacjom na odczytywanie tekstu przez SandFly.</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">Funkcja SandFly jest włączona. Aby ją wyłączyć, przytrzymaj 2 palce na ekranie przez 5 sekund. Aby przestać wyświetlać ten komunikat, wyłącz opcję Ustawienia SandFly &gt; Wstrzymywanie i wyłączanie &gt; Pokazuj instrukcje wyłączania funkcji SandFly.</string>
     <string name="tutorial_link">Ustawienia SandFly &gt; Pomoc i opinie &gt; Samouczek SandFly</string>

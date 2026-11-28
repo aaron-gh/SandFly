@@ -263,6 +263,21 @@ public class SpeechControllerImpl implements SpeechController {
   /** Whether we should request audio focus during speech. */
   private boolean useAudioFocus = false;
 
+  /**
+   * Whether audio focus is held: from when it is granted until it is abandoned or lost. Main thread
+   * only.
+   */
+  private boolean audioFocusHeld = false;
+
+  /**
+   * How long audio focus is kept after speech ends. Speech that starts again in that time, as when
+   * moving to the next item, keeps it, rather than abandoning and requesting it again, which are
+   * calls to Android each time. Media stays ducked for up to this long after speech.
+   */
+  private static final long AUDIO_FOCUS_KEEP_MS = 500;
+
+  private final Runnable abandonAudioFocus = this::abandonAudioFocus;
+
   /** The text-to-speech screen overlay. */
   private TextToSpeechOverlay ttsOverlay;
 
@@ -546,11 +561,27 @@ public class SpeechControllerImpl implements SpeechController {
     this.useAudioFocus = useAudioFocus;
     if (!this.useAudioFocus) {
       LogUtils.v(TAG, "Abandon Audio Focus.");
+      mHandler.removeCallbacks(abandonAudioFocus);
+      audioFocusHeld = false;
       if (BuildVersionUtils.isAtLeastO()) {
         audioManager.abandonAudioFocusRequest(mAudioFocusRequest);
       } else {
         audioManager.abandonAudioFocus(mAudioFocusListener);
       }
+    }
+  }
+
+  /** Abandons audio focus, if it is held. */
+  private void abandonAudioFocus() {
+    mHandler.removeCallbacks(abandonAudioFocus);
+    if (!audioFocusHeld) {
+      return;
+    }
+    audioFocusHeld = false;
+    if (BuildVersionUtils.isAtLeastO()) {
+      audioManager.abandonAudioFocusRequest(mAudioFocusRequest);
+    } else {
+      audioManager.abandonAudioFocus(mAudioFocusListener);
     }
   }
 
@@ -1893,21 +1924,53 @@ public class SpeechControllerImpl implements SpeechController {
       boolean stopTtsSpeechCompletely,
       boolean notifyObserver,
       boolean interruptItemsThatCanIgnoreInterrupts) {
+    interrupt(
+        stopTtsSpeechCompletely,
+        notifyObserver,
+        interruptItemsThatCanIgnoreInterrupts,
+        /* holdForPause= */ false);
+  }
+
+  /**
+   * Interrupts SandFly's speech as {@link #interrupt(boolean)} does, but holds low-latency speech
+   * mid-word rather than stopping the engine, for a pause that may follow, such as at the start of
+   * a touch that may be the pause gesture, or for the pause gesture itself.
+   */
+  public void interruptHoldingForPause() {
+    interrupt(
+        /* stopTtsSpeechCompletely= */ false,
+        /* notifyObserver= */ true,
+        /* interruptItemsThatCanIgnoreInterrupts= */ true,
+        /* holdForPause= */ true);
+  }
+
+  private void interrupt(
+      boolean stopTtsSpeechCompletely,
+      boolean notifyObserver,
+      boolean interruptItemsThatCanIgnoreInterrupts,
+      boolean holdForPause) {
     if (mHandler.getLooper().isCurrentThread()) {
       interruptFromHandlerThread(
-          stopTtsSpeechCompletely, notifyObserver, interruptItemsThatCanIgnoreInterrupts);
+          stopTtsSpeechCompletely,
+          notifyObserver,
+          interruptItemsThatCanIgnoreInterrupts,
+          holdForPause);
     } else {
       mHandler.post(
           () ->
               interruptFromHandlerThread(
-                  stopTtsSpeechCompletely, notifyObserver, interruptItemsThatCanIgnoreInterrupts));
+                  stopTtsSpeechCompletely,
+                  notifyObserver,
+                  interruptItemsThatCanIgnoreInterrupts,
+                  holdForPause));
     }
   }
 
   private void interruptFromHandlerThread(
       boolean stopTtsSpeechCompletely,
       boolean notifyObserver,
-      boolean interruptItemsThatCanIgnoreInterrupts) {
+      boolean interruptItemsThatCanIgnoreInterrupts,
+      boolean holdForPause) {
     if (!interruptItemsThatCanIgnoreInterrupts) {
       if (!clearCurrentAndQueuedUtterancesThatDontIgnoreInterrupts(notifyObserver)) {
         // If there are speech items that are not removed from the speech queue, or the currently
@@ -1933,7 +1996,7 @@ public class SpeechControllerImpl implements SpeechController {
       failoverTts.stopAll();
     } else {
       // Stop TTS audio from TalkBack.
-      failoverTts.stopFromTalkBack();
+      failoverTts.stopFromTalkBack(holdForPause);
     }
   }
 
@@ -2045,7 +2108,7 @@ public class SpeechControllerImpl implements SpeechController {
   @Override
   public void pause() {
     if (FormFactorUtils.isAndroidXr() && !requestPause) {
-      failoverTts.stopFromTalkBack();
+      failoverTts.stopFromTalkBack(/* holdForPause= */ true);
     }
     long delta = SystemClock.uptimeMillis() - feedbackSavedTime;
     // The savedFeedbackQueue was copied for the last interrupted speech content. If the delta
@@ -2054,7 +2117,7 @@ public class SpeechControllerImpl implements SpeechController {
     if (savedFeedbackQueue != null && delta <= SAVED_FEEDBACK_FOR_PAUSE_TIME) {
       currentFeedbackItem = null;
       requestPause = true;
-      failoverTts.stopFromTalkBack();
+      failoverTts.stopFromTalkBack(/* holdForPause= */ true);
       // Low-latency speech held at the touch stays held, to carry on mid-word when resumed.
       failoverTts.keepHeldSpeech();
     }
@@ -2076,6 +2139,7 @@ public class SpeechControllerImpl implements SpeechController {
   @Override
   public void shutdown() {
     interrupt(false /* stopTtsSpeechCompletely */);
+    abandonAudioFocus();
 
     failoverTts.shutdown();
 
@@ -2623,11 +2687,16 @@ public class SpeechControllerImpl implements SpeechController {
       observer.onSpeechStarting();
     }
 
-    boolean useAudioFocus = this.useAudioFocus;
-    List<AudioRecordingConfiguration> recordConfigurations =
-        audioManager.getActiveRecordingConfigurations();
-    if (!recordConfigurations.isEmpty()) {
-      useAudioFocus = false;
+    // Focus kept from the speech just before is held still, unless another app took it, which
+    // the focus listener notes.
+    mHandler.removeCallbacks(abandonAudioFocus);
+    boolean useAudioFocus = this.useAudioFocus && !audioFocusHeld;
+    if (useAudioFocus) {
+      List<AudioRecordingConfiguration> recordConfigurations =
+          audioManager.getActiveRecordingConfigurations();
+      if (!recordConfigurations.isEmpty()) {
+        useAudioFocus = false;
+      }
     }
     // An assistant such as Gemini stops its answer for good when it loses focus, even when it
     // could duck, so speech plays alongside it instead.
@@ -2637,12 +2706,17 @@ public class SpeechControllerImpl implements SpeechController {
 
     if (useAudioFocus) {
       LogUtils.v(TAG, "Request Audio Focus.");
+      int result;
       if (BuildVersionUtils.isAtLeastO()) {
-        audioManager.requestAudioFocus(mAudioFocusRequest);
+        result = audioManager.requestAudioFocus(mAudioFocusRequest);
       } else {
-        audioManager.requestAudioFocus(
-            mAudioFocusListener, DEFAULT_STREAM, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK);
+        result =
+            audioManager.requestAudioFocus(
+                mAudioFocusListener,
+                DEFAULT_STREAM,
+                AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK);
       }
+      audioFocusHeld = result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED;
     }
 
     if (mIsSpeaking) {
@@ -2691,12 +2765,10 @@ public class SpeechControllerImpl implements SpeechController {
       }
     }
 
-    if (useAudioFocus) {
-      if (BuildVersionUtils.isAtLeastO()) {
-        audioManager.abandonAudioFocusRequest(mAudioFocusRequest);
-      } else {
-        audioManager.abandonAudioFocus(mAudioFocusListener);
-      }
+    if (audioFocusHeld) {
+      // Kept for speech that starts again shortly.
+      mHandler.removeCallbacks(abandonAudioFocus);
+      mHandler.postDelayed(abandonAudioFocus, AUDIO_FOCUS_KEEP_MS);
     }
 
     mIsSpeaking = false;
@@ -3164,6 +3236,12 @@ public class SpeechControllerImpl implements SpeechController {
         @Override
         public void onAudioFocusChange(int focusChange) {
           LogUtils.d(TAG, "Saw audio focus change: %d", focusChange);
+          if (focusChange == AudioManager.AUDIOFOCUS_LOSS
+              || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT
+              || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
+            // Requested again when speech next starts. Called on the main thread.
+            audioFocusHeld = false;
+          }
         }
       };
 

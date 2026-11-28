@@ -579,7 +579,11 @@ public class KeyComboManager
     @Nullable KeyEvent outer = handlingKeyEvent;
     handlingKeyEvent = event;
     try {
-      return handleKeyEvent(event, eventId);
+      // The app's keyboard shortcuts are looked up several times for a key press; the window list
+      // is read for them once.
+      return event.getAction() == KeyEvent.ACTION_DOWN
+          ? AppGestures.withKeysApp(() -> handleKeyEvent(event, eventId))
+          : handleKeyEvent(event, eventId);
     } finally {
       handlingKeyEvent = outer;
     }
@@ -1958,6 +1962,11 @@ public class KeyComboManager
 
   /** Returns true if the active window is training activity. */
   private boolean isOnTrainingPage() {
+    // Only while the training captures key combinations: the lookups below ask the app for the
+    // focused node and search its window, which every key press did.
+    if (!captureTrainingCombos) {
+      return false;
+    }
     // Compares resource ID with all child nodes on the active window if navigate-up arrow is
     // shown because the first child node is the navigate-up arrow which is no resource ID.
     AccessibilityNodeInfoCompat root = accessibilityFocusMonitor.getAccessibilityFocus(false);
@@ -1965,8 +1974,7 @@ public class KeyComboManager
       return false;
     }
 
-    return WindowUtils.rootChildMatchesResId(context, root.unwrap(), TrainingActivity.ROOT_RES_ID)
-        && captureTrainingCombos;
+    return WindowUtils.rootChildMatchesResId(context, root.unwrap(), TrainingActivity.ROOT_RES_ID);
   }
 
   private boolean onKeyDown(KeyEvent event) {

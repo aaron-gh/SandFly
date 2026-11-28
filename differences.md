@@ -1102,6 +1102,10 @@ In **Typing** > **Typing method**, **Hold finger to select any key, then lift. D
 
 On Android 13 and later, **Typing** > **Typing method** has **Tap any key to type it, or hold finger to select any key, then lift**. A quick tap on a key types it at once, as direct touch typing does in VoiceOver, so that quick double letters type twice. Holding a finger on the keyboard explores the keys, and lifting types the key under the finger.
 
+On Android 13 and later, **Typing** > **Typing method** has **Tap or lift on any key to type it, without gestures on the keyboard**. SandFly recognizes no gestures in a touch that starts on the keyboard and starts touch exploration as the finger goes down, without the typing focus delay, so the key under the finger is read at once and lifting types it. Split-tap still types.
+
+On Android 11 and later, **Typing** > **Typing method** has **Tap or lift on any key to type it, without touch exploration on the keyboard**. The keyboard window is in the touch exploration passthrough region while it is shown, so the keyboard gets touches as with the screen reader off: a tap types a key, and lifting the finger on a key after sliding to it types it. Keys under the finger aren't spoken; typed characters are spoken by **Keyboard echo**. Gestures and touch exploration work on the rest of the screen. SandFly's own keyboards are left out.
+
 ### Keys held down after the touch and hold delay
 
 With **Typing** > **Hold keys down after the touch and hold delay** on, SandFly presses the key down at the end of **Touch and hold delay when typing** and passes the rest of the touch to the keyboard, as a double-tap and hold does. The keyboard then handles the touch as a long press of its own, such as a Delete key that repeats while held. This applies with the typing methods that type on lift, on all keyboards except Gboard and Pixelboard versions before 18.8. It's off by default.

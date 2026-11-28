@@ -282,8 +282,9 @@ public final class AccessibilityFocusActionHistory {
     if (focusActionRecordList.size() > MAXIMUM_RECORD_QUEUE_SIZE) {
       // Poll the eldest order if the queue grows up its maximum size.
       FocusActionRecord evicted = focusActionRecordList.pollFirst();
-      if (evicted != null && !isWebPathCaptureKept(evicted)) {
-        evicted.cancelWebPathCapture();
+      // A finished capture needs no cancelling, nor the search for the records sharing it.
+      if (evicted != null && evicted.isPathCapturePending() && !isPathCaptureKept(evicted)) {
+        evicted.cancelPathCapture();
       }
     }
 
@@ -298,14 +299,14 @@ public final class AccessibilityFocusActionHistory {
     }
   }
 
-  /** Whether a record outside the action queue shares the web path capture of {@code record}. */
-  private boolean isWebPathCaptureKept(FocusActionRecord record) {
-    if (record.sharesWebPathCapture(lastEditableFocusActionRecord)
-        || record.sharesWebPathCapture(recordNotFound)) {
+  /** Whether a record outside the action queue shares the path capture of {@code record}. */
+  private boolean isPathCaptureKept(FocusActionRecord record) {
+    if (record.sharesPathCapture(lastEditableFocusActionRecord)
+        || record.sharesPathCapture(recordNotFound)) {
       return true;
     }
     for (FocusActionRecord kept : windowIdentifierToFocusActionRecordMap.snapshot().values()) {
-      if (record.sharesWebPathCapture(kept)) {
+      if (record.sharesPathCapture(kept)) {
         return true;
       }
     }

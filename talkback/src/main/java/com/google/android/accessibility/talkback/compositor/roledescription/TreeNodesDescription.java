@@ -25,7 +25,9 @@ import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.graphics.Rect;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
+import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.compositor.AccessibilityNodeFeedbackUtils;
@@ -119,14 +121,16 @@ public class TreeNodesDescription {
     CharSequence selectedState =
         AccessibilityNodeFeedbackUtils.getSelectedStateText(node, context, globalVariables);
 
-    LogUtils.v(
-        TAG,
-        "aggregateNodeTreeDescription: %s",
-        String.format(" (%s)", node.hashCode())
-            + String.format(", treeDescriptionWithLabel={%s}", treeDescription)
-            + String.format(", disabledStateOrReadOnlyState=%s", disabledStateOrReadOnlyState)
-            + String.format(", selectedState=%s", selectedState)
-            + String.format(", descriptionOrder=%s", descriptionOrder));
+    if (LogUtils.shouldLog(Log.VERBOSE)) {
+      LogUtils.v(
+          TAG,
+          "aggregateNodeTreeDescription: %s",
+          String.format(" (%s)", node.hashCode())
+              + String.format(", treeDescriptionWithLabel={%s}", treeDescription)
+              + String.format(", disabledStateOrReadOnlyState=%s", disabledStateOrReadOnlyState)
+              + String.format(", selectedState=%s", selectedState)
+              + String.format(", descriptionOrder=%s", descriptionOrder));
+    }
 
     // Disabled and read only state announcement should always be a postfix.
     return isStateBeforeName(descriptionOrder)
@@ -148,14 +152,16 @@ public class TreeNodesDescription {
         AccessibilityNodeFeedbackUtils.getDescriptionFromLabelNode(
             node, context, imageContents, globalVariables);
 
-    LogUtils.v(
-        TAG,
-        "  treeDescriptionWithLabel: %s",
-        new StringBuilder()
-            .append(String.format(", appendedTreeDescription={%s}", appendedTreeDescription))
-            .append(String.format(", labelDescription=%s", labelDescription))
-            .append(String.format(", shouldAppendChildNode=%s", shouldAppendChildNode))
-            .toString());
+    if (LogUtils.shouldLog(Log.VERBOSE)) {
+      LogUtils.v(
+          TAG,
+          "  treeDescriptionWithLabel: %s",
+          new StringBuilder()
+              .append(String.format(", appendedTreeDescription={%s}", appendedTreeDescription))
+              .append(String.format(", labelDescription=%s", labelDescription))
+              .append(String.format(", shouldAppendChildNode=%s", shouldAppendChildNode))
+              .toString());
+    }
 
     return TextUtils.isEmpty(labelDescription)
         ? appendedTreeDescription
@@ -215,14 +221,16 @@ public class TreeNodesDescription {
     CharSequence tooltip =
         AccessibilityNodeFeedbackUtils.getUniqueTooltipText(node, context, globalVariables);
 
-    LogUtils.v(
-        TAG,
-        StringBuilderUtils.joinFields(
-            String.format("    getAppendedTreeDescription: (%s)  ", node.hashCode()),
-            StringBuilderUtils.optionalText("accessibilityNodeError", accessibilityNodeError),
-            String.format(", treeDescription={%s} ,", treeDescription),
-            StringBuilderUtils.optionalText("accessibilityNodeHint", accessibilityNodeHint),
-            StringBuilderUtils.optionalText("tooltip", tooltip)));
+    if (LogUtils.shouldLog(Log.VERBOSE)) {
+      LogUtils.v(
+          TAG,
+          StringBuilderUtils.joinFields(
+              String.format("    getAppendedTreeDescription: (%s)  ", node.hashCode()),
+              StringBuilderUtils.optionalText("accessibilityNodeError", accessibilityNodeError),
+              String.format(", treeDescription={%s} ,", treeDescription),
+              StringBuilderUtils.optionalText("accessibilityNodeHint", accessibilityNodeHint),
+              StringBuilderUtils.optionalText("tooltip", tooltip)));
+    }
 
     return CompositorUtils.joinCharSequences(
         accessibilityNodeError, accessibilityNodeHint, treeDescription, tooltip);
@@ -245,17 +253,19 @@ public class TreeNodesDescription {
     boolean srcIsChecked = node.isChecked();
     int collectionSelectionMode = globalVariables.getCollectionSelectionMode();
 
-    LogUtils.v(
-        TAG,
-        "      nodeStatusDescription: %s",
-        new StringBuilder()
-            .append(String.format("role=%s", Role.roleToString(role)))
-            .append(String.format(", collapsedOrExpandedState=%s", collapsedOrExpandedState))
-            .append(String.format(", stateDescriptionIsEmpty=%s", stateDescriptionIsEmpty))
-            .append(String.format(", srcIsCheckable=%b", srcIsCheckable))
-            .append(String.format(", srcIsChecked=%b", srcIsChecked))
-            .append(String.format(", collectionSelectionMode=%d", collectionSelectionMode))
-            .toString());
+    if (LogUtils.shouldLog(Log.VERBOSE)) {
+      LogUtils.v(
+          TAG,
+          "      nodeStatusDescription: %s",
+          new StringBuilder()
+              .append(String.format("role=%s", Role.roleToString(role)))
+              .append(String.format(", collapsedOrExpandedState=%s", collapsedOrExpandedState))
+              .append(String.format(", stateDescriptionIsEmpty=%s", stateDescriptionIsEmpty))
+              .append(String.format(", srcIsCheckable=%b", srcIsCheckable))
+              .append(String.format(", srcIsChecked=%b", srcIsChecked))
+              .append(String.format(", collectionSelectionMode=%d", collectionSelectionMode))
+              .toString());
+    }
 
     // Appends checked state for checkable view if it is in collection selection or checked.
     // If the node has set stateDescription, node checked state description in tree nodes
@@ -331,12 +341,16 @@ public class TreeNodesDescription {
         joinList.addAll(notificationDescription);
       }
     }
-    StringBuilder logString = new StringBuilder();
-    logString
+    // Built only for the verbose log: the formatting is a large part of describing a node.
+    @Nullable
+    StringBuilder logString = LogUtils.shouldLog(Log.VERBOSE) ? new StringBuilder() : null;
+    if (logString != null) {
+      logString
         .append(String.format(" (%s)", node.hashCode()))
         .append(String.format(", role=%s", Role.roleToString(role)))
         .append(String.format(", isContentDescriptionEmpty=%b", isContentDescriptionEmpty))
         .append(String.format(", shouldAppendChildNode=%b", shouldAppendChildNode));
+    }
 
     // A control with no text of its own, such as the checkbox in a settings row, takes its name
     // from the rest of the row. It's left out of the list here, and its type and state are put
@@ -361,13 +375,17 @@ public class TreeNodesDescription {
         ReorderedChildrenIterator childIterator =
             ReorderedChildrenIterator.createAscendingIterator(node);
         if (!childIterator.hasNext()) {
-          logString.append(", hasNoNextChildNode");
+          if (logString != null) {
+            logString.append(", hasNoNextChildNode");
+          }
         }
         while (childIterator.hasNext()) {
           AccessibilityNodeInfoCompat childNode = childIterator.next();
           if (childNode == null) {
-            logString.append(
-                String.format("error: sourceNode (%s) has a null child.", node.hashCode()));
+            if (logString != null) {
+              logString.append(
+                  String.format("error: sourceNode (%s) has a null child.", node.hashCode()));
+            }
           } else {
             boolean isVisible =
                 AccessibilityNodeInfoUtils.isVisible(childNode)
@@ -375,7 +393,8 @@ public class TreeNodesDescription {
                     || isCoveredBySystemBar(node, childNode);
             boolean isAccessibilityFocusable =
                 AccessibilityNodeInfoUtils.isAccessibilityFocusable(childNode);
-            logString
+            if (logString != null) {
+              logString
                 .append(String.format("\n        childNode:(%s)", childNode.hashCode()))
                 .append(String.format(", isVisible=%b", isVisible))
                 .append(
@@ -383,6 +402,7 @@ public class TreeNodesDescription {
                         ? String.format(", bounds=%s", boundsOf(childNode))
                         : "")
                 .append(String.format(", isAccessibilityFocusable=%b", isAccessibilityFocusable));
+            }
 
             if (isVisible
                 && isAccessibilityFocusable
@@ -392,7 +412,9 @@ public class TreeNodesDescription {
               CharSequence linkName =
                   AccessibilityNodeFeedbackUtils.getNodeTextOrLabelDescription(
                       childNode, context, imageContents, globalVariables);
-              logString.append(String.format("\n        > appendLinkName= {%s}", linkName));
+              if (logString != null) {
+                logString.append(String.format("\n        > appendLinkName= {%s}", linkName));
+              }
               joinList.add(linkName);
               continue;
             }
@@ -417,8 +439,10 @@ public class TreeNodesDescription {
               CharSequence description =
                   getAppendedTreeDescription(
                       childNode, event, shouldIterateChildren, shouldAppendChildNode);
-              logString.append(
-                  String.format("\n        > appendChildNodeDescription= {%s}", description));
+              if (logString != null) {
+                logString.append(
+                    String.format("\n        > appendChildNodeDescription= {%s}", description));
+              }
               joinList.add(description);
             }
           }
@@ -428,7 +452,9 @@ public class TreeNodesDescription {
       }
     }
 
-    LogUtils.v(TAG, "      treeNodesDescription:  %s", logString);
+    if (logString != null) {
+      LogUtils.v(TAG, "      treeNodesDescription:  %s", logString);
+    }
 
     // A node with no name of its own, such as a button whose label is a child view, is named by its
     // children, so their text takes the name's place in the description order. Otherwise the type

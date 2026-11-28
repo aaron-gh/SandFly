@@ -416,6 +416,9 @@ public class TouchInteractionMonitor
   // Whether the touch went down on the keyboard with the Tap to type typing method, which types
   // without focusing keys, so the typing focus delay applies whatever has focus.
   private boolean downOnKeyboard;
+  // Whether this touch went down on the keyboard with the typing method without gestures on the
+  // keyboard: touch exploration starts as the finger goes down, and only split taps are gestures.
+  private boolean keyboardTouchWithoutGestures;
   // The root of Gboard's window, if the touch went down on Gboard with a typing method other than
   // Double-tap to type, so it is kept from touch exploration and explored here; see
   // KeyboardExploration. It is fetched once for the touch, since fetching it waits for Gboard.
@@ -1101,13 +1104,28 @@ public class TouchInteractionMonitor
       }
       oneFingerSwipeStarted = false;
       oneFingerSwipeInterrupted = false;
+      boolean withoutGestures =
+          typingMethod == FocusProcessorForTapAndTouchExploration.KEYBOARD_WITHOUT_GESTURES;
+      // Both keyboard checks below use one read of the window list, which costs an IPC call on
+      // every read (and a Knox service lookup on Samsung phones).
+      @Nullable List<AccessibilityWindowInfo> downWindows = null;
+      boolean onKeyboard = false;
+      if (typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE || withoutGestures) {
+        downWindows = service.getWindowsOnDisplay(displayId);
+        onKeyboard = isOnKeyboard(downWindows, event.getX(), event.getY());
+      }
       downOnKeyboard =
-          typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
-              && isOnKeyboard(event.getX(), event.getY());
+          typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE && onKeyboard;
+      keyboardTouchWithoutGestures =
+          withoutGestures && onKeyboard && state == STATE_TOUCH_INTERACTING;
       long rootStartMs = SystemClock.uptimeMillis();
       gboardRoot =
           typingMethod != FocusProcessorForTapAndTouchExploration.DOUBLE_TAP
-              ? KeyboardExploration.gboardRootAt(service, displayId, event.getX(), event.getY())
+              ? KeyboardExploration.gboardRootAt(
+                  service,
+                  downWindows != null ? downWindows : service.getWindowsOnDisplay(displayId),
+                  event.getX(),
+                  event.getY())
               : null;
       if (gboardRoot != null
           && KeyboardExploration.usesTouchExploration(service, gboardRoot.getPackageName())) {
@@ -1124,6 +1142,10 @@ public class TouchInteractionMonitor
             rootStartMs - touchDownTimeMs);
       }
       HoverlessWindows.clearStart();
+    }
+    if (keyboardTouchWithoutGestures) {
+      handleKeyboardTouchWithoutGestures(event);
+      return;
     }
     if (handleEdgeSwipe(event)) {
       return;
@@ -1817,6 +1839,12 @@ public class TouchInteractionMonitor
       return;
     }
     int gestureId = gestureEvent.getGestureId();
+    if (keyboardTouchWithoutGestures
+        && gestureId != GESTURE_FAKED_SPLIT_TYPING
+        && gestureId != GESTURE_FAKED_SPLIT_TYPING_AND_HOLD) {
+      LogUtils.v(LOG_TAG, "Gesture dropped: no gestures on the keyboard with this typing method");
+      return;
+    }
     if (gestureId == GESTURE_TOUCH_EXPLORE || gestureId == GESTURE_TAP_UP_TOUCH_EXPLORE) {
       requestTouchExplorationDelayed.cancel();
       requestTouchExploration("onGestureCompleted");
@@ -2005,6 +2033,31 @@ public class TouchInteractionMonitor
   }
 
   /**
+   * Handles a touch that went down on the keyboard with the typing method without gestures on the
+   * keyboard. Touch exploration starts at once, without waiting to tell a gesture from exploring.
+   * The gesture matchers still see the touch, for split taps; {@link #onGestureCompleted} drops
+   * every other gesture.
+   */
+  private void handleKeyboardTouchWithoutGestures(MotionEvent event) {
+    if (event.getActionMasked() == ACTION_DOWN) {
+      keepMonitorTouchExplore = false;
+      requestTouchExplorationDelayed.cancel();
+      gestureDetector.clear();
+      // A tap here and a tap after it elsewhere make no double tap.
+      clearGestureDetectorOnNextDown = true;
+      eventId = Performance.getInstance().onGestureEventReceived(displayId, event);
+      waitFirstMotionEvent = false;
+    }
+    if (shouldPerformGestureDetection()) {
+      trackLatestTouchDown(event);
+      gestureDetector.onMotionEvent(eventId, event);
+    }
+    if (event.getActionMasked() == ACTION_DOWN) {
+      requestTouchExploration("keyboardWithoutGestures");
+    }
+  }
+
+  /**
    * Types the key under a one-finger tap on the keyboard with the Tap to type typing method. Returns
    * true for the event that lifts the finger, which no gesture matcher may see, so that a tap right
    * after it types another key instead of making a double-tap.
@@ -2057,8 +2110,13 @@ public class TouchInteractionMonitor
 
   /** Returns whether the keyboard is the topmost window at this point of the display. */
   private boolean isOnKeyboard(float x, float y) {
+    return isOnKeyboard(service.getWindowsOnDisplay(displayId), x, y);
+  }
+
+  /** {@link #isOnKeyboard(float, float)} with the window list of the display already read. */
+  private boolean isOnKeyboard(List<AccessibilityWindowInfo> windows, float x, float y) {
     Region region = new Region();
-    for (AccessibilityWindowInfo window : service.getWindowsOnDisplay(displayId)) {
+    for (AccessibilityWindowInfo window : windows) {
       // The clipboard history covers the keyboard.
       if (window.getType() == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY
           && !ClipboardHistoryOverlay.isOwnWindow(service, window)) {
@@ -2079,13 +2137,16 @@ public class TouchInteractionMonitor
   private boolean handleRotation(MotionEvent event) {
     boolean wasRotating = rotationTracker.isRotating();
     // Like scrubbing and pinching, only when a rotation does something: otherwise two fingers
-    // that turn a little would stop passing through, such as on a map.
+    // that turn a little would stop passing through, such as on a map. A rotation needs two
+    // fingers, so one-finger events skip the command lookup, which reads the window list when apps
+    // have gestures of their own; the lookup is kept for the rest of the touch.
     if (!wasRotating
-        && (state != STATE_TOUCH_INTERACTING
+        && (event.getPointerCount() < 2
+            || state != STATE_TOUCH_INTERACTING
             || nonSwipeGestureStarted
             || !gestureDetector.isMultiFingerGesturesEnabled()
-            || !(isGestureAssigned(GESTURE_2_FINGER_ROTATE_CLOCKWISE)
-                || isGestureAssigned(GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE)))) {
+            || !(isGestureAssignedForMatching(GESTURE_2_FINGER_ROTATE_CLOCKWISE)
+                || isGestureAssignedForMatching(GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE)))) {
       if (GestureLog.getEnabled() && event.getActionMasked() == ACTION_POINTER_DOWN) {
         Log.d(
             DEBUG_GESTURE_TAG,
@@ -2746,9 +2807,17 @@ public class TouchInteractionMonitor
 
   /** Runs a gesture on the main thread of the service. */
   private void postGesture(AccessibilityGestureEvent gestureEvent) {
+    // The app whose gestures applied when the gesture was matched, read from the window list once
+    // for the touch, so that running the gesture doesn't read it again.
+    @Nullable String gestureApp = gestureAppThisInteraction;
     mainHandler.post(
         () -> {
-          boolean unused = service.onGesture(gestureEvent);
+          if (gestureApp != null) {
+            boolean unused =
+                AppGestures.withApp(gestureApp, () -> service.onGesture(gestureEvent));
+          } else {
+            boolean unused = service.onGesture(gestureEvent);
+          }
         });
   }
 

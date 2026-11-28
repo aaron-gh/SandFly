@@ -17,18 +17,27 @@
 package com.google.android.accessibility.talkback.compositor
 
 import android.os.SystemClock
+import android.util.Log
 import android.view.accessibility.AccessibilityEvent
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache
+import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
  * The announcements of the nodes that a swipe from the focused node would most likely reach,
  * worked out while the user listens, so that a swipe can speak one without working it out then.
  *
- * They hold for the focused node only, and are thrown away when the focus moves, when anything in
- * the window changes, even text, and after [MAX_AGE_MS].
+ * They hold for the focused node only, and are thrown away when the focus moves, when the window
+ * shows another screen, and after [MAX_AGE_MS]. Any other event that can change a node in their
+ * window, even a text, marks them as changed: one is then used only if the node, read again from
+ * the app, has the same [NodeFingerprint] as when it was prepared.
+ *
+ * Filter logcat by the "PreparedFocusSpeech" tag in debug builds to see how often they are used.
  */
 object PreparedFocusSpeech {
+  private const val TAG = "PreparedFocusSpeech"
+
   /** How long a prepared announcement is kept, in case a change came without an event. */
   const val MAX_AGE_MS = 5_000L
 
@@ -43,14 +52,32 @@ object PreparedFocusSpeech {
   /**
    * An announcement of focusing [node], which was read from the app to prepare it, and
    * [containerTitle], the title of the container that working it out left focus in, which giving it
-   * must leave focus in too.
+   * must leave focus in too. [fingerprint] is the node's when it was prepared, or null if it has
+   * none, see [NodeFingerprint.of].
    */
-  class Prepared(
+  class Prepared
+  internal constructor(
     val node: AccessibilityNodeInfoCompat,
     val feedback: EventFeedback,
     val containerTitle: CharSequence,
+    internal val fingerprint: List<Any?>?,
+    internal val time: Long,
+    /** Whether [node] was read again after a change and found to say the same. */
+    val isCheckedAfterChange: Boolean,
   ) {
-    internal val time = SystemClock.uptimeMillis()
+    constructor(
+      node: AccessibilityNodeInfoCompat,
+      feedback: EventFeedback,
+      containerTitle: CharSequence,
+      fingerprint: List<Any?>?,
+    ) : this(
+      node,
+      feedback,
+      containerTitle,
+      fingerprint,
+      SystemClock.uptimeMillis(),
+      isCheckedAfterChange = false,
+    )
 
     internal fun isFor(other: AccessibilityNodeInfoCompat): Boolean = node == other
   }
@@ -58,60 +85,95 @@ object PreparedFocusSpeech {
   private val prepared = ArrayList<Prepared>(2)
   private var windowId = NO_WINDOW_ID
 
+  /** What changed in the window since the announcements were prepared, or null if nothing has. */
+  private var changedBy: String? = null
+
+  /** Why the announcements were last thrown away, for the log. */
+  private var lastClearReason = "start"
+  private var used = 0
+  private var missed = 0
+
   /** Keeps [feedback] as the announcement of focusing [node]; see [Prepared]. */
   @JvmStatic
   fun put(
     node: AccessibilityNodeInfoCompat,
     feedback: EventFeedback,
     containerTitle: CharSequence,
+    fingerprint: List<Any?>?,
   ) {
     if (node.windowId != windowId) {
-      clear()
+      clear("window changed")
       windowId = node.windowId
     }
+    if (changedBy != null) {
+      // This one is read after the change, so it needs no check. Those prepared before still do,
+      // and are thrown away, so that the change holds for all that are kept.
+      prepared.clear()
+      changedBy = null
+    }
     prepared.removeAll { it.isFor(node) }
-    prepared += Prepared(node, feedback, containerTitle)
-  }
-
-  /** Returns whether an announcement of focusing [node] is kept. */
-  @JvmStatic
-  fun has(node: AccessibilityNodeInfoCompat): Boolean = find(node) != null
-
-  /**
-   * Returns the announcement of focusing [node], or null if there is none or it was prepared less
-   * than [MIN_AGE_MS] ago, and forgets them all, since the focus is moving.
-   */
-  @JvmStatic
-  fun take(node: AccessibilityNodeInfoCompat): Prepared? {
-    val found = find(node)
-    clear()
-    return found?.takeIf { isOldEnough(it.time, SystemClock.uptimeMillis()) }
+    prepared += Prepared(node, feedback, containerTitle, fingerprint)
   }
 
   /**
-   * Returns the announcement of focusing [node], or null if there is none or it was prepared less
-   * than [MIN_AGE_MS] ago, and keeps them all.
+   * Returns whether an announcement of focusing [node] is kept that needs no check, so that it
+   * need not be prepared again.
    */
   @JvmStatic
-  fun peek(node: AccessibilityNodeInfoCompat): Prepared? =
-    find(node)?.takeIf { isOldEnough(it.time, SystemClock.uptimeMillis()) }
+  fun has(node: AccessibilityNodeInfoCompat): Boolean = changedBy == null && find(node) != null
+
+  /**
+   * Returns the announcement of focusing [node], or null if there is none, it was prepared less
+   * than [MIN_AGE_MS] ago, or its node, read again after a change in its window, no longer says
+   * the same. Keeps them all: the caller clears them once the focus moves.
+   */
+  @JvmStatic
+  fun peek(node: AccessibilityNodeInfoCompat): Prepared? = usable(node)
 
   /** Whether an announcement prepared at [preparedTime] may be used at [now]; see [MIN_AGE_MS]. */
   @JvmStatic
   fun isOldEnough(preparedTime: Long, now: Long): Boolean = now - preparedTime >= MIN_AGE_MS
 
-  /** Forgets all announcements. */
+  /** Forgets all announcements, for [reason], which the log gives. */
   @JvmStatic
-  fun clear() {
+  fun clear(reason: String) {
+    if (prepared.isNotEmpty()) {
+      lastClearReason = reason
+      LogUtils.d(TAG, "Prepared speech thrown away: %s", reason)
+    }
     prepared.clear()
+    changedBy = null
     windowId = NO_WINDOW_ID
   }
 
-  /** Forgets all announcements if [event] can change what a node in their window says. */
+  /**
+   * Forgets all announcements if [event] shows another screen, and marks them as changed if it can
+   * change what a node in their window says, see [canChange].
+   */
   @JvmStatic
   fun onAccessibilityEvent(event: AccessibilityEvent) {
-    if (prepared.isNotEmpty() && canChange(event.eventType, event.windowId, windowId)) clear()
+    if (prepared.isEmpty()) {
+      return
+    }
+    val type = event.eventType
+    if (!canChange(type, event.windowId, windowId)) {
+      return
+    }
+    if (type == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
+      clear(if (LogUtils.shouldLog(Log.DEBUG)) describe(event) else "")
+      return
+    }
+    if (changedBy == null) {
+      val reason = if (LogUtils.shouldLog(Log.DEBUG)) describe(event) else ""
+      changedBy = reason
+      LogUtils.d(TAG, "Prepared speech to be checked before use: %s", reason)
+    }
   }
+
+  private fun describe(event: AccessibilityEvent): String =
+    AccessibilityEvent.eventTypeToString(event.eventType) +
+      " 0x" +
+      Integer.toHexString(event.contentChangeTypes)
 
   /**
    * Whether an event of [type] from the window [eventWindowId] can change what a node in the window
@@ -126,10 +188,94 @@ object PreparedFocusSpeech {
         eventWindowId == NO_WINDOW_ID ||
         eventWindowId == preparedWindowId)
 
-  /** Forgets all announcements before Backtalk performs [actionId], if it can change the nodes. */
+  /** Forgets all announcements before SandFly performs [actionId], if it can change the nodes. */
   @JvmStatic
   fun onNodeAction(actionId: Int) {
-    if (TraversalTreeCache.changesNodes(actionId)) clear()
+    if (prepared.isNotEmpty() && TraversalTreeCache.changesNodes(actionId)) {
+      clear(
+        if (LogUtils.shouldLog(Log.DEBUG)) AccessibilityNodeInfoUtils.actionToString(actionId)
+        else ""
+      )
+    }
+  }
+
+  /**
+   * Notes that a swipe to [node] does not use a prepared announcement, for [reason], such as
+   * moving to another row of a grid, whose sounds were not prepared.
+   */
+  @JvmStatic
+  fun noteNotUsed(node: AccessibilityNodeInfoCompat, reason: String) {
+    if (find(node) != null) {
+      logNotUsed(reason)
+    }
+  }
+
+  private fun usable(node: AccessibilityNodeInfoCompat): Prepared? {
+    val found = find(node)
+    if (found == null) {
+      if (prepared.isEmpty()) {
+        logNotUsed("none kept, last thrown away: ", lastClearReason)
+      } else {
+        logNotUsed("kept for other nodes")
+      }
+      return null
+    }
+    val now = SystemClock.uptimeMillis()
+    if (!isOldEnough(found.time, now)) {
+      logNotUsed("prepared ms before: ", now - found.time)
+      return null
+    }
+    val change = changedBy
+    if (change == null) {
+      used++
+      LogUtils.d(TAG, "Prepared speech used (%d used, %d not)", used, missed)
+      return found
+    }
+    val checked = checked(found)
+    if (checked == null) {
+      logNotUsed("changed: ", change)
+      return null
+    }
+    used++
+    LogUtils.d(TAG, "Prepared speech used, same after %s (%d used, %d not)", change, used, missed)
+    return checked
+  }
+
+  /** Counts and logs an announcement not used, for [reason], followed by [detail] if any. */
+  private fun logNotUsed(reason: String, detail: Any = "") {
+    missed++
+    LogUtils.d(TAG, "Prepared speech not used: %s%s (%d used, %d not)", reason, detail, used, missed)
+  }
+
+  /**
+   * Returns [found] for its node read again from the app, if that node has the fingerprint it had
+   * when it was prepared, or else null.
+   */
+  private fun checked(found: Prepared): Prepared? {
+    val fingerprint = found.fingerprint ?: return null
+    @Suppress("DEPRECATION") // obtain(): copy, so that the kept node is left as it was.
+    val node = AccessibilityNodeInfoCompat.obtain(found.node)
+    val now =
+      try {
+        if (!node.refresh()) {
+          return null
+        }
+        NodeFingerprint.of(node)
+      } catch (e: RuntimeException) {
+        LogUtils.e(TAG, "Cannot check prepared speech: %s", e)
+        return null
+      }
+    if (now != fingerprint) {
+      return null
+    }
+    return Prepared(
+      node,
+      found.feedback,
+      found.containerTitle,
+      fingerprint,
+      found.time,
+      isCheckedAfterChange = true,
+    )
   }
 
   private fun find(node: AccessibilityNodeInfoCompat): Prepared? {

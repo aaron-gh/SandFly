@@ -112,7 +112,7 @@ class LiftCancelStrip(private val context: Context, private val listener: Listen
         PixelFormat.TRANSLUCENT,
       )
     params.gravity = Gravity.BOTTOM
-    params.title = "SandFly lift cancel strip"
+    params.title = TITLE
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
       params.layoutInDisplayCutoutMode =
         WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
@@ -144,13 +144,16 @@ class LiftCancelStrip(private val context: Context, private val listener: Listen
     }
   }
 
-  private companion object {
-    const val TAG = "LiftCancelStrip"
+  companion object {
+    private const val TAG = "LiftCancelStrip"
+
+    /** The strip's window title, which tells its window apart from SandFly's other overlays. */
+    const val TITLE = "SandFly lift cancel strip"
 
     /**
      * The height of the strip. On the Fold's inner screen, a finger sliding off the bottom was
      * reported at most 1.4 to 3.2 mm from the edge.
      */
-    const val STRIP_HEIGHT_MM = 3.5f
+    private const val STRIP_HEIGHT_MM = 3.5f
   }
 }
