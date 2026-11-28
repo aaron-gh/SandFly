@@ -523,8 +523,20 @@ public class FailoverTextToSpeech {
   private final Runnable checkEngineHang = this::checkEngineHang;
 
   /** What each low-latency utterance said, to say it again the usual way if it gives no audio. */
-  private final Map<String, Pair<CharSequence, Bundle>> lowLatencyRequests =
-      new ConcurrentHashMap<>();
+  private final Map<String, LowLatencyRequest> lowLatencyRequests = new ConcurrentHashMap<>();
+
+  /**
+   * What a low-latency utterance said, and {@link #speechGeneration} when it was given to the
+   * engine.
+   */
+  private record LowLatencyRequest(CharSequence text, Bundle bundle, long generation) {}
+
+  /**
+   * How many times SandFly's speech was replaced, by speech that flushes the queue, or stopped. An
+   * utterance said again the usual way is dropped if this changed since it was given to the
+   * engine, as newer speech took its place.
+   */
+  private final AtomicLong speechGeneration = new AtomicLong();
 
   /**
    * Low-latency utterances that the engine makes without playing, by ID. Nothing of them is heard
@@ -1252,6 +1264,9 @@ public class FailoverTextToSpeech {
     String utteranceId = params.get(Engine.KEY_PARAM_UTTERANCE_ID);
     // New speech ends a pause.
     dropHeldSpeech();
+    if (flushGlobalTtsQueue) {
+      speechGeneration.incrementAndGet();
+    }
     if (flushGlobalTtsQueue && tts != null) {
       stopLowLatencySpeech();
       try {
@@ -1313,6 +1328,7 @@ public class FailoverTextToSpeech {
     // New speech ends a pause.
     dropHeldSpeech();
     if (flushGlobalTtsQueue) {
+      speechGeneration.incrementAndGet();
       emojiVoice.stop();
       if (tts != null) {
         stopLowLatencySpeech();
@@ -1544,6 +1560,7 @@ public class FailoverTextToSpeech {
 
   /** Stops speech from all applications. No utterance callbacks will be sent. */
   public void stopAll() {
+    speechGeneration.incrementAndGet();
     emojiVoice.stop();
     stopLanguageVoices();
     dropAfterCallSpeech();
@@ -1576,6 +1593,7 @@ public class FailoverTextToSpeech {
    *     engine stops at once, and has stopped by the time the next speech is given to it.
    */
   public void stopFromTalkBack(boolean holdForPause) {
+    speechGeneration.incrementAndGet();
     emojiVoice.stop();
     stopLanguageVoices();
     dropAfterCallSpeech();
@@ -1860,6 +1878,9 @@ public class FailoverTextToSpeech {
 
     int queueMode =
         utteranceInfoCombo.flushGlobalTtsQueue() ? SPEECH_FLUSH_ALL : TextToSpeech.QUEUE_ADD;
+    if (queueMode != TextToSpeech.QUEUE_ADD) {
+      speechGeneration.incrementAndGet();
+    }
 
     // Track latency from event received to feedback queued.
     if (eventId != null && utteranceId != null) {
@@ -2442,7 +2463,8 @@ public class FailoverTextToSpeech {
             hasLetterOrDigit(text),
             lowLatencyListener);
     lowLatencyStreams.put(utteranceId, stream);
-    lowLatencyRequests.put(utteranceId, Pair.create(text, bundle));
+    lowLatencyRequests.put(
+        utteranceId, new LowLatencyRequest(text, bundle, speechGeneration.get()));
     // A flush makes the engine drop queued pieces without a callback, so their finished streams
     // would stay. They are kept for a while, so that late callbacks are still ignored.
     if (lowLatencyStreams.size() > MAX_LOW_LATENCY_STREAMS) {
@@ -3257,13 +3279,18 @@ public class FailoverTextToSpeech {
     } else {
       LogUtils.e(TAG, "Low-latency player failed, so %s is said the usual way", utteranceId);
     }
-    @Nullable Pair<CharSequence, Bundle> request = lowLatencyRequests.remove(utteranceId);
+    @Nullable LowLatencyRequest request = lowLatencyRequests.remove(utteranceId);
     if (request == null || tts == null) {
       utteranceProgressCallback.onError(utteranceId);
       return;
     }
+    long generation = request.generation();
+    if (generation != speechGeneration.get()) {
+      dropRespokenSpeech(List.of(utteranceId));
+      return;
+    }
     List<String> ids = new ArrayList<>();
-    List<Pair<CharSequence, Bundle>> requests = new ArrayList<>();
+    List<LowLatencyRequest> requests = new ArrayList<>();
     ids.add(utteranceId);
     requests.add(request);
     // The engine makes the later pieces of a split utterance before this piece's second try, which
@@ -3271,7 +3298,7 @@ public class FailoverTextToSpeech {
     // not started playing are said again the usual way too, after it.
     for (String next = nextPieceId(utteranceId); next != null; next = nextPieceId(next)) {
       LowLatencyAudio.@Nullable SpeechStream nextStream = lowLatencyStreams.get(next);
-      @Nullable Pair<CharSequence, Bundle> nextRequest = lowLatencyRequests.get(next);
+      @Nullable LowLatencyRequest nextRequest = lowLatencyRequests.get(next);
       if (nextStream == null || nextRequest == null || !nextStream.discardUnplayed()) {
         break;
       }
@@ -3295,6 +3322,10 @@ public class FailoverTextToSpeech {
             }
             return;
           }
+          if (generation != speechGeneration.get()) {
+            dropRespokenSpeech(ids);
+            return;
+          }
           // The silent first tries may still be in the engine, which would hold up the second tries
           // for as long as they take. Stop them, unless other speech waits in the engine too, which
           // stopping would lose.
@@ -3304,11 +3335,24 @@ public class FailoverTextToSpeech {
             unfinishedUtterances.removeAll(ids);
           }
           for (int i = 0; i < ids.size(); i++) {
-            Pair<CharSequence, Bundle> said = requests.get(i);
+            LowLatencyRequest said = requests.get(i);
             engineRequests.incrementAndGet();
-            tts.speak(said.first, QUEUE_ADD, said.second, RESPOKEN_ID_PREFIX + ids.get(i));
+            tts.speak(said.text(), QUEUE_ADD, said.bundle(), RESPOKEN_ID_PREFIX + ids.get(i));
           }
         });
+  }
+
+  /**
+   * Reports low-latency utterances as stopped rather than saying them again, since newer speech
+   * flushed them or speech was stopped after they were given to the engine.
+   */
+  private void dropRespokenSpeech(List<String> ids) {
+    LogUtils.d(TAG, "Not saying %s again: speech was replaced or stopped since", ids);
+    for (String id : ids) {
+      respokenUtterances.remove(id);
+      unplayedByEngine.remove(id);
+      utteranceProgressCallback.onStop(id, /* interrupted= */ true);
+    }
   }
 
   /**
