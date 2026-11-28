@@ -77,6 +77,8 @@ object NotificationReader {
   const val KEY_COMMAND_VOICE = "pref_command_feedback_voice_profile"
   /** Whether that voice talks over SandFly's speech instead of waiting for it to end. */
   const val KEY_COMMAND_OVER_SPEECH = "pref_command_feedback_over_speech"
+  /** Whether the result of a command waits for the one before it, or interrupts it. On by default. */
+  const val KEY_COMMAND_QUEUE = "pref_command_feedback_queue"
   private const val LANGUAGE_WAIT_MS = 600L
   private const val MAX_REPEATING = 10
   private const val VOLUME_KEY_PAIR_MS = 400L
@@ -889,13 +891,15 @@ object NotificationReader {
    *
    * With [textEditing] true, for the commands that copy, paste or select text, they go on while
    * a voice profile is chosen for command feedback: the result is said in SandFly's voice if the
-   * profile is reading, so that the notification isn't cut off by a command.
+   * profile is reading, so that the notification isn't cut off by a command. With [answer] true,
+   * for the commands that say something, such as the time or the battery level, they go on
+   * whatever the command feedback voice is: the answer is said in SandFly's voice meanwhile.
    */
   @JvmStatic
   @MainThread
-  fun onUserAction(textEditing: Boolean) {
+  fun onUserAction(textEditing: Boolean, answer: Boolean) {
     stopSummary()
-    if (textEditing && hasCommandVoice()) return
+    if (answer || (textEditing && hasCommandVoice())) return
     val handed = (listOfNotNull(reading) + queued).filter { it.voiceKey.isNotEmpty() }
     if (handed.isEmpty()) return
     LogUtils.d(TAG, "User action; stopping %d notifications in voice profiles", handed.size)

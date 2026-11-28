@@ -2410,6 +2410,7 @@ public class SpeechControllerImpl implements SpeechController {
           feedbackItem.getUtteranceId(),
           commandText,
           feedbackItem.shouldFlushGlobalTtsQueue(),
+          feedbackItem.hasFlag(FeedbackItem.FLAG_INTERRUPT_CURRENT_UTTERANCE_WITH_SAME_UTTERANCE_GROUP),
           () ->
               failoverTts.speak(
                   commandText,
@@ -2465,16 +2466,26 @@ public class SpeechControllerImpl implements SpeechController {
    *
    * @param flush whether the item interrupts what SandFly is saying, as it does when the speech
    *     engine says it
+   * @param replacesEarlier whether the item replaces the one before it of its utterance group. Said
+   *     over SandFly's speech, the one before it has ended in the speech queue already, so the
+   *     voice stops what it says of it
    * @param fallback says the fragment in SandFly's voice, when the command voice can't
    * @return false if there is no command voice, so the speech engine says the fragment
    */
   private boolean speakInCommandVoice(
-      String utteranceId, CharSequence text, boolean flush, Runnable fallback) {
+      String utteranceId,
+      CharSequence text,
+      boolean flush,
+      boolean replacesEarlier,
+      Runnable fallback) {
     final CommandVoice voice = commandVoice;
     if (voice == null || !voice.isActive()) {
       return false;
     }
     final boolean over = voice.isOverSpeech();
+    if (over && replacesEarlier) {
+      voice.stop(/* includingOverSpeech= */ true);
+    }
     if (flush) {
       // The speech engine would have stopped what SandFly is saying, and its emoji and language
       // voices, before saying this: the old speech must not play on under the command voice.
