@@ -29,6 +29,7 @@ import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.talkback.monitor.BatteryLevelAnnouncements;
+import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.talkback.notifications.VoiceChoices;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.EmojiSpeech;
@@ -63,6 +64,7 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     setupSpeakUserFocusPreference();
     setupPunctuationNonePreference();
     setupBatteryLevelVoicePreference();
+    setupCallerVoicePreference();
   }
 
   @Override
@@ -70,6 +72,15 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     super.onStart();
     // Voice profiles may have been added or renamed on their own screen.
     setupBatteryLevelVoicePreference();
+    setupCallerVoicePreference();
+  }
+
+  /** Lists SandFly's voice and the voice profiles for the caller of an incoming call. */
+  private void setupCallerVoicePreference() {
+    Preference voice = findPreference(NotificationReader.KEY_CALLER_VOICE);
+    if (voice instanceof ListPreference voiceList && preferences != null) {
+      VoiceChoices.setUp(requireContext(), preferences, voiceList, /* notificationVoice= */ false);
+    }
   }
 
   /** Lists the notification voice, SandFly's voice and the voice profiles for the battery level. */

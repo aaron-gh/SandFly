@@ -56,6 +56,18 @@ public abstract class EventFeedback {
    */
   public abstract boolean commandFeedback();
 
+  /**
+   * Whether the speech is a popup, a toast, which can be said in the voice profile chosen for
+   * popups.
+   */
+  public abstract boolean popupFeedback();
+
+  /**
+   * Whether the speech says the caller of an incoming call, which can be said in the voice profile
+   * chosen for the caller.
+   */
+  public abstract boolean callerFeedback();
+
   public abstract double ttsPitch();
 
   public abstract boolean preventDeviceSleep();
@@ -135,6 +147,12 @@ public abstract class EventFeedback {
     if (commandFeedback()) {
       flags |= FeedbackItem.FLAG_COMMAND_FEEDBACK;
     }
+    if (popupFeedback()) {
+      flags |= FeedbackItem.FLAG_POPUP_FEEDBACK;
+    }
+    if (callerFeedback()) {
+      flags |= FeedbackItem.FLAG_CALLER_FEEDBACK;
+    }
     if (ttsClearQueueGroup() != SpeechController.UTTERANCE_GROUP_DEFAULT) {
       flags |= FeedbackItem.FLAG_CLEAR_QUEUED_UTTERANCES_WITH_SAME_UTTERANCE_GROUP;
     }
@@ -199,6 +217,8 @@ public abstract class EventFeedback {
         .setForceFeedbackEvenIfPhoneCallActive(true)
         .setTtsForceFeedback(false)
         .setCommandFeedback(false)
+        .setPopupFeedback(false)
+        .setCallerFeedback(false)
         .setTtsInterruptSameGroup(false)
         .setTtsClearQueueGroup(SpeechController.UTTERANCE_GROUP_DEFAULT)
         .setTtsSkipDuplicate(false)
@@ -242,6 +262,10 @@ public abstract class EventFeedback {
     public abstract Builder setTtsInterruptSameGroup(boolean value);
 
     public abstract Builder setCommandFeedback(boolean value);
+
+    public abstract Builder setPopupFeedback(boolean value);
+
+    public abstract Builder setCallerFeedback(boolean value);
 
     public abstract Builder setTtsSkipDuplicate(boolean value);
 

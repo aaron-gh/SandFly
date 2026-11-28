@@ -1580,7 +1580,14 @@ public class GestureController {
       result =
           callerAnnouncer != null
               && pipeline.returnFeedback(
-                  eventId, Feedback.requestedSpeech(callerAnnouncer.sayCallerText()));
+                  eventId,
+                  Feedback.speech(
+                      callerAnnouncer.sayCallerText(),
+                      SpeakOptions.create()
+                          .setFlags(
+                              FeedbackItem.FLAG_FORCE_FEEDBACK_ALL
+                                  | FeedbackItem.FLAG_COMMAND_FEEDBACK
+                                  | FeedbackItem.FLAG_CALLER_FEEDBACK)));
     } else if (action.equals(service.getString(R.string.shortcut_value_announce_status))) {
       result =
           pipeline.returnFeedback(eventId, Feedback.requestedSpeech(statusReader.describe()));

@@ -261,6 +261,15 @@ public class FailoverTextToSpeech {
   public static final String STREAM_VALUE_RING = "ring";
   public static final String STREAM_VALUE_CALL = "call";
 
+  /** The setting of the volume the caller of a call is said at, "speech" for the speech volume. */
+  public static final String PREF_CALLER_STREAM_KEY = "pref_caller_stream";
+
+  /**
+   * The speech parameter that holds the audio usage of one text, when it isn't the one of SandFly's
+   * speech. {@link #usageForStream} gives the usages.
+   */
+  public static final String SPEECH_PARAM_USAGE = "sandfly_audio_usage";
+
   /** The volumes speech can use, in the order the reading control goes through them. */
   public static final List<String> STREAM_VALUES =
       List.of(STREAM_VALUE_ACCESSIBILITY, STREAM_VALUE_MEDIA, STREAM_VALUE_RING, STREAM_VALUE_CALL);
@@ -957,7 +966,15 @@ public class FailoverTextToSpeech {
    * volume like a call, on the earpiece when no headset is connected.
    */
   public static int speechUsage(Context context) {
-    return switch (speechStream(context)) {
+    return usageForStream(speechStream(context));
+  }
+
+  /** The audio usage of a volume, one of {@link #STREAM_VALUES}; accessibility for any other. */
+  public static int usageForStream(@Nullable String stream) {
+    if (stream == null) {
+      return AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY;
+    }
+    return switch (stream) {
       case STREAM_VALUE_MEDIA -> AudioAttributes.USAGE_MEDIA;
       case STREAM_VALUE_RING -> AudioAttributes.USAGE_NOTIFICATION_RINGTONE;
       case STREAM_VALUE_CALL -> AudioAttributes.USAGE_VOICE_COMMUNICATION;
@@ -966,12 +983,66 @@ public class FailoverTextToSpeech {
   }
 
   public static int getSpeechAudioStream(Context context) {
-    return switch (speechStream(context)) {
+    return audioStreamOf(speechStream(context));
+  }
+
+  /** The audio stream of a volume, one of {@link #STREAM_VALUES}; accessibility for any other. */
+  public static int audioStreamOf(@Nullable String stream) {
+    if (stream == null) {
+      return AudioManager.STREAM_ACCESSIBILITY;
+    }
+    return switch (stream) {
       case STREAM_VALUE_MEDIA -> AudioManager.STREAM_MUSIC;
       case STREAM_VALUE_RING -> AudioManager.STREAM_RING;
       case STREAM_VALUE_CALL -> AudioManager.STREAM_VOICE_CALL;
       default -> AudioManager.STREAM_ACCESSIBILITY;
     };
+  }
+
+  /**
+   * The volume the caller of a call is said at, the accessibility, media or ring one, or null for
+   * the speech volume. The call volume is left out: it plays on the earpiece when no headset is
+   * connected.
+   */
+  public static @Nullable String callerStream(Context context) {
+    String chosen =
+        SharedPreferencesUtils.getSharedPreferences(context)
+            .getString(PREF_CALLER_STREAM_KEY, null);
+    return chosen != null && STREAM_VALUES.contains(chosen) && !STREAM_VALUE_CALL.equals(chosen)
+        ? chosen
+        : null;
+  }
+
+  /** The audio usage a text is said with, if it has one of its own. */
+  private static @Nullable Integer usageOf(@Nullable Bundle bundle) {
+    String usage = bundle == null ? null : bundle.getString(SPEECH_PARAM_USAGE);
+    if (usage == null) {
+      return null;
+    }
+    try {
+      return Integer.valueOf(usage);
+    } catch (NumberFormatException e) {
+      return null;
+    }
+  }
+
+  /**
+   * Speaks with the engine, at the volume of the text if it has one of its own. The engine reads
+   * the audio attributes when it is asked to speak, so they are set for this text and back to
+   * those of SandFly's speech after it.
+   */
+  private int engineSpeak(
+      CharSequence text, int queueMode, Bundle bundle, @Nullable String utteranceId) {
+    @Nullable Integer usage = usageOf(bundle);
+    if (usage == null) {
+      return tts.speak(text, queueMode, bundle, utteranceId);
+    }
+    tts.setAudioAttributes(attributesFor(usage));
+    try {
+      return tts.speak(text, queueMode, bundle, utteranceId);
+    } finally {
+      applyAudioAttributes();
+    }
   }
 
   public static @Nullable String getSelectedEngine(Context context) {
@@ -2187,7 +2258,7 @@ public class FailoverTextToSpeech {
       utteranceTexts.put(utteranceId, text);
     }
     SpeechCacheManager speechCacheManager = usableSpeechCache();
-    if (speechCacheManager == null) {
+    if (speechCacheManager == null || usageOf(bundle) != null) {
       return speakInChunks(text, queueMode, bundle, utteranceId, locale);
     }
 
@@ -2308,9 +2379,9 @@ public class FailoverTextToSpeech {
    */
   private int ttsSpeak(
       CharSequence text, int queueMode, Bundle bundle, @Nullable String utteranceId) {
-    @Nullable LowLatencyAudio player = lowLatencyPlayer();
+    @Nullable LowLatencyAudio player = lowLatencyPlayer(usageOf(bundle));
     if (player == null || utteranceId == null || TextUtils.isEmpty(text)) {
-      return tts.speak(text, queueMode, bundle, utteranceId);
+      return engineSpeak(text, queueMode, bundle, utteranceId);
     }
     watchForEngineHang(queueMode, utteranceId);
     if (queueMode != QUEUE_ADD) {
@@ -2365,13 +2436,13 @@ public class FailoverTextToSpeech {
       // The engine speaks as usual but at no volume, and Backtalk plays the copy of its audio.
       Bundle silent = new Bundle(bundle);
       silent.putFloat(SpeechParam.VOLUME, 0f);
-      result = tts.speak(text, queueMode, silent, utteranceId);
+      result = engineSpeak(text, queueMode, silent, utteranceId);
     }
     if (result != TextToSpeech.SUCCESS) {
       stream.discard();
       lowLatencyStreams.remove(utteranceId);
       lowLatencyRequests.remove(utteranceId);
-      return tts.speak(text, queueMode, bundle, utteranceId);
+      return engineSpeak(text, queueMode, bundle, utteranceId);
     }
     return result;
   }
@@ -2419,8 +2490,11 @@ public class FailoverTextToSpeech {
     return changedAt != 0 && SystemClock.uptimeMillis() - changedAt < AUDIO_MODE_SETTLE_MS;
   }
 
-  /** The player for speech, or null if speech should play the usual way. */
-  private @Nullable LowLatencyAudio lowLatencyPlayer() {
+  /**
+   * The player for speech, or null if speech should play the usual way. {@code usage} is the audio
+   * usage of one text with a volume of its own, or null for the speech volume.
+   */
+  private @Nullable LowLatencyAudio lowLatencyPlayer(@Nullable Integer usage) {
     if (!lowLatencyAudio
         || LowLatencyAudio.isMicrophoneInUse()
         || inCall()
@@ -2430,12 +2504,12 @@ public class FailoverTextToSpeech {
         || (ttsEngine != null && enginesWithoutFileAudio.contains(ttsEngine))) {
       return null;
     }
-    return LowLatencyAudio.get(context, speechAttributes());
+    return LowLatencyAudio.get(context, speechAttributes(usage));
   }
 
-  private AudioAttributes speechAttributes() {
+  private AudioAttributes speechAttributes(@Nullable Integer usage) {
     return new AudioAttributes.Builder()
-        .setUsage(speechUsage(context))
+        .setUsage(usage != null ? usage : speechUsage(context))
         .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
         .build();
   }
@@ -3053,7 +3127,7 @@ public class FailoverTextToSpeech {
           }
           for (int i = 0; i < ids.size(); i++) {
             Pair<CharSequence, Bundle> said = requests.get(i);
-            tts.speak(said.first, QUEUE_ADD, said.second, RESPOKEN_ID_PREFIX + ids.get(i));
+            engineSpeak(said.first, QUEUE_ADD, said.second, RESPOKEN_ID_PREFIX + ids.get(i));
           }
         });
   }
@@ -3620,15 +3694,17 @@ public class FailoverTextToSpeech {
     if (tts == null) {
       return;
     }
-    int usage = speechUsage(context);
-    tts.setAudioAttributes(
-        CapturePolicy.applyTo(
-                new AudioAttributes.Builder()
-                    .setUsage(usage)
-                    .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
-                    .setFlags(AudioAttributes.FLAG_LOW_LATENCY),
-                SharedPreferencesUtils.getSharedPreferences(context))
-            .build());
+    tts.setAudioAttributes(attributesFor(speechUsage(context)));
+  }
+
+  private AudioAttributes attributesFor(int usage) {
+    return CapturePolicy.applyTo(
+            new AudioAttributes.Builder()
+                .setUsage(usage)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+                .setFlags(AudioAttributes.FLAG_LOW_LATENCY),
+            SharedPreferencesUtils.getSharedPreferences(context))
+        .build();
   }
 
   private @Nullable String getTargetEngine() {

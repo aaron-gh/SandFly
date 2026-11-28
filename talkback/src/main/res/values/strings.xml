@@ -526,6 +526,12 @@
     <string name="title_pref_battery_level_voice">Battery level voice</string>
     <!-- List: how often SandFly says the caller of an incoming phone call or app call, such as a WhatsApp call: once, repeatedly while the call rings, or not at all. [CHAR LIMIT=NONE] -->
     <string name="title_pref_announce_caller">Announce caller</string>
+    <!-- List, in Verbosity, next to Announce caller: the voice the caller of an incoming call is said with, SandFly's voice or a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_caller_voice">Caller voice</string>
+    <!-- List, in Verbosity, available while a voice profile is chosen for the caller: the volume the caller is said at. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_caller_stream">Caller volume</string>
+    <!-- Choice of Caller volume: the caller is said at the volume chosen for speech, in Speech > Speech volume. [CHAR LIMIT=60] -->
+    <string name="caller_stream_speech">Same as the speech volume</string>
     <!-- Choice in the Announce caller list: say the caller once when the call starts ringing. [CHAR LIMIT=40] -->
     <string name="announce_caller_once">Once</string>
     <!-- Choice in the Announce caller list: say the caller again every few seconds until the call is answered, declined or ends. [CHAR LIMIT=40] -->
@@ -534,6 +540,12 @@
     <string name="title_pref_command_feedback_voice">Voice for command feedback and text editing</string>
     <!-- Title of a switch, in Speech, that is available while a voice profile is chosen for command feedback. On: the feedback is said over the speech of SandFly. Off: it waits for it. -->
     <string name="title_pref_command_feedback_over_speech">Read command feedback over SandFly\'s speech</string>
+    <!-- Title of a setting, in Speech, that chooses the voice profile that popups (toasts), the short messages that Android and apps show over the screen, are said with. -->
+    <string name="title_pref_popup_voice">Voice for popups</string>
+    <!-- Title of a switch, in Speech, available while a voice profile is chosen for popups. On: popups are said over the speech of SandFly. Off: they wait for it. -->
+    <string name="title_pref_popup_over_speech">Read popups over SandFly\'s speech</string>
+    <!-- Title of a switch, in Speech. On: a popup waits for the one before it to be said. Off: it replaces the one before it. -->
+    <string name="title_pref_popup_queue">Queue popups</string>
     <!-- Title of the switch that says how long a phone call lasted when it ends. [CHAR LIMIT=NONE] -->
     <string name="title_pref_announce_call_length">Announce call length</string>
     <!-- Spoken when a phone call ends, with Announce call length on. %1$s is how long it lasted, such as "3 minutes, 12 seconds". [CHAR LIMIT=NONE] -->

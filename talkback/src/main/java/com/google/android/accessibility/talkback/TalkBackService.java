@@ -1203,6 +1203,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     SpeechControl.detach();
     if (speechController != null) {
       speechController.setCommandVoice(null);
+      speechController.setPopupVoice(null);
+      speechController.setCallerVoice(null);
     }
     NotificationReader.detach();
     if (callerAnnouncer != null) {
@@ -6023,6 +6025,8 @@ public class TalkBackService extends AccessibilityServiceCompat
           () -> isTouchInteracting);
       // The result of commands can be said in a voice profile, which the notification reader sets up.
       speechController.setCommandVoice(NotificationReader.commandVoice);
+      speechController.setPopupVoice(NotificationReader.popupVoice);
+      speechController.setCallerVoice(NotificationReader.callerVoice);
       NotificationListService.onSandFlyStarted(this);
     }
     if (scriptHost != null || pipeline == null || !UserManagerCompat.isUserUnlocked(this)) {

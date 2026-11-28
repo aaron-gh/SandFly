@@ -344,6 +344,41 @@ public class SpeechControllerImpl implements SpeechController {
     commandVoice = voice;
   }
 
+  /** The voice the popups are said with, or null for the speech engine. */
+  private volatile @Nullable CommandVoice popupVoice;
+
+  /** Sets the voice profile that items flagged {@link FeedbackItem#FLAG_POPUP_FEEDBACK} use. */
+  public void setPopupVoice(@Nullable CommandVoice voice) {
+    popupVoice = voice;
+  }
+
+  /** The voice the caller of an incoming call is said with, or null for the speech engine. */
+  private volatile @Nullable CommandVoice callerVoice;
+
+  /** Sets the voice profile that items flagged {@link FeedbackItem#FLAG_CALLER_FEEDBACK} use. */
+  public void setCallerVoice(@Nullable CommandVoice voice) {
+    callerVoice = voice;
+  }
+
+  /** The voice profile that {@code item} is said with, or null for the speech engine. */
+  private @Nullable CommandVoice profileVoiceFor(FeedbackItem item) {
+    if (item.hasFlag(FeedbackItem.FLAG_CALLER_FEEDBACK)) {
+      // The caller has its own voice. Without one, Say caller, which is also command feedback, is
+      // said in the command feedback voice, and the rest in SandFly's.
+      final CommandVoice caller = callerVoice;
+      if (caller != null && caller.isActive()) {
+        return caller;
+      }
+    }
+    if (item.hasFlag(FeedbackItem.FLAG_COMMAND_FEEDBACK)) {
+      return commandVoice;
+    }
+    if (item.hasFlag(FeedbackItem.FLAG_POPUP_FEEDBACK)) {
+      return popupVoice;
+    }
+    return null;
+  }
+
   /** Whether muted speech still plays its earcons and haptics, as when the user turned speech off. */
   private boolean playFeedbackWhileMuted = false;
 
@@ -1613,7 +1648,9 @@ public class SpeechControllerImpl implements SpeechController {
       if (currentFeedbackItem != null && filter.accept(currentFeedbackItem)) {
         // Always flush if current item interrupted.
         item.setFlushGlobalTtsQueue(true);
-        if (currentFeedbackItem.hasFlag(FeedbackItem.FLAG_COMMAND_FEEDBACK)) {
+        if (currentFeedbackItem.hasFlag(FeedbackItem.FLAG_COMMAND_FEEDBACK)
+            || currentFeedbackItem.hasFlag(FeedbackItem.FLAG_POPUP_FEEDBACK)
+            || currentFeedbackItem.hasFlag(FeedbackItem.FLAG_CALLER_FEEDBACK)) {
           stopCommandVoice(/* includingOverSpeech= */ false);
         }
         notifyItemInterrupted(currentFeedbackItem);
@@ -2308,9 +2345,22 @@ public class SpeechControllerImpl implements SpeechController {
     final float volume = speechVolume * parseFloatParam(params, SpeechParam.VOLUME, 1);
 
     // Utterance ID, stream, and volume override item params.
-    final int stream = FailoverTextToSpeech.getSpeechAudioStream(mContext);
+    // The caller of a call can have a volume of its own, in SandFly's voice and in its fallback.
+    final @Nullable String callerStream =
+        feedbackItem.hasFlag(FeedbackItem.FLAG_CALLER_FEEDBACK)
+            ? FailoverTextToSpeech.callerStream(mContext)
+            : null;
+    final int stream =
+        callerStream == null
+            ? FailoverTextToSpeech.getSpeechAudioStream(mContext)
+            : FailoverTextToSpeech.audioStreamOf(callerStream);
     params.put(Engine.KEY_PARAM_UTTERANCE_ID, feedbackItem.getUtteranceId());
     params.put(Engine.KEY_PARAM_STREAM, String.valueOf(stream));
+    if (callerStream != null) {
+      params.put(
+          FailoverTextToSpeech.SPEECH_PARAM_USAGE,
+          String.valueOf(FailoverTextToSpeech.usageForStream(callerStream)));
+    }
     params.put(Engine.KEY_PARAM_VOLUME, String.valueOf(volume));
     HashMap<String, Integer> customFlags = new HashMap<>();
 
@@ -2400,16 +2450,19 @@ public class SpeechControllerImpl implements SpeechController {
     }
 
     sourceIsVolumeControl = feedbackItem.hasFlag(FLAG_SOURCE_IS_VOLUME_CONTROL);
-    if (text != null && feedbackItem.hasFlag(FeedbackItem.FLAG_COMMAND_FEEDBACK)) {
+    @Nullable CommandVoice profileVoice = text == null ? null : profileVoiceFor(feedbackItem);
+    if (profileVoice != null) {
       // If the voice can't say it soon enough, SandFly's own voice says it, as it would have.
       final CharSequence commandText = text;
       final HashMap<String, String> commandParams = new HashMap<>(params);
       final float commandPitch = pitch;
       final float commandRate = rate;
       if (speakInCommandVoice(
+          profileVoice,
           feedbackItem.getUtteranceId(),
           commandText,
           feedbackItem.shouldFlushGlobalTtsQueue(),
+          feedbackItem.hasFlag(FeedbackItem.FLAG_INTERRUPT_CURRENT_UTTERANCE_WITH_SAME_UTTERANCE_GROUP),
           () ->
               failoverTts.speak(
                   commandText,
@@ -2469,12 +2522,21 @@ public class SpeechControllerImpl implements SpeechController {
    * @return false if there is no command voice, so the speech engine says the fragment
    */
   private boolean speakInCommandVoice(
-      String utteranceId, CharSequence text, boolean flush, Runnable fallback) {
-    final CommandVoice voice = commandVoice;
+      @Nullable CommandVoice voice,
+      String utteranceId,
+      CharSequence text,
+      boolean flush,
+      boolean replacesEarlier,
+      Runnable fallback) {
     if (voice == null || !voice.isActive()) {
       return false;
     }
     final boolean over = voice.isOverSpeech();
+    if (over && replacesEarlier) {
+      // Said over SandFly's speech, the item before it has ended in the speech queue already, so
+      // there is nothing there for the group to interrupt: the voice stops what it says of it.
+      voice.stop(/* includingOverSpeech= */ true);
+    }
     if (flush) {
       // The speech engine would have stopped what SandFly is saying, and its emoji and language
       // voices, before saying this: the old speech must not play on under the command voice.
@@ -2528,9 +2590,17 @@ public class SpeechControllerImpl implements SpeechController {
 
   /** Stops the command voice, if it is saying something. */
   private void stopCommandVoice(boolean includingOverSpeech) {
-    final CommandVoice voice = commandVoice;
-    if (voice != null) {
-      voice.stop(includingOverSpeech);
+    final CommandVoice command = commandVoice;
+    if (command != null) {
+      command.stop(includingOverSpeech);
+    }
+    final CommandVoice popup = popupVoice;
+    if (popup != null) {
+      popup.stop(includingOverSpeech);
+    }
+    final CommandVoice caller = callerVoice;
+    if (caller != null) {
+      caller.stop(includingOverSpeech);
     }
   }
 

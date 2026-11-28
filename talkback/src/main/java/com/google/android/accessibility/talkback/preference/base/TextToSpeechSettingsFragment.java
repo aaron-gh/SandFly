@@ -57,7 +57,9 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
           // A profile chosen as the emoji voice or the command feedback voice may have been removed.
           setUpEmojiVoice();
           setUpCommandFeedbackVoice();
-        } else if (TextUtils.equals(key, NotificationReader.KEY_COMMAND_VOICE)) {
+          setUpPopupVoice();
+        } else if (TextUtils.equals(key, NotificationReader.KEY_COMMAND_VOICE)
+            || TextUtils.equals(key, NotificationReader.KEY_POPUP_VOICE)) {
           updateCommandFeedbackOverSpeech();
         } else if (SpeechEqualizer.isKey(key)
             || TextUtils.equals(key, FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY)) {
@@ -120,6 +122,7 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     // Profiles may have been added, renamed or removed on their own screen.
     setUpEmojiVoice();
     setUpCommandFeedbackVoice();
+    setUpPopupVoice();
 
     boolean serviceActive =
         TalkBackService.getServiceState() == ServiceStateListener.SERVICE_STATE_ACTIVE;
@@ -205,11 +208,23 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     }
   }
 
+  /** Lists SandFly's voice and the voice profiles, by name, to say popups with. */
+  private void setUpPopupVoice() {
+    if (findPreference(NotificationReader.KEY_POPUP_VOICE) instanceof ListPreference list) {
+      VoiceChoices.setUp(requireContext(), prefs, list, /* notificationVoice= */ false);
+      updateCommandFeedbackOverSpeech();
+    }
+  }
+
   /** Read over SandFly's speech applies only while a voice profile is chosen for the feedback. */
   private void updateCommandFeedbackOverSpeech() {
     Preference overSpeech = findPreference(NotificationReader.KEY_COMMAND_OVER_SPEECH);
     if (overSpeech != null) {
       overSpeech.setEnabled(!prefs.getString(NotificationReader.KEY_COMMAND_VOICE, "").isEmpty());
+    }
+    Preference popupOverSpeech = findPreference(NotificationReader.KEY_POPUP_OVER_SPEECH);
+    if (popupOverSpeech != null) {
+      popupOverSpeech.setEnabled(!prefs.getString(NotificationReader.KEY_POPUP_VOICE, "").isEmpty());
     }
   }
 

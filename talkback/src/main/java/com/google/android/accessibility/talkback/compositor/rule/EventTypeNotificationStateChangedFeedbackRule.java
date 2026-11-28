@@ -27,10 +27,13 @@ import com.google.android.accessibility.talkback.compositor.Compositor.HandleEve
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.EventFeedback;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.Role;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.StringBuilderUtils;
+import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
 import java.util.List;
@@ -113,15 +116,30 @@ public final class EventTypeNotificationStateChangedFeedbackRule {
                   || notificationCategory
                       .toString()
                       .equals(context.getString(R.string.notification_category_call));
-          return EventFeedback.builder()
-              .setTtsOutput(Optional.of(ttsOutput))
-              .setQueueMode(QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH)
-              .setTtsAddToHistory(true)
-              .setForceFeedbackEvenIfAudioPlaybackActive(isToastOrCall)
-              .setForceFeedbackEvenIfMicrophoneActive(isToastOrCall)
-              .setForceFeedbackEvenIfSsbActive(false)
-              .setForceFeedbackEvenIfPhoneCallActive(isToastOrCall)
-              .build();
+          // A popup can be said in a voice profile of its own, and a new one replaces the one
+          // before it, instead of waiting for it, when Queue popups is off.
+          boolean replacePopups =
+              isToast
+                  && !SharedPreferencesUtils.getSharedPreferences(context)
+                      .getBoolean(NotificationReader.KEY_POPUP_QUEUE, true);
+          EventFeedback.Builder feedback =
+              EventFeedback.builder()
+                  .setTtsOutput(Optional.of(ttsOutput))
+                  .setQueueMode(QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH)
+                  .setTtsAddToHistory(true)
+                  .setForceFeedbackEvenIfAudioPlaybackActive(isToastOrCall)
+                  .setForceFeedbackEvenIfMicrophoneActive(isToastOrCall)
+                  .setForceFeedbackEvenIfSsbActive(false)
+                  .setForceFeedbackEvenIfPhoneCallActive(isToastOrCall)
+                  .setPopupFeedback(isToast)
+                  // The announcement of a call notification says the caller.
+                  .setCallerFeedback(!isToast && isToastOrCall);
+          if (replacePopups) {
+            feedback
+                .setTtsClearQueueGroup(SpeechController.UTTERANCE_GROUP_POPUPS)
+                .setTtsInterruptSameGroup(true);
+          }
+          return feedback.build();
         });
   }
 

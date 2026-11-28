@@ -280,6 +280,7 @@ constructor(
                 .setQueueMode(SpeechController.QUEUE_MODE_QUEUE)
                 .setFlags(
                   FeedbackItem.FLAG_NO_HISTORY or
+                    FeedbackItem.FLAG_CALLER_FEEDBACK or
                     FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE or
                     FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE or
                     FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE

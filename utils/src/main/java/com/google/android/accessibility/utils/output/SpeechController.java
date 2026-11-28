@@ -150,6 +150,8 @@ public interface SpeechController {
   // SandFly: the SandFly keyboard's corrections and suggestions said while typing, which the next
   // key stops.
   int UTTERANCE_GROUP_KEYBOARD_SUGGESTIONS = 10;
+  // SandFly: popups, so that a new popup can replace the one before it.
+  int UTTERANCE_GROUP_POPUPS = 11;
 
   /** Enumeration of utterance-group values. */
   @IntDef({
@@ -163,7 +165,8 @@ public interface SpeechController {
     UTTERANCE_GROUP_OTHER_APPS,
     UTTERANCE_GROUP_NOTIFICATIONS,
     UTTERANCE_GROUP_LIVE_RECOGNITION,
-    UTTERANCE_GROUP_KEYBOARD_SUGGESTIONS
+    UTTERANCE_GROUP_KEYBOARD_SUGGESTIONS,
+    UTTERANCE_GROUP_POPUPS
   })
   @Retention(RetentionPolicy.SOURCE)
   public @interface UtteranceGroup {}
