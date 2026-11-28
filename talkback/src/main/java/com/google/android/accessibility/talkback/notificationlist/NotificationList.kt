@@ -179,7 +179,9 @@ object NotificationList {
    * ranks, as one item when it has two or more members, and its summary only when it has no other
    * members, as the summary repeats them. As in the system's shade, the members of an app's group
    * without a summary are shown one by one. Media players are left out when [leaveOutMedia], and
-   * notifications the shade hides, as [isHiddenInShade] tells, are left out.
+   * notifications the shade hides, as [isHiddenInShade] tells, are left out. Notifications without
+   * title or text, as [isListed] tells, are left out after grouping, so that a group keeps its
+   * summary; a group whose other members are all left out shows its summary, if it has text.
    */
   private fun build(context: Context, leaveOutMedia: Boolean): List<NotificationItem> {
     val order = ranking?.orderedKeys?.toList() ?: notifications.keys.toList()
@@ -204,25 +206,31 @@ object NotificationList {
       val members = groups[groupKey].orEmpty()
       val (summaries, children) = members.partition { it.notification.isGroupSummary() }
       if (summaries.isEmpty() && members.none { it.overrideGroupKey != null }) {
-        members.forEach { result.add(NotificationItem.Single(entry(context, it))) }
+        members
+          .map { entry(context, it) }
+          .filter(::isListed)
+          .forEach { result.add(NotificationItem.Single(it)) }
         continue
       }
-      val entries = children.ifEmpty { members }.map { entry(context, it) }
-      result.add(
-        if (entries.size >= 2) {
-          NotificationItem.Group(
-            groupKey,
-            entries.first().appName,
-            summaries.firstOrNull()?.let { entry(context, it) },
-            entries,
-          )
-        } else {
-          NotificationItem.Single(entries.first())
-        }
-      )
+      val summary = summaries.firstOrNull()?.let { entry(context, it) }
+      val entries = children.ifEmpty { members }.map { entry(context, it) }.filter(::isListed)
+      when {
+        entries.size >= 2 ->
+          result.add(NotificationItem.Group(groupKey, entries.first().appName, summary, entries))
+        entries.size == 1 -> result.add(NotificationItem.Single(entries.first()))
+        summary != null && children.isNotEmpty() && isListed(summary) ->
+          result.add(NotificationItem.Single(summary))
+      }
     }
     return result
   }
+
+  /**
+   * Whether [entry] is listed: one without title or text, whose row would read only the app name
+   * and time, isn't, unless it is a media player's, whose row reads whether it plays.
+   */
+  internal fun isListed(entry: NotificationEntry): Boolean =
+    entry.hasContent || NotificationInfo.isMedia(entry.notification.notification)
 
   /**
    * One UI's "N more notifications", which stands in the shade for silent notifications that the

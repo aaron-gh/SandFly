@@ -265,6 +265,7 @@ In the list:
 - Each notification has its actions and, where the app offers it, a reply field with **Send**.
 - Media notifications show **Playing** or **Paused**, with **Previous**, **Play** or **Pause**, and **Next**.
 - A notification without text, such as a weather notification with a layout of its own, is read with the text of its layout, or else with its sub text, info text or summary text.
+- Notifications with no title and no text, which would be read only as the app name and time, aren't listed. Media notifications are listed.
 - Text longer than about 160 characters is cut. The **Show all** action reads the whole text, and **Show less** cuts it again.
 - **Dismiss** removes a notification, and **Clear all** removes all that can be removed.
 - **Quick settings** opens the quick settings.
