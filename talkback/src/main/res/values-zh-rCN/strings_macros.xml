@@ -14,12 +14,12 @@
     <string name="macro_delete_confirm">删除<xliff:g id="name" example="Send message">%1$s</xliff:g>？</string>
     <string name="macro_step_command">运行命令</string>
     <string name="macro_step_wait">等待</string>
-    <string name="macro_step_tap">单击项目</string>
+    <string name="macro_step_tap">点击项目</string>
     <string name="macro_step_focus">聚焦项目</string>
     <string name="macro_step_speak_item">朗读项目</string>
     <string name="macro_step_speak_text">朗读文字</string>
     <string name="macro_step_type">输入文字</string>
-    <string name="macro_step_tap_value">单击<xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_tap_value">点击<xliff:g id="label" example="Send">%1$s</xliff:g></string>
     <string name="macro_step_focus_value">聚焦<xliff:g id="label" example="Send">%1$s</xliff:g></string>
     <string name="macro_step_speak_item_value">朗读<xliff:g id="label" example="Send">%1$s</xliff:g></string>
     <string name="macro_step_speak_text_value">朗读<xliff:g id="text" example="Done">%1$s</xliff:g></string>
@@ -95,7 +95,7 @@
     <string name="macro_test_label_optional">项目文字（可选）</string>
     <string name="macro_item_kind">项目类型</string>
     <string name="macro_kind_any">任意类型</string>
-    <string name="macro_kind_clickable">可单击</string>
+    <string name="macro_kind_clickable">可点击</string>
     <string name="macro_kind_long_clickable">可长按</string>
     <string name="macro_kind_editable">可编辑</string>
     <string name="macro_kind_scrollable">可滚动</string>
@@ -194,8 +194,8 @@
     <string name="macro_test_focus_inside">焦点在项目内</string>
     <string name="macro_test_focus_inside_value">焦点在内：%1$s</string>
     <string name="macro_test_not_focus_inside_value">焦点不在内：%1$s</string>
-    <string name="macro_step_tap_position">单击位置</string>
-    <string name="macro_step_tap_position_value">单击 <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_step_tap_position">点击位置</string>
+    <string name="macro_step_tap_position_value">点击 <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
     <string name="macro_tap_x">X，距左边缘的像素</string>
     <string name="macro_tap_y">Y，距上边缘的像素</string>
     <string name="macro_invalid_position">请输入 0 到 <xliff:g id="max" example="10000">%1$d</xliff:g> 之间的 X 和 Y</string>

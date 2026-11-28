@@ -143,7 +143,7 @@
   <string name="keycombo_menu_navigate_previous_line">前往上一行</string>
   <string name="keycombo_menu_navigate_next_container">前往下一个容器</string>
   <string name="keycombo_menu_navigate_previous_container">前往上一个容器</string>
-  <string name="keycombo_menu_perform_click">执行单击操作</string>
+  <string name="keycombo_menu_perform_click">执行点击操作</string>
   <string name="keycombo_menu_perform_double_click">执行双击</string>
   <string name="keycombo_menu_perform_long_click">执行长按操作</string>
   <string name="keycombo_menu_category_global">全局操作</string>
@@ -875,7 +875,7 @@
   <string name="new_shortcut_gesture_note">注意：您已自定义某些手势，因此这些信息可能不准确。如需查看您的手势，请转到 SandFly 设置。</string>
   <string name="welcome_to_android11_text">我们添加了一些新手势，协助您更快速、更轻松地使用 SandFly。\n\n您可以在此屏幕上试用这些新手势，也可随时在 SandFly 设置中查看这些信息。</string>
   <string name="new_gesture_notification_title">SandFly 中的新手势</string>
-  <string name="new_gesture_notification_content">单击即可了解如何通过新手势更快速地使用 SandFly。</string>
+  <string name="new_gesture_notification_content">点击即可了解如何通过新手势更快速地使用 SandFly。</string>
   <string name="dump_node_tree_description">系统已将节点树打印到日志中。</string>
   <string name="report_gesture_description">这些是您最近做过的手势，请报告出错的手势以及该手势应执行的操作。</string>
   <string name="update_welcome_talkback_16.1">此 SandFly 更新引入了以下改进：将“描述屏幕内容”功能扩展到更多语言；进行了其他质量优化，让 SandFly 用起来更简单。\n\n接下来的几个界面将为您详细介绍这些更改。\n\n之后，您可以依次前往“SandFly 设置”&gt;“SandFly 中的新功能”，查看这些信息。</string>
@@ -920,10 +920,10 @@
   <string name="tutorial_entry_point_title">教程</string>
   <string name="welcome_to_talkback_title">欢迎使用 SandFly</string>
   <string name="talkback_is_on">SandFly 已开启</string>
-  <string name="talkback_turn_off_description">SandFly 会大声朗读屏幕上显示的内容，并改变导航功能在设备上的运作方式。如需关闭此功能，请单击“关闭 SandFly”两次。</string>
+  <string name="talkback_turn_off_description">SandFly 会大声朗读屏幕上显示的内容，并改变导航功能在设备上的运作方式。如需关闭此功能，请点击“关闭 SandFly”两次。</string>
   <string name="turn_off_talkback">关闭 SandFly</string>
-  <string name="tap_again_to_turn_off">再次单击即可关闭</string>
-  <string name="talkback_turn_off_description_pointer_and_touch">SandFly 会大声朗读屏幕上的内容，并改变导航功能在设备上的运作方式。如需关闭该功能，请选择“关闭 SandFly”或双击该功能。</string>
+  <string name="tap_again_to_turn_off">再次点击即可关闭</string>
+  <string name="talkback_turn_off_description_pointer_and_touch">SandFly 会大声朗读屏幕上的内容，并改变导航功能在设备上的运作方式。如需关闭该功能，请选择“关闭 SandFly”或点击该功能两次。</string>
   <string name="welcome_to_talkback_text">SandFly 会提供语音反馈，让您无需看屏幕即可使用设备。SandFly 可为难以看清屏幕的用户提供实用性帮助。\n\n如果您想使用音量键快速开启或关闭 SandFly，可以依次前往“SandFly 设置”&gt;“SandFly 快捷方式”，并设置快捷方式。\n\nSandFly 处于开启状态时，系统会将屏幕上聚焦的内容大声读出来。\n\n右滑会移至下一项内容，左滑会移至上一项内容。\n\n现在，请右滑，找到“下一页”按钮。</string>
   <string name="welcome_to_talkback_text_tts">SandFly 会提供语音反馈，让您无需看屏幕即可使用设备。SandFly 对于不便查看屏幕或难以看清屏幕的用户而言非常实用。\n\n如果您想使用音量键快速开启或关闭 SandFly，可以依次前往“SandFly 设置”&gt;“SandFly 快捷键”设置快捷键。\n\nSandFly 处于开启状态时，会将屏幕上聚焦的项大声读出来。\n\n右滑会移至下一项内容，左滑会移至上一项内容。\n\n现在，请右滑，找到“下一项”按钮。</string>
   <string name="welcome_to_talkback_page_idle_announcement">立即右滑找到“继续”按钮</string>
@@ -1473,7 +1473,7 @@
     <string name="battery_optimization_notification_title">电池优化可能会停止 SandFly</string>
 
     <!-- Text of the notification shown once on phones whose battery saver can stop SandFly. Tapping it opens the system list of battery optimization. [CHAR LIMIT=NONE] -->
-    <string name="battery_optimization_notification_text">在这台手机上，省电模式可能在屏幕关闭后停掉 SandFly，使其保持静默直到重新启动。单击以打开电池优化，选择所有应用，找到 SandFly 并选择不优化。</string>
+    <string name="battery_optimization_notification_text">在这台手机上，省电模式可能在屏幕关闭后停掉 SandFly，使其保持静默直到重新启动。点击以打开电池优化，选择所有应用，找到 SandFly 并选择不优化。</string>
 
     <!-- Title of the setting that keeps speech the user did not ask for, such as notifications, quiet while another app records with the microphone. [CHAR LIMIT=NONE] -->
     <string name="title_pref_mute_speech_while_recording">录音时保持安静</string>
@@ -2438,7 +2438,7 @@
     <string name="gesture_profile_new_name">手势配置 <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="gesture_profile_name_taken">已有名为 <xliff:g id="name" example="Driving">%1$s</xliff:g> 的手势配置</string>
     <string name="title_pref_delete_gesture_profile">删除手势配置</string>
-    <string name="title_pref_tap_nav_bar_buttons">单击即可激活导航栏按钮</string>
+    <string name="title_pref_tap_nav_bar_buttons">点击即可激活导航栏按钮</string>
     <string name="title_pref_reset_accessibility_audio">通话后重置无障碍音频</string>
     <string name="summary_pref_reset_accessibility_audio_needs_shizuku">需要 Shizuku。如果没有 Shizuku，请在通话后语音从听筒播放时使用 adb 运行此命令：%1$s</string>
     <string name="arrow_key_nav_unavailable">此按键映射中没有箭头键导航</string>
@@ -2455,8 +2455,8 @@
   <string name="summary_pref_hold_to_cancel">%1$s。手指在项目上长按达到此时长后抬起，不会激活任何内容。</string>
   <string name="value_hold_to_cancel_off">关</string>
   <string name="value_hold_to_cancel_3000">3 秒</string>
-  <string name="title_pref_tap_to_activate">单击即激活</string>
-  <string name="summary_pref_tap_to_activate">如果在手指下方的项目获得焦点之前抬起手指，单击即会激活该项目。</string>
+  <string name="title_pref_tap_to_activate">点击以激活</string>
+  <string name="summary_pref_tap_to_activate">在手指下方的项目获得焦点之前抬起手指，即可激活该项目。</string>
     <string name="title_selector_ai_actions">AI 操作</string>
     <string name="ai_actions_hint">上下滑动选择操作，双击执行</string>
     <string name="title_pref_ai_actions_included">要包含的 AI 操作</string>
@@ -2510,7 +2510,7 @@
     <string name="speech_control_ask_locked_text">它可以在设备锁定时用你的 SandFly 语音朗读文本。“允许”需要设备处于解锁状态。你可以依次前往“设置”、“语音”和“允许其他应用朗读”更改此项。</string>
     <string name="permission_speak_when_locked_label">在设备锁定时通过 SandFly 朗读</string>
     <string name="permission_speak_when_locked_description">允许应用请求在设备锁定时用你的 SandFly 语音朗读文本。SandFly 会另行征得你的同意后才允许。</string>
-    <string name="title_pref_category_back_tap">背面单击</string>
+    <string name="title_pref_category_back_tap">背面点击</string>
     <string name="title_pref_keep_speech_off_casts">投屏时将语音保留在手机上</string>
     <string name="title_pref_app_shortcuts">应用快捷方式</string>
     <string name="app_shortcut_label"><xliff:g id="app_name" example="Amazon">%1$s</xliff:g>：<xliff:g id="shortcut" example="Cart">%2$s</xliff:g></string>
@@ -2532,9 +2532,9 @@
     <string name="title_pref_shortcut_edge_along_top_right">沿顶部边缘右滑</string>
     <string name="title_pref_shortcut_edge_along_bottom_left">沿底部边缘左滑</string>
     <string name="title_pref_shortcut_edge_along_bottom_right">沿底部边缘右滑</string>
-    <string name="title_pref_shortcut_back_tap_double">在背面双击</string>
-    <string name="title_pref_shortcut_back_tap_triple">在背面三击</string>
-    <string name="title_pref_back_tap_sensitivity">背面单击灵敏度</string>
+    <string name="title_pref_shortcut_back_tap_double">背面双击</string>
+    <string name="title_pref_shortcut_back_tap_triple">背面三击</string>
+    <string name="title_pref_back_tap_sensitivity">背面点击灵敏度</string>
     <string name="title_pref_edge_zone_mm">边缘宽度</string>
     <string name="title_pref_edge_scroll_left">沿左边缘单指滚动</string>
     <string name="title_pref_edge_scroll_right">沿右边缘单指滚动</string>
@@ -2699,7 +2699,7 @@
     <string name="summary_pref_swipes_before_lift">关闭往返手势和角度手势。</string>
     <string name="title_pref_corner_size_mm">角落大小</string>
     <string name="value_corner_size_edge_width">与边缘宽度相同</string>
-    <string name="title_pref_corner_tap_time_ms">角落单击时间限制</string>
+    <string name="title_pref_corner_tap_time_ms">角落点击时间限制</string>
     <string name="value_corner_tap_time_system">系统默认</string>
     <string name="title_pref_edge_speak_commands">每次点击时朗读命令</string>
     <string-array name="pref_volume_change_feedback_entries">
@@ -2814,7 +2814,7 @@
     <string name="two_stroke_swipe_gestures_left_and_down_title">以“先左后下”开始的两笔滑动</string>
     <string name="two_stroke_swipe_gestures_right_and_up_title">以“先右后上”开始的两笔滑动</string>
     <string name="two_stroke_swipe_gestures_right_and_down_title">以“先右后下”开始的两笔滑动</string>
-    <string name="tap_swipe_gestures_title">单击后滑动</string>
+    <string name="tap_swipe_gestures_title">点击后滑动</string>
     <string name="two_finger_angle_gestures_title">双指折角</string>
     <string name="value_keyboard_phone_keymap">键盘手机按键映射</string>
     <string name="value_keyboard_phone_single_key_keymap">键盘手机单键按键映射</string>
@@ -3260,7 +3260,7 @@
     <string name="title_pref_shortcut_right_and_down_lift_left_and_down">先右后下，抬起，然后先左后下</string>
     <string name="title_pref_shortcut_right_and_down_lift_right_and_up">先右后下，抬起，然后先右后上</string>
     <string name="title_pref_shortcut_right_and_down_lift_right_and_down">先右后下，抬起，然后先右后下</string>
-    <string name="title_pref_shortcut_back_tap_quadruple">在背面四击</string>
+    <string name="title_pref_shortcut_back_tap_quadruple">背面四击</string>
     <string name="title_pref_shortcut_shake">摇晃</string>
     <string name="title_pref_shake_sensitivity">摇晃灵敏度</string>
     <string name="title_pref_two_stroke_swipe_time">两笔滑动之间的时间</string>
@@ -3324,10 +3324,10 @@
     <string name="macro_shortcut_invalid">快捷方式无效。请重新将宏添加到主屏幕。</string>
     <string name="update_download_progress">%1$d%%</string>
     <string name="update_download_progress_time">%1$d%%，剩余 %2$s</string>
-    <string name="title_pref_double_tap_taps">双击即单击屏幕</string>
-    <string name="shortcut_toggle_double_tap_taps_app">在此应用中双击即单击屏幕</string>
-    <string name="double_tap_taps_on">双击即单击屏幕已开启</string>
-    <string name="double_tap_taps_off">双击即单击屏幕已关闭</string>
+    <string name="title_pref_double_tap_taps">双击即点击屏幕</string>
+    <string name="shortcut_toggle_double_tap_taps_app">在此应用中双击即点击屏幕</string>
+    <string name="double_tap_taps_on">双击即点击屏幕已开启</string>
+    <string name="double_tap_taps_off">双击即点击屏幕已关闭</string>
     <string name="double_tap_taps_no_app">前台没有应用</string>
     <string name="keycombo_menu_toggle_key_practice">开启或关闭键盘练习</string>
     <string name="key_practice_on">键盘练习已开启</string>
