@@ -119,5 +119,11 @@ class ReportNotes(@get:VisibleForTesting internal val maxEntries: Int) {
     private const val MAX_AUDIO_ENTRIES = 100
     /** Typing from the popup of alternative characters of Gboard 18.8 and later. */
     @JvmField val gboardPopup = ReportNotes(MAX_ENTRIES)
+
+    /**
+     * Each change of the touch exploration passthrough region SandFly gives Android, where touches
+     * go to apps without touch exploration or gestures.
+     */
+    @JvmField val passthrough = ReportNotes(MAX_ENTRIES)
   }
 }
