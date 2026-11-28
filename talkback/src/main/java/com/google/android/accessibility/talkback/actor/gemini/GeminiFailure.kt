@@ -108,6 +108,7 @@ class GeminiFailure(
   companion object {
     private const val MAX_SPOKEN_DETAILS = 200
     private const val MAX_RETRY_AFTER_MS = 8_000L
+    private const val MAX_RETRY_AFTER_SECONDS = MAX_RETRY_AFTER_MS / 1_000L
 
     /** A failure on the phone, such as an answer that could not be read. */
     @JvmStatic
@@ -164,7 +165,7 @@ class GeminiFailure(
           ?: return 0L
       val seconds = value.trim().toLongOrNull() ?: return 0L
       if (seconds <= 0L) return 0L
-      return minOf(seconds * 1_000L, MAX_RETRY_AFTER_MS)
+      return minOf(seconds, MAX_RETRY_AFTER_SECONDS) * 1_000L
     }
 
     /**
@@ -219,8 +220,7 @@ class GeminiFailure(
     private fun isHighDemandMessage(message: String): Boolean =
       message.contains("high demand", ignoreCase = true) ||
         message.contains("overloaded", ignoreCase = true) ||
-        message.contains("temporarily unavailable", ignoreCase = true) ||
-        message.contains("try again later", ignoreCase = true)
+        message.contains("temporarily unavailable", ignoreCase = true)
 
     /** Google sends {"error": {...}}, and sometimes a list holding that object. */
     private fun errorObject(body: String?): JSONObject? {

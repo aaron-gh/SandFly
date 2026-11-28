@@ -672,6 +672,9 @@ public class GeminiActor {
 
   public void onUnbind() {
     progressTonePlayer.stop();
+    if (geminiEndpoint != null) {
+      geminiEndpoint.cancelCommand();
+    }
     if (aiCoreEndpoint != null) {
       aiCoreEndpoint.onUnbind();
     }

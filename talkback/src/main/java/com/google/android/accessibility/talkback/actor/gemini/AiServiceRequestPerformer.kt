@@ -29,23 +29,34 @@ import com.google.android.accessibility.talkback.actor.gemini.GeminiRestRequestP
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.util.concurrent.atomic.AtomicLong
 import org.json.JSONException
 import org.json.JSONObject
 
 /** Sends Gemini requests to the [AiService] the user set up, as chat requests. */
-internal class AiServiceRequestPerformer(context: Context) {
+internal class AiServiceRequestPerformer
+@JvmOverloads
+constructor(context: Context, queueOverride: RequestQueue? = null) {
   private val appContext = context.applicationContext
-  private val requestQueue: RequestQueue by lazy { GeminiRestRequestPerformer.sharedQueue(appContext) }
+  private val requestQueue: RequestQueue by lazy {
+    queueOverride ?: GeminiRestRequestPerformer.sharedQueue(appContext)
+  }
   private val mainHandler = Handler(Looper.getMainLooper())
   private val retryToken = Any()
+  private val requestTag = Any()
+  private val cancelGeneration = AtomicLong()
 
   /**
    * Reports a failure found before sending, after [performRequest] returns, as Volley reports its
    * failures. The caller starts the progress tone after the request is made, so a failure reported
    * during the call would stop the tone before it starts.
    */
-  private fun failLater(callback: GeminiRestResponseCallback, failure: GeminiFailure) {
-    mainHandler.post { callback.onFailure(failure) }
+  private fun failLater(callback: GeminiRestResponseCallback, failure: GeminiFailure, gen: Long) {
+    mainHandler.postAtTime(
+      { if (gen == cancelGeneration.get()) callback.onFailure(failure) },
+      retryToken,
+      SystemClock.uptimeMillis(),
+    )
   }
 
   fun performRequest(
@@ -55,15 +66,16 @@ internal class AiServiceRequestPerformer(context: Context) {
     geminiRequest: JSONObject,
     callback: GeminiRestResponseCallback,
   ) {
+    val gen = cancelGeneration.get()
     if (!AiService.isValidAddress(address)) {
-      failLater(callback, GeminiFailure.other("The AI service address must start with https"))
+      failLater(callback, GeminiFailure.other("The AI service address must start with https"), gen)
       return
     }
     val sandflyPro =
       AiProvider.active(SharedPreferencesUtils.getSharedPreferences(appContext)) == AiProvider.SANDFLY_PRO
     if (sandflyPro) {
       SandflyAi.features?.aiServiceUnavailable(appContext)?.let {
-        failLater(callback, GeminiFailure.spoken(it))
+        failLater(callback, GeminiFailure.spoken(it), gen)
         return
       }
     }
@@ -71,11 +83,11 @@ internal class AiServiceRequestPerformer(context: Context) {
       try {
         AiService.toChatRequest(geminiRequest, model)
       } catch (e: JSONException) {
-        failLater(callback, GeminiFailure.other("Could not make the request: $e"))
+        failLater(callback, GeminiFailure.other("Could not make the request: $e"), gen)
         return
       }
     val wantsJson = AiService.wantsJson(geminiRequest)
-    send(address, model, apiKey, chatRequest, wantsJson, sandflyPro, callback, 0, SystemClock.uptimeMillis())
+    send(address, model, apiKey, chatRequest, wantsJson, sandflyPro, callback, 0, SystemClock.uptimeMillis(), gen)
   }
 
   private fun send(
@@ -88,7 +100,9 @@ internal class AiServiceRequestPerformer(context: Context) {
     callback: GeminiRestResponseCallback,
     round: Int,
     firstAt: Long,
+    gen: Long,
   ) {
+    if (gen != cancelGeneration.get()) return
     val request =
       object :
         JsonObjectRequest(
@@ -96,36 +110,59 @@ internal class AiServiceRequestPerformer(context: Context) {
           AiService.chatUrl(address),
           chatRequest,
           { response ->
-            try {
-              callback.onResponse(AiService.parseChatResponse(response, wantsJson))
-            } catch (e: JSONException) {
-              callback.onFailure(GeminiFailure.other("Could not read the answer: $e"))
+            if (gen == cancelGeneration.get()) {
+              try {
+                callback.onResponse(AiService.parseChatResponse(response, wantsJson))
+              } catch (e: JSONException) {
+                callback.onFailure(GeminiFailure.other("Could not read the answer: $e"))
+              }
             }
           },
           { error ->
-            val failure = failure(error, sandflyPro)
-            val now = SystemClock.uptimeMillis()
-            val elapsedMs = maxOf(0L, now - firstAt)
-            if (
-              !sandflyPro &&
-                failure.kind == GeminiFailure.Kind.BUSY &&
-                round < BUSY_RETRY_DELAYS_MS.size &&
-                elapsedMs < RETRY_WINDOW_MS
-            ) {
-              val retryAfterMs = GeminiFailure.parseRetryAfterMs(error.networkResponse?.headers)
+            if (gen == cancelGeneration.get()) {
+              val failure = failure(error, sandflyPro)
+              val headers = error.networkResponse?.headers
+              val now = SystemClock.uptimeMillis()
+              val elapsedMs = maxOf(0L, now - firstAt)
+              val retryAfterMs = GeminiFailure.parseRetryAfterMs(headers)
               val delayMs =
-                minOf(
-                  maxOf(BUSY_RETRY_DELAYS_MS[round], retryAfterMs),
-                  maxOf(0L, RETRY_WINDOW_MS - elapsedMs),
+                if (round < BUSY_RETRY_DELAYS_MS.size) {
+                  maxOf(BUSY_RETRY_DELAYS_MS[round], retryAfterMs)
+                } else {
+                  0L
+                }
+              val nextStartElapsedMs = elapsedMs + delayMs
+              if (
+                !sandflyPro &&
+                  isRetryable(failure.statusCode, headers) &&
+                  round < BUSY_RETRY_DELAYS_MS.size &&
+                  nextStartElapsedMs <= RETRY_WINDOW_MS &&
+                  MAX_RETRY_TOTAL_MS - nextStartElapsedMs >= MIN_RETRY_TIMEOUT_MS
+              ) {
+                LogUtils.w(TAG, "AI service busy, retrying in %d ms: %s", delayMs, failure.logMessage)
+                mainHandler.postAtTime(
+                  {
+                    if (gen == cancelGeneration.get()) {
+                      send(
+                        address,
+                        model,
+                        apiKey,
+                        chatRequest,
+                        wantsJson,
+                        false,
+                        callback,
+                        round + 1,
+                        firstAt,
+                        gen,
+                      )
+                    }
+                  },
+                  retryToken,
+                  now + delayMs,
                 )
-              LogUtils.w(TAG, "AI service busy, retrying in %d ms: %s", delayMs, failure.logMessage)
-              mainHandler.postAtTime(
-                { send(address, model, apiKey, chatRequest, wantsJson, false, callback, round + 1, firstAt) },
-                retryToken,
-                now + delayMs,
-              )
-            } else {
-              callback.onFailure(failure)
+              } else {
+                callback.onFailure(failure)
+              }
             }
           },
         ) {
@@ -136,13 +173,32 @@ internal class AiServiceRequestPerformer(context: Context) {
           return headers
         }
       }
+    request.tag = requestTag
+    val attemptTimeoutMs =
+      if (round == 0) {
+        TIMEOUT_MS
+      } else {
+        val elapsedMs = maxOf(0L, SystemClock.uptimeMillis() - firstAt)
+        maxOf(1_000, minOf(TIMEOUT_MS, (MAX_RETRY_TOTAL_MS - elapsedMs).toInt()))
+      }
     request.retryPolicy =
-      DefaultRetryPolicy(TIMEOUT_MS, MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
+      DefaultRetryPolicy(attemptTimeoutMs, MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
     requestQueue.add(request)
   }
 
   fun cancel() {
+    cancelGeneration.incrementAndGet()
     mainHandler.removeCallbacksAndMessages(retryToken)
+    requestQueue.cancelAll(requestTag)
+  }
+
+  private fun isRetryable(statusCode: Int, headers: Map<String, String>?): Boolean {
+    if (statusCode == 502 || statusCode == 503 || statusCode == 529) return true
+    val hasRetryAfter =
+      headers?.entries?.any {
+        it.key.equals("Retry-After", ignoreCase = true) && it.value.isNotBlank()
+      } == true
+    return hasRetryAfter && (statusCode == 429 || statusCode >= 500)
   }
 
   /**
@@ -163,9 +219,11 @@ internal class AiServiceRequestPerformer(context: Context) {
     const val HTTP_PAYMENT_REQUIRED = 402
     // Services that run large models on demand can take longer than Gemini to answer.
     const val TIMEOUT_MS = 60_000
+    const val MAX_RETRY_TOTAL_MS = 35_000L
+    const val MIN_RETRY_TIMEOUT_MS = 8_000L
     // Retrying a request that timed out sends and pays for the same slow request again.
     const val MAX_RETRIES = 0
     val BUSY_RETRY_DELAYS_MS = longArrayOf(1_000L, 2_000L, 4_000L)
-    const val RETRY_WINDOW_MS = 24_000L
+    const val RETRY_WINDOW_MS = 20_000L
   }
 }

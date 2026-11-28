@@ -42,6 +42,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicLong;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -76,7 +77,7 @@ public class GeminiRestRequestPerformer {
   private static final long[] BUSY_RETRY_DELAYS_MS = {1_000, 2_000, 4_000};
 
   /** No retry starts later than this after the first request, so the answer comes in time. */
-  private static final long RETRY_WINDOW_MS = 24_000;
+  private static final long RETRY_WINDOW_MS = 20_000;
 
   interface GeminiRestResponseCallback {
     void onResponse(GeminiResponse response);
@@ -90,9 +91,15 @@ public class GeminiRestRequestPerformer {
   private final Handler handler = new Handler(Looper.getMainLooper());
   /** Marks the retries waiting to be sent, so that cancelling drops them. */
   private final Object retryToken = new Object();
+  private final Object requestTag = new Object();
+  private final AtomicLong cancelGeneration = new AtomicLong();
 
   public GeminiRestRequestPerformer(Context context) {
-    requestQueue = sharedQueue(context);
+    this(sharedQueue(context));
+  }
+
+  GeminiRestRequestPerformer(RequestQueue requestQueue) {
+    this.requestQueue = requestQueue;
   }
 
   private static @Nullable RequestQueue sharedQueue;
@@ -163,7 +170,7 @@ public class GeminiRestRequestPerformer {
         0,
         0,
         SystemClock.uptimeMillis(),
-        /* sawBusy= */ false);
+        cancelGeneration.get());
   }
 
   private void send(
@@ -174,7 +181,10 @@ public class GeminiRestRequestPerformer {
       int model,
       int round,
       long firstAt,
-      boolean sawBusy) {
+      long gen) {
+    if (gen != cancelGeneration.get()) {
+      return;
+    }
     String url = urls.get(model);
     String modelName = modelOf(url);
     boolean thinkingSetting = !modelsWithoutThinkingSetting.contains(modelName);
@@ -193,6 +203,9 @@ public class GeminiRestRequestPerformer {
             url,
             body,
             response -> {
+              if (gen != cancelGeneration.get()) {
+                return;
+              }
               try {
                 GeminiResponse result = DataFieldUtils.parseGeminiResponse(response);
                 callback.onResponse(result);
@@ -201,6 +214,9 @@ public class GeminiRestRequestPerformer {
               }
             },
             error -> {
+              if (gen != cancelGeneration.get()) {
+                return;
+              }
               GeminiFailure failure = GeminiFailure.fromVolleyError(error);
               long now = SystemClock.uptimeMillis();
               GeminiFailure.Kind kind = failure.getKind();
@@ -211,11 +227,10 @@ public class GeminiRestRequestPerformer {
                     modelName,
                     failure.getLogMessage());
                 modelsWithoutThinkingSetting.add(modelName);
-                send(urls, apiKey, postData, callback, model, round, firstAt, sawBusy);
+                send(urls, apiKey, postData, callback, model, round, firstAt, gen);
                 return;
               }
               boolean busy = kind == GeminiFailure.Kind.BUSY;
-              boolean nextSawBusy = sawBusy || busy;
               boolean another =
                   busy
                       || kind == GeminiFailure.Kind.QUOTA
@@ -223,26 +238,30 @@ public class GeminiRestRequestPerformer {
               if (another && model + 1 < urls.size() && now - firstAt < RETRY_WINDOW_MS) {
                 LogUtils.w(
                     TAG, "%s, asking the next model: %s", modelName, failure.getLogMessage());
-                send(urls, apiKey, postData, callback, model + 1, round, firstAt, nextSawBusy);
+                send(urls, apiKey, postData, callback, model + 1, round, firstAt, gen);
                 return;
               }
+              boolean retryable = busy || kind == GeminiFailure.Kind.QUOTA;
               long retryAfterMs =
                   error.networkResponse == null
                       ? 0L
                       : GeminiFailure.parseRetryAfterMs(error.networkResponse.headers);
+              long delayMs = busyRetryDelayMs(round, retryAfterMs);
               long elapsedMs = Math.max(0L, now - firstAt);
-              if (nextSawBusy && round < BUSY_RETRY_DELAYS_MS.length && elapsedMs < RETRY_WINDOW_MS) {
-                long delayMs =
-                    Math.min(
-                        busyRetryDelayMs(round, retryAfterMs),
-                        Math.max(0L, RETRY_WINDOW_MS - elapsedMs));
+              if (retryable
+                  && round < BUSY_RETRY_DELAYS_MS.length
+                  && elapsedMs + delayMs <= RETRY_WINDOW_MS) {
                 LogUtils.w(
                     TAG,
                     "Gemini is busy, asking again in %d ms: %s",
                     delayMs,
                     failure.getLogMessage());
                 handler.postAtTime(
-                    () -> send(urls, apiKey, postData, callback, 0, round + 1, firstAt, false),
+                    () -> {
+                      if (gen == cancelGeneration.get()) {
+                        send(urls, apiKey, postData, callback, 0, round + 1, firstAt, gen);
+                      }
+                    },
                     retryToken,
                     now + delayMs);
                 return;
@@ -260,9 +279,10 @@ public class GeminiRestRequestPerformer {
           }
         };
 
+    stringRequest.setTag(requestTag);
     stringRequest.setRetryPolicy(
         new DefaultRetryPolicy(
-            timeoutMs(model + 1 < urls.size(), SystemClock.uptimeMillis() - firstAt),
+            timeoutMs(model + 1 < urls.size(), Math.max(0L, SystemClock.uptimeMillis() - firstAt)),
             MAX_RETRIES,
             DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
     requestQueue.add(stringRequest);
@@ -281,13 +301,11 @@ public class GeminiRestRequestPerformer {
    * it gets [TIMEOUT_BEFORE_NEXT_MODEL_MS], and the last gets what is left of [TOTAL_TIMEOUT_MS].
    */
   static int timeoutMs(boolean anotherModelAfter, long elapsedMs) {
-    if (anotherModelAfter) {
-      return TIMEOUT_BEFORE_NEXT_MODEL_MS;
-    }
+    int cap = anotherModelAfter ? TIMEOUT_BEFORE_NEXT_MODEL_MS : TIMEOUT_MS;
     if (elapsedMs <= 0) {
-      return TIMEOUT_MS;
+      return cap;
     }
-    return (int) Math.max(MIN_TIMEOUT_MS, Math.min(TIMEOUT_MS, TOTAL_TIMEOUT_MS - elapsedMs));
+    return (int) Math.max(MIN_TIMEOUT_MS, Math.min(cap, TOTAL_TIMEOUT_MS - elapsedMs));
   }
 
   /**
@@ -354,9 +372,11 @@ public class GeminiRestRequestPerformer {
     return end > start ? url.substring(start, end) : url;
   }
 
-  /** Drops the retries waiting to be sent, when the request is given up. */
+  /** Cancels any in-flight request and drops retries waiting to be sent. */
   public void cancelExistingRequestIfNeeded() {
+    cancelGeneration.incrementAndGet();
     handler.removeCallbacksAndMessages(retryToken);
+    requestQueue.cancelAll(requestTag);
   }
 
   public boolean hasPendingTransaction() {

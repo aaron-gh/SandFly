@@ -121,6 +121,12 @@ class GeminiFailureTest {
     val failure =
       GeminiFailure.fromResponse(429, body(429, "RESOURCE_EXHAUSTED", "You exceeded your quota."))
     assertEquals(Kind.QUOTA, failure.kind)
+    val tryAgainLater =
+      GeminiFailure.fromResponse(
+        429,
+        body(429, "RESOURCE_EXHAUSTED", "Too many requests, please try again later."),
+      )
+    assertEquals(Kind.QUOTA, tryAgainLater.kind)
   }
 
   @Test
@@ -159,6 +165,10 @@ class GeminiFailureTest {
   fun retryAfterHeaderIsParsedAndClamped() {
     assertEquals(3_000L, GeminiFailure.parseRetryAfterMs(mapOf("retry-after" to "3")))
     assertEquals(8_000L, GeminiFailure.parseRetryAfterMs(mapOf("Retry-After" to "60")))
+    assertEquals(
+      8_000L,
+      GeminiFailure.parseRetryAfterMs(mapOf("Retry-After" to Long.MAX_VALUE.toString())),
+    )
     assertEquals(0L, GeminiFailure.parseRetryAfterMs(mapOf("Retry-After" to "invalid")))
     assertEquals(0L, GeminiFailure.parseRetryAfterMs(null))
   }

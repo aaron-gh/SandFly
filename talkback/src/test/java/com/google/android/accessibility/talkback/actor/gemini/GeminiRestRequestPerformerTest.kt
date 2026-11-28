@@ -16,6 +16,17 @@
 
 package com.google.android.accessibility.talkback.actor.gemini
 
+import android.os.Looper
+import com.android.volley.ClientError
+import com.android.volley.Network
+import com.android.volley.NetworkResponse
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.ServerError
+import com.android.volley.toolbox.NoCache
+import com.google.android.accessibility.talkback.actor.gemini.DataFieldUtils.GeminiResponse
+import com.google.android.accessibility.talkback.actor.gemini.GeminiRestRequestPerformer.GeminiRestResponseCallback
+import java.time.Duration
 import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -24,6 +35,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
@@ -91,5 +103,139 @@ class GeminiRestRequestPerformerTest {
     assertEquals(2_000L, GeminiRestRequestPerformer.busyRetryDelayMs(1, 500L))
     assertEquals(4_000L, GeminiRestRequestPerformer.busyRetryDelayMs(2, 0L))
     assertEquals(5_000L, GeminiRestRequestPerformer.busyRetryDelayMs(0, 5_000L))
+  }
+
+  @Test
+  fun cancelDuringInFlightRequestStopsRetryChain() {
+    val queue = RecordingRequestQueue()
+    val performer = GeminiRestRequestPerformer(queue)
+    val failures = mutableListOf<GeminiFailure>()
+    val responses = mutableListOf<GeminiResponse>()
+    performer.performRequest(
+      listOf(url("gemini-2.5-flash")),
+      "key",
+      postData,
+      recordingCallback(responses, failures),
+    )
+
+    assertEquals(1, queue.requests.size)
+    val inFlight = queue.requests.single()
+    performer.cancelExistingRequestIfNeeded()
+    assertTrue(inFlight.isCanceled)
+
+    inFlight.deliverError(ServerError(NetworkResponse(503, ByteArray(0), false, 0L, emptyList())))
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(10))
+
+    assertEquals(1, queue.requests.size)
+    assertTrue(failures.isEmpty())
+    assertTrue(responses.isEmpty())
+  }
+
+  @Test
+  fun nonBusyLastFailureDoesNotRetryChain() {
+    val queue = RecordingRequestQueue()
+    val performer = GeminiRestRequestPerformer(queue)
+    val failures = mutableListOf<GeminiFailure>()
+    performer.performRequest(
+      listOf(url("gemini-2.5-pro"), url("gemini-2.5-flash")),
+      "key",
+      postData,
+      recordingCallback(mutableListOf(), failures),
+    )
+
+    assertEquals(1, queue.requests.size)
+    queue.requests[0].deliverError(
+      ServerError(NetworkResponse(503, ByteArray(0), false, 0L, emptyList()))
+    )
+    assertEquals(2, queue.requests.size)
+
+    val badRequest =
+      """{"error":{"code":400,"status":"INVALID_ARGUMENT","message":"Bad image."}}""".toByteArray()
+    queue.requests[1].deliverError(
+      ClientError(NetworkResponse(400, badRequest, false, 0L, emptyList()))
+    )
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(15))
+
+    assertEquals(2, queue.requests.size)
+    assertEquals(1, failures.size)
+    assertEquals(400, failures.single().statusCode)
+  }
+
+  @Test
+  fun busyRetriesRespectWindowAndKeepTimeoutInBudget() {
+    val queue = RecordingRequestQueue()
+    val performer = GeminiRestRequestPerformer(queue)
+    val failures = mutableListOf<GeminiFailure>()
+    performer.performRequest(
+      listOf(url("gemini-2.5-pro"), url("gemini-2.5-flash")),
+      "key",
+      postData,
+      recordingCallback(mutableListOf(), failures),
+    )
+
+    // Fail model 0 quickly, then spend 18.5 s before model 1 fails with 503.
+    queue.requests[0].deliverError(
+      ServerError(NetworkResponse(503, ByteArray(0), false, 0L, emptyList()))
+    )
+    assertEquals(2, queue.requests.size)
+
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(18_500))
+    queue.requests[1].deliverError(
+      ServerError(NetworkResponse(503, ByteArray(0), false, 0L, emptyList()))
+    )
+    // Round 0 delay is 1_000 ms -> round 1 starts at 19_500 ms (inside 20 s window).
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(999))
+    assertEquals(2, queue.requests.size)
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(1))
+    assertEquals(3, queue.requests.size)
+    // Model 0 with another after it gets remaining budget (32_000 - 19_500 = 12_500 <= 15_000).
+    assertEquals(12_500, queue.requests[2].retryPolicy.currentTimeout)
+
+    // Model 0 fails at 19_600 ms -> model 1 starts immediately, then fails past the window.
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(100))
+    queue.requests[2].deliverError(
+      ServerError(NetworkResponse(503, ByteArray(0), false, 0L, emptyList()))
+    )
+    assertEquals(4, queue.requests.size)
+
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(500))
+    queue.requests[3].deliverError(
+      ServerError(NetworkResponse(503, ByteArray(0), false, 0L, emptyList()))
+    )
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(10))
+
+    assertEquals(4, queue.requests.size)
+    assertEquals(1, failures.size)
+    assertEquals(GeminiFailure.Kind.BUSY, failures.single().kind)
+  }
+
+  private fun url(model: String) =
+    "https://generativelanguage.googleapis.com/v1beta/models/$model:generateContent"
+
+  private fun recordingCallback(
+    responses: MutableList<GeminiResponse>,
+    failures: MutableList<GeminiFailure>,
+  ) =
+    object : GeminiRestResponseCallback {
+      override fun onResponse(response: GeminiResponse) {
+        responses += response
+      }
+
+      override fun onFailure(failure: GeminiFailure) {
+        failures += failure
+      }
+
+      override fun onCancelled() {}
+    }
+
+  private class RecordingRequestQueue :
+    RequestQueue(NoCache(), Network { throw AssertionError("Unexpected network call") }) {
+    val requests = mutableListOf<Request<*>>()
+
+    override fun <T> add(request: Request<T>): Request<T> {
+      super.add(request)
+      requests += request
+      return request
+    }
   }
 }
