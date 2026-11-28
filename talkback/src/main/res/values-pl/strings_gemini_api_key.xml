@@ -2,19 +2,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_model">Model Gemini</string>
     <string name="gemini_model_automatic">Automatyczny</string>
-    <string name="summary_pref_gemini_model_automatic">Automatycznie: Gemini Flash, następnie Flash-Lite, gdy Flash jest zajęty</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, następnie Flash-Lite, gdy jest zajęty</string>
-    <string name="gemini_model_loading">Pobieranie modeli…</string>
-    <string name="gemini_model_list_failed">Nie udało się pobrać modeli: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="summary_pref_gemini_model_automatic">Automatycznie: Gemini Flash, a gdy jest przeciążony — Flash-Lite</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, a gdy jest przeciążony — Flash-Lite</string>
+    <string name="gemini_model_loading">Pobieranie listy modeli…</string>
+    <string name="gemini_model_list_failed">Nie udało się pobrać listy modeli: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Najpierw ustaw klucz API Gemini</string>
-    <string name="ai_service_address_hint">Adres, na przykład https://openrouter.ai/api/v1</string>
+    <string name="ai_service_address_hint">Adres, np. https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Model</string>
-    <string name="ai_service_address_invalid">Adres musi zaczynać się od https://. Nic nie zostało zapisane.</string>
-    <string name="dialog_message_ai_service_consent">Obrazy i zrzuty ekranu są wysyłane do <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> w celu opisania, co trwa kilka sekund. Obowiązują warunki i polityka prywatności tej usługi. Generatywna sztuczna inteligencja jest eksperymentalna, więc będzie popełniać błędy.</string>
+    <string name="ai_service_address_invalid">Adres musi zaczynać się od https://. Niczego nie zapisano.</string>
+    <string name="dialog_message_ai_service_consent">Obrazy i zrzuty ekranu są wysyłane do usługi <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> w celu ich opisania. Trwa to kilka sekund. Obowiązują warunki korzystania i polityka prywatności tej usługi. Generatywna AI jest eksperymentalna i może popełniać błędy.</string>
     <string name="ai_service_error_api_key">Usługa AI nie zaakceptowała klucza API. Sprawdź jej ustawienia w sekcji „Usługi AI”.</string>
-    <string name="ai_service_error_quota">Osiągnięto limit wykorzystania usługi AI. Spróbuj ponownie później.</string>
+    <string name="ai_service_error_quota">Osiągnięto limit użycia usługi AI. Spróbuj ponownie później.</string>
     <string name="ai_service_error_busy">Usługa AI jest teraz zajęta. Spróbuj ponownie za chwilę.</string>
-    <string name="ai_service_error_timeout">Odpowiedź usługi AI trwała zbyt długo. Spróbuj ponownie.</string>
+    <string name="ai_service_error_timeout">Usługa AI nie odpowiedziała w wyznaczonym czasie. Spróbuj ponownie.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -34,13 +34,13 @@
     <string name="ai_provider_not_set_up">Nie skonfigurowano</string>
     <string name="ai_provider_not_ready">Najpierw wybierz model</string>
     <string name="ai_provider_address">Adres</string>
-    <string name="ai_provider_address_message">Adres usługi z interfejsem API czatu zgodnym z OpenAI i danymi wejściowymi obrazu, np. https://example.com/v1.</string>
+    <string name="ai_provider_address_message">Adres usługi z interfejsem API czatu zgodnym z OpenAI i obsługą obrazów, np. https://example.com/v1.</string>
     <string name="ai_provider_not_set">Nie ustawiono</string>
-    <string name="ai_provider_set">Skonfigurowane</string>
+    <string name="ai_provider_set">Zapisano</string>
     <string name="title_pref_gemini_api_key_of">Klucz API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of">Model <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Nie wybrano</string>
-    <string name="ai_provider_key_message">Wklej swój klucz API usługi <xliff:g id="service" example="Claude">%1$s</xliff:g>. Aby go usunąć, wyczyść pole i zapisz. Obrazy i ekrany, których opis zlecasz, są wysyłane do <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">Wklej swój klucz API usługi <xliff:g id="service" example="Claude">%1$s</xliff:g>. Aby go usunąć, wyczyść pole i zapisz. Obrazy i zrzuty ekranu, których opis zlecasz, są wysyłane do <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Najpierw ustaw klucz API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Najpierw ustaw adres</string>
     <string name="ai_provider_enter_model">Wprowadź nazwę modelu</string>

@@ -121,7 +121,7 @@ Tabela z wartościami jest listą, na przykład `{ 'speech', 'screen' }`. Tabela
 | `commands` | Lista | [Polecenia](#commands) dla użytkownika. |
 | `navigation` | Lista | [Sposoby nawigacji](#navigation). |
 | `onDemand` | Wartość logiczna | Od wersji 4. [Ładuje skrypt](#scripts-loaded-on-demand) wyłącznie do wykonania polecenia. |
-| `keepLoaded` | Wartość logiczna | Od wersji 5. Dodaje **Działaj przy wyłączonym ekranie** na stronie skryptu. Zobacz [działanie przy wygaszonym ekranie](#with-the-screen-off). |
+| `keepLoaded` | Wartość logiczna | Od wersji 5. Dodaje **Działaj przy wygaszonym ekranie** na stronie skryptu. Zobacz [działanie przy wygaszonym ekranie](#with-the-screen-off). |
 
 SandFly ignoruje inne pola najwyższego poziomu. Nieznane pola reguł, zapytań, czynności lub nawigacji powodują odrzucenie manifestu. SandFly poda nazwę pola. Jeśli `minApiVersion` jest za wysokie, nadal możesz zainstalować skrypt, ale SandFly wyświetli informację o zgodności przy instalacji, na stronie i w dzienniku.
 
@@ -158,7 +158,7 @@ Nie można wskazać SandFly w `apps`. Skrypt globalny pozostaje załadowany, wi�
 
 ### Działanie przy wygaszonym ekranie {#with-the-screen-off}
 
-Od wersji 5 skrypt z `keepLoaded = true` może pozostać w pamięci przy wygaszonym ekranie. Dotyczy to na przykład skryptu odczytującego godzinę lub przypomnienia. Użytkownik włącza **Działaj przy wyłączonym ekranie** na stronie skryptu. Po instalacji opcja jest wyłączona. Skrypt nie może jej sam włączyć. Tylko skrypty bez `apps` i `onDemand` mogą używać `keepLoaded`.
+Od wersji 5 skrypt z `keepLoaded = true` może pozostać w pamięci przy wygaszonym ekranie. Dotyczy to na przykład skryptu odczytującego godzinę lub przypomnienia. Użytkownik włącza **Działaj przy wygaszonym ekranie** na stronie skryptu. Po instalacji opcja jest wyłączona. Skrypt nie może jej sam włączyć. Tylko skrypty bez `apps` i `onDemand` mogą używać `keepLoaded`.
 
 Przy wygaszonym ekranie nadal działają liczniki, żądania i `sf.speak`. Zdarzenia ekranu, takie jak `onFocus`, nie są obsługiwane. Liczniki nie budzą telefonu i mogą wykonać się później.
 
@@ -337,7 +337,7 @@ Zapytania służą do wyszukiwania w regułach, nawigacji i kodzie. Podaj ID jak
 | `hint`, `stateDescription` | Od wersji 6. Dokładna podpowiedź lub opis stanu. |
 | `contains` | Od wersji 6. Fragment tekstu, opisu zawartości, podpowiedzi, stanu lub dymka. Wielkość liter nie ma znaczenia. Działa jak **Dowolny tekst** w teście makra. Użyj `field`, żeby sprawdzać tylko jedno pole. |
 | `matches` | Od wersji 6. Szuka wyrażenia regularnego w tekście, opisie zawartości, podpowiedzi, stanie lub dymku. Wielkość liter nie ma znaczenia, tak jak przy polu **Wyrażenie regularne** w teście makra. Przy `field` szuka tylko we wskazanym polu. Na przykład `{ matches = '^new post$', field = 'contentDescription' }` pasuje do elementu, którego cały opis to „New post”. Powtarzane grupy nie mogą zawierać powtórzeń ani alternatyw (`\|`). W każdym polu sprawdzane jest tylko pierwsze 1000 znaków. |
-| `field` | Od wersji 6. Zawęża `contains` i `matches` tak jak opcja **Dopasuj w** w teście makra. Przyjmuje `'text'`, `'contentDescription'` lub `'description'`, `'hint'`, `'stateDescription'` lub `'state'`, `'tooltip'` albo `'id'`. Identyfikator jest porównywany z nazwą pakietu i bez niej. Na przykład `'^send$'` pasuje do `com.example:id/send`. |
+| `field` | Od wersji 6. Zawęża `contains` i `matches` tak jak opcja **Szukaj w** w teście makra. Przyjmuje `'text'`, `'contentDescription'` lub `'description'`, `'hint'`, `'stateDescription'` lub `'state'`, `'tooltip'` albo `'id'`. Identyfikator jest porównywany z nazwą pakietu i bez niej. Na przykład `'^send$'` pasuje do `com.example:id/send`. |
 | `kind` | Od wersji 6. Typ elementu z testu makra lub lista typów, z których wszystkie muszą pasować. Dozwolone są `'clickable'`, `'longClickable'`, `'editable'`, `'scrollable'`, `'adjustable'`, `'checkable'`, `'checked'`, `'selected'`, `'heading'`, `'enabled'`. Typy klikalne sięgają do przodków, najwyżej sześć poziomów. `'scrollable'` sprawdza czynność przewinięcia, a `'adjustable'` suwak lub pasek postępu. Na przykład `{ contains = 'new post', field = 'description', kind = 'clickable' }` odpowiada testowi makra szukającemu klikalnego elementu z „new post” w opisie. |
 
 `contains` i `matches` pomijają białe znaki przy krawędziach. Pozostałe pola tekstowe porównują bez przycinania. Zapytanie w manifeście musi zawierać przynajmniej jedno pole. Błędny `kind`, `field` lub wzorzec w kodzie powoduje błąd w chwili użycia.
@@ -694,7 +694,7 @@ sf.touch.gesture({
 
 Od wersji 6 `sf.touch.lock(ms)` blokuje dotyk przez `ms` milisekund, najwyżej 10 000. Dotknięcia i gesty użytkownika w tym czasie nie działają ani nie trafiają do aplikacji. Gesty skryptu z `sf.touch` nadal do niej trafiają. Funkcja zwraca uchwyt z metodą `release()`. Metoda kończy blokadę. Możesz też wywołać `sf.touch.unlock()`, żeby zakończyć blokadę rozpoczętą przez ten skrypt.
 
-Blokada kończy się, gdy skrypt zostanie zwolniony z pamięci, zgłosi błąd lub aplikacja, w której ją włączono, przestanie być widoczna. Użytkownik może ją zakończyć, naciskając oba klawisze głośności jednocześnie lub wykonując **Zablokuj lub odblokuj dotyk**. Nowa blokada zastępuje poprzednią także wtedy, gdy pochodzi z innego skryptu. Blokada jest niedostępna na ekranach SandFly. Do jej działania wymagany jest Android 13 lub nowszy oraz włączone **Używaj gestów w SandFly**.
+Blokada kończy się, gdy skrypt zostanie zwolniony z pamięci, zgłosi błąd lub aplikacja, w której ją włączono, przestanie być widoczna. Użytkownik może ją zakończyć, naciskając oba klawisze głośności jednocześnie lub wykonując **Zablokuj lub odblokuj dotyk**. Nowa blokada zastępuje poprzednią także wtedy, gdy pochodzi z innego skryptu. Blokada jest niedostępna na ekranach SandFly. Do jej działania wymagany jest Android 13 lub nowszy oraz włączone **Rozpoznawaj gesty w SandFly**.
 
 ### Pisanie i naciskanie klawiszy {#type-and-press-keys}
 
@@ -735,7 +735,7 @@ sf.message('Keys go to the game')
 Od wersji 6 **`sf.macros.run(file, values)`** uruchamia makro z pliku w pakiecie, na przykład `'macros/reply.json'`, tak jak SandFly uruchamia makra użytkownika. Plik może mieć do 1 MB i korzysta z tego samego formatu co **Eksportuj do pliku**. SandFly uruchamia pierwsze makro z pliku. Zobacz [Makra w opisie formatu plików](item-files.md#macros).
 
 - Jeśli inne makro już działa, zostanie zatrzymane. Funkcja zwraca `true` od razu. Kroki są wykonywane po wznowieniu skryptu, więc możesz wywołać funkcję z dowolnej procedury obsługi zdarzenia.
-- `values` to rekord tekstów wstawianych w miejscach `{name}` w krokach, na przykład `{ text = item.text }`. Możesz podać do 200 nazw, każdą do 64 znaków. Używaj liter, cyfr, kropek (`.`), łączników (`-`) i podkreśleń (`_`). Każda wartość może mieć do 10 000 znaków. Makro otrzymuje też wartości zapisane przez makra tego skryptu krokami **Ustaw wartość**, **Pobierz z linku** i **Przetłumacz tekst**.
+- `values` to rekord tekstów wstawianych w miejscach `{name}` w krokach, na przykład `{ text = item.text }`. Możesz podać do 200 nazw, każdą do 64 znaków. Używaj liter, cyfr, kropek (`.`), łączników (`-`) i podkreśleń (`_`). Każda wartość może mieć do 10 000 znaków. Makro otrzymuje też wartości zapisane przez makra tego skryptu krokami **Ustaw wartość zmiennej**, **Pobierz tekst z adresu** i **Przetłumacz tekst**.
 - Wywołanie zgłasza błąd na ekranie SandFly, przy pliku bez makra lub jeśli makro używa polecenia **Włącz lub wyłącz wszystkie skrypty** albo **Włącz lub wyłącz obsługę klawiatury przez SandFly**.
 
 Skrypt potrzebuje uprawnień kroków:
@@ -1076,7 +1076,7 @@ Poniższe dodatkowe gesty SandFly rozpoznaje tylko wtedy, gdy używa ich polecen
 - Zsuwanie i rozsuwanie palców oraz szybki ruch dwoma palcami tam i z powrotem. `twoFingerPinch`, `twoFingerSpread`, `threeFingerPinch`, `threeFingerSpread`, `fourFingerPinch`, `fourFingerSpread`, `twoFingerScrub`.
 - Przesunięcie i przytrzymanie. `swipeUpAndHold`, `swipeDownAndHold`, `swipeLeftAndHold`, `swipeRightAndHold`, `swipeUpThenDownAndHold`, `swipeDownThenUpAndHold`, `swipeLeftThenRightAndHold`, `swipeRightThenLeftAndHold`, `swipeUpThenLeftAndHold`, `swipeUpThenRightAndHold`, `swipeDownThenLeftAndHold`, `swipeDownThenRightAndHold`, `swipeLeftThenUpAndHold`, `swipeLeftThenDownAndHold`, `swipeRightThenUpAndHold`, `swipeRightThenDownAndHold`.
 
-Przesunięcia trzyczęściowe mają nazwy takie jak `swipeRightThenUpThenRight`, `swipeUpThenDownThenUp`. Gesty oddzielone uniesieniem mają nazwy takie jak `swipeRightLiftSwipeUp`, `swipeDownLiftSwipeDown`, `swipeUpThenLeftLiftSwipeRight`, `swipeUpLiftSwipeRightThenDown`. Te ostatnie wymagają ustawienia **Odstęp między przesunięciami dwuetapowymi**. Gdy krawędź służy do otwierania menu, ruchy wzdłuż niej trafiają do menu.
+Przesunięcia trzyczęściowe mają nazwy takie jak `swipeRightThenUpThenRight`, `swipeUpThenDownThenUp`. Gesty oddzielone uniesieniem mają nazwy takie jak `swipeRightLiftSwipeUp`, `swipeDownLiftSwipeDown`, `swipeUpThenLeftLiftSwipeRight`, `swipeUpLiftSwipeRightThenDown`. Te ostatnie wymagają ustawienia **Odstęp między częściami gestu dwuetapowego**. Gdy krawędź służy do otwierania menu, ruchy wzdłuż niej trafiają do menu.
 
 ## Testowanie i diagnozowanie {#testing-and-debugging}
 

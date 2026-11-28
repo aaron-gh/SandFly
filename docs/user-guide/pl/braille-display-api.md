@@ -8,7 +8,7 @@ Monitor może odczytać wszystko, co SandFly pokazuje w brajlu, a jego klawisze 
 
 - Jeśli SandFly znajdzie aplikację, która może działać jako monitor, a użytkownik jeszcze nie zdecydował o dostępie, pojawi się powiadomienie. Otwiera ono ostrzeżenie opisujące zakres dostępu.
 - Aplikacja może też od razu otworzyć ostrzeżenie. Zobacz [Manifest aplikacji](#your-apps-manifest).
-- W ustawieniach **Brajl** > **Monitor brajlowski** > **Wyświetlacze z innych aplikacji** znajduje się lista wszystkich aplikacji, które mogą działać jako monitor. Użytkownik może tam nadać lub cofnąć zgodę dla każdej z nich. Przy udzielaniu zgody również pojawi się ostrzeżenie.
+- W ustawieniach **Brajl** > **Monitor brajlowski** > **Monitory brajlowskie z innych aplikacji** znajduje się lista wszystkich aplikacji, które mogą działać jako monitor. Użytkownik może tam nadać lub cofnąć zgodę dla każdej z nich. Przy udzielaniu zgody również pojawi się ostrzeżenie.
 
 Gdy monitor aplikacji działa, SandFly wyświetla powiadomienie z jej nazwą. Po udzieleniu zgody SandFly nie ogranicza treści ani częstotliwości danych, które wysyła monitor.
 

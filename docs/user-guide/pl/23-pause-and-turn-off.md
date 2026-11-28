@@ -11,7 +11,7 @@ Opcje związane z wstrzymywaniem i wyłączaniem znajdziesz na ekranie **Wstrzym
 ### Zatrzymaj samą mowę {#pause-speech}
 
 - **Wstrzymaj lub wznów komunikaty głosowe** zatrzymuje odczyt. Gdy użyjesz polecenia ponownie, SandFly będzie czytać od miejsca, w którym przerwał. Domyślny gest to stuknięcie dwoma palcami.
-- **Włącz lub wyłącz komunikaty głosowe** wyłącza mowę aż do ponownego użycia polecenia. SandFly nadal odtwarza dźwięki, wibruje i obsługuje gesty. Domyślny gest to dwukrotne stuknięcie trzema palcami.
+- **Włącz lub wyłącz mowę** wyłącza mowę aż do ponownego użycia polecenia. SandFly nadal odtwarza dźwięki, wibruje i obsługuje gesty. Domyślny gest to dwukrotne stuknięcie trzema palcami.
 
 Więcej o mowie przeczytasz w [](#speech).
 

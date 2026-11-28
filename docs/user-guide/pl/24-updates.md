@@ -53,7 +53,7 @@ O aktualizacjach na zegarku przeczytasz w [](#devices-watch-updates).
 
 ### Pokaż SandFly jako aplikację z Google Play {#updates-play-installer}
 
-Niektóre aplikacje, np. bankowe, wyłączają usługi ułatwień dostępu, jeżeli Android wskazuje dla nich źródło instalacji inne niż Google Play. Opcja **Aktualizacje i instalacja** > **Pokazuj jako zainstalowane z Google Play** powoduje, że Android zapisuje Google Play jako instalator SandFly. Dzięki temu te aplikacje mogą pozostawić SandFly włączony. Opcja jest domyślnie wyłączona i wymaga Shizuku lub dostępu root.
+Niektóre aplikacje, np. bankowe, wyłączają usługi ułatwień dostępu, jeżeli Android wskazuje dla nich źródło instalacji inne niż Google Play. Opcja **Aktualizacje i instalacja** > **Zgłaszaj Google Play jako źródło instalacji** powoduje, że Android zapisuje Google Play jako instalator SandFly. Dzięki temu te aplikacje mogą pozostawić SandFly włączony. Opcja jest domyślnie wyłączona i wymaga Shizuku lub dostępu root.
 
 Po włączeniu tej opcji SandFly ponownie instaluje swój pakiet APK przez Shizuku, wskazując Google Play jako instalator. W trakcie instalacji SandFly uruchamia się ponownie, więc mowa na chwilę się zatrzymuje. Aplikacja i ustawienia zostają takie same. Zmienia się informacja o instalatorze udostępniana innym aplikacjom. Aplikacja może ustalić w inny sposób, skąd faktycznie zainstalowano SandFly.
 
@@ -64,7 +64,7 @@ Przy włączonej opcji aktualizacje działają następująco.
 
 Po wyłączeniu opcji SandFly przywraca nazwę poprzedniego instalatora.
 
-Jeśli zmiana instalatora z aplikacji jest niedostępna, użyj czynności **Kopiuj polecenie**. Skopiuje polecenie adb wykonujące tę samą operację. Uruchom je na komputerze z folderu, w którym znajduje się plik `sandfly.apk`.
+Jeśli zmiana instalatora z aplikacji jest niedostępna, użyj czynności **Skopiuj polecenie**. Skopiuje polecenie adb wykonujące tę samą operację. Uruchom je na komputerze z folderu, w którym znajduje się plik `sandfly.apk`.
 
 ```
 adb install -r -i com.android.vending sandfly.apk
@@ -90,29 +90,29 @@ Shizuku uruchomione przez debugowanie bezprzewodowe lub adb zatrzymuje się przy
 
 Bez Shizuku lub dostępu root poniższe funkcje są niedostępne albo działają w ograniczonym zakresie.
 
-- **Dotyk** > **Napraw zablokowaną eksplorację dotykową** jest domyślnie włączone. Potrzebuje uprawnienia DUMP, aby wznowić eksplorację, gdy Android pozostawi dotknięcie w stanie aktywnym. Bez uprawnienia SandFly tylko informuje, że eksploracja dotykowa mogła się zablokować. Zobacz [](#touch).
+- **Dotyk** > **Przywracaj działanie czytania dotykiem** jest domyślnie włączone. Potrzebuje uprawnienia DUMP, aby wznowić czytanie dotykiem, gdy Android pozostawi dotknięcie w stanie aktywnym. Bez uprawnienia SandFly tylko informuje, że czytanie dotykiem mogło się zablokować. Zobacz [](#touch).
 - **Wyjście audio** > **Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha** wymaga uprawnienia do zarządzania połączeniami. Działa od Androida 12. Zobacz [](#sound).
-- **Wyjście audio** > **Resetuj dźwięk ułatwień dostępu po połączeniach** działa przez Shizuku lub dostęp root, od Androida 13. Zobacz [](#sound).
-- **Klawisze głośności** > **Skróty przy wygaszonym ekranie** działają wyłącznie przez Shizuku. Zobacz [](#buttons).
-- **Przegląd** > **Używaj przeglądu SandFly** odczytuje i otwiera ostatnie aplikacje z pomocą Shizuku lub dostępu root. Bez nich otwiera się systemowy przegląd. Shizuku lub roota wymagają też Alt+Tab, otwieranie aplikacji na podzielonym ekranie oraz polecenia **Starsza aplikacja** i **Nowsza aplikacja**. Zobacz [](#display).
+- **Wyjście audio** > **Przywracaj prawidłowe wyjście dźwięku dostępności po rozmowach** działa przez Shizuku lub dostęp root, od Androida 13. Zobacz [](#sound).
+- **Przyciski głośności** > **Skróty klawiszy głośności przy wygaszonym ekranie** działają wyłącznie przez Shizuku. Zobacz [](#buttons).
+- **Przegląd SandFly** > **Używaj przeglądu SandFly** odczytuje i otwiera ostatnie aplikacje z pomocą Shizuku lub dostępu root. Bez nich otwiera się systemowy przegląd. Shizuku lub roota wymagają też Alt+Tab, otwieranie aplikacji na podzielonym ekranie oraz polecenia **Wcześniej używana aplikacja** i **Później używana aplikacja**. Zobacz [](#display).
 - Panel szybkich ustawień SandFly korzysta z Shizuku lub roota do obsługi m.in. Wi-Fi, Bluetooth, danych komórkowych i trybu samolotowego. Dotyczy to też jasności, automatycznego obracania, podświetlenia nocnego, dodatkowego przyciemnienia, kolorów i rozmiaru elementów na ekranie. Bez tych uprawnień niektóre przełączniki otwierają odpowiednie ustawienia Androida. Zobacz [](#display).
-- Jeśli w historii schowka włączysz **Dodawaj kopie z innych aplikacji**, dołączenie tekstu skopiowanego poza SandFly wymaga Shizuku lub roota. Zobacz [](#typing).
+- Jeśli w historii schowka włączysz **Dodawaj tekst kopiowany w innych aplikacjach**, dołączenie tekstu skopiowanego poza SandFly wymaga Shizuku lub roota. Zobacz [](#typing).
 - Gboard odtwarza własne sygnały klawiszy, np. z opcji **Wibracja przy naciśnięciu klawisza**, podczas eksplorowania klawiszy tylko z Shizuku lub dostępem root. Zobacz [](#typing).
 - Polecenia uruchamiające skrót ułatwień dostępu innej usługi wymagają Shizuku lub roota. Zobacz [](#commands).
 - Polecenia z grup **Kafelki aplikacji** i **Kafelki systemowe** oraz **Dodaj kafelek systemowy** w ustawieniach panelu szybkich ustawień. Bez Shizuku lub roota kafelek działa tylko wtedy, gdy znajduje się w szybkich ustawieniach systemu, a **Dodaj kafelek systemowy** wyszukuje kafelki w szybkich ustawieniach systemu. Zobacz [](#commands-categories) i [](#display-quick-settings).
 - Skróty dodawane przez aplikację podczas działania oraz skróty, które może otworzyć tylko aplikacja ekranu głównego, są widoczne na liście tylko z Shizuku lub dostępem root. Zobacz [](#gestures-app-shortcuts).
 - Tych uprawnień wymagają też skrypty i makra naciskające klawisze lub wpisujące tekst poza polem edycji oraz kroki makr zmieniające wymienione wyżej opcje w szybkich ustawieniach. Zobacz [](#scripts) i [](#macros).
-- **Aktualizacje i instalacja** > **Pokazuj jako zainstalowane z Google Play** wymaga dostępu opisanego w [](#updates-play-installer).
+- **Aktualizacje i instalacja** > **Zgłaszaj Google Play jako źródło instalacji** wymaga dostępu opisanego w [](#updates-play-installer).
 
 Jeśli przy uruchomieniu SandFly ma dostęp do Shizuku lub roota, przyznaje sobie uprawnienia wymagane przez włączone funkcje.
 
 #### Przyznaj uprawnienia przez adb {#updates-adb}
 
-Jeśli nie korzystasz z Shizuku, przy ustawieniach wymagających dodatkowego uprawnienia znajdziesz w opisie polecenie adb. Czynność **Kopiuj polecenie** zapisze je w schowku. Podłącz urządzenie do komputera z adb, włącz debugowanie przez USB lub debugowanie bezprzewodowe, uruchom polecenie i wróć do ustawienia.
+Jeśli nie korzystasz z Shizuku, przy ustawieniach wymagających dodatkowego uprawnienia znajdziesz w opisie polecenie adb. Czynność **Skopiuj polecenie** zapisze je w schowku. Podłącz urządzenie do komputera z adb, włącz debugowanie przez USB lub debugowanie bezprzewodowe, uruchom polecenie i wróć do ustawienia.
 
 Polecenie zależy od funkcji.
 
-- Aby użyć opcji **Napraw zablokowaną eksplorację dotykową**, uruchom poniższe polecenie.
+- Aby użyć opcji **Przywracaj działanie czytania dotykiem**, uruchom poniższe polecenie.
 
   ```
   adb shell pm grant io.github.aaron_gh.sandfly android.permission.DUMP
@@ -130,12 +130,12 @@ Polecenie zależy od funkcji.
   adb shell pm grant io.github.aaron_gh.sandfly android.permission.WRITE_SECURE_SETTINGS
   ```
 
-Dla opcji **Resetuj dźwięk ułatwień dostępu po połączeniach** adb nie udostępnia uprawnienia. Bez Shizuku przy tym ustawieniu pojawia się polecenie, które jednorazowo resetuje wyjście audio ułatwień dostępu. Przydaje się, gdy po rozmowie mowa nadal jest odtwarzana przez słuchawkę telefonu. Polecenie wskazuje zainstalowany pakiet APK, więc skopiuj je ponownie po aktualizacji SandFly.
+Dla opcji **Przywracaj prawidłowe wyjście dźwięku dostępności po rozmowach** adb nie udostępnia uprawnienia. Bez Shizuku przy tym ustawieniu pojawia się polecenie, które jednorazowo resetuje wyjście audio ułatwień dostępu. Przydaje się, gdy po rozmowie mowa nadal jest odtwarzana przez słuchawkę telefonu. Polecenie wskazuje zainstalowany pakiet APK, więc skopiuj je ponownie po aktualizacji SandFly.
 
 ### Użyj dostępu root zamiast Shizuku {#updates-root}
 
-Na urządzeniu z rootem SandFly może wykonywać polecenia za pomocą dostępu root. Włącz **Shizuku i root** > **Używaj roota zamiast Shizuku**. Opcja jest domyślnie wyłączona.
+Na urządzeniu z rootem SandFly może wykonywać polecenia za pomocą dostępu root. Włącz **Shizuku i root** > **Używaj uprawnień root zamiast Shizuku**. Opcja jest domyślnie wyłączona.
 
-SandFly uruchamia wtedy polecenia przez `su` jako użytkownik `shell`, z którego korzystają też adb i Shizuku. Menedżer dostępu root, np. Magisk lub KernelSU, wyświetli prośbę o przyznanie dostępu SandFly. Po włączeniu opcji funkcje wymagające Shizuku używają dostępu root. Wyjątkiem jest opcja **Skróty przy wygaszonym ekranie**, ukryta w tym trybie. Jeśli `su` nie przyzna dostępu root, w przeglądzie aplikacji i na podzielonym ekranie usłyszysz „Brak dostępu do roota”.
+SandFly uruchamia wtedy polecenia przez `su` jako użytkownik `shell`, z którego korzystają też adb i Shizuku. Menedżer dostępu root, np. Magisk lub KernelSU, wyświetli prośbę o przyznanie dostępu SandFly. Po włączeniu opcji funkcje wymagające Shizuku używają dostępu root. Wyjątkiem jest opcja **Skróty klawiszy głośności przy wygaszonym ekranie**, ukryta w tym trybie. Jeśli `su` nie przyzna dostępu root, w przeglądzie aplikacji i na podzielonym ekranie usłyszysz „Brak dostępu do roota”.
 
 Uwaga: Jeśli `su` na Twoim urządzeniu nie może uruchomić polecenia jako użytkownik `shell`, SandFly wykonuje je jako użytkownik root. Dodawanie kopii z innych aplikacji do historii schowka i przełącznik hotspotu są wtedy niedostępne.

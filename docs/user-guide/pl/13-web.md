@@ -80,7 +80,7 @@ Każdy element sterowania czytaniem, gest i skrót związany z tymi elementami d
 
 Gdy kolejny element jest poza ekranem, SandFly przewija listę, w której się znajduje, najwyżej dziesięć razy.
 
-Opcja **Sterowanie czytaniem** > **Łącza i elementy sterujące tylko w treści internetowej** ukrywa pozycje **Linki** i **Kontrolki** poza treścią internetową. Domyślnie jest wyłączona. Powiązane gesty i skróty klawiaturowe nadal działają wszędzie.
+Opcja **Sterowanie czytaniem** > **Linki i kontrolki tylko w treściach internetowych** ukrywa pozycje **Linki** i **Kontrolki** poza treścią internetową. Domyślnie jest wyłączona. Powiązane gesty i skróty klawiaturowe nadal działają wszędzie.
 
 Jeśli aplikacja nie udostępnia elementów, rozpoznawanie ekranu w SandFly Pro może je dodać. Możesz je wtedy odczytać, znaleźć dotykiem i przechodzić między nimi tak samo jak między zwykłymi elementami aplikacji. Zobacz [](#pro).
 
@@ -126,6 +126,6 @@ Jeśli szukasz adresów stron, adresów e-mail i numerów telefonu zapisanych w 
 ### Ustawienia dotyczące treści internetowej {#web-settings}
 
 - **Nawigacja** > **Inteligentny tryb przeglądania** i **Zapamiętaj tryb przeglądania w każdej aplikacji**. Zobacz [](#web-browse-mode).
-- **Sterowanie czytaniem** > **Łącza i elementy sterujące tylko w treści internetowej**. Zobacz [](#web-elements-in-apps).
+- **Sterowanie czytaniem** > **Linki i kontrolki tylko w treściach internetowych**. Zobacz [](#web-elements-in-apps).
 - **Sterowanie czytaniem** > **Automatycznie zmieniaj opcję sterowania czytaniem**. Zobacz [](#web-actions).
 - Możesz automatycznie stosować profil ustawień, gdy fokus jest w treści internetowej. W ten sposób ustawisz np. inną szybkość mowy na stronach. Zobacz [](#profiles).

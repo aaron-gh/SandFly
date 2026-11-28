@@ -1,6 +1,6 @@
 ## Dźwięk, wibracje i wyjście audio {#sound}
 
-SandFly sygnalizuje dźwiękiem i wibracją takie zdarzenia jak przeniesienie fokusu, aktywowanie elementu, przewinięcie listy czy otwarcie okna. Na ekranie **Dźwięk i wibracje** możesz włączać lub wyłączać te sygnały, zmieniać ich głośność i siłę oraz ustawiać motywy dźwiękowe i dźwięki kontrolek. Ekran **Wyjście audio** pozwala wybrać urządzenie odtwarzające, ustawić głośność i zdecydować, co dzieje się z pozostałym dźwiękiem i rozmowami, gdy SandFly jest włączony.
+SandFly sygnalizuje dźwiękiem i wibracją takie zdarzenia jak przeniesienie fokusu, aktywowanie elementu, przewinięcie listy czy otwarcie okna. Na ekranie **Dźwięk i wibracje** możesz włączać lub wyłączać te sygnały, zmieniać ich głośność i siłę oraz ustawiać tematy dźwiękowe i dźwięki kontrolek. Ekran **Wyjście audio** pozwala wybrać urządzenie odtwarzające, ustawić głośność i zdecydować, co dzieje się z pozostałym dźwiękiem i rozmowami, gdy SandFly jest włączony.
 
 Syntezator, głosy, szybkość i głośność mowy oraz efekty głosu opisuje [](#speech). O przyciskach głośności i opcji **Informacja zwrotna o zmianie głośności** przeczytasz w [](#buttons).
 
@@ -10,8 +10,8 @@ W grupie **Dźwięki** na ekranie **Dźwięk i wibracje** znajdziesz poniższe u
 
 - **Sygnał dźwiękowy** włącza dźwięki SandFly. Jest domyślnie włączony. Po wyłączeniu nadal działają wibracje.
 - **Głośność sygnału dźwiękowego** pozwala ustawić od 5% do 100%, co pięć punktów procentowych. Domyślna wartość to 50%.
-- **Tematy dźwiękowe** otwierają listę zainstalowanych motywów, ustawienia dźwięków kontrolek i dźwięku przestrzennego. Zobacz [](#sound-themes).
-- **Dźwięk „Dostępne czynności”** określa, kiedy słychać dźwięk **Dostępne czynności**. Możesz wybrać **Wyłączony**, **Gdy element zostanie zaznaczony** (domyślnie) lub **Po odczytaniu elementu**. Zobacz [](#sound-actions-available).
+- **Tematy dźwiękowe** otwierają listę zainstalowanych tematów, ustawienia dźwięków kontrolek i dźwięku przestrzennego. Zobacz [](#sound-themes).
+- **Dźwięk „Dostępne czynności”** określa, kiedy słychać dźwięk **Dostępne czynności**. Możesz wybrać **Wyłączony**, **Po ustawieniu fokusu na elemencie** (domyślnie) lub **Po odczytaniu elementu**. Zobacz [](#sound-actions-available).
 
 Skrót klawiszowy **Włącz lub wyłącz sygnał dźwiękowy (ikony audio)** przełącza opcję **Sygnał dźwiękowy**. Zobacz [](#appendix-keyboard-shortcuts).
 
@@ -23,10 +23,10 @@ Poniższe ustawienia znajdziesz w grupie **Wibracje** na ekranie **Dźwięk i wi
 
 - **Sygnał wibracyjny** włącza wibracje SandFly. Domyślnie jest włączony. Po wyłączeniu nadal działają dźwięki.
 - **Siła wibracji** ustawia natężenie od 5% do 200%. Domyślnie jest to 100%. Opcja jest widoczna, jeśli urządzenie pozwala zmieniać siłę wibracji.
-- **Typ wibracji** wybiera sposób odtwarzania. Na liście są tylko typy obsługiwane przez urządzenie. Gdy dostępny jest jeden typ, opcja jest ukryta. Dopóki nic nie wybierzesz, SandFly używa pierwszego typu z listy.
+- **Rodzaj wibracji** wybiera sposób odtwarzania. Na liście są tylko typy obsługiwane przez urządzenie. Gdy dostępny jest jeden typ, opcja jest ukryta. Dopóki nic nie wybierzesz, SandFly używa pierwszego typu z listy.
   - **Efekty haptyczne** to złożone wzory, np. kliknięcia lub krótkie stuknięcia. Są dostępne od Androida 11, jeśli silnik wibracji je obsługuje.
   - **Impulsy** to wibracje o zmiennej sile. Wymagają silnika z regulacją siły.
-  - **Włączanie i wyłączanie** uruchamia i zatrzymuje silnik przy pełnej sile. Ten typ obsługuje każdy silnik wibracji.
+  - **Włączanie i wyłączanie wibracji** uruchamia i zatrzymuje silnik przy pełnej sile. Ten typ obsługuje każdy silnik wibracji.
 
 Jeśli przy ustawieniu **Efekty haptyczne** wibracje są za słabe, wybierz **Impulsy** i zwiększ wartość **Siła wibracji**.
 
@@ -36,31 +36,31 @@ Polecenie **Sygnał wibracyjny** z grupy **Mowa** włącza i wyłącza wibracje.
 
 Każdy dźwięk ma własną wibrację, którą poczujesz również po wyłączeniu **Sygnał dźwiękowy**. Dzięki temu możesz rozpoznawać zdarzenia przy wyciszonym dźwięku. Niektóre wibracje, np. dla komunikatów i klawiatury brajlowskiej, występują samodzielnie.
 
-Poniższe nazwy znajdziesz w ustawieniach **Poszczególne dźwięki i wibracje** oraz na liście dźwięków motywu.
+Poniższe nazwy znajdziesz w ustawieniach **Poszczególne dźwięki i wibracje** oraz na liście dźwięków tematu.
 
 | Dźwięk | Kiedy go słychać |
 | --- | --- |
 | **Zaznaczenie elementu** | Fokus przechodzi na element. |
-| **Zaznaczenie elementu z dostępną czynnością** | Fokus przechodzi na element, który możesz aktywować. |
+| **Fokus na elemencie z dostępną czynnością** | Fokus przechodzi na element, który możesz aktywować. |
 | **Dostępne czynności** | Fokus przechodzi na element z czynnościami aplikacji, np. z odpowiedzią na wiadomość. Zobacz [](#sound-actions-available). |
 | **Dotknięcie pustego obszaru** | Dotykasz miejsca bez elementu. |
 | **Kliknięcie** | Aktywujesz element. |
 | **Przytrzymanie** | Naciskasz i przytrzymujesz element. |
 | **Przewijanie** | Lista się przewija. |
 | **Wejście do listy** i **Wyjście z listy** | Fokus wchodzi na listę lub z niej wychodzi. |
-| **Działanie wykonane lub osiągnięto koniec** | Czynność się kończy lub fokus dociera do końca listy. |
+| **Zakończenie działania lub osiągnięcie końca** | Czynność się kończy lub fokus dociera do końca listy. |
 | **Zmiana okna** | Otwiera się nowe okno lub ekran. |
 | **Następny element sterowania czytaniem** i **Poprzedni element sterowania czytaniem** | Wybierasz inną pozycję sterowania czytaniem. |
-| **Gest krawędzi na dole**, **Środkowy gest krawędzi** i **Góra gestu krawędzi** | Kolejne etapy gestu krawędziowego. Niedostępne na zegarkach. |
-| **Punkt wstawiania został przeniesiony** | Nawigacja po znakach, słowach, wierszach lub akapitach przesuwa kursor w edytowanym polu. |
+| **Gest krawędziowy: dotknięcie krawędzi**, **Gest krawędziowy: pierwszy próg** i **Gest krawędziowy: drugi próg** | Kolejne etapy gestu krawędziowego. Niedostępne na zegarkach. |
+| **Przesunięcie kursora tekstowego** | Nawigacja po znakach, słowach, wierszach lub akapitach przesuwa kursor w edytowanym polu. |
 | **Przejście do następnego wiersza** i **Przejście do poprzedniego wiersza** | Przesunięcie palca przenosi fokus do wiersza niżej lub wyżej. |
-| **Zadanie agenta rozpoczęte**, **Zadanie agenta ukończone**, **Pytanie agenta**, **Agent zatrzymany przy wrażliwej czynności** i **Zadanie agenta nieudane** | Zdarzenia agenta w kompilacjach z SandFly Pro. Zobacz [](#pro). |
+| **Rozpoczęcie zadania agenta**, **Ukończenie zadania agenta**, **Pytanie agenta**, **Zatrzymanie agenta przed wrażliwym działaniem** i **Niepowodzenie zadania agenta** | Zdarzenia agenta w kompilacjach z SandFly Pro. Zobacz [](#pro). |
 | **Błąd pisowni** | W tekście jest źle napisane słowo. |
 | **Link** | W tekście jest link. |
 | **Sformatowany tekst** | Tekst ma formatowanie, np. pogrubienie. |
-| **Emoji** | Po emoji, gdy w opcji **Szczegółowość** > **Po nazwach emoji** wybrano **Odtwórz dźwięk**. Brak wbudowanej wibracji. Motyw dźwiękowy może ją dodać. Zobacz [](#verbosity-emoji). |
+| **Emoji** | Po emoji, gdy w opcji **Szczegółowość** > **Po nazwach emoji** wybrano **Odtwórz dźwięk**. Brak wbudowanej wibracji. Temat dźwiękowy może ją dodać. Zobacz [](#verbosity-emoji). |
 | **Ekran wyłączony** i **Ekran włączony** | Ekran się wyłącza lub włącza. |
-| **Ekran ukryty** i **Ekran pokazany** | Ekran zostaje ukryty lub ponownie pokazany. Zobacz [](#display). |
+| **Ekran ukryty** i **Ekran widoczny** | Ekran zostaje ukryty lub ponownie pokazany. Zobacz [](#display). |
 | **Wczytywanie** | Trwa wczytywanie opisu lub innego wyniku. |
 | **Ładowanie modelu AI na urządzeniu** | Trwa wczytywanie lokalnego modelu AI. |
 | **Tryb przeglądania włączony** i **Tryb przeglądania wyłączony** | Włączasz lub wyłączasz tryb przeglądania. Zobacz [](#web). |
@@ -76,19 +76,19 @@ Poniższe nazwy znajdziesz w ustawieniach **Poszczególne dźwięki i wibracje**
 SandFly nie odtwarza dźwięku przy rozpoczęciu ani zakończeniu gestu. W trakcie nawigacji możesz natomiast usłyszeć następujące sygnały.
 
 - **Następny element sterowania czytaniem** i **Poprzedni element sterowania czytaniem** słychać po zmianie pozycji gestem, w menu kołowym, skrótem klawiszowym albo klawiaturą brajlowską.
-- Dźwięk gestu krawędziowego słychać po dotknięciu miejsca, od którego zaczyna się gest (**Gest krawędzi na dole**, niski dźwięk), po osiągnięciu pierwszego etapu (**Środkowy gest krawędzi**) oraz po osiągnięciu drugiego (**Góra gestu krawędzi**). Cofnięcie palca odtwarza dźwięk etapu, do którego wracasz. Po uniesieniu palca nic nie słychać. Zobacz [](#gestures).
+- Dźwięk gestu krawędziowego słychać po dotknięciu miejsca, od którego zaczyna się gest (**Gest krawędziowy: dotknięcie krawędzi**, niski dźwięk), po osiągnięciu pierwszego etapu (**Gest krawędziowy: pierwszy próg**) oraz po osiągnięciu drugiego (**Gest krawędziowy: drugi próg**). Cofnięcie palca odtwarza dźwięk etapu, do którego wracasz. Po uniesieniu palca nic nie słychać. Zobacz [](#gestures).
 - **Przejście do następnego wiersza** słychać, gdy przesunięcie do następnego elementu przenosi fokus do niższego wiersza. **Przejście do poprzedniego wiersza** słychać, gdy przesunięcie wstecz przenosi go wyżej. Każda pozycja listy stanowi osobny wiersz. Elementy ułożone obok siebie, np. ikony ekranu głównego lub komórki tabeli, są w jednym wierszu. Sygnał gra razem z dźwiękiem fokusu, a jego wibracja zastępuje wibrację fokusu. Sygnał jest pomijany przy przejściu do innego okna.
 
 #### Dźwięk „Dostępne czynności” {#sound-actions-available}
 
 Dźwięk **Dostępne czynności** sygnalizuje, że poza zwykłą obsługą element ma dodatkowe czynności aplikacji. Przykładem są odpowiedź i przekazanie wiadomości w komunikatorze. Zwykłe czynności, takie jak aktywowanie, przytrzymanie, przewijanie i rozwijanie, nie wywołują tego sygnału. Nie słychać go więc na zwykłym przycisku ani na klawiszu klawiatury ekranowej. Dodatkowe czynności znajdziesz w pozycji **Czynności** w sterowaniu czytaniem i w menu SandFly.
 
-SandFly domyślnie nie wibruje przy tym dźwięku. Motyw dźwiękowy może dodać wibrację.
+SandFly domyślnie nie wibruje przy tym dźwięku. Temat dźwiękowy może dodać wibrację.
 
 Opcja **Dźwięk i wibracje** > **Dźwięk „Dostępne czynności”** określa, kiedy odtworzyć dźwięk.
 
 - **Wyłączony** pomija ten dźwięk.
-- **Gdy element zostanie zaznaczony** odtwarza sygnał po dźwięku fokusu. To ustawienie domyślne. Jeśli motyw nadaje mu wibrację, zastępuje ona wibrację fokusu.
+- **Po ustawieniu fokusu na elemencie** odtwarza sygnał po dźwięku fokusu. To ustawienie domyślne. Jeśli temat nadaje mu wibrację, zastępuje ona wibrację fokusu.
 - **Po odczytaniu elementu** odtwarza sygnał po przeczytaniu pełnego opisu. Jeśli przejdziesz dalej wcześniej, sygnału nie będzie.
 
 Aby SandFly odczytywał słowa „Dostępne czynności”, zobacz [](#verbosity-items).
@@ -109,48 +109,48 @@ Aby odtworzyć sygnał przed zmianą ustawienia, wykonaj te kroki.
 
 Zmiana ustawienia przełącznika nie odtwarza sygnału.
 
-Na liście **Wibracje** znajdziesz też przełączniki wibracji bez dźwięku, np. **Komunikat**, **Gest krawędzi: przesunięcie wstecz** oraz wibracje klawiatury brajlowskiej, takie jak **Klawiatura brajlowska: wpisywanie znaku** i **Klawiatura brajlowska: brak tekstu do usunięcia**. Wyłączenie wibracji wyłącza również wibrację podstawioną w jej miejsce przez motyw.
+Na liście **Wibracje** znajdziesz też przełączniki wibracji bez dźwięku, np. **Komunikat**, **Gest krawędziowy: cofnięcie do poprzedniego progu** oraz wibracje klawiatury brajlowskiej, takie jak **Klawiatura brajlowska: wpisywanie znaku** i **Klawiatura brajlowska: brak tekstu do usunięcia**. Wyłączenie wibracji wyłącza również wibrację podstawioną w jej miejsce przez temat.
 
-### Motywy dźwiękowe {#sound-themes}
+### Tematy dźwiękowe {#sound-themes}
 
-Motyw dźwiękowy to zestaw dźwięków i wibracji zastępujących wbudowane sygnały. Każdy motyw ma też własne ustawienia **Dźwięki i wibracje kontrolek**, **Dźwięk przestrzenny 3D** i **Nadal odczytuj typ kontrolki**. Wbudowane sygnały należą do motywu **SandFly**, którego nie można usunąć.
+Temat dźwiękowy to zestaw dźwięków i wibracji zastępujących wbudowane sygnały. Każdy temat ma też własne ustawienia **Dźwięki i wibracje kontrolek**, **Dźwięk przestrzenny 3D** i **Nadal odczytuj typ kontrolki**. Wbudowane sygnały należą do tematu **SandFly**, którego nie można usunąć.
 
 Ekran **Dźwięk i wibracje** > **Tematy dźwiękowe** składa się z poniższych części.
 
-- **Utwórz nowy temat** tworzy motyw. Zobacz [](#sound-themes-create).
-- **Zainstalowane tematy** pokazują wszystkie motywy. Używany motyw ma odpowiednie oznaczenie w podsumowaniu.
-- Grupa **Ustawienia tematu** wraz z nazwą aktywnego motywu zawiera ustawienia dźwięków kontrolek oraz listę dźwięków. Zobacz [](#sound-control-sounds) i [](#sound-themes-replace).
+- **Nowy temat dźwiękowy** tworzy temat. Zobacz [](#sound-themes-create).
+- **Zainstalowane tematy** pokazują wszystkie tematy. Używany temat ma odpowiednie oznaczenie w podsumowaniu.
+- Grupa **Ustawienia tematu** wraz z nazwą aktywnego tematu zawiera ustawienia dźwięków kontrolek oraz listę dźwięków. Zobacz [](#sound-control-sounds) i [](#sound-themes-replace).
 - **Zainstaluj temat** pozwala wybrać **Z pliku**, **Z linku** lub **Ze źródła**. Zobacz [](#sound-themes-install).
 
-#### Zainstaluj motyw dźwiękowy {#sound-themes-install}
+#### Zainstaluj temat dźwiękowy {#sound-themes-install}
 
-Motyw jest zapisany w pliku ZIP. Zainstalujesz go na jeden z poniższych sposobów.
+Temat jest zapisany w pliku ZIP. Zainstalujesz go na jeden z poniższych sposobów.
 
-- **Z pliku** otwiera systemowy wybór plików. Wskaż plik motywu.
-- **Z linku** pozwala wpisać lub wkleić link do pliku motywu albo repozytorium GitHub zawierającego motyw. Link musi zaczynać się od `https`. Wybierz **Zainstaluj**.
-- **Ze źródła** pokazuje listę repozytoriów z GitHuba, GitLaba, Codeberga, Gitei lub Bitbucket. Wybierz **Dodaj źródło** i podaj adres repozytorium, np. `github.com/owner/repository`. Wybierz źródło, aby zobaczyć pliki motywów, a następnie wybierz plik, aby go zainstalować. Na liście jest początkowo repozytorium motywów SandFly. **Usuń źródło** usuwa je z listy i zachowuje motywy z niego zainstalowane.
-- Otwórz plik motywu za pomocą SandFly z menedżera plików lub z pobranych plików przeglądarki. Możesz też udostępnić plik lub link do SandFly z innej aplikacji. Wybierz **Zainstaluj temat dźwiękowy**.
+- **Z pliku** otwiera systemowy wybór plików. Wskaż plik tematu.
+- **Z linku** pozwala wpisać lub wkleić link do pliku tematu albo repozytorium GitHub zawierającego temat. Link musi zaczynać się od `https`. Wybierz **Zainstaluj**.
+- **Ze źródła** pokazuje listę repozytoriów z GitHuba, GitLaba, Codeberga, Gitei lub Bitbucket. Wybierz **Dodaj źródło** i podaj adres repozytorium, np. `github.com/owner/repository`. Wybierz źródło, aby zobaczyć pliki tematów, a następnie wybierz plik, aby go zainstalować. Na liście jest początkowo repozytorium tematów SandFly. **Usuń źródło** usuwa je z listy i zachowuje tematy z niego zainstalowane.
+- Otwórz plik tematu za pomocą SandFly z menedżera plików lub z pobranych plików przeglądarki. Możesz też udostępnić plik lub link do SandFly z innej aplikacji. Wybierz **Zainstaluj temat dźwiękowy**.
 
-Przed instalacją zobaczysz autora, opis, liczbę dźwięków i wibracji, licencję oraz pominięte pliki. Wybierz **Zainstaluj i użyj**, aby od razu przełączyć motyw, lub **Zainstaluj**, aby pozostać przy bieżącym. Motyw o tej samej nazwie zastąpi poprzedni.
+Przed instalacją zobaczysz autora, opis, liczbę dźwięków i wibracji, licencję oraz pominięte pliki. Wybierz **Zainstaluj i użyj**, aby od razu przełączyć temat, lub **Zainstaluj**, aby pozostać przy bieżącym. Temat o tej samej nazwie zastąpi poprzedni.
 
-Uwaga: Zegarki nie mają menedżera wyboru plików. Instaluj na nich motywy z linku. Opcja **Ze źródła** jest dostępna tylko na telefonach.
+Uwaga: Zegarki nie mają menedżera wyboru plików. Instaluj na nich tematy z linku. Opcja **Ze źródła** jest dostępna tylko na telefonach.
 
-#### Wybierz motyw lub zmień jego ustawienia {#sound-themes-manage}
+#### Wybierz temat lub zmień jego ustawienia {#sound-themes-manage}
 
 1. Otwórz **Dźwięk i wibracje** > **Tematy dźwiękowe**.
-2. W sekcji **Zainstalowane tematy** wybierz motyw.
+2. W sekcji **Zainstalowane tematy** wybierz temat.
 3. Wybierz jedną z opcji.
-   - **Użyj tego tematu** włącza motyw wraz z jego ustawieniami dźwięków kontrolek.
+   - **Użyj tego tematu** włącza temat wraz z jego ustawieniami dźwięków kontrolek.
    - **Informacje o temacie** pokazują autora, opis, liczbę dźwięków i wibracji, licencję i stronę internetową.
-   - **Zapisz jako plik tematu** zapisuje motyw w pliku ZIP do udostępnienia.
-   - **Usuń** usuwa motyw. Ta opcja jest niedostępna dla motywu **SandFly**.
+   - **Zapisz jako plik tematu** zapisuje temat w pliku ZIP do udostępnienia.
+   - **Usuń** usuwa temat. Ta opcja jest niedostępna dla tematu **SandFly**.
 
 #### Zastąp wybrane dźwięki {#sound-themes-replace}
 
-Każdy dźwięk używanego motywu możesz zastąpić plikiem. Jeśli chcesz zmienić dźwięki bez instalowania motywu, użyj motywu **SandFly**.
+Każdy dźwięk używanego tematu możesz zastąpić plikiem. Jeśli chcesz zmienić dźwięki bez instalowania tematu, użyj tematu **SandFly**.
 
 1. Otwórz **Dźwięk i wibracje** > **Tematy dźwiękowe**.
-2. W ustawieniach używanego motywu wybierz **Dźwięki**.
+2. W ustawieniach używanego tematu wybierz **Dźwięki**.
 3. Wybierz dźwięk. Tytuł okna podaje nazwę dźwięku i nazwę jego pliku, np. „Kliknięcie (tick)”.
 4. Wybierz jedną z opcji.
    - **Wybierz plik dźwiękowy** otwiera systemowy wybór plików. Plik może mieć do 5 MB i być w formacie WAV, OGG, MP3 lub FLAC.
@@ -160,7 +160,7 @@ Każdy dźwięk używanego motywu możesz zastąpić plikiem. Jeśli chcesz zmie
    - **Brak dźwięku** wycisza to zdarzenie.
    - **Użyj dźwięku SandFly** przywraca wbudowany dźwięk.
 
-W podsumowaniu każdego dźwięku jest **Dźwięk SandFly**, **Dźwięk tematu** lub **Brak dźwięku**. Te same działania są w menu czynności dźwięku pod nazwami **Odsłuchaj**, **Ustaw brak dźwięku**, **Użyj dźwięku SandFly** i **Wybierz plik dźwiękowy**. Opcja **Przywróć wszystkie dźwięki SandFly** usuwa zmiany dźwięków motywu i przywraca wbudowane.
+W podsumowaniu każdego dźwięku jest **Dźwięk SandFly**, **Dźwięk tematu** lub **Brak dźwięku**. Te same działania są w menu czynności dźwięku pod nazwami **Odsłuchaj**, **Wyłącz dźwięk**, **Użyj dźwięku SandFly** i **Wybierz plik dźwiękowy**. Opcja **Przywróć wszystkie dźwięki SandFly** usuwa zmiany dźwięków tematu i przywraca wbudowane.
 
 Na tej liście znajdziesz również dźwięki spoza ekranu **Poszczególne dźwięki i wibracje**. **Zmiana głośności** jest odtwarzana przy każdym kroku regulacji, gdy w opcji **Informacja zwrotna o zmianie głośności** wybrano sygnał. Zobacz [](#buttons). Dźwięki klawiatury brajlowskiej słychać po włączeniu **Dźwięki pisania** w jej ustawieniach. Zobacz [](#braille).
 
@@ -176,44 +176,44 @@ Lista pokazuje najpierw podfoldery, a potem pliki dźwiękowe, w obu grupach wed
 
 Jeśli folder zostanie usunięty albo SandFly nie może go już odczytać, systemowy wybór folderu otworzy się ponownie.
 
-#### Utwórz motyw dźwiękowy {#sound-themes-create}
+#### Utwórz temat dźwiękowy {#sound-themes-create}
 
 1. Otwórz **Dźwięk i wibracje** > **Tematy dźwiękowe**.
-2. Wybierz **Utwórz nowy temat**.
-3. W polu **Nazwa** wpisz nazwę inną niż nazwy zainstalowanych motywów. Pola **Opis**, **Autor** i **Strona internetowa** są opcjonalne.
-4. Wybierz **OK**, aby otworzyć listę dźwięków motywu.
+2. Wybierz **Nowy temat dźwiękowy**.
+3. W polu **Nazwa** wpisz nazwę inną niż nazwy zainstalowanych tematów. Pola **Opis**, **Autor** i **Strona internetowa** są opcjonalne.
+4. Wybierz **OK**, aby otworzyć listę dźwięków tematu.
 5. Ustaw **Dźwięki i wibracje kontrolek**, **Dźwięk przestrzenny 3D** i **Nadal odczytuj typ kontrolki**. Wybierz plik dla każdego dźwięku, który chcesz zastąpić.
-6. Wybierz **Zapisz**, aby zapisać i włączyć motyw, albo **Zapisz jako plik tematu**, aby zapisać go jako ZIP bez włączania.
+6. Wybierz **Zapisz**, aby zapisać i włączyć temat, albo **Zapisz jako plik tematu**, aby zapisać go jako ZIP bez włączania.
 
-Aby wyjść bez zapisu, wróć i wybierz **Odrzuć**. Przycisk **Edytuj dalej** wraca do motywu. Jeśli zostawisz **Dźwięki i wibracje kontrolek** bez zmian, SandFly włączy je podczas zapisu motywu zawierającego dźwięki kontrolek.
+Aby wyjść bez zapisu, wróć i wybierz **Odrzuć**. Przycisk **Edytuj dalej** wraca do tematu. Jeśli zostawisz **Dźwięki i wibracje kontrolek** bez zmian, SandFly włączy je podczas zapisu tematu zawierającego dźwięki kontrolek.
 
-#### Pliki motywów {#sound-themes-files}
+#### Pliki tematów {#sound-themes-files}
 
-Plik motywu to archiwum ZIP z plikiem `theme.json` i plikami dźwiękowymi w tym samym katalogu. W archiwum może to być też jeden katalog niżej, jak w plikach ZIP eksportowanych przez GitHuba. Repozytorium z plikiem `theme.json` i dźwiękami w katalogu głównym jest więc gotowym motywem. Możesz też zainstalować ZIP z samymi dźwiękami. Motyw otrzyma wtedy nazwę pliku.
+Plik tematu to archiwum ZIP z plikiem `theme.json` i plikami dźwiękowymi w tym samym katalogu. W archiwum może to być też jeden katalog niżej, jak w plikach ZIP eksportowanych przez GitHuba. Repozytorium z plikiem `theme.json` i dźwiękami w katalogu głównym jest więc gotowym tematem. Możesz też zainstalować ZIP z samymi dźwiękami. Temat otrzyma wtedy nazwę pliku.
 
-- Nazwij każdy plik tak jak zastępowany dźwięk. Użyj rozszerzenia jego formatu, np. `focus.wav` lub `tick.ogg`. Nazwę pliku zobaczysz w oknie dźwięku na ekranie **Dźwięki**. Motyw może zawierać tylko dźwięki, które zmienia.
-- Obsługiwane są WAV, OGG, MP3, FLAC, M4A, AAC i Opus. Limit to 5 MB na plik i 50 MB na motyw. Pliki, których Android nie może odtworzyć, są pomijane przy instalacji.
-- W `theme.json` można określić nazwę, autora, opis, licencję i stronę motywu. Można także ustawić dźwięki kontrolek i wibracje oraz wskazać, które zdarzenia mają być bez dźwięku. Każda wibracja może mieć do trzech postaci dla różnych typów wibracji.
-- Pliki licencji i opisu, np. `LICENSE.txt` lub `README.md`, zostają w motywie. Pozostałe pliki są pomijane.
+- Nazwij każdy plik tak jak zastępowany dźwięk. Użyj rozszerzenia jego formatu, np. `focus.wav` lub `tick.ogg`. Nazwę pliku zobaczysz w oknie dźwięku na ekranie **Dźwięki**. Temat może zawierać tylko dźwięki, które zmienia.
+- Obsługiwane są WAV, OGG, MP3, FLAC, M4A, AAC i Opus. Limit to 5 MB na plik i 50 MB na temat. Pliki, których Android nie może odtworzyć, są pomijane przy instalacji.
+- W `theme.json` można określić nazwę, autora, opis, licencję i stronę tematu. Można także ustawić dźwięki kontrolek i wibracje oraz wskazać, które zdarzenia mają być bez dźwięku. Każda wibracja może mieć do trzech postaci dla różnych typów wibracji.
+- Pliki licencji i opisu, np. `LICENSE.txt` lub `README.md`, zostają w temacie. Pozostałe pliki są pomijane.
 
-Pełny format wraz z nazwami wszystkich dźwięków i wibracji opisuje [dokumentacja motywów dźwiękowych](https://github.com/aaron-gh/SandFly/blob/master/themes.md).
+Pełny format wraz z nazwami wszystkich dźwięków i wibracji opisuje [dokumentacja tematów dźwiękowych](https://github.com/aaron-gh/SandFly/blob/master/themes.md).
 
 ### Dźwięki i wibracje kontrolek {#sound-control-sounds}
 
 Gdy dźwięki kontrolek są włączone, po przeniesieniu fokusu na kontrolkę usłyszysz dźwięk i poczujesz wibrację jej typu. Zastępują one zwykłe sygnały fokusu. SandFly może wtedy pominąć czytanie typu, np. słowa „przycisk”. Dostępne są dźwięki dla przycisków, pól wyboru (także przełączników), przycisków opcji, pól edycji, list rozwijanych, suwaków, obrazów, zegarów, kart, pozycji menu i listy, a na stronach także linków i elementów drzewa.
 
 1. Otwórz **Dźwięk i wibracje** > **Tematy dźwiękowe**.
-2. W ustawieniach używanego motywu włącz **Dźwięki i wibracje kontrolek**. Opcja jest domyślnie wyłączona.
+2. W ustawieniach używanego tematu włącz **Dźwięki i wibracje kontrolek**. Opcja jest domyślnie wyłączona.
 
-W ustawieniach bieżącego motywu znajdziesz trzy związane opcje.
+W ustawieniach bieżącego tematu znajdziesz trzy związane opcje.
 
 - **Dźwięki i wibracje kontrolek** włączają odpowiednie sygnały.
 - **Dźwięk przestrzenny 3D** określa, kiedy odtwarzać dźwięk z położenia kontrolki. Zobacz [](#sound-3d-audio).
-- **Nadal odczytuj typ kontrolki** dodaje nazwę jej typu po dźwięku. Domyślnie jest włączona w motywie **SandFly**, a w innych wyłączona, chyba że motyw ustawia ją inaczej.
+- **Nadal odczytuj typ kontrolki** dodaje nazwę jej typu po dźwięku. Domyślnie jest włączona w temacie **SandFly**, a w innych wyłączona, chyba że temat ustawia ją inaczej.
 
-Jeśli element sam nie jest kontrolką, np. wiersz ustawień, SandFly odtwarza dźwięk pierwszej kontrolki w środku, takiej jak przełącznik. Gdy nie ma kontrolki, używa dźwięku typu elementu, np. pozycji listy. Klawisze klawiatury ekranowej zachowują zwykły dźwięk fokusu. Wibracja kontrolki działa również po wyłączeniu **Sygnał dźwiękowy**. Jeśli dźwięk danego typu wyłączysz w **Poszczególne dźwięki i wibracje** lub motyw ustawia go jako **Brak dźwięku**, SandFly odtworzy zwykły dźwięk fokusu i odczyta typ kontrolki.
+Jeśli element sam nie jest kontrolką, np. wiersz ustawień, SandFly odtwarza dźwięk pierwszej kontrolki w środku, takiej jak przełącznik. Gdy nie ma kontrolki, używa dźwięku typu elementu, np. pozycji listy. Klawisze klawiatury ekranowej zachowują zwykły dźwięk fokusu. Wibracja kontrolki działa również po wyłączeniu **Sygnał dźwiękowy**. Jeśli dźwięk danego typu wyłączysz w **Poszczególne dźwięki i wibracje** lub temat ustawia go jako **Brak dźwięku**, SandFly odtworzy zwykły dźwięk fokusu i odczyta typ kontrolki.
 
-Każdy motyw zapamiętuje własne ustawienia dźwięków kontrolek. Przy zmianie motywu zmieniają się też te ustawienia.
+Każdy temat zapamiętuje własne ustawienia dźwięków kontrolek. Przy zmianie tematu zmieniają się też te ustawienia.
 
 #### Dźwięk przestrzenny 3D {#sound-3d-audio}
 
@@ -222,6 +222,7 @@ Dźwięk może dochodzić z miejsca, w którym znajduje się kontrolka. Jeśli k
 W opcji **Dźwięk przestrzenny 3D** wybierz jedno z poniższych ustawień.
 
 - **Podczas używania słuchawek** to opcja domyślna. Dźwięk 3D działa, gdy SandFly odtwarza przez słuchawki przewodowe lub USB, zestaw lub słuchawki Bluetooth albo aparaty słuchowe. Od Androida 13 SandFly sprawdza, gdzie faktycznie odtwarza. Podłączony głośnik Bluetooth lub zestaw samochodowy, przez który nie gra dźwięk SandFly, się nie liczy. W starszym Androidzie liczą się dowolne podłączone słuchawki.
+- **Dźwięk 3D w słuchawkach, poza nimi na środku** zachowuje położenie dźwięków w słuchawkach, a poza nimi odtwarza dźwięki pośrodku.
 - **Zawsze** włącza dźwięk 3D również w głośniku telefonu.
 - **Nigdy, tylko lewy i prawy kanał** zachowuje położenie w lewo i w prawo.
 
@@ -230,10 +231,10 @@ W opcji **Dźwięk przestrzenny 3D** wybierz jedno z poniższych ustawień.
 Na ekranie **Wyjście audio** w ustawieniach SandFly znajdziesz poniższe opcje.
 
 - **Urządzenie odtwarzające** określa, gdzie słychać mowę i dźwięki. Zobacz [](#sound-output-device).
-- **Głośnik telefonu przy tych urządzeniach** wybiera urządzenia, których podłączenie przenosi dźwięk SandFly na głośnik telefonu. Zobacz [](#sound-speaker-devices).
+- **Odtwarzaj przez głośnik telefonu po połączeniu z tymi urządzeniami** wybiera urządzenia, których podłączenie przenosi dźwięk SandFly na głośnik telefonu. Zobacz [](#sound-speaker-devices).
 - **Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha** przełącza rozmowy między słuchawką telefonu a jego głośnikiem. Zobacz [](#sound-calls).
 - **Odtwarzaj mowę tylko na telefonie podczas przesyłania ekranu** pozostawia dźwięk SandFly na telefonie. Zobacz [](#sound-casting).
-- **Resetuj dźwięk ułatwień dostępu po połączeniach** przywraca wyjście dźwięku po rozmowie. Zobacz [](#sound-calls).
+- **Przywracaj prawidłowe wyjście dźwięku dostępności po rozmowach** przywraca wyjście dźwięku po rozmowie. Zobacz [](#sound-calls).
 - **Regulacja głośności mowy** ustala, której głośności używają mowa i dźwięki. Zobacz [](#sound-speech-volume).
 - **Wyciszanie tła** ścisza inne dźwięki na czas mowy SandFly. Zobacz [](#sound-ducking).
 - **Dźwięk o niskim opóźnieniu** przyspiesza rozpoczęcie odtwarzania. Zobacz [](#sound-low-latency).
@@ -254,7 +255,7 @@ Pozycja **Urządzenie odtwarzające** w sterowaniu czytaniem zmienia wyjście po
 
 ### Odtwarzaj przez głośnik telefonu przy wybranych urządzeniach {#sound-speaker-devices}
 
-Ekran **Wyjście audio** > **Głośnik telefonu przy tych urządzeniach** pokazuje aktualnie podłączone urządzenia Bluetooth, przewodowe i USB oraz urządzenia podłączane wcześniej, gdy SandFly był włączony. Gdy zaznaczone urządzenie się połączy, mowa i dźwięki SandFly przechodzą na głośnik telefonu niezależnie od opcji **Urządzenie odtwarzające**. Możesz np. zaznaczyć głośnik Bluetooth, aby odtwarzał muzykę, a mowę słyszeć z telefonu. Słuchawki douszne pozostaw odznaczone, aby słyszeć w nich mowę.
+Ekran **Wyjście audio** > **Odtwarzaj przez głośnik telefonu po połączeniu z tymi urządzeniami** pokazuje aktualnie podłączone urządzenia Bluetooth, przewodowe i USB oraz urządzenia podłączane wcześniej, gdy SandFly był włączony. Gdy zaznaczone urządzenie się połączy, mowa i dźwięki SandFly przechodzą na głośnik telefonu niezależnie od opcji **Urządzenie odtwarzające**. Możesz np. zaznaczyć głośnik Bluetooth, aby odtwarzał muzykę, a mowę słyszeć z telefonu. Słuchawki douszne pozostaw odznaczone, aby słyszeć w nich mowę.
 
 Urządzenia są zapisywane według nazw. Dwa o tej samej nazwie mają jedną pozycję na liście. Jeśli niczego jeszcze nie podłączono, zobaczysz „Nie podłączono jeszcze żadnych urządzeń Bluetooth ani przewodowych”.
 
@@ -265,7 +266,7 @@ W menu **Wyjście audio** > **Regulacja głośności mowy** wybierz, która gło
 - **Głośność dostępności** to wartość domyślna.
 - **Głośność multimediów** używa głośności multimediów w Androidzie.
 - **Głośność dzwonka** odtwarza mowę tak jak dzwonek. Pozostaje ona na telefonie przy przesyłaniu multimediów na inne urządzenie, może grać w głośniku przy podłączonych słuchawkach i milknie w trybie cichym.
-- **Głośność połączenia, słuchawka** odtwarza mowę tak jak rozmowę, przez słuchawkę przy uchu, jeśli nie podłączono zestawu słuchawkowego.
+- **Głośność rozmowy, słuchawka telefonu** odtwarza mowę tak jak rozmowę, przez słuchawkę przy uchu, jeśli nie podłączono zestawu słuchawkowego.
 
 Gdy **Urządzenie odtwarzające** kieruje dźwięk do głośnika telefonu, urządzenia przewodowego, USB lub aparatu słuchowego, mowa korzysta z głośności dostępności.
 
@@ -298,11 +299,11 @@ Na ekranie **Wyjście audio** są dwie opcje dotyczące rozmów.
 Do działania potrzebne jest uprawnienie, którego Android nie przyznaje czytnikom ekranu. Dopóki go brakuje, podsumowanie pokazuje polecenie, które je przyznaje. Możesz skorzystać z jednego z poniższych sposobów.
 
 - Uruchom Shizuku i włącz opcję. SandFly uzyska uprawnienie przez Shizuku. Zobacz [](#updates).
-- Uruchom polecenie przez adb. Aby je skopiować, otwórz menu czynności ustawienia i wybierz **Kopiuj polecenie**. Potem wróć na ekran **Wyjście audio**. Bez Shizuku przełącznik stanie się dostępny po przyznaniu uprawnienia.
+- Uruchom polecenie przez adb. Aby je skopiować, otwórz menu czynności ustawienia i wybierz **Skopiuj polecenie**. Potem wróć na ekran **Wyjście audio**. Bez Shizuku przełącznik stanie się dostępny po przyznaniu uprawnienia.
 
 SandFly sprawdza, czy trzymasz telefon przy uchu, za pomocą czujnika zbliżeniowego.
 
-**Resetuj dźwięk ułatwień dostępu po połączeniach** przywraca wyjście audio, gdy po rozmowie np. w komunikatorze Android pozostawi dźwięk ułatwień dostępu w słuchawce telefonu. Domyślnie opcja jest wyłączona. Wymaga Androida 13 lub nowszego oraz Shizuku albo dostępu root. Przy włączaniu może pojawić się prośba o zezwolenie na dostęp do Shizuku. Bez Shizuku podsumowanie pokazuje polecenie adb do jednorazowego resetu dźwięku. Otwórz menu czynności ustawienia i wybierz **Kopiuj polecenie**, żeby je skopiować.
+**Przywracaj prawidłowe wyjście dźwięku dostępności po rozmowach** przywraca wyjście audio, gdy po rozmowie np. w komunikatorze Android pozostawi dźwięk ułatwień dostępu w słuchawce telefonu. Domyślnie opcja jest wyłączona. Wymaga Androida 13 lub nowszego oraz Shizuku albo dostępu root. Przy włączaniu może pojawić się prośba o zezwolenie na dostęp do Shizuku. Bez Shizuku podsumowanie pokazuje polecenie adb do jednorazowego resetu dźwięku. Otwórz menu czynności ustawienia i wybierz **Skopiuj polecenie**, żeby je skopiować.
 
 ### Sterowanie dźwiękiem i głośnością podczas czytania {#sound-reading-controls}
 

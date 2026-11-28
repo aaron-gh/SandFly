@@ -27,7 +27,7 @@ SandFly sprawdza to, co powiesz, w następującej kolejności.
 2. Szuka nazwy polecenia takiej jak na ekranie **Polecenia**, np. **Czytaj od góry**, **Opisz obraz** albo **Następny nagłówek**. Możesz też powiedzieć nazwę swojego makra, menu lub polecenia skryptu. Nazwa aplikacji, np. „Gmail”, otwiera aplikację, chyba że polecenie ma taką nazwę. Zobacz [](#commands-list).
 3. Próbuje dopasować wzorzec wypowiedzi, np. „otwórz Chrome”, „wybierz Ustawienia”, „zadzwoń do Alex” lub „wpisz cześć”. Zobacz [](#voice-commands-sandfly).
 4. Sprawdza starsze polecenia głosowe, takie jak „Znajdź zapisz”, „Nawigacja typu słowa”, „Mów szybciej” lub „Kopiuj”. Zobacz [](#appendix-voice-commands).
-5. Jeśli włączono **Rozumiej polecenia głosowe za pomocą AI**, przekazuje nierozpoznaną wypowiedź do usługi AI. Zobacz [](#voice-commands-ai).
+5. Jeśli włączono **Używaj AI do interpretacji poleceń głosowych**, przekazuje nierozpoznaną wypowiedź do usługi AI. Zobacz [](#voice-commands-ai).
 
 Wielkość liter i znaki przestankowe dodane przy rozpoznawaniu mowy nie wpływają na dopasowanie. SandFly pomija też m.in. „proszę”, „czy możesz”, „możesz”, „chcę” i „teraz” na początku wypowiedzi oraz „proszę”, „dla mnie” i „teraz” na końcu.
 
@@ -114,7 +114,7 @@ Podczas nagrywania mowa SandFly jest wyciszona, aby nie trafiła do nagrania. Gd
 
 ### Rozpoznawanie poleceń za pomocą AI {#voice-commands-ai}
 
-Opcja **Polecenia głosowe** > **Rozumiej polecenia głosowe za pomocą AI** przekazuje do bieżącej usługi AI wypowiedzi, których SandFly nie rozpoznał, w tym sekwencje rozpoznane tylko częściowo. Usługa zamienia je na polecenia. SandFly wysyła treść wypowiedzi, nazwy poleceń i teksty elementów widocznych na ekranie. Domyślnie opcja jest wyłączona.
+Opcja **Polecenia głosowe** > **Używaj AI do interpretacji poleceń głosowych** przekazuje do bieżącej usługi AI wypowiedzi, których SandFly nie rozpoznał, w tym sekwencje rozpoznane tylko częściowo. Usługa zamienia je na polecenia. SandFly wysyła treść wypowiedzi, nazwy poleceń i teksty elementów widocznych na ekranie. Domyślnie opcja jest wyłączona.
 
 Najpierw skonfiguruj usługę na ekranie **Usługi AI**. Może to być AI na urządzeniu, SandFly Pro lub inna usługa z kluczem. Zobacz [](#descriptions) i [](#pro). Odpowiedź AI może uruchomić polecenia, aktywować elementy, otworzyć aplikacje, wpisać tekst, poczekać, wykonać połączenie, wysłać wiadomość, opisać ekran lub obraz, skopiować tekst albo odczytać krótką odpowiedź.
 
@@ -127,7 +127,7 @@ Własne polecenie głosowe to zwrot, który uruchamia wybrane polecenie. SandFly
 3. Wpisz zwrot o długości do 200 znaków.
 4. Wybierz grupę, a w niej polecenie.
 
-Wybierz zapisane polecenie, aby użyć opcji **Zmień frazę**, **Zmień polecenie** lub **Usuń**. Każde własne polecenie musi mieć inny zwrot.
+Wybierz zapisane polecenie, aby użyć opcji **Zmień zwrot**, **Zmień polecenie** lub **Usuń**. Każde własne polecenie musi mieć inny zwrot.
 
 Opcja **Eksportuj do pliku** zapisuje własne polecenia, a **Importuj z pliku** dodaje je z pliku. Zobacz [](#api-item-files).
 

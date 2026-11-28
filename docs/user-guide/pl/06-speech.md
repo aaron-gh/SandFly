@@ -37,9 +37,9 @@ W [](#sound-speech-volume) przeczytasz, jak wybrać głośność ułatwień dost
 
 ### Powtórz ostatnią wypowiedź wolniej {#speech-repeat-slower}
 
-Polecenie **Powtórz wolniej ostatnią wypowiedź** z grupy **Czytanie** jeszcze raz odczytuje ostatnią wypowiedź tym samym głosem, w wolniejszym tempie. Następny element znów usłyszysz w zwykłym tempie.
+Polecenie **Powtórz ostatnią wypowiedź wolniej** z grupy **Czytanie** jeszcze raz odczytuje ostatnią wypowiedź tym samym głosem, w wolniejszym tempie. Następny element znów usłyszysz w zwykłym tempie.
 
-Opcja **Mowa** > **Powtarzaj wolniej o** ustawia wartość od 5% do 50%. Do wyboru są 5%, 10%, 15%, 20%, 25%, 30%, 40% i 50%. Domyślnie ustawiono 15%.
+Opcja **Mowa** > **Spowolnienie powtarzanej wypowiedzi** ustawia wartość od 5% do 50%. Do wyboru są 5%, 10%, 15%, 20%, 25%, 30%, 40% i 50%. Domyślnie ustawiono 15%.
 
 Przypisz polecenie do gestu lub skrótu klawiszowego albo dodaj je do menu. Zobacz [](#commands).
 
@@ -47,7 +47,7 @@ Przypisz polecenie do gestu lub skrótu klawiszowego albo dodaj je do menu. Zoba
 
 Profil głosowy pozwala jednocześnie zmienić syntezator, język, głos, głośność, szybkość, wysokość, efekty głosu oraz ustawienie **Przekazuj długi tekst do syntezatora zdanie po zdaniu**. Możesz np. mieć profil z osobnym syntezatorem do długiego czytania i zachować szybki **Domyślny profil głosowy SandFly** do nawigacji.
 
-Na liście zawsze jest **Domyślny profil głosowy SandFly**, który korzysta z ustawień na ekranie **Mowa**. Gdy używasz innego profilu, cała mowa korzysta z jego syntezatora i głosu. SandFly zwykle nie zmienia wtedy języka ani dialektu. Wyjątkiem są języki, które mają osobny profil w opcji **Głosy według języka**. Zobacz [](#speech-voices-by-language).
+Na liście zawsze jest **Domyślny profil głosowy SandFly**, który korzysta z ustawień na ekranie **Mowa**. Gdy używasz innego profilu, cała mowa korzysta z jego syntezatora i głosu. SandFly zwykle nie zmienia wtedy języka ani dialektu. Wyjątkiem są języki, które mają osobny profil w opcji **Głosy dla poszczególnych języków**. Zobacz [](#speech-voices-by-language).
 
 Profile głosowe służą też do czytania emoji i tekstów w różnych językach. Zobacz [](#speech-emoji) i [](#speech-voices-by-language).
 
@@ -70,7 +70,7 @@ Aby zmienić ustawienia, otwórz **Mowa** > **Profile głosowe** i wybierz profi
 - **Głośność mowy**, **Szybkość mowy** i **Wysokość głosu** działają tak jak na ekranie **Mowa**, dla tego profilu.
 - **Efekty głosu** zmieniają efekty tego profilu. Zobacz [](#voice-effects). Są niedostępne na zegarkach.
 - **Przekazuj długi tekst do syntezatora zdanie po zdaniu** działa tak jak na ekranie **Mowa**, dla tego profilu. Zobacz [](#speech-pronunciation).
-- **Utrzymuj uruchomiony syntezator mowy** pozostawia syntezator profilu uruchomiony, gdy używasz innego syntezatora przy zapalonym ekranie. Dzięki temu przy przełączeniu nie trzeba czekać na start. Każdy pozostawiony syntezator działa we własnym procesie. Domyślnie opcja jest wyłączona.
+- **Pozostaw syntezator uruchomiony** pozostawia syntezator profilu uruchomiony, gdy używasz innego syntezatora przy zapalonym ekranie. Dzięki temu przy przełączeniu nie trzeba czekać na start. Każdy pozostawiony syntezator działa we własnym procesie. Domyślnie opcja jest wyłączona.
 - **Przenieś w górę** i **Przenieś w dół** w tym miejscu są dostępne tylko na zegarkach. Na telefonie przenosisz profile na liście.
 - **Usuń profil głosowy** usuwa profil po potwierdzeniu.
 
@@ -90,14 +90,14 @@ Na ekranie **Profile głosowe** możesz wykonać poniższe czynności.
 - Aby przenieść profil, przytrzymaj go i przeciągnij w górę lub w dół albo użyj **Przenieś w górę** lub **Przenieś w dół**. SandFly ogłosi, nad którym profilem lub pod którym profilem znalazła się przeniesiona pozycja.
 - Aby zmienić nazwę lub usunąć profil, użyj **Zmień nazwę** lub **Usuń**. Możesz też przytrzymać profil, aby otworzyć menu z tymi opcjami.
 
-**Utrzymuj uruchomiony syntezator mowy poprzedniego profilu głosowego** na ekranie **Profile głosowe** pozostawia syntezator poprzedniego profilu uruchomiony, gdy ekran jest włączony. Dzięki temu przy powrocie do tego profilu nie trzeba czekać na uruchomienie syntezatora. Domyślnie opcja jest wyłączona.
+**Pozostaw uruchomiony syntezator poprzedniego profilu głosowego** na ekranie **Profile głosowe** pozostawia syntezator poprzedniego profilu uruchomiony, gdy ekran jest włączony. Dzięki temu przy powrocie do tego profilu nie trzeba czekać na uruchomienie syntezatora. Domyślnie opcja jest wyłączona.
 
 ### Głos i szybkość odczytu emoji {#speech-emoji}
 
 W grupie **Głos** są dwie opcje dotyczące odczytywania emoji.
 
-- W polu **Głos emoji** wybierz **Taki sam jak mowa** (domyślnie) lub profil głosowy.
-- **Szybkość mowy emoji** ustawia od 50% do 300% zwykłej szybkości mowy. Domyślnie jest to 100%.
+- W polu **Głos do odczytywania emoji** wybierz **Taki sam jak do pozostałych wypowiedzi** (domyślnie) lub profil głosowy.
+- **Tempo odczytywania emoji** ustawia od 50% do 300% zwykłej szybkości mowy. Domyślnie jest to 100%.
 
 Obie opcje działają, gdy emoji czyta syntezator oraz gdy SandFly zastępuje je nazwami. Sposób odczytu wybierzesz w menu **Szczegółowość** > **Emoji**. Zobacz [](#verbosity-emoji).
 
@@ -126,20 +126,20 @@ Jeśli aplikacja oznaczy tekst jako napisany w innym języku, SandFly przełącz
 
 - **Automatycznie przełączaj język** zmienia głos dla tekstu w innym języku. Domyślnie opcja jest włączona.
 - **Automatycznie przełączaj dialekt** zmienia odmianę regionalną języka. Na przykład tekst oznaczony jako brytyjski angielski może zostać odczytany brytyjskim głosem, mimo że bieżący głos jest amerykański. Domyślnie opcja jest włączona.
-- **Głosy według języka** pozwalają przypisać głos do każdego języka, w którym czytasz. Zobacz [](#speech-voices-by-language).
-- **Rozpoznawaj języki na podstawie słów** rozróżnia języki zapisywane tym samym alfabetem, gdy aplikacja nie oznaczyła języka. Domyślnie opcja jest wyłączona.
+- **Głosy dla poszczególnych języków** pozwalają przypisać głos do każdego języka, w którym czytasz. Zobacz [](#speech-voices-by-language).
+- **Rozpoznawaj język na podstawie słów** rozróżnia języki zapisywane tym samym alfabetem, gdy aplikacja nie oznaczyła języka. Domyślnie opcja jest wyłączona.
 
 Gdy odpowiednie przełączanie jest wyłączone, SandFly odczytuje tekst bieżącym głosem bez pauz wokół tego fragmentu.
 
-Przy włączonej opcji **Automatycznie przełączaj język** SandFly rozpoznaje języki nieoznaczone przez aplikację po piśmie, np. litery arabskie lub greckie w tekście angielskim, oraz po literach występujących tylko w jednym z Twoich języków. **Rozpoznawaj języki na podstawie słów** korzysta z rozpoznawania w Usługach Google Play na urządzeniu. Działa na fragmentach zawierających co najmniej 12 liter.
+Przy włączonej opcji **Automatycznie przełączaj język** SandFly rozpoznaje języki nieoznaczone przez aplikację po piśmie, np. litery arabskie lub greckie w tekście angielskim, oraz po literach występujących tylko w jednym z Twoich języków. **Rozpoznawaj język na podstawie słów** korzysta z rozpoznawania w Usługach Google Play na urządzeniu. Działa na fragmentach zawierających co najmniej 12 liter.
 
-Polecenia **Automatycznie przełączaj język** i **Rozpoznawaj języki na podstawie słów** z grupy **Mowa** przełączają te ustawienia.
+Polecenia **Automatycznie przełączaj język** i **Rozpoznawaj język na podstawie słów** z grupy **Mowa** przełączają te ustawienia.
 
 #### Głosy według języka {#speech-voices-by-language}
 
-Ekran **Mowa** > **Głosy według języka** pokazuje dodane języki. Do każdego możesz wybrać **Domyślny profil głosowy SandFly**, który użyje głosu bieżącego syntezatora dla tego języka, lub osobny profil. Wybierz własny profil, jeśli głos domyślnego syntezatora Ci nie odpowiada.
+Ekran **Mowa** > **Głosy dla poszczególnych języków** pokazuje dodane języki. Do każdego możesz wybrać **Domyślny profil głosowy SandFly**, który użyje głosu bieżącego syntezatora dla tego języka, lub osobny profil. Wybierz własny profil, jeśli głos domyślnego syntezatora Ci nie odpowiada.
 
-1. Otwórz **Mowa** > **Głosy według języka**.
+1. Otwórz **Mowa** > **Głosy dla poszczególnych języków**.
 2. Wybierz **Dodaj język**. SandFly pokaże języki wszystkich zainstalowanych syntezatorów.
 3. Wybierz język. SandFly doda go z ustawieniem **Domyślny profil głosowy SandFly**.
 4. Jeśli chcesz użyć innego profilu, wybierz język na liście, a potem profil.
@@ -157,17 +157,17 @@ Pozycja **Język wypowiedzi** w sterowaniu czytaniem i polecenie **Zmień język
 W grupie **Wymowa** znajdziesz poniższe ustawienia.
 
 - **Zmieniaj ton** odczytuje usuwane litery wyższym głosem. Domyślnie opcja jest włączona.
-- **Odczytuj litery fonetycznie podczas przeglądania** dotyczy nawigacji po znakach i literowania.
-- **Odczytuj litery fonetycznie podczas pisania** dotyczy klawiszy oraz liter wpisywanych lub usuwanych.
+- **Odczytuj litery z przykładami podczas przeglądania tekstu** dotyczy nawigacji po znakach i literowania.
+- **Odczytuj litery z przykładami podczas pisania** dotyczy klawiszy oraz liter wpisywanych lub usuwanych.
 - **Przekazuj długi tekst do syntezatora zdanie po zdaniu** pomaga szybciej przerwać czytanie przesunięciem palca w syntezatorach, które wolno przerywają mowę, np. Gryphon. Wiele syntezatorów robi dłuższe pauzy między osobno przekazanymi zdaniami. Jeśli Twój szybko przerywa mowę, pozostaw domyślnie wyłączoną opcję.
-- **Odczytuj podziały wierszy jako spacje** pomija pauzy na końcach wierszy. Domyślnie opcja jest wyłączona.
+- **Odczytuj podziały wierszy jak spacje** pomija pauzy na końcach wierszy. Domyślnie opcja jest wyłączona.
 - **Słownik mowy** i **Słownik symboli** są opisane w [](#speech-dictionary).
 
 Obie opcje fonetyczne mają po cztery wartości.
 
 - **Wyłączone** podaje tylko literę.
-- **Po literze, z pauzą, np. „h, Henryk”** to ustawienie domyślne. Przy przechodzeniu znak po znaku SandFly podaje słowo po krótkiej pauzie. Jeśli przejdziesz dalej wcześniej, słowo zostanie pominięte.
-- **Po literze, bez pauzy, np. „h Henryk”** odczytuje słowo zaraz po literze.
+- **Po literze, z opóźnieniem, np. „h, Henryk”** to ustawienie domyślne. Przy przechodzeniu znak po znaku SandFly podaje słowo po krótkiej pauzie. Jeśli przejdziesz dalej wcześniej, słowo zostanie pominięte.
+- **Po literze, bez opóźnienia, np. „h Henryk”** odczytuje słowo zaraz po literze.
 - **Zamiast litery, np. „Henryk”** czyta samo słowo.
 
 ### Słownik mowy {#speech-dictionary}
@@ -176,7 +176,7 @@ Opcja **Mowa** > **Słownik mowy** zmienia wymowę we wszystkich wypowiedziach, 
 
 1. Otwórz **Mowa** > **Słownik mowy**.
 2. Wybierz **Dodaj zamiennik**.
-3. W polu **Tekst** wpisz szukany tekst, a w **Wymawiaj jako** podaj jego zamiennik. Jeśli chcesz pominąć tekst, zostaw **Wymawiaj jako** puste.
+3. W polu **Tekst** wpisz szukany tekst, a w **Zastąp tekstem** podaj jego zamiennik. Jeśli chcesz pominąć tekst, zostaw **Zastąp tekstem** puste.
 4. Wybierz **Tylko całe słowa**, aby dopasowywać tylko całe słowa. Ta opcja jest domyślnie włączona. Możesz też wybrać **Wyrażenie regularne**, aby szukać według wzorca.
 5. Wybierz **OK**.
 
@@ -206,7 +206,7 @@ Miejsce wznowienia zależy od sposobu odtwarzania.
 
 Przy wznowieniu SandFly pomija ponowne odtworzenie dźwięku i wibracji elementu.
 
-Polecenie **Włącz lub wyłącz komunikaty głosowe** przełącza całą mowę.
+Polecenie **Włącz lub wyłącz mowę** przełącza całą mowę.
 
 Na klawiaturze fizycznej możesz też wstrzymać mowę, naciskając sam Ctrl. Zobacz [](#keyboards).
 
@@ -214,7 +214,7 @@ Na klawiaturze fizycznej możesz też wstrzymać mowę, naciskając sam Ctrl. Zo
 
 W grupie **Zatrzymywanie mowy** wybierasz, co ma ją przerywać.
 
-- **Zatrzymuj mowę po dotknięciu ekranu** jest domyślnie włączone.
+- **Przerywaj mowę po dotknięciu ekranu** jest domyślnie włączone.
 - **Przerywaj mowę podczas pisania** ustala, kiedy wpisanie znaku na klawiaturze fizycznej zatrzymuje mowę. Do wyboru są **Zawsze** (domyślnie), **W polach edycji** i **Gdy echo klawiatury odczytuje wpisany znak lub słowo**. Ostatnia opcja przerywa mowę, jeśli echo odczytuje znak lub słowo, które ten znak kończy. Opcja jest niedostępna na zegarkach.
 - **Przerywaj mowę po naciśnięciu klawisza Enter** dotyczy klawiatury fizycznej. Domyślnie opcja jest włączona. Jest niedostępna na zegarkach.
 - **Zakryj czujnik zbliżeniowy, by zatrzymać wypowiedź** wstrzymuje mowę po zasłonięciu czujnika. Domyślnie opcja jest wyłączona. Jest ukryta na telewizorach i urządzeniach bez czujnika zbliżeniowego.
@@ -251,10 +251,10 @@ Dokumentację dla programistów znajdziesz w [](#api-speech).
 
 ### Polecenia mowy i sterowanie czytaniem {#speech-commands}
 
-W grupie **Mowa** dostępne są m.in. **Wstrzymaj lub wznów komunikaty głosowe**, **Włącz lub wyłącz komunikaty głosowe**, **Zwiększ szybkość mowy**, **Zmniejsz szybkość mowy**, **Zwiększ ton głosu**, **Zmniejsz ton głosu**, **Zmień język wypowiedzi**, **Automatycznie przełączaj język**, **Rozpoznawaj języki na podstawie słów**, **Wybierz profil głosowy**, **Następny profil głosowy**, **Poprzedni profil głosowy** i **Używaj efektów głosu**. Klawiatura daje też skróty **Zwiększ głośność mowy**, **Zmniejsz głośność mowy**, **Zresetuj szybkość mowy i ton** i **Otwórz ustawienia zamiany tekstu na mowę**.
+W grupie **Mowa** dostępne są m.in. **Wstrzymaj lub wznów komunikaty głosowe**, **Włącz lub wyłącz mowę**, **Zwiększ szybkość mowy**, **Zmniejsz szybkość mowy**, **Zwiększ ton głosu**, **Zmniejsz ton głosu**, **Zmień język wypowiedzi**, **Automatycznie przełączaj język**, **Rozpoznawaj język na podstawie słów**, **Wybierz profil głosowy**, **Następny profil głosowy**, **Poprzedni profil głosowy** i **Używaj efektów głosu**. Klawiatura daje też skróty **Zwiększ głośność mowy**, **Zmniejsz głośność mowy**, **Zresetuj szybkość mowy i ton** i **Otwórz ustawienia zamiany tekstu na mowę**.
 
-W grupie **Czytanie** są polecenia **Powtórz ostatnią wypowiedź**, **Powtórz wolniej ostatnią wypowiedź**, **Przeliteruj ostatnią wypowiedź** i **Historia mowy**.
+W grupie **Czytanie** są polecenia **Powtórz ostatnią wypowiedź**, **Powtórz ostatnią wypowiedź wolniej**, **Przeliteruj ostatnią wypowiedź** i **Historia mowy**.
 
-Pozycje związane z mową to **Szybkość mowy**, **Język wypowiedzi**, **Syntezator mowy**, **Profil głosowy**, **Efekty głosu** i pasma korektora. Domyślnie na liście jest tylko **Szybkość mowy**. Opcje **Głośność mowy** i **Urządzenie odtwarzające** opisuje [](#sound-reading-controls). W grupie **Mowa** na ekranie **Sterowanie czytaniem** znajdziesz także **Odczytuj znaki interpunkcyjne i symbole**, **Emoji** i **Informuj o formatowaniu tekstu**, opisane w [](#verbosity-text), **Automatyczne tłumaczenie**, opisane w [](#translation), oraz **Odczytuj tylko fokus przeniesiony przez użytkownika**, opisane w [](#verbosity-own-speech).
+Pozycje związane z mową to **Szybkość mowy**, **Język wypowiedzi**, **Syntezator mowy**, **Profil głosowy**, **Efekty głosu** i pasma korektora. Domyślnie na liście jest tylko **Szybkość mowy**. Opcje **Głośność mowy** i **Urządzenie odtwarzające** opisuje [](#sound-reading-controls). W grupie **Mowa** na ekranie **Sterowanie czytaniem** znajdziesz także **Odczytuj znaki interpunkcyjne i symbole**, **Emoji** i **Informuj o formatowaniu tekstu**, opisane w [](#verbosity-text), **Automatyczne tłumaczenie**, opisane w [](#translation), oraz **Odczytuj elementy tylko po przeniesieniu fokusu przez użytkownika**, opisane w [](#verbosity-own-speech).
 
 O przypisywaniu poleceń do gestów i klawiszy oraz dodawaniu pozycji do sterowania czytaniem przeczytasz w [](#commands).

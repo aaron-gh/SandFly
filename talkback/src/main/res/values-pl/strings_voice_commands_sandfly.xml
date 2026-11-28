@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_voice_commands">Polecenia głosowe</string>
-    <string name="title_pref_voice_commands_ai">Rozumiej polecenia głosowe za pomocą AI</string>
+    <string name="title_pref_voice_commands_ai">Używaj AI do interpretacji poleceń głosowych</string>
     <string name="voice_commands_custom">Własne polecenia głosowe</string>
     <string name="voice_command_add">Dodaj polecenie głosowe</string>
-    <string name="voice_command_phrase">Fraza</string>
-    <string name="voice_command_change_phrase">Zmień frazę</string>
+    <string name="voice_command_phrase">Zwrot</string>
+    <string name="voice_command_change_phrase">Zmień zwrot</string>
     <string name="voice_command_change_command">Zmień polecenie</string>
     <string name="voice_command_delete_confirm">Usunąć <xliff:g id="phrase" example="Good morning">%1$s</xliff:g>?</string>
-    <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> jest już poleceniem głosowym</string>
-    <string name="voice_commands_not_understood">Nie zrozumiano: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
-    <string name="voice_commands_not_available">Niedostępne: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
+    <string name="voice_command_phrase_exists">Zwrot „<xliff:g id="phrase" example="Good morning">%1$s</xliff:g>” jest już przypisany do polecenia głosowego</string>
+    <string name="voice_commands_not_understood">Nie rozpoznano polecenia: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
+    <string name="voice_commands_not_available">Nie można teraz wykonać polecenia: <xliff:g id="name" example="Morning macro">%1$s</xliff:g></string>
     <string name="voice_commands_not_found">Nie znaleziono: <xliff:g id="label" example="Settings">%1$s</xliff:g></string>
     <string name="voice_commands_no_app">Brak aplikacji o nazwie <xliff:g id="name" example="Signal">%1$s</xliff:g></string>
-    <string name="voice_commands_no_app_for_action">Brak aplikacji dla tej czynności</string>
+    <string name="voice_commands_no_app_for_action">Brak aplikacji do wykonania tej czynności</string>
     <string name="voice_commands_calling">Dzwonię do: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
-    <string name="voice_commands_call_permission">Zezwól na połączenia telefoniczne, a następnie powiedz polecenie ponownie.</string>
-    <string name="voice_commands_contacts_permission">Zezwól na dostęp do kontaktów, a następnie powiedz polecenie ponownie.</string>
+    <string name="voice_commands_call_permission">Zezwól na wykonywanie połączeń telefonicznych, a następnie powtórz polecenie.</string>
+    <string name="voice_commands_contacts_permission">Zezwól na dostęp do kontaktów, a następnie powtórz polecenie.</string>
     <string name="voice_commands_no_contact">Brak kontaktu o nazwie <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
-    <string name="voice_commands_contacts_several">Więcej niż jeden kontakt o nazwie <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
-    <string name="voice_commands_message_text">Wiadomość do: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
-    <string name="voice_commands_message_confirm">Wysłać do <xliff:g id="name" example="Sam">%1$s</xliff:g>: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>?</string>
-    <string name="voice_commands_message_confirm_result">Wysłać do <xliff:g id="name" example="Sam">%1$s</xliff:g>?</string>
+    <string name="voice_commands_contacts_several">Do „<xliff:g id="name" example="Sam">%1$s</xliff:g>” pasuje kilka kontaktów: <xliff:g id="names" example="Sam Jones, Sam Smith">%2$s</xliff:g></string>
+    <string name="voice_commands_message_text">Podyktuj wiadomość. Odbiorca: <xliff:g id="name" example="Sam">%1$s</xliff:g></string>
+    <string name="voice_commands_message_confirm">Odbiorca: <xliff:g id="name" example="Sam">%1$s</xliff:g>. Treść: <xliff:g id="text" example="I am on my way">%2$s</xliff:g>. Wysłać wiadomość?</string>
+    <string name="voice_commands_message_confirm_result">Odbiorca: <xliff:g id="name" example="Sam">%1$s</xliff:g>. Wysłać wiadomość?</string>
     <string name="voice_commands_message_not_sent">Wiadomość nie została wysłana</string>
-    <string name="voice_commands_send_pressed">Naciśnięto Wyślij</string>
+    <string name="voice_commands_send_pressed">Naciśnięto przycisk „Wyślij”</string>
     <string name="voice_commands_send_button">Wyślij</string>
     <string name="voice_commands_no_description">Nie otrzymano opisu</string>
     <string name="voice_commands_copied">Skopiowano</string>
@@ -52,23 +52,24 @@
         <item>teraz</item>
     </string-array>
     <string-array name="voice_commands_cancel_words">
-        <item>stop</item>
-        <item>anuluj</item>
-        <item>przerwij</item>
-        <item>zostaw</item>
-        <item>nieważne</item>
-        <item>cicho</item>
+      <item>stop</item>
+      <item>anuluj</item>
+      <item>przerwij</item>
+      <item>zatrzymaj</item>
+      <item>zrezygnuj</item>
+      <item>zostaw</item>
+      <item>nieważne</item>
+      <item>cicho</item>
     </string-array>
     <string-array name="voice_commands_yes">
-        <item>tak</item>
-        <item>no</item>
-        <item>jasne</item>
-        <item>wyślij</item>
-        <item>wyślij to</item>
-        <item>ok</item>
-        <item>okej</item>
-        <item>dobrze</item>
-        <item>zrób to</item>
+      <item>tak</item>
+      <item>jasne</item>
+      <item>wyślij</item>
+      <item>wyślij to</item>
+      <item>ok</item>
+      <item>okej</item>
+      <item>dobrze</item>
+      <item>zrób to</item>
     </string-array>
     <string-array name="voice_commands_sms_names">
         <item>SMS</item>
@@ -93,19 +94,24 @@
         <item>udostępnij to {who}</item>
     </string-array>
     <string-array name="voice_commands_message">
-        <item>wyślij wiadomość do {who} w {app} o treści {text}</item>
-        <item>wyślij wiadomość do {who} przez {app} o treści {text}</item>
-        <item>wyślij wiadomość do {who} o treści {text}</item>
-        <item>wyślij wiadomość do {whoandtext}</item>
-        <item>wyślij wiadomość {app} do {who} o treści {text}</item>
-        <item>wyślij wiadomość {app} do {who}</item>
-        <item>wyślij SMS do {who} o treści {text}</item>
-        <item>napisz do {who} w {app} {text}</item>
-        <item>napisz do {who} {text}</item>
-        <item>napisz wiadomość do {who} {text}</item>
-        <item>napisz SMS do {who} {text}</item>
-        <item>napisz do {whoandtext}</item>
-        <item>napisz wiadomość do {whoandtext}</item>
+      <item>wyślij wiadomość do {who} w {app} o treści {text}</item>
+      <item>wyślij wiadomość do {who} przez {app} o treści {text}</item>
+      <item>wyślij wiadomość do {who} o treści {text}</item>
+      <item>wyślij wiadomość {app} do {who} o treści {text}</item>
+      <item>wyślij SMS do {who} o treści {text}</item>
+      <item>napisz do {who} w {app} o treści {text}</item>
+      <item>napisz do {who} przez {app} o treści {text}</item>
+      <item>napisz do {who} o treści {text}</item>
+      <item>napisz wiadomość do {who} o treści {text}</item>
+      <item>napisz SMS do {who} o treści {text}</item>
+      <item>wyślij wiadomość do {who} przez {app}</item>
+      <item>napisz do {who} przez {app}</item>
+      <item>wyślij wiadomość do {whoandtext}</item>
+      <item>wyślij SMS do {whoandtext}</item>
+      <item>napisz wiadomość do {whoandtext}</item>
+      <item>napisz SMS do {whoandtext}</item>
+      <item>napisz do {whoandtext}</item>
+      <item>wyślij wiadomość {app} do {who}</item>
     </string-array>
     <string-array name="voice_commands_call">
         <item>zadzwoń do {who}</item>
@@ -115,9 +121,9 @@
         <item>połącz z {who}</item>
     </string-array>
     <string-array name="voice_commands_describe_screen">
-        <item>opisz ekran</item>
-        <item>opisz, co jest na ekranie</item>
-        <item>co jest na [moim] ekranie</item>
+      <item>opisz ekran</item>
+      <item>opisz co jest na ekranie</item>
+      <item>co jest na [moim] ekranie</item>
     </string-array>
     <string-array name="voice_commands_describe_image">
         <item>opisz [ten] obraz</item>
@@ -126,19 +132,29 @@
         <item>co jest na [tym] zdjęciu</item>
     </string-array>
     <string-array name="voice_commands_copy_result">
-        <item>skopiuj to</item>
-        <item>skopiuj opis</item>
-        <item>skopiuj ostatnią wypowiedź</item>
-        <item>skopiuj ostatnią frazę</item>
-        <item>skopiuj ostatnio wypowiedzianą frazę</item>
-        <item>skopiuj to co [przed chwilą] powiedziałeś</item>
+      <item>skopiuj to</item>
+      <item>skopiuj opis</item>
+      <item>skopiuj ostatnią wypowiedź</item>
+      <item>skopiuj ostatnią frazę</item>
+      <item>skopiuj ostatnio wypowiedzianą frazę</item>
+      <item>skopiuj to co powiedziałeś</item>
+      <item>skopiuj to co przed chwilą powiedziałeś</item>
+      <item>skopiuj to co powiedziałaś</item>
+      <item>skopiuj to co przed chwilą powiedziałaś</item>
     </string-array>
     <string-array name="voice_commands_wait">
-        <item>poczekaj {n} sekund</item>
-        <item>poczekaj {n} sekundy</item>
-        <item>poczekaj {n} sekundę</item>
-        <item>poczekaj sekundę</item>
-        <item>poczekaj</item>
+      <item>poczekaj jedną sekundę</item>
+      <item>zaczekaj jedną sekundę</item>
+      <item>poczekaj {n} sekund</item>
+      <item>poczekaj {n} sekundy</item>
+      <item>poczekaj {n} sekundę</item>
+      <item>zaczekaj {n} sekund</item>
+      <item>zaczekaj {n} sekundy</item>
+      <item>zaczekaj {n} sekundę</item>
+      <item>poczekaj sekundę</item>
+      <item>zaczekaj sekundę</item>
+      <item>poczekaj</item>
+      <item>zaczekaj</item>
     </string-array>
     <string-array name="voice_commands_type_text">
         <item>wpisz {text}</item>
@@ -190,9 +206,10 @@
     </string-array>
     <string name="voice_commands_text_password">Niedostępne w polach haseł</string>
     <string-array name="voice_commands_text_move">
-        <item>przesuń kursor {target}</item>
-        <item>przejdź {target}</item>
-        <item>{target}</item>
+      <item>przesuń [kursor] {target}</item>
+      <item>przenieś [kursor] {target}</item>
+      <item>przejdź {target}</item>
+      <item>{target}</item>
     </string-array>
     <string-array name="voice_commands_text_select">
         <item>zaznacz {target}</item>
@@ -211,25 +228,25 @@
         <item>wymaż {target}</item>
     </string-array>
     <string-array name="voice_commands_text_next">
-        <item>następne {units}</item>
-        <item>następny {units}</item>
-        <item>następną {units}</item>
-        <item>kolejne {units}</item>
-        <item>kolejny {units}</item>
-        <item>kolejną {units}</item>
-        <item>w prawo {units}</item>
-        <item>do przodu {units}</item>
+      <item>następne {units}</item>
+      <item>następny {units}</item>
+      <item>następną {units}</item>
+      <item>kolejne {units}</item>
+      <item>kolejny {units}</item>
+      <item>kolejną {units}</item>
+      <item>w prawo [o] {units}</item>
+      <item>do przodu [o] {units}</item>
     </string-array>
     <string-array name="voice_commands_text_previous">
-        <item>poprzednie {units}</item>
-        <item>poprzedni {units}</item>
-        <item>poprzednią {units}</item>
-        <item>ostatnie {units}</item>
-        <item>ostatni {units}</item>
-        <item>ostatnią {units}</item>
-        <item>w lewo {units}</item>
-        <item>wstecz {units}</item>
-        <item>do tyłu {units}</item>
+      <item>poprzednie {units}</item>
+      <item>poprzedni {units}</item>
+      <item>poprzednią {units}</item>
+      <item>ostatnie {units}</item>
+      <item>ostatni {units}</item>
+      <item>ostatnią {units}</item>
+      <item>w lewo [o] {units}</item>
+      <item>wstecz [o] {units}</item>
+      <item>do tyłu [o] {units}</item>
     </string-array>
     <string-array name="voice_commands_text_start">
         <item>na początek {unit}</item>

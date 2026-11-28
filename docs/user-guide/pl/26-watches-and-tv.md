@@ -32,7 +32,7 @@ Domyślne przypisania są takie jak na telefonach, z poniższymi wyjątkami.
 | Gest | Polecenie na zegarku |
 | --- | --- |
 | **Kliknij dwukrotnie i przytrzymaj 2 palcami** | **Otwórz menu SandFly** |
-| **Kliknij trzykrotnie i przytrzymaj 2 palcami** | **Włącz lub wyłącz komunikaty głosowe** |
+| **Kliknij trzykrotnie i przytrzymaj 2 palcami** | **Włącz lub wyłącz mowę** |
 | **Przesuń w lewo, a potem w górę** | **Powtórz ostatnią wypowiedź** |
 | **Przesuń w prawo, a potem w górę** | **Zwiększ głośność** |
 | **Przesuń w prawo, a potem w dół** | **Zmniejsz głośność** |
@@ -58,7 +58,7 @@ Na zegarkach nie ma poniższych funkcji ani odpowiadających im ustawień.
 - Polecenia głosowe, dotyk bezpośredni, stukanie w tył telefonu, potrząsanie oraz ustawienia gestów przy krawędziach i w rogach.
 - Klawiatura brajlowska, klawiatura do pisania odręcznego i klawiatura SandFly.
 - AI na urządzeniu i ustawienie **Użyj SandFly jako tapety**.
-- **Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha**, **Resetuj dźwięk ułatwień dostępu po połączeniach**, **Skróty przy wygaszonym ekranie** i **Pokazuj instrukcje wyłączania funkcji SandFly**.
+- **Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha**, **Przywracaj prawidłowe wyjście dźwięku dostępności po rozmowach**, **Skróty klawiszy głośności przy wygaszonym ekranie** i **Pokazuj instrukcje wyłączania funkcji SandFly**.
 
 O powiadomieniach na zegarkach Samsung przeczytasz w [](#notifications).
 

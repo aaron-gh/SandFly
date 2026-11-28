@@ -15,16 +15,16 @@
     <string name="macro_step_command">Uruchom polecenie</string>
     <string name="macro_step_wait">Czekaj</string>
     <string name="macro_step_tap">Kliknij element</string>
-    <string name="macro_step_focus">Zaznacz element</string>
+    <string name="macro_step_focus">Przenieś fokus na element</string>
     <string name="macro_step_speak_item">Odczytaj element</string>
     <string name="macro_step_speak_text">Odczytaj tekst</string>
     <string name="macro_step_type">Wpisz tekst</string>
     <string name="macro_step_tap_value">Kliknij <xliff:g id="label" example="Send">%1$s</xliff:g></string>
-    <string name="macro_step_focus_value">Zaznacz <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_focus_value">Przenieś fokus na: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
     <string name="macro_step_speak_item_value">Odczytaj <xliff:g id="label" example="Send">%1$s</xliff:g></string>
     <string name="macro_step_speak_text_value">Odczytaj <xliff:g id="text" example="Done">%1$s</xliff:g></string>
     <string name="macro_step_type_value">Wpisz <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
-    <string name="macro_step_replace_value">Zastąp tekst tekstem <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
+    <string name="macro_step_replace_value">Zastąp zawartość pola tekstem: <xliff:g id="text" example="On my way">%1$s</xliff:g></string>
     <plurals name="macro_step_wait_seconds">
         <item quantity="one">Czekaj <xliff:g id="count" example="2">%d</xliff:g> sekundę</item>
         <item quantity="few">Czekaj <xliff:g id="count" example="2">%d</xliff:g> sekundy</item>
@@ -41,11 +41,11 @@
     <string name="macro_seconds">Sekundy</string>
     <string name="macro_invalid_seconds">Wpisz liczbę sekund do <xliff:g id="max" example="600">%1$d</xliff:g></string>
     <string name="macro_tap_label">Tekst elementu</string>
-    <string name="macro_tap_timeout">Sekundy oczekiwania na element</string>
+    <string name="macro_tap_timeout">Czas oczekiwania na element (sekundy)</string>
     <string name="macro_text">Tekst</string>
     <string name="macro_replace_text">Zastąp tekst w polu</string>
-    <string name="macro_item_not_found">Makro zatrzymane. Nie znaleziono: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
-    <string name="macro_step_failed">Makro zatrzymane. Niepowodzenie: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
+    <string name="macro_item_not_found">Zatrzymano makro. Nie znaleziono elementu: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
+    <string name="macro_step_failed">Zatrzymano makro. Nie udało się wykonać kroku: <xliff:g id="step" example="Open Gmail">%1$s</xliff:g></string>
     <string name="macro_step_wait_until">Czekaj, aż</string>
     <string name="macro_step_if">Jeśli</string>
     <string name="macro_step_else_if">W przeciwnym razie, jeśli</string>
@@ -60,21 +60,21 @@
     <string name="macro_step_repeat_while_value">Powtarzaj, dopóki <xliff:g id="condition" example="Item on screen: Load more">%1$s</xliff:g></string>
     <string name="macro_step_wait_until_value">Czekaj, aż <xliff:g id="condition" example="Item on screen: Send">%1$s</xliff:g></string>
     <plurals name="macro_step_repeat_value">
-        <item quantity="one">Powtórz <xliff:g id="count" example="3">%d</xliff:g> raz</item>
-        <item quantity="few">Powtórz <xliff:g id="count" example="3">%d</xliff:g> razy</item>
-        <item quantity="many">Powtórz <xliff:g id="count" example="3">%d</xliff:g> razy</item>
-        <item quantity="other">Powtórz <xliff:g id="count" example="3">%d</xliff:g> razu</item>
+      <item quantity="one">Powtórz <xliff:g id="count" example="1">%d</xliff:g> raz</item>
+      <item quantity="few">Powtórz <xliff:g id="count" example="3">%d</xliff:g> razy</item>
+      <item quantity="many">Powtórz <xliff:g id="count" example="3">%d</xliff:g> razy</item>
+      <item quantity="other">Powtórz <xliff:g id="count" example="3">%d</xliff:g> razy</item>
     </plurals>
     <string name="macro_times">Liczba powtórzeń</string>
     <string name="macro_invalid_times">Wpisz liczbę od 1 do <xliff:g id="max" example="1000">%1$d</xliff:g></string>
-    <string name="macro_run_only_when">Uruchamiaj tylko, gdy</string>
+    <string name="macro_run_only_when">Uruchamiaj tylko wtedy, gdy</string>
     <string name="macro_always">Zawsze</string>
     <string name="macro_no_tests">Brak warunków</string>
     <string name="macro_add_test">Dodaj warunek</string>
     <string name="macro_tests">Warunki</string>
     <string name="macro_choose_test">Warunek</string>
     <string name="macro_test_item">Element na ekranie</string>
-    <string name="macro_test_focused">Zaznaczony element</string>
+    <string name="macro_test_focused">Element z fokusem</string>
     <string name="macro_test_app">Aplikacja na pierwszym planie</string>
     <string name="macro_test_keyboard">Klawiatura widoczna</string>
     <string name="macro_test_keyboard_hidden">Klawiatura ukryta</string>
@@ -82,19 +82,19 @@
     <string name="macro_test_unlocked">Ekran odblokowany</string>
     <string name="macro_test_item_value">Element na ekranie: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
     <string name="macro_test_no_item_value">Brak elementu na ekranie: <xliff:g id="item" example="Send">%1$s</xliff:g></string>
-    <string name="macro_test_focused_value">Zaznaczony element: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
-    <string name="macro_test_not_focused_value">Zaznaczony element inny niż: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_focused_value">Element z fokusem: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
+    <string name="macro_test_not_focused_value">Brak pasującego elementu z fokusem: <xliff:g id="item" example="Editable">%1$s</xliff:g></string>
     <string name="macro_test_app_value">Aplikacja na pierwszym planie: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
     <string name="macro_test_not_app_value">Aplikacja nie na pierwszym planie: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
     <string name="macro_test_label_kind"><xliff:g id="label" example="Send">%1$s</xliff:g>, <xliff:g id="kind" example="Clickable">%2$s</xliff:g></string>
     <string name="macro_join_and"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> i <xliff:g id="second" example="Focused item: Editable">%2$s</xliff:g></string>
     <string name="macro_join_or"><xliff:g id="first" example="Keyboard shown">%1$s</xliff:g> lub <xliff:g id="second" example="Screen locked">%2$s</xliff:g></string>
     <string name="macro_regex">Wyrażenie regularne</string>
-    <string name="macro_invalid_regex">To nie jest użyteczne wyrażenie regularne. Powtarzane grupy nie mogą zawierać powtórzeń ani znaku |.</string>
-    <string name="macro_match_in">Dopasuj w</string>
+    <string name="macro_invalid_regex">Nieprawidłowe lub nieobsługiwane wyrażenie regularne. Grupy objęte powtórzeniem nie mogą zawierać dalszych powtórzeń ani operatora „|”.</string>
+    <string name="macro_match_in">Szukaj w</string>
     <string name="macro_field_any">Dowolny tekst</string>
     <string name="macro_field_text">Tekst</string>
-    <string name="macro_field_description">Opis</string>
+    <string name="macro_field_description">Opis treści</string>
     <string name="macro_field_hint">Podpowiedź</string>
     <string name="macro_field_state">Stan</string>
     <string name="macro_field_id">Identyfikator zasobu</string>
@@ -109,67 +109,67 @@
     <string name="macro_kind_editable">Edytowalny</string>
     <string name="macro_kind_scrollable">Przewijalny</string>
     <string name="macro_kind_adjustable">Regulowany</string>
-    <string name="macro_kind_checkable">Z polem wyboru</string>
+    <string name="macro_kind_checkable">Z możliwością zaznaczenia</string>
     <string name="macro_kind_checked">Zaznaczony</string>
     <string name="macro_kind_selected">Wybrany</string>
     <string name="macro_kind_heading">Nagłówek</string>
-    <string name="macro_kind_enabled">Włączony</string>
+    <string name="macro_kind_enabled">Dostępny</string>
     <string name="macro_change_to">Zmień na: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
     <string name="macro_join_with_and">Połącz spójnikiem „i”</string>
     <string name="macro_join_with_or">Połącz spójnikiem „lub”</string>
     <string name="macro_clause_and">i <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
     <string name="macro_clause_or">lub <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
-    <string name="macro_wait_timeout">Sekundy oczekiwania</string>
-    <string name="macro_add_step_after">Dodaj krok po</string>
+    <string name="macro_wait_timeout">Czas oczekiwania (sekundy)</string>
+    <string name="macro_add_step_after">Dodaj krok po tym kroku</string>
     <string name="macro_problem">Krok <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
-    <string name="macro_problem_no_if">W przeciwnym razie, jeśli, W przeciwnym razie lub Koniec warunku bez Jeśli</string>
-    <string name="macro_problem_after_else">W przeciwnym razie, jeśli lub W przeciwnym razie po W przeciwnym razie</string>
-    <string name="macro_problem_no_repeat">Koniec powtarzania bez Powtarzaj</string>
-    <string name="macro_problem_no_end_if">Jeśli bez Koniec warunku</string>
-    <string name="macro_problem_no_end_repeat">Powtarzaj bez Koniec powtarzania</string>
-    <string name="macro_problem_exit">Wyjdź z pętli poza powtarzaniem</string>
-    <string name="macro_stopped_problem">Makro zatrzymane. Krok <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
-    <string name="macro_stopped_repeats">Makro zatrzymane. Powtórzono <xliff:g id="count" example="1000">%1$d</xliff:g> razy: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
-    <string name="macro_stopped_timeout">Makro zatrzymane. Przekroczono czas: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
-    <string name="macro_not_met">Makro nie zostało uruchomione. Uruchamiaj tylko, gdy: niespełnione</string>
+    <string name="macro_problem_no_if">Krok „W przeciwnym razie, jeśli”, „W przeciwnym razie” lub „Koniec warunku” bez pasującego kroku „Jeśli”.</string>
+    <string name="macro_problem_after_else">Krok „W przeciwnym razie, jeśli” lub „W przeciwnym razie” występuje po kroku „W przeciwnym razie” w tym samym bloku.</string>
+    <string name="macro_problem_no_repeat">Krok „Koniec powtarzania” bez pasującego kroku „Powtarzaj” lub „Powtarzaj, dopóki”.</string>
+    <string name="macro_problem_no_end_if">Brak kroku „Koniec warunku” dla kroku „Jeśli”.</string>
+    <string name="macro_problem_no_end_repeat">Brak kroku „Koniec powtarzania” dla kroku „Powtarzaj” lub „Powtarzaj, dopóki”.</string>
+    <string name="macro_problem_exit">Krok „Wyjdź z pętli” znajduje się poza blokiem powtarzania.</string>
+    <string name="macro_stopped_problem">Zatrzymano makro. Krok <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
+    <string name="macro_stopped_repeats">Zatrzymano makro. Osiągnięto limit <xliff:g id="count" example="1000">%1$d</xliff:g> powtórzeń: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
+    <string name="macro_stopped_timeout">Zatrzymano makro. Upłynął czas oczekiwania: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
+    <string name="macro_not_met">Nie uruchomiono makra: warunek uruchomienia nie został spełniony.</string>
     <string name="macro_step_more">Więcej kroków</string>
     <string name="macro_do_play_sound">Odtwórz dźwięk</string>
-    <string name="macro_do_vibrate">Wibruj</string>
+    <string name="macro_do_vibrate">Uruchom wibrację</string>
     <string name="macro_do_play_tone">Odtwórz ton</string>
     <string name="macro_do_copy_text">Kopiuj tekst</string>
     <string name="macro_do_open_link">Otwórz link</string>
-    <string name="macro_do_open_settings">Otwórz stronę ustawień</string>
+    <string name="macro_do_open_settings">Otwórz ekran ustawień Androida</string>
     <string name="macro_do_share_text">Udostępnij tekst</string>
     <string name="macro_do_set_volume">Ustaw głośność</string>
     <string name="macro_do_set_ringer">Ustaw tryb dzwonka</string>
     <string name="macro_do_press_keys">Naciśnij klawisze</string>
-    <string name="macro_do_show_message">Pokaż wiadomość</string>
-    <string name="macro_do_set_value">Ustaw wartość</string>
-    <string name="macro_do_fetch">Pobierz z linku</string>
+    <string name="macro_do_show_message">Pokaż komunikat</string>
+    <string name="macro_do_set_value">Ustaw wartość zmiennej</string>
+    <string name="macro_do_fetch">Pobierz tekst z adresu</string>
     <string name="macro_do_translate">Przetłumacz tekst</string>
     <string name="macro_do_value">%1$s: %2$s</string>
-    <string name="macro_do_into_value">%1$s: %2$s, do %3$s</string>
-    <string name="macro_do_vibrate_value">Wibruj %1$d ms</string>
+    <string name="macro_do_into_value">%1$s: %2$s; zapisz w zmiennej %3$s</string>
+    <string name="macro_do_vibrate_value">Uruchom wibrację na %1$d ms</string>
     <string name="macro_do_play_tone_value">Odtwórz ton %1$d Hz</string>
     <string name="macro_do_set_volume_value">Ustaw głośność %1$s na %2$d%%</string>
     <string name="macro_do_link_hint">Adres</string>
     <string name="macro_do_keys_hint">Klawisze, np. tab enter</string>
     <string name="macro_number_range">Wpisz od %1$d do %2$d</string>
-    <string name="macro_value_name">Nazwa wartości</string>
-    <string name="macro_value_name_invalid">Używaj liter, cyfr, kropek, łączników lub podkreśleń</string>
-    <string name="macro_test_value">Wartość</string>
-    <string name="macro_test_value_label">Zawiera (puste: dowolna wartość)</string>
-    <string name="macro_test_value_set">Wartość %1$s jest ustawiona</string>
-    <string name="macro_test_value_value">Wartość %1$s zawiera %2$s</string>
+    <string name="macro_value_name">Nazwa zmiennej</string>
+    <string name="macro_value_name_invalid">Użyj od 1 do 64 znaków: liter A–Z lub a–z, cyfr, kropek, łączników albo podkreśleń.</string>
+    <string name="macro_test_value">Wartość zmiennej</string>
+    <string name="macro_test_value_label">Zawiera (puste pole: sprawdź niepustą wartość)</string>
+    <string name="macro_test_value_set">Zmienna %1$s ma niepustą wartość</string>
+    <string name="macro_test_value_value">Zmienna %1$s zawiera: %2$s</string>
     <string name="macro_test_not">Nie: %1$s</string>
-    <string name="macro_values_help">Wartości wstawiaj jako {name}. Także {item}, {clipboard}, {time}, {date}, {battery} i {device.wifi}.</string>
+    <string name="macro_values_help">Wstawiaj wartości zmiennych w postaci {name}, gdzie name to nazwa zmiennej. Możesz też użyć {item} (element z fokusem), {clipboard} (schowek), {time} (godzina), {date} (data), {battery} (poziom baterii) i {device.wifi} (stan Wi-Fi).</string>
     <string name="macro_do_device_control">Ustawienie urządzenia</string>
     <string name="macro_do_device_control_value">%1$s: %2$s</string>
     <string name="macro_do_turn_on">Włącz</string>
     <string name="macro_do_turn_off">Wyłącz</string>
     <string name="macro_do_toggle">Włącz lub wyłącz</string>
-    <string name="macro_do_slider_help" formatted="false">Liczba, procent, np. 50%, albo +1 lub -1.</string>
-    <string name="macro_do_choice_help">Opcja, np. Tylko wibracje, albo next.</string>
+    <string name="macro_do_slider_help" formatted="false">Podaj liczbę, wartość procentową, np. 50%, lub zmianę względem bieżącej wartości, np. +1 albo -1.</string>
+    <string name="macro_do_choice_help">Podaj nazwę opcji, np. „Tylko wibracje”, albo next, aby wybrać następną opcję.</string>
     <string name="macro_do_media">Klawisz multimediów</string>
     <string name="macro_media_play_pause">Odtwórz lub wstrzymaj</string>
     <string name="macro_media_play">Odtwórz</string>
@@ -179,54 +179,54 @@
     <string name="macro_media_stop">Zatrzymaj</string>
     <string name="macro_media_rewind">Przewiń do tyłu</string>
     <string name="macro_media_fast_forward">Przewiń do przodu</string>
-    <string name="macro_do_set_timer">Ustaw timer</string>
-    <string name="macro_do_set_timer_value">Ustaw timer: %1$s s, %2$s</string>
+    <string name="macro_do_set_timer">Ustaw minutnik</string>
+    <string name="macro_do_set_timer_value">Ustaw minutnik: %1$s s, %2$s</string>
     <string name="macro_do_timer_seconds">Sekundy</string>
     <string name="macro_do_label">Etykieta (opcjonalnie)</string>
-    <string name="macro_do_set_alarm">Ustaw alarm</string>
-    <string name="macro_do_set_alarm_value">Ustaw alarm: %1$s, %2$s</string>
+    <string name="macro_do_set_alarm">Ustaw budzik</string>
+    <string name="macro_do_set_alarm_value">Ustaw budzik: %1$s, %2$s</string>
     <string name="macro_do_call">Zadzwoń</string>
     <string name="macro_do_number">Numer telefonu</string>
-    <string name="macro_do_send_message">Wyślij wiadomość</string>
-    <string name="macro_do_send_message_value">Wiadomość do %1$s: %2$s</string>
+    <string name="macro_do_send_message">Przygotuj wiadomość SMS</string>
+    <string name="macro_do_send_message_value">Przygotuj SMS. Odbiorca: %1$s. Treść: %2$s</string>
     <string name="macro_do_open_camera">Otwórz aparat</string>
     <string name="macro_do_camera_photo">Zdjęcie</string>
     <string name="macro_do_camera_video">Film</string>
-    <string name="macro_do_set_timer_short">Ustaw timer: %1$s s</string>
-    <string name="macro_do_set_alarm_short">Ustaw alarm: %1$s</string>
-    <string name="macro_step_act_item">Przytrzymaj lub przewiń element</string>
-    <string name="macro_act_long_press">Przytrzymaj</string>
+    <string name="macro_do_set_timer_short">Ustaw minutnik: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Ustaw budzik: %1$s</string>
+    <string name="macro_step_act_item">Wykonaj długie kliknięcie lub przewiń</string>
+    <string name="macro_act_long_press">Wykonaj długie kliknięcie</string>
     <string name="macro_act_scroll_forward">Przewiń do przodu</string>
     <string name="macro_act_scroll_backward">Przewiń wstecz</string>
     <string name="macro_step_act_value">%1$s: %2$s</string>
     <string name="macro_step_act_times_value">%1$s: %2$s, liczba powtórzeń: %3$d</string>
-    <string name="macro_test_focus_inside">Zaznaczenie wewnątrz elementu</string>
-    <string name="macro_test_focus_inside_value">Zaznaczenie wewnątrz: %1$s</string>
-    <string name="macro_test_not_focus_inside_value">Zaznaczenie nie wewnątrz: %1$s</string>
-    <string name="macro_step_tap_position">Kliknij w pozycji</string>
-    <string name="macro_step_tap_position_value">Kliknij w punkcie <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
-    <string name="macro_tap_x">X, piksele od lewej</string>
-    <string name="macro_tap_y">Y, piksele od góry</string>
-    <string name="macro_invalid_position">Wpisz X i Y od 0 do <xliff:g id="max" example="10000">%1$d</xliff:g></string>
-    <string name="macro_field_tooltip">Podpowiedź</string>
-    <string name="macro_step_touch_hold">Naciśnij i przytrzymaj element</string>
-    <string name="macro_step_touch_hold_value">Naciśnij i przytrzymaj <xliff:g id="label" example="Voice message">%1$s</xliff:g> przez <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
-    <string name="macro_step_touch_hold_slide_value">Naciśnij i przytrzymaj <xliff:g id="label" example="Voice message">%1$s</xliff:g> przez <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
-    <string name="macro_hold_seconds">Czas przytrzymania w sekundach</string>
-    <string name="macro_slide">Przed uniesieniem</string>
-    <string name="macro_slide_none">Unieś w miejscu</string>
+    <string name="macro_test_focus_inside">Fokus w elemencie lub jego zawartości</string>
+    <string name="macro_test_focus_inside_value">Fokus w elemencie lub jego zawartości: <xliff:g id="item" example="watch_player">%1$s</xliff:g></string>
+    <string name="macro_test_not_focus_inside_value">Brak fokusu w elemencie i jego zawartości: <xliff:g id="item" example="watch_player">%1$s</xliff:g></string>
+    <string name="macro_step_tap_position">Kliknij w podanym miejscu</string>
+    <string name="macro_step_tap_position_value">Kliknij w punkcie: <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X: piksele od lewej krawędzi</string>
+    <string name="macro_tap_y">Y: piksele od górnej krawędzi</string>
+    <string name="macro_invalid_position">Podaj całkowite wartości X i Y od 0 do <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Dymek podpowiedzi</string>
+    <string name="macro_step_touch_hold">Dotknij i przytrzymaj element</string>
+    <string name="macro_step_touch_hold_value">Dotknij i przytrzymaj <xliff:g id="label" example="Voice message">%1$s</xliff:g> przez <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Dotknij i przytrzymaj <xliff:g id="label" example="Voice message">%1$s</xliff:g> przez <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> o <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Czas przytrzymania (sekundy)</string>
+    <string name="macro_slide">Przed zwolnieniem dotyku</string>
+    <string name="macro_slide_none">Zwolnij dotyk bez przesuwania</string>
     <string name="macro_slide_up">Przesuń w górę</string>
     <string name="macro_slide_down">Przesuń w dół</string>
     <string name="macro_slide_left">Przesuń w lewo</string>
     <string name="macro_slide_right">Przesuń w prawo</string>
-    <string name="macro_slide_distance">Odległość w dp</string>
+    <string name="macro_slide_distance">Odległość (dp)</string>
     <string name="macro_app">Aplikacja</string>
     <string name="macro_all_apps">Wszystkie aplikacje</string>
     <string name="macro_add_app">Dodaj aplikację</string>
     <string name="macro_apps">Aplikacje</string>
-    <string name="macro_in_actions">Pokazuj w menu Czynności</string>
-    <string name="macro_in_actions_only_when">Pokazuj w menu Czynności tylko, gdy</string>
-    <string name="macro_not_in_app">Nie uruchomiono makra. Działa tylko w aplikacji <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <string name="macro_in_actions">Pokazuj w czynnościach</string>
+    <string name="macro_in_actions_only_when">Pokazuj w czynnościach tylko, gdy</string>
+    <string name="macro_not_in_app">Nie uruchomiono makra. Wymagana aplikacja na pierwszym planie: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
     <plurals name="macro_count">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makro</item>
         <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> makra</item>
@@ -236,10 +236,10 @@
     <string name="macro_record">Nagraj kroki</string>
     <string name="macro_record_new">Nagraj makro</string>
     <string name="macro_recording_notification">Nagrywanie kroków makra: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
-    <string name="macro_recording_toast">Nagrywanie. Aby zatrzymać, uruchom „Nagraj makro” lub „Zatrzymaj makro” albo otwórz powiadomienie „Nagrywanie kroków makra”.</string>
+    <string name="macro_recording_toast">Trwa nagrywanie. Aby zakończyć, wybierz polecenie „Nagraj makro” lub „Zatrzymaj makro” albo otwórz powiadomienie „Nagrywanie kroków makra”.</string>
     <string name="macro_recorded">Nagrane kroki</string>
-    <string name="macro_recorded_no_passwords">Tekst wpisany w polach haseł nie jest nagrywany.</string>
-    <string name="macro_recorded_too_many">Nie dodano. Maksymalna liczba kroków makra: <xliff:g id="count" example="200">%1$d</xliff:g>.</string>
-    <string name="macro_recorded_name">Nagranie <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_recorded_no_passwords">Tekst wpisywany w polach haseł nie jest nagrywany.</string>
+    <string name="macro_recorded_too_many">Nie dodano kroków. Makro może zawierać najwyżej <xliff:g id="count" example="200">%1$d</xliff:g> kroków.</string>
+    <string name="macro_recorded_name">Makro nagrane <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
     <string name="macro_list_on_screen">Lista na ekranie</string>
 </resources>

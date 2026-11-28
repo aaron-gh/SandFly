@@ -84,17 +84,17 @@ Ustawienia z grupy **Tabele** działają po włączeniu **Odczytywanie informacj
 
 W grupie **Komunikaty** wybierzesz, co SandFly mówi, gdy na urządzeniu coś się zmienia.
 
-- W opcji **Nazwy okien** wartość **Zawsze** podaje nazwę przy otwarciu okna i po przeniesieniu fokusu z innego okna, przed odczytaniem pierwszego elementu. Domyślne **Zawsze ucinane przy pierwszym elemencie** działa tak samo, ale odczyt pierwszego elementu nowego okna przerywa nazwę. **Tylko wtedy, gdy okno się otworzy** podaje nazwę przy otwarciu. **Nigdy** pomija nazwy.
+- W opcji **Nazwy okien** wartość **Zawsze** podaje nazwę przy otwarciu okna i po przeniesieniu fokusu z innego okna, przed odczytaniem pierwszego elementu. Domyślne **Zawsze, do rozpoczęcia odczytu pierwszego elementu** działa tak samo, ale odczyt pierwszego elementu nowego okna przerywa nazwę. **Tylko wtedy, gdy okno się otworzy** podaje nazwę przy otwarciu. **Nigdy** pomija nazwy.
 - **Zawsze odczytuj liczbę elementów z listy** podaje widoczne pozycje po każdym przewinięciu. Domyślnie opcja jest wyłączona. Wtedy SandFly nie podaje pozycji listy podczas przewijania.
 - **Informuj o pełnym naładowaniu** raz mówi, że bateria jest pełna, i odtwarza dźwięk **Pełne naładowanie**, jeśli ładowarka jest podłączona. Domyślnie opcja jest wyłączona.
 - **Poziom baterii** odczytuje stan baterii podczas ładowania i poza nim. Możesz wybrać odczyt przy osiągnięciu wielokrotności 5% lub 10% albo co 15 minut, 30 minut lub godzinę. Przy wygaszonym ekranie odczyt jest pomijany. Domyślnie opcja jest wyłączona.
-- W opcji **Głos poziomu baterii** wybierz **Głos powiadomień**, **Głos SandFly** (domyślnie) lub jeden z profili głosowych. Zobacz [](#notifications-voice).
-- **Informuj o czasie trwania połączenia** podaje długość połączenia po jego zakończeniu, liczoną od odebrania lub wybrania numeru. Połączenia nieodebrane są pomijane. Domyślnie opcja jest wyłączona.
+- W opcji **Głos ogłaszania poziomu baterii** wybierz **Głos powiadomień**, **Głos SandFly** (domyślnie) lub jeden z profili głosowych. Zobacz [](#notifications-voice).
+- **Odczytuj czas trwania połączenia** podaje długość połączenia po jego zakończeniu, liczoną od odebrania lub wybrania numeru. Połączenia nieodebrane są pomijane. Domyślnie opcja jest wyłączona.
 - **Informowanie o pokazaniu lub ukryciu klawiatury** jest domyślnie włączone.
 - **Włączanie i wyłączanie ekranu** określa komunikaty przy wygaszaniu, wybudzaniu i odblokowaniu. Zobacz [](#verbosity-screen-on-off).
 - W opcji **Format godziny** wybierz **Użyj formatu godziny urządzenia** (domyślnie), **12-godzinny** lub **24-godzinny**.
-- **Podawaj sekundy w godzinie** jest domyślnie wyłączone.
-- **Podawaj sekundy po włączeniu ekranu** pozwala podać sekundy przy wybudzeniu urządzenia, gdy włączono **Podawaj sekundy w godzinie**. Domyślnie opcja jest włączona.
+- **Odczytuj godzinę z sekundami** jest domyślnie wyłączone.
+- **Odczytuj sekundy także po włączeniu ekranu** pozwala podać sekundy przy wybudzeniu urządzenia, gdy włączono **Odczytuj godzinę z sekundami**. Domyślnie opcja jest włączona.
 - **Odczytywanie stanu urządzenia** ustala zawartość polecenia **Odczytaj stan urządzenia**. Zobacz [](#verbosity-status-readout).
 
 #### Włączanie i wyłączanie ekranu {#verbosity-screen-on-off}
@@ -108,7 +108,7 @@ W menu **Szczegółowość** > **Włączanie i wyłączanie ekranu** są trzy gr
 - **Liczba powiadomień** jest domyślnie włączona przy włączaniu ekranu i wyłączona w dwóch pozostałych grupach.
 - W ustawieniu **Bateria** wybierz **Wyłączone** (domyślnie), **Zawsze** albo **Tylko podczas ładowania**.
 - **Niski poziom baterii** podaje poziom po spadku poniżej wybranego progu. Dostępne są **Wyłączone** (domyślnie), **Poniżej 10%**, **Poniżej 15%**, **Poniżej 20%**, **Poniżej 30%** i **Poniżej 50%**.
-- **Ukryty ekran** podaje informację tylko przy ukrytym ekranie. Domyślnie opcja jest wyłączona. Zobacz [](#display).
+- **Ukrycie ekranu** podaje informację tylko przy ukrytym ekranie. Domyślnie opcja jest wyłączona. Zobacz [](#display).
 - **Wi-Fi** podaje nazwę sieci i siłę sygnału. Domyślnie opcja jest wyłączona.
 - **Sieć komórkowa** podaje operatora, rodzaj sieci i siłę sygnału. Domyślnie opcja jest wyłączona.
 - **Dzwonek i tryb Nie przeszkadzać** odczytuje informację tylko wtedy, gdy dzwonek jest wyciszony lub działa tryb Nie przeszkadzać. Domyślnie opcja jest wyłączona.
@@ -118,7 +118,7 @@ Powyżej grup znajdziesz **Odczytuj podczas odtwarzania multimediów**. Pozwala 
 
 #### Odczytywanie stanu urządzenia {#verbosity-status-readout}
 
-Ekran **Szczegółowość** > **Odczytywanie stanu urządzenia** pokazuje informacje podawane przez polecenie **Odczytaj stan urządzenia** w kolejności odczytu. To **Godzina**, **Bateria**, **Wi-Fi**, **Sieć komórkowa**, **Dzwonek i tryb Nie przeszkadzać**, **Tryb samolotowy** i **Ukryty ekran**. Domyślnie wszystkie są włączone. Zwykły stan, np. to, że dzwonek jest włączony, jest pomijany.
+Ekran **Szczegółowość** > **Odczytywanie stanu urządzenia** pokazuje informacje podawane przez polecenie **Odczytaj stan urządzenia** w kolejności odczytu. To **Godzina**, **Bateria**, **Wi-Fi**, **Sieć komórkowa**, **Dzwonek i tryb Nie przeszkadzać**, **Tryb samolotowy** i **Ukrycie ekranu**. Domyślnie wszystkie są włączone. Zwykły stan, np. to, że dzwonek jest włączony, jest pomijany.
 
 - Wybierz pozycję, żeby ją włączyć lub wyłączyć.
 - Użyj czynności **Przenieś w górę** lub **Przenieś w dół**, żeby zmienić kolejność.
@@ -129,11 +129,11 @@ Ekran **Odczytywanie stanu urządzenia** jest niedostępny na telewizorach.
 
 Niektóre aplikacje i klawiatury mają własną mowę. Na przykład asystent czyta odpowiedź w trakcie przenoszenia fokusu ułatwień dostępu na kolejne fragmenty, a klawiatura może sama czytać klawisze. W grupie **Aplikacje z własną mową** możesz ograniczyć mowę SandFly, żeby nie słyszeć tej samej treści dwa razy. Nadal działa przenoszenie fokusu oraz odtwarzanie dźwięków i wibracji. SandFly zawsze czyta swoje ekrany.
 
-- W opcji **Odczytuj tylko fokus przeniesiony przez użytkownika** wybierz **Wyłączone** (domyślnie), **We wszystkich aplikacjach** lub **W wybranych aplikacjach**. Gdy opcja działa, SandFly czyta elementy, na które przenosisz fokus dotykiem, gestem, klawiszami, monitorem brajlowskim lub poleceniem. Pomija fokus przeniesiony przez aplikację, komunikaty, zmiany obszarów dynamicznych, nazwy okien i komunikaty o zmianie okna. Dotyczy to też fokusu przeniesionego przez SandFly po zmianie okna, przewinięciu lub w ślad za fokusem wprowadzania.
+- W opcji **Odczytuj elementy tylko po przeniesieniu fokusu przez użytkownika** wybierz **Wyłączone** (domyślnie), **We wszystkich aplikacjach** lub **W wybranych aplikacjach**. Gdy opcja działa, SandFly czyta elementy, na które przenosisz fokus dotykiem, gestem, klawiszami, monitorem brajlowskim lub poleceniem. Pomija fokus przeniesiony przez aplikację, komunikaty, zmiany obszarów dynamicznych, nazwy okien i komunikaty o zmianie okna. Dotyczy to też fokusu przeniesionego przez SandFly po zmianie okna, przewinięciu lub w ślad za fokusem wprowadzania.
 - **Wybrane aplikacje** to lista dostępna po ustawieniu wartości **W wybranych aplikacjach**. Wybierz **Dodaj aplikację**, żeby dodać pozycję, lub wybierz już dodaną aplikację, żeby ją usunąć.
-- **Odczytuj tylko fokus przeniesiony przez użytkownika, gdy asystent lub połączenie odtwarza dźwięk** stosuje tę zasadę we wszystkich aplikacjach w trakcie odtwarzania dźwięku asystenta lub rozmowy przez inną aplikację. Fokus przenoszony przez Ciebie nadal jest odczytywany. Domyślnie opcja jest wyłączona.
+- **Odczytuj elementy tylko po przeniesieniu fokusu przez użytkownika podczas odtwarzania dźwięku asystenta lub rozmowy** stosuje tę zasadę we wszystkich aplikacjach w trakcie odtwarzania dźwięku asystenta lub rozmowy przez inną aplikację. Fokus przenoszony przez Ciebie nadal jest odczytywany. Domyślnie opcja jest wyłączona.
 - Jeśli wyświetlana klawiatura jest na liście **Klawiatury z własną mową**, SandFly pomija jej klawisze, wpisywany i usuwany tekst oraz ruch kursora w polu edycji. Gesty i polecenia działają dalej. Nadal słyszysz tekst podczas nawigacji za pomocą sterowania czytaniem. Aby dodać klawiaturę, wybierz **Dodaj klawiaturę**.
 
 SandFly pomija komunikaty, zmiany obszarów dynamicznych i zmiany okien usługi `com.oplus.viewtalk` na telefonach realme i OPPO. To usługa ułatwień dostępu, która przekazuje opisy obrazów, np. „Obraz może zawierać…”.
 
-Pozycja **Odczytuj tylko fokus przeniesiony przez użytkownika** w sterowaniu czytaniem zmienia pierwsze ustawienie z tej grupy. Polecenie o tej samej nazwie wyłącza je. Przy ponownym włączeniu wybiera **W wybranych aplikacjach**, jeśli lista zawiera aplikacje, albo **We wszystkich aplikacjach**, jeśli jest pusta. Pozycja nie należy do domyślnego sterowania czytaniem. Zobacz [](#commands).
+Pozycja **Odczytuj elementy tylko po przeniesieniu fokusu przez użytkownika** w sterowaniu czytaniem zmienia pierwsze ustawienie z tej grupy. Polecenie o tej samej nazwie wyłącza je. Przy ponownym włączeniu wybiera **W wybranych aplikacjach**, jeśli lista zawiera aplikacje, albo **We wszystkich aplikacjach**, jeśli jest pusta. Pozycja nie należy do domyślnego sterowania czytaniem. Zobacz [](#commands).

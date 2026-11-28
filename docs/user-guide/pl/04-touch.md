@@ -14,7 +14,7 @@ Możesz dodać **Opóźnienie zaznaczenia** do [sterowania czytaniem](#commands)
 
 #### Aktywowanie jednym stuknięciem {#touch-single-tap}
 
-Włącz **Dotyk** > **Kliknij raz, aby uaktywnić**, żeby aktywować pojedynczym stuknięciem element, na którym jest już fokus. Opcja jest domyślnie wyłączona. Wymaga eksploracji dotykiem. Jest niedostępna na telewizorach.
+Włącz **Dotyk** > **Kliknij raz, aby uaktywnić**, żeby aktywować pojedynczym stuknięciem element, na którym jest już fokus. Opcja jest domyślnie wyłączona. Wymaga czytania dotykiem. Jest niedostępna na telewizorach.
 
 #### Aktywowanie po uniesieniu palca {#touch-lift-to-activate}
 
@@ -39,7 +39,7 @@ Włącz **Dotyk** > **Kliknij, aby uaktywnić**, jeśli chcesz aktywować elemen
 
 #### Przyciski paska nawigacji {#touch-navigation-bar}
 
-Opcja **Dotyk** > **Aktywowanie przycisków paska nawigacji kliknięciem** przekazuje dotknięcia paska bezpośrednio do Androida. Stuknięcie naciska przycisk, a przytrzymanie działa tak jak w systemie, na przykład na przycisku ekranu głównego. Funkcja jest domyślnie wyłączona i wymaga Androida 11. Gdy ją włączysz, **Aktywowanie po puszczeniu** przestaje obejmować pasek nawigacji.
+Opcja **Dotyk** > **Aktywuj przyciski paska nawigacji jednym dotknięciem** przekazuje dotknięcia paska bezpośrednio do Androida. Stuknięcie naciska przycisk, a przytrzymanie działa tak jak w systemie, na przykład na przycisku ekranu głównego. Funkcja jest domyślnie wyłączona i wymaga Androida 11. Gdy ją włączysz, **Aktywowanie po puszczeniu** przestaje obejmować pasek nawigacji.
 
 SandFly odczytuje nazwę dopiero po naciśnięciu przycisku, na przykład „Wstecz”. Żeby wyciszyć te nazwy, wyłącz **Dotyk** > **Odczytuj nazwy przycisków paska nawigacji**. Domyślnie opcja jest włączona.
 
@@ -47,15 +47,15 @@ SandFly odczytuje nazwę dopiero po naciśnięciu przycisku, na przykład „Wst
 
 Niektóre elementy reagują tylko na dotknięcie ekranu w miejscu, w którym się znajdują. Gdy zwykła aktywacja nic nie robi, użyj **Aktywuj dotknięciem**. SandFly wykona pojedyncze stuknięcie w środku elementu, na którym jest fokus. Polecenie jest domyślnie nieprzypisane. Możesz dodać [gest](#gestures) lub skrót klawiszowy. [Skrypt](#scripts) może stosować ten sposób przy każdej aktywacji wybranych elementów. Obie metody wymagają Androida 11 lub nowszego. Na wcześniejszej wersji aktywacja działa jak zwykle.
 
-Aby używać dotknięcia przy każdej aktywacji w danej aplikacji, zaznacz ją w **Dotyk** > **Dwukrotne kliknięcie stuka w ekran**. Możesz również uruchomić w tej aplikacji polecenie **Dwukrotne kliknięcie stuka w ekran w tej aplikacji**. Domyślnie nie ma ono gestu. SandFly ogłosi, czy włączono stuknięcie ekranu przy dwukrotnym kliknięciu, czy je wyłączono. Gdy nie ma aplikacji na pierwszym planie, usłyszysz komunikat o jej braku. Ta funkcja wymaga Androida 11 i jest niedostępna na zegarkach i telewizorach.
+Aby używać dotknięcia przy każdej aktywacji w danej aplikacji, zaznacz ją w **Dotyk** > **Dwukrotne kliknięcie symuluje dotknięcie ekranu**. Możesz również uruchomić w tej aplikacji polecenie **Przełącz symulowanie dotknięcia przy dwukrotnym kliknięciu w tej aplikacji**. Domyślnie nie ma ono gestu. SandFly ogłosi, czy włączono stuknięcie ekranu przy dwukrotnym kliknięciu, czy je wyłączono. Gdy nie ma aplikacji na pierwszym planie, usłyszysz komunikat o jej braku. Ta funkcja wymaga Androida 11 i jest niedostępna na zegarkach i telewizorach.
 
 #### Mowa podczas dotykania ekranu {#touch-speech}
 
-Domyślnie dotknięcie ekranu zatrzymuje mowę. Jeśli chcesz, żeby SandFly czytał do chwili przeniesienia fokusu, wyłącz **Mowa** > **Zatrzymuj mowę po dotknięciu ekranu**. Zobacz [ustawienia mowy](#speech).
+Domyślnie dotknięcie ekranu zatrzymuje mowę. Jeśli chcesz, żeby SandFly czytał do chwili przeniesienia fokusu, wyłącz **Mowa** > **Przerywaj mowę po dotknięciu ekranu**. Zobacz [ustawienia mowy](#speech).
 
 ### Zablokuj dotyk {#touch-lock}
 
-Po zablokowaniu dotyku SandFly nie wykonuje gestów ani nie przekazuje dotknięć do aplikacji. Nadal możesz używać klawiszy, poleceń klawiszy głośności, gestów na czytniku linii papilarnych, stuknięć w tył urządzenia i potrząśnięcia. Polecenia, które dotykają ekranu, na przykład **Aktywuj dotknięciem**, **Przytrzymaj dotyk na elemencie z fokusem** i dotknięcia w makrach, nadal trafiają do aplikacji. Blokada wymaga Androida 13 lub nowszego oraz włączonej opcji **Ustawienia programisty** > **Używaj gestów w SandFly**.
+Po zablokowaniu dotyku SandFly nie wykonuje gestów ani nie przekazuje dotknięć do aplikacji. Nadal możesz używać klawiszy, poleceń klawiszy głośności, gestów na czytniku linii papilarnych, stuknięć w tył urządzenia i potrząśnięcia. Polecenia, które dotykają ekranu, na przykład **Aktywuj dotknięciem**, **Przytrzymaj dotyk na elemencie z fokusem** i dotknięcia w makrach, nadal trafiają do aplikacji. Blokada wymaga Androida 13 lub nowszego oraz włączonej opcji **Ustawienia programisty** > **Rozpoznawaj gesty w SandFly**.
 
 Użyj polecenia **Zablokuj lub odblokuj dotyk**. Usłyszysz „Dotyk zablokowany” lub „Dotyk odblokowany”. Przypisz polecenie do [klawisza głośności](#buttons), skrótu klawiszowego lub [stuknięcia w tył urządzenia](#gestures-back-tap), żeby odblokować ekran bez dotykania. Jednoczesne naciśnięcie obu klawiszy głośności zawsze odblokowuje dotyk.
 
@@ -64,9 +64,9 @@ W menu **Dotyk** > **Automatycznie blokuj dotyk** wybierzesz, kiedy ma się wł�
 - **Nigdy** to ustawienie domyślne.
 - **Po włączeniu ekranu** włącza blokadę za każdym razem, gdy ekran się zapala. Użyj polecenia lub obu klawiszy głośności, żeby odblokować dotyk.
 - **Na ekranie blokady** włącza blokadę do chwili odblokowania telefonu.
-- **Gdy czujnik zbliżeniowy jest zakryty** blokuje dotyk przy włączonym ekranie, gdy czujnik przysłania na przykład ucho lub kieszeń.
+- **Gdy czujnik zbliżeniowy jest zasłonięty** blokuje dotyk przy włączonym ekranie, gdy czujnik przysłania na przykład ucho lub kieszeń.
 
-SandFly nie odczytuje komunikatu przy automatycznej blokadzie. Reakcję na dotknięcie wybierzesz w menu **Dotyk** > **Dotknięcia przy zablokowanym dotyku**. Do wyboru masz **Nic**, **Dźwięk** i **Wibracja**. Domyślnie ustawiona jest wartość **Nic**. [Skrypty](#scripts) mogą blokować dotyk na najwyżej 10 sekund.
+SandFly nie odczytuje komunikatu przy automatycznej blokadzie. Reakcję na dotknięcie wybierzesz w menu **Dotyk** > **Reakcja na dotyk podczas blokady**. Do wyboru masz **Nic**, **Dźwięk** i **Wibracja**. Domyślnie ustawiona jest wartość **Nic**. [Skrypty](#scripts) mogą blokować dotyk na najwyżej 10 sekund.
 
 ### Dotyk bezpośredni {#touch-direct-touch}
 
@@ -107,26 +107,26 @@ Klawiatura, która mówi sama, na przykład osobna klawiatura brajlowska, może 
 
 Aplikacja może zadeklarować, że potrzebuje dotyku bezpośredniego. SandFly włączy go, gdy aplikacja po raz pierwszy znajdzie się na pierwszym planie. Możesz ją odznaczyć na liście **Aplikacje**.
 
-Niektóre aplikacje przejmują tylko część ekranu, na przykład planszę gry. Na pozostałym obszarze możesz korzystać z eksploracji dotykiem. Aplikacja może też sama zakończyć przejmowanie dotyku. Funkcje te działają, gdy aplikacja jest zaznaczona na liście **Aplikacje**. Zobacz [interfejs dotyku bezpośredniego dla programistów](#api-direct-touch).
+Niektóre aplikacje przejmują tylko część ekranu, na przykład planszę gry. Na pozostałym obszarze możesz korzystać z czytania dotykiem. Aplikacja może też sama zakończyć przejmowanie dotyku. Funkcje te działają, gdy aplikacja jest zaznaczona na liście **Aplikacje**. Zobacz [interfejs dotyku bezpośredniego dla programistów](#api-direct-touch).
 
 ### Przywróć odczyt podczas przesuwania palca {#touch-stuck}
 
-Na niektórych telefonach Android może po dotknięciu kilkoma palcami zablokować eksplorację dotykiem aż do ponownego uruchomienia urządzenia. Gesty i stuknięcia działają, ale podczas przesuwania palca SandFly niczego nie odczytuje. Dotyczy to wszystkich czytników na urządzeniu.
+Na niektórych telefonach Android może po dotknięciu kilkoma palcami zablokować czytanie dotykiem aż do ponownego uruchomienia urządzenia. Gesty i stuknięcia działają, ale podczas przesuwania palca SandFly niczego nie odczytuje. Dotyczy to wszystkich czytników na urządzeniu.
 
-Opcja **Dotyk** > **Napraw zablokowaną eksplorację dotykową** jest domyślnie włączona. SandFly rozpoznaje problem, gdy podczas eksploracji nie znajduje elementów. Do naprawy potrzebuje uprawnienia `DUMP`.
+Opcja **Dotyk** > **Przywracaj działanie czytania dotykiem** jest domyślnie włączona. SandFly rozpoznaje problem, gdy podczas czytania dotykiem nie znajduje elementów. Do naprawy potrzebuje uprawnienia `DUMP`.
 
 - Jeśli działa [Shizuku](#updates), SandFly przyznaje sobie uprawnienie przy starcie i po włączeniu tej opcji. Za pierwszym razem Shizuku wyświetli prośbę o zgodę.
-- Możesz też nadać uprawnienie raz przez `adb`. Dopóki go nie ma, SandFly pokazuje polecenie. Użyj **Kopiuj polecenie**, żeby skopiować je do schowka.
+- Możesz też nadać uprawnienie raz przez `adb`. Dopóki go nie ma, SandFly pokazuje polecenie. Użyj **Skopiuj polecenie**, żeby skopiować je do schowka.
 
 ```
 adb shell pm grant io.github.aaron_gh.sandfly android.permission.DUMP
 ```
 
-Jeśli SandFly ma uprawnienie, mówi „Naprawianie eksploracji dotykowej”, kończy dotknięcia, które Android nadal traktował jako aktywne, i mówi „Naprawiono eksplorację dotykową”. Dotknięcie podczas naprawy trafia bezpośrednio do aplikacji. Naprawa działa na telefonach, które pokazują te dotknięcia w `dumpsys input`, na przykład na telefonach Samsunga.
+Jeśli SandFly ma uprawnienie, mówi „Przywracanie czytania dotykiem”, kończy dotknięcia, które Android nadal traktował jako aktywne, i mówi „Przywrócono czytanie dotykiem”. Dotknięcie podczas naprawy trafia bezpośrednio do aplikacji. Naprawa działa na telefonach, które pokazują te dotknięcia w `dumpsys input`, na przykład na telefonach Samsunga.
 
 Gdy brakuje uprawnienia lub telefon nie udostępnia danych, SandFly może tylko ostrzec o możliwej blokadzie. W takiej sytuacji uruchom telefon ponownie. Ostrzeżenie może się też pojawić, gdy przyłożysz palec do miejsca bez elementów do odczytania, na przykład w grze. SandFly podaje je najwyżej raz na 10 minut.
 
-Jeżeli ekran zgaśnie podczas dotykania, Android może potraktować uniesione palce tak, jakby dalej dotykały ekranu. Wtedy działa wyłącznie eksploracja, a gesty i dwukrotne stuknięcia przestają reagować. SandFly wykrywa zgaśnięcie ekranu w trakcie dotyku lub dwa kolejne dotknięcia zakończone eksploracją. Nie liczy się dotknięcie, które kończy się, bo następny palec dotyka ekranu, jak przy szybkim pisaniu. Wyłącza wtedy eksplorację i zaraz włącza ją ponownie. Ta naprawa działa niezależnie od opcji **Napraw zablokowaną eksplorację dotykową** i uprawnienia `DUMP`.
+Jeżeli ekran zgaśnie podczas dotykania, Android może potraktować uniesione palce tak, jakby dalej dotykały ekranu. Wtedy działa wyłącznie czytanie dotykiem, a gesty i dwukrotne stuknięcia przestają reagować. SandFly wykrywa zgaśnięcie ekranu w trakcie dotyku lub dwa kolejne dotknięcia zakończone czytaniem dotykiem. Nie liczy się dotknięcie, które kończy się, bo następny palec dotyka ekranu, jak przy szybkim pisaniu. Wyłącza wtedy czytanie dotykiem i zaraz włącza ją ponownie. Ta naprawa działa niezależnie od opcji **Przywracaj działanie czytania dotykiem** i uprawnienia `DUMP`.
 
 ### Przywróć domyślne czasy reakcji {#touch-reset-delays}
 

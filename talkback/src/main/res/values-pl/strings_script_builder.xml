@@ -8,7 +8,7 @@
     <string name="script_builder_name">Nazwa</string>
     <string name="script_builder_name_empty">Wpisz nazwę</string>
     <string name="script_builder_title_field">Tytuł</string>
-    <string name="script_builder_script_page">Strona skryptu</string>
+    <string name="script_builder_script_page">Ekran zarządzania skryptem</string>
     <string name="script_builder_apps">Aplikacje</string>
     <string name="script_builder_all_apps">Wszystkie aplikacje</string>
     <string name="script_builder_add_app">Dodaj aplikację</string>
@@ -49,8 +49,8 @@
     <string name="script_builder_label_value">etykieta %1$s</string>
     <string name="script_builder_speak">Odczytuj zamiast tego</string>
     <string name="script_builder_speak_value">odczytuj %1$s</string>
-    <string name="script_builder_hint">Wskazówka użytkowania</string>
-    <string name="script_builder_hint_value">wskazówka %1$s</string>
+    <string name="script_builder_hint">Podpowiedź obsługi</string>
+    <string name="script_builder_hint_value">podpowiedź %1$s</string>
     <string name="script_builder_state">Stan</string>
     <string name="script_builder_state_value">stan %1$s</string>
     <string name="script_builder_heading">Nagłówek</string>
@@ -59,20 +59,20 @@
     <string name="script_builder_hide">Ukryj</string>
     <string name="script_builder_hide_item">Ukryj element</string>
     <string name="script_builder_hide_all">Ukryj element i elementy w nim</string>
-    <string name="script_builder_silence">Wycisz zmiany</string>
-    <string name="script_builder_silence_item">Wycisz element</string>
-    <string name="script_builder_silence_all">Wycisz element i elementy w nim</string>
+    <string name="script_builder_silence">Pomijaj odczytywanie zmian</string>
+    <string name="script_builder_silence_item">Pomijaj komunikaty tego elementu</string>
+    <string name="script_builder_silence_all">Pomijaj komunikaty elementu i jego zawartości</string>
     <string name="script_builder_group">Czytaj jako jeden element</string>
     <string name="script_builder_read_order">Kolejność czytania</string>
     <string name="script_builder_read_before">Czytaj przed elementem</string>
     <string name="script_builder_read_after">Czytaj po elemencie</string>
     <string name="script_builder_read_before_value">Przed: %1$s</string>
     <string name="script_builder_read_after_value">Po: %1$s</string>
-    <string name="script_builder_activate">Kliknięcie dwukrotne aktywuje</string>
-    <string name="script_builder_lift_to_activate">Aktywowanie po puszczeniu</string>
-    <string name="script_builder_long_press_after">Przytrzymanie po (ms)</string>
+    <string name="script_builder_activate">Dwukrotne kliknięcie aktywuje</string>
+    <string name="script_builder_lift_to_activate">Aktywuj po oderwaniu palca</string>
+    <string name="script_builder_long_press_after">Czas do długiego kliknięcia (ms)</string>
     <string name="script_builder_long_press_range">Wpisz od 100 do 10 000</string>
-    <string name="script_builder_touch_to_activate">Aktywuj dotknięciem ekranu</string>
+    <string name="script_builder_touch_to_activate">Aktywuj kliknięciem w miejscu elementu</string>
     <string name="script_builder_actions">Czynności</string>
     <string name="script_builder_add_action">Dodaj czynność</string>
     <string name="script_builder_action_value">czynność %1$s</string>
@@ -98,7 +98,7 @@
     </plurals>
     <string name="script_builder_when_focus">Gdy fokus przejdzie na element</string>
     <string name="script_builder_when_focus_value">Gdy fokus przejdzie na: %1$s</string>
-    <string name="script_builder_when_app">Gdy aplikacja się otworzy</string>
+    <string name="script_builder_when_app">Gdy aplikacja przejdzie na pierwszy plan</string>
     <string name="script_builder_when_window">Gdy zmieni się okno</string>
     <string name="script_builder_when_announcement">Gdy komunikat zawiera tekst</string>
     <string name="script_builder_when_announcement_value">Gdy komunikat zawiera: %1$s</string>
@@ -115,7 +115,7 @@
         <item quantity="other">%1$d wiersza</item>
     </plurals>
     <string name="script_builder_problem_item">ustaw element</string>
-    <string name="script_builder_problem_other_item">ustaw element dla „Kolejność czytania” lub „Kliknięcie dwukrotne aktywuje”</string>
+    <string name="script_builder_problem_other_item">wskaż element dla „Kolejność czytania” lub „Dwukrotne kliknięcie aktywuje”</string>
     <string name="script_builder_problem_action">ustaw działanie czynności %1$s</string>
     <string name="script_builder_problem_change">ustaw zmianę lub dodaj czynność</string>
     <string name="script_builder_rule_for_item">Dodaj regułę dla tego elementu</string>
@@ -136,23 +136,23 @@
     <string name="script_builder_setting_text">Tekst</string>
     <string name="script_builder_setting_number">Liczba</string>
     <string name="script_builder_setting_button">Przycisk</string>
-    <string name="script_builder_setting_value">%1$s, w krokach jako %2$s</string>
-    <string name="script_builder_setting_summary">Podsumowanie</string>
+    <string name="script_builder_setting_value">%1$s, wartość w krokach: %2$s</string>
+    <string name="script_builder_setting_summary">Opis ustawienia</string>
     <string name="script_builder_setting_default">Wartość domyślna</string>
     <string name="script_builder_setting_options">Opcje</string>
     <string name="script_builder_setting_options_help">Jedna opcja w wierszu.</string>
     <string name="script_builder_option_one">Opcja 1</string>
-    <string name="script_builder_speech_changes">Zmiany mowy</string>
-    <string name="script_builder_add_speech_change">Dodaj zmianę mowy</string>
-    <string name="script_builder_speech_change">Zmiana mowy</string>
-    <string name="script_builder_speech_which">Zmieniana mowa</string>
-    <string name="script_builder_speech_focus">Mowa dla elementu</string>
+    <string name="script_builder_speech_changes">Zmiany treści wypowiedzi</string>
+    <string name="script_builder_add_speech_change">Dodaj zmianę treści wypowiedzi</string>
+    <string name="script_builder_speech_change">Zmiana treści wypowiedzi</string>
+    <string name="script_builder_speech_which">Rodzaj zmienianych wypowiedzi</string>
+    <string name="script_builder_speech_focus">Odczyt elementu po przeniesieniu fokusu</string>
     <string name="script_builder_speech_notifications">Powiadomienia</string>
     <string name="script_builder_speech_announcements">Komunikaty</string>
-    <string name="script_builder_speech_all">Cała mowa</string>
+    <string name="script_builder_speech_all">Wszystkie wypowiedzi</string>
     <string name="script_builder_speech_app">Aplikacja</string>
     <string name="script_builder_speech_has_value">zawiera %1$s</string>
-    <string name="script_builder_has_text_optional">Zawiera tekst (puste: dowolny)</string>
+    <string name="script_builder_has_text_optional">Zawiera tekst (puste pole: dowolny tekst)</string>
     <string name="script_builder_speech_how">Zmiana</string>
     <string name="script_builder_change_say">Powiedz zamiast tego</string>
     <string name="script_builder_change_before">Powiedz przed</string>
@@ -166,8 +166,8 @@
     <string name="script_builder_speech_find">Tekst do zastąpienia</string>
     <string name="script_builder_speech_replace_with">Zastąp tekstem</string>
     <string name="script_builder_speech_text">Tekst</string>
-    <string name="script_builder_speech_text_help">{text} to to, co powiedziałby SandFly.</string>
-    <string name="script_builder_when_app_leave">Gdy aplikacja się zamknie</string>
+    <string name="script_builder_speech_text_help">Zmienna {text} zawiera tekst, który odczytałby SandFly.</string>
+    <string name="script_builder_when_app_leave">Gdy aplikacja opuści pierwszy plan</string>
     <string name="script_builder_when_text_change">Gdy zmieni się tekst</string>
     <string name="script_builder_when_content_change">Gdy zmieni się ekran</string>
     <string name="script_builder_when_scroll">Gdy lista się przewinie</string>
@@ -185,7 +185,7 @@
     <string name="script_builder_minutes">Minuty</string>
     <string name="script_builder_time">Godzina</string>
     <string name="script_builder_time_error">Wpisz godzinę, np. 08:30</string>
-    <string name="script_builder_command_defaults">Domyślne przy udostępnianiu</string>
+    <string name="script_builder_command_defaults">Domyślne przypisania po udostępnieniu</string>
     <string name="script_builder_command_menu">W menu SandFly</string>
     <string name="script_builder_command_control">Jako opcja sterowania czytaniem</string>
     <string name="script_builder_command_gesture">Gest</string>
@@ -210,7 +210,7 @@
     <string name="script_builder_state_focusable">Może mieć fokus</string>
     <string name="script_builder_state_focused">Ma fokus</string>
     <string name="script_builder_state_visible">Widoczny</string>
-    <string name="script_builder_state_password">Hasło</string>
+    <string name="script_builder_state_password">Pole hasła</string>
     <string name="script_builder_yes">Tak</string>
     <string name="script_builder_no">Nie</string>
     <plurals name="script_builder_when_every_value">
@@ -219,14 +219,14 @@
         <item quantity="many">Co %1$d minut</item>
         <item quantity="other">Co %1$d minuty</item>
     </plurals>
-    <string name="script_builder_has_depth">Poziomy w dół</string>
+    <string name="script_builder_has_depth">Głębokość wyszukiwania wewnątrz</string>
     <plurals name="script_builder_levels">
         <item quantity="one">Bezpośrednio wewnątrz</item>
         <item quantity="few">Do %1$d poziomów</item>
         <item quantity="many">Do %1$d poziomów</item>
         <item quantity="other">Do %1$d poziomu</item>
     </plurals>
-    <string name="script_builder_change_speech">Zmień mowę</string>
+    <string name="script_builder_change_speech">Zmień treść wypowiedzi</string>
     <string name="script_builder_change_speech_summary">Usuń, zastąp lub zmień kolejność tego, co SandFly mówi dla elementu</string>
     <string name="script_builder_edits">Edycje</string>
     <string name="script_builder_add_edit">Dodaj edycję</string>
@@ -237,8 +237,8 @@
     <string name="script_builder_edit_keep_parts">Zachowaj pierwsze części</string>
     <string name="script_builder_edit_remove_value">Usuń: %1$s</string>
     <string name="script_builder_edit_remove_parts_value">Usuń części z: %1$s</string>
-    <string name="script_builder_parts_help">Części to fragmenty między przecinkami.</string>
-    <string name="script_builder_regex_help">Przy opcji Wyrażenie regularne $1 w nowym tekście to pierwsza grupa w nawiasach.</string>
+    <string name="script_builder_parts_help">Części wypowiedzi to fragmenty oddzielone przecinkami.</string>
+    <string name="script_builder_regex_help">Gdy używasz opcji „Wyrażenie regularne”, $1 w tekście zastępującym oznacza zawartość pierwszej grupy w nawiasach.</string>
     <string name="script_builder_preview">Podgląd na sprawdzonym elemencie</string>
     <string name="script_builder_preview_silent">Nic nie mówi</string>
     <plurals name="script_builder_edit_keep_parts_value">
@@ -255,9 +255,9 @@
         <item quantity="other">Pasuje do sprawdzonego elementu i %1$d podobnego elementu</item>
     </plurals>
     <string name="script_builder_inspected_category">Sprawdzony element</string>
-    <string name="script_builder_one_item_actions">Czytaj jako jeden element, z jego przyciskami jako czynnościami</string>
+    <string name="script_builder_one_item_actions">Odczytuj jako jeden element, z przyciskami w czynnościach</string>
     <string name="script_builder_actions_value">Czynności: %1$s</string>
-    <string name="script_builder_choose_read">Wybierz, co jest czytane</string>
+    <string name="script_builder_choose_read">Wybierz fragmenty do odczytania</string>
     <string name="script_builder_record_action">Nagraj czynność</string>
     <string name="script_builder_recording_toast">Nagrywanie. Wykonaj kroki na jednym elemencie, a następnie otwórz powiadomienie „Nagrywanie czynności”.</string>
     <string name="script_builder_recording_notification">Nagrywanie czynności: %1$s</string>
@@ -271,10 +271,10 @@
     <string name="script_builder_step_long_click_in_item">Przytrzymaj %1$s w elemencie</string>
     <string name="script_builder_step_click_screen">Naciśnij %1$s</string>
     <string name="script_builder_step_long_click_screen">Przytrzymaj %1$s</string>
-    <string name="script_builder_button_actions">Przyciski w środku jako czynności</string>
+    <string name="script_builder_button_actions">Przyciski wewnętrzne jako czynności</string>
     <string name="script_builder_skip_buttons">Przyciski do pominięcia</string>
     <string name="script_builder_skip_buttons_hint">Teksty oddzielone przecinkami</string>
-    <string name="script_builder_read">Ustal, co jest czytane</string>
+    <string name="script_builder_read">Ustal treść i kolejność odczytu</string>
     <plurals name="script_builder_read_parts">
         <item quantity="one">%1$d część</item>
         <item quantity="few">%1$d części</item>
@@ -283,9 +283,9 @@
     </plurals>
     <string name="script_builder_read_add">Dodaj część</string>
     <string name="script_builder_read_own">Własny tekst elementu</string>
-    <string name="script_builder_read_place">Element %1$s w nim</string>
-    <string name="script_builder_read_text_before">Tekst przed nią</string>
-    <string name="script_builder_read_above">Jeśli pusta, użyj elementu powyżej</string>
+    <string name="script_builder_read_place">Element na ścieżce %1$s</string>
+    <string name="script_builder_read_text_before">Tekst przed fragmentem</string>
+    <string name="script_builder_read_above">Gdy brak tekstu, użyj elementu powyżej</string>
     <string name="script_ai_build">Utwórz skrypt za pomocą SandFly Pro</string>
     <string name="script_ai_change">Zmień za pomocą SandFly Pro</string>
     <string name="script_ai_review">Napisany przez SandFly Pro</string>
@@ -294,7 +294,7 @@
     <string name="script_ai_ask_changes">Poproś o zmiany</string>
     <string name="script_ai_discard">Odrzuć</string>
     <string name="script_builder_rule_for">Reguła dla</string>
-    <string name="script_builder_rule_for_row">Każdy wiersz podobny do tego, w którym jest</string>
+    <string name="script_builder_rule_for_row">Każdy podobny wiersz listy</string>
     <string name="script_builder_rule_for_item_choice">Każdy element podobny do sprawdzonego elementu</string>
     <string name="script_builder_setting_command">Polecenie</string>
 </resources>

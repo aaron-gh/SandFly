@@ -1,12 +1,12 @@
 # Obszary dotyku bezpośredniego
 
-Dotyk bezpośredni przekazuje dotknięcia aplikacji z pominięciem eksploracji SandFly. Może obejmować cały ekran albo wybrane obszary, na przykład planszę gry. Na reszcie ekranu nadal działa eksploracja. Zasady można ustawić w manifeście dla danej aktywności i stanu, a także zmienić podczas działania.
+Dotyk bezpośredni przekazuje dotknięcia aplikacji z pominięciem czytania dotykiem w SandFly. Może obejmować cały ekran albo wybrane obszary, na przykład planszę gry. Na reszcie ekranu nadal działa czytanie dotykiem. Zasady można ustawić w manifeście dla danej aktywności i stanu, a także zmienić podczas działania.
 
 ## Ustawienia użytkownika {#what-the-user-controls}
 
 - Jeśli aplikacja zadeklarowała obszary lub uprawnienie, SandFly włącza dotyk bezpośredni, gdy zobaczy ją po raz pierwszy. Użytkownik może go wyłączyć w **Dotyk** > **Dotyk bezpośredni**. Deklaracje i żądania aplikacji nie obowiązują wtedy.
 - SandFly przejmuje dotyk po otwarciu okna dialogowego, innej aplikacji, powiadomień lub szybkich ustawień, po przejściu do pola tekstowego i gdy ekran zgaśnie. Po zamknięciu takiego okna, opuszczeniu pola albo ponownym włączeniu ekranu dotyk bezpośredni wraca na obszary aplikacji.
-- Okna systemowe, takie jak pasek stanu, pozostają pod obsługą SandFly. Dotyczy to również klawiatury, chyba że użytkownik włączy pisanie bezpośrednie dla aplikacji. Pasek nawigacji przyjmuje dotknięcia bezpośrednio tylko wtedy, gdy użytkownik włączy **Aktywowanie przycisków paska nawigacji kliknięciem**.
+- Okna systemowe, takie jak pasek stanu, pozostają pod obsługą SandFly. Dotyczy to również klawiatury, chyba że użytkownik włączy pisanie bezpośrednie dla aplikacji. Pasek nawigacji przyjmuje dotknięcia bezpośrednio tylko wtedy, gdy użytkownik włączy **Aktywuj przyciski paska nawigacji jednym dotknięciem**.
 - Gdy obszary aplikacji zaczynają odbierać dotknięcia, SandFly mówi „Dotyk bezpośredni włączony”. Gdy przestają, mówi „Dotyk bezpośredni wyłączony”. Oba komunikaty można wyłączyć opcją **Odczytuj zmiany stanu dotyku bezpośredniego**.
 
 ## Wybór obszarów {#which-areas-apply}

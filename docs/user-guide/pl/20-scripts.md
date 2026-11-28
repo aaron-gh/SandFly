@@ -76,7 +76,7 @@ Pozostałe nowsze wersje są wymienione w sekcji **Aktualizacje** na ekranie **S
 Otwórz **Skrypty** i wybierz skrypt. Na jego ekranie znajdziesz poniższe opcje i informacje.
 
 - **Włącz** przełącza działanie skryptu.
-- **Działaj przy wyłączonym ekranie** utrzymuje działanie skryptu przy wygaszonym ekranie, np. gdy skrypt odczytuje godzinę. Opcja jest widoczna tylko w skryptach, które ją udostępniają, i jest wyłączona po instalacji.
+- **Działaj przy wygaszonym ekranie** utrzymuje działanie skryptu przy wygaszonym ekranie, np. gdy skrypt odczytuje godzinę. Opcja jest widoczna tylko w skryptach, które ją udostępniają, i jest wyłączona po instalacji.
 - Nazwa, opis, wersja, autor i informacja o tym, gdzie skrypt działa.
 - **Wyświetl kod** pokazuje plik `main.lua` skryptu razem z manifestem. Zobacz [](#scripts-code).
 - **Edytuj kod** zmienia kod skryptu. Opcja nie jest widoczna w skryptach utworzonych w kreatorze. Zobacz [](#scripts-code).
@@ -119,7 +119,7 @@ Skrypt może prosić o następujące uprawnienia.
 - **Dodawanie gestów, skrótów klawiszowych, pozycji menu i opcji sterowania czytaniem oraz uruchamianie poleceń SandFly**.
 - **Korzystanie z internetu**.
 - **Odczytywanie i zmienianie zawartości schowka**.
-- **Cofanie, przechodzenie do ekranu głównego, otwieranie powiadomień, wyświetlanie listy aplikacji, otwieranie aplikacji, ustawień i linków, wysyłanie intencji do aplikacji, zmiana głośności, trybu dzwonka i ustawień urządzenia, takich jak Wi-Fi i latarka, sterowanie multimediami, ustawianie timerów i alarmów oraz rozpoczynanie połączeń i wiadomości**.
+- **Cofanie, przechodzenie do ekranu głównego, otwieranie powiadomień, wyświetlanie listy aplikacji, otwieranie aplikacji, ustawień i linków, wysyłanie intencji do aplikacji, zmiana głośności, trybu dzwonka i ustawień urządzenia, takich jak Wi-Fi i latarka, sterowanie multimediami, ustawianie minutników i alarmów oraz rozpoczynanie połączeń i przygotowywanie wiadomości**.
 - **Odczytywanie i zmienianie treści odczytywanych powiadomień**.
 - **Śledzenie wszystkich zdarzeń w każdej aplikacji, w tym wpisywania tekstu**.
 - **Wyświetlanie okien dialogowych nad dowolną aplikacją**.
@@ -171,30 +171,30 @@ Otworzy się kreator. Każda zmiana jest od razu zapisywana i stosowana. Częśc
 - **Sterowanie czytaniem** zawiera pozycje przechodzące po określonym rodzaju elementów. Wybierz **Dodaj opcję sterowania czytaniem** i wskaż element, na który ma przechodzić.
 - **Polecenia** zawierają kroki uruchamiane gestem, klawiszami, z menu SandFly lub za pomocą sterowania czytaniem. Zobacz [](#scripts-builder-commands).
 - **Wyzwalacze** zawierają kroki, które uruchamiają się automatycznie. Zobacz [](#scripts-builder-triggers).
-- **Zmiany mowy** określają, co odczytuje SandFly. Zobacz [](#scripts-builder-speech).
+- **Zmiany treści wypowiedzi** określają, co odczytuje SandFly. Zobacz [](#scripts-builder-speech).
 - **Ustawienia**, **Informacje** i **Kod** dotyczą konfiguracji i treści skryptu. Zobacz [](#scripts-builder-settings).
 - W grupie **Skrypt** znajdziesz **Eksportuj skrypt** i **Duplikuj skrypt**. Zobacz [](#scripts-builder-manage).
 
-Opcja **Strona skryptu** otwiera ekran skryptu z przełącznikiem, uprawnieniami i dziennikiem. Przy niedokończonej części pojawia się informacja o brakujących danych, np. o konieczności wskazania elementu. Dopóki jej nie uzupełnisz, ta część jest pomijana.
+Opcja **Ekran zarządzania skryptem** otwiera ekran skryptu z przełącznikiem, uprawnieniami i dziennikiem. Przy niedokończonej części pojawia się informacja o brakujących danych, np. o konieczności wskazania elementu. Dopóki jej nie uzupełnisz, ta część jest pomijana.
 
 #### Reguły {#scripts-builder-rules}
 
 Reguła wybiera element i określa, jak go zmienić. Wybierz **Dodaj regułę**, aby utworzyć nową.
 
-W sekcji **Element** określasz, do których elementów stosować regułę. Dostępne są te same warunki co w makrze. Możesz dopasować tekst przez **Dopasuj w** i **Wyrażenie regularne**, a także użyć typu elementu oraz pól **Dokładny tekst**, **Identyfikator zasobu**, **Identyfikator zasobu elementu nadrzędnego**, **Nazwa klasy**, **Rola**, **Stany**, **Wewnątrz elementu** i **Zawiera element**. Zobacz [](#macros). Możesz też wybrać **Użyj sprawdzonego elementu**. Wtedy pola zostaną uzupełnione danymi elementu ostatnio sprawdzonego poleceniem **Sprawdź element z fokusem** lub **Kopiuj szczegóły elementu**. Zobacz [](#scripts-inspect).
+W sekcji **Element** określasz, do których elementów stosować regułę. Dostępne są te same warunki co w makrze. Możesz dopasować tekst przez **Szukaj w** i **Wyrażenie regularne**, a także użyć typu elementu oraz pól **Dokładny tekst**, **Identyfikator zasobu**, **Identyfikator zasobu elementu nadrzędnego**, **Nazwa klasy**, **Rola**, **Stany**, **Wewnątrz elementu** i **Zawiera element**. Zobacz [](#macros). Możesz też wybrać **Użyj sprawdzonego elementu**. Wtedy pola zostaną uzupełnione danymi elementu ostatnio sprawdzonego poleceniem **Sprawdź element z fokusem** lub **Kopiuj szczegóły elementu**. Zobacz [](#scripts-inspect).
 
 W sekcji **Zmiany** wybierasz działanie reguły.
 
-- **Etykieta**, **Odczytuj zamiast tego**, **Wskazówka użytkowania**, **Stan**, **Rola** i **Nagłówek** zmieniają właściwości elementu.
+- **Etykieta**, **Odczytuj zamiast tego**, **Podpowiedź obsługi**, **Stan**, **Rola** i **Nagłówek** zmieniają właściwości elementu.
 - W polu **Ukryj** możesz wybrać **Ukryj element** lub **Ukryj element i elementy w nim**.
-- **Wycisz zmiany** pomija odczyt zmian elementu, a w razie potrzeby również jego zawartości.
+- **Pomijaj odczytywanie zmian** pomija odczyt zmian elementu, a w razie potrzeby również jego zawartości.
 - **Czytaj jako jeden element** odczytuje element wraz z zawartością jako jedną pozycję.
 - W polu **Kolejność czytania** użyj **Czytaj przed elementem** lub **Czytaj po elemencie**.
-- **Kliknięcie dwukrotne aktywuje** pozwala wskazać inny element do aktywowania. Są tu też opcje **Aktywowanie po puszczeniu**, **Przytrzymanie po (ms)** i **Aktywuj dotknięciem ekranu**.
-- **Zmień mowę** usuwa, zastępuje lub przestawia części wypowiedzi, którą SandFly odczytuje przy elemencie. Zobacz [](#scripts-builder-speech).
-- **Ustal, co jest czytane** określa części wypowiedzi i ich kolejność. Za pomocą **Dodaj część** dodasz jeden z tekstów elementu, własny tekst lub element wewnętrzny.
+- **Dwukrotne kliknięcie aktywuje** pozwala wskazać inny element do aktywowania. Są tu też opcje **Aktywowanie po puszczeniu**, **Czas do długiego kliknięcia (ms)** i **Aktywuj kliknięciem w miejscu elementu**.
+- **Zmień treść wypowiedzi** usuwa, zastępuje lub przestawia części wypowiedzi, którą SandFly odczytuje przy elemencie. Zobacz [](#scripts-builder-speech).
+- **Ustal treść i kolejność odczytu** określa części wypowiedzi i ich kolejność. Za pomocą **Dodaj część** dodasz jeden z tekstów elementu, własny tekst lub element wewnętrzny.
 
-Sekcja **Czynności** dodaje pozycje do menu czynności elementu. Wybierz **Dodaj czynność**. W polu **Działanie** możesz wybrać **Kliknij element**, **Kliknij element z przytrzymaniem**, **Przenieś fokus na element**, **Przewiń element do przodu**, **Przewiń element do tyłu**, **Odczytaj tekst** lub **Odczytaj tekst elementu**. Ustal też, czy pozycja ma być przed czynnościami aplikacji, czy za nimi. Opcja **Przyciski w środku jako czynności** zamienia przyciski wewnątrz elementu na czynności. W polu **Przyciski do pominięcia** wybierzesz wyjątki.
+Sekcja **Czynności** dodaje pozycje do menu czynności elementu. Wybierz **Dodaj czynność**. W polu **Działanie** możesz wybrać **Kliknij element**, **Kliknij element z przytrzymaniem**, **Przenieś fokus na element**, **Przewiń element do przodu**, **Przewiń element do tyłu**, **Odczytaj tekst** lub **Odczytaj tekst elementu**. Ustal też, czy pozycja ma być przed czynnościami aplikacji, czy za nimi. Opcja **Przyciski wewnętrzne jako czynności** zamienia przyciski wewnątrz elementu na czynności. W polu **Przyciski do pominięcia** wybierzesz wyjątki.
 
 Możesz też nagrać czynność.
 
@@ -203,7 +203,7 @@ Możesz też nagrać czynność.
 3. Otwórz powiadomienie o nagrywaniu czynności.
 4. Wybierz **Zapisz** lub **Nagraj ponownie**.
 
-Jeśli reguła wskazuje sprawdzony element, sekcja **Sprawdzony element** udostępnia **Czytaj jako jeden element, z jego przyciskami jako czynnościami** oraz **Wybierz, co jest czytane**. Druga opcja pokazuje części treści odczytywane przez SandFly. Odznacz fragmenty, które mają być pomijane w każdym podobnym elemencie. W polu **Reguła dla** wybierz **Każdy wiersz podobny do tego, w którym jest** lub **Każdy element podobny do sprawdzonego elementu**.
+Jeśli reguła wskazuje sprawdzony element, sekcja **Sprawdzony element** udostępnia **Odczytuj jako jeden element, z przyciskami w czynnościach** oraz **Wybierz fragmenty do odczytania**. Druga opcja pokazuje części treści odczytywane przez SandFly. Odznacz fragmenty, które mają być pomijane w każdym podobnym elemencie. W polu **Reguła dla** wybierz **Każdy podobny wiersz listy** lub **Każdy element podobny do sprawdzonego elementu**.
 
 **Duplikuj regułę** tworzy kopię w tym samym skrypcie. **Kopiuj regułę do skryptu** przenosi kopię do innego skryptu utworzonego w kreatorze. **Usuń regułę** usuwa regułę.
 
@@ -213,7 +213,7 @@ Opcja **Dodaj polecenie** tworzy polecenie o podanej nazwie. Na jego ekranie zna
 
 - **Kroki** zawierają czynności polecenia. Edytuje się je tak samo jak kroki makra. Zobacz [](#macros).
 - **Gesty i skrót klawiszowy** służą do ustawienia przypisań na tym telefonie. Zobacz [](#scripts-commands).
-- **Domyślne przy udostępnianiu** określa przypisania nadawane poleceniu przy instalowaniu skryptu. Możesz ustawić gest, klawisze, **W menu SandFly** i **Jako opcja sterowania czytaniem**.
+- **Domyślne przypisania po udostępnieniu** określa przypisania nadawane poleceniu przy instalowaniu skryptu. Możesz ustawić gest, klawisze, **W menu SandFly** i **Jako opcja sterowania czytaniem**.
 - **Zmień nazwę** i **Usuń** pozwalają zmienić nazwę lub skasować polecenie.
 
 #### Wyzwalacze {#scripts-builder-triggers}
@@ -221,7 +221,7 @@ Opcja **Dodaj polecenie** tworzy polecenie o podanej nazwie. Na jego ekranie zna
 Opcja **Dodaj wyzwalacz** tworzy kroki wykonywane samoczynnie. Wybierz zdarzenie, które ma je uruchamiać.
 
 - **Gdy fokus przejdzie na element**.
-- **Gdy aplikacja się otworzy** lub **Gdy aplikacja się zamknie**.
+- **Gdy aplikacja przejdzie na pierwszy plan** lub **Gdy aplikacja opuści pierwszy plan**.
 - **Gdy zmieni się okno**.
 - **Gdy komunikat zawiera tekst** lub **Gdy powiadomienie zawiera tekst**.
 - **Gdy zmieni się tekst**, **Gdy zmieni się ekran**, **Gdy lista się przewinie**, **Gdy kursor się przesunie**, **Gdy element zostanie kliknięty**, **Gdy element zostanie kliknięty z przytrzymaniem** lub **Gdy pole edycji otrzyma fokus wprowadzania**. Możesz wybrać dowolny albo konkretny element.
@@ -232,14 +232,14 @@ Wyzwalacze czasowe działają tylko wtedy, gdy skrypt jest uruchomiony.
 
 #### Zmiany mowy {#scripts-builder-speech}
 
-Opcja **Dodaj zmianę mowy** pozwala zmienić to, co odczytuje SandFly. W polu **Zmieniana mowa** wybierz **Mowa dla elementu**, **Powiadomienia** (ewentualnie z wybraną pozycją **Aplikacja**), **Komunikaty** lub **Cała mowa**. Pole **Zawiera tekst (puste: dowolny)** zawęża dopasowanie do podanego tekstu, jeśli je uzupełnisz.
+Opcja **Dodaj zmianę treści wypowiedzi** pozwala zmienić to, co odczytuje SandFly. W polu **Rodzaj zmienianych wypowiedzi** wybierz **Odczyt elementu po przeniesieniu fokusu**, **Powiadomienia** (ewentualnie z wybraną pozycją **Aplikacja**), **Komunikaty** lub **Wszystkie wypowiedzi**. Pole **Zawiera tekst (puste pole: dowolny tekst)** zawęża dopasowanie do podanego tekstu, jeśli je uzupełnisz.
 
 W sekcji **Edycje** zmiany wykonują się w kolejności na liście. Dostępne są **Usuń tekst**, **Zastąp tekst**, **Usuń powtarzające się części**, **Usuń części zawierające tekst**, **Zachowaj pierwsze części**, **Powiedz zamiast tego**, **Powiedz przed**, **Powiedz po** i **Nic nie mów**. Części wypowiedzi są oddzielone przecinkami. W ustawieniach **Powiedz zamiast tego**, **Powiedz przed** i **Powiedz po** zapis `{text}` oznacza tekst, który SandFly normalnie by wypowiedział. Użyj **Podgląd na sprawdzonym elemencie**, aby zobaczyć wynik na ostatnim sprawdzonym elemencie.
 
 #### Ustawienia, informacje i kod {#scripts-builder-settings}
 
 - **Ustawienia** > **Dodaj ustawienie** dodaje na ekranie skryptu element typu **Przełącznik**, **Lista**, **Tekst**, **Liczba** albo **Przycisk**. Kroki mogą korzystać z wartości ustawienia. Przycisk uruchamia wyzwalacz.
-- **Informacje** zawierają **Opis**, **Wersja**, **Strona główna**, **Wczytuj tylko do uruchomienia polecenia** oraz **Działaj przy wyłączonym ekranie**.
+- **Informacje** zawierają **Opis**, **Wersja**, **Strona główna**, **Wczytuj tylko do uruchomienia polecenia** oraz **Działaj przy wygaszonym ekranie**.
 - **Kod** zawiera pole **Kod Lua** i pozycję **Dodatkowe uprawnienia**, wymagane przez ten kod. Kod jest dołączany do końca skryptu. SandFly sprawdza, czy nie ma w nim błędów, przed zapisem.
 
 #### Eksportuj, duplikuj i kopiuj skrypty {#scripts-builder-manage}

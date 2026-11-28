@@ -1,6 +1,6 @@
 ## Wyświetlanie, ostatnie aplikacje i szybkie ustawienia {#display}
 
-Na ekranie **Wyświetlanie** w ustawieniach SandFly możesz zmienić obramowanie fokusu, animacje okien i tapetę. W tym rozdziale opisano też ukrywanie ekranu, zmianę jasności, listę ostatnich aplikacji w **Przegląd**, podzielony ekran i panel **Szybkie ustawienia** SandFly.
+Na ekranie **Wyświetlanie** w ustawieniach SandFly możesz zmienić obramowanie fokusu, animacje okien i tapetę. W tym rozdziale opisano też ukrywanie ekranu, zmianę jasności, listę ostatnich aplikacji na ekranie **Przegląd SandFly**, podzielony ekran i panel **Szybkie ustawienia** SandFly.
 
 ### Zmień obramowanie fokusu {#display-focus-indicator}
 
@@ -61,36 +61,36 @@ Te ustawienia są dostępne na telefonach i tabletach.
 
 ### Przegląd ostatnich aplikacji SandFly {#display-overview}
 
-Przegląd SandFly pokazuje ostatnie aplikacje na liście lub w siatce. SandFly odczytuje je po kolei. Żeby otwierać ten przegląd zamiast systemowego, włącz **Przegląd** > **Używaj przeglądu SandFly**. Opcja jest domyślnie wyłączona.
+Przegląd SandFly pokazuje ostatnie aplikacje na liście lub w siatce. SandFly odczytuje je po kolei. Żeby otwierać ten przegląd zamiast systemowego, włącz **Przegląd SandFly** > **Używaj przeglądu SandFly**. Opcja jest domyślnie wyłączona.
 
 SandFly używa Shizuku lub roota do pobierania i otwierania ostatnich aplikacji. Zobacz [](#updates). Jeśli Shizuku nie działa lub SandFly nie ma dostępu, usłyszysz „Shizuku nie działa” albo „Shizuku nie zezwala SandFly” i otworzy się przegląd systemowy. Na ekranie blokady otwiera się przegląd systemowy.
 
-W **Przegląd** znajdziesz także dwie opcje.
+Na ekranie **Przegląd SandFly** znajdziesz także dwie opcje.
 
-- **Najnowsza aplikacja na dole** umieszcza ostatnio używaną aplikację na końcu listy i od razu tam przewija. Opcja jest domyślnie wyłączona.
+- **Ostatnio używana aplikacja na dole** umieszcza ostatnio używaną aplikację na końcu listy i od razu tam przewija. Opcja jest domyślnie wyłączona.
 - **Kolumny** ustawia układ. Jedna kolumna pokazuje listę. Dwie, trzy lub cztery pokazują siatkę o wybranej szerokości. Domyślnie ustawiona jest jedna kolumna.
 
 Tych ustawień nie ma na telewizorach.
 
 #### Korzystaj z przeglądu {#display-overview-use}
 
-Przy włączonym **Używaj przeglądu SandFly** polecenie **Przegląd** w kategorii **Czynności systemowe** otworzy listę SandFly. Przegląd SandFly pojawi się też nad systemowym po użyciu gestu nawigacji Androida lub przycisku ostatnich aplikacji.
+Przy włączonym **Używaj przeglądu SandFly** polecenie **Przegląd SandFly** w kategorii **Czynności systemowe** otworzy listę SandFly. Przegląd SandFly pojawi się też nad systemowym po użyciu gestu nawigacji Androida lub przycisku ostatnich aplikacji.
 
 - Stuknij dwukrotnie na aplikacji, żeby do niej przejść.
 - Otwórz menu **Czynności** danej aplikacji, żeby wybrać **Zamknij**, **Podziel ekran** lub **Informacje o aplikacji**. **Podziel ekran** otwiera wybraną aplikację obok tej, z której otwarto przegląd. **Informacje o aplikacji** otwiera odpowiednią stronę ustawień Androida.
 - Naciśnij Delete na klawiaturze fizycznej, żeby zamknąć aplikację, na której jest fokus.
 - U dołu po lewej wybierz **Zamknij wszystkie**, żeby zamknąć wszystkie ostatnie aplikacje.
-- U dołu po prawej wybierz **Przegląd systemowy**, żeby otworzyć systemową listę.
+- U dołu po prawej wybierz **Systemowy ekran ostatnich aplikacji**, żeby otworzyć systemową listę.
 
-Gdy przegląd jest otwarty, ponownie uruchom **Przegląd**, żeby przejść do poprzedniej aplikacji. Osobne polecenie **Przegląd systemowy** otwiera listę Androida także wtedy, gdy **Używaj przeglądu SandFly** jest włączone.
+Gdy przegląd jest otwarty, ponownie uruchom **Przegląd SandFly**, żeby przejść do poprzedniej aplikacji. Osobne polecenie **Systemowy ekran ostatnich aplikacji** otwiera listę Androida także wtedy, gdy **Używaj przeglądu SandFly** jest włączone.
 
 #### Przełączaj się między aplikacjami {#display-switch-apps}
 
 W kategorii **Czynności systemowe** znajdziesz trzy polecenia. Domyślnie nie mają przypisań. Zobacz [](#commands).
 
 - **Poprzednia aplikacja** otwiera aplikację używaną bezpośrednio przed bieżącą. Jeśli nie ma dokąd przejść, usłyszysz „Brak poprzedniej aplikacji”. Bez Shizuku SandFly otworzy przegląd systemowy i wybierze w nim poprzednią aplikację.
-- **Starsza aplikacja** przechodzi do kolejnej starszej pozycji na liście. Wykonaj polecenie ponownie, żeby cofnąć się dalej. SandFly podaje nazwę każdej aplikacji, a na końcu listy „Brak starszej aplikacji”. Bez Shizuku polecenie działa jak **Poprzednia aplikacja**.
-- **Nowsza aplikacja** przechodzi w stronę najnowszej pozycji po użyciu **Starsza aplikacja**. Przy ostatniej pozycji usłyszysz „Brak nowszej aplikacji”. Polecenie wymaga Shizuku.
+- **Wcześniej używana aplikacja** przechodzi do kolejnej starszej pozycji na liście. Wykonaj polecenie ponownie, żeby cofnąć się dalej. SandFly podaje nazwę każdej aplikacji, a na końcu listy „Brak starszej aplikacji”. Bez Shizuku polecenie działa jak **Poprzednia aplikacja**.
+- **Później używana aplikacja** przechodzi w stronę najnowszej pozycji po użyciu **Wcześniej używana aplikacja**. Przy ostatniej pozycji usłyszysz „Brak nowszej aplikacji”. Polecenie wymaga Shizuku.
 
 Gdy **Używaj przeglądu SandFly** jest włączone i Shizuku działa, możesz przełączać aplikacje z klawiatury fizycznej bez otwierania przeglądu.
 
@@ -104,7 +104,7 @@ Skrót Alt + Tab jest niedostępny, jeśli Alt jest [klawiszem SandFly](#keyboar
 
 Żeby wyświetlić dwie aplikacje obok siebie, użyj **Podziel ekran** w menu **Czynności** aplikacji w [przeglądzie SandFly](#display-overview-use).
 
-Przy podzielonym ekranie w menu SandFly znajdziesz **Podziel ekran**. Otwiera **Przejdź do separatora** i czynności separatora, między innymi zmianę proporcji i zamianę aplikacji miejscami. To samo menu otwiera polecenie **Podziel ekran** z kategorii **Czynności systemowe**. Jeśli okna nie są podzielone, usłyszysz „Ekran nie jest podzielony”. W układzie dzielonym Wstecz i klawisze służące do wpisywania trafiają do aplikacji, w której ostatnio przenosiłeś fokus.
+Przy podzielonym ekranie w menu SandFly znajdziesz **Podziel ekran**. Otwiera **Przejdź do granicy podziału ekranu** i czynności separatora, między innymi zmianę proporcji i zamianę aplikacji miejscami. To samo menu otwiera polecenie **Podziel ekran** z kategorii **Czynności systemowe**. Jeśli okna nie są podzielone, usłyszysz „Ekran nie jest podzielony”. W układzie dzielonym Wstecz i klawisze służące do wpisywania trafiają do aplikacji, w której ostatnio przenosiłeś fokus.
 
 ### Panel szybkich ustawień SandFly {#display-quick-settings}
 
@@ -115,7 +115,7 @@ W panelu SandFly możesz ułożyć własną siatkę przełączników, suwaków i
 Panel otwiera polecenie **Szybkie ustawienia** z kategorii **Czynności systemowe** lub przycisk **Szybkie ustawienia** na [liście powiadomień](#notifications) SandFly. Na ekranie blokady otwierają się szybkie ustawienia systemowe.
 
 - SandFly podaje wiersz i kolumnę elementu, jego nazwę i stan, na przykład nazwę połączonej sieci Wi-Fi.
-- Stuknij dwa razy, żeby zmienić stan przełącznika. W opcjach z kilkoma wartościami, takich jak **Tryb dźwięku** lub **Limit czasu ekranu**, dwukrotne stuknięcie wybiera następną wartość.
+- Stuknij dwa razy, żeby zmienić stan przełącznika. W opcjach z kilkoma wartościami, takich jak **Tryb dźwięku** lub **Czas do wygaszenia ekranu**, dwukrotne stuknięcie wybiera następną wartość.
 - Na suwaku, takim jak **Jasność** lub **Głośność multimediów**, przesuń palcem w górę albo w dół, żeby zmienić wartość o jeden krok.
 - Stuknij dwa razy i przytrzymaj po drugim stuknięciu lub użyj czynności **Otwórz ustawienia**, żeby przejść do ustawień Androida dla danego elementu.
 - **Edytuj** otwiera ekran wyboru elementów. Zobacz [](#display-quick-settings-edit).
@@ -134,8 +134,8 @@ Otwórz **Szybkie ustawienia** > **Panel szybkich ustawień** lub wybierz **Edyt
 - **Dodaj element sterujący** wyświetla elementy SandFly, których jeszcze nie ma w panelu. Na liście są tylko funkcje dostępne na urządzeniu.
   - Połączenia i dane obejmują **Wi-Fi**, **Bluetooth**, **Dane mobilne**, **Hotspot**, **Tryb samolotowy**, **Oszczędzanie danych**, **Lokalizacja** i **NFC**.
   - Dźwięk i zasilanie obejmują **Nie przeszkadzać**, **Tryb dźwięku**, **Oszczędzanie baterii**, **Głośność multimediów**, **Głośność połączenia**, **Głośność dzwonka**, **Głośność powiadomień**, **Głośność alarmu**, **Głośność dostępności**, **Głośność dźwięku systemowego**, **Następny alarm** i **Bateria**.
-  - Obraz i oświetlenie obejmują **Latarka**, **Jasność latarki**, **Automatyczne obracanie**, **Ciemny motyw**, **Nocne światło**, **Bardzo przyciemnione**, **Inwersja kolorów**, **Korekta koloru**, **Jasność**, **Jasność adaptacyjna**, **Limit czasu ekranu**, **Rozmiar czcionki** i **Rozmiar wyświetlacza**.
-  - Pozostałe elementy to **Dostęp do mikrofonu**, **Dostęp do kamery**, **Media**, **Wyjście multimedialne**, **Ustawienia** i **Menu zasilania**.
+  - Obraz i oświetlenie obejmują **Latarka**, **Jasność latarki**, **Automatyczne obracanie**, **Ciemny motyw**, **Podświetlenie nocne**, **Dodatkowe przyciemnienie**, **Inwersja kolorów**, **Korekta koloru**, **Jasność**, **Jasność adaptacyjna**, **Czas do wygaszenia ekranu**, **Rozmiar czcionki** i **Rozmiar wyświetlania**.
+  - Pozostałe elementy to **Dostęp do mikrofonu**, **Dostęp do aparatu**, **Multimedia**, **Wyjście multimedialne**, **Ustawienia** i **Menu zasilania**.
 - **Dodaj kafelek aplikacji** wyświetla kafelki szybkich ustawień oferowane przez zainstalowane aplikacje.
 - **Dodaj kafelek systemowy** wyświetla kafelki z szybkich ustawień Androida. Jeśli kafelek ma odpowiednik w SandFly, zostanie dodany jako element SandFly. Tak działa na przykład **Hotspot**. Gdy Shizuku działa, SandFly przyznaje sobie uprawnienie DUMP i dostęp do danych o użyciu, a potem odczytuje listę z systemu. W przeciwnym razie przegląda szybkie ustawienia systemu, co trwa kilka sekund.
 - **Liczba kolumn** pozwala ustawić od 1 do 4 kolumn siatki. Domyślnie są dwie.
@@ -145,4 +145,4 @@ Otwórz **Szybkie ustawienia** > **Panel szybkich ustawień** lub wybierz **Edyt
 - **Przenieś** wyświetla komórki siatki. Element zajmie wybraną komórkę. Pozostałe pozycje pomiędzy starym a nowym miejscem przesuną się o jedną komórkę. SandFly poda, ile z nich zostało przesuniętych.
 - **Usuń** usuwa element z panelu.
 
-Domyślnie panel zawiera **Wi-Fi**, **Bluetooth**, **Dane mobilne**, **Tryb samolotowy**, **Nie przeszkadzać**, **Tryb dźwięku**, **Latarka**, **Lokalizacja**, **Automatyczne obracanie**, **Oszczędzanie baterii**, **Jasność**, **Głośność multimediów**, **Głośność dzwonka**, **Głośność dostępności**, **Media** i **Bateria**.
+Domyślnie panel zawiera **Wi-Fi**, **Bluetooth**, **Dane mobilne**, **Tryb samolotowy**, **Nie przeszkadzać**, **Tryb dźwięku**, **Latarka**, **Lokalizacja**, **Automatyczne obracanie**, **Oszczędzanie baterii**, **Jasność**, **Głośność multimediów**, **Głośność dzwonka**, **Głośność dostępności**, **Multimedia** i **Bateria**.

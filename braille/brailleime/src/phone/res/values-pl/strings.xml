@@ -45,7 +45,7 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Aby zmieniać język podczas pisania przy użyciu klawiatury brajlowskiej, otwórz menu opcji, przesuwając w górę 3 palcami. Następnie wybierz opcję „Przełącz na następny język”.</string>
   <string name="title_pref_accumulate_presses">Uwzględniaj wszystkie naciśnięte punkty</string>
   <string name="summary_pref_accumulate_presses">Każdy naciśnięty punkt jest uwzględniany, nawet jeśli przestajesz go naciskać przed pozostałymi</string>
-  <string name="title_pref_reverse_dots">Zamień lewe i prawe kropki</string>
+  <string name="title_pref_reverse_dots">Zamień miejscami lewe i prawe punkty brajlowskie</string>
   <string name="summary_pref_reverse_dots">Punkty 1, 2 i 3 zamieniają się miejscami z punktami 4, 5 i 6</string>
   <string name="bd_preference_braille_contracted">Brajl skrótowy</string>
   <string name="bd_preference_braille_uncontracted">Brajl integralny</string>
@@ -206,19 +206,19 @@
   <string name="custom_gesture_try_another">Spróbuj wykonać inny gest. Aby zobaczyć listę wszystkich dostępnych gestów, otwórz Centrum pomocy klawiatury brajlowskiej SandFly. %s</string>
   <string name="custom_gesture_no_match">Gesty są niezgodne</string>
   <string name="custom_gesture_perform_again">Wykonaj ponownie gest, którego chcesz używać. %s</string>
-    <string name="switch_to_language_contracted_announcement">Przełączono na: %s, Brajl skrótowy</string>
-    <string name="switch_to_language_uncontracted_announcement">Przełączono na: %s, Brajl integralny</string>
-    <string name="emoji_search_announcement">Wyszukiwanie emotikonów</string>
-    <string name="emoji_search_closed_announcement">Wyszukiwanie emotikonów zamknięte</string>
-    <string name="emoji_search_no_emoji_announcement">Brak emotikonów</string>
+    <string name="switch_to_language_contracted_announcement">Przełączono na: %s, brajl skrótowy</string>
+    <string name="switch_to_language_uncontracted_announcement">Przełączono na: %s, brajl integralny</string>
+    <string name="emoji_search_announcement">Wyszukiwanie emoji</string>
+    <string name="emoji_search_closed_announcement">Zamknięto wyszukiwanie emoji</string>
+    <string name="emoji_search_no_emoji_announcement">Brak emoji</string>
     <string name="emoji_search_item_announcement">%1$s, %2$d z %3$d</string>
     <string name="emoji_search_inserted_announcement">Wstawiono: %s</string>
-    <string name="emoji_search_not_available_announcement">Wyszukiwanie emotikonów jest niedostępne</string>
+    <string name="emoji_search_not_available_announcement">Wyszukiwanie emoji jest niedostępne</string>
     <string name="perform_action_no_send_button">Nie znaleziono przycisku wysyłania</string>
-  <string name="title_pref_speak_submitting">Mów „Przesyłanie tekstu”</string>
+  <string name="title_pref_speak_submitting">Odczytuj komunikat „Przesyłanie tekstu”</string>
   <string name="title_pref_quick_calibration">Zmień pozycje punktów jedną ręką, a potem drugą</string>
     <string name="title_pref_capitalize_sentences">Wielkie litery na początku zdań</string>
-    <string name="title_pref_dot_tracking">Zmieniaj pozycje punktów podczas pisania</string>
+    <string name="title_pref_dot_tracking">Dostosowuj położenie punktów podczas pisania</string>
     <string name="title_pref_return_to_previous_keyboard">Wróć do poprzedniej klawiatury</string>
     <string name="title_pref_keep_open_after_sending">Pozostaw klawiaturę otwartą po wysłaniu</string>
 </resources>

@@ -192,9 +192,9 @@
   <string name="template_volume_change_volume_up_curved_text">Zwiększ</string>
   <string name="template_volume_change_volume_down_curved_text">Zmniejsz</string>
   <string name="template_seekbar_range">%1$d%%</string>
-  <string name="template_hint_menu_type_high_verbosity">Dostępne: %1$s; użyj gestu %2$s, aby wyświetlić</string>
+  <string name="template_hint_menu_type_high_verbosity">Dostępne <xliff:g id="type" example="action">%1$s</xliff:g>; użyj gestu <xliff:g id="gesture" example="up-then-right">%2$s</xliff:g>, aby wyświetlić</string>
   <string name="template_hint_view_actions">Użyj gestu <xliff:g id="gesture" example="up-then-right">%1$s</xliff:g>, aby wyświetlić czynności</string>
-  <string name="template_hint_for_reading_control_actions_in_high_verbosity">Dostępne: %1$s; %2$s i kliknij dwukrotnie, aby aktywować</string>
+  <string name="template_hint_for_reading_control_actions_in_high_verbosity">Dostępne <xliff:g id="type" example="action">%1$s</xliff:g>; <xliff:g id="gesture" example="up-then-right">%2$s</xliff:g> i kliknij dwukrotnie, aby aktywować</string>
   <string name="hint_suggestion">Dostępna jest korekta</string>
   <string name="template_hint_edit_text_containing_typo">Dostępna jest korekta. Nieprawidłowo napisane słowa: %1$d. %2$s i kliknij „Korekta”, aby wyświetlić</string>
   <string name="template_hint_reading_menu_spelling_suggestion">Dostępna jest korekta. %1$s i użyj czynności, aby wyświetlić</string>
