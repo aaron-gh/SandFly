@@ -33,6 +33,7 @@ import com.google.android.accessibility.talkback.PrimesController;
 import com.google.android.accessibility.talkback.PrimesController.TimerAction;
 import com.google.android.accessibility.talkback.actor.helper.FocusActorHelper;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.gesture.HoverlessWindows;
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
@@ -456,8 +457,11 @@ public class FocusActorForScreenStateChange {
             .build();
     if (nodeToFocus == null || !AccessibilityNodeInfoUtils.shouldFocusNode(nodeToFocus)) {
       nodeToFocus =
-          TraversalStrategyUtils.findFirstFocusInNodeTree(
-              traversalStrategy, root, SEARCH_FOCUS_FORWARD, nodeFilter);
+          HoverlessWindows.firstSpokenItemAfterSilentCover(
+              TraversalStrategyUtils.findFirstFocusInNodeTree(
+                  traversalStrategy, root, SEARCH_FOCUS_FORWARD, nodeFilter),
+              traversalStrategy,
+              nodeFilter);
       focusActionInfo =
           FOCUS_ACTION_INFO_FIRST_FOCUSABLE_NODE_BUILDER
               .setForceMuteFeedback(forceMuteFeedback)
