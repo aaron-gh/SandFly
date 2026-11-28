@@ -1106,9 +1106,14 @@ public class TouchInteractionMonitor
       oneFingerSwipeInterrupted = false;
       boolean withoutGestures =
           typingMethod == FocusProcessorForTapAndTouchExploration.KEYBOARD_WITHOUT_GESTURES;
-      boolean onKeyboard =
-          (typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE || withoutGestures)
-              && isOnKeyboard(event.getX(), event.getY());
+      // Both keyboard checks below use one read of the window list, which costs an IPC call on
+      // every read (and a Knox service lookup on Samsung phones).
+      @Nullable List<AccessibilityWindowInfo> downWindows = null;
+      boolean onKeyboard = false;
+      if (typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE || withoutGestures) {
+        downWindows = service.getWindowsOnDisplay(displayId);
+        onKeyboard = isOnKeyboard(downWindows, event.getX(), event.getY());
+      }
       downOnKeyboard =
           typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE && onKeyboard;
       keyboardTouchWithoutGestures =
@@ -1116,7 +1121,11 @@ public class TouchInteractionMonitor
       long rootStartMs = SystemClock.uptimeMillis();
       gboardRoot =
           typingMethod != FocusProcessorForTapAndTouchExploration.DOUBLE_TAP
-              ? KeyboardExploration.gboardRootAt(service, displayId, event.getX(), event.getY())
+              ? KeyboardExploration.gboardRootAt(
+                  service,
+                  downWindows != null ? downWindows : service.getWindowsOnDisplay(displayId),
+                  event.getX(),
+                  event.getY())
               : null;
       if (gboardRoot != null
           && KeyboardExploration.usesTouchExploration(service, gboardRoot.getPackageName())) {
@@ -2101,8 +2110,13 @@ public class TouchInteractionMonitor
 
   /** Returns whether the keyboard is the topmost window at this point of the display. */
   private boolean isOnKeyboard(float x, float y) {
+    return isOnKeyboard(service.getWindowsOnDisplay(displayId), x, y);
+  }
+
+  /** {@link #isOnKeyboard(float, float)} with the window list of the display already read. */
+  private boolean isOnKeyboard(List<AccessibilityWindowInfo> windows, float x, float y) {
     Region region = new Region();
-    for (AccessibilityWindowInfo window : service.getWindowsOnDisplay(displayId)) {
+    for (AccessibilityWindowInfo window : windows) {
       // The clipboard history covers the keyboard.
       if (window.getType() == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY
           && !ClipboardHistoryOverlay.isOwnWindow(service, window)) {
@@ -2123,13 +2137,16 @@ public class TouchInteractionMonitor
   private boolean handleRotation(MotionEvent event) {
     boolean wasRotating = rotationTracker.isRotating();
     // Like scrubbing and pinching, only when a rotation does something: otherwise two fingers
-    // that turn a little would stop passing through, such as on a map.
+    // that turn a little would stop passing through, such as on a map. A rotation needs two
+    // fingers, so one-finger events skip the command lookup, which reads the window list when apps
+    // have gestures of their own; the lookup is kept for the rest of the touch.
     if (!wasRotating
-        && (state != STATE_TOUCH_INTERACTING
+        && (event.getPointerCount() < 2
+            || state != STATE_TOUCH_INTERACTING
             || nonSwipeGestureStarted
             || !gestureDetector.isMultiFingerGesturesEnabled()
-            || !(isGestureAssigned(GESTURE_2_FINGER_ROTATE_CLOCKWISE)
-                || isGestureAssigned(GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE)))) {
+            || !(isGestureAssignedForMatching(GESTURE_2_FINGER_ROTATE_CLOCKWISE)
+                || isGestureAssignedForMatching(GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE)))) {
       if (GestureLog.getEnabled() && event.getActionMasked() == ACTION_POINTER_DOWN) {
         Log.d(
             DEBUG_GESTURE_TAG,

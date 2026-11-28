@@ -122,8 +122,19 @@ object KeyboardExploration {
     displayId: Int,
     x: Float,
     y: Float,
+  ): AccessibilityNodeInfoCompat? =
+    gboardRootAt(service, service.windowsOnAllDisplays.get(displayId) ?: emptyList(), x, y)
+
+  /** [gboardRootAt] with the window list of the display already read. */
+  @JvmStatic
+  @RequiresApi(Build.VERSION_CODES.R)
+  fun gboardRootAt(
+    service: AccessibilityService,
+    windows: List<AccessibilityWindowInfo>,
+    x: Float,
+    y: Float,
   ): AccessibilityNodeInfoCompat? {
-    val window = topmostWindowAt(service, displayId, x, y) ?: return null
+    val window = topmostWindowIn(service, windows, x, y, withOverlays = false) ?: return null
     if (window.type != AccessibilityWindowInfo.TYPE_INPUT_METHOD) {
       return null
     }
@@ -143,8 +154,18 @@ object KeyboardExploration {
     y: Float,
     withOverlays: Boolean = false,
   ): AccessibilityWindowInfo? {
-    val region = Region()
     val windows = service.windowsOnAllDisplays.get(displayId) ?: return null
+    return topmostWindowIn(service, windows, x, y, withOverlays)
+  }
+
+  private fun topmostWindowIn(
+    service: AccessibilityService,
+    windows: List<AccessibilityWindowInfo>,
+    x: Float,
+    y: Float,
+    withOverlays: Boolean,
+  ): AccessibilityWindowInfo? {
+    val region = Region()
     for (window in windows) {
       // The clipboard history covers the keyboard.
       if (

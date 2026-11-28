@@ -167,7 +167,7 @@ class AudioDeviceRouter @JvmOverloads constructor(
   private val playbackCallback =
     object : AudioManager.AudioPlaybackCallback() {
       override fun onPlaybackConfigChanged(configs: MutableList<AudioPlaybackConfiguration>?) {
-        audioManager?.let { AudioNotes.note(it, playing = configs.orEmpty()) }
+        audioManager?.let { AudioNotes.noteLater(it, playing = configs.orEmpty()) }
         // Another app (a media player, say) starting or stopping makes Android re-pick routes,
         // which can silently drop ours. Re-assert when the set of other players changes; our own
         // accessibility-usage tracks are ignored so we do not react to ourselves.
@@ -186,7 +186,7 @@ class AudioDeviceRouter @JvmOverloads constructor(
   private val recordingCallback =
     object : AudioManager.AudioRecordingCallback() {
       override fun onRecordingConfigChanged(configs: MutableList<AudioRecordingConfiguration>?) {
-        audioManager?.let { AudioNotes.note(it, recording = configs.orEmpty()) }
+        audioManager?.let { AudioNotes.noteLater(it, recording = configs.orEmpty()) }
         val active = isVoiceInput(configs)
         if (active == isVoiceInputActive) return
         isVoiceInputActive = active
