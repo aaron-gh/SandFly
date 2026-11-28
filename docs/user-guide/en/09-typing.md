@@ -179,7 +179,7 @@ Granular editing opens the text of the focused text field, or of any focused ite
 - **Split by** chooses the pieces: **Characters**, **Words**, **Sentences**, **Lines** or **Paragraphs**. The default is **Words**, and SandFly keeps your last choice.
 - Double-tap a piece to edit it. Leaving it empty deletes it.
 - The actions of a piece are **Select**, **Insert before**, **Insert after** and **Delete**. Double-tap and hold a piece to open them in a dialog. **Start selection** and **End selection** select every piece between two pieces.
-- Spaces, tabs and line breaks between pieces are pieces of their own, such as "2 spaces" or "New line", and a blank line is read as "Blank line".
+- Spaces, tabs and line breaks between pieces are pieces of their own, such as "2 spaces" or "New line", and a blank line is read as "Blank line". One space between two words or sentences, and one blank line between two paragraphs, aren't pieces of their own; they are deleted with the piece before them.
 - **Copy** copies the selected pieces, or all the text when no piece is selected.
 - **More** has **Undo**, **Redo**, **Find**, **Find next**, **Find previous**, **Replace**, **Add text at end**, **Select all**, **Clear selection**, **Cut selected** and **Delete selected**. **Replace** replaces all matches, ignoring case.
 - **Save** writes the text back to the text field and closes the screen. If the text field is gone, the text is copied instead.

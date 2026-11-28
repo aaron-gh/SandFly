@@ -37,11 +37,12 @@ enum class Granularity(
 }
 
 /**
- * A piece of the text: [coreStart] to [coreEnd] is what is shown and edited. For lines, [coreEnd]
- * to [end] is the line break that ends the line, which goes with the line when it is deleted;
- * otherwise [start] is [coreStart] and [end] is [coreEnd]. The pieces of a text cover all of it,
- * in order, white space included: white space between words, sentences and paragraphs is a piece
- * of its own, and a blank line is a line with no text.
+ * A piece of the text: [coreStart] to [coreEnd] is what is shown and edited, and [start] is
+ * [coreStart]. [coreEnd] to [end] goes with the piece when it is deleted: for lines, the line break
+ * that ends the line; for words, sentences and paragraphs, the separator after the piece when it is
+ * the granularity's usual one, such as one space between two words; otherwise nothing. The pieces
+ * of a text cover all of it, in order, white space included: other white space between words,
+ * sentences and paragraphs is a piece of its own, and a blank line is a line with no text.
  */
 data class Piece(val start: Int, val coreStart: Int, val coreEnd: Int, val end: Int) {
   val isBlank: Boolean
@@ -76,7 +77,7 @@ object TextPieces {
             .sorted()
         Granularity.PARAGRAPHS -> paragraphBreaks(text)
       }
-    return separateWhiteSpace(text, bounds)
+    return attachSeparators(text, separateWhiteSpace(text, bounds), granularity)
   }
 
   /** Whether [piece] is white space only, such as the space between two words. */
@@ -140,7 +141,9 @@ object TextPieces {
 
   /**
    * The text without [pieces]. Deleting the last line, which has no line break of its own, also
-   * deletes the line break before it, which would otherwise leave a blank line in its place.
+   * deletes the line break before it, which would otherwise leave a blank line in its place. In the
+   * same way, deleting the last word, sentence or paragraph deletes the separator that went with
+   * the piece before it.
    */
   fun delete(text: String, pieces: Collection<Piece>, granularity: Granularity): String {
     val ranges = pieces.map { it.start to it.end }.sortedBy { it.first }
@@ -153,10 +156,13 @@ object TextPieces {
         merged += range
       }
     }
-    val lastLine = pieces.any { it.end == text.length && it.coreEnd == it.end }
-    if (granularity == Granularity.LINES && lastLine && merged.isNotEmpty()) {
+    val last = pieces.any { it.end == text.length && it.coreEnd == it.end }
+    if (last && merged.isNotEmpty()) {
       val (from, to) = merged.last()
-      merged[merged.size - 1] = from - lineBreakBefore(text, from) to to
+      val before =
+        if (granularity == Granularity.LINES) lineBreakBefore(text, from)
+        else separatorBefore(text, from, granularity)
+      merged[merged.size - 1] = from - before to to
     }
     val builder = StringBuilder(text)
     merged.asReversed().forEach { (from, to) -> builder.delete(from, to) }
@@ -322,6 +328,61 @@ object TextPieces {
     }
     if (text.endsWith('\n')) pieces += Piece(text.length, text.length, text.length, text.length)
     return pieces
+  }
+
+  /**
+   * Gives a white space piece that is the granularity's separator to the piece before it, as the
+   * part after its shown text, when it is where [insertAt] would put a separator: between two
+   * pieces that aren't white space and, for words, not before closing punctuation or after opening
+   * punctuation. Other white space, such as two spaces, a space before a comma or a line break
+   * between words, stays a piece of its own.
+   */
+  private fun attachSeparators(text: String, pieces: List<Piece>, granularity: Granularity): List<Piece> {
+    val separator = granularity.separator
+    if (separator.isEmpty() || pieces.size < 3) return pieces
+    val result = ArrayList<Piece>(pieces.size)
+    var index = 0
+    while (index < pieces.size) {
+      val piece = pieces[index]
+      val next = pieces.getOrNull(index + 1)
+      val after = pieces.getOrNull(index + 2)
+      if (
+        next != null &&
+          after != null &&
+          !isWhiteSpace(text, piece) &&
+          !isWhiteSpace(text, after) &&
+          text.regionMatches(next.start, separator, 0, separator.length) &&
+          next.end - next.start == separator.length &&
+          separates(text[piece.end - 1], text[after.start], granularity)
+      ) {
+        result += Piece(piece.start, piece.coreStart, piece.coreEnd, next.end)
+        index += 2
+      } else {
+        result += piece
+        index++
+      }
+    }
+    return result
+  }
+
+  /** Whether a separator goes between [before] and [after], as [insertAt] decides. */
+  private fun separates(before: Char, after: Char, granularity: Granularity): Boolean =
+    granularity != Granularity.WORDS || !(isOpening(before) || isClosing(after))
+
+  /**
+   * The length of the separator that [attachSeparators] gave to the piece before [offset], or 0
+   * when there is none there.
+   */
+  private fun separatorBefore(text: String, offset: Int, granularity: Granularity): Int {
+    val separator = granularity.separator
+    val start = offset - separator.length
+    if (separator.isEmpty() || start < 1 || offset >= text.length) return 0
+    val attached =
+      text.regionMatches(start, separator, 0, separator.length) &&
+        !text[start - 1].isWhitespace() &&
+        !text[offset].isWhitespace() &&
+        separates(text[start - 1], text[offset], granularity)
+    return if (attached) separator.length else 0
   }
 
   /** The length of the line break that ends just before [offset]: 2 for "\r\n", 1, or 0. */

@@ -37,7 +37,11 @@ class TextPiecesTest {
       pieces.zipWithNext().forEach { (a, b) -> assertEquals(granularity.name, a.end, b.start) }
       pieces.forEach { assertTrue(it.start <= it.coreStart && it.coreStart <= it.coreEnd && it.coreEnd <= it.end) }
       if (granularity != Granularity.LINES) {
-        pieces.forEach { assertTrue(it.start == it.coreStart && it.coreEnd == it.end && !it.isBlank) }
+        pieces.forEach {
+          assertTrue(it.start == it.coreStart && !it.isBlank)
+          val after = text.substring(it.coreEnd, it.end)
+          assertTrue(after.isEmpty() || after == granularity.separator)
+        }
       }
     }
   }
@@ -53,15 +57,18 @@ class TextPiecesTest {
   }
 
   @Test
-  fun wordsShowWhiteSpaceAsPieces() {
+  fun wordsShowWhiteSpaceOtherThanOneSpaceAsPieces() {
     assertEquals(
       listOf(
-        "  ", "Hello", ",", " ", "big", " ", "world", ".", "  ", "How", " ", "are", " ", "you", "?", "\n",
-        "Second", " ", "line", "\n\n\n", "New", " ", "paragraph", ".", " ",
+        "  ", "Hello", ",", "big", "world", ".", "  ", "How", "are", "you", "?", "\n",
+        "Second", "line", "\n\n\n", "New", "paragraph", ".", " ",
       ),
       shown(text, Granularity.WORDS),
     )
+    // A space before closing punctuation or after opening punctuation is shown.
     assertEquals(listOf("word", " ", ",", "  ", "next"), shown("word ,  next", Granularity.WORDS))
+    assertEquals(listOf("(", " ", "a", ")", "b"), shown("( a) b", Granularity.WORDS))
+    assertEquals(listOf("a", "\t", "b"), shown("a\tb", Granularity.WORDS))
   }
 
   @Test
@@ -80,6 +87,8 @@ class TextPiecesTest {
       listOf("  ", "Hello, big world.  How are you?\nSecond line", "\n\n\n", "New paragraph.", " "),
       shown(text, Granularity.PARAGRAPHS),
     )
+    assertEquals(listOf("P1", "P2"), shown("P1\n\nP2", Granularity.PARAGRAPHS))
+    assertEquals(listOf("One.", "Two."), shown("One. Two.", Granularity.SENTENCES))
     assertEquals(
       listOf("  ", "Hello, big world.", "  ", "How are you?", "\n", "Second line", "\n\n\n", "New paragraph.", " "),
       shown(text, Granularity.SENTENCES),
@@ -106,9 +115,16 @@ class TextPiecesTest {
   fun deleteRemovesOnlyThePieces() {
     val t = "one two three"
     val words = TextPieces.split(t, Granularity.WORDS, Locale.US)
-    assertEquals("one  three", TextPieces.delete(t, listOf(words[2]), Granularity.WORDS))
-    assertEquals("one three", TextPieces.delete(t, listOf(words[1], words[2]), Granularity.WORDS))
-    assertEquals("one two", TextPieces.delete(t, listOf(words[3], words[4]), Granularity.WORDS))
+    assertEquals("two three", TextPieces.delete(t, listOf(words[0]), Granularity.WORDS))
+    assertEquals("one three", TextPieces.delete(t, listOf(words[1]), Granularity.WORDS))
+    assertEquals("one two", TextPieces.delete(t, listOf(words[2]), Granularity.WORDS))
+    assertEquals("one", TextPieces.delete(t, listOf(words[1], words[2]), Granularity.WORDS))
+    assertEquals("", TextPieces.delete(t, words, Granularity.WORDS))
+    // White space shown as a piece of its own stays when the word after it is deleted.
+    val spaced = "one  two"
+    val spacedWords = TextPieces.split(spaced, Granularity.WORDS, Locale.US)
+    assertEquals("one  ", TextPieces.delete(spaced, listOf(spacedWords[2]), Granularity.WORDS))
+    assertEquals("One.", TextPieces.delete("One. Two.", listOf(TextPieces.split("One. Two.", Granularity.SENTENCES, Locale.US)[1]), Granularity.SENTENCES))
   }
 
   @Test
@@ -127,21 +143,20 @@ class TextPiecesTest {
   fun editsKeepTheRestOfTheText() {
     val t = "one two three"
     val words = TextPieces.split(t, Granularity.WORDS, Locale.US)
-    assertEquals("one 2 three", TextPieces.replace(t, words[2], "2"))
-    assertEquals("one two and three", TextPieces.insertAfter(t, words[2], "and", Granularity.WORDS))
-    assertEquals("one two and three", TextPieces.insertAfter(t, words[3], "and", Granularity.WORDS))
-    assertEquals("one two and three", TextPieces.insertBefore(t, words[4], "and", Granularity.WORDS))
+    assertEquals("one 2 three", TextPieces.replace(t, words[1], "2"))
+    assertEquals("one two and three", TextPieces.insertAfter(t, words[1], "and", Granularity.WORDS))
+    assertEquals("one two and three", TextPieces.insertBefore(t, words[2], "and", Granularity.WORDS))
     assertEquals("zero one two three", TextPieces.insertBefore(t, words[0], "zero", Granularity.WORDS))
     assertEquals("one two three four", TextPieces.append(t, "four", Granularity.WORDS))
-    assertEquals("one three", TextPieces.join(t, listOf(words[4], words[0]), Granularity.WORDS))
-    assertEquals("one two", TextPieces.join(t, listOf(words[0], words[1], words[2]), Granularity.WORDS))
+    assertEquals("one three", TextPieces.join(t, listOf(words[2], words[0]), Granularity.WORDS))
+    assertEquals("one two", TextPieces.join(t, listOf(words[0], words[1]), Granularity.WORDS))
   }
 
   @Test
   fun wordsInsertNextToPunctuation() {
     val t = "(one), two"
     val words = TextPieces.split(t, Granularity.WORDS, Locale.US)
-    assertEquals(listOf("(", "one", ")", ",", " ", "two"), shown(t, Granularity.WORDS))
+    assertEquals(listOf("(", "one", ")", ",", "two"), shown(t, Granularity.WORDS))
     assertEquals("(one and), two", TextPieces.insertAfter(t, words[1], "and", Granularity.WORDS))
     assertEquals("(and one), two", TextPieces.insertBefore(t, words[1], "and", Granularity.WORDS))
   }
@@ -171,7 +186,8 @@ class TextPiecesTest {
     val t = "P1\n\nP2"
     val paragraphs = TextPieces.split(t, Granularity.PARAGRAPHS, Locale.US)
     assertEquals("P1\n\nnew\n\nP2", TextPieces.insertAfter(t, paragraphs[0], "new", Granularity.PARAGRAPHS))
-    assertEquals("P1\n\nnew\n\nP2", TextPieces.insertAfter(t, paragraphs[1], "new", Granularity.PARAGRAPHS))
+    assertEquals("P1\n\nnew\n\nP2", TextPieces.insertBefore(t, paragraphs[1], "new", Granularity.PARAGRAPHS))
+    assertEquals("P1\n\nP2\n\nnew", TextPieces.insertAfter(t, paragraphs[1], "new", Granularity.PARAGRAPHS))
   }
 
   @Test

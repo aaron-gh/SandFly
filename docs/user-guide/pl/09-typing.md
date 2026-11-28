@@ -173,7 +173,7 @@ Szczegółowa edycja pokazuje tekst pola lub innego elementu, na którym jest fo
 - W opcji **Podziel według** wybierz **Znaki**, **Słowa**, **Zdania**, **Wiersze** lub **Akapity**. Domyślnie wybrane są **Słowa**. SandFly zapamiętuje ostatni wybór.
 - Stuknij fragment dwa razy, aby go zmienić. Pozostawienie pustego pola usuwa fragment.
 - Przy każdym fragmencie są działania **Zaznacz**, **Wstaw przed**, **Wstaw po** i **Usuń**. Stuknij go dwukrotnie i przytrzymaj, aby otworzyć je w oknie. **Rozpocznij zaznaczanie** i **Zakończ zaznaczanie** pozwalają zaznaczyć wszystkie pośrednie fragmenty.
-- Spacje, tabulatory i podziały wierszy między fragmentami są osobnymi pozycjami, np. „2 spacje” lub „Nowy wiersz”. Pusty wiersz jest odczytywany jako „Pusty wiersz”.
+- Spacje, tabulatory i podziały wierszy między fragmentami są osobnymi pozycjami, np. „2 spacje” lub „Nowy wiersz”. Pusty wiersz jest odczytywany jako „Pusty wiersz”. Pojedyncza spacja między dwoma słowami lub zdaniami i jeden pusty wiersz między dwoma akapitami nie są osobnymi pozycjami; są usuwane razem z fragmentem przed nimi.
 - **Kopiuj** kopiuje zaznaczone fragmenty. Jeśli nic nie zaznaczysz, skopiuje cały tekst.
 - W menu **Więcej** są **Cofnij**, **Ponów**, **Znajdź**, **Znajdź następny**, **Znajdź poprzedni**, **Zastąp**, **Dodaj tekst na końcu**, **Zaznacz wszystko**, **Odznacz cały tekst**, **Wytnij zaznaczony tekst** i **Usuń wybrane**. **Zastąp** zmienia wszystkie dopasowania, niezależnie od wielkości liter.
 - **Zapisz** wstawia tekst z powrotem do pola i zamyka ekran. Jeśli pola już nie ma, tekst trafia do schowka.
