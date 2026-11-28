@@ -410,16 +410,17 @@ public class FailoverTextToSpeech {
    * taken for a low-latency failure. With the setting off, the engine plays its own speech, and
    * Backtalk leaves it be.
    */
-  private static final long ENGINE_HANG_MS = 3000;
+  @VisibleForTesting static final long ENGINE_HANG_MS = 3000;
 
   /** How long an engine that says it is speaking, perhaps for another app, may say nothing. */
   private static final long ENGINE_BUSY_HANG_MS = 20_000;
 
   /**
-   * How long the main thread waits for the engine to say whether it is speaking. An engine that
-   * doesn't answer counts as not speaking.
+   * How long the main thread waits for the engine to say whether it is speaking about stalled
+   * speech, where an engine that doesn't answer counts as not speaking. The hang check doesn't
+   * wait, and looks at the answer this long after asking: see {@link #probeRecheckMs}.
    */
-  private static final long ENGINE_PROBE_WAIT_MS = 300;
+  @VisibleForTesting static final long ENGINE_PROBE_WAIT_MS = 300;
 
   /**
    * Asks engines whether they are speaking. A call into an engine waits until the engine answers,
@@ -469,6 +470,9 @@ public class FailoverTextToSpeech {
    * how many times speech flushed the queue since. Speech that flushes the queue starts its own
    * wait for the engine, unless the engine has reported on none of {@link
    * #FLUSHES_BEFORE_KEEPING_WAIT} flushes in a row, as when it hangs while the user keeps moving.
+   * Even then, the engine counts as hung only once it has also said nothing for as long after the
+   * last flush: an engine slow to abort the speech that a flush stops says nothing about the speech
+   * after it until it has, which rapid flushes, as when typing fast, keep putting off.
    */
   @VisibleForTesting
   static final class UnansweredSpeech {
@@ -476,6 +480,7 @@ public class FailoverTextToSpeech {
 
     private long firstAt;
     private int flushes;
+    private long lastFlushAt;
 
     /**
      * Notes speech given to the engine at {@code now}, which flushes the queue or not. Returns when
@@ -490,13 +495,28 @@ public class FailoverTextToSpeech {
         return 0;
       }
       flushes++;
+      lastFlushAt = now;
       return flushes >= FLUSHES_BEFORE_KEEPING_WAIT ? firstAt : 0;
+    }
+
+    /**
+     * Returns how long after {@code now} the engine, quiet since {@code quietSince}, counts as
+     * hung, or 0 if it does: {@code hangMs} after {@code quietSince}, and {@code hangMs} after the
+     * last unanswered flush.
+     */
+    synchronized long msUntilHang(long now, long quietSince, long hangMs) {
+      long wait = hangMs - (now - quietSince);
+      if (lastFlushAt != 0) {
+        wait = Math.max(wait, hangMs - (now - lastFlushAt));
+      }
+      return Math.max(0, wait);
     }
 
     /** Notes that the engine reported on speech, or that the wait for it ended. */
     synchronized void reset() {
       firstAt = 0;
       flushes = 0;
+      lastFlushAt = 0;
     }
   }
 
@@ -2732,9 +2752,7 @@ public class FailoverTextToSpeech {
    */
   private void turnOffLowLatencyAudio() {
     dropHeldSpeech();
-    mHandler.removeCallbacks(checkEngineHang);
-    engineQuietSince = 0;
-    unansweredSpeech.reset();
+    stopHangCheck();
     unfinishedUtterances.clear();
     boolean speaking = !lowLatencyStreams.isEmpty();
     LowLatencyAudio.shutdownAll();
@@ -2762,9 +2780,7 @@ public class FailoverTextToSpeech {
     respokenUtterances.clear();
     stalledInEngine.clear();
     stalledEnds.clear();
-    mHandler.removeCallbacks(checkEngineHang);
-    engineQuietSince = 0;
-    unansweredSpeech.reset();
+    stopHangCheck();
     unfinishedUtterances.clear();
     LowLatencyAudio.shutdownAll();
   }
@@ -2900,16 +2916,103 @@ public class FailoverTextToSpeech {
       engineQuietSince = keptSince;
       if (keptSince != 0) {
         engineQuietUtteranceId = utteranceId;
-        mHandler.removeCallbacks(checkEngineHang);
-        mHandler.postDelayed(checkEngineHang, Math.max(0, ENGINE_HANG_MS - (now - keptSince)));
+        scheduleHangCheck(unansweredSpeech.msUntilHang(now, keptSince, ENGINE_HANG_MS));
       }
     }
     unfinishedUtterances.add(utteranceId);
     if (idle && engineQuietSince == 0) {
       engineQuietUtteranceId = utteranceId;
       engineQuietSince = SystemClock.uptimeMillis();
-      mHandler.removeCallbacks(checkEngineHang);
-      mHandler.postDelayed(checkEngineHang, ENGINE_HANG_MS);
+      scheduleHangCheck(ENGINE_HANG_MS);
+    }
+  }
+
+  /** Runs {@link #checkEngineHang} once, {@code delayMs} from now. */
+  private void scheduleHangCheck(long delayMs) {
+    mHandler.removeCallbacks(checkEngineHang);
+    mHandler.postDelayed(checkEngineHang, delayMs);
+  }
+
+  /** Stops waiting for the engine to respond, as when it changes. */
+  private void stopHangCheck() {
+    mHandler.removeCallbacks(checkEngineHang);
+    engineQuietSince = 0;
+    unansweredSpeech.reset();
+    hangProbe = null;
+  }
+
+  /** The question to the engine of whether it is speaking that {@link #checkEngineHang} waits on. */
+  private @Nullable Future<Boolean> hangProbe;
+
+  /** The engine {@link #hangProbe} asks. */
+  private @Nullable TextToSpeech hangProbeTts;
+
+  /** When {@link #hangProbe} was asked. */
+  private long hangProbeAskedAt;
+
+  /**
+   * Returns how long after the engine was asked whether it is speaking, {@code waited} ms ago and
+   * not answered yet, {@link #checkEngineHang} looks at the answer again, or 0 if not answering
+   * counts as not speaking. An engine busy aborting stopped speech can be slow to answer, so one
+   * that hasn't answered in {@link #ENGINE_PROBE_WAIT_MS} is not known to be speaking or not, and
+   * is asked again later. One that still hasn't answered {@link #ENGINE_HANG_MS} after that is not
+   * speaking.
+   */
+  @VisibleForTesting
+  static long probeRecheckMs(long waited) {
+    if (waited < ENGINE_PROBE_WAIT_MS) {
+      return ENGINE_PROBE_WAIT_MS - waited;
+    }
+    long giveUpAt = ENGINE_PROBE_WAIT_MS + ENGINE_HANG_MS;
+    return Math.max(0, giveUpAt - waited);
+  }
+
+  /**
+   * Whether the engine says it is speaking, for {@link #checkEngineHang}, without waiting for the
+   * answer on the main thread. Returns null while it isn't known, with the check scheduled again.
+   * See {@link #probeRecheckMs}.
+   */
+  private @Nullable Boolean engineSpeakingForHangCheck(long now) {
+    @Nullable Future<Boolean> probe = hangProbe;
+    if (probe == null || hangProbeTts != tts) {
+      probe = askEngineIfSpeaking();
+      if (probe == null) {
+        // Other engines that don't answer hold every thread to ask on, so it isn't known.
+        hangProbe = null;
+        scheduleHangCheck(ENGINE_HANG_MS);
+        return null;
+      }
+      hangProbe = probe;
+      hangProbeTts = tts;
+      hangProbeAskedAt = now;
+    }
+    long waited = now - hangProbeAskedAt;
+    if (!probe.isDone()) {
+      long recheck = probeRecheckMs(waited);
+      if (recheck > 0) {
+        if (waited >= ENGINE_PROBE_WAIT_MS) {
+          LogUtils.w(
+              TAG,
+              "TTS engine %s didn't say in %d ms whether it is speaking",
+              ttsEngine,
+              waited);
+        }
+        scheduleHangCheck(recheck);
+        return null;
+      }
+      LogUtils.w(TAG, "TTS engine %s didn't say in %d ms whether it is speaking", ttsEngine, waited);
+      hangProbe = null;
+      return false;
+    }
+    hangProbe = null;
+    try {
+      // Answered already, so this doesn't wait.
+      return probe.get();
+    } catch (ExecutionException | CancellationException e) {
+      return false;
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      return false;
     }
   }
 
@@ -2990,17 +3093,27 @@ public class FailoverTextToSpeech {
     long since = engineQuietSince;
     if (since == 0 || tts == null || !lowLatencyAudio) {
       engineQuietSince = 0;
+      hangProbe = null;
       return;
     }
-    long quiet = SystemClock.uptimeMillis() - since;
-    if (quiet < ENGINE_HANG_MS) {
-      mHandler.postDelayed(checkEngineHang, ENGINE_HANG_MS - quiet);
+    long now = SystemClock.uptimeMillis();
+    long wait = unansweredSpeech.msUntilHang(now, since, ENGINE_HANG_MS);
+    if (wait > 0) {
+      scheduleHangCheck(wait);
       return;
     }
-    if (quiet < ENGINE_BUSY_HANG_MS && isEngineSpeaking()) {
-      // Another app's speech with the same engine comes first.
-      mHandler.postDelayed(checkEngineHang, ENGINE_HANG_MS);
-      return;
+    long quiet = now - since;
+    if (quiet < ENGINE_BUSY_HANG_MS) {
+      @Nullable Boolean speaking = engineSpeakingForHangCheck(now);
+      if (speaking == null) {
+        // Checked again later.
+        return;
+      }
+      if (speaking) {
+        // Another app's speech with the same engine comes first.
+        scheduleHangCheck(ENGINE_HANG_MS);
+        return;
+      }
     }
     checkAudioMode();
     long modeChangedAt = audioModeChangedAt;
@@ -3009,13 +3122,14 @@ public class FailoverTextToSpeech {
         && modeChangedAt >= since - AUDIO_MODE_SETTLE_MS) {
       // The audio mode changed while the engine had the speech, such as when a call started, or
       // shortly before.
-      mHandler.postDelayed(checkEngineHang, ENGINE_HANG_MS);
+      scheduleHangCheck(ENGINE_HANG_MS);
       return;
     }
     @Nullable String hungUtteranceId = engineQuietUtteranceId;
     LogUtils.e(TAG, "TTS engine %s said nothing for %d ms, so it is hung", ttsEngine, quiet);
     engineQuietSince = 0;
     unansweredSpeech.reset();
+    hangProbe = null;
     unfinishedUtterances.clear();
     boolean lowLatency = hungUtteranceId != null && lowLatencyRequests.containsKey(hungUtteranceId);
     // Speech waiting on the hung engine stops, so that it holds up nothing.
@@ -3590,9 +3704,7 @@ public class FailoverTextToSpeech {
     unplayedByEngine.clear();
     respokenUtterances.clear();
     LowLatencyAudio.stopAllStreams();
-    mHandler.removeCallbacks(checkEngineHang);
-    engineQuietSince = 0;
-    unansweredSpeech.reset();
+    stopHangCheck();
     unfinishedUtterances.clear();
     engineRequestsAtStop = -1;
 
