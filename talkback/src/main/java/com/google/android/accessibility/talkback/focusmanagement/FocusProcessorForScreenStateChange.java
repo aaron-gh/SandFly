@@ -195,13 +195,14 @@ public class FocusProcessorForScreenStateChange {
       AccessibilityWindowInfo window,
       AccessibilityFocusActionHistory.Reader history,
       EventId eventId) {
-    if (!focusNewWindows) {
+    long now = SystemClock.uptimeMillis();
+    // Checked first so that focus is read again only while a Back waits.
+    if (!focusNewWindows || !history.isBackPendingInWindow(now, window.getId())) {
       return;
     }
     AccessibilityNodeInfoCompat focus =
         accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
-    if (focus != null
-        && history.isBackPendingAtFocus(SystemClock.uptimeMillis(), window.getId(), focus)) {
+    if (focus != null && history.isBackPendingAtFocus(now, window.getId(), focus)) {
       pipeline.input(eventId, new Interpretation.ID(Interpretation.ID.Value.FOCUS_KEPT_AFTER_BACK));
     }
   }

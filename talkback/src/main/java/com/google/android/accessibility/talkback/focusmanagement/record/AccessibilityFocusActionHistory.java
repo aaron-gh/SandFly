@@ -130,6 +130,10 @@ public final class AccessibilityFocusActionHistory {
         long now, int windowId, @NonNull AccessibilityNodeInfoCompat focus) {
       return AccessibilityFocusActionHistory.this.isBackPendingAtFocus(now, windowId, focus);
     }
+
+    public boolean isBackPendingInWindow(long now, int windowId) {
+      return AccessibilityFocusActionHistory.this.isBackPendingInWindow(now, windowId);
+    }
   }
 
   /** Restricted-access interface for reading focus state. */
@@ -633,10 +637,15 @@ public final class AccessibilityFocusActionHistory {
    */
   public boolean isBackPendingAtFocus(
       long now, int windowId, @NonNull AccessibilityNodeInfoCompat focus) {
-    return backTime >= 0
-        && now - backTime <= RESTORE_AFTER_BACK_MS
-        && backWindowId == windowId
-        && focus.equals(focusAtBack);
+    return isBackPendingInWindow(now, windowId) && focus.equals(focusAtBack);
+  }
+
+  /**
+   * Returns whether a Back in {@code windowId} within {@link #RESTORE_AFTER_BACK_MS} waits for its
+   * list. Like {@link #isBackPendingAtFocus}, it only reads.
+   */
+  public boolean isBackPendingInWindow(long now, int windowId) {
+    return backTime >= 0 && now - backTime <= RESTORE_AFTER_BACK_MS && backWindowId == windowId;
   }
 
   public long getBackTime() {
