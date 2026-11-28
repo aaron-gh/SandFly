@@ -89,7 +89,7 @@ Wybierz, jak duży fragment SandFly ma czytać po przesunięciu w górę lub w d
 - **Zdania** kończą się na znaku kończącym zdanie, w tym na znakach 。！？, albo na końcu wiersza. SandFly może przeczytać zdanie ze strony internetowej w kilku częściach, na przykład gdy w środku jest osobny link. Pozycję **Zdania** trzeba dodać do listy. Jest niedostępna w trybie zaznaczania.
 - **Akapity** pozwalają czytać po akapicie.
 
-Jeśli edytujesz pole tekstowe, gesty przenoszą kursor w obrębie pola. Zobacz [edycję tekstu](#typing). W ten sposób możesz też czytać niektóre teksty, po których sama aplikacja nie pozwala przechodzić fragmentami, na przykład wiadomości w Telegramie.
+Jeśli edytujesz pole tekstowe, gesty przenoszą kursor w obrębie pola. Zobacz [edycję tekstu](#typing). W ten sposób możesz też czytać niektóre teksty, po których sama aplikacja nie pozwala przechodzić fragmentami, na przykład wiadomości w Telegramie. W takim tekście wiersz kończy się na podziale wiersza.
 
 #### Przechodź po wybranym rodzaju elementów {#reading-kinds}
 
