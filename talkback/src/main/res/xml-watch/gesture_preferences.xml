@@ -24,6 +24,14 @@
       android:key="@string/pref_multi_tap_timeout_key"
       android:summary="%s"
       android:title="@string/title_pref_multi_tap_timeout" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_swipe_start_time_default"
+      android:dialogTitle="@string/title_pref_swipe_start_time"
+      android:entries="@array/pref_swipe_start_time_entries"
+      android:entryValues="@array/pref_swipe_start_time_values"
+      android:key="@string/pref_swipe_start_time_key"
+      android:summary="%s"
+      android:title="@string/title_pref_swipe_start_time" />
   <!-- One finger gestures -->
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="@string/pref_category_1finger_shortcuts_key"

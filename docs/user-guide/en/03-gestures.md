@@ -217,10 +217,10 @@ With **Handle two-finger swipes in SandFly** off, two-finger swipes go to the ap
 
 - **Time between one-finger taps**: how long SandFly waits for a further tap before it decides that a one-finger tap gesture is finished, from 0.1 to 2 seconds on phones and from 0.1 to 0.5 seconds on watches. The default is 0.25 seconds. A shorter time makes one-finger double-taps respond faster, but a slow double-tap can then count as two taps. With a longer time, two taps on an item within that time activate it, and corner taps and multi-finger single taps wait longer. With a time longer than 0.3 seconds, a single tap focuses the item under the finger 0.25 seconds after the finger lifts, and a second tap within the time still activates that item. Taps with two or more fingers always allow at least 0.25 seconds between taps.
 - **Hold time after a swipe**: how long the finger rests after a swipe for a swipe and hold gesture, from 0.1 to 0.5 seconds. The default is 0.25 seconds. See [](#gestures-swipe-and-hold).
-- **Gesture start time**: how long a one-finger swipe can take to move its first centimeter before the touch becomes touch exploration, from 0.15 to 2 seconds. The default is 0.15 seconds. Choose a longer time if slow swipes start touch exploration.
+- **Gesture start time** sets how long a one-finger swipe has to move 1 cm on a phone or 8.5 mm on a watch. The range is 0.15 to 2 seconds, with a default of 0.15 seconds on both. Choose a longer time if slow swipes start touch exploration.
 - **Time between two-stroke swipes**: how long after a swipe the second swipe of a two-stroke swipe can start: **Off**, 0.25, 0.5, 1, 1.5 or 2 seconds. The default is **Off**, which turns two-stroke swipes off and hides their categories. See [](#gestures-two-stroke).
 
-These settings need gesture recognition by SandFly; see [](#gestures-recognition). **Hold time after a swipe**, **Gesture start time** and **Time between two-stroke swipes** aren't on watches.
+These settings need gesture recognition by SandFly. See [](#gestures-recognition). **Hold time after a swipe** and **Time between two-stroke swipes** are available on phones.
 
 #### Recognize swipes before lifting {#gestures-swipes-before-lift}
 

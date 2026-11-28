@@ -33,6 +33,7 @@ import com.google.android.accessibility.utils.BuildConfig;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.SettingsUtils;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -184,8 +185,7 @@ public class TalkBackPreferenceFilter {
         R.string.pref_swipe_hold_time_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | SHOW_IF_SERVICE_GESTURE_DETECTION),
     SWIPE_START_TIME(
-        R.string.pref_swipe_start_time_key,
-        HIDDEN_ON_TV | HIDDEN_ON_WATCH | SHOW_IF_SERVICE_GESTURE_DETECTION),
+        R.string.pref_swipe_start_time_key, HIDDEN_ON_TV | SHOW_IF_SERVICE_GESTURE_DETECTION),
     SWIPES_BEFORE_LIFT(
         R.string.pref_swipes_before_lift_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | SHOW_IF_SERVICE_GESTURE_DETECTION),
@@ -723,6 +723,16 @@ public class TalkBackPreferenceFilter {
 
     if (hasFlag(pref.get(), SHOW_IF_SERVICE_GESTURE_DETECTION)
         && !FeatureSupport.supportGestureDetection()) {
+      return true;
+    }
+
+    if (pref.get() == TalkBackPreference.SWIPE_START_TIME
+        && FormFactorUtils.isAndroidWear()
+        && !SharedPreferencesUtils.getBooleanPref(
+            SharedPreferencesUtils.getSharedPreferences(context),
+            context.getResources(),
+            R.string.pref_talkback_gesture_detection_key,
+            R.bool.pref_talkback_gesture_detection_default)) {
       return true;
     }
 
