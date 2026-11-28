@@ -1047,10 +1047,10 @@ public class AccessibilityNodeInfoUtils {
       return true;
     } else {
       // Reject all non-leaf nodes that are neither actionable nor focusable, and have the same
-      // bounds as the window.
-      if (areBoundsIdenticalToWindow(node)
-          && node.getChildCount() > 0
-          && !isFocusableOrClickable(node)) {
+      // bounds as the window. The window is read last, as each read copies it.
+      if (node.getChildCount() > 0
+          && !isFocusableOrClickable(node)
+          && areBoundsIdenticalToWindow(node)) {
         logShouldFocusNode(
             checkChildren,
             FOCUS_FAIL_SAME_WINDOW_BOUNDS_CHILDREN,
@@ -1414,13 +1414,13 @@ public class AccessibilityNodeInfoUtils {
 
       // Ignore invisible nodes.
       if (!isVisible(child)) {
-        LogUtils.v(TAG, "Child %d, %s is invisible, skipping it", i, printId(node));
+        LogUtils.v(TAG, "Child %d, %s is invisible, skipping it", i, lazyId(node));
         continue;
       }
 
       // Ignore focusable nodes
       if (isFocusableOrClickable(child)) {
-        LogUtils.v(TAG, "Child %d, %s is focusable or clickable, skipping it", i, printId(node));
+        LogUtils.v(TAG, "Child %d, %s is focusable or clickable, skipping it", i, lazyId(node));
         continue;
       }
 
@@ -1429,13 +1429,13 @@ public class AccessibilityNodeInfoUtils {
       if ((isTopLevelScrollItem(child) && isSpeakingNode(child, speakingNodesCache, visitedNodes))
           && !(isClickable(node) || isLongClickable(node))) {
 
-        LogUtils.v(TAG, "Child %d, %s is a top level scroll item, skipping it", i, printId(node));
+        LogUtils.v(TAG, "Child %d, %s is a top level scroll item, skipping it", i, lazyId(node));
         continue;
       }
 
       // Recursively check non-focusable child nodes.
       if (isSpeakingNode(child, speakingNodesCache, visitedNodes)) {
-        LogUtils.v(TAG, "Does have actionable speaking children (child %d, %s)", i, printId(node));
+        LogUtils.v(TAG, "Does have actionable speaking children (child %d, %s)", i, lazyId(node));
         return true;
       }
     }
@@ -1469,7 +1469,7 @@ public class AccessibilityNodeInfoUtils {
           && hasText(child)
           && !(child.isScreenReaderFocusable() || isActionableForAccessibility(child))) {
         LogUtils.v(
-            TAG, "Non-actionable invisible node with text found (child %d, %s)", i, printId(node));
+            TAG, "Non-actionable invisible node with text found (child %d, %s)", i, lazyId(node));
         return true;
       }
     }
@@ -2532,13 +2532,35 @@ public class AccessibilityNodeInfoUtils {
    * introduced in API level 21 and later. However, it does not support bitmasks.
    */
   public static boolean supportsAction(@NonNull AccessibilityNodeInfoCompat node, int action) {
+    return supportsAnyAction(node, action, action, action, action);
+  }
+
+  /**
+   * Returns whether the node supports any of the actions. The node's own action list is read
+   * without the wrapper copies that {@link AccessibilityNodeInfoCompat#getActionList()} makes on
+   * every call, which role and focus checks make for every node they look at.
+   */
+  public static boolean supportsAnyAction(
+      @NonNull AccessibilityNodeInfoCompat node, int first, int second, int third, int fourth) {
     // New actions in >= API 21 won't appear in getActions() but in getActionList().
     // On Lollipop+ devices, pre-API 21 actions will also appear in getActionList().
+    @Nullable AccessibilityNodeInfo info = node.unwrap();
+    if (info != null) {
+      List<AccessibilityNodeInfo.AccessibilityAction> actions = info.getActionList();
+      int size = actions.size();
+      for (int i = 0; i < size; ++i) {
+        int id = actions.get(i).getId();
+        if (id == first || id == second || id == third || id == fourth) {
+          return true;
+        }
+      }
+      return false;
+    }
     List<AccessibilityActionCompat> actions = node.getActionList();
     int size = actions.size();
     for (int i = 0; i < size; ++i) {
-      AccessibilityActionCompat actionCompat = actions.get(i);
-      if (actionCompat.getId() == action) {
+      int id = actions.get(i).getId();
+      if (id == first || id == second || id == third || id == fourth) {
         return true;
       }
     }
@@ -3908,6 +3930,19 @@ public class AccessibilityNodeInfoUtils {
 
       return suggestionsString.toString();
     }
+  }
+
+  /**
+   * {@link #printId} for a log argument, worked out only if the message is logged: these messages
+   * are verbose, and the checks they are in run for every child of every item described.
+   */
+  private static Object lazyId(AccessibilityNodeInfoCompat node) {
+    return new Object() {
+      @Override
+      public String toString() {
+        return printId(node);
+      }
+    };
   }
 
   private static String printId(AccessibilityNodeInfoCompat node) {

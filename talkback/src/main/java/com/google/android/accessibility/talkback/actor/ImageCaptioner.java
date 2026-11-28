@@ -538,8 +538,13 @@ public class ImageCaptioner extends Handler
    */
   public static boolean needAutomaticCaptioning(
       Context context, AccessibilityNodeInfoCompat node, boolean hasAiCore) {
-    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
     CaptionNodeType captionNodeType = getCaptionNodeType(context, node, /* needSizeCheck= */ false);
+    if (captionNodeType == NONE) {
+      // No setting captions such a node, and the size check only rules out more. This runs for
+      // every focus event, so the settings are not read for it.
+      return false;
+    }
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
     return needAutomaticIconDetection(context, prefs, captionNodeType)
         || needAutomaticImageDescription(
             context, prefs, getCaptionNodeType(context, node, true), hasAiCore)

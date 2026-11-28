@@ -1815,6 +1815,17 @@ public class TalkBackService extends AccessibilityServiceCompat
    * modifier, lock or volume key stops it, except typed characters and Enter, which follow their
    * settings. Ctrl alone pauses speech instead, see {@link #handleCtrlTap}.
    */
+  /** Whether a modifier key is held with {@code keyEvent}, as keyboard shortcuts have. */
+  private static boolean hasShortcutModifier(KeyEvent keyEvent) {
+    return (keyEvent.getMetaState()
+            & (KeyEvent.META_CTRL_MASK
+                | KeyEvent.META_META_MASK
+                | KeyEvent.META_ALT_MASK
+                | KeyEvent.META_SYM_ON
+                | KeyEvent.META_FUNCTION_ON))
+        != 0;
+  }
+
   private int keyEffectOnSpeech(KeyEvent keyEvent) {
     int keyCode = keyEvent.getKeyCode();
     if (KeyEvent.isModifierKey(keyCode)
@@ -2067,7 +2078,14 @@ public class TalkBackService extends AccessibilityServiceCompat
           && isFromPhysicalKeyboard(keyEvent)) {
         int effect = keyEffectOnSpeech(keyEvent);
         if (effect != KEY_KEEPS_SPEECH) {
-          interruptAllFeedback(/* stopTtsSpeechCompletely= */ false);
+          // The keyboard's pause shortcuts are pressed with a modifier or the SandFly key, so speech
+          // is held mid-word for those keys, where the pause can carry on from it. Other keys, such
+          // as Space moving to the next item, stop the engine at once.
+          if (hasShortcutModifier(keyEvent) || triggerModifierPressed) {
+            interruptAllFeedbackHoldingForPause();
+          } else {
+            interruptAllFeedback(/* stopTtsSpeechCompletely= */ false);
+          }
         }
         if (effect == KEY_STOPS_SPEECH && processorScreen != null) {
           processorScreen.onSpeechStoppedByKey(keyEvent);
@@ -2741,6 +2759,20 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     if (pipeline != null) {
       pipeline.interruptAllFeedback(stopTtsSpeechCompletely);
+    }
+  }
+
+  /**
+   * Interrupts all SandFly feedback for the pause command, holding low-latency speech mid-word so
+   * that the pause carries on from where it stopped.
+   */
+  public void interruptAllFeedbackHoldingForPause() {
+    if (fullScreenReadActor != null) {
+      fullScreenReadActor.interrupt();
+    }
+
+    if (pipeline != null) {
+      pipeline.interruptAllFeedbackHoldingForPause();
     }
   }
 
@@ -5902,7 +5934,7 @@ public class TalkBackService extends AccessibilityServiceCompat
         LogUtils.d(TAG, "A shared preference changed: %s", key);
         // The prepared announcements may have been worked out with the setting as it was, such as
         // a verbosity setting changed from the reading controls.
-        PreparedFocusSpeech.clear();
+        PreparedFocusSpeech.clear("setting changed");
         // Skip reloadPreferences to avoid the additional of Talkback re-configuration for some
         // settings changes.
         if (getString(R.string.pref_previous_global_window_animation_scale_key).equals(key)
@@ -5928,7 +5960,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (serviceState == ServiceStateListener.SERVICE_STATE_INACTIVE) {
       return;
     }
-    PreparedFocusSpeech.clear();
+    PreparedFocusSpeech.clear("settings profile");
     reloadPreferences();
     if (keyboard && keyComboManager != null) {
       keyComboManager.refreshKeyComboModel();

@@ -931,14 +931,12 @@ public class Role {
     }
 
     // Inheritance: View->ViewGroup->ViewPager2
-    if (AccessibilityNodeInfoUtils.supportsAction(
-            node, AccessibilityActionCompat.ACTION_PAGE_UP.getId())
-        || AccessibilityNodeInfoUtils.supportsAction(
-            node, AccessibilityActionCompat.ACTION_PAGE_DOWN.getId())
-        || AccessibilityNodeInfoUtils.supportsAction(
-            node, AccessibilityActionCompat.ACTION_PAGE_LEFT.getId())
-        || AccessibilityNodeInfoUtils.supportsAction(
-            node, AccessibilityActionCompat.ACTION_PAGE_RIGHT.getId())) {
+    if (AccessibilityNodeInfoUtils.supportsAnyAction(
+        node,
+        AccessibilityActionCompat.ACTION_PAGE_UP.getId(),
+        AccessibilityActionCompat.ACTION_PAGE_DOWN.getId(),
+        AccessibilityActionCompat.ACTION_PAGE_LEFT.getId(),
+        AccessibilityActionCompat.ACTION_PAGE_RIGHT.getId())) {
       return ROLE_PAGER;
     }
 
