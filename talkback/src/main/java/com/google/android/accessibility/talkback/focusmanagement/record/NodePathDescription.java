@@ -28,6 +28,7 @@ import android.text.TextUtils;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionItemInfoCompat;
+import com.google.android.accessibility.talkback.focusmanagement.WindowNodePrefetcher;
 import com.google.android.accessibility.utils.AccessibilityNode;
 import com.google.android.accessibility.utils.ConcurrentNodeQueries;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
@@ -39,7 +40,6 @@ import com.google.android.accessibility.utils.LogDepth;
 import com.google.android.accessibility.utils.PackageManagerUtils;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.StringBuilderUtils;
-import com.google.android.accessibility.talkback.focusmanagement.WindowNodePrefetcher;
 import com.google.android.accessibility.utils.compat.CompatUtils;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
 import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy;
@@ -229,11 +229,7 @@ public final class NodePathDescription {
     while (current != null && visited.add(current)) {
       // On Android 13 and later, one request reads all the ancestors.
       AccessibilityNodeInfoCompat parent =
-          readAhead && nodes.isEmpty()
-              ? current.getParent(
-                  AccessibilityNodeInfoCompat.FLAG_PREFETCH_ANCESTORS
-                      | AccessibilityNodeInfoCompat.FLAG_PREFETCH_UNINTERRUPTIBLE)
-              : current.getParent();
+          readAhead && nodes.isEmpty() ? parentWithAncestors(current) : current.getParent();
       nodes.add(current);
       parents.add(parent);
       current = parent;
@@ -250,6 +246,22 @@ public final class NodePathDescription {
               nodes.get(i), /* isPathEnd= */ i == 0, AccessibilityNode.takeOwnership(parents.get(i))));
     }
     return nodePath;
+  }
+
+  /**
+   * The parent of {@code node}, read with all its ancestors in one request. A node that Android
+   * didn't seal, such as one SandFly made itself, can't be asked with prefetch flags, so its parent
+   * is read alone.
+   */
+  private static @Nullable AccessibilityNodeInfoCompat parentWithAncestors(
+      AccessibilityNodeInfoCompat node) {
+    try {
+      return node.getParent(
+          AccessibilityNodeInfoCompat.FLAG_PREFETCH_ANCESTORS
+              | AccessibilityNodeInfoCompat.FLAG_PREFETCH_UNINTERRUPTIBLE);
+    } catch (IllegalStateException e) {
+      return node.getParent();
+    }
   }
 
   /**
