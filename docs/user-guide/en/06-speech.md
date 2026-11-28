@@ -112,7 +112,7 @@ Speech that is off or muted, the speech filter and script rewrites, the pronunci
 
 **Read command feedback over SandFly's speech** is available while a voice profile is chosen. With it off, the feedback waits in SandFly's speech queue. With it on, it is said at once, over what SandFly is saying. It's off by default.
 
-**Queue command feedback** sets what happens when you give a command while the answer to a command is still being said, such as the time and date, and then the battery level. On, the default, the new answer waits for the one before it. Off, it interrupts the one before it, so you hear the latest answer at once. It applies in SandFly's voice and in a voice profile. Notifications have their own setting, **Notifications** > **When another notification is read**.
+**Queue command feedback** sets what happens when you give a command while the answer to a command is still being said, such as the time and date, and then the battery level. On, the default, the new answer waits for the one before it. Off, it replaces the one before it, so you hear the latest answer at once. Only the answer of a command is replaced: the speech and the notifications around it go on. It applies in SandFly's voice and in a voice profile, also with **Read command feedback over SandFly's speech** on, where the new answer stops the one before it in the profile and SandFly's speech isn't cut off. Notifications have their own setting, **Notifications** > **When another notification is read**.
 
 If the engine of the voice profile doesn't start within 2 seconds, SandFly's own voice says the text. With **Read command feedback over SandFly's speech** on, the text is dropped instead.
 

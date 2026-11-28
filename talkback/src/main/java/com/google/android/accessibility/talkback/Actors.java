@@ -114,6 +114,7 @@ import com.google.android.accessibility.talkback.focusmanagement.record.FocusAct
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction;
 import com.google.android.accessibility.talkback.labeling.TalkBackLabelManager;
+import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.talkback.preference.base.AutomaticDescriptionsFragment;
 import com.google.android.accessibility.talkback.training.TutorialInitiator;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
@@ -124,7 +125,6 @@ import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor;
-import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.utils.output.FeedbackController;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils.PunctuationVerbosity;
@@ -321,21 +321,27 @@ class Actors {
   }
 
   /**
-   * Returns {@code options} to speak with: for the result of a command, interrupting the speech
-   * before it unless "Queue command feedback" is on, which it is by default.
+   * Returns {@code options} to speak with: for the result of a command, replacing the result of a
+   * command before it unless "Queue command feedback" is on, which it is by default. Only that
+   * result is replaced: the speech and the notifications around it are left alone.
    */
   private @Nullable SpeakOptions commandFeedbackQueueing(@Nullable SpeakOptions options) {
     if (options == null
         || (options.mFlags & FeedbackItem.FLAG_COMMAND_FEEDBACK) == 0
         || options.mQueueMode != SpeechControllerImpl.QUEUE_MODE_QUEUE
+        || options.mUtteranceGroup != SpeechControllerImpl.UTTERANCE_GROUP_DEFAULT
         || SharedPreferencesUtils.getSharedPreferences(context)
             .getBoolean(NotificationReader.KEY_COMMAND_QUEUE, true)) {
       return options;
     }
-    return SpeakOptions.create()
-        .setQueueMode(SpeechControllerImpl.QUEUE_MODE_INTERRUPT)
-        .setFlags(options.mFlags)
-        .setUtteranceGroup(options.mUtteranceGroup);
+    // A copy: options such as TextEditActor.SPEAK_OPTIONS are shared instances.
+    return options
+        .copy()
+        .setUtteranceGroup(SpeechControllerImpl.UTTERANCE_GROUP_COMMAND_FEEDBACK)
+        .setFlags(
+            options.mFlags
+                | FeedbackItem.FLAG_INTERRUPT_CURRENT_UTTERANCE_WITH_SAME_UTTERANCE_GROUP
+                | FeedbackItem.FLAG_CLEAR_QUEUED_UTTERANCES_WITH_SAME_UTTERANCE_GROUP);
   }
 
   /** Executes feedback and modifies actorState. Returns success flag. */

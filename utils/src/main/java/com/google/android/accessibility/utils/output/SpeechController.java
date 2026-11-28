@@ -150,6 +150,8 @@ public interface SpeechController {
   // SandFly: the SandFly keyboard's corrections and suggestions said while typing, which the next
   // key stops.
   int UTTERANCE_GROUP_KEYBOARD_SUGGESTIONS = 10;
+  // SandFly: the result of a command, so that a new one can replace the one before it.
+  int UTTERANCE_GROUP_COMMAND_FEEDBACK = 12;
 
   /** Enumeration of utterance-group values. */
   @IntDef({
@@ -163,7 +165,8 @@ public interface SpeechController {
     UTTERANCE_GROUP_OTHER_APPS,
     UTTERANCE_GROUP_NOTIFICATIONS,
     UTTERANCE_GROUP_LIVE_RECOGNITION,
-    UTTERANCE_GROUP_KEYBOARD_SUGGESTIONS
+    UTTERANCE_GROUP_KEYBOARD_SUGGESTIONS,
+    UTTERANCE_GROUP_COMMAND_FEEDBACK
   })
   @Retention(RetentionPolicy.SOURCE)
   public @interface UtteranceGroup {}
@@ -293,6 +296,25 @@ public interface SpeechController {
 
     public static SpeakOptions create() {
       return new SpeakOptions();
+    }
+
+    /**
+     * Returns new options with every field of these ones, to change some of them without changing
+     * the original, which can be a shared instance. A new field has to be copied here too.
+     */
+    public SpeakOptions copy() {
+      SpeakOptions copy = new SpeakOptions();
+      copy.mEarcons = mEarcons;
+      copy.mHaptics = mHaptics;
+      copy.mQueueMode = mQueueMode;
+      copy.mFlags = mFlags;
+      copy.mUtteranceGroup = mUtteranceGroup;
+      copy.mSpeechParams = mSpeechParams;
+      copy.mNonSpeechParams = mNonSpeechParams;
+      copy.mStartingAction = mStartingAction;
+      copy.mRangeStartCallback = mRangeStartCallback;
+      copy.mCompletedAction = mCompletedAction;
+      return copy;
     }
 
     @CanIgnoreReturnValue
@@ -446,6 +468,7 @@ public interface SpeechController {
       case UTTERANCE_GROUP_OTHER_APPS -> "UTTERANCE_GROUP_OTHER_APPS";
       case UTTERANCE_GROUP_NOTIFICATIONS -> "UTTERANCE_GROUP_NOTIFICATIONS";
       case UTTERANCE_GROUP_LIVE_RECOGNITION -> "UTTERANCE_GROUP_LIVE_RECOGNITION";
+      case UTTERANCE_GROUP_COMMAND_FEEDBACK -> "UTTERANCE_GROUP_COMMAND_FEEDBACK";
       default -> "(unknown utterance group)";
     };
   }
