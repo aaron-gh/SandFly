@@ -2807,9 +2807,17 @@ public class TouchInteractionMonitor
 
   /** Runs a gesture on the main thread of the service. */
   private void postGesture(AccessibilityGestureEvent gestureEvent) {
+    // The app whose gestures applied when the gesture was matched, read from the window list once
+    // for the touch, so that running the gesture doesn't read it again.
+    @Nullable String gestureApp = gestureAppThisInteraction;
     mainHandler.post(
         () -> {
-          boolean unused = service.onGesture(gestureEvent);
+          if (gestureApp != null) {
+            boolean unused =
+                AppGestures.withApp(gestureApp, () -> service.onGesture(gestureEvent));
+          } else {
+            boolean unused = service.onGesture(gestureEvent);
+          }
         });
   }
 
