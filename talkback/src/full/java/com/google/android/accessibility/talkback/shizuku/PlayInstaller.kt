@@ -17,9 +17,12 @@
 package com.google.android.accessibility.talkback.shizuku
 
 import android.content.Context
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.ParcelFileDescriptor
+import android.util.Log
 import androidx.core.content.edit
+import androidx.core.content.pm.PackageInfoCompat
 import androidx.core.util.Consumer
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
@@ -39,6 +42,8 @@ import java.io.File
  * through Shizuku while this is on, so an update keeps the recorded installer.
  */
 object PlayInstaller {
+  private const val TAG = "PlayInstaller"
+
   /** Google Play's package, which apps look for when they check the installer. */
   const val PLAY = "com.android.vending"
 
@@ -47,6 +52,13 @@ object PlayInstaller {
 
   /** Whether the user wants Google Play recorded, kept so SandFly can restore it after a reset. */
   private const val PREF_WANTED = "play_installer_wanted"
+
+  /**
+   * The build that SandFly last reinstalled itself in to record Google Play, so that a reinstall
+   * after which Android still doesn't record it isn't repeated at every start. Each reinstall
+   * restarts SandFly, and each start reinstalled it again.
+   */
+  private const val PREF_REINSTALLED_BUILD = "play_installer_reinstalled_build"
 
   /** Whether SandFly has tried to restore the installer this run, so it does so at most once. */
   @Volatile private var reapplied = false
@@ -90,15 +102,18 @@ object PlayInstaller {
     }
     // Kept before the reinstall, which restarts SandFly, so the choice survives and can be
     // restored after an update or a reset.
-    prefs.edit { putBoolean(PREF_WANTED, play) }
+    prefs.edit(commit = true) {
+      putBoolean(PREF_WANTED, play)
+      if (play) putLong(PREF_REINSTALLED_BUILD, build(appContext))
+    }
     install(appContext, target(appContext, play)) { worked -> onDone.accept(worked) }
   }
 
   /**
    * Restores Google Play as the installer if the user wants it and it isn't recorded now, which
    * happens after an update that Shizuku couldn't do. Does nothing, and never prompts, unless
-   * Shizuku already allows SandFly. Runs at most once per process, since the reinstall restarts
-   * SandFly and this runs again then.
+   * Shizuku already allows SandFly. Runs at most once per build, since the reinstall restarts
+   * SandFly and this runs again then: on some phones, Android doesn't record Google Play.
    */
   fun reapplyIfNeeded(context: Context) {
     val appContext = context.applicationContext
@@ -106,8 +121,16 @@ object PlayInstaller {
       return
     }
     reapplied = true
+    val prefs = SharedPreferencesUtils.getSharedPreferences(appContext)
+    val build = build(appContext)
+    if (prefs.getLong(PREF_REINSTALLED_BUILD, -1L) == build) {
+      Log.w(TAG, "Installer is ${installer(appContext)} after reinstalling build $build; not again")
+      return
+    }
+    // Kept before the reinstall, which restarts SandFly before it returns.
+    prefs.edit(commit = true) { putLong(PREF_REINSTALLED_BUILD, build) }
     install(appContext, PLAY) { worked ->
-      LogUtils.i("PlayInstaller", "Restored Google Play as the installer: %s", worked)
+      LogUtils.i(TAG, "Restored Google Play as the installer: %s", worked)
     }
   }
 
@@ -165,6 +188,16 @@ object PlayInstaller {
     info.splitSourceDirs?.let { paths.addAll(it) }
     return paths.filterNotNull().map { File(it) }.filter { it.exists() }
   }
+
+  /** SandFly's build number, which changes with each update. */
+  private fun build(context: Context): Long =
+    try {
+      PackageInfoCompat.getLongVersionCode(
+        context.packageManager.getPackageInfo(context.packageName, 0)
+      )
+    } catch (e: PackageManager.NameNotFoundException) {
+      -1L
+    }
 
   /** The installer to record: Google Play, or the real one kept before, or SandFly itself. */
   private fun target(context: Context, play: Boolean): String {
