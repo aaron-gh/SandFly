@@ -41,6 +41,13 @@ class NotificationEntry(
     get() = notification.key
 
   /**
+   * Whether the entry has a title or text, the latter also from a custom layout, ticker, sub text,
+   * info text or summary text, so that its row reads more than the app name and time.
+   */
+  val hasContent: Boolean
+    get() = !title.isNullOrBlank() || !text.isNullOrBlank()
+
+  /**
    * One entry for each message of a messaging notification with two or more, which apps such as
    * Telegram post once per chat and update as messages arrive. This entry for any other.
    */
