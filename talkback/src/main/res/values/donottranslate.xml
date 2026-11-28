@@ -3056,6 +3056,28 @@
     </string-array>
 
     <!-- The values of EmojiSpeech's MODE constants. -->
+    <!-- Must match pref_item_types_spoken_entries and ItemTypes.ALL. -->
+    <string-array name="pref_item_types_spoken_values" translatable="false">
+      <item>button</item>
+      <item>checkbox</item>
+      <item>switch</item>
+      <item>radio_button</item>
+      <item>edit_box</item>
+      <item>drop_down_list</item>
+      <item>slider</item>
+      <item>progress_bar</item>
+      <item>link</item>
+      <item>heading</item>
+      <item>image</item>
+      <item>tab</item>
+      <item>tab_bar</item>
+      <item>list</item>
+      <item>grid</item>
+      <item>page</item>
+      <item>web_view</item>
+      <item>other</item>
+    </string-array>
+
     <string-array name="pref_emoji_speech_values" translatable="false">
       <item>engine</item>
       <item>names</item>

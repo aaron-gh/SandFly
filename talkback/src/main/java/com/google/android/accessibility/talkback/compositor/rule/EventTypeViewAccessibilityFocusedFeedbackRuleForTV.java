@@ -27,6 +27,7 @@ import com.google.android.accessibility.talkback.compositor.AccessibilityNodeFee
 import com.google.android.accessibility.talkback.compositor.ActionsAvailable;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.compositor.ItemTypes;
 import com.google.android.accessibility.talkback.compositor.roledescription.TreeNodesDescription;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
@@ -113,6 +114,7 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRuleForTV {
       logString.append(
           String.format("\n    collectionItemTransition={%s}", collectionItemTransition));
     } else if (speakRoles
+        && globalVariables.isItemTypeSpoken(ItemTypes.HEADING)
         && !WebInterfaceUtils.isWebContainer(node)
         && AccessibilityNodeInfoUtils.isHeading(node)) {
       // If the source node has collection item transition, collectionItemTransition text would

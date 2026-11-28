@@ -44,6 +44,7 @@ import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.EventFeedback;
 import com.google.android.accessibility.talkback.compositor.EventInterpretation;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.compositor.ItemTypes;
 import com.google.android.accessibility.talkback.compositor.roledescription.SamsungNotificationDescription;
 import com.google.android.accessibility.talkback.compositor.roledescription.TreeNodesDescription;
 import com.google.android.accessibility.talkback.controlsounds.ControlSounds;
@@ -356,6 +357,7 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
         logString.append(
             String.format("\n    collectionItemTransition={%s}", collectionItemTransition));
       } else if (speakRoles
+          && globalVariables.isItemTypeSpoken(ItemTypes.HEADING)
           && !WebInterfaceUtils.isWebContainer(node)
           && AccessibilityNodeInfoUtils.isHeading(node)) {
         // If the source node has collection item transition, collectionItemTransition text would

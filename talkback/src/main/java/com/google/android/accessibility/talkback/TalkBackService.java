@@ -176,6 +176,7 @@ import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.EarlyFocusSpeech;
 import com.google.android.accessibility.talkback.compositor.EventFilter;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.compositor.ItemTypes;
 import com.google.android.accessibility.talkback.compositor.PreparedFocusSpeech;
 import com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DescriptionOrder;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
@@ -425,6 +426,7 @@ import java.io.PrintWriter;
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -5352,6 +5354,8 @@ public class TalkBackService extends AccessibilityServiceCompat
               res.getString(R.string.pref_speak_roles_key),
               res.getBoolean(R.bool.pref_speak_roles_default));
       globalVariables.setSpeakRoles(speakRoles);
+      globalVariables.setUnspokenItemTypes(
+          speakRoles ? ItemTypes.unspoken(prefs) : Collections.emptySet());
       CompositorUtils.setRoleWithoutPause(
           SharedPreferencesUtils.getBooleanPref(
               prefs,
