@@ -143,7 +143,7 @@ Not on watches.
 
 ### Tap, then swipe {#gestures-tap-then-swipe}
 
-The **Tap, then swipe** category has gestures that tap once, twice or three times with two, three or four fingers and then swipe with as many fingers, such as **Double-tap, then swipe up with 2 fingers**. It also has gestures that tap with two fingers and then swipe with one finger, such as **Tap with 2 fingers, then swipe up**. They do nothing by default.
+The **Tap, then swipe** category has gestures that tap once, twice or three times with two, three or four fingers and then swipe with as many fingers, such as **Double-tap, then swipe up with 2 fingers**, in the **2 fingers**, **3 fingers** and **4 fingers** categories inside it. Its **2-finger tap, 1-finger swipe** category has gestures that tap with two fingers and then swipe with one finger, such as **Tap with 2 fingers, then swipe up with 1 finger**. They do nothing by default.
 
 The swipe is the next touch after the last tap and must start within 0.25 seconds of it. While one of these gestures has a command, the taps it starts with wait for the swipe. Not on watches.
 
@@ -178,7 +178,7 @@ On phones whose fingerprint sensor reports swipes, the **Fingerprint gestures** 
 - The timing settings: see [](#gestures-timing).
 - **Recognize swipes before lifting**: see [](#gestures-swipes-before-lift).
 - **Gestures in apps**, **Gesture profiles** and **App shortcuts**: see [](#gestures-in-apps), [](#gestures-profiles) and [](#gestures-app-shortcuts).
-- The gesture categories: **1 finger**, **1 finger back-and-forth**, **1 finger angle**, **Edges**, **Corners**, **2 fingers**, **2 finger angle**, **3 fingers**, **4 fingers**, **Tap, then swipe**, **Fingerprint gestures**, **Back tap**, **Shake**, **Three-part swipes**, **Two-stroke swipes**, **Two-stroke swipes ending with back-and-forth or angle** and a **Two-stroke swipes starting with** category for each back-and-forth and angle swipe.
+- The gesture categories: **1 finger**, **1 finger back-and-forth**, **1 finger angle**, **Edges**, **Corners**, **2 fingers**, **2 finger angle**, **3 fingers**, **4 fingers**, **Tap, then swipe** (with **2 fingers**, **3 fingers**, **4 fingers** and **2-finger tap, 1-finger swipe** inside it), **Fingerprint gestures**, **Back tap**, **Shake**, **Three-part swipes**, **Two-stroke swipes**, **Two-stroke swipes ending with back-and-forth or angle** and a **Two-stroke swipes starting with** category for each back-and-forth and angle swipe.
 
 The categories are collapsed. Activate a category to expand it. Each gesture in a category shows the command it runs.
 

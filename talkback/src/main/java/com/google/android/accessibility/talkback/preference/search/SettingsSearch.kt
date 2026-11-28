@@ -25,6 +25,7 @@ import android.view.ViewGroup
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.inputmethod.EditorInfo
 import android.widget.FrameLayout
+import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -339,14 +340,18 @@ object SettingsSearch {
     }
   }
 
-  private fun collectRows(
+  @VisibleForTesting
+  internal fun collectRows(
     group: PreferenceGroup,
     include: Predicate<Preference>,
     rows: MutableList<Preference>,
   ) {
     for (i in 0 until group.preferenceCount) {
       val preference = group.getPreference(i)
-      if (!preference.isVisible) {
+      // Rows of a collapsed category are found too; showing one expands the category.
+      val hiddenByCollapse =
+        group is AccessibilitySuitePreferenceCategory && group.isHiddenByCollapse(preference)
+      if (!preference.isVisible && !hiddenByCollapse) {
         continue
       }
       if (preference is PreferenceGroup) {
