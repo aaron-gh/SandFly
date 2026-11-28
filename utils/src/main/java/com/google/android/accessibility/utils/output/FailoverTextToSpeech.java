@@ -43,6 +43,7 @@ import android.os.Bundle;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
+import android.os.ParcelFileDescriptor;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.os.Process;
@@ -105,6 +106,7 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.BooleanSupplier;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -408,16 +410,17 @@ public class FailoverTextToSpeech {
    * taken for a low-latency failure. With the setting off, the engine plays its own speech, and
    * Backtalk leaves it be.
    */
-  private static final long ENGINE_HANG_MS = 3000;
+  @VisibleForTesting static final long ENGINE_HANG_MS = 3000;
 
   /** How long an engine that says it is speaking, perhaps for another app, may say nothing. */
   private static final long ENGINE_BUSY_HANG_MS = 20_000;
 
   /**
-   * How long the main thread waits for the engine to say whether it is speaking. An engine that
-   * doesn't answer counts as not speaking.
+   * How long the main thread waits for the engine to say whether it is speaking about stalled
+   * speech, where an engine that doesn't answer counts as not speaking. The hang check doesn't
+   * wait, and looks at the answer this long after asking: see {@link #probeRecheckMs}.
    */
-  private static final long ENGINE_PROBE_WAIT_MS = 300;
+  @VisibleForTesting static final long ENGINE_PROBE_WAIT_MS = 300;
 
   /**
    * Asks engines whether they are speaking. A call into an engine waits until the engine answers,
@@ -467,6 +470,9 @@ public class FailoverTextToSpeech {
    * how many times speech flushed the queue since. Speech that flushes the queue starts its own
    * wait for the engine, unless the engine has reported on none of {@link
    * #FLUSHES_BEFORE_KEEPING_WAIT} flushes in a row, as when it hangs while the user keeps moving.
+   * Even then, the engine counts as hung only once it has also said nothing for as long after the
+   * last flush: an engine slow to abort the speech that a flush stops says nothing about the speech
+   * after it until it has, which rapid flushes, as when typing fast, keep putting off.
    */
   @VisibleForTesting
   static final class UnansweredSpeech {
@@ -474,6 +480,7 @@ public class FailoverTextToSpeech {
 
     private long firstAt;
     private int flushes;
+    private long lastFlushAt;
 
     /**
      * Notes speech given to the engine at {@code now}, which flushes the queue or not. Returns when
@@ -488,21 +495,48 @@ public class FailoverTextToSpeech {
         return 0;
       }
       flushes++;
+      lastFlushAt = now;
       return flushes >= FLUSHES_BEFORE_KEEPING_WAIT ? firstAt : 0;
+    }
+
+    /**
+     * Returns how long after {@code now} the engine, quiet since {@code quietSince}, counts as
+     * hung, or 0 if it does: {@code hangMs} after {@code quietSince}, and {@code hangMs} after the
+     * last unanswered flush.
+     */
+    synchronized long msUntilHang(long now, long quietSince, long hangMs) {
+      long wait = hangMs - (now - quietSince);
+      if (lastFlushAt != 0) {
+        wait = Math.max(wait, hangMs - (now - lastFlushAt));
+      }
+      return Math.max(0, wait);
     }
 
     /** Notes that the engine reported on speech, or that the wait for it ended. */
     synchronized void reset() {
       firstAt = 0;
       flushes = 0;
+      lastFlushAt = 0;
     }
   }
 
   private final Runnable checkEngineHang = this::checkEngineHang;
 
   /** What each low-latency utterance said, to say it again the usual way if it gives no audio. */
-  private final Map<String, Pair<CharSequence, Bundle>> lowLatencyRequests =
-      new ConcurrentHashMap<>();
+  private final Map<String, LowLatencyRequest> lowLatencyRequests = new ConcurrentHashMap<>();
+
+  /**
+   * What a low-latency utterance said, and {@link #speechGeneration} when it was given to the
+   * engine.
+   */
+  private record LowLatencyRequest(CharSequence text, Bundle bundle, long generation) {}
+
+  /**
+   * How many times SandFly's speech was replaced, by speech that flushes the queue, or stopped. An
+   * utterance said again the usual way is dropped if this changed since it was given to the
+   * engine, as newer speech took its place.
+   */
+  private final AtomicLong speechGeneration = new AtomicLong();
 
   /**
    * Low-latency utterances that the engine makes without playing, by ID. Nothing of them is heard
@@ -519,6 +553,13 @@ public class FailoverTextToSpeech {
 
   /** Where the engine writes speech that it makes without playing. */
   private static final File DISCARDED_AUDIO = new File("/dev/null");
+
+  /**
+   * {@link #DISCARDED_AUDIO} opened for writing, kept open for all speech made without playing, as
+   * giving the engine the file opens and checks it each time. Null until needed, or if it can't be
+   * opened. Closed on shutdown. Main thread only.
+   */
+  private @Nullable ParcelFileDescriptor discardedAudioDescriptor;
 
   /**
    * Low-latency utterances being said again the usual way, by ID. The engine can still report on
@@ -797,6 +838,12 @@ public class FailoverTextToSpeech {
    */
   private final Deque<String> recentUtteranceIds =
       new ConcurrentLinkedDeque<>(); // may contain nulls
+
+  /** How many times speech was given to {@link #tts}, including empty speech that flushes it. */
+  private final AtomicLong engineRequests = new AtomicLong();
+
+  /** {@link #engineRequests} when {@link #tts} was last stopped, or -1. */
+  private volatile long engineRequestsAtStop = -1;
 
   private final @Nullable SpeechCacheManager speechCacheManager;
 
@@ -1217,9 +1264,13 @@ public class FailoverTextToSpeech {
     String utteranceId = params.get(Engine.KEY_PARAM_UTTERANCE_ID);
     // New speech ends a pause.
     dropHeldSpeech();
+    if (flushGlobalTtsQueue) {
+      speechGeneration.incrementAndGet();
+    }
     if (flushGlobalTtsQueue && tts != null) {
       stopLowLatencySpeech();
       try {
+        engineRequests.incrementAndGet();
         tts.speak("", SPEECH_FLUSH_ALL, null);
         unfinishedUtterances.clear();
       } catch (Exception e) {
@@ -1277,10 +1328,12 @@ public class FailoverTextToSpeech {
     // New speech ends a pause.
     dropHeldSpeech();
     if (flushGlobalTtsQueue) {
+      speechGeneration.incrementAndGet();
       emojiVoice.stop();
       if (tts != null) {
         stopLowLatencySpeech();
         try {
+          engineRequests.incrementAndGet();
           tts.speak("", SPEECH_FLUSH_ALL, null);
           unfinishedUtterances.clear();
         } catch (Exception e) {
@@ -1445,10 +1498,32 @@ public class FailoverTextToSpeech {
    * through {@link KeepScreenOn}, as the wake lock doesn't keep the screen on on some phones.
    */
   private void preventDeviceSleep() {
+    // The lock kept from speech just before is still held.
+    mHandler.removeCallbacks(releaseWakeLock);
     if (wakeLock != null && !wakeLock.isHeld()) {
       wakeLock.acquire(KeepScreenOn.LIMIT_MS);
     }
     KeepScreenOn.request(KeepScreenOn.SPEECH);
+  }
+
+  /**
+   * How long the {@link WakeLock} is kept after speech stops or ends, for speech that follows at
+   * once, as when moving to the next item. Releasing and acquiring it are calls to Android each.
+   */
+  private static final long WAKE_LOCK_RELEASE_DELAY_MS = 2000;
+
+  private final Runnable releaseWakeLock = this::releaseWakeLock;
+
+  /** Releases the {@link WakeLock} now, if it is held. */
+  private void releaseWakeLock() {
+    mHandler.removeCallbacks(releaseWakeLock);
+    if (wakeLock != null && wakeLock.isHeld()) {
+      try {
+        wakeLock.release();
+      } catch (RuntimeException unused) {
+        // Ignore: already released by timeout.
+      }
+    }
   }
 
   /** Releases the {@link WakeLock} and the {@link KeepScreenOn} request of speech. */
@@ -1464,12 +1539,10 @@ public class FailoverTextToSpeech {
     }
     KeepScreenOn.release(KeepScreenOn.SPEECH);
     if (wakeLock != null && wakeLock.isHeld()) {
-      try {
-        wakeLock.release();
-      } catch (RuntimeException unused) {
-        // Ignore: already released by timeout.
-        // TODO: Log this exception from GoogleLogger.
-      }
+      // Released later, unless speech starts again first. Posted, as this can be called on a
+      // binder thread.
+      mHandler.removeCallbacks(releaseWakeLock);
+      mHandler.postDelayed(releaseWakeLock, WAKE_LOCK_RELEASE_DELAY_MS);
     }
   }
 
@@ -1487,6 +1560,7 @@ public class FailoverTextToSpeech {
 
   /** Stops speech from all applications. No utterance callbacks will be sent. */
   public void stopAll() {
+    speechGeneration.incrementAndGet();
     emojiVoice.stop();
     stopLanguageVoices();
     dropAfterCallSpeech();
@@ -1495,6 +1569,7 @@ public class FailoverTextToSpeech {
     try {
       allowDeviceSleep();
       ensureQueueFlush();
+      engineRequests.incrementAndGet();
       tts.speak("", SPEECH_FLUSH_ALL, null);
       unfinishedUtterances.clear();
     } catch (Exception e) {
@@ -1502,12 +1577,28 @@ public class FailoverTextToSpeech {
     }
   }
 
-  /** Stops all speech that originated from TalkBack. No utterance callbacks will be sent. */
+  /**
+   * Stops all speech that originated from TalkBack at once. No utterance callbacks will be sent.
+   */
   public void stopFromTalkBack() {
+    stopFromTalkBack(/* holdForPause= */ false);
+  }
+
+  /**
+   * Stops all speech that originated from TalkBack. No utterance callbacks will be sent.
+   *
+   * @param holdForPause whether a pause may follow, such as at the start of a touch that may be
+   *     the pause gesture. Then low-latency speech playing now is held mid-word instead, and the
+   *     engine goes on making it, so that a pause can carry on from where it stopped. Otherwise the
+   *     engine stops at once, and has stopped by the time the next speech is given to it.
+   */
+  public void stopFromTalkBack(boolean holdForPause) {
+    speechGeneration.incrementAndGet();
     emojiVoice.stop();
     stopLanguageVoices();
     dropAfterCallSpeech();
-    if (holdLowLatencySpeech()) {
+    // Speech held already stays held, for a pause that may still follow.
+    if (holdForPause ? holdLowLatencySpeech() : heldUtteranceId != null) {
       // The engine keeps making the held speech, so it can carry on if speech is paused.
       allowDeviceSleep();
       return;
@@ -1515,11 +1606,31 @@ public class FailoverTextToSpeech {
     stopLowLatencySpeech();
     try {
       allowDeviceSleep();
-      tts.speak("", TextToSpeech.QUEUE_FLUSH, null);
+      // Stopping rather than speaking nothing, which flushes as much but queues the empty speech
+      // ahead of the next. Then the next speech doesn't stop the engine again.
+      if (!engineStoppedAndIdle()) {
+        stopEngine();
+      }
       unfinishedUtterances.clear();
     } catch (Exception e) {
       // Don't care, we're not speaking.
     }
+  }
+
+  /**
+   * Stops {@link #tts}'s speech, and notes that it has none until speech is given to it again.
+   * Throws what the engine throws.
+   */
+  private void stopEngine() {
+    // Read first: speech given while the engine stops may not be stopped.
+    long requests = engineRequests.get();
+    tts.stop();
+    engineRequestsAtStop = requests;
+  }
+
+  /** Whether {@link #tts} was stopped and given no speech since, so stopping it again does nothing. */
+  private boolean engineStoppedAndIdle() {
+    return engineRequestsAtStop == engineRequests.get();
   }
 
   /**
@@ -1536,6 +1647,8 @@ public class FailoverTextToSpeech {
     }
     languageVoices.clear();
     allowDeviceSleep();
+    // Now, as the delayed release is removed with the handler's other messages below.
+    releaseWakeLock();
     context.unregisterReceiver(mediaStateMonitor);
     context.unregisterReceiver(screenReceiver);
     unregisterGoogleTtsFixCallbacks();
@@ -1550,6 +1663,7 @@ public class FailoverTextToSpeech {
 
     TextToSpeechUtils.attemptTtsShutdown(tts);
     tts = null;
+    closeDiscardedAudio();
 
     TextToSpeechUtils.attemptTtsShutdown(tempTts);
     tempTts = null;
@@ -1595,6 +1709,7 @@ public class FailoverTextToSpeech {
     try {
       File tempFile = File.createTempFile("tmpsynthesize", null, context.getCacheDir());
       // The engine has its own descriptor for the file once synthesizeToFile returns.
+      engineRequests.incrementAndGet();
       tts.synthesizeToFile("1 2 3", null, tempFile, "tmpsynthesize");
       tempFile.delete();
     } catch (IOException e) {
@@ -1763,6 +1878,9 @@ public class FailoverTextToSpeech {
 
     int queueMode =
         utteranceInfoCombo.flushGlobalTtsQueue() ? SPEECH_FLUSH_ALL : TextToSpeech.QUEUE_ADD;
+    if (queueMode != TextToSpeech.QUEUE_ADD) {
+      speechGeneration.incrementAndGet();
+    }
 
     // Track latency from event received to feedback queued.
     if (eventId != null && utteranceId != null) {
@@ -2222,6 +2340,7 @@ public class FailoverTextToSpeech {
         // speak next speech immediately
         if (speechCacheManager.speakWithSpeechCachePlayer(
             utteranceId, queueMode, text, bundle, playbackStateListener, locale)) {
+          engineRequests.incrementAndGet();
           tts.speak("", SPEECH_FLUSH_ALL, null);
           return TextToSpeech.SUCCESS;
         }
@@ -2231,6 +2350,7 @@ public class FailoverTextToSpeech {
     } else {
       if (speechCacheManager.speakWithSpeechCachePlayer(
           utteranceId, queueMode, text, bundle, playbackStateListener, locale)) {
+        engineRequests.incrementAndGet();
         tts.speak("", SPEECH_FLUSH_ALL, null);
         return TextToSpeech.SUCCESS;
       }
@@ -2325,6 +2445,7 @@ public class FailoverTextToSpeech {
       CharSequence text, int queueMode, Bundle bundle, @Nullable String utteranceId) {
     @Nullable LowLatencyAudio player = lowLatencyPlayer();
     if (player == null || utteranceId == null || TextUtils.isEmpty(text)) {
+      engineRequests.incrementAndGet();
       return tts.speak(text, queueMode, bundle, utteranceId);
     }
     watchForEngineHang(queueMode, utteranceId);
@@ -2342,7 +2463,8 @@ public class FailoverTextToSpeech {
             hasLetterOrDigit(text),
             lowLatencyListener);
     lowLatencyStreams.put(utteranceId, stream);
-    lowLatencyRequests.put(utteranceId, Pair.create(text, bundle));
+    lowLatencyRequests.put(
+        utteranceId, new LowLatencyRequest(text, bundle, speechGeneration.get()));
     // A flush makes the engine drop queued pieces without a callback, so their finished streams
     // would stay. They are kept for a while, so that late callbacks are still ignored.
     if (lowLatencyStreams.size() > MAX_LOW_LATENCY_STREAMS) {
@@ -2363,16 +2485,19 @@ public class FailoverTextToSpeech {
       Bundle unplayed = new Bundle(bundle);
       unplayed.putFloat(SpeechParam.VOLUME, 1f);
       unplayed.putFloat(Engine.KEY_PARAM_PAN, 0f);
-      if (queueMode != QUEUE_ADD) {
-        // Making speech has no queue mode: it always waits for the engine's earlier speech.
-        tts.stop();
+      if (queueMode != QUEUE_ADD && !engineStoppedAndIdle()) {
+        // Making speech has no queue mode: it always waits for the engine's earlier speech. An
+        // engine stopped with nothing given to it since, as by the interrupt before this speech,
+        // has none.
+        stopEngine();
       }
+      engineRequests.incrementAndGet();
       // Text with no letters or digits, such as a line break, may have no audio at all, which
       // leaves nothing to say again.
       if (hasLetterOrDigit(text)) {
         unplayedByEngine.add(utteranceId);
       }
-      result = tts.synthesizeToFile(text, unplayed, DISCARDED_AUDIO, utteranceId);
+      result = synthesizeToDiscard(text, unplayed, utteranceId);
       if (result != TextToSpeech.SUCCESS) {
         unplayedByEngine.remove(utteranceId);
       }
@@ -2380,15 +2505,55 @@ public class FailoverTextToSpeech {
       // The engine speaks as usual but at no volume, and Backtalk plays the copy of its audio.
       Bundle silent = new Bundle(bundle);
       silent.putFloat(SpeechParam.VOLUME, 0f);
+      engineRequests.incrementAndGet();
       result = tts.speak(text, queueMode, silent, utteranceId);
     }
     if (result != TextToSpeech.SUCCESS) {
       stream.discard();
       lowLatencyStreams.remove(utteranceId);
       lowLatencyRequests.remove(utteranceId);
+      engineRequests.incrementAndGet();
       return tts.speak(text, queueMode, bundle, utteranceId);
     }
     return result;
+  }
+
+  /** Has the engine make speech into {@link #DISCARDED_AUDIO}, and returns the engine's result. */
+  private int synthesizeToDiscard(CharSequence text, Bundle params, String utteranceId) {
+    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
+      @Nullable ParcelFileDescriptor descriptor = discardedAudioDescriptor;
+      if (descriptor != null && !descriptor.getFileDescriptor().valid()) {
+        // Taken by an engine in this process, which gets the same descriptor.
+        closeDiscardedAudio();
+        descriptor = null;
+      }
+      if (descriptor == null) {
+        try {
+          descriptor =
+              ParcelFileDescriptor.open(DISCARDED_AUDIO, ParcelFileDescriptor.MODE_WRITE_ONLY);
+          discardedAudioDescriptor = descriptor;
+        } catch (IOException | RuntimeException e) {
+          LogUtils.w(TAG, "Couldn't open %s: %s", DISCARDED_AUDIO, e.toString());
+        }
+      }
+      if (descriptor != null) {
+        return tts.synthesizeToFile(text, params, descriptor, utteranceId);
+      }
+    }
+    return tts.synthesizeToFile(text, params, DISCARDED_AUDIO, utteranceId);
+  }
+
+  /** Closes {@link #discardedAudioDescriptor}, if open. */
+  private void closeDiscardedAudio() {
+    @Nullable ParcelFileDescriptor descriptor = discardedAudioDescriptor;
+    discardedAudioDescriptor = null;
+    if (descriptor != null) {
+      try {
+        descriptor.close();
+      } catch (IOException | RuntimeException e) {
+        // Closed already.
+      }
+    }
   }
 
   /** Whether {@code text} has a letter or a digit. */
@@ -2570,7 +2735,7 @@ public class FailoverTextToSpeech {
     stopLowLatencySpeech();
     try {
       // Stopping rather than speaking nothing, which would queue ahead of new speech.
-      tts.stop();
+      stopEngine();
       unfinishedUtterances.clear();
     } catch (Exception e) {
       // Not speaking.
@@ -2609,16 +2774,14 @@ public class FailoverTextToSpeech {
    */
   private void turnOffLowLatencyAudio() {
     dropHeldSpeech();
-    mHandler.removeCallbacks(checkEngineHang);
-    engineQuietSince = 0;
-    unansweredSpeech.reset();
+    stopHangCheck();
     unfinishedUtterances.clear();
     boolean speaking = !lowLatencyStreams.isEmpty();
     LowLatencyAudio.shutdownAll();
     if (speaking && tts != null) {
       try {
         // The engine is still making that speech, at no volume.
-        tts.stop();
+        stopEngine();
       } catch (Exception e) {
         // Not speaking.
       }
@@ -2639,9 +2802,7 @@ public class FailoverTextToSpeech {
     respokenUtterances.clear();
     stalledInEngine.clear();
     stalledEnds.clear();
-    mHandler.removeCallbacks(checkEngineHang);
-    engineQuietSince = 0;
-    unansweredSpeech.reset();
+    stopHangCheck();
     unfinishedUtterances.clear();
     LowLatencyAudio.shutdownAll();
   }
@@ -2777,16 +2938,103 @@ public class FailoverTextToSpeech {
       engineQuietSince = keptSince;
       if (keptSince != 0) {
         engineQuietUtteranceId = utteranceId;
-        mHandler.removeCallbacks(checkEngineHang);
-        mHandler.postDelayed(checkEngineHang, Math.max(0, ENGINE_HANG_MS - (now - keptSince)));
+        scheduleHangCheck(unansweredSpeech.msUntilHang(now, keptSince, ENGINE_HANG_MS));
       }
     }
     unfinishedUtterances.add(utteranceId);
     if (idle && engineQuietSince == 0) {
       engineQuietUtteranceId = utteranceId;
       engineQuietSince = SystemClock.uptimeMillis();
-      mHandler.removeCallbacks(checkEngineHang);
-      mHandler.postDelayed(checkEngineHang, ENGINE_HANG_MS);
+      scheduleHangCheck(ENGINE_HANG_MS);
+    }
+  }
+
+  /** Runs {@link #checkEngineHang} once, {@code delayMs} from now. */
+  private void scheduleHangCheck(long delayMs) {
+    mHandler.removeCallbacks(checkEngineHang);
+    mHandler.postDelayed(checkEngineHang, delayMs);
+  }
+
+  /** Stops waiting for the engine to respond, as when it changes. */
+  private void stopHangCheck() {
+    mHandler.removeCallbacks(checkEngineHang);
+    engineQuietSince = 0;
+    unansweredSpeech.reset();
+    hangProbe = null;
+  }
+
+  /** The question to the engine of whether it is speaking that {@link #checkEngineHang} waits on. */
+  private @Nullable Future<Boolean> hangProbe;
+
+  /** The engine {@link #hangProbe} asks. */
+  private @Nullable TextToSpeech hangProbeTts;
+
+  /** When {@link #hangProbe} was asked. */
+  private long hangProbeAskedAt;
+
+  /**
+   * Returns how long after the engine was asked whether it is speaking, {@code waited} ms ago and
+   * not answered yet, {@link #checkEngineHang} looks at the answer again, or 0 if not answering
+   * counts as not speaking. An engine busy aborting stopped speech can be slow to answer, so one
+   * that hasn't answered in {@link #ENGINE_PROBE_WAIT_MS} is not known to be speaking or not, and
+   * is asked again later. One that still hasn't answered {@link #ENGINE_HANG_MS} after that is not
+   * speaking.
+   */
+  @VisibleForTesting
+  static long probeRecheckMs(long waited) {
+    if (waited < ENGINE_PROBE_WAIT_MS) {
+      return ENGINE_PROBE_WAIT_MS - waited;
+    }
+    long giveUpAt = ENGINE_PROBE_WAIT_MS + ENGINE_HANG_MS;
+    return Math.max(0, giveUpAt - waited);
+  }
+
+  /**
+   * Whether the engine says it is speaking, for {@link #checkEngineHang}, without waiting for the
+   * answer on the main thread. Returns null while it isn't known, with the check scheduled again.
+   * See {@link #probeRecheckMs}.
+   */
+  private @Nullable Boolean engineSpeakingForHangCheck(long now) {
+    @Nullable Future<Boolean> probe = hangProbe;
+    if (probe == null || hangProbeTts != tts) {
+      probe = askEngineIfSpeaking();
+      if (probe == null) {
+        // Other engines that don't answer hold every thread to ask on, so it isn't known.
+        hangProbe = null;
+        scheduleHangCheck(ENGINE_HANG_MS);
+        return null;
+      }
+      hangProbe = probe;
+      hangProbeTts = tts;
+      hangProbeAskedAt = now;
+    }
+    long waited = now - hangProbeAskedAt;
+    if (!probe.isDone()) {
+      long recheck = probeRecheckMs(waited);
+      if (recheck > 0) {
+        if (waited >= ENGINE_PROBE_WAIT_MS) {
+          LogUtils.w(
+              TAG,
+              "TTS engine %s didn't say in %d ms whether it is speaking",
+              ttsEngine,
+              waited);
+        }
+        scheduleHangCheck(recheck);
+        return null;
+      }
+      LogUtils.w(TAG, "TTS engine %s didn't say in %d ms whether it is speaking", ttsEngine, waited);
+      hangProbe = null;
+      return false;
+    }
+    hangProbe = null;
+    try {
+      // Answered already, so this doesn't wait.
+      return probe.get();
+    } catch (ExecutionException | CancellationException e) {
+      return false;
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      return false;
     }
   }
 
@@ -2867,17 +3115,27 @@ public class FailoverTextToSpeech {
     long since = engineQuietSince;
     if (since == 0 || tts == null || !lowLatencyAudio) {
       engineQuietSince = 0;
+      hangProbe = null;
       return;
     }
-    long quiet = SystemClock.uptimeMillis() - since;
-    if (quiet < ENGINE_HANG_MS) {
-      mHandler.postDelayed(checkEngineHang, ENGINE_HANG_MS - quiet);
+    long now = SystemClock.uptimeMillis();
+    long wait = unansweredSpeech.msUntilHang(now, since, ENGINE_HANG_MS);
+    if (wait > 0) {
+      scheduleHangCheck(wait);
       return;
     }
-    if (quiet < ENGINE_BUSY_HANG_MS && isEngineSpeaking()) {
-      // Another app's speech with the same engine comes first.
-      mHandler.postDelayed(checkEngineHang, ENGINE_HANG_MS);
-      return;
+    long quiet = now - since;
+    if (quiet < ENGINE_BUSY_HANG_MS) {
+      @Nullable Boolean speaking = engineSpeakingForHangCheck(now);
+      if (speaking == null) {
+        // Checked again later.
+        return;
+      }
+      if (speaking) {
+        // Another app's speech with the same engine comes first.
+        scheduleHangCheck(ENGINE_HANG_MS);
+        return;
+      }
     }
     checkAudioMode();
     long modeChangedAt = audioModeChangedAt;
@@ -2886,13 +3144,14 @@ public class FailoverTextToSpeech {
         && modeChangedAt >= since - AUDIO_MODE_SETTLE_MS) {
       // The audio mode changed while the engine had the speech, such as when a call started, or
       // shortly before.
-      mHandler.postDelayed(checkEngineHang, ENGINE_HANG_MS);
+      scheduleHangCheck(ENGINE_HANG_MS);
       return;
     }
     @Nullable String hungUtteranceId = engineQuietUtteranceId;
     LogUtils.e(TAG, "TTS engine %s said nothing for %d ms, so it is hung", ttsEngine, quiet);
     engineQuietSince = 0;
     unansweredSpeech.reset();
+    hangProbe = null;
     unfinishedUtterances.clear();
     boolean lowLatency = hungUtteranceId != null && lowLatencyRequests.containsKey(hungUtteranceId);
     // Speech waiting on the hung engine stops, so that it holds up nothing.
@@ -3020,13 +3279,18 @@ public class FailoverTextToSpeech {
     } else {
       LogUtils.e(TAG, "Low-latency player failed, so %s is said the usual way", utteranceId);
     }
-    @Nullable Pair<CharSequence, Bundle> request = lowLatencyRequests.remove(utteranceId);
+    @Nullable LowLatencyRequest request = lowLatencyRequests.remove(utteranceId);
     if (request == null || tts == null) {
       utteranceProgressCallback.onError(utteranceId);
       return;
     }
+    long generation = request.generation();
+    if (generation != speechGeneration.get()) {
+      dropRespokenSpeech(List.of(utteranceId));
+      return;
+    }
     List<String> ids = new ArrayList<>();
-    List<Pair<CharSequence, Bundle>> requests = new ArrayList<>();
+    List<LowLatencyRequest> requests = new ArrayList<>();
     ids.add(utteranceId);
     requests.add(request);
     // The engine makes the later pieces of a split utterance before this piece's second try, which
@@ -3034,7 +3298,7 @@ public class FailoverTextToSpeech {
     // not started playing are said again the usual way too, after it.
     for (String next = nextPieceId(utteranceId); next != null; next = nextPieceId(next)) {
       LowLatencyAudio.@Nullable SpeechStream nextStream = lowLatencyStreams.get(next);
-      @Nullable Pair<CharSequence, Bundle> nextRequest = lowLatencyRequests.get(next);
+      @Nullable LowLatencyRequest nextRequest = lowLatencyRequests.get(next);
       if (nextStream == null || nextRequest == null || !nextStream.discardUnplayed()) {
         break;
       }
@@ -3058,19 +3322,37 @@ public class FailoverTextToSpeech {
             }
             return;
           }
+          if (generation != speechGeneration.get()) {
+            dropRespokenSpeech(ids);
+            return;
+          }
           // The silent first tries may still be in the engine, which would hold up the second tries
           // for as long as they take. Stop them, unless other speech waits in the engine too, which
           // stopping would lose.
           boolean onlyThese = ids.containsAll(unfinishedUtterances);
           if (onlyThese) {
-            tts.stop();
+            stopEngine();
             unfinishedUtterances.removeAll(ids);
           }
           for (int i = 0; i < ids.size(); i++) {
-            Pair<CharSequence, Bundle> said = requests.get(i);
-            tts.speak(said.first, QUEUE_ADD, said.second, RESPOKEN_ID_PREFIX + ids.get(i));
+            LowLatencyRequest said = requests.get(i);
+            engineRequests.incrementAndGet();
+            tts.speak(said.text(), QUEUE_ADD, said.bundle(), RESPOKEN_ID_PREFIX + ids.get(i));
           }
         });
+  }
+
+  /**
+   * Reports low-latency utterances as stopped rather than saying them again, since newer speech
+   * flushed them or speech was stopped after they were given to the engine.
+   */
+  private void dropRespokenSpeech(List<String> ids) {
+    LogUtils.d(TAG, "Not saying %s again: speech was replaced or stopped since", ids);
+    for (String id : ids) {
+      respokenUtterances.remove(id);
+      unplayedByEngine.remove(id);
+      utteranceProgressCallback.onStop(id, /* interrupted= */ true);
+    }
   }
 
   /**
@@ -3302,6 +3584,7 @@ public class FailoverTextToSpeech {
    */
   private void ensureQueueFlush() {
     if (BuildVersionUtils.isM()) {
+      engineRequests.incrementAndGet();
       tts.speak("", TextToSpeech.QUEUE_FLUSH, null, null);
     }
   }
@@ -3465,10 +3748,9 @@ public class FailoverTextToSpeech {
     unplayedByEngine.clear();
     respokenUtterances.clear();
     LowLatencyAudio.stopAllStreams();
-    mHandler.removeCallbacks(checkEngineHang);
-    engineQuietSince = 0;
-    unansweredSpeech.reset();
+    stopHangCheck();
     unfinishedUtterances.clear();
+    engineRequestsAtStop = -1;
 
     tts = newTts;
     tts.setOnUtteranceProgressListener(lowLatencyRouter);
@@ -4056,6 +4338,7 @@ public class FailoverTextToSpeech {
         mLastUtteranceLocale = actualLocale;
       }
       // Use getter to override it in testing.
+      engineRequests.incrementAndGet();
       if (getEngineInstance().synthesizeToFile(text, params, file, utteranceId)
           == TextToSpeech.SUCCESS) {
         return true;

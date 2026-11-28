@@ -2107,7 +2107,12 @@ public class GestureController {
       return;
     }
 
-    service.interruptAllFeedback(false);
+    if (action.equals(service.getString(R.string.shortcut_value_pause_or_resume_feedback))) {
+      // Continuous reading pauses mid-word, as other speech does at the start of the touch.
+      service.interruptAllFeedbackHoldingForPause();
+    } else {
+      service.interruptAllFeedback(false);
+    }
   }
 
   /** Checks if users have changed gestures manually. */
