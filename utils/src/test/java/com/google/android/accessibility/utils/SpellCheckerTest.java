@@ -18,15 +18,18 @@ package com.google.android.accessibility.utils;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import android.content.Context;
 import android.text.Spanned;
 import android.text.style.SuggestionSpan;
+import android.view.inputmethod.InputMethodSubtype;
 import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SuggestionsInfo;
 import com.google.common.collect.ImmutableList;
 import java.time.Duration;
+import java.util.Locale;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -86,5 +89,22 @@ public class SpellCheckerTest {
 
     ShadowSystemClock.advanceBy(Duration.ofMillis(SpellChecker.NO_SESSION_RETRY_DELAY_MS));
     assertFalse(SpellChecker.isSessionUnavailable());
+  }
+
+  @Test
+  public void checksAreInTheLanguageOfTheKeyboardSubtype() {
+    InputMethodSubtype tagged =
+        new InputMethodSubtype.InputMethodSubtypeBuilder()
+            .setLanguageTag("en-GB")
+            .setSubtypeLocale("en_GB")
+            .build();
+    InputMethodSubtype localeOnly =
+        new InputMethodSubtype.InputMethodSubtypeBuilder().setSubtypeLocale("ro_RO").build();
+    InputMethodSubtype noLanguage = new InputMethodSubtype.InputMethodSubtypeBuilder().build();
+
+    assertEquals(Locale.UK, SpellChecker.localeOf(tagged));
+    assertEquals(Locale.forLanguageTag("ro-RO"), SpellChecker.localeOf(localeOnly));
+    assertNull(SpellChecker.localeOf(noLanguage));
+    assertNull(SpellChecker.localeOf(null));
   }
 }
