@@ -638,6 +638,9 @@ object ClipboardHistoryOverlay {
           refreshList()
           focusLater(PAGE_FOCUS_DELAY_MS) { empty }
         }
+      button(page, R.string.clipboard_history_limits) {
+        openActivity(ClipboardHistoryActivity.MODE_LIMITS, entry = null)
+      }
       button(page, R.string.close_string) { close(restoreFocus = true) }
     }
     refreshList()

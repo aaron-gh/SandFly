@@ -151,7 +151,7 @@ None of these commands has a gesture by default. To give one a gesture, see [](#
 
 ### Clipboard history {#typing-clipboard-history}
 
-SandFly keeps a history of up to 50 texts copied, newest first. Each text is kept up to 200,000 characters, and the history up to 1,000,000 characters in all: older texts past that are removed. **Add to clipboard** also stops at 200,000 characters. The history holds the texts that SandFly copies, and the texts that other apps copy while a window of SandFly has focus. Android doesn't let apps read the clipboard in the background, so with Shizuku or root, the switch **Add copies from other apps** at the top of the history adds every text that other apps copy. The history is kept apart from the settings and isn't included in a settings backup.
+SandFly keeps a history of the texts copied, newest first: up to 50 texts, unless **Limits** in the history is set otherwise. Each text is kept up to 200,000 characters, and the history up to 1,000,000 characters in all: older texts past that are removed. **Add to clipboard** also stops at 200,000 characters. The history holds the texts that SandFly copies, and the texts that other apps copy while a window of SandFly has focus. Android doesn't let apps read the clipboard in the background, so with Shizuku or root, the switch **Add copies from other apps** at the top of the history adds every text that other apps copy. The history is kept apart from the settings and isn't included in a settings backup.
 
 To open the history, run **Clipboard history**, from the **Text editing** commands or the **Editing menu**. The history opens over the current screen.
 
@@ -161,6 +161,7 @@ To open the history, run **Clipboard history**, from the **Text editing** comman
 - **Select** shows the texts as check boxes. Double-tap texts to check them, then choose **Remove** or **Export to file** for the checked texts.
 - **Export to file** saves the whole history as a text file. Several texts are separated by a line of three hyphens between blank lines.
 - **Clear history** removes all the texts.
+- **Limits** sets **Maximum texts**, from 1 to 5000, and **Days kept**. Texts copied more than that many days ago are deleted, even when the history holds fewer texts than the maximum. Copying a text again starts its days again. Leave **Days kept** empty to keep texts until they are removed.
 
 To paste without opening the history, add the **Clipboard history** reading control, in the **Actions for current item** group of **Reading controls**. In a text field, swipe up or down to go through the texts in the history, and double-tap to paste the text that SandFly read last. The reading control is off by default. See [](#commands).
 

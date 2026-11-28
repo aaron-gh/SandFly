@@ -18,9 +18,14 @@ package com.google.android.accessibility.talkback.clipboard
 
 import android.os.Bundle
 import android.text.Editable
+import android.text.InputFilter
 import android.text.InputType
 import android.text.TextWatcher
+import android.view.View
 import android.view.WindowManager
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -32,10 +37,12 @@ import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 
 /**
  * The parts of the clipboard history that need an activity, opened from [ClipboardHistoryOverlay]
- * while its window is closed: Edit, a dialog that changes the text of an entry, and Export to file,
+ * while its window is closed: Edit, a dialog that changes the text of an entry, Limits, a dialog
+ * that sets how many texts the history keeps and for how many days, and Export to file,
  * which saves the whole history, or the texts [ClipboardHistoryOverlay.exportedEntries], as a UTF-8
- * text file in the format [ClipboardHistory.exportText] describes. The window shows again when the dialog closes or the file picker returns. Leaving the
- * Edit dialog for another screen discards the change, and the window doesn't show again.
+ * text file in the format [ClipboardHistory.exportText] describes. The window shows again when the
+ * dialog closes or the file picker returns. Leaving a dialog for another screen discards the
+ * change, and the window doesn't show again.
  */
 class ClipboardHistoryActivity : AppCompatActivity() {
 
@@ -45,7 +52,7 @@ class ClipboardHistoryActivity : AppCompatActivity() {
       val exported = ClipboardHistoryOverlay.exportedEntries
       if (uri != null) {
         // The whole history is read when the file is written, off the main thread. It holds at
-        // most MAX_ENTRIES texts of MAX_LENGTH characters.
+        // most MAX_TOTAL_LENGTH characters.
         ItemFileLauncher.exportText(this, uri) {
           ClipboardHistory.exportText(exported ?: ClipboardHistory.entries(it))
         }
@@ -65,6 +72,7 @@ class ClipboardHistoryActivity : AppCompatActivity() {
         val entry = ClipboardHistoryOverlay.editedEntry
         if (entry == null) finishWithoutWindow() else showEditor(entry)
       }
+      MODE_LIMITS -> showLimits()
       MODE_EXPORT -> {
         // After a configuration change the file picker is already open, and its result comes to
         // this activity.
@@ -126,13 +134,96 @@ class ClipboardHistoryActivity : AppCompatActivity() {
     dialog = editor
   }
 
+  /**
+   * Shows the number fields for the most texts the history keeps, from 1 to
+   * [ClipboardHistory.MAX_ENTRIES], and the days it keeps them, empty for no limit. Larger numbers
+   * are saved as the largest.
+   */
+  private fun showLimits() {
+    val maxField =
+      numberField(ClipboardHistory.MAX_ENTRIES.toString().length).apply {
+        setText(ClipboardHistory.maxEntries(this@ClipboardHistoryActivity).toString())
+      }
+    val daysField =
+      numberField(DAYS_DIGITS).apply {
+        hint = getString(R.string.clipboard_history_days_unlimited)
+        ClipboardHistory.days(this@ClipboardHistoryActivity).takeIf { it > 0 }?.let {
+          setText(it.toString())
+        }
+      }
+    val padding = (resources.displayMetrics.density * PADDING_DP).toInt()
+    val fields =
+      LinearLayout(this).apply {
+        orientation = LinearLayout.VERTICAL
+        setPadding(padding, padding / 2, padding, 0)
+        addLabelled(
+          getString(R.string.clipboard_history_max_entries, ClipboardHistory.MAX_ENTRIES),
+          maxField,
+        )
+        addLabelled(getString(R.string.clipboard_history_days), daysField)
+      }
+    val limits =
+      AlertDialog.Builder(this)
+        .setTitle(R.string.clipboard_history_limits)
+        .setView(fields)
+        .setPositiveButton(R.string.granular_editing_save) { _, _ ->
+          val max = number(maxField) ?: return@setPositiveButton
+          ClipboardHistory.setLimits(this, max, number(daysField) ?: 0)
+          end(focusText = null)
+        }
+        .setNegativeButton(android.R.string.cancel) { _, _ -> end(focusText = null) }
+        .setOnCancelListener { end(focusText = null) }
+        .setOnDismissListener { if (!ended && !isChangingConfigurations) end(focusText = null) }
+        .show()
+    limits.keepButtonCase()
+    limits.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
+    // The most texts must be a number above 0.
+    val save = limits.getButton(AlertDialog.BUTTON_POSITIVE)
+    save?.isEnabled = (number(maxField) ?: 0) > 0
+    maxField.addTextChangedListener(
+      object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+        override fun afterTextChanged(s: Editable?) {
+          save?.isEnabled = (number(maxField) ?: 0) > 0
+        }
+      }
+    )
+    maxField.requestFocus()
+    maxField.setSelection(maxField.length())
+    dialog = limits
+  }
+
+  private fun numberField(digits: Int): EditText =
+    KeyboardSafeEditText(this).apply {
+      id = View.generateViewId()
+      inputType = InputType.TYPE_CLASS_NUMBER
+      isSingleLine = true
+      filters = arrayOf(InputFilter.LengthFilter(digits))
+    }
+
+  private fun LinearLayout.addLabelled(label: String, field: EditText) {
+    addView(
+      TextView(context).apply {
+        text = label
+        labelFor = field.id
+      }
+    )
+    addView(field)
+  }
+
+  /** The field's number; null when it is empty. */
+  private fun number(field: EditText): Int? = field.text?.toString()?.trim()?.toIntOrNull()
+
   override fun onStop() {
     super.onStop()
-    // Edit is left for another screen. Export goes on while the file picker is in front.
+    // A dialog is left for another screen. Export goes on while the file picker is in front.
     if (
       !ended &&
         !isChangingConfigurations &&
-        intent.getStringExtra(EXTRA_MODE) == MODE_EDIT
+        intent.getStringExtra(EXTRA_MODE) != MODE_EXPORT
     ) {
       ended = true
       ClipboardHistoryOverlay.forgetSuspended()
@@ -166,6 +257,10 @@ class ClipboardHistoryActivity : AppCompatActivity() {
     const val EXTRA_MODE = "mode"
     const val MODE_EDIT = "edit"
     const val MODE_EXPORT = "export"
+    const val MODE_LIMITS = "limits"
     private const val MAX_LINES = 12
+    /** The most digits of Days kept: up to 99,999 days. */
+    private const val DAYS_DIGITS = 5
+    private const val PADDING_DP = 24
   }
 }
