@@ -62,6 +62,7 @@ import android.util.Pair;
 import androidx.annotation.VisibleForTesting;
 import androidx.annotation.WorkerThread;
 import androidx.core.content.ContextCompat;
+import com.google.android.accessibility.utils.AudioModes;
 import com.google.android.accessibility.utils.BuildVersionUtils;
 import com.google.android.accessibility.utils.KeepScreenOn;
 import com.google.android.accessibility.utils.Logger;
@@ -863,7 +864,7 @@ public class FailoverTextToSpeech {
     // connect to system services
     initWakeLock(context);
     audioManager = (AudioManager) this.context.getSystemService(Context.AUDIO_SERVICE);
-    lastAudioMode = audioManager.getMode();
+    lastAudioMode = AudioModes.current(audioManager);
     telephonyManager = (TelephonyManager) this.context.getSystemService(Context.TELEPHONY_SERVICE);
   }
 
@@ -1343,7 +1344,7 @@ public class FailoverTextToSpeech {
    * seen shortly before. A voice call in an app has a call mode with no phone call.
    */
   private boolean callAudioEnding() {
-    int mode = audioManager.getMode();
+    int mode = AudioModes.current(audioManager);
     if (mode != AudioManager.MODE_IN_CALL && mode != AudioManager.MODE_IN_COMMUNICATION) {
       callModeOutlasted = false;
       return false;
@@ -2402,7 +2403,7 @@ public class FailoverTextToSpeech {
 
   /** Whether a phone or voice call has the audio mode. */
   private boolean inCall() {
-    int mode = audioManager.getMode();
+    int mode = AudioModes.current(audioManager);
     return mode == AudioManager.MODE_IN_CALL || mode == AudioManager.MODE_IN_COMMUNICATION;
   }
 
@@ -2411,7 +2412,7 @@ public class FailoverTextToSpeech {
    * Backtalk wasn't looking counts from now.
    */
   private void checkAudioMode() {
-    int mode = audioManager.getMode();
+    int mode = AudioModes.current(audioManager);
     if (mode != lastAudioMode) {
       boolean callEnded =
           (lastAudioMode == AudioManager.MODE_IN_CALL
