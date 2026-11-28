@@ -34,6 +34,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
 import android.text.TextUtils;
+import android.util.LruCache;
 import android.util.SparseArray;
 import android.view.Display;
 import android.view.accessibility.AccessibilityEvent;
@@ -1547,7 +1548,19 @@ public class WindowEventInterpreter implements WindowsDelegate, DisplayStateChan
     }
   }
 
+  /**
+   * App labels by package and language: every screen change asks for the label of each window's
+   * app, which is an IPC call to the package manager and loads the label from the app's resources.
+   */
+  private final LruCache<String, CharSequence> applicationLabels = new LruCache<>(32);
+
   private @Nullable CharSequence getApplicationLabel(CharSequence packageName) {
+    String key =
+        packageName + "|" + service.getResources().getConfiguration().getLocales().get(0);
+    CharSequence cached = applicationLabels.get(key);
+    if (cached != null) {
+      return cached;
+    }
     PackageManager packageManager = service.getPackageManager();
     if (packageManager == null) {
       return null;
@@ -1560,7 +1573,11 @@ public class WindowEventInterpreter implements WindowsDelegate, DisplayStateChan
       return null;
     }
 
-    return packageManager.getApplicationLabel(applicationInfo);
+    CharSequence label = packageManager.getApplicationLabel(applicationInfo);
+    if (label != null) {
+      applicationLabels.put(key, label);
+    }
+    return label;
   }
 
   // /////////////////////////////////////////////////////////////////////////////////////
