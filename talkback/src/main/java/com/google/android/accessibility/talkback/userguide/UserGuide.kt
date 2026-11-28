@@ -28,6 +28,7 @@ import com.google.android.accessibility.talkback.keyboard.KeyComboManager
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel
 import com.google.android.accessibility.talkback.keyboard.Keymap
 import com.google.android.accessibility.talkback.keyboard.NewKeyComboModel
+import com.google.android.accessibility.talkback.preference.search.SettingsSearch
 import java.io.FileNotFoundException
 import java.util.Locale
 import org.xmlpull.v1.XmlPullParser
@@ -127,12 +128,19 @@ object UserGuide {
     val android = "http://schemas.android.com/apk/res/android"
     class Gesture(val key: String, val title: String, val sandFlyDefault: String?)
     val groups = mutableListOf<Pair<String, MutableList<Gesture>>>()
+    // The titles of the categories that the parser is in, such as Tap, then swipe and 2 fingers.
+    val categories = ArrayDeque<String>()
     context.resources.getXml(R.xml.gesture_preferences).use { parser ->
       while (parser.next() != XmlPullParser.END_DOCUMENT) {
+        if (parser.eventType == XmlPullParser.END_TAG && parser.name.endsWith("PreferenceCategory")) {
+          categories.removeLastOrNull()
+          continue
+        }
         if (parser.eventType != XmlPullParser.START_TAG) continue
         val title = parser.getAttributeResourceValue(android, "title", 0)
         if (parser.name.endsWith("PreferenceCategory")) {
-          groups += (if (title == 0) "" else context.getString(title)) to mutableListOf()
+          categories.addLast(if (title == 0) "" else context.getString(title))
+          groups += SettingsSearch.path(categories.filter { it.isNotEmpty() }) to mutableListOf()
           continue
         }
         if (!parser.name.endsWith(".GestureListPreference")) continue

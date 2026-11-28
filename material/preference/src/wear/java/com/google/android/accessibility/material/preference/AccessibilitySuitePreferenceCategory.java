@@ -17,6 +17,7 @@ package com.google.android.accessibility.material.preference;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import androidx.preference.Preference;
 import com.google.android.accessibility.material.preference.compose.ComposePreferenceCategory;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -38,4 +39,8 @@ public class AccessibilitySuitePreferenceCategory extends ComposePreferenceCateg
   }
 
   public void setCollapsed(boolean collapsed) {}
+
+  public boolean isHiddenByCollapse(Preference preference) {
+    return false;
+  }
 }

@@ -161,22 +161,30 @@ class GestureProfileFragment : NotificationCodeFragment(R.string.title_pref_gest
     for (category in categories) {
       // Back-and-forth and angle gestures are off while swipes run before the finger lifts.
       if (SwipesBeforeLift.hidesCategory(context, category.key, swipesBeforeLift)) continue
-      val group = AccessibilitySuitePreferenceCategory(context)
-      // The Gestures screen's key, which keeps whether it is expanded.
-      group.key = category.key
-      group.title = category.title
-      screen.addPreference(group)
-      for (slot in category.gestures) {
-        val key = GestureProfiles.rowKey(id, slot.baseKey)
-        GestureListPreference(context, key, slot.name, GestureProfiles.DEFAULT_VALUE).also {
-          it.isPersistent = false
-          it.isIconSpaceReserved = false
-          it.setCommandWithoutProfile(slot.value(context, prefs))
-          group.addPreference(it)
-        }
-      }
+      addCategory(screen, category)
     }
     collapseCategories()
+  }
+
+  private fun addCategory(parent: PreferenceGroup, category: CommandBindings.GestureCategory) {
+    val context = requireContext()
+    val group = AccessibilitySuitePreferenceCategory(context)
+    // The Gestures screen's key, which keeps whether it is expanded.
+    group.key = category.key
+    group.title = category.title
+    parent.addPreference(group)
+    for (slot in category.gestures) {
+      val key = GestureProfiles.rowKey(id, slot.baseKey)
+      GestureListPreference(context, key, slot.name, GestureProfiles.DEFAULT_VALUE).also {
+        it.isPersistent = false
+        it.isIconSpaceReserved = false
+        it.setCommandWithoutProfile(slot.value(context, prefs))
+        group.addPreference(it)
+      }
+    }
+    for (subcategory in category.subcategories) {
+      addCategory(group, subcategory)
+    }
   }
 
   override fun onDisplayPreferenceDialog(preference: Preference) {

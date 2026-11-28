@@ -78,6 +78,11 @@ public class AccessibilitySuitePreferenceCategory extends PreferenceCategory {
     return collapsed;
   }
 
+  /** Whether {@code preference} is hidden only because the category is collapsed. */
+  public boolean isHiddenByCollapse(Preference preference) {
+    return collapsed && hiddenByCollapse.contains(preference);
+  }
+
   public void setCollapsed(boolean collapsed) {
     if (!collapsible || collapsed == this.collapsed) {
       return;
