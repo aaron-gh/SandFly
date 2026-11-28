@@ -100,6 +100,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.SynchronousQueue;
@@ -1652,6 +1654,7 @@ public class FailoverTextToSpeech {
     context.unregisterReceiver(mediaStateMonitor);
     context.unregisterReceiver(screenReceiver);
     unregisterGoogleTtsFixCallbacks();
+    endVoiceListings();
     mHandler.removeCallbacksAndMessages(null);
 
     resolver.unregisterContentObserver(mSynthObserver);
@@ -1973,6 +1976,124 @@ public class FailoverTextToSpeech {
   private @Nullable Set<Voice> engineVoices;
 
   /**
+   * When {@link #engineVoices} are listed again for {@link #getVoices}. Use with {@link #ttsLock}.
+   */
+  private final VoiceRelisting voiceRelisting = new VoiceRelisting();
+
+  /**
+   * Says when the voices kept for {@link #getVoices} are old enough to be listed again in the
+   * background, so that a voice installed while the engine is in use shows in menus. It keeps more
+   * than one listing from running at once, and a listing's voices from replacing voices kept after
+   * it started, such as another engine's or a fuller list.
+   */
+  @VisibleForTesting
+  static final class VoiceRelisting {
+    /** How old the kept voices can be before they are listed again. */
+    static final long RELIST_AFTER_MS = 60_000;
+
+    /** What {@link #start} returns when the voices aren't listed again. */
+    static final int NOT_STARTED = 0;
+
+    private long listedAt;
+    private boolean old;
+    private int generation;
+    private int lastListing;
+    private int runningListing = NOT_STARTED;
+    private int runningGeneration;
+
+    /** Notes that the kept voices were listed at {@code now}. A listing that runs is dropped. */
+    void onListed(long now) {
+      generation++;
+      listedAt = now;
+      old = false;
+      runningListing = NOT_STARTED;
+    }
+
+    /**
+     * Notes that the kept voices were cleared or replaced without being listed, so they may be old,
+     * as when the engine changes or the voices are cleared to be listed again. A listing that runs
+     * is dropped.
+     */
+    void onReplaced() {
+      generation++;
+      old = true;
+      runningListing = NOT_STARTED;
+    }
+
+    /**
+     * Returns {@link #NOT_STARTED}, or, when the voices are to be listed again at {@code now}, the
+     * listing to give {@link #onEnded}, and notes that it runs.
+     */
+    int start(long now) {
+      if (runningListing != NOT_STARTED || (!old && now - listedAt <= RELIST_AFTER_MS)) {
+        return NOT_STARTED;
+      }
+      runningListing = ++lastListing;
+      runningGeneration = generation;
+      return runningListing;
+    }
+
+    /** Whether {@code listing} runs and the kept voices haven't changed since it started. */
+    boolean isCurrent(int listing) {
+      return listing == runningListing && runningGeneration == generation;
+    }
+
+    /** Notes that {@code listing} didn't start, so that the next ask may start another at once. */
+    void cancel(int listing) {
+      if (listing == runningListing) {
+        runningListing = NOT_STARTED;
+      }
+    }
+
+    /**
+     * Notes that {@code listing} ended at {@code now}, with voices or not, and returns whether its
+     * voices are kept. They aren't if another listing runs or the kept voices changed since it
+     * started. A listing that failed is tried again only {@link #RELIST_AFTER_MS} later.
+     */
+    boolean onEnded(int listing, boolean listed, long now) {
+      if (listing != runningListing) {
+        return false;
+      }
+      runningListing = NOT_STARTED;
+      if (runningGeneration != generation) {
+        return false;
+      }
+      listedAt = now;
+      old = false;
+      if (listed) {
+        generation++;
+      }
+      return listed;
+    }
+  }
+
+  /**
+   * How long a listing of the voices waits for the engine. An engine that doesn't answer is asked
+   * again only {@link VoiceRelisting#RELIST_AFTER_MS} later.
+   */
+  private static final long VOICE_LISTING_TIMEOUT_MS = 20_000;
+
+  /**
+   * How long the engine can leave speech unanswered before the voices aren't listed, as it may have
+   * hung.
+   */
+  private static final long ENGINE_QUIET_FOR_LISTING_MS = 1000;
+
+  /** Lists an engine's voices again, away from the main thread, as the engine can take seconds. */
+  private static final ThreadPoolExecutor VOICE_LISTER =
+      new ThreadPoolExecutor(
+          /* corePoolSize= */ 0,
+          /* maximumPoolSize= */ 4,
+          /* keepAliveTime= */ 10,
+          TimeUnit.SECONDS,
+          new SynchronousQueue<>(),
+          runnable -> {
+            Thread thread = new Thread(runnable, "TtsVoiceLister");
+            thread.setDaemon(true);
+            return thread;
+          });
+
+  /**
    * A voice {@link #findVoice} didn't find even after listing the voices again, so that it isn't
    * listed again for every utterance. Cleared with {@link #engineVoices}, when the engine changes.
    */
@@ -2033,6 +2154,8 @@ public class FailoverTextToSpeech {
       int retries = ++profileVoiceRetries;
       // The engine may have listed its voices before it loaded them all.
       engineVoices = null;
+      voiceRelisting.onReplaced();
+      partialVoices = null;
       missingVoice = null;
       localeInUse = attemptSetProfileVoice(profile);
       if (unsetProfileVoice == null) {
@@ -2194,8 +2317,9 @@ public class FailoverTextToSpeech {
   /**
    * The current engine's voices, kept from the last time they were listed, or null without an
    * engine. Listing them calls the engine, which can take seconds, so menus that ask each time they
-   * are shown, such as the reading controls asking whether Language applies, list them once per
-   * engine.
+   * are shown, such as the reading controls asking whether Language applies, get the kept list.
+   * When it is older than {@link VoiceRelisting#RELIST_AFTER_MS}, it is listed again in the
+   * background for the next time, so that a voice installed since shows.
    */
   public @Nullable Set<Voice> getVoices() {
     synchronized (ttsLock) {
@@ -2203,18 +2327,312 @@ public class FailoverTextToSpeech {
         return null;
       }
       if (engineVoices == null) {
-        engineVoices = tts.getVoices();
+        listEngineVoices();
+      } else {
+        relistVoicesIfOld();
       }
       return engineVoices;
     }
   }
 
   /**
+   * Lists the kept voices again in the background if they are old enough, on the main thread, as
+   * making the connection to list them waits for the system. Call with {@link #ttsLock}.
+   */
+  private void relistVoicesIfOld() {
+    String engine = ttsEngine;
+    if (engine == null || connectedEngineUnknown) {
+      return;
+    }
+    int listing = voiceRelisting.start(SystemClock.uptimeMillis());
+    if (listing != VoiceRelisting.NOT_STARTED) {
+      mHandler.post(() -> startVoiceListing(listing, engine));
+    }
+  }
+
+  /** The listings of the voices that haven't ended. Use on the main thread. */
+  private final Set<VoiceListing> voiceListings = new HashSet<>();
+
+  /**
+   * Whether Android didn't say which engine a listing's connection reached, so that the voices
+   * aren't listed again, as a connection that fell back to another engine would list its voices.
+   */
+  private volatile boolean connectedEngineUnknown;
+
+  /**
+   * The engines with a listing whose connection isn't closed yet, with how many such listings each
+   * has. Shared by every instance, as a connection to an engine that doesn't answer outlives the
+   * speech it was for. Use with this map.
+   */
+  private static final Map<String, Integer> BUSY_ENGINES = new HashMap<>();
+
+  private static boolean isEngineBusy(String engine) {
+    synchronized (BUSY_ENGINES) {
+      return BUSY_ENGINES.containsKey(engine);
+    }
+  }
+
+  private static void onEngineBusy(String engine, boolean busy) {
+    synchronized (BUSY_ENGINES) {
+      int count = BUSY_ENGINES.getOrDefault(engine, 0) + (busy ? 1 : -1);
+      if (count > 0) {
+        BUSY_ENGINES.put(engine, count);
+      } else {
+        BUSY_ENGINES.remove(engine);
+      }
+    }
+  }
+
+  /**
+   * Closes the connections of voice listings. Closing one waits for the lock its connection holds
+   * while it connects and lists, so a connection to an engine that doesn't answer waits here,
+   * rather than holding up {@link TextToSpeechUtils#attemptTtsShutdown}, which closes every
+   * engine's connections. Its engine stays busy until then, so it waits on one thread at most.
+   */
+  private static final ExecutorService VOICE_LISTING_CLOSER =
+      Executors.newCachedThreadPool(
+          runnable -> {
+            Thread thread = new Thread(runnable, "TtsVoiceListingCloser");
+            thread.setDaemon(true);
+            return thread;
+          });
+
+  /**
+   * Starts {@code listing} of {@code engine}'s voices, on the main thread, unless the engine
+   * changed or the kept voices did since it was asked for, or a listing of the engine hasn't closed
+   * its connection yet.
+   */
+  private void startVoiceListing(int listing, String engine) {
+    synchronized (ttsLock) {
+      // Android sets up every engine connection of the app in turn, so a connection to an engine
+      // that may have hung would hold up the one to an engine replacing it.
+      long quietSince = engineQuietSince;
+      boolean engineQuiet =
+          quietSince != 0 && SystemClock.uptimeMillis() - quietSince > ENGINE_QUIET_FOR_LISTING_MS;
+      if (tts == null
+          || !engine.equals(ttsEngine)
+          || !voiceRelisting.isCurrent(listing)
+          || engineQuiet) {
+        // The next ask lists the engine in use then.
+        voiceRelisting.cancel(listing);
+        return;
+      }
+      if (isEngineBusy(engine)) {
+        voiceRelisting.onEnded(listing, /* listed= */ false, SystemClock.uptimeMillis());
+        return;
+      }
+    }
+    try {
+      voiceListings.add(new VoiceListing(listing, engine));
+    } catch (RuntimeException e) {
+      LogUtils.w(TAG, "Listing the voices again failed to start: %s", e);
+      synchronized (ttsLock) {
+        voiceRelisting.onEnded(listing, /* listed= */ false, SystemClock.uptimeMillis());
+      }
+    }
+  }
+
+  /** Ends the listings of the voices, as speech is shut down. */
+  private void endVoiceListings() {
+    for (VoiceListing listing : new ArrayList<>(voiceListings)) {
+      listing.end(/* voices= */ null);
+    }
+  }
+
+  /** Lists the current engine's voices into {@link #engineVoices}. Call with {@link #ttsLock}. */
+  private void listEngineVoices() {
+    engineVoices = tts.getVoices();
+    voiceRelisting.onListed(SystemClock.uptimeMillis());
+    partialVoices = null;
+  }
+
+  /**
+   * Lists the engine's voices again over a connection of its own, which it closes afterwards on
+   * {@link #VOICE_LISTING_CLOSER}. The engine in use takes a lock for each call, so listing on it
+   * would hold up speech for as long as the engine takes to list, which can be seconds. The voices
+   * are kept if {@link #voiceRelisting} says so when they arrive, within {@link
+   * #VOICE_LISTING_TIMEOUT_MS}.
+   */
+  private final class VoiceListing {
+    private final int listing;
+    private final String engine;
+    private final TextToSpeech connection;
+    private final Runnable giveUp = this::giveUp;
+
+    // Read on VOICE_LISTER too, so use with this object.
+    private boolean ended;
+    private boolean answered;
+
+    /**
+     * Starts {@code listing} of {@code engine}'s voices. Call on the main thread.
+     *
+     * @throws RuntimeException if the connection can't be made, such as when binding is refused
+     */
+    VoiceListing(int listing, String engine) {
+      this.listing = listing;
+      this.engine = engine;
+      onEngineBusy(engine, /* busy= */ true);
+      try {
+        // Posted, as a connection that can't bind reports from within its constructor.
+        connection =
+            new TextToSpeech(context, status -> mHandler.post(() -> onInit(status)), engine);
+      } catch (RuntimeException e) {
+        onEngineBusy(engine, /* busy= */ false);
+        throw e;
+      }
+      mHandler.postDelayed(giveUp, VOICE_LISTING_TIMEOUT_MS);
+    }
+
+    /** Ends the listing without voices once it has waited too long, unless the engine answered. */
+    private void giveUp() {
+      synchronized (this) {
+        if (answered) {
+          // Its voices are on their way to end().
+          return;
+        }
+      }
+      // The engine isn't listed again until the connection closes, which waits for the engine to
+      // answer if it connected. One that never answers isn't listed again until SandFly's process
+      // restarts, as each try would keep another thread.
+      LogUtils.w(
+          TAG,
+          "TTS engine %s didn't connect and list its voices in %d ms; not listed again until the"
+              + " connection closes",
+          engine,
+          VOICE_LISTING_TIMEOUT_MS);
+      end(/* voices= */ null);
+    }
+
+    private void onInit(int status) {
+      synchronized (this) {
+        if (ended) {
+          return;
+        }
+      }
+      // A connection falls back to another engine when it can't reach the one asked for.
+      String reached = TextToSpeechCompatUtils.getCurrentEngine(connection);
+      if (status == TextToSpeech.SUCCESS && reached == null) {
+        connectedEngineUnknown = true;
+      }
+      if (status != TextToSpeech.SUCCESS || !engine.equals(reached)) {
+        LogUtils.w(
+            TAG,
+            "Listing the voices of %s didn't connect: status %d, engine %s",
+            engine,
+            status,
+            reached);
+        end(/* voices= */ null);
+        return;
+      }
+      try {
+        VOICE_LISTER.execute(this::list);
+      } catch (RejectedExecutionException e) {
+        // Every thread waits for an engine.
+        end(/* voices= */ null);
+      }
+    }
+
+    /** Lists the voices on {@link #VOICE_LISTER}, unless the listing has ended. */
+    private void list() {
+      synchronized (this) {
+        if (ended) {
+          return;
+        }
+      }
+      @Nullable Set<Voice> voices = null;
+      try {
+        voices = connection.getVoices();
+      } catch (RuntimeException e) {
+        LogUtils.w(TAG, "Listing the voices again failed: %s", e);
+      }
+      synchronized (this) {
+        answered = true;
+      }
+      @Nullable Set<Voice> listed = voices;
+      mHandler.post(() -> end(listed));
+    }
+
+    /**
+     * Ends the listing with {@code voices}, or with none when the engine failed or didn't answer in
+     * time, or SandFly's speech stops, and closes the connection.
+     */
+    void end(@Nullable Set<Voice> voices) {
+      synchronized (this) {
+        if (ended) {
+          return;
+        }
+        ended = true;
+      }
+      mHandler.removeCallbacks(giveUp);
+      voiceListings.remove(this);
+      VOICE_LISTING_CLOSER.execute(
+          () -> {
+            try {
+              connection.shutdown();
+            } catch (RuntimeException e) {
+              // Closing anyway.
+            } finally {
+              onEngineBusy(engine, /* busy= */ false);
+            }
+          });
+      synchronized (ttsLock) {
+        // A partial list is noted only from a listing whose result can be kept.
+        // An empty list counts as partial, so that it is kept only when the next one is empty too.
+        boolean listed =
+            voiceRelisting.isCurrent(listing) && voices != null && !isPartialList(voices);
+        if (!voiceRelisting.onEnded(listing, listed, SystemClock.uptimeMillis())
+            || voices == null) {
+          return;
+        }
+        LogUtils.d(TAG, "Voices listed again: %d", voices.size());
+        engineVoices = voices;
+        partialVoices = null;
+        // A language the engine refused may be one it has since installed and now lists.
+        unsupportedLocales.clear();
+        // A missing voice is looked for again only if it has been installed since.
+        if (missingVoice != null && findVoice(voices, missingVoice) != null) {
+          missingVoice = null;
+        }
+      }
+    }
+  }
+
+  /**
+   * The names of the voices of a list with fewer voices than the kept ones, listed in the
+   * background, or null. Use with {@link #ttsLock}.
+   */
+  private @Nullable Set<String> partialVoices;
+
+  /**
+   * Whether {@code voices}, listed in the background, has fewer voices than the kept ones and isn't
+   * kept. An engine that has just started, such as after installing a voice, can list its voices
+   * before it loaded them all, so such a list is kept only when the next listing gives the same
+   * voices, as when a voice was uninstalled. Voices are compared by name, as installing one changes
+   * its features. Call with {@link #ttsLock}.
+   */
+  private boolean isPartialList(Set<Voice> voices) {
+    if (engineVoices == null || voices.size() >= engineVoices.size()) {
+      return false;
+    }
+    Set<String> names = new HashSet<>();
+    for (Voice voice : voices) {
+      if (voice != null) {
+        names.add(voice.getName());
+      }
+    }
+    if (names.equals(partialVoices)) {
+      return false;
+    }
+    partialVoices = names;
+    return true;
+  }
+
+  /**
    * Returns the current engine's installed voice called {@code name}, or null if it has none. The
    * engine's voices are kept from the last time they were needed, as listing them is slow, and
    * listed again only if the voice isn't there, as it may have been installed since. A voice still
-   * missing after that isn't looked for again until the engine changes. Call with {@link
-   * #ttsLock}.
+   * missing after that isn't looked for again until the engine changes, or the voices are listed
+   * again in the background and have it. Call with {@link #ttsLock}.
    */
   private @Nullable Voice findVoice(String name) {
     if (name.isEmpty() || name.equals(missingVoice)) {
@@ -2222,12 +2640,12 @@ public class FailoverTextToSpeech {
     }
     boolean listed = false;
     if (engineVoices == null) {
-      engineVoices = tts.getVoices();
+      listEngineVoices();
       listed = true;
     }
     Voice voice = findVoice(engineVoices, name);
     if (voice == null && !listed) {
-      engineVoices = tts.getVoices();
+      listEngineVoices();
       voice = findVoice(engineVoices, name);
     }
     if (voice == null) {
@@ -3695,6 +4113,8 @@ public class FailoverTextToSpeech {
         cachedTtsLocale = null;
         unsupportedLocales.clear();
         engineVoices = null;
+        voiceRelisting.onReplaced();
+        partialVoices = null;
         missingVoice = null;
       }
       attemptTtsFailover(tempTtsEngine);
@@ -3727,6 +4147,14 @@ public class FailoverTextToSpeech {
       // An engine kept started may have another language set.
       mLastUtteranceLocale = null;
       engineVoices = voices;
+      if (voices != null) {
+        // Voices kept with a started engine are listed again by the first menu a minute later, so
+        // that listing them doesn't compete with the engine's first speech.
+        voiceRelisting.onListed(SystemClock.uptimeMillis());
+      } else {
+        voiceRelisting.onReplaced();
+      }
+      partialVoices = null;
       missingVoice = null;
       clearUnsetProfileVoice();
     }

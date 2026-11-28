@@ -165,7 +165,7 @@ When two or more of the listed languages, or a listed language and the language 
 
 #### Change the spoken language {#speech-spoken-language}
 
-The **Spoken language** reading control and the **Change spoken language** command change the language of SandFly default speech. While a voice profile is in use, the profile sets the language, and the reading control has no value. The reading control isn't in the reading controls by default.
+The **Spoken language** reading control and the **Change spoken language** command change the language of SandFly default speech. While a voice profile is in use, the profile sets the language, and the reading control has no value. A language you install in the engine while SandFly runs is offered without a restart: when its list is more than a minute old, using the reading control or the command makes SandFly list the engine's languages again in the background, and the new language is offered the time after that. The reading control isn't in the reading controls by default.
 
 ### Pronunciation {#speech-pronunciation}
 

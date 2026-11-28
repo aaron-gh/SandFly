@@ -688,6 +688,10 @@ The reading control goes through the profiles in the order of the **Voice profil
 
 Voice profiles are also used for notifications, emoji, languages and braille keyboard languages. See [Reading notifications](#reading-notifications), [Emoji voice and rate](#emoji-voice-and-rate), [Voices by language](#voices-by-language) and [Next braille table](#next-braille-table).
 
+### Voices installed while SandFly runs
+
+TalkBack lists the voices of the speech engine when it needs them. SandFly keeps the list from the first time it is needed after the engine starts, as an engine can take seconds to make it, and lists the voices again in the background, over a connection of its own, so that speech doesn't wait while they are listed again. Menus that use the list, such as the **Spoken language** reading control, list it again when it is more than a minute old, and use the new list the next time. A list with fewer voices, as an engine that has just restarted can give, replaces the kept list only when the next listing gives the same, as after a voice was uninstalled.
+
 ### Voices by language
 
 **Speech** > **Voices by language** lists the languages you read, each spoken with **SandFly default**, using the voice of its engine for that language, or with a voice profile. **Add language** lists the languages of all installed engines. When two or more of the listed languages share a script with each other or with the language of the voice, such as English and French in Latin script, the screen shows a list for that script, such as **Latin script**, which sets the language of text in that script when nothing else identifies it.
