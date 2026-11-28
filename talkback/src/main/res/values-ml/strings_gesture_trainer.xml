@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">രണ്ടാമത്തെ സ്വൈപ്പ് <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">മുഴുവൻ ജെസ്‌ച്ചർ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">അവയ്ക്കിടയിൽ <xliff:g id="ms">%1$d</xliff:g> ms ഉയർത്തി</string>
+    <string name="gesture_trainer_how_menu_horizontal">ഒരു വിരൽ <xliff:g id="edge">%1$s</xliff:g> വച്ച്, മെനു തുറക്കാൻ സ്ക്രീനിന്റെ മധ്യത്തിലേക്ക് കുറഞ്ഞത് <xliff:g id="distance">%2$d</xliff:g> mm ഉള്ളിലേക്ക് സ്ലൈഡ് ചെയ്യുക. മെനുവിൽ അരികിൽ നിന്ന് സ്ക്രീനിന് കുറുകെ <xliff:g id="count">%3$d</xliff:g> ഇനങ്ങളുണ്ട്, ഓരോന്നിനും ഏകദേശം <xliff:g id="size">%6$s</xliff:g> cm വീതി. ഇനം <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, അരികിൽ നിന്ന് <xliff:g id="from">%7$s</xliff:g> മുതൽ <xliff:g id="to">%8$s</xliff:g> cm വരെയാണ്. വിരൽ ഒരേ ഉയരത്തിൽ നിലനിർത്തുക, ഇനം വായിക്കുമ്പോൾ വിരൽ ഉയർത്തുക.</string>
+    <string name="gesture_trainer_finding_menu_left_line">മെനു തുറന്ന സ്ഥാനത്തിന് <xliff:g id="mm">%1$.0f</xliff:g> mm മുകളിലോ താഴെയോ ആണ് വിരൽ ഉയർത്തിയത്, <xliff:g id="limit">%2$.0f</xliff:g> mm-ൽ കൂടുതലായാൽ മെനു അടയും.</string>
+    <string name="gesture_trainer_tip_menu_left_line">ഉള്ളിലേക്ക് സ്ലൈഡ് ചെയ്യുമ്പോൾ വിരൽ ഒരേ ഉയരത്തിൽ നിലനിർത്തി അവിടെ ഉയർത്തുക.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">ഓരോ ഇനത്തിനും അരികിൽ നിന്ന് സ്ക്രീനിന് കുറുകെ ഒരു നിശ്ചിത സ്ഥാനമുണ്ട്, വിരൽ ഉയർത്തുന്നിടത്തെ ഇനം തിരഞ്ഞെടുക്കപ്പെടും. ഇനം വായിക്കുമ്പോൾ ഉയർത്തുക.</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g> ഉള്ളിലേക്കുള്ള സ്ലൈഡുകൾ ഒഴിവാക്കി: ആ അരികിലെ മെനു സ്ക്രീനിന് കുറുകെ പോകുന്നതിനാൽ, അവിടെ നിന്നുള്ള സ്ലൈഡ് ജെസ്‌ച്ചർ പ്രവർത്തിപ്പിക്കുന്നതിന് പകരം മെനു തുറക്കുന്നു.</string>
+    <string name="gesture_trainer_statistics">സ്ഥിതിവിവരക്കണക്കുകൾ</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. ശ്രമങ്ങൾ: <xliff:g id="tries">%2$d</xliff:g>, തിരിച്ചറിഞ്ഞവ: <xliff:g id="recognized">%3$d</xliff:g>. ഏറ്റവും കുറഞ്ഞത്: <xliff:g id="shortest">%4$d</xliff:g> ms, മീഡിയൻ: <xliff:g id="median">%5$d</xliff:g> ms, ഏറ്റവും കൂടിയത്: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">ഓരോ സ്‌പർശവും: ഏറ്റവും കുറഞ്ഞത് <xliff:g id="shortest">%1$d</xliff:g> ms, മീഡിയൻ <xliff:g id="median">%2$d</xliff:g> ms, ഏറ്റവും കൂടിയത് <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">ടാപ്പുകൾ</string>
+    <string name="gesture_trainer_kind_double_tap">ഡബിൾ ടാപ്പുകൾ</string>
+    <string name="gesture_trainer_kind_triple_tap">മൂന്ന് തവണയുള്ള ടാപ്പുകൾ</string>
+    <string name="gesture_trainer_kind_quadruple_tap">നാല് തവണയുള്ള ടാപ്പുകൾ</string>
+    <string name="gesture_trainer_kind_tap_hold">ടാപ്പ് ചെയ്‌ത് പിടിക്കുക</string>
+    <string name="gesture_trainer_kind_double_tap_hold">ഡബിൾ ടാപ്പ് ചെയ്‌ത് പിടിക്കുക</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">മൂന്ന് തവണ ടാപ്പ് ചെയ്‌ത് പിടിക്കുക</string>
+    <string name="gesture_trainer_kind_swipe">സ്വൈപ്പുകൾ</string>
+    <string name="gesture_trainer_kind_swipe_hold">സ്വൈപ്പ് ചെയ്‌ത് അമർത്തിപ്പിടിക്കുക</string>
+    <string name="gesture_trainer_kind_two_part_swipe">പിന്നോട്ടും മുന്നോട്ടുമുള്ള സ്വൈപ്പുകളും ആംഗിൾ സ്വൈപ്പുകളും</string>
+    <string name="gesture_trainer_kind_pinch">പിഞ്ചുകൾ</string>
+    <string name="gesture_trainer_kind_spread">പരത്തലുകൾ</string>
+    <string name="gesture_trainer_kind_rotate">തിരിക്കലുകൾ</string>
+    <string name="gesture_trainer_kind_scrub">സ്‌ക്രബുകൾ</string>
 </resources>

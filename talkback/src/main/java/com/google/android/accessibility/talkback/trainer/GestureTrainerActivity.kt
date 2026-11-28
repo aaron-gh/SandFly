@@ -87,6 +87,7 @@ class GestureTrainerActivity : AppCompatActivity() {
     CONTENTS,
     GROUP_DONE,
     TRIES,
+    STATISTICS,
   }
 
   private var screen = Screen.GROUPS
@@ -105,6 +106,12 @@ class GestureTrainerActivity : AppCompatActivity() {
   private var leftOut: List<String> = emptyList()
   private var index = 0
   private val reports = ArrayList<AttemptReport>()
+
+  /** The durations of the tries since the trainer opened. */
+  private val statistics = GestureStatistics()
+
+  /** The screen the statistics were opened from, which closing them goes back to. */
+  private var statisticsFrom = Screen.GROUPS
   private lateinit var limits: TrainerLimits
   private lateinit var analyzer: AttemptAnalyzer
 
@@ -269,6 +276,7 @@ class GestureTrainerActivity : AppCompatActivity() {
         override fun handleOnBackPressed() {
           when {
             takingTries -> showExercise()
+            screen == Screen.STATISTICS -> closeStatistics()
             group != null -> showGroups()
             else -> finish()
           }
@@ -345,6 +353,7 @@ class GestureTrainerActivity : AppCompatActivity() {
       Screen.TRIES -> showExercise()
       Screen.RESULTS -> showResults()
       Screen.CONTENTS -> showContents()
+      Screen.STATISTICS -> showStatistics()
     }
   }
 
@@ -399,6 +408,7 @@ class GestureTrainerActivity : AppCompatActivity() {
           }
         )
       }
+      addStatisticsButton()
     }
     content.addView(button(getString(R.string.gesture_trainer_close)) { finish() })
     showTop(title)
@@ -633,7 +643,9 @@ class GestureTrainerActivity : AppCompatActivity() {
         analyzer.analyzeShake(exercise, shakeStrongest, shakes.threshold, shakeMostSwings, shaken)
       } else {
         if (recorder.touches.isEmpty() || recorder.fingersDown) return
-        analyzer.analyze(exercise, recorder.touches, recognized.toList(), menuChoice)
+        analyzer.analyze(exercise, recorder.touches, recognized.toList(), menuChoice).also {
+          statistics.add(exercise, recorder.touches, it.success)
+        }
       }
     if (GestureLog.enabled) logTry(report)
     reports += report
@@ -730,9 +742,106 @@ class GestureTrainerActivity : AppCompatActivity() {
     content.addView(button(getString(R.string.gesture_trainer_next)) { nextExercise() })
     content.addView(button(getString(R.string.gesture_trainer_repeat)) { startTries() })
     content.addView(button(getString(R.string.gesture_trainer_contents)) { showContents() })
+    addStatisticsButton()
     content.addView(button(getString(R.string.gesture_trainer_finish)) { showGroups() })
     showTop(title)
   }
+
+  // Statistics
+
+  /** Adds the button that opens the statistics, once there are tries to show. */
+  private fun addStatisticsButton() {
+    if (statistics.isEmpty) return
+    content.addView(button(getString(R.string.gesture_trainer_statistics)) { openStatistics() })
+  }
+
+  private fun openStatistics() {
+    statisticsFrom = screen
+    showStatistics()
+  }
+
+  /**
+   * Lists the durations of the tries since the trainer opened: a heading for each kind of gesture,
+   * and a line for each number of fingers.
+   */
+  private fun showStatistics() {
+    stopTries()
+    enterScreen(Screen.STATISTICS)
+    content.removeAllViews()
+    val title = heading(getString(R.string.gesture_trainer_statistics))
+    content.addView(title)
+    var kind: StatKind? = null
+    for (summary in statistics.summaries()) {
+      if (summary.kind != kind) {
+        kind = summary.kind
+        content.addView(subheading(getString(kindTitle(summary.kind))))
+      }
+      val whole = summary.whole
+      var line =
+        getString(
+          R.string.gesture_trainer_statistics_item,
+          getString(fingersTitle(summary.fingers)),
+          summary.tries,
+          summary.recognized,
+          whole.shortestMs.toInt(),
+          whole.medianMs.toInt(),
+          whole.longestMs.toInt(),
+        )
+      summary.touches?.let { touches ->
+        line +=
+          " " +
+            getString(
+              R.string.gesture_trainer_statistics_touches,
+              touches.shortestMs.toInt(),
+              touches.medianMs.toInt(),
+              touches.longestMs.toInt(),
+            )
+      }
+      content.addView(text(line))
+    }
+    content.addView(button(getString(R.string.gesture_trainer_close)) { closeStatistics() })
+    showTop(title)
+  }
+
+  private fun closeStatistics() {
+    when (statisticsFrom) {
+      Screen.RESULTS -> if (exercise != null) showResults() else showGroups()
+      else -> showGroups()
+    }
+  }
+
+  private fun kindTitle(kind: StatKind): Int =
+    when (kind) {
+      StatKind.TAP -> R.string.gesture_trainer_kind_tap
+      StatKind.DOUBLE_TAP -> R.string.gesture_trainer_kind_double_tap
+      StatKind.TRIPLE_TAP -> R.string.gesture_trainer_kind_triple_tap
+      StatKind.QUADRUPLE_TAP -> R.string.gesture_trainer_kind_quadruple_tap
+      StatKind.TAP_HOLD -> R.string.gesture_trainer_kind_tap_hold
+      StatKind.DOUBLE_TAP_HOLD -> R.string.gesture_trainer_kind_double_tap_hold
+      StatKind.TRIPLE_TAP_HOLD -> R.string.gesture_trainer_kind_triple_tap_hold
+      StatKind.SWIPE -> R.string.gesture_trainer_kind_swipe
+      StatKind.SWIPE_HOLD -> R.string.gesture_trainer_kind_swipe_hold
+      StatKind.TWO_PART_SWIPE -> R.string.gesture_trainer_kind_two_part_swipe
+      StatKind.THREE_PART_SWIPE -> R.string.gesture_trainer_group_three_part
+      StatKind.TAP_SWIPE -> R.string.gesture_trainer_group_tap_swipe
+      StatKind.TWO_STROKE_SWIPE -> R.string.gesture_trainer_group_two_stroke
+      StatKind.PINCH -> R.string.gesture_trainer_kind_pinch
+      StatKind.SPREAD -> R.string.gesture_trainer_kind_spread
+      StatKind.ROTATE -> R.string.gesture_trainer_kind_rotate
+      StatKind.SCRUB -> R.string.gesture_trainer_kind_scrub
+      StatKind.EDGE_SWIPE -> R.string.gesture_trainer_group_edge_swipes
+      StatKind.ALONG_EDGE -> R.string.gesture_trainer_group_along_edges
+      StatKind.EDGE_MENU -> R.string.gesture_trainer_group_edge_menus
+      StatKind.CORNER -> R.string.gesture_trainer_group_corners
+    }
+
+  private fun fingersTitle(fingers: Int): Int =
+    when (fingers) {
+      1 -> R.string.gesture_trainer_group_one_finger
+      2 -> R.string.gesture_trainer_group_two_fingers
+      3 -> R.string.gesture_trainer_group_three_fingers
+      else -> R.string.gesture_trainer_group_four_fingers
+    }
 
   /** Adds advice and a button for each setting that would help with the [findings]. */
   private fun addSettingsAdvice(exercise: Exercise, findings: List<Finding>) {

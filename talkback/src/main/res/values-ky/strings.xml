@@ -2860,4 +2860,109 @@
     <string name="title_pref_cyrillic_text_recognition">Кириллица текстин таануу</string>
     <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> тили үчүн текстти таануу модели жок. Аны Сүрөт жана экран сүрөттөмөлөрү, Кириллица текстин таануу бөлүмүнөн жүктөп алыңыз.</string>
     <string name="cyrillic_text_model_error_http">Жүктөө сервери сурамды кабыл албады. Кийинчерээк кайра аракет кылыңыз.</string>
+    <string name="title_pref_announce_caller">Чалуучуну айтуу</string>
+    <string name="announce_caller_once">Бир жолу</string>
+    <string name="announce_caller_repeat">Шыңгырап турганда кайталоо</string>
+    <string name="title_pref_command_feedback_voice">Команданын жыйынтыгы жана текстти түзөтүү үчүн үн</string>
+    <string name="title_pref_command_feedback_over_speech">Команданын жыйынтыгын SandFly кебинин үстүнөн окуу</string>
+    <string name="title_pref_item_types_spoken">Айтыла турган элемент түрлөрү</string>
+    <string name="item_type_link">Шилтеме</string>
+    <string name="item_type_tab">Өтмөк</string>
+    <string name="item_type_other">Башка түрлөр</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">2 манжа менен таптоо, 1 манжа менен сүрүү</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">Боштук</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">Меню</string>
+    <string name="keycombo_key_search">Издөө</string>
+    <string name="keycombo_key_grave">Гравис</string>
+    <string name="keycombo_key_minus">Минус</string>
+    <string name="keycombo_key_equals">Барабар</string>
+    <string name="keycombo_key_left_bracket">Сол төрт бурчтуу кашаа</string>
+    <string name="keycombo_key_right_bracket">Оң төрт бурчтуу кашаа</string>
+    <string name="keycombo_key_backslash">Тескери жантык сызык</string>
+    <string name="keycombo_key_semicolon">Үтүрлүү чекит</string>
+    <string name="keycombo_key_apostrophe">Апостроф</string>
+    <string name="keycombo_key_comma">Үтүр</string>
+    <string name="keycombo_key_period">Чекит</string>
+    <string name="keycombo_key_slash">Жантык сызык</string>
+    <string name="keycombo_key_plus">Плюс</string>
+    <string name="keycombo_key_at">Маймылча</string>
+    <string name="keycombo_key_star">Жылдызча</string>
+    <string name="keycombo_key_pound">Хеш</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">Сандык плюс</string>
+    <string name="keycombo_key_numpad_subtract">Сандык минус</string>
+    <string name="keycombo_key_numpad_multiply">Сандык көбөйтүү</string>
+    <string name="keycombo_key_numpad_divide">Сандык бөлүү</string>
+    <string name="keycombo_key_numpad_dot">Сандык чекит</string>
+    <string name="keycombo_key_numpad_comma">Сандык үтүр</string>
+    <string name="keycombo_key_numpad_equals">Сандык барабар</string>
+    <string name="keycombo_key_numpad_enter">Сандык Enter</string>
+    <string name="keycombo_key_volume_up">Үндү көтөрүү</string>
+    <string name="keycombo_key_volume_down">Үндү басаңдатуу</string>
+    <string name="keycombo_key_volume_mute">Үндү басуу</string>
+    <string name="keycombo_key_media_play_pause">Ойнотуу же тындыруу</string>
+    <string name="keycombo_key_media_next">Кийинки трек</string>
+    <string name="keycombo_key_media_previous">Мурунку трек</string>
+    <string name="keycombo_key_media_stop">Токтотуу</string>
+    <string name="keycombo_key_back">Артка</string>
+    <string name="keycombo_key_numpad">Сандык <xliff:g id="digit" example="5">%1$s</xliff:g></string>
+    <string name="title_pref_typing_swipes_through_keys">Бардык терүү ыкмаларында баскычтан баскычка сүрүү</string>
+    <string name="shortcut_say_caller">Чалуучуну айтуу</string>
+    <string name="say_caller_unknown">Кирүүчү чалуу</string>
+    <string name="shortcut_restart_phone">Телефонду өчүрүп күйгүзүү</string>
+    <string name="shortcut_power_off_phone">Телефонду өчүрүү</string>
+    <string name="restart_phone_confirm_title">Телефонду өчүрүп күйгүзөсүзбү?</string>
+    <string name="restart_phone_confirm_button">Өчүрүп күйгүзүү</string>
+    <string name="power_off_phone_confirm_title">Телефонду өчүрөсүзбү?</string>
+    <string name="power_off_phone_confirm_button">Өчүрүү</string>
+    <string name="power_command_failed">Аткарылган жок, кубат менюсу ачылды</string>
+    <string name="clipboard_history_search_hint">Алмашуу буферинин таржымалынан издөө</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> текст</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> текст</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Четтен ичкери сүрүү</string>
+    <string name="title_pref_category_sliders">Сыдырмалар</string>
+    <string name="title_pref_slider_step">Сыдырманын кадамы</string>
+    <string name="value_slider_step_app">Колдонмо койгондой</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">Диапазондун эң кичине кадамы</string>
+    <string name="title_pref_slider_skip_unchanged">Маанини өзгөртпөгөн кадамдарды өткөрүп жиберүү</string>
+    <string name="title_slider_enter_value">Маанини киргизүү</string>
+    <string name="slider_value_range"><xliff:g id="min" example="0">%1$s</xliff:g> баштап <xliff:g id="max" example="100">%2$s</xliff:g> чейин</string>
+    <string name="voice_phrases_not_understood">Түшүнүлбөгөн фразалар</string>
+    <string name="title_pref_voice_phrases_not_understood">Түшүнүлбөгөн фразаларды сактоо</string>
+    <string name="voice_phrases_not_understood_listed">«Түшүнүлбөгөн фразалар» тизмесине кошулду.</string>
 </resources>

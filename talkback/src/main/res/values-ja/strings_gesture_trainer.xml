@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">2 回目のスワイプ <xliff:g id="ms">%1$d</xliff:g> ミリ秒</string>
     <string name="gesture_trainer_measure_whole_gesture">ジェスチャー全体 <xliff:g id="ms">%1$d</xliff:g> ミリ秒</string>
     <string name="gesture_trainer_measure_stroke_gap">間で <xliff:g id="ms">%1$d</xliff:g> ミリ秒指を離していました</string>
+    <string name="gesture_trainer_how_menu_horizontal">1 本の指を<xliff:g id="edge">%1$s</xliff:g>置き、画面の中央に向かって <xliff:g id="distance">%2$d</xliff:g> mm 以上スライドしてメニューを開きます。メニューには端から画面を横切って <xliff:g id="count">%3$d</xliff:g> 個の項目があり、それぞれの幅は約 <xliff:g id="size">%6$s</xliff:g> cm です。項目 <xliff:g id="number">%4$d</xliff:g>「<xliff:g id="item">%5$s</xliff:g>」は端から <xliff:g id="from">%7$s</xliff:g>～<xliff:g id="to">%8$s</xliff:g> cm の位置にあります。指を同じ高さに保ち、項目が読み上げられたら離してください。</string>
+    <string name="gesture_trainer_finding_menu_left_line">指はメニューが開いた高さから上または下に <xliff:g id="mm">%1$.0f</xliff:g> mm 離れた位置で離れました。<xliff:g id="limit">%2$.0f</xliff:g> mm を超えるとメニューが閉じます。</string>
+    <string name="gesture_trainer_tip_menu_left_line">内側にスライドする間は指を同じ高さに保ち、その高さで離してください。</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">各項目は端から画面を横切る方向に決まった位置にあり、指を離した位置の項目が選択されます。項目が読み上げられたら離してください。</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g>から内側へのスライドは除外されています: その端のメニューは画面を横切るため、内側にスライドするとジェスチャーではなくメニューが開きます。</string>
+    <string name="gesture_trainer_statistics">統計</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>。試行: <xliff:g id="tries">%2$d</xliff:g> 回、認識: <xliff:g id="recognized">%3$d</xliff:g> 回。最短: <xliff:g id="shortest">%4$d</xliff:g> ミリ秒、中央値: <xliff:g id="median">%5$d</xliff:g> ミリ秒、最長: <xliff:g id="longest">%6$d</xliff:g> ミリ秒。</string>
+    <string name="gesture_trainer_statistics_touches">各タッチ: 最短 <xliff:g id="shortest">%1$d</xliff:g> ミリ秒、中央値 <xliff:g id="median">%2$d</xliff:g> ミリ秒、最長 <xliff:g id="longest">%3$d</xliff:g> ミリ秒。</string>
+    <string name="gesture_trainer_kind_tap">タップ</string>
+    <string name="gesture_trainer_kind_double_tap">ダブルタップ</string>
+    <string name="gesture_trainer_kind_triple_tap">トリプルタップ</string>
+    <string name="gesture_trainer_kind_quadruple_tap">4 回タップ</string>
+    <string name="gesture_trainer_kind_tap_hold">長押し</string>
+    <string name="gesture_trainer_kind_double_tap_hold">ダブルタップして長押し</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">トリプルタップして長押し</string>
+    <string name="gesture_trainer_kind_swipe">スワイプ</string>
+    <string name="gesture_trainer_kind_swipe_hold">スワイプして長押し</string>
+    <string name="gesture_trainer_kind_two_part_swipe">往復と直角のスワイプ</string>
+    <string name="gesture_trainer_kind_pinch">ピンチ</string>
+    <string name="gesture_trainer_kind_spread">広げる</string>
+    <string name="gesture_trainer_kind_rotate">回転</string>
+    <string name="gesture_trainer_kind_scrub">こする</string>
 </resources>

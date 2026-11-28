@@ -145,6 +145,27 @@ public class VoiceProfileFragment extends TalkbackBaseFragment {
         });
     voicePref =
         addList(context, screen, VoiceProfiles.VOICE, R.string.title_pref_voice_profile_voice);
+    voicePref.setOnPreferenceChangeListener(
+        (preference, newValue) -> {
+          String voice = (String) newValue;
+          // A voice chosen with the engine's default language also sets the language, so that
+          // what goes by a profile's language, such as switching braille tables, finds it.
+          @Nullable
+          String language = profile().language().isEmpty() ? languageOfVoice(voice) : null;
+          if (language == null || languagePref == null || voicePref == null) {
+            return true;
+          }
+          // Saved together, so that the service applies the profile once.
+          prefs
+              .edit()
+              .putString(VoiceProfiles.key(id, VoiceProfiles.LANGUAGE), language)
+              .putString(VoiceProfiles.key(id, VoiceProfiles.VOICE), voice)
+              .apply();
+          languagePref.setValue(language);
+          voicePref.setValue(voice);
+          updateVoiceLists(language);
+          return false;
+        });
     addSeekBar(
         new AccessibilitySeekBarPreference(context),
         screen,
@@ -617,6 +638,20 @@ public class VoiceProfileFragment extends TalkbackBaseFragment {
       names.put(currentVoice, getString(R.string.voice_profile_not_installed, currentVoice));
     }
     setEntries(voicePref, names);
+  }
+
+  /** Returns the language tag of the engine's voice called {@code voice}, or null. */
+  private @Nullable String languageOfVoice(String voice) {
+    List<Voice> voices = this.voices;
+    if (voices == null || voice.isEmpty()) {
+      return null;
+    }
+    for (Voice candidate : voices) {
+      if (candidate.getName().equals(voice)) {
+        return candidate.getLocale().toLanguageTag();
+      }
+    }
+    return null;
   }
 
   /** Whether the engine has {@code voice}, in {@code language} unless that is empty. */

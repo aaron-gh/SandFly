@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">друге проведення <xliff:g id="ms">%1$d</xliff:g> мс</string>
     <string name="gesture_trainer_measure_whole_gesture">увесь жест <xliff:g id="ms">%1$d</xliff:g> мс</string>
     <string name="gesture_trainer_measure_stroke_gap">палець піднято на <xliff:g id="ms">%1$d</xliff:g> мс між ними</string>
+    <string name="gesture_trainer_how_menu_horizontal">Покладіть один палець <xliff:g id="edge">%1$s</xliff:g> і проведіть ним до середини екрана щонайменше на <xliff:g id="distance">%2$d</xliff:g> мм, щоб відкрити меню. Пунктів меню: <xliff:g id="count">%3$d</xliff:g>, поперек екрана від краю, кожен завширшки приблизно <xliff:g id="size">%6$s</xliff:g> см. Пункт <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, розташований на відстані від <xliff:g id="from">%7$s</xliff:g> до <xliff:g id="to">%8$s</xliff:g> см від краю. Тримайте палець на тій самій висоті й підніміть його, коли пункт буде озвучено.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Палець піднявся на <xliff:g id="mm">%1$.0f</xliff:g> мм вище або нижче місця, де відкрилося меню, а меню закривається далі ніж за <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Проводячи до середини, тримайте палець на тій самій висоті й там його піднімайте.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Кожен пункт має фіксоване місце поперек екрана від краю, і вибирається пункт, на якому палець піднімається. Піднімайте палець, коли пункт озвучено.</string>
+    <string name="gesture_trainer_left_out_in_menu">Проведення від <xliff:g id="edge">%1$s</xliff:g> до середини пропущено: меню цього краю розташоване поперек екрана, тож проведення від нього відкриває меню, а не виконує жест.</string>
+    <string name="gesture_trainer_statistics">Статистика</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Спроб: <xliff:g id="tries">%2$d</xliff:g>, розпізнано: <xliff:g id="recognized">%3$d</xliff:g>. Найкоротша: <xliff:g id="shortest">%4$d</xliff:g> мс, медіана: <xliff:g id="median">%5$d</xliff:g> мс, найдовша: <xliff:g id="longest">%6$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_statistics_touches">Кожен дотик: найкоротший <xliff:g id="shortest">%1$d</xliff:g> мс, медіана <xliff:g id="median">%2$d</xliff:g> мс, найдовший <xliff:g id="longest">%3$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_kind_tap">Дотики</string>
+    <string name="gesture_trainer_kind_double_tap">Подвійні дотики</string>
+    <string name="gesture_trainer_kind_triple_tap">Потрійні дотики</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Четверні дотики</string>
+    <string name="gesture_trainer_kind_tap_hold">Дотик і утримування</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Подвійний дотик і утримування</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Потрійний дотик і утримування</string>
+    <string name="gesture_trainer_kind_swipe">Проведення</string>
+    <string name="gesture_trainer_kind_swipe_hold">Проведення й утримування</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Проведення вперед і назад і кутові проведення</string>
+    <string name="gesture_trainer_kind_pinch">Зведення</string>
+    <string name="gesture_trainer_kind_spread">Розведення</string>
+    <string name="gesture_trainer_kind_rotate">Повороти</string>
+    <string name="gesture_trainer_kind_scrub">Потирання</string>
 </resources>

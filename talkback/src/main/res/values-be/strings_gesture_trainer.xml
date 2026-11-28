@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">другое правядзенне <xliff:g id="ms">%1$d</xliff:g> мс</string>
     <string name="gesture_trainer_measure_whole_gesture">увесь жэст <xliff:g id="ms">%1$d</xliff:g> мс</string>
     <string name="gesture_trainer_measure_stroke_gap">палец быў адарваны <xliff:g id="ms">%1$d</xliff:g> мс паміж імі</string>
+    <string name="gesture_trainer_how_menu_horizontal">Пастаўце адзін палец <xliff:g id="edge">%1$s</xliff:g> і правядзіце ім да сярэдзіны экрана не менш чым на <xliff:g id="distance">%2$d</xliff:g> мм, каб адкрыць меню. Колькасць пунктаў: <xliff:g id="count">%3$d</xliff:g>, папярок экрана ад краю, кожны шырынёй прыкладна <xliff:g id="size">%6$s</xliff:g> см. Пункт <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, знаходзіцца на адлегласці ад <xliff:g id="from">%7$s</xliff:g> да <xliff:g id="to">%8$s</xliff:g> см ад краю. Трымайце палец на той жа вышыні і адрывайце яго, калі пункт будзе агучаны.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Палец адарваўся на <xliff:g id="mm">%1$.0f</xliff:g> мм вышэй або ніжэй за месца, дзе адкрылася меню, а меню закрываецца далей за <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Трымайце палец на той жа вышыні падчас руху ўнутр і адрывайце яго там жа.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Кожны пункт мае сталае месца папярок экрана ад краю, і выбіраецца пункт, на якім палец адрываецца. Адпусціце, калі пункт будзе агучаны.</string>
+    <string name="gesture_trainer_left_out_in_menu">Правядзенні ўнутр ад <xliff:g id="edge">%1$s</xliff:g> прапушчаны: меню гэтага краю размешчана папярок экрана, таму правядзенне ўнутр ад яго адкрывае меню замест выканання жэсту.</string>
+    <string name="gesture_trainer_statistics">Статыстыка</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Спробы: <xliff:g id="tries">%2$d</xliff:g>, распазнана: <xliff:g id="recognized">%3$d</xliff:g>. Найкарацейшы: <xliff:g id="shortest">%4$d</xliff:g> мс, медыяна: <xliff:g id="median">%5$d</xliff:g> мс, найдаўжэйшы: <xliff:g id="longest">%6$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_statistics_touches">Кожны дотык: найкарацейшы <xliff:g id="shortest">%1$d</xliff:g> мс, медыяна <xliff:g id="median">%2$d</xliff:g> мс, найдаўжэйшы <xliff:g id="longest">%3$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_kind_tap">Націсканні</string>
+    <string name="gesture_trainer_kind_double_tap">Падвойныя націсканні</string>
+    <string name="gesture_trainer_kind_triple_tap">Трайныя націсканні</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Чатырохразовыя націсканні</string>
+    <string name="gesture_trainer_kind_tap_hold">Націсканне з утрыманнем</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Падвойнае націсканне з утрыманнем</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Трайное націсканне з утрыманнем</string>
+    <string name="gesture_trainer_kind_swipe">Правядзенні</string>
+    <string name="gesture_trainer_kind_swipe_hold">Правядзенне з утрыманнем</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Правядзенні «туды і назад» і пад вуглом</string>
+    <string name="gesture_trainer_kind_pinch">Зводзіны</string>
+    <string name="gesture_trainer_kind_spread">Развядзенні</string>
+    <string name="gesture_trainer_kind_rotate">Павароты</string>
+    <string name="gesture_trainer_kind_scrub">Рухі туды і назад</string>
 </resources>

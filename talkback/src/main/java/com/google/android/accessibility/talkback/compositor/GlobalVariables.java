@@ -67,6 +67,7 @@ import com.google.android.apps.common.proguard.UsedByReflection;
 import java.util.ArrayDeque;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
@@ -205,6 +206,8 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
 
   // Verbosity settings
   private boolean speakRoles = true;
+  // The item types of Item types to speak that are unchecked, empty while Speak item type is off.
+  private Set<String> unspokenItemTypes = Collections.emptySet();
   private boolean speakCollectionInfo = true;
   private boolean speakGridInfo = true;
 
@@ -804,6 +807,24 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     speakRoles = value;
   }
 
+  /** Sets the item types whose type isn't spoken, from {@link ItemTypes}. */
+  public void setUnspokenItemTypes(Set<String> types) {
+    unspokenItemTypes =
+        types.isEmpty() ? Collections.emptySet() : Collections.unmodifiableSet(new HashSet<>(types));
+  }
+
+  /** Returns whether the type of items of {@code type}, from {@link ItemTypes}, is spoken. */
+  public boolean isItemTypeSpoken(String type) {
+    return !unspokenItemTypes.contains(type);
+  }
+
+  /** Returns whether the type of {@code node} is spoken, by the item types it is spoken for. */
+  public boolean isItemTypeSpoken(@Nullable AccessibilityNodeInfoCompat node) {
+    return unspokenItemTypes.isEmpty()
+        || node == null
+        || !unspokenItemTypes.contains(ItemTypes.of(node));
+  }
+
   /**
    * Sets whether control sounds are heard, the ones that are heard or felt as vibrations, the ones
    * of those that are heard, and whether the kind of control is still spoken when its sound
@@ -1295,6 +1316,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
             .append(String.format("speakCollectionInfo=%s, ", getSpeakCollectionInfo()))
             .append(String.format("speakElementIds=%s, ", getSpeakElementIds()))
             .append(String.format("speakRoles=%s, ", getSpeakRoles()))
+            .append(String.format("unspokenItemTypes=%s, ", unspokenItemTypes))
             .append(String.format("speakWindowNamesOnFocusMove=%s, ", getSpeakWindowNamesOnFocusMove()))
             .append(String.format("textChangeRateUnlimited=%s, ", getTextChangeRateUnlimited()))
             .append(String.format("dndEnabled=%s, ", isDndEnabled()))

@@ -34,16 +34,16 @@ Na ekranie konkretnego makra znajdziesz te opcje.
 - **Uruchom teraz** wykonuje makro. Gdy SandFly jest wyłączony, pojawia się komunikat o jego wyłączeniu.
 - **Dodaj krok** dodaje czynność. Poniżej pojawia się miejsce wstawienia, np. **Na końcu**, **Na początku** albo za wybranym krokiem. Nowy krok trafia po ostatnio dodanym. Dzięki temu kroki dodane po **Jeśli** lub po początku powtarzania trafiają do jego wnętrza.
 - **Nagraj kroki** dodaje nagrane działania w tym samym miejscu co **Dodaj krok**. Zobacz [](#macros-record).
-- **Uruchamiaj tylko, gdy** pozwala ustawić warunek uruchomienia makra. Domyślnie wybrano **Zawsze**. Jeśli warunek jest niespełniony, makro się nie wykona, a **Uruchom teraz** odczyta informację o niespełnionym warunku. Zobacz [](#macros-conditions).
+- **Uruchamiaj tylko wtedy, gdy** pozwala ustawić warunek uruchomienia makra. Domyślnie wybrano **Zawsze**. Jeśli warunek jest niespełniony, makro się nie wykona, a **Uruchom teraz** odczyta informację o niespełnionym warunku. Zobacz [](#macros-conditions).
 - **Aplikacja** wskazuje aplikację, w której makro ma działać. Domyślna wartość to **Wszystkie aplikacje**. Makro przypisane do aplikacji działa tylko na jej pierwszym planie. Jeśli wybierzesz **Uruchom teraz** poza nią, SandFly poinformuje, w której aplikacji działa makro.
-- **Pokazuj w menu Czynności** dodaje makro do menu **Czynności** i do elementu **Czynności** w sterowaniu czytaniem. Pojawia się po czynnościach aplikacji dla każdego jej elementu lub w każdej aplikacji przy ustawieniu **Wszystkie aplikacje**. Wybierz makro na liście, aby je uruchomić. Domyślnie opcja jest wyłączona.
-- **Pokazuj w menu Czynności tylko, gdy** pojawia się po włączeniu **Pokazuj w menu Czynności**. Pozwala określić warunek, który musi spełnić element, aby pojawiło się makro. Jeśli ustawisz warunek, makro liczy się jako czynność elementu dla opcji **Automatycznie zmieniaj opcję sterowania czytaniem**. SandFly wybierze wtedy **Czynności** przy tym elemencie. Bez warunku makro nie wywołuje tej zmiany.
+- **Pokazuj w czynnościach** dodaje makro do menu **Czynności** i do elementu **Czynności** w sterowaniu czytaniem. Pojawia się po czynnościach aplikacji dla każdego jej elementu lub w każdej aplikacji przy ustawieniu **Wszystkie aplikacje**. Wybierz makro na liście, aby je uruchomić. Domyślnie opcja jest wyłączona.
+- **Pokazuj w czynnościach tylko, gdy** pojawia się po włączeniu **Pokazuj w czynnościach**. Pozwala określić warunek, który musi spełnić element, aby pojawiło się makro. Jeśli ustawisz warunek, makro liczy się jako czynność elementu dla opcji **Automatycznie zmieniaj opcję sterowania czytaniem**. SandFly wybierze wtedy **Czynności** przy tym elemencie. Bez warunku makro nie wywołuje tej zmiany.
 - **Kroki** pokazują czynności w kolejności wykonania. Kroki w warunku **Jeśli** lub w pętli są wcięte.
 - **Gesty i skrót klawiszowy** pokazują gesty, strzałki, komórki brajlowskie oraz skrót uruchamiające makro.
 - **Dodaj do ekranu głównego** tworzy skrót uruchamiający makro na ekranie, z którego je otworzysz. Zmiana nazwy makra zmienia nazwę skrótu, a usunięcie makra go wyłącza. Skróty zależą od obsługi w aplikacji ekranu głównego.
 - **Zmień nazwę**, **Eksportuj do pliku** i **Usuń makro** pozwalają zmienić nazwę, zapisać lub usunąć makro.
 
-Po wybraniu kroku możesz użyć **Edytuj**, **Dodaj krok po**, **Przenieś w górę**, **Przenieś w dół** i **Usuń**. Te same pozycje znajdziesz w czynnościach ułatwień dostępu kroku. Usunięcie **Jeśli** lub początku pętli usuwa powiązane kroki **W przeciwnym razie, jeśli**, **W przeciwnym razie** i krok kończący. Kroki znajdujące się w środku zostają. Makro może mieć najwyżej 200 kroków.
+Po wybraniu kroku możesz użyć **Edytuj**, **Dodaj krok po tym kroku**, **Przenieś w górę**, **Przenieś w dół** i **Usuń**. Te same pozycje znajdziesz w czynnościach ułatwień dostępu kroku. Usunięcie **Jeśli** lub początku pętli usuwa powiązane kroki **W przeciwnym razie, jeśli**, **W przeciwnym razie** i krok kończący. Kroki znajdujące się w środku zostają. Makro może mieć najwyżej 200 kroków.
 
 Jeśli w makrze brakuje pasującego kroku kończącego, np. po **Jeśli** nie ma **Koniec warunku**, SandFly wskazuje krok i problem pod nagłówkiem **Kroki**. Makra z takim błędem nie można uruchomić.
 
@@ -52,18 +52,18 @@ Jeśli w makrze brakuje pasującego kroku kończącego, np. po **Jeśli** nie ma
 Pod **Dodaj krok** znajdziesz poniższe rodzaje kroków.
 
 - **Uruchom polecenie** wykonuje dowolne polecenie poza innym makrem. Wybierz grupę i polecenie.
-- **Kliknij element** aktywuje pierwszy element ekranu, którego tekst lub opis zawiera podany fragment, niezależnie od wielkości liter. Pierwszeństwo ma element pasujący w całości. SandFly czeka, aż element się pojawi. Czas ustawisz w polu **Sekundy oczekiwania na element**. Domyślnie są to trzy sekundy.
-- **Kliknij w pozycji** stuka w ekran na współrzędnych X i Y, podanych w pikselach od lewego górnego rogu. Wymaga Androida 11 lub nowszego.
-- **Naciśnij i przytrzymaj element** przytrzymuje środek elementu przez **Czas przytrzymania w sekundach**, domyślnie jedną sekundę. Potem unosi palec w miejscu albo przesuwa go w górę, w dół, w lewo lub w prawo o odległość podaną w dp. Przydaje się np. do przycisku nagrywania wiadomości głosowej, który działa w trakcie przytrzymania. Wymaga Androida 11 lub nowszego.
-- **Zaznacz element** szuka go tak jak **Kliknij element**. Przenosi na niego fokus ułatwień dostępu, więc SandFly go odczytuje.
+- **Kliknij element** aktywuje pierwszy element ekranu, którego tekst lub opis zawiera podany fragment, niezależnie od wielkości liter. Pierwszeństwo ma element pasujący w całości. SandFly czeka, aż element się pojawi. Czas ustawisz w polu **Czas oczekiwania na element (sekundy)**. Domyślnie są to trzy sekundy.
+- **Kliknij w podanym miejscu** stuka w ekran na współrzędnych X i Y, podanych w pikselach od lewego górnego rogu. Wymaga Androida 11 lub nowszego.
+- **Dotknij i przytrzymaj element** przytrzymuje środek elementu przez **Czas przytrzymania (sekundy)**, domyślnie jedną sekundę. Potem unosi palec w miejscu albo przesuwa go w górę, w dół, w lewo lub w prawo o odległość podaną w dp. Przydaje się np. do przycisku nagrywania wiadomości głosowej, który działa w trakcie przytrzymania. Wymaga Androida 11 lub nowszego.
+- **Przenieś fokus na element** szuka go tak jak **Kliknij element**. Przenosi na niego fokus ułatwień dostępu, więc SandFly go odczytuje.
 - **Odczytaj element** szuka go tak jak **Kliknij element** i odczytuje jego nazwę bez przenoszenia fokusu.
-- **Przytrzymaj lub przewiń element** przytrzymuje albo przewija element do przodu lub do tyłu określoną liczbę razy. Jeśli sam element nie obsługuje czynności, SandFly korzysta z najbliższego elementu, który ją obsługuje, np. suwaka. Przewinięcie bez tekstu elementu przewija największą listę na ekranie.
+- **Wykonaj długie kliknięcie lub przewiń** przytrzymuje albo przewija element do przodu lub do tyłu określoną liczbę razy. Jeśli sam element nie obsługuje czynności, SandFly korzysta z najbliższego elementu, który ją obsługuje, np. suwaka. Przewinięcie bez tekstu elementu przewija największą listę na ekranie.
 - **Odczytaj tekst** odczytuje podany tekst.
 - **Wpisz tekst** wpisuje tekst w miejscu kursora w polu edycji, na którym jest fokus. Po włączeniu **Zastąp tekst w polu** nowy tekst zastępuje zawartość pola.
 - **Otwórz aplikację** uruchamia wybraną aplikację.
 - **Więcej kroków** pokazuje kroki działające poza ekranem. Zobacz [](#macros-more-steps).
 - **Czekaj** wstrzymuje wykonanie na podaną liczbę sekund, najwyżej 600.
-- **Czekaj, aż** czeka na spełnienie warunku. W polu **Sekundy oczekiwania** domyślnie ustawiono dziesięć sekund. Gdy czas minie, makro się zatrzymuje.
+- **Czekaj, aż** czeka na spełnienie warunku. W polu **Czas oczekiwania (sekundy)** domyślnie ustawiono dziesięć sekund. Gdy czas minie, makro się zatrzymuje.
 - **Jeśli**, **W przeciwnym razie, jeśli**, **W przeciwnym razie** i **Koniec warunku** wykonują kroki pierwszej gałęzi z pasującym warunkiem. Zobacz [](#macros-if).
 - **Powtarzaj**, **Powtarzaj, dopóki**, **Koniec powtarzania** i **Wyjdź z pętli** służą do ponownego wykonywania kroków. Zobacz [](#macros-repeat).
 - **Zatrzymaj makro** kończy wykonywanie makra.
@@ -76,32 +76,32 @@ Kroki i warunki, które szukają elementu, mają poniższe pola.
 
 - **Tekst elementu** określa szukany tekst.
 - **Wyrażenie regularne** interpretuje **Tekst elementu** jako wzorzec, który może pasować w dowolnym miejscu tekstu, niezależnie od wielkości liter. Powtarzana grupa nie może zawierać innego powtórzenia ani operatora `|`. Przykład niedozwolonego wzorca to `(a+)+`.
-- **Dopasuj w** określa, gdzie szukać. Dostępne są **Dowolny tekst** (domyślnie), **Tekst**, **Opis**, **Podpowiedź**, **Stan**, podpowiedź wyświetlana przy elemencie oraz **Identyfikator zasobu**. Identyfikator pasuje z nazwą pakietu lub bez niej, np. `send` pasuje do `com.example:id/send`.
-- **Typ elementu** jest dostępny poza warunkiem **Zaznaczenie wewnątrz elementu**. Do wyboru są **Dowolny typ** (domyślnie), **Klikalny**, **Klikalny z przytrzymaniem**, **Edytowalny**, **Przewijalny**, **Regulowany**, **Z polem wyboru**, **Zaznaczony**, **Wybrany**, **Nagłówek** i **Włączony**. Jeśli ustawisz **Klikalny**, krok **Kliknij element** wybierze przycisk spośród przycisku i nagłówka z tym samym tekstem. Przy ustawianiu warunku wybór typu pojawia się po wpisaniu tekstu.
+- **Szukaj w** określa, gdzie szukać. Dostępne są **Dowolny tekst** (domyślnie), **Tekst**, **Opis**, **Podpowiedź**, **Stan**, podpowiedź wyświetlana przy elemencie oraz **Identyfikator zasobu**. Identyfikator pasuje z nazwą pakietu lub bez niej, np. `send` pasuje do `com.example:id/send`.
+- **Typ elementu** jest dostępny poza warunkiem **Fokus w elemencie lub jego zawartości**. Do wyboru są **Dowolny typ** (domyślnie), **Klikalny**, **Klikalny z przytrzymaniem**, **Edytowalny**, **Przewijalny**, **Regulowany**, **Z możliwością zaznaczenia**, **Zaznaczony**, **Wybrany**, **Nagłówek** i **Włączony**. Jeśli ustawisz **Klikalny**, krok **Kliknij element** wybierze przycisk spośród przycisku i nagłówka z tym samym tekstem. Przy ustawianiu warunku wybór typu pojawia się po wpisaniu tekstu.
 
 Polecenie **Sprawdź element z fokusem** pokazuje wartości poszczególnych pól i typy elementu. Zobacz [](#macros-inspect).
 
 #### Więcej kroków {#macros-more-steps}
 
 - **Odtwórz dźwięk** odtwarza jeden z dźwięków SandFly.
-- **Wibruj** wywołuje wibrację, a **Odtwórz ton** odtwarza ton.
+- **Uruchom wibrację** wywołuje wibrację, a **Odtwórz ton** odtwarza ton.
 - **Kopiuj tekst** zapisuje podany tekst w schowku.
 - **Otwórz link** otwiera adres.
-- **Otwórz stronę ustawień** otwiera stronę ustawień Androida, np. Wi-Fi, Bluetooth lub baterii.
+- **Otwórz ekran ustawień Androida** otwiera stronę ustawień Androida, np. Wi-Fi, Bluetooth lub baterii.
 - **Udostępnij tekst** otwiera panel udostępniania z podanym tekstem.
 - **Ustaw głośność** ustawia procentową głośność wybranego rodzaju dźwięku, np. multimediów, dzwonka lub ułatwień dostępu.
 - **Ustaw tryb dzwonka** ustawia tryb zwykły, wibracje lub tryb cichy.
 - **Ustawienie urządzenia** zmienia jedną z opcji w szybkich ustawieniach SandFly, takich jak Wi-Fi, latarka, Nie przeszkadzać lub jasność. Dla przełącznika wybierz **Włącz**, **Wyłącz** albo **Włącz lub wyłącz**. Dla suwaka podaj liczbę, wartość procentową (np. 50%) albo +1 lub -1. Przy wyborze z listy podaj opcję albo wybierz następną. Zobacz [](#display).
 - **Klawisz multimediów** wykonuje **Odtwórz lub wstrzymaj**, **Odtwórz**, **Wstrzymaj**, **Następny utwór**, **Poprzedni utwór**, **Zatrzymaj**, **Przewiń do tyłu** lub **Przewiń do przodu**.
-- **Ustaw timer** ustawia odliczanie w sekundach, do 86 400, z opcjonalną etykietą.
-- **Ustaw alarm** ustawia godzinę, np. 08:30, z opcjonalną etykietą.
+- **Ustaw minutnik** ustawia odliczanie w sekundach, do 86 400, z opcjonalną etykietą.
+- **Ustaw budzik** ustawia godzinę, np. 08:30, z opcjonalną etykietą.
 - **Zadzwoń** wybiera numer telefonu.
-- **Wyślij wiadomość** przygotowuje wiadomość do podanego numeru.
+- **Przygotuj wiadomość SMS** przygotowuje wiadomość do podanego numeru.
 - **Otwórz aparat** otwiera aparat do zrobienia zdjęcia lub nagrania filmu.
 - **Naciśnij klawisze** wykonuje naciśnięcia takie jak `tab enter`. Wymaga Shizuku. Zobacz [](#updates).
-- **Pokaż wiadomość** wyświetla okno z tekstem i czeka na jego zamknięcie.
-- **Ustaw wartość** zapisuje podany tekst pod wybraną nazwą.
-- **Pobierz z linku** zapisuje tekst z adresu HTTPS jako wartość.
+- **Pokaż komunikat** wyświetla okno z tekstem i czeka na jego zamknięcie.
+- **Ustaw wartość zmiennej** zapisuje podany tekst pod wybraną nazwą.
+- **Pobierz tekst z adresu** zapisuje tekst z adresu HTTPS jako wartość.
 - **Przetłumacz tekst** tłumaczy podany tekst na język urządzenia i zapisuje go jako wartość. Zobacz [](#translation).
 
 Nazwy wartości mogą zawierać litery, cyfry, kropki, łączniki i znaki podkreślenia. Wartości są wspólne dla wszystkich makr i pozostają zapisane między uruchomieniami.
@@ -110,19 +110,19 @@ W treści kroków **Odczytaj tekst**, **Wpisz tekst** i wymienionych powyżej mo
 
 ### Warunki {#macros-conditions}
 
-Warunek składa się z jednej lub kilku kontroli. Mają go kroki **Jeśli**, **W przeciwnym razie, jeśli**, **Powtarzaj, dopóki** i **Czekaj, aż** oraz ustawienia **Uruchamiaj tylko, gdy** i **Pokazuj w menu Czynności tylko, gdy**. Wybierz krok lub ustawienie, aby otworzyć ekran warunku.
+Warunek składa się z jednej lub kilku kontroli. Mają go kroki **Jeśli**, **W przeciwnym razie, jeśli**, **Powtarzaj, dopóki** i **Czekaj, aż** oraz ustawienia **Uruchamiaj tylko wtedy, gdy** i **Pokazuj w czynnościach tylko, gdy**. Wybierz krok lub ustawienie, aby otworzyć ekran warunku.
 
-Na ekranie znajdziesz **Dodaj warunek** i listę **Warunki**. Dla **Czekaj, aż** dostępne jest też pole **Sekundy oczekiwania**. Warunek z pustą listą jest zawsze spełniony.
+Na ekranie znajdziesz **Dodaj warunek** i listę **Warunki**. Dla **Czekaj, aż** dostępne jest też pole **Czas oczekiwania (sekundy)**. Warunek z pustą listą jest zawsze spełniony.
 
 Możesz użyć następujących kontroli.
 
 - **Element na ekranie** sprawdza, czy na ekranie jest element o podanym tekście i opcjonalnie wybranym typie. Zobacz [](#macros-find-items).
-- **Zaznaczony element** sprawdza, czy element, na którym jest fokus ułatwień dostępu, lub któryś z elementów w jego środku ma podany tekst, typ lub obie cechy. Tekst możesz zostawić pusty.
-- **Zaznaczenie wewnątrz elementu** sprawdza, czy fokus jest na wskazanym elemencie lub w jego wnętrzu. Możesz np. wskazać odtwarzacz wideo według identyfikatora zasobu.
+- **Element z fokusem** sprawdza, czy element, na którym jest fokus ułatwień dostępu, lub któryś z elementów w jego środku ma podany tekst, typ lub obie cechy. Tekst możesz zostawić pusty.
+- **Fokus w elemencie lub jego zawartości** sprawdza, czy fokus jest na wskazanym elemencie lub w jego wnętrzu. Możesz np. wskazać odtwarzacz wideo według identyfikatora zasobu.
 - **Aplikacja na pierwszym planie** sprawdza, czy wybrana aplikacja jest na pierwszym planie.
 - **Klawiatura widoczna** sprawdza, czy widać klawiaturę ekranową.
 - **Ekran zablokowany** sprawdza, czy widać ekran blokady.
-- **Wartość** sprawdza, czy zapisana wartość zawiera tekst z pola **Zawiera**. Jeśli pole zostawisz puste, sprawdza, czy wartość jest ustawiona. Po włączeniu **Wyrażenie regularne** wpisany tekst staje się wzorcem.
+- **Wartość zmiennej** sprawdza, czy zapisana wartość zawiera tekst z pola **Zawiera**. Jeśli pole zostawisz puste, sprawdza, czy wartość jest ustawiona. Po włączeniu **Wyrażenie regularne** wpisany tekst staje się wzorcem.
 
 Jeśli na liście jest już kontrola, po wybraniu **Dodaj warunek** wybierasz **Połącz spójnikiem „i”** lub **Połącz spójnikiem „lub”**. Wybierz kontrolę na liście, aby zobaczyć poniższe opcje.
 
@@ -148,7 +148,7 @@ Po wstawieniu pętli przez **Dodaj krok** SandFly dodaje od razu **Koniec powtar
 Aby przewijać listę do znalezienia elementu, a potem go otworzyć, wykonaj te kroki.
 
 1. Dodaj **Powtarzaj, dopóki**. Wybierz **Element na ekranie**, podaj tekst elementu i użyj **Zmień na**, aby ustawić **Brak elementu na ekranie**.
-2. Dodaj **Przytrzymaj lub przewiń element** z działaniem **Przewiń do przodu**. Zostaw tekst elementu pusty.
+2. Dodaj **Wykonaj długie kliknięcie lub przewiń** z działaniem **Przewiń do przodu**. Zostaw tekst elementu pusty.
 3. Za krokiem **Koniec powtarzania** dodaj **Kliknij element** z tekstem szukanego elementu.
 
 ### Nagraj makro {#macros-record}
@@ -164,7 +164,7 @@ SandFly może zapisać czynności wykonywane przez Ciebie w aplikacjach jako kro
 
 Jeśli chcesz nagrać kroki do istniejącego makra, wybierz **Nagraj kroki** na jego ekranie. SandFly wróci do aplikacji otwartej przed ustawieniami albo otworzy aplikację przypisaną do makra, a następnie zacznie nagrywać. Kroki trafią do tego samego miejsca co przy użyciu **Dodaj krok**.
 
-SandFly nagrywa naciśnięcia i przytrzymania elementów dotykiem lub za pomocą SandFly, przewijanie, wpisywany tekst i otwieranie aplikacji z ekranu głównego. Zapisuje też polecenia **Wstecz**, **Ekran główny**, **Przegląd**, **Powiadomienia**, **Szybkie ustawienia**, **Wszystkie aplikacje**, **Zaznacz wszystko**, **Kopiuj**, **Wytnij** i **Wklej**. Jeśli użyjesz powiadomień, szybkich ustawień, przeglądu lub listy wszystkich aplikacji tylko po to, żeby zakończyć nagrywanie, polecenie zostanie pominięte. SandFly pomija też tekst wpisywany w polach haseł i czynności na własnych ekranach.
+SandFly nagrywa naciśnięcia i przytrzymania elementów dotykiem lub za pomocą SandFly, przewijanie, wpisywany tekst i otwieranie aplikacji z ekranu głównego. Zapisuje też polecenia **Wstecz**, **Ekran główny**, **Przegląd SandFly**, **Powiadomienia**, **Szybkie ustawienia**, **Wszystkie aplikacje**, **Zaznacz wszystko**, **Kopiuj**, **Wytnij** i **Wklej**. Jeśli użyjesz powiadomień, szybkich ustawień, przeglądu lub listy wszystkich aplikacji tylko po to, żeby zakończyć nagrywanie, polecenie zostanie pominięte. SandFly pomija też tekst wpisywany w polach haseł i czynności na własnych ekranach.
 
 Przy tworzeniu kroków SandFly uwzględnia przebieg nagrania.
 
@@ -180,7 +180,7 @@ Nagrane kroki szukają pełnego tekstu elementów za pomocą wyrażeń regularny
 
 - Użyj przypisanego gestu, skrótu klawiszowego, strzałki lub komórki brajlowskiej. Zobacz [](#commands-assign).
 - Wybierz makro w menu. Dodasz je z grupy **Makra** do menu SandFly, własnego menu lub własnego sterowania czytaniem. Zobacz [](#commands).
-- Wybierz makro w menu **Czynności** lub w pozycji **Czynności** sterowania czytaniem, jeśli włączono **Pokazuj w menu Czynności**.
+- Wybierz makro w menu **Czynności** lub w pozycji **Czynności** sterowania czytaniem, jeśli włączono **Pokazuj w czynnościach**.
 - Użyj skrótu na ekranie głównym dodanego przez **Dodaj do ekranu głównego**.
 - Użyj polecenia głosowego. Powiedz nazwę makra albo „uruchom makro” i jego nazwę. Możesz też przypisać własny zwrot. Zobacz [](#voice-commands).
 - Wybierz **Uruchom teraz** na ekranie makra.
@@ -191,7 +191,7 @@ Uruchomienie kolejnego makra zatrzymuje wykonywane makro. Możesz też użyć **
 
 Polecenie **Sprawdź element z fokusem** z grupy **Ustawienia programisty** otwiera okno **Szczegóły elementu**. W oknie znajdziesz poniższe sekcje.
 
-- **Teksty** pokazują tekst, opis, podpowiedź i stan elementu pod tymi samymi nazwami co pole **Dopasuj w**.
+- **Teksty** pokazują tekst, opis, podpowiedź i stan elementu pod tymi samymi nazwami co pole **Szukaj w**.
 - **Typy elementu** podają pasujące typy, np. **Klikalny** lub **Nagłówek**.
 - **Elementy wewnątrz** pokazują teksty elementów zawartych w bieżącym elemencie.
 - **Szczegóły dla skryptów** pokazują identyfikator zasobu, rolę, klasę i inne dane używane przez skrypty.

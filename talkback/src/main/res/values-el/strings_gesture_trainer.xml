@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">δεύτερο σύρσιμο <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">ολόκληρη η κίνηση <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">σηκωμένο για <xliff:g id="ms">%1$d</xliff:g> ms ανάμεσά τους</string>
+    <string name="gesture_trainer_how_menu_horizontal">Τοποθετήστε ένα δάχτυλο <xliff:g id="edge">%1$s</xliff:g> και σύρετέ το προς το κέντρο της οθόνης για τουλάχιστον <xliff:g id="distance">%2$d</xliff:g> mm για να ανοίξει το μενού. Έχει <xliff:g id="count">%3$d</xliff:g> στοιχεία κατά πλάτος της οθόνης, από την άκρη, το καθένα πλάτους περίπου <xliff:g id="size">%6$s</xliff:g> cm. Το στοιχείο <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, βρίσκεται <xliff:g id="from">%7$s</xliff:g> έως <xliff:g id="to">%8$s</xliff:g> cm από την άκρη. Κρατήστε το δάχτυλο στο ίδιο ύψος και σηκώστε το όταν εκφωνηθεί το στοιχείο.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Το δάχτυλο σηκώθηκε <xliff:g id="mm">%1$.0f</xliff:g> mm πάνω ή κάτω από το σημείο όπου άνοιξε το μενού, και το μενού κλείνει πέρα από τα <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Κρατήστε το δάχτυλο στο ίδιο ύψος καθώς σύρετε προς τα μέσα, και σηκώστε το εκεί.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Κάθε στοιχείο έχει σταθερή θέση κατά πλάτος της οθόνης, από την άκρη, και επιλέγεται το στοιχείο όπου σηκώνεται το δάχτυλο. Σηκώστε το όταν εκφωνηθεί το στοιχείο.</string>
+    <string name="gesture_trainer_left_out_in_menu">Τα συρσίματα προς τα μέσα από την πλευρά <xliff:g id="edge">%1$s</xliff:g> παραλείπονται: το μενού άκρης εκεί εκτείνεται κατά πλάτος της οθόνης, οπότε ένα σύρσιμο προς τα μέσα από εκεί ανοίγει το μενού αντί να εκτελέσει κίνηση.</string>
+    <string name="gesture_trainer_statistics">Στατιστικά</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Προσπάθειες: <xliff:g id="tries">%2$d</xliff:g>, αναγνωρίστηκαν: <xliff:g id="recognized">%3$d</xliff:g>. Συντομότερη: <xliff:g id="shortest">%4$d</xliff:g> ms, διάμεσος: <xliff:g id="median">%5$d</xliff:g> ms, μεγαλύτερη: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Κάθε άγγιγμα: συντομότερο <xliff:g id="shortest">%1$d</xliff:g> ms, διάμεσος <xliff:g id="median">%2$d</xliff:g> ms, μεγαλύτερο <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Πατήματα</string>
+    <string name="gesture_trainer_kind_double_tap">Διπλά πατήματα</string>
+    <string name="gesture_trainer_kind_triple_tap">Τριπλά πατήματα</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Τετραπλά πατήματα</string>
+    <string name="gesture_trainer_kind_tap_hold">Παρατεταμένο πάτημα</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Διπλό παρατεταμένο πάτημα</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Τριπλό παρατεταμένο πάτημα</string>
+    <string name="gesture_trainer_kind_swipe">Σαρώσεις</string>
+    <string name="gesture_trainer_kind_swipe_hold">Σάρωση και κράτημα</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Κινήσεις μπρος-πίσω και υπό γωνία</string>
+    <string name="gesture_trainer_kind_pinch">Τσιμπήματα</string>
+    <string name="gesture_trainer_kind_spread">Ανοίγματα</string>
+    <string name="gesture_trainer_kind_rotate">Περιστροφές</string>
+    <string name="gesture_trainer_kind_scrub">Τριψίματα</string>
 </resources>

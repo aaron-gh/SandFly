@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">lần vuốt thứ hai <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">toàn bộ cử chỉ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">nhấc lên <xliff:g id="ms">%1$d</xliff:g> ms giữa hai lần</string>
+    <string name="gesture_trainer_how_menu_horizontal">Đặt một ngón tay <xliff:g id="edge">%1$s</xliff:g> và trượt vào phía giữa màn hình ít nhất <xliff:g id="distance">%2$d</xliff:g> mm để mở trình đơn. Trình đơn có <xliff:g id="count">%3$d</xliff:g> mục theo chiều ngang màn hình, tính từ cạnh, mỗi mục rộng khoảng <xliff:g id="size">%6$s</xliff:g> cm. Mục <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, cách cạnh từ <xliff:g id="from">%7$s</xliff:g> đến <xliff:g id="to">%8$s</xliff:g> cm. Giữ ngón tay ở cùng độ cao và nhấc lên khi mục được đọc.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Ngón tay nhấc lên cao hơn hoặc thấp hơn <xliff:g id="mm">%1$.0f</xliff:g> mm so với vị trí trình đơn mở, và trình đơn đóng khi vượt quá <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Giữ ngón tay ở cùng độ cao khi trượt vào, và nhấc lên tại đó.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Mỗi mục có vị trí cố định theo chiều ngang màn hình, tính từ cạnh, và mục tại vị trí nhấc ngón tay sẽ được chọn. Nhấc lên khi mục được đọc.</string>
+    <string name="gesture_trainer_left_out_in_menu">Đã bỏ qua thao tác trượt vào từ <xliff:g id="edge">%1$s</xliff:g>: trình đơn của cạnh này nằm ngang màn hình, vì vậy trượt vào từ cạnh này sẽ mở trình đơn thay vì chạy cử chỉ.</string>
+    <string name="gesture_trainer_statistics">Thống kê</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Số lần thử: <xliff:g id="tries">%2$d</xliff:g>, nhận dạng được: <xliff:g id="recognized">%3$d</xliff:g>. Ngắn nhất: <xliff:g id="shortest">%4$d</xliff:g> ms, trung vị: <xliff:g id="median">%5$d</xliff:g> ms, dài nhất: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Mỗi lần chạm: ngắn nhất <xliff:g id="shortest">%1$d</xliff:g> ms, trung vị <xliff:g id="median">%2$d</xliff:g> ms, dài nhất <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Nhấn</string>
+    <string name="gesture_trainer_kind_double_tap">Nhấn đúp</string>
+    <string name="gesture_trainer_kind_triple_tap">Nhấn 3 lần</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Nhấn 4 lần</string>
+    <string name="gesture_trainer_kind_tap_hold">Nhấn và giữ</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Nhấn đúp và giữ</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Nhấn 3 lần và giữ</string>
+    <string name="gesture_trainer_kind_swipe">Vuốt</string>
+    <string name="gesture_trainer_kind_swipe_hold">Vuốt và giữ</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Vuốt qua lại và vuốt theo góc</string>
+    <string name="gesture_trainer_kind_pinch">Chụm</string>
+    <string name="gesture_trainer_kind_spread">Tách</string>
+    <string name="gesture_trainer_kind_rotate">Xoay</string>
+    <string name="gesture_trainer_kind_scrub">Chà</string>
 </resources>

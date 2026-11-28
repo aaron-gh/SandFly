@@ -6,6 +6,9 @@
  */
 package com.google.android.accessibility.talkback.focusmanagement.record
 
+import android.view.View
+import android.view.accessibility.AccessibilityNodeInfo
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory.ActivatedItem
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -111,6 +114,23 @@ class ActivatedItemsAfterBackTest {
     history.onItemActivated(item("A"))
     back(1000, windows = listOf(1, 2))
     assertEquals(1, history.activatedItemCount)
+  }
+
+  @Test
+  fun backIsPendingAtTheFocusOfTheBackOnlyInItsWindowAndTime() {
+    val app = RuntimeEnvironment.getApplication()
+    val navigateUp = AccessibilityNodeInfoCompat.wrap(AccessibilityNodeInfo.obtain(View(app)))
+    val row = AccessibilityNodeInfoCompat.wrap(AccessibilityNodeInfo.obtain(View(app)))
+    history.onItemActivated(item("Speech"))
+    history.onBack(1000, 1, navigateUp, "Navigate up", null)
+    assertTrue(history.isBackPendingAtFocus(1100, 1, navigateUp))
+    assertFalse(history.isBackPendingAtFocus(1100, 1, row))
+    assertFalse(history.isBackPendingAtFocus(1100, 2, navigateUp))
+    assertFalse(
+      history.isBackPendingAtFocus(
+        1001 + AccessibilityFocusActionHistory.RESTORE_AFTER_BACK_MS, 1, navigateUp))
+    history.cancelBack()
+    assertFalse(history.isBackPendingAtFocus(1100, 1, navigateUp))
   }
 
   @Test

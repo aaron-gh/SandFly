@@ -320,4 +320,26 @@
   <string name="gesture_trainer_measure_second_stroke">second swipe <xliff:g id="ms">%1$d</xliff:g> ms</string>
   <string name="gesture_trainer_measure_whole_gesture">whole gesture <xliff:g id="ms">%1$d</xliff:g> ms</string>
   <string name="gesture_trainer_measure_stroke_gap">lifted for <xliff:g id="ms">%1$d</xliff:g> ms between them</string>
+
+  <!-- Statistics: durations of the tries made since the gesture trainer opened, by kind of gesture and number of fingers. Button and heading. [CHAR_LIMIT=40] -->
+  <string name="gesture_trainer_statistics">Statistics</string>
+  <!-- One line of the statistics. %1$s is the number of fingers, such as "Two fingers"; %2$d the number of tries; %3$d how many were recognized; %4$d, %5$d and %6$d the shortest, median and longest time from the first finger landing to the last lifting, in milliseconds. -->
+  <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Tries: <xliff:g id="tries">%2$d</xliff:g>, recognized: <xliff:g id="recognized">%3$d</xliff:g>. Shortest: <xliff:g id="shortest">%4$d</xliff:g> ms, median: <xliff:g id="median">%5$d</xliff:g> ms, longest: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+  <!-- Added to a line of the statistics for gestures of several touches, such as a double tap: the shortest, median and longest time a single touch lasted, in milliseconds. -->
+  <string name="gesture_trainer_statistics_touches">Each touch: shortest <xliff:g id="shortest">%1$d</xliff:g> ms, median <xliff:g id="median">%2$d</xliff:g> ms, longest <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+  <!-- Headings of the statistics: kinds of gesture. -->
+  <string name="gesture_trainer_kind_tap">Taps</string>
+  <string name="gesture_trainer_kind_double_tap">Double taps</string>
+  <string name="gesture_trainer_kind_triple_tap">Triple taps</string>
+  <string name="gesture_trainer_kind_quadruple_tap">Quadruple taps</string>
+  <string name="gesture_trainer_kind_tap_hold">Tap and hold</string>
+  <string name="gesture_trainer_kind_double_tap_hold">Double tap and hold</string>
+  <string name="gesture_trainer_kind_triple_tap_hold">Triple tap and hold</string>
+  <string name="gesture_trainer_kind_swipe">Swipes</string>
+  <string name="gesture_trainer_kind_swipe_hold">Swipe and hold</string>
+  <string name="gesture_trainer_kind_two_part_swipe">Back-and-forth and angle swipes</string>
+  <string name="gesture_trainer_kind_pinch">Pinches</string>
+  <string name="gesture_trainer_kind_spread">Spreads</string>
+  <string name="gesture_trainer_kind_rotate">Rotations</string>
+  <string name="gesture_trainer_kind_scrub">Scrubs</string>
 </resources>

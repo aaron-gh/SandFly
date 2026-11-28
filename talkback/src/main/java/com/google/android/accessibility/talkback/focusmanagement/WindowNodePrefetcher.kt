@@ -20,15 +20,19 @@ import android.os.Build
 import android.os.SystemClock
 import android.text.TextUtils
 import android.util.Log
+import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.annotation.RequiresApi
+import androidx.annotation.VisibleForTesting
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.utils.WebInterfaceUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.CountDownLatch
 import java.util.concurrent.Executors
 import java.util.concurrent.RejectedExecutionException
 import java.util.concurrent.TimeUnit
+import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.locks.ReentrantLock
 import kotlin.concurrent.withLock
@@ -60,14 +64,17 @@ object WindowNodePrefetcher {
   private const val MAX_NODES = 5000
 
   /**
-   * How long after reading a window its order is built again without reading it first. Its nodes
-   * are mostly still in Android's node cache, which a second walk would only copy again, and the
-   * order reads the few that changed itself.
+   * How long after reading a window its order is built again without reading it first, as long as
+   * no event has cleared part of the window from Android's node cache since. Its nodes are then
+   * still in that cache, which a second walk would only copy again, and the order reads the few
+   * that changed itself.
    */
   private const val WINDOW_AGAIN_MS = 2_000L
 
+  private const val NO_WINDOW_ID = -1
+
   // The window read last for its order, and when, on the main thread.
-  private var lastWindowId = -1
+  private var lastWindowId = NO_WINDOW_ID
   private var lastWindowReadMs = 0L
 
   private const val FLAGS =
@@ -98,14 +105,65 @@ object WindowNodePrefetcher {
    */
   @JvmStatic
   fun prefetchWindow(root: AccessibilityNodeInfoCompat, ownPackage: String) {
-    val now = SystemClock.uptimeMillis()
-    if (root.windowId == lastWindowId && now - lastWindowReadMs < WINDOW_AGAIN_MS) {
-      return
+    if (shouldReadWindow(root.windowId, SystemClock.uptimeMillis())) {
+      prefetch(root, ownPackage)
     }
-    lastWindowId = root.windowId
-    lastWindowReadMs = now
-    prefetch(root, ownPackage)
   }
+
+  /**
+   * Whether window [windowId] is to be read before its order is built at [now], and if so, notes
+   * the read. Called on the main thread.
+   */
+  @VisibleForTesting
+  @JvmStatic
+  fun shouldReadWindow(windowId: Int, now: Long): Boolean {
+    if (windowId == lastWindowId && now - lastWindowReadMs < WINDOW_AGAIN_MS) {
+      return false
+    }
+    lastWindowId = windowId
+    lastWindowReadMs = now
+    return true
+  }
+
+  /**
+   * Has the window read last be read again before its next order when [event] clears part of it
+   * from Android's node cache: a subtree change or a scroll there. An app whose list reports subtree
+   * changes many times a second has none of the list's nodes in the cache by the next swipe, and
+   * the order then read them one request at a time. Called on the main thread.
+   */
+  @JvmStatic
+  fun onAccessibilityEvent(event: AccessibilityEvent) {
+    onEvent(event.windowId, event.eventType, event.contentChangeTypes)
+  }
+
+  @VisibleForTesting
+  @JvmStatic
+  fun onEvent(windowId: Int, eventType: Int, contentChangeTypes: Int) {
+    if (
+      lastWindowId != NO_WINDOW_ID &&
+        (windowId == lastWindowId || windowId == NO_WINDOW_ID) &&
+        clearsCachedNodes(eventType, contentChangeTypes)
+    ) {
+      lastWindowId = NO_WINDOW_ID
+    }
+  }
+
+  /**
+   * Whether an event of [eventType] with [contentChangeTypes] makes Android clear the nodes below its
+   * source from its node cache.
+   */
+  @VisibleForTesting
+  @JvmStatic
+  fun clearsCachedNodes(eventType: Int, contentChangeTypes: Int): Boolean =
+    when (eventType) {
+      AccessibilityEvent.TYPE_VIEW_SCROLLED,
+      AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED -> true
+      AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED ->
+        contentChangeTypes and
+          (AccessibilityEvent.CONTENT_CHANGE_TYPE_SUBTREE or
+            AccessibilityEvent.CONTENT_CHANGE_TYPE_PANE_DISAPPEARED) != 0
+      else -> false
+    }
 
   @JvmStatic
   fun prefetch(root: AccessibilityNodeInfoCompat, ownPackage: String) {
@@ -123,6 +181,58 @@ object WindowNodePrefetcher {
     if (LogUtils.shouldLog(Log.DEBUG)) {
       Log.d(TAG, "Read ${walk.nodes.get()} nodes in ${SystemClock.uptimeMillis() - start} ms")
     }
+  }
+
+  /** The most parents whose children [prefetchChildren] reads. */
+  private const val MAX_PARENTS = 32
+
+  private const val CHILDREN_FLAGS =
+    AccessibilityNodeInfo.FLAG_PREFETCH_SIBLINGS or AccessibilityNodeInfo.FLAG_PREFETCH_UNINTERRUPTIBLE
+
+  /**
+   * Reads the children of each of [parents] into Android's node cache, with one request per parent,
+   * all at once, waiting at most [MAX_WAIT_MS]. A request reads up to 50 nodes. Null entries and
+   * parents of fewer than two children are passed over. The caller makes sure that the nodes are
+   * not in SandFly's own windows, whose requests are answered on the main thread.
+   */
+  @JvmStatic
+  fun prefetchChildren(parents: List<AccessibilityNodeInfoCompat?>) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU || running.get() >= THREADS) {
+      return
+    }
+    val read =
+      parents.asSequence().filterNotNull().distinct().filter { it.childCount > 1 }.take(MAX_PARENTS)
+        .map { it.unwrap() }.toList()
+    if (read.isEmpty()) {
+      return
+    }
+    val done = CountDownLatch(read.size)
+    val stopped = AtomicBoolean()
+    for (parent in read) {
+      try {
+        executor.execute {
+          running.incrementAndGet()
+          try {
+            if (!stopped.get()) {
+              parent.getChild(0, CHILDREN_FLAGS)
+            }
+          } catch (e: RuntimeException) {
+            Log.w(TAG, "Could not read children", e)
+          } finally {
+            running.decrementAndGet()
+            done.countDown()
+          }
+        }
+      } catch (e: RejectedExecutionException) {
+        done.countDown()
+      }
+    }
+    try {
+      done.await(MAX_WAIT_MS, TimeUnit.MILLISECONDS)
+    } catch (e: InterruptedException) {
+      Thread.currentThread().interrupt()
+    }
+    stopped.set(true)
   }
 
   @RequiresApi(Build.VERSION_CODES.TIRAMISU)

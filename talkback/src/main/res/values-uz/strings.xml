@@ -2860,4 +2860,109 @@
     <string name="title_pref_cyrillic_text_recognition">Kirill matnini aniqlash</string>
     <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> tili uchun matnni aniqlash modeli yoʻq. Uni Rasm va ekran tavsiflari, Kirill matnini aniqlash boʻlimida yuklab oling.</string>
     <string name="cyrillic_text_model_error_http">Yuklab olish serveri soʻrovni qabul qilmadi. Keyinroq qayta urining.</string>
+    <string name="title_pref_announce_caller">Qoʻngʻiroq qiluvchini eʼlon qilish</string>
+    <string name="announce_caller_once">Bir marta</string>
+    <string name="announce_caller_repeat">Jiringlayotganda takrorlash</string>
+    <string name="title_pref_command_feedback_voice">Buyruq natijalari va matn tahriri uchun ovoz</string>
+    <string name="title_pref_command_feedback_over_speech">Buyruq natijalarini SandFly nutqi ustidan oʻqish</string>
+    <string name="title_pref_item_types_spoken">Aytiladigan element turlari</string>
+    <string name="item_type_link">Havola</string>
+    <string name="item_type_tab">Varaq</string>
+    <string name="item_type_other">Boshqa turlar</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">2 barmoq bilan teginish, 1 barmoq bilan surish</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">Probel</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">Menyu</string>
+    <string name="keycombo_key_search">Qidiruv</string>
+    <string name="keycombo_key_grave">Gravis</string>
+    <string name="keycombo_key_minus">Minus</string>
+    <string name="keycombo_key_equals">Tenglik</string>
+    <string name="keycombo_key_left_bracket">Chap kvadrat qavs</string>
+    <string name="keycombo_key_right_bracket">Oʻng kvadrat qavs</string>
+    <string name="keycombo_key_backslash">Teskari qiya chiziq</string>
+    <string name="keycombo_key_semicolon">Nuqtali vergul</string>
+    <string name="keycombo_key_apostrophe">Apostrof</string>
+    <string name="keycombo_key_comma">Vergul</string>
+    <string name="keycombo_key_period">Nuqta</string>
+    <string name="keycombo_key_slash">Qiya chiziq</string>
+    <string name="keycombo_key_plus">Plyus</string>
+    <string name="keycombo_key_at">At belgisi</string>
+    <string name="keycombo_key_star">Yulduzcha</string>
+    <string name="keycombo_key_pound">Panjara</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">Raqamli klaviaturadagi Plyus</string>
+    <string name="keycombo_key_numpad_subtract">Raqamli klaviaturadagi Minus</string>
+    <string name="keycombo_key_numpad_multiply">Raqamli klaviaturadagi Koʻpaytirish</string>
+    <string name="keycombo_key_numpad_divide">Raqamli klaviaturadagi Boʻlish</string>
+    <string name="keycombo_key_numpad_dot">Raqamli klaviaturadagi Nuqta</string>
+    <string name="keycombo_key_numpad_comma">Raqamli klaviaturadagi Vergul</string>
+    <string name="keycombo_key_numpad_equals">Raqamli klaviaturadagi Tenglik</string>
+    <string name="keycombo_key_numpad_enter">Raqamli klaviaturadagi Enter</string>
+    <string name="keycombo_key_volume_up">Ovozni oshirish</string>
+    <string name="keycombo_key_volume_down">Ovozni pasaytirish</string>
+    <string name="keycombo_key_volume_mute">Ovozsiz</string>
+    <string name="keycombo_key_media_play_pause">Ijro etish yoki pauza</string>
+    <string name="keycombo_key_media_next">Keyingi trek</string>
+    <string name="keycombo_key_media_previous">Oldingi trek</string>
+    <string name="keycombo_key_media_stop">Toʻxtatish</string>
+    <string name="keycombo_key_back">Orqaga</string>
+    <string name="keycombo_key_numpad">Raqamli klaviaturadagi <xliff:g id="digit" example="5">%1$s</xliff:g></string>
+    <string name="title_pref_typing_swipes_through_keys">Har qanday yozish usulida tugmadan tugmaga surish</string>
+    <string name="shortcut_say_caller">Qoʻngʻiroq qiluvchini aytish</string>
+    <string name="say_caller_unknown">Kiruvchi qoʻngʻiroq</string>
+    <string name="shortcut_restart_phone">Telefonni qayta ishga tushirish</string>
+    <string name="shortcut_power_off_phone">Telefonni oʻchirish</string>
+    <string name="restart_phone_confirm_title">Telefon qayta ishga tushirilsinmi?</string>
+    <string name="restart_phone_confirm_button">Qayta ishga tushirish</string>
+    <string name="power_off_phone_confirm_title">Telefon oʻchirilsinmi?</string>
+    <string name="power_off_phone_confirm_button">Oʻchirish</string>
+    <string name="power_command_failed">Bajarilmadi, quvvat menyusi ochildi</string>
+    <string name="clipboard_history_search_hint">Klipbord tarixidan qidirish</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ta matn</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> ta matn</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Chetdan ichkariga surish</string>
+    <string name="title_pref_category_sliders">Slayderlar</string>
+    <string name="title_pref_slider_step">Slayder qadami</string>
+    <string name="value_slider_step_app">Ilova belgilaganidek</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">Diapazonning eng kichik qadami</string>
+    <string name="title_pref_slider_skip_unchanged">Qiymatni oʻzgartirmaydigan qadamlarni oʻtkazib yuborish</string>
+    <string name="title_slider_enter_value">Qiymat kiritish</string>
+    <string name="slider_value_range"><xliff:g id="min" example="0">%1$s</xliff:g> dan <xliff:g id="max" example="100">%2$s</xliff:g> gacha</string>
+    <string name="voice_phrases_not_understood">Tushunilmagan iboralar</string>
+    <string name="title_pref_voice_phrases_not_understood">Tushunilmagan iboralarni saqlash</string>
+    <string name="voice_phrases_not_understood_listed">Tushunilmagan iboralarga qoʻshildi.</string>
 </resources>

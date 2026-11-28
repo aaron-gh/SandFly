@@ -2405,18 +2405,18 @@
     <string name="title_pref_shortcut_4finger_3tap_swipe_down">Fes triple toc i després llisca cap avall amb 4 dits</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_left">Fes triple toc i després llisca cap a l\'esquerra amb 4 dits</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_right">Fes triple toc i després llisca cap a la dreta amb 4 dits</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Toca amb 2 dits i després llisca cap amunt</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Toca amb 2 dits i després llisca cap avall</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Toca amb 2 dits i després llisca cap a l\'esquerra</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Toca amb 2 dits i després llisca cap a la dreta</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Fes doble toc amb 2 dits i després llisca cap amunt</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Fes doble toc amb 2 dits i després llisca cap avall</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Fes doble toc amb 2 dits i després llisca cap a l\'esquerra</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Fes doble toc amb 2 dits i després llisca cap a la dreta</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Fes triple toc amb 2 dits i després llisca cap amunt</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Fes triple toc amb 2 dits i després llisca cap avall</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Fes triple toc amb 2 dits i després llisca cap a l\'esquerra</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Fes triple toc amb 2 dits i després llisca cap a la dreta</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Toca amb 2 dits i després llisca cap amunt amb 1 dit</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Toca amb 2 dits i després llisca cap avall amb 1 dit</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Toca amb 2 dits i després llisca cap a l\'esquerra amb 1 dit</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Toca amb 2 dits i després llisca cap a la dreta amb 1 dit</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Fes doble toc amb 2 dits i després llisca cap amunt amb 1 dit</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Fes doble toc amb 2 dits i després llisca cap avall amb 1 dit</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Fes doble toc amb 2 dits i després llisca cap a l\'esquerra amb 1 dit</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Fes doble toc amb 2 dits i després llisca cap a la dreta amb 1 dit</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Fes triple toc amb 2 dits i després llisca cap amunt amb 1 dit</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Fes triple toc amb 2 dits i després llisca cap avall amb 1 dit</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Fes triple toc amb 2 dits i després llisca cap a l\'esquerra amb 1 dit</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Fes triple toc amb 2 dits i després llisca cap a la dreta amb 1 dit</string>
     <string name="title_pref_shortcut_up_and_down_and_up">Llisca cap amunt, cap avall i després cap amunt</string>
     <string name="title_pref_shortcut_up_and_down_and_left">Llisca cap amunt, cap avall i després a l\'esquerra</string>
     <string name="title_pref_shortcut_up_and_down_and_right">Llisca cap amunt, cap avall i després a la dreta</string>
@@ -2869,4 +2869,110 @@
     <string name="title_pref_cyrillic_text_recognition">Reconeixement de text en ciríl·lic</string>
     <string name="cyrillic_text_model_missing">No hi ha cap model de reconeixement de text per a <xliff:g id="language" example="Russian">%1$s</xliff:g>. Baixa\'l a Descripcions d\'imatges i pantalla, Reconeixement de text en ciríl·lic.</string>
     <string name="cyrillic_text_model_error_http">El servidor de baixades no ha acceptat la sol·licitud. Torna-ho a provar més tard.</string>
+    <string name="title_pref_announce_caller">Anuncia qui truca</string>
+    <string name="announce_caller_once">Una vegada</string>
+    <string name="announce_caller_repeat">Repeteix mentre sona</string>
+    <string name="title_pref_command_feedback_voice">Veu de la resposta de les ordres i de l\'edició de text</string>
+    <string name="title_pref_command_feedback_over_speech">Llegeix la resposta de les ordres per sobre de la veu de SandFly</string>
+    <string name="title_pref_item_types_spoken">Tipus d\'element que s\'enuncien</string>
+    <string name="item_type_link">Enllaç</string>
+    <string name="item_type_tab">Pestanya</string>
+    <string name="item_type_other">Altres tipus</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">Toc amb 2 dits, lliscament amb 1 dit</string>
+    <string name="keycombo_key_enter">Retorn</string>
+    <string name="keycombo_key_space">Espai</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Re Pàg</string>
+    <string name="keycombo_key_page_down">Av Pàg</string>
+    <string name="keycombo_key_home">Inici</string>
+    <string name="keycombo_key_end">Fi</string>
+    <string name="keycombo_key_delete">Supr</string>
+    <string name="keycombo_key_menu">Menú</string>
+    <string name="keycombo_key_search">Cerca</string>
+    <string name="keycombo_key_grave">Accent greu</string>
+    <string name="keycombo_key_minus">Menys</string>
+    <string name="keycombo_key_equals">Igual</string>
+    <string name="keycombo_key_left_bracket">Claudàtor d\'obertura</string>
+    <string name="keycombo_key_right_bracket">Claudàtor de tancament</string>
+    <string name="keycombo_key_backslash">Barra inversa</string>
+    <string name="keycombo_key_semicolon">Punt i coma</string>
+    <string name="keycombo_key_apostrophe">Apòstrof</string>
+    <string name="keycombo_key_comma">Coma</string>
+    <string name="keycombo_key_period">Punt</string>
+    <string name="keycombo_key_slash">Barra</string>
+    <string name="keycombo_key_plus">Més</string>
+    <string name="keycombo_key_at">Arrova</string>
+    <string name="keycombo_key_star">Asterisc</string>
+    <string name="keycombo_key_pound">Coixinet</string>
+    <string name="keycombo_key_caps_lock">Bloq Maj</string>
+    <string name="keycombo_key_scroll_lock">Bloq Despl</string>
+    <string name="keycombo_key_num_lock">Bloq Núm</string>
+    <string name="keycombo_key_pause">Pausa</string>
+    <string name="keycombo_key_print_screen">Impr Pant</string>
+    <string name="keycombo_key_numpad_add">Més (teclat numèric)</string>
+    <string name="keycombo_key_numpad_subtract">Menys (teclat numèric)</string>
+    <string name="keycombo_key_numpad_multiply">Multiplica (teclat numèric)</string>
+    <string name="keycombo_key_numpad_divide">Divideix (teclat numèric)</string>
+    <string name="keycombo_key_numpad_dot">Punt (teclat numèric)</string>
+    <string name="keycombo_key_numpad_comma">Coma (teclat numèric)</string>
+    <string name="keycombo_key_numpad_equals">Igual (teclat numèric)</string>
+    <string name="keycombo_key_numpad_enter">Retorn (teclat numèric)</string>
+    <string name="keycombo_key_volume_up">Apujar el volum</string>
+    <string name="keycombo_key_volume_down">Abaixar el volum</string>
+    <string name="keycombo_key_volume_mute">Silenciar el volum</string>
+    <string name="keycombo_key_media_play_pause">Reproduir o pausar</string>
+    <string name="keycombo_key_media_next">Pista següent</string>
+    <string name="keycombo_key_media_previous">Pista anterior</string>
+    <string name="keycombo_key_media_stop">Aturar</string>
+    <string name="keycombo_key_back">Enrere</string>
+    <string name="keycombo_key_numpad"><xliff:g id="digit" example="5">%1$s</xliff:g> (teclat numèric)</string>
+    <string name="title_pref_typing_swipes_through_keys">Llisca de tecla en tecla amb qualsevol mètode d\'escriptura</string>
+    <string name="shortcut_say_caller">Digues qui truca</string>
+    <string name="say_caller_unknown">Trucada entrant</string>
+    <string name="shortcut_restart_phone">Reinicia el telèfon</string>
+    <string name="shortcut_power_off_phone">Apaga el telèfon</string>
+    <string name="restart_phone_confirm_title">Vols reiniciar el telèfon?</string>
+    <string name="restart_phone_confirm_button">Reinicia</string>
+    <string name="power_off_phone_confirm_title">Vols apagar el telèfon?</string>
+    <string name="power_off_phone_confirm_button">Apaga</string>
+    <string name="power_command_failed">Ha fallat; s\'ha obert el menú d\'alimentació</string>
+    <string name="clipboard_history_search_hint">Cerca a l\'historial del porta-retalls</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> text</item>
+        <item quantity="many"><xliff:g id="count" example="12">%d</xliff:g> textos</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> textos</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Llisca cap a dins des de la vora</string>
+    <string name="title_pref_category_sliders">Controls lliscants</string>
+    <string name="title_pref_slider_step">Pas del control lliscant</string>
+    <string name="value_slider_step_app">El que defineix l\'aplicació</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">Pas més petit de l\'interval</string>
+    <string name="title_pref_slider_skip_unchanged">Omet els passos que no canvien el valor</string>
+    <string name="title_slider_enter_value">Introdueix el valor</string>
+    <string name="slider_value_range">De <xliff:g id="min" example="0">%1$s</xliff:g> a <xliff:g id="max" example="100">%2$s</xliff:g></string>
+    <string name="voice_phrases_not_understood">Frases no enteses</string>
+    <string name="title_pref_voice_phrases_not_understood">Desa les frases no enteses</string>
+    <string name="voice_phrases_not_understood_listed">S\'ha afegit a Frases no enteses.</string>
 </resources>

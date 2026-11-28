@@ -91,7 +91,7 @@ Podczas dopasowania SandFly umieszcza punkty tam, gdzie oprzesz palce. Każdy uk
 - Możesz też wybrać **Zmień pozycje punktów** w menu **Opcje klawiatury brajlowskiej**. Wykonaj kroki wyświetlane kolejno dla każdej ręki.
 - W ustawieniach **Brajl** > **Klawiatura brajlowska** jest też opcja **Zmień pozycje punktów jedną ręką, a potem drugą**. Przytrzymaj trzy palce jednej ręki przez co najmniej 0,4 sekundy. Dołóż trzy palce drugiej ręki i pozostaw wszystkie nieruchomo przez 0,65 sekundy. Możesz zacząć dowolną ręką. Przy brajlu ośmiopunktowym użyj po cztery palce każdej ręki. Jeśli przyłożysz sześć palców jednocześnie albo uniesiesz je za wcześnie, wpiszesz komórkę. Opcja jest domyślnie włączona, ale żeby z niej skorzystać, wyłącz **Uwzględniaj wszystkie naciśnięte punkty**.
 
-Domyślna opcja **Zmieniaj pozycje punktów podczas pisania** stopniowo dopasowuje punkty do zmieniającego się ułożenia dłoni. Zapisane pozycje obowiązują też przy kolejnym otwarciu klawiatury.
+Domyślna opcja **Dostosowuj położenie punktów podczas pisania** stopniowo dopasowuje punkty do zmieniającego się ułożenia dłoni. Zapisane pozycje obowiązują też przy kolejnym otwarciu klawiatury.
 
 - Dotyk przesuwa punkt, gdy palec trafia wyraźnie bliżej niego niż pozostałych punktów. Jeśli niechcący wpisujesz już sąsiedni punkt, dopasuj położenie od nowa.
 - Punkty pozostają na ekranie, w tej samej kolejności i co najmniej o szerokość jednego punktu od siebie.
@@ -151,10 +151,10 @@ Każdy inny gest zamyka wyszukiwanie. Nazwy pochodzą z Unicode CLDR dla języka
 
 W **Brajl** > **Klawiatura brajlowska** znajdziesz też te opcje.
 
-- **Zamień lewe i prawe kropki** zamienia miejscami punkty 1, 2 i 3 z punktami 4, 5 i 6. Opcja jest domyślnie wyłączona.
+- **Zamień miejscami lewe i prawe punkty brajlowskie** zamienia miejscami punkty 1, 2 i 3 z punktami 4, 5 i 6. Opcja jest domyślnie wyłączona.
 - **Zamień górne i dolne punkty** zamienia punkt 1 z 3, a punkt 4 z 6. Opcja jest domyślnie wyłączona. Możesz ustawić obie zamiany naraz.
 - **Dźwięki pisania** odtwarza dźwięk przy wpisaniu znaku oraz osobne dźwięki dla spacji, usuwania i nowego wiersza. Używa głośności dźwięków SandFly. Możesz zmienić dźwięki za pomocą motywu. Opcja jest domyślnie wyłączona. Zobacz [](#sound).
-- **Mów „Przesyłanie tekstu”** odczytuje ten komunikat, gdy przesyłasz tekst gestem dwóch palców w górę. Opcja jest domyślnie włączona.
+- **Odczytuj komunikat „Przesyłanie tekstu”** odczytuje ten komunikat, gdy przesyłasz tekst gestem dwóch palców w górę. Opcja jest domyślnie włączona.
 - **Pozostaw klawiaturę otwartą po wysłaniu** pozostawia klawiaturę brajlowską otwartą, gdy **Prześlij tekst** naciśnie przycisk wysyłania obok pola. Po wyłączeniu klawiatura chowa się po każdym **Prześlij tekst**. Opcja jest domyślnie wyłączona.
 - **Wróć do poprzedniej klawiatury** przełącza na klawiaturę używaną wcześniej, gdy ukryjesz klawiaturę brajlowską gestem **Ukryj klawiaturę** lub opuścisz jej pole tekstowe. **Prześlij tekst**, wyłączenie ekranu i obrót ekranu nie zmieniają klawiatury. Klawiaturę brajlowską otworzysz ponownie poleceniem **Włącz klawiaturę brajlowską**. Opcja nie działa, gdy jest podłączony monitor brajlowski. Domyślnie jest wyłączona.
 - **Wielkie litery na początku zdań** zmienia pierwszą literę na wielką na początku pola, w nowym wierszu i po kropce, pytajniku lub wykrzykniku, jeśli po znaku jest spacja. Nie zmienia haseł, adresów e-mail, adresów stron ani pól liczbowych. Opcja jest domyślnie wyłączona.
@@ -192,9 +192,9 @@ Przytrzymaj punkty 4, 5 i 6 i przesuń palcem w lewo, żeby przejść do następ
 | 1 i 2 | **Wstecz** |
 | 1, 2 i 5 | **Ekran główny** |
 | 1, 2 i 4 | **Znajdź tekst** |
-| 1, 2, 4 i 6 | **Znajdź następny tekst** |
-| 1, 3, 4 i 5 | **Znajdź poprzedni tekst** |
-| 1, 2, 3 i 5 | **Przegląd** |
+| 1, 2, 4 i 6 | **Znajdź następne wystąpienie tekstu** |
+| 1, 3, 4 i 5 | **Znajdź poprzednie wystąpienie tekstu** |
+| 1, 2, 3 i 5 | **Przegląd SandFly** |
 | 1, 2, 3, 4 i 5 | **Szybkie ustawienia** |
 | 2, 3, 4 i 5 | **Zaznacz pierwszy element na ekranie** |
 | 1 i 5 | **Zaznacz ostatni element na ekranie** |
@@ -213,13 +213,13 @@ Wyszukiwanie zamyka się po 15 sekundach bez dotyku. Żeby otworzyć je bezpośr
 
 #### Znajdź tekst na ekranie {#braille-commands-find}
 
-Polecenia **Znajdź tekst**, **Znajdź następny tekst** i **Znajdź poprzedni tekst** znajdziesz w grupie **Brajl** w ustawieniach **Polecenia**. Każde ma domyślnie przypisaną komórkę brajlowską.
+Polecenia **Znajdź tekst**, **Znajdź następne wystąpienie tekstu** i **Znajdź poprzednie wystąpienie tekstu** znajdziesz w grupie **Brajl** w ustawieniach **Polecenia**. Każde ma domyślnie przypisaną komórkę brajlowską.
 
 1. Uruchom **Znajdź tekst**. Usłyszysz „Wpisz tekst do znalezienia”.
 2. Wpisz szukaną treść brajlem integralnym. Przesunięcie palcem w prawo wstawia spację, a w lewo usuwa znak. Przesunięcie dwoma palcami w lewo usuwa cały wpis.
 3. Przesuń dwoma palcami w górę lub w prawo. Fokus przejdzie na następny element zawierający szukany tekst.
 
-Po dojściu do dołu ekranu **Znajdź tekst** kontynuuje wyszukiwanie od góry. Usłyszysz wtedy „Od początku”. **Znajdź następny tekst** i **Znajdź poprzedni tekst** szukają tego samego tekstu za bieżącym elementem lub przed nim. Zatrzymują się na końcu lub początku ekranu. Jeśli nie było jeszcze żadnego wyniku, działają jak **Znajdź tekst**. Przesuń dwoma palcami w dół, żeby wyjść bez szukania. Wpisany tekst jest dostępny do chwili zamknięcia poleceń brajlowskich.
+Po dojściu do dołu ekranu **Znajdź tekst** kontynuuje wyszukiwanie od góry. Usłyszysz wtedy „Od początku”. **Znajdź następne wystąpienie tekstu** i **Znajdź poprzednie wystąpienie tekstu** szukają tego samego tekstu za bieżącym elementem lub przed nim. Zatrzymują się na końcu lub początku ekranu. Jeśli nie było jeszcze żadnego wyniku, działają jak **Znajdź tekst**. Przesuń dwoma palcami w dół, żeby wyjść bez szukania. Wpisany tekst jest dostępny do chwili zamknięcia poleceń brajlowskich.
 
 #### Zmień przypisanie komórki {#braille-commands-cells}
 
@@ -276,13 +276,13 @@ W grupie **Ogólne** są następujące ustawienia.
 - **Ukrywaj klawiaturę ekranową** chowa pozostałe klawiatury ekranowe, gdy monitor jest podłączony. Pasek klawiatury brajlowskiej pozostaje widoczny, bo przez nią tekst z monitora trafia do pola. Opcja jest domyślnie wyłączona.
 - **Autoprzewijanie** przesuwa zawartość monitora w ustawionym tempie. Żeby je włączyć lub wyłączyć, naciśnij spację z punktami 1, 2, 4, 5 i 6. Punkt 4 wydłuża czas wyświetlania, a punkt 1 go skraca. **Automatycznie dostosowuj czas wyświetlania** uwzględnia długość tekstu. W **Domyślny czas wyświetlania** ustawisz czas podstawowy.
 - **Pokaż napisy na monitorze brajlowskim** wyświetla napisy do filmów i innych multimediów.
-- W **Wyświetlacze z innych aplikacji** zarządzasz monitorami udostępnionymi przez aplikacje. Zobacz [](#braille-displays-other-apps).
+- W **Monitory brajlowskie z innych aplikacji** zarządzasz monitorami udostępnionymi przez aplikacje. Zobacz [](#braille-displays-other-apps).
 - W **Ustawienia zaawansowane** są dodatkowe opcje monitora.
   - **Odwróć działanie przycisków przesuwania w górę i w dół** zamienia ich funkcje.
   - **Pokaż dane wyjściowe w brajlu na ekranie** włącza podgląd na ekranie.
   - W **Czas trwania wiadomości** wybierz **Krótki**, **Średni** albo **Długi**.
   - W **Kursor miga co** ustaw odstęp do 2 sekund albo wybierz **Nigdy**. Domyślny odstęp to 0,75 sekundy.
-  - **Pokazuj kursor na elementach, których nie można edytować** jest domyślnie włączone.
+  - **Pokazuj kursor na elementach nieedytowalnych** jest domyślnie włączone.
   - **Pokaż wiadomości z urządzenia** wyświetla na monitorze między innymi powiadomienia i połączenia przychodzące.
   - **Zapisz wiadomości na urządzeniu** zachowuje ich listę. Otworzysz ją spacją z punktami 1, 3, 4, 5, 7 i 8.
 
@@ -293,9 +293,9 @@ Polecenie **Przejdź do ustawień monitora brajlowskiego** z grupy **Brajl** w u
 1. Podłącz monitor.
 2. Otwórz **Brajl** > **Monitor brajlowski** > **Polecenia na monitorze brajlowskim**.
 3. Wybierz grupę, a potem polecenie.
-4. Wybierz **Zmień klawisze**. Na monitorze naciśnij nowy klawisz lub spację z punktami. Na monitorach EuroBraille możesz też użyć klawisza Backspace z punktami.
+4. Wybierz **Zmień przypisanie klawiszy**. Na monitorze naciśnij nowy klawisz lub spację z punktami. Na monitorach EuroBraille możesz też użyć klawisza Backspace z punktami.
 
-Jeśli klawisze uruchamiają już inne polecenie, okno potwierdzenia pozwoli przenieść przypisanie. Poprzednie polecenie pozostanie bez klawiszy. **Resetuj** przywraca domyślne klawisze jednego polecenia, a **Resetuj wszystkie klawisze** przywraca je dla wszystkich poleceń.
+Jeśli klawisze uruchamiają już inne polecenie, okno potwierdzenia pozwoli przenieść przypisanie. Poprzednie polecenie pozostanie bez klawiszy. **Resetuj** przywraca domyślne klawisze jednego polecenia, a **Przywróć wszystkie przypisania domyślne** przywraca je dla wszystkich poleceń.
 
 W **Polecenia SandFly** znajdziesz polecenia dostępne z gestów, między innymi **Otwórz menu SandFly**, **Powiadomienia** i **Czytaj od góry**. Są pogrupowane tak jak w ustawieniach poleceń. Każdemu możesz przypisać klawisze monitora. Przy poleceniu bez przypisania dla podłączonego monitora pojawi się „Brak klawiszy”.
 
@@ -307,7 +307,7 @@ Na EuroBraille spacja z punktem 2, 3, 5 lub 6 oraz Backspace z punktami czekają
 
 Aplikacja może udostępnić monitor, z którym SandFly nie potrafi się bezpośrednio połączyć. Mogą to być na przykład klawisze i komórki wbudowane w notatnik brajlowski. SandFly korzysta z nich jak z podłączonego monitora. Można też używać urządzenia z samymi klawiszami.
 
-Po wykryciu takiej aplikacji pojawi się okno zgody z jej nazwą. Okno informuje, że aplikacja uzyska dostęp do całej treści wyświetlanej w brajlu i będzie mogła sterować urządzeniem. Wybierz **Zezwól** lub **Nie zezwalaj**. W **Brajl** > **Monitor brajlowski** > **Wyświetlacze z innych aplikacji** możesz zmieniać zgodę dla każdej aplikacji z listy. Gdy taki monitor jest używany, powiadomienie podaje nazwę aplikacji.
+Po wykryciu takiej aplikacji pojawi się okno zgody z jej nazwą. Okno informuje, że aplikacja uzyska dostęp do całej treści wyświetlanej w brajlu i będzie mogła sterować urządzeniem. Wybierz **Zezwól** lub **Nie zezwalaj**. W **Brajl** > **Monitor brajlowski** > **Monitory brajlowskie z innych aplikacji** możesz zmieniać zgodę dla każdej aplikacji z listy. Gdy taki monitor jest używany, powiadomienie podaje nazwę aplikacji.
 
 Monitor podłączony bezpośrednio przez Bluetooth lub USB ma pierwszeństwo. Monitor z aplikacji jest używany tylko wtedy, gdy nie ma takiego połączenia.
 

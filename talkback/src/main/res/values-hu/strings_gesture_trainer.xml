@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">második csúsztatás <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">teljes kézmozdulat <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap"><xliff:g id="ms">%1$d</xliff:g> ms-ig felemelve közöttük</string>
+    <string name="gesture_trainer_how_menu_horizontal">Tegye le az egyik ujját <xliff:g id="edge">%1$s</xliff:g>, és a menü megnyitásához csúsztassa a képernyő közepe felé legalább <xliff:g id="distance">%2$d</xliff:g> mm-t. A menünek <xliff:g id="count">%3$d</xliff:g> eleme van a képernyőn keresztben, a széltől kezdve, mindegyik kb. <xliff:g id="size">%6$s</xliff:g> cm széles. A(z) <xliff:g id="number">%4$d</xliff:g>. elem, <xliff:g id="item">%5$s</xliff:g>, a széltől <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> cm-re van. Tartsa az ujját ugyanazon a magasságon, és emelje fel, amikor a rendszer felolvassa az elemet.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Az ujj <xliff:g id="mm">%1$.0f</xliff:g> mm-rel a menü megnyílásának helye felett vagy alatt emelkedett fel, és a menü <xliff:g id="limit">%2$.0f</xliff:g> mm-en túl bezárul.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Becsúsztatás közben tartsa az ujját ugyanazon a magasságon, és ott emelje fel.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Minden elemnek rögzített helye van a képernyőn keresztben, a széltől kezdve, és az az elem lesz kiválasztva, ahol az ujj felemelkedik. Emelje fel, amikor a rendszer felolvassa az elemet.</string>
+    <string name="gesture_trainer_left_out_in_menu">A(z) <xliff:g id="edge">%1$s</xliff:g> felőli becsúsztatások kimaradnak: a szélmenüje a képernyőn keresztben nyílik, ezért az onnan induló becsúsztatás kézmozdulat futtatása helyett a menüt nyitja meg.</string>
+    <string name="gesture_trainer_statistics">Statisztika</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Próbálkozások: <xliff:g id="tries">%2$d</xliff:g>, felismerve: <xliff:g id="recognized">%3$d</xliff:g>. Legrövidebb: <xliff:g id="shortest">%4$d</xliff:g> ms, medián: <xliff:g id="median">%5$d</xliff:g> ms, leghosszabb: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Egyes érintések: legrövidebb <xliff:g id="shortest">%1$d</xliff:g> ms, medián <xliff:g id="median">%2$d</xliff:g> ms, leghosszabb <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Koppintások</string>
+    <string name="gesture_trainer_kind_double_tap">Dupla koppintások</string>
+    <string name="gesture_trainer_kind_triple_tap">Tripla koppintások</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Négyszeres koppintások</string>
+    <string name="gesture_trainer_kind_tap_hold">Koppintás és lenyomva tartás</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Dupla koppintás és lenyomva tartás</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Tripla koppintás és lenyomva tartás</string>
+    <string name="gesture_trainer_kind_swipe">Csúsztatások</string>
+    <string name="gesture_trainer_kind_swipe_hold">Csúsztatás és lenyomva tartás</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Oda-vissza és szögletes csúsztatások</string>
+    <string name="gesture_trainer_kind_pinch">Összecsippentések</string>
+    <string name="gesture_trainer_kind_spread">Széthúzások</string>
+    <string name="gesture_trainer_kind_rotate">Forgatások</string>
+    <string name="gesture_trainer_kind_scrub">Dörzsölések</string>
 </resources>

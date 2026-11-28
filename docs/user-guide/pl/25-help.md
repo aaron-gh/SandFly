@@ -27,22 +27,22 @@ Za pomocą opcji **Prześlij opinię** możesz zgłosić problem lub wysłać su
 
 Na ekranie **Prześlij opinię** znajdziesz trzy pozycje.
 
-- **Nowa opinia** otwiera formularz zgłoszenia.
+- **Nowe zgłoszenie** otwiera formularz zgłoszenia.
 - **Skrzynka odbiorcza** zawiera wysłane zgłoszenia, ich stan i odpowiedzi.
-- **Szkice** zawierają zgłoszenia rozpoczęte i jeszcze niewysłane.
+- **Wersje robocze** zawierają zgłoszenia rozpoczęte i jeszcze niewysłane.
 
 #### Wyślij zgłoszenie {#help-feedback-send}
 
 1. Otwórz **Pomoc i opinie** > **Prześlij opinię**.
-2. Wybierz **Nowa opinia**.
+2. Wybierz **Nowe zgłoszenie**.
 3. Uzupełnij formularz.
-   - W polu **Rodzaj informacji zwrotnej** wybierz **Nieprawidłowe działanie**, **Awaria aplikacji**, **Wolne działanie lub brak reakcji** albo **Sugestia**. Domyślna opcja to **Nieprawidłowe działanie**.
+   - W polu **Rodzaj zgłoszenia** wybierz **Nieprawidłowe działanie**, **Awaria aplikacji**, **Wolne działanie lub brak reakcji** albo **Sugestia**. Domyślna opcja to **Nieprawidłowe działanie**.
    - W polu **Obszar** wybierz część SandFly, której dotyczy zgłoszenie, np. **Mowa**, **Gesty**, **Monitor brajlowski** lub **Aktualizacje**.
    - W wymaganym polu **Tytuł** krótko podsumuj zgłoszenie.
-   - W polu **Aplikacja, w której to się dzieje** podaj nazwę aplikacji, jeśli problem dotyczy jednej aplikacji.
+   - W polu **Aplikacja, której dotyczy zgłoszenie** podaj nazwę aplikacji, jeśli problem dotyczy jednej aplikacji.
    - W wymaganym polu **Opis** napisz, co się dzieje i czego oczekujesz.
-   - W polu **Kroki do odtworzenia** opisz, co zrobić, żeby wywołać problem. Pole pojawia się przy zgłoszeniach problemów.
-   - W polu **E-mail do odpowiedzi** możesz podać adres. Odpowiedzi trafią do SandFly także wtedy, gdy zostawisz pole puste.
+   - W polu **Jak odtworzyć problem** opisz, co zrobić, żeby wywołać problem. Pole pojawia się przy zgłoszeniach problemów.
+   - W polu **Adres e-mail do odpowiedzi** możesz podać adres. Odpowiedzi trafią do SandFly także wtedy, gdy zostawisz pole puste.
    - Opcja **Dołącz informacje o urządzeniu** jest domyślnie włączona. Zobacz [](#help-feedback-contents).
    - Opcja **Dołącz dziennik SandFly** jest domyślnie wyłączona. Zobacz [](#help-feedback-contents).
 4. Wybierz **Wyślij**.
@@ -64,7 +64,7 @@ Opcja **Dołącz dziennik SandFly** dodaje ostatnie wpisy, które mogą pomóc a
 - Ostatnia awaria, ostatnie wyłączenie SandFly oraz przypadki, w których aplikacja przez chwilę nie odpowiadała.
 - Lista włączonych usług ułatwień dostępu i ostatnie naciśnięcia przycisków głośności i klawisza Enter.
 - Ostatnie komunikaty, powiadomienia, wyskakujące komunikaty i nazwy okien wysłane przez aplikacje, z nazwą aplikacji i początkiem tekstu.
-- Miejsce, do którego przeszedł fokus po **Wstecz**, czas sprawdzania warunków **Pokazuj w menu Czynności tylko, gdy** w makrach, informacje o tym, co odtwarza i nagrywa dźwięk, oraz wpisywanie z wyskakującego okna znaków alternatywnych Gboard.
+- Miejsce, do którego przeszedł fokus po **Wstecz**, czas sprawdzania warunków **Pokazuj w czynnościach tylko, gdy** w makrach, informacje o tym, co odtwarza i nagrywa dźwięk, oraz wpisywanie z wyskakującego okna znaków alternatywnych Gboard.
 - Dzienniki innych procesów SandFly, np. funkcji AI działających na urządzeniu.
 
 Żeby w dzienniku pozostał zapis problemu, otwórz **Prześlij opinię** zaraz po jego wystąpieniu, przed wykonaniem innych czynności.
@@ -74,17 +74,17 @@ Opcja **Dołącz dziennik SandFly** dodaje ostatnie wpisy, które mogą pomóc a
 Na ekranie **Skrzynka odbiorcza** znajdziesz wysłane zgłoszenia, stan każdego z nich oraz liczbę nieprzeczytanych odpowiedzi. Zgłoszenie może mieć jeden z poniższych stanów.
 
 - **Otwarte**.
-- **Zamknięte, zakończone**.
-- **Zamknięte, nieplanowane**.
+- **Zamknięte: zrealizowane**.
+- **Zamknięte: bez planów realizacji**.
 - **Zamknięte, duplikat**.
 - **Usunięto** oznacza, że zgłoszenia nie ma już na serwerze.
 
-Wybierz zgłoszenie, aby je otworzyć. Znajdziesz w nim sekcje **Stan**, **Twoja opinia** i **Wiadomości**. Przy każdej wiadomości, zarówno Twojej, jak i autora, podano nadawcę i czas wysłania. Aby odpowiedzieć, wykonaj dwa kroki.
+Wybierz zgłoszenie, aby je otworzyć. Znajdziesz w nim sekcje **Stan**, **Twoje zgłoszenie** i **Wiadomości**. Przy każdej wiadomości, zarówno Twojej, jak i autora, podano nadawcę i czas wysłania. Aby odpowiedzieć, wykonaj dwa kroki.
 
 1. Wybierz **Twoja odpowiedź** i wpisz tekst.
 2. Wybierz **Wyślij odpowiedź**.
 
-Gdy SandFly jest włączony, sprawdza odpowiedzi i zmiany stanu co godzinę oraz po każdym otwarciu ekranu **Prześlij opinię**. Odpowiedź lub zmiana stanu wywołuje powiadomienie z dźwiękiem. Jego otwarcie prowadzi do zgłoszenia. SandFly sprawdza zamknięte zgłoszenia jeszcze przez 30 dni. Powiadomienia o odpowiedziach są w kategorii **Odpowiedzi na opinie** w ustawieniach powiadomień SandFly.
+Gdy SandFly jest włączony, sprawdza odpowiedzi i zmiany stanu co godzinę oraz po każdym otwarciu ekranu **Prześlij opinię**. Odpowiedź lub zmiana stanu wywołuje powiadomienie z dźwiękiem. Jego otwarcie prowadzi do zgłoszenia. SandFly sprawdza zamknięte zgłoszenia jeszcze przez 30 dni. Powiadomienia o odpowiedziach są w kategorii **Odpowiedzi na zgłoszenia** w ustawieniach powiadomień SandFly.
 
 Opcja **Usuń ze skrzynki odbiorczej** usuwa zgłoszenie z urządzenia i zatrzymuje sprawdzanie odpowiedzi. Autor nadal ma dostęp do zgłoszenia.
 
@@ -103,7 +103,7 @@ Na ekranie **Ustawienia programisty** znajdziesz opcje przydatne przy diagnozowa
 - **Kod wersji** pokazuje wersję SandFly i jej kod. Na Androidzie 11 i starszym wersja jest widoczna pod tytułem tego ekranu.
 - **Tryb diagnostyczny** jest domyślnie wyłączony. Po jego włączeniu stuknięcie czterema palcami zapisuje zawartość ekranu do dziennika systemowego. Opcje **Pokazuj odpowiedzi głosowe na ekranie**, **Powtórz rozpoznaną mowę**, **Włącz debugowanie drzewa węzłów** i **Włączyć nakładkę rejestrowania debugowania?** działają wtedy tak, jak po włączeniu. Zmiana tych opcji i ustawienia **Poziom rejestrowania** jest w tym czasie niedostępna. Włączenie trybu wymaga potwierdzenia.
 - **Pokazuj odpowiedzi głosowe na ekranie** wyświetla odczytywany tekst. Domyślnie opcja jest wyłączona.
-- **Używaj gestów w SandFly** jest domyślnie włączone. Przy tym ustawieniu gesty rozpoznaje SandFly, a po jego wyłączeniu rozpoznawanie gestów przejmuje Android. Wiele funkcji SandFly związanych z gestami wymaga tej opcji. Po zmianie ustawienia wyłącz i ponownie włącz SandFly. Na telewizorze ta opcja jest niedostępna.
+- **Rozpoznawaj gesty w SandFly** jest domyślnie włączone. Przy tym ustawieniu gesty rozpoznaje SandFly, a po jego wyłączeniu rozpoznawanie gestów przejmuje Android. Wiele funkcji SandFly związanych z gestami wymaga tej opcji. Po zmianie ustawienia wyłącz i ponownie włącz SandFly. Na telewizorze ta opcja jest niedostępna.
 - **Ignoruj limity pamięci RAM dla AI na urządzeniu** pokazuje wszystkie modele AI działające lokalnie, również te, które potrzebują więcej pamięci niż ma urządzenie. Wybrany model uruchamia się wtedy bez sprawdzania wolnej pamięci. Domyślnie opcja jest wyłączona. Zobacz [](#descriptions).
 - **Powtórz rozpoznaną mowę** odczytuje tekst rozpoznany z polecenia głosowego. Domyślnie opcja jest wyłączona. Zobacz [](#voice-commands).
 - **Włącz statystyki wydajności** zbiera pomiary czasu, które polecenie **Drukuj statystyki wydajności** zapisuje do dziennika systemowego. Zbieranie statystyk zużywa więcej pamięci i energii. Domyślnie opcja jest wyłączona, a włączenie wymaga potwierdzenia.

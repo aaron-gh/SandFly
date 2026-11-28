@@ -2456,18 +2456,18 @@
     <string name="title_pref_shortcut_4finger_3tap_swipe_down">Tocar três vezes e depois deslizar rapidamente para baixo com 4 dedos</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_left">Tocar três vezes e depois deslizar rapidamente para a esquerda com 4 dedos</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_right">Tocar três vezes e depois deslizar rapidamente para a direita com 4 dedos</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Tocar com 2 dedos e depois deslizar para cima</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Tocar com 2 dedos e depois deslizar para baixo</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Tocar com 2 dedos e depois deslizar para a esquerda</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Tocar com 2 dedos e depois deslizar para a direita</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Tocar duas vezes com 2 dedos e depois deslizar para cima</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Tocar duas vezes com 2 dedos e depois deslizar para baixo</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Tocar duas vezes com 2 dedos e depois deslizar para a esquerda</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Tocar duas vezes com 2 dedos e depois deslizar para a direita</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Tocar três vezes com 2 dedos e depois deslizar para cima</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Tocar três vezes com 2 dedos e depois deslizar para baixo</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Tocar três vezes com 2 dedos e depois deslizar para a esquerda</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Tocar três vezes com 2 dedos e depois deslizar para a direita</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Tocar com 2 dedos e depois deslizar para cima com 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Tocar com 2 dedos e depois deslizar para baixo com 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Tocar com 2 dedos e depois deslizar para a esquerda com 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Tocar com 2 dedos e depois deslizar para a direita com 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Tocar duas vezes com 2 dedos e depois deslizar para cima com 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Tocar duas vezes com 2 dedos e depois deslizar para baixo com 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Tocar duas vezes com 2 dedos e depois deslizar para a esquerda com 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Tocar duas vezes com 2 dedos e depois deslizar para a direita com 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Tocar três vezes com 2 dedos e depois deslizar para cima com 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Tocar três vezes com 2 dedos e depois deslizar para baixo com 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Tocar três vezes com 2 dedos e depois deslizar para a esquerda com 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Tocar três vezes com 2 dedos e depois deslizar para a direita com 1 dedo</string>
     <string name="title_pref_shortcut_up_and_down_and_up">Deslizar para cima, para baixo e depois para cima</string>
     <string name="title_pref_shortcut_up_and_down_and_left">Deslizar para cima, para baixo e depois para a esquerda</string>
     <string name="title_pref_shortcut_up_and_down_and_right">Deslizar para cima, para baixo e depois para a direita</string>
@@ -2920,4 +2920,59 @@
     <string name="title_pref_cyrillic_text_recognition">Reconhecimento de texto cirílico</string>
     <string name="cyrillic_text_model_missing">Sem modelo de reconhecimento de texto para <xliff:g id="language" example="Russian">%1$s</xliff:g>. Transfira-o em Descrições de imagens e do ecrã, Reconhecimento de texto cirílico.</string>
     <string name="cyrillic_text_model_error_http">O servidor de transferência não aceitou o pedido. Tente novamente mais tarde.</string>
+    <string name="title_pref_announce_caller">Anunciar quem está a ligar</string>
+    <string name="announce_caller_once">Uma vez</string>
+    <string name="announce_caller_repeat">Repetir enquanto toca</string>
+    <string name="title_pref_item_types_spoken">Tipos de elemento a ler</string>
+    <string name="item_type_link">Link</string>
+    <string name="item_type_tab">Separador</string>
+    <string name="item_type_other">Outros tipos</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">Tocar com 2 dedos, deslizar com 1 dedo</string>
+    <string name="title_pref_typing_swipes_through_keys">Deslizar de tecla em tecla com qualquer método de digitação</string>
+    <string name="shortcut_say_caller">Dizer quem está a ligar</string>
+    <string name="say_caller_unknown">Chamada recebida</string>
+    <string name="shortcut_restart_phone">Reiniciar o telemóvel</string>
+    <string name="shortcut_power_off_phone">Desligar o telemóvel</string>
+    <string name="restart_phone_confirm_title">Reiniciar o telemóvel?</string>
+    <string name="restart_phone_confirm_button">Reiniciar</string>
+    <string name="power_off_phone_confirm_title">Desligar o telemóvel?</string>
+    <string name="power_off_phone_confirm_button">Desligar</string>
+    <string name="power_command_failed">Falhou, menu ligar/desligar aberto</string>
+    <string name="clipboard_history_search_hint">Pesquisar no histórico da área de transferência</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> texto</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> textos</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Deslizar para dentro a partir da borda</string>
+    <string name="title_pref_category_sliders">Controlos de deslize</string>
+    <string name="title_pref_slider_step">Passo do controlo de deslize</string>
+    <string name="value_slider_step_app">Como a app define</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">Passo mais pequeno do intervalo</string>
+    <string name="title_pref_slider_skip_unchanged">Saltar passos que não alteram o valor</string>
+    <string name="title_slider_enter_value">Introduzir valor</string>
+    <string name="slider_value_range">De <xliff:g id="min" example="0">%1$s</xliff:g> a <xliff:g id="max" example="100">%2$s</xliff:g></string>
+    <string name="voice_phrases_not_understood">Frases não compreendidas</string>
+    <string name="title_pref_voice_phrases_not_understood">Guardar frases não compreendidas</string>
+    <string name="voice_phrases_not_understood_listed">Adicionada a Frases não compreendidas.</string>
 </resources>

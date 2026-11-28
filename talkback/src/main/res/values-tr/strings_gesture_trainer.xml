@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">ikinci kaydırma <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">tüm hareket <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">aralarında <xliff:g id="ms">%1$d</xliff:g> ms kaldırıldı</string>
+    <string name="gesture_trainer_how_menu_horizontal">Menüyü açmak için bir parmağı <xliff:g id="edge">%1$s</xliff:g> koyun ve ekranın ortasına doğru en az <xliff:g id="distance">%2$d</xliff:g> mm içeri kaydırın. Menüde kenardan başlayarak ekran boyunca <xliff:g id="count">%3$d</xliff:g> öğe vardır, her biri yaklaşık <xliff:g id="size">%6$s</xliff:g> cm genişliğindedir. <xliff:g id="number">%4$d</xliff:g>. öğe, <xliff:g id="item">%5$s</xliff:g>, kenardan <xliff:g id="from">%7$s</xliff:g> ile <xliff:g id="to">%8$s</xliff:g> cm uzaktadır. Parmağı aynı yükseklikte tutun ve öğe söylendiğinde kaldırın.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Parmak, menünün açıldığı yerin <xliff:g id="mm">%1$.0f</xliff:g> mm üstünde veya altında kalktı; menü <xliff:g id="limit">%2$.0f</xliff:g> mm\'nin ötesinde kapanır.</string>
+    <string name="gesture_trainer_tip_menu_left_line">İçeri kaydırırken parmağı aynı yükseklikte tutun ve orada kaldırın.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Her öğenin kenardan başlayarak ekran boyunca sabit bir yeri vardır ve parmağın kalktığı öğe seçilir. Öğe söylendiğinde kaldırın.</string>
+    <string name="gesture_trainer_left_out_in_menu">Kenardan içeri kaydırmalar hariç tutuldu (<xliff:g id="edge">%1$s</xliff:g>): bu kenarın menüsü ekran boyunca açılır, bu nedenle bu kenardan içeri kaydırma bir hareket çalıştırmak yerine menüyü açar.</string>
+    <string name="gesture_trainer_statistics">İstatistikler</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Deneme: <xliff:g id="tries">%2$d</xliff:g>, tanınan: <xliff:g id="recognized">%3$d</xliff:g>. En kısa: <xliff:g id="shortest">%4$d</xliff:g> ms, ortanca: <xliff:g id="median">%5$d</xliff:g> ms, en uzun: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Her dokunuş: en kısa <xliff:g id="shortest">%1$d</xliff:g> ms, ortanca <xliff:g id="median">%2$d</xliff:g> ms, en uzun <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Dokunmalar</string>
+    <string name="gesture_trainer_kind_double_tap">İki kez dokunmalar</string>
+    <string name="gesture_trainer_kind_triple_tap">Üç kez dokunmalar</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Dört kez dokunmalar</string>
+    <string name="gesture_trainer_kind_tap_hold">Dokunup basılı tutma</string>
+    <string name="gesture_trainer_kind_double_tap_hold">İki kez dokunup basılı tutma</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Üç kez dokunup basılı tutma</string>
+    <string name="gesture_trainer_kind_swipe">Kaydırmalar</string>
+    <string name="gesture_trainer_kind_swipe_hold">Kaydırıp basılı tutma</string>
+    <string name="gesture_trainer_kind_two_part_swipe">İleri-geri ve açılı kaydırmalar</string>
+    <string name="gesture_trainer_kind_pinch">Kıstırmalar</string>
+    <string name="gesture_trainer_kind_spread">Açmalar</string>
+    <string name="gesture_trainer_kind_rotate">Döndürmeler</string>
+    <string name="gesture_trainer_kind_scrub">Hızlı ileri geri kaydırmalar</string>
 </resources>

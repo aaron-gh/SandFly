@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">tweede swipe <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">heel gebaar <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap"><xliff:g id="ms">%1$d</xliff:g> ms opgetild ertussen</string>
+    <string name="gesture_trainer_how_menu_horizontal">Zet één vinger <xliff:g id="edge">%1$s</xliff:g> en schuif hem naar het midden van het scherm over minstens <xliff:g id="distance">%2$d</xliff:g> mm om het menu te openen. Het heeft <xliff:g id="count">%3$d</xliff:g> items over het scherm, vanaf de rand, elk ongeveer <xliff:g id="size">%6$s</xliff:g> cm breed. Item <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, ligt <xliff:g id="from">%7$s</xliff:g> tot <xliff:g id="to">%8$s</xliff:g> cm van de rand. Houd de vinger op dezelfde hoogte, en til hem op wanneer het item wordt uitgesproken.</string>
+    <string name="gesture_trainer_finding_menu_left_line">De vinger werd <xliff:g id="mm">%1$.0f</xliff:g> mm boven of onder de plek waar het menu opende opgetild, en het menu sluit voorbij <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Houd de vinger op dezelfde hoogte terwijl je naar binnen schuift, en til hem daar op.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Elk item heeft een vaste plek over het scherm, vanaf de rand, en het item waar de vinger wordt opgetild, wordt gekozen. Til op wanneer het item wordt uitgesproken.</string>
+    <string name="gesture_trainer_left_out_in_menu">Swipes vanaf <xliff:g id="edge">%1$s</xliff:g> naar binnen zijn weggelaten: het randmenu van deze rand gaat over het scherm, dus een swipe vanaf deze rand naar binnen opent het menu in plaats van een gebaar uit te voeren.</string>
+    <string name="gesture_trainer_statistics">Statistieken</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Pogingen: <xliff:g id="tries">%2$d</xliff:g>, herkend: <xliff:g id="recognized">%3$d</xliff:g>. Kortst: <xliff:g id="shortest">%4$d</xliff:g> ms, mediaan: <xliff:g id="median">%5$d</xliff:g> ms, langst: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Elke aanraking: kortst <xliff:g id="shortest">%1$d</xliff:g> ms, mediaan <xliff:g id="median">%2$d</xliff:g> ms, langst <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Tikken</string>
+    <string name="gesture_trainer_kind_double_tap">Dubbeltikken</string>
+    <string name="gesture_trainer_kind_triple_tap">3 keer tikken</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Viervoudig tikken</string>
+    <string name="gesture_trainer_kind_tap_hold">Tikken en vasthouden</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Dubbeltikken en vasthouden</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">3 keer tikken en vasthouden</string>
+    <string name="gesture_trainer_kind_swipe">Swipes</string>
+    <string name="gesture_trainer_kind_swipe_hold">Swipen en vasthouden</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Heen-en-weer-gebaren en hoekgebaren</string>
+    <string name="gesture_trainer_kind_pinch">Knijpen</string>
+    <string name="gesture_trainer_kind_spread">Uiteenspreiden</string>
+    <string name="gesture_trainer_kind_rotate">Draaien</string>
+    <string name="gesture_trainer_kind_scrub">Snel heen en weer vegen</string>
 </resources>

@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">ການປັດຄັ້ງທີສອງ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">ທ່າທາງທັງໝົດ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">ຍົກຂຶ້ນ <xliff:g id="ms">%1$d</xliff:g> ms ລະຫວ່າງນັ້ນ</string>
+    <string name="gesture_trainer_how_menu_horizontal">ວາງນິ້ວດຽວ<xliff:g id="edge">%1$s</xliff:g> ແລະ ເລື່ອນເຂົ້າຫາກາງໜ້າຈໍຢ່າງໜ້ອຍ <xliff:g id="distance">%2$d</xliff:g> ມມ ເພື່ອເປີດເມນູ. ມັນມີ <xliff:g id="count">%3$d</xliff:g> ລາຍການຂວາງໜ້າຈໍ, ຈາກຂອບ, ແຕ່ລະລາຍການກວ້າງປະມານ <xliff:g id="size">%6$s</xliff:g> ຊມ. ລາຍການທີ <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, ຢູ່ຫ່າງຈາກຂອບ <xliff:g id="from">%7$s</xliff:g> ຫາ <xliff:g id="to">%8$s</xliff:g> ຊມ. ຮັກສານິ້ວໃຫ້ຢູ່ລະດັບຄວາມສູງດຽວກັນ, ແລະ ຍົກຂຶ້ນເມື່ອລາຍການຖືກອ່ານອອກສຽງ.</string>
+    <string name="gesture_trainer_finding_menu_left_line">ນິ້ວຍົກຂຶ້ນສູງ ຫຼື ຕ່ຳກວ່າບ່ອນທີ່ເມນູເປີດ <xliff:g id="mm">%1$.0f</xliff:g> ມມ, ແລະ ເມນູຈະປິດເມື່ອເກີນ <xliff:g id="limit">%2$.0f</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_tip_menu_left_line">ຮັກສານິ້ວໃຫ້ຢູ່ລະດັບຄວາມສູງດຽວກັນໃນຂະນະທີ່ເລື່ອນເຂົ້າ, ແລະ ຍົກຂຶ້ນຢູ່ບ່ອນນັ້ນ.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">ແຕ່ລະລາຍການມີບ່ອນຄົງທີ່ຂວາງໜ້າຈໍ, ຈາກຂອບ, ແລະ ລາຍການທີ່ນິ້ວຍົກຂຶ້ນຈະຖືກເລືອກ. ຍົກຂຶ້ນເມື່ອລາຍການຖືກອ່ານອອກສຽງ.</string>
+    <string name="gesture_trainer_left_out_in_menu">ການເລື່ອນເຂົ້າຈາກ<xliff:g id="edge">%1$s</xliff:g>ຖືກຕັດອອກ: ເມນູຂອບຂອງມັນຂວາງໜ້າຈໍ, ສະນັ້ນການເລື່ອນເຂົ້າຈາກມັນຈະເປີດເມນູແທນການເຮັດທ່າທາງ.</string>
+    <string name="gesture_trainer_statistics">ສະຖິຕິ</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. ຈຳນວນຄັ້ງ: <xliff:g id="tries">%2$d</xliff:g>, ຮັບຮູ້ໄດ້: <xliff:g id="recognized">%3$d</xliff:g>. ສັ້ນສຸດ: <xliff:g id="shortest">%4$d</xliff:g> ມິລລິວິນາທີ, ຄ່າກາງ: <xliff:g id="median">%5$d</xliff:g> ມິລລິວິນາທີ, ຍາວສຸດ: <xliff:g id="longest">%6$d</xliff:g> ມິລລິວິນາທີ.</string>
+    <string name="gesture_trainer_statistics_touches">ແຕ່ລະການສຳຜັດ: ສັ້ນສຸດ <xliff:g id="shortest">%1$d</xliff:g> ມິລລິວິນາທີ, ຄ່າກາງ <xliff:g id="median">%2$d</xliff:g> ມິລລິວິນາທີ, ຍາວສຸດ <xliff:g id="longest">%3$d</xliff:g> ມິລລິວິນາທີ.</string>
+    <string name="gesture_trainer_kind_tap">ການແຕະ</string>
+    <string name="gesture_trainer_kind_double_tap">ການແຕະສອງເທື່ອ</string>
+    <string name="gesture_trainer_kind_triple_tap">ການແຕະສາມເທື່ອ</string>
+    <string name="gesture_trainer_kind_quadruple_tap">ການແຕະສີ່ເທື່ອ</string>
+    <string name="gesture_trainer_kind_tap_hold">ແຕະຄ້າງໄວ້</string>
+    <string name="gesture_trainer_kind_double_tap_hold">ແຕະສອງເທື່ອຄ້າງໄວ້</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">ແຕະສາມເທື່ອຄ້າງໄວ້</string>
+    <string name="gesture_trainer_kind_swipe">ການປັດ</string>
+    <string name="gesture_trainer_kind_swipe_hold">ປັດ ແລະ ຄ້າງໄວ້</string>
+    <string name="gesture_trainer_kind_two_part_swipe">ການປັດໄປ-ກັບ ແລະ ການປັດມຸມ</string>
+    <string name="gesture_trainer_kind_pinch">ການບີບ</string>
+    <string name="gesture_trainer_kind_spread">ການກາງອອກ</string>
+    <string name="gesture_trainer_kind_rotate">ການໝຸນ</string>
+    <string name="gesture_trainer_kind_scrub">ການຂັດ</string>
 </resources>

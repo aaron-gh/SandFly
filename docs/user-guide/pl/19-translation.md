@@ -50,7 +50,7 @@ Po wybraniu usługi **Na urządzeniu** listy zawierają języki dostępne w tłu
 
 Jeśli w ustawieniach tłumaczenia ręcznego lub automatycznego wybrano **Na urządzeniu**, pojawia się grupa ustawień tłumaczenia na urządzeniu z trzema opcjami.
 
-- **Języki na urządzeniu** pokazują listę języków i informują, które są już pobrane. Wybierz niepobrany język, aby pobrać około 30 MB danych. Wybierz pobrany język, aby go usunąć.
+- **Języki tłumaczenia na urządzeniu** pokazują listę języków i informują, które są już pobrane. Wybierz niepobrany język, aby pobrać około 30 MB danych. Wybierz pobrany język, aby go usunąć.
 - **Pobierz wszystkie języki** po wyświetleniu ich liczby i rozmiaru pobiera po kolei wszystkie brakujące języki. W trakcie pobierania pozycja pokazuje liczbę gotowych języków. Jeśli ekran **Tłumaczenie** jest otwarty, SandFly oznajmia ukończenie kolejnych 25 procent. Pobieranie trwa także po wyjściu z ekranu. Aby je zatrzymać, wybierz tę opcję ponownie.
 - **Pobieraj języki tylko przez Wi-Fi** ogranicza pobieranie do Wi-Fi. Domyślnie opcja jest wyłączona.
 
@@ -63,7 +63,7 @@ W grupie **Automatyczne tłumaczenie** znajdziesz poniższe opcje.
 - **Automatyczne tłumaczenie** tłumaczy mowę przed jej odczytaniem, także w powiadomieniach, jeśli tekst jest w innym języku niż ustawiony w opcji **Tłumacz na**. Domyślnie opcja jest wyłączona.
 - **Tłumacz powiadomienia** tłumaczy tylko powiadomienia i działa, gdy **Automatyczne tłumaczenie** jest wyłączone. Domyślnie ta opcja też jest wyłączona.
 - W opcji **Usługa automatycznego tłumaczenia** możesz wybrać **Na urządzeniu**, **Google Cloud Translation**, **DeepL**, **Microsoft Translator** lub **LibreTranslate**. Domyślnie używana jest usługa tłumaczenia ręcznego. Jeśli jest nią **Usługa AI**, tłumaczenie automatyczne korzysta domyślnie z usługi **Na urządzeniu**.
-- Na liście **Języki bez tłumaczenia** możesz wskazać języki, które SandFly ma czytać w oryginale, np. języki, które rozumiesz. Domyślnie lista jest pusta.
+- Na liście **Języki pomijane w automatycznym tłumaczeniu** możesz wskazać języki, które SandFly ma czytać w oryginale, np. języki, które rozumiesz. Domyślnie lista jest pusta.
 
 Dwie ostatnie opcje są dostępne, gdy włączono **Automatyczne tłumaczenie** lub **Tłumacz powiadomienia**.
 
@@ -71,7 +71,7 @@ Aby przełączać automatyczne tłumaczenie bez wchodzenia w ustawienia, użyj e
 
 #### Jak działa automatyczne tłumaczenie {#translation-automatic-details}
 
-SandFly wykrywa język każdej wypowiedzi na telefonie. Tekst zostaje odczytany w oryginale i pozostaje na telefonie, jeśli jest już w języku docelowym albo w jednym z języków z listy **Języki bez tłumaczenia**. Gdy w opcji **Tłumacz z** wybierzesz konkretny język, tekst w każdym innym języku również pozostaje w oryginale. Wykrywanie języka pomija teksty złożone z mniej niż trzech liter.
+SandFly wykrywa język każdej wypowiedzi na telefonie. Tekst zostaje odczytany w oryginale i pozostaje na telefonie, jeśli jest już w języku docelowym albo w jednym z języków z listy **Języki pomijane w automatycznym tłumaczeniu**. Gdy w opcji **Tłumacz z** wybierzesz konkretny język, tekst w każdym innym języku również pozostaje w oryginale. Wykrywanie języka pomija teksty złożone z mniej niż trzech liter.
 
 Dźwięki i wibracje są odtwarzane od razu. Mowa zaczyna się, gdy tłumaczenie jest gotowe. Jeśli tłumaczenie trwa dłużej niż trzy sekundy albo się nie powiedzie, SandFly odczytuje oryginał. Ostatnie wyniki są zapamiętywane, więc powrót do tego samego elementu nie uruchamia ponownego tłumaczenia.
 

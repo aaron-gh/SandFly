@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">второ повлекување <xliff:g id="ms">%1$d</xliff:g> мс</string>
     <string name="gesture_trainer_measure_whole_gesture">цело движење <xliff:g id="ms">%1$d</xliff:g> мс</string>
     <string name="gesture_trainer_measure_stroke_gap">подигнато <xliff:g id="ms">%1$d</xliff:g> мс меѓу нив</string>
+    <string name="gesture_trainer_how_menu_horizontal">Ставете еден прст <xliff:g id="edge">%1$s</xliff:g> и лизнете го навнатре кон средината на екранот најмалку <xliff:g id="distance">%2$d</xliff:g> мм за да се отвори менито. Менито има <xliff:g id="count">%3$d</xliff:g> ставки преку екранот, од работ, секоја широка околу <xliff:g id="size">%6$s</xliff:g> см. Ставката <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, е од <xliff:g id="from">%7$s</xliff:g> до <xliff:g id="to">%8$s</xliff:g> см од работ. Држете го прстот на иста висина и подигнете го кога ќе се изговори ставката.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Прстот се подигна <xliff:g id="mm">%1$.0f</xliff:g> мм над или под местото каде што се отвори менито, а менито се затвора над <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Држете го прстот на иста висина додека лизгате навнатре и подигнете го таму.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Секоја ставка има фиксно место преку екранот, од работ, и се избира ставката каде што се подига прстот. Подигнете го кога ќе се изговори ставката.</string>
+    <string name="gesture_trainer_left_out_in_menu">Лизгањата навнатре од <xliff:g id="edge">%1$s</xliff:g> се изоставени: менито на тој раб оди преку екранот, па лизгањето навнатре од него го отвора менито наместо да изврши движење.</string>
+    <string name="gesture_trainer_statistics">Статистика</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Обиди: <xliff:g id="tries">%2$d</xliff:g>, препознаени: <xliff:g id="recognized">%3$d</xliff:g>. Најкратко: <xliff:g id="shortest">%4$d</xliff:g> мс, медијана: <xliff:g id="median">%5$d</xliff:g> мс, најдолго: <xliff:g id="longest">%6$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_statistics_touches">Секој допир: најкратко <xliff:g id="shortest">%1$d</xliff:g> мс, медијана <xliff:g id="median">%2$d</xliff:g> мс, најдолго <xliff:g id="longest">%3$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_kind_tap">Допири</string>
+    <string name="gesture_trainer_kind_double_tap">Двојни допири</string>
+    <string name="gesture_trainer_kind_triple_tap">Тројни допири</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Четирикратни допири</string>
+    <string name="gesture_trainer_kind_tap_hold">Допир и задржување</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Двоен допир и задржување</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Троен допир и задржување</string>
+    <string name="gesture_trainer_kind_swipe">Повлекувања</string>
+    <string name="gesture_trainer_kind_swipe_hold">Повлекување и задржување</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Повлекувања напред-назад и аголни повлекувања</string>
+    <string name="gesture_trainer_kind_pinch">Стискања</string>
+    <string name="gesture_trainer_kind_spread">Раширувања</string>
+    <string name="gesture_trainer_kind_rotate">Ротирања</string>
+    <string name="gesture_trainer_kind_scrub">Брзи движења напред-назад</string>
 </resources>

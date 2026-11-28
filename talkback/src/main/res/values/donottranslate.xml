@@ -473,6 +473,22 @@
     <string name="pref_touch_stops_speech_key" translatable="false">pref_touch_stops_speech_key</string>
     <string name="pref_focus_new_windows_key" translatable="false">pref_focus_new_windows_key</string>
     <string name="pref_leave_system_bars_key" translatable="false">pref_leave_system_bars</string>
+    <string name="pref_category_sliders_key" translatable="false">pref_category_sliders</string>
+    <string name="pref_slider_step_key" translatable="false">pref_slider_step</string>
+    <!-- SliderSteps.STEP_APP -->
+    <string name="pref_slider_step_default" translatable="false">app</string>
+    <string-array name="pref_slider_step_entries" translatable="false">
+      <item>@string/value_slider_step_app</item>
+      <item>@string/value_slider_step_percent</item>
+      <item>@string/value_slider_step_smallest</item>
+    </string-array>
+    <!-- SliderSteps.STEP_APP, STEP_PERCENT and STEP_SMALLEST -->
+    <string-array name="pref_slider_step_values" translatable="false">
+      <item>app</item>
+      <item>percent</item>
+      <item>smallest</item>
+    </string-array>
+    <string name="pref_slider_skip_unchanged_key" translatable="false">pref_slider_skip_unchanged</string>
     <string name="pref_volume_keys_adjust_sliders_key" translatable="false">pref_volume_keys_adjust_sliders_key</string>
     <string name="pref_volume_keys_screen_off_key" translatable="false">pref_volume_keys_screen_off</string>
     <string name="pref_volume_keys_move_cursor_key" translatable="false">pref_volume_keys_move_cursor</string>
@@ -1293,6 +1309,10 @@
     <string name="pref_shortcut_2finger_3tap_1finger_swipe_left_key" translatable="false">pref_shortcut_two_finger_triple_tap_one_finger_swipe_left</string>
     <string name="pref_shortcut_2finger_3tap_1finger_swipe_right_key" translatable="false">pref_shortcut_two_finger_triple_tap_one_finger_swipe_right</string>
     <string name="pref_category_tap_swipe_shortcuts_key" translatable="false">pref_category_tap_swipe_shortcuts</string>
+    <string name="pref_category_tap_swipe_2finger_shortcuts_key" translatable="false">pref_category_tap_swipe_2finger_shortcuts</string>
+    <string name="pref_category_tap_swipe_3finger_shortcuts_key" translatable="false">pref_category_tap_swipe_3finger_shortcuts</string>
+    <string name="pref_category_tap_swipe_4finger_shortcuts_key" translatable="false">pref_category_tap_swipe_4finger_shortcuts</string>
+    <string name="pref_category_tap_swipe_2finger_1finger_shortcuts_key" translatable="false">pref_category_tap_swipe_2finger_1finger_shortcuts</string>
     <string name="pref_shortcut_2finger_rotate_counterclockwise_key" translatable="false">pref_shortcut_two_finger_rotate_counterclockwise</string>
 
     <!-- Fingerprint gesture shortcut keys -->
@@ -3040,6 +3060,28 @@
     </string-array>
 
     <!-- The values of EmojiSpeech's MODE constants. -->
+    <!-- Must match pref_item_types_spoken_entries and ItemTypes.ALL. -->
+    <string-array name="pref_item_types_spoken_values" translatable="false">
+      <item>button</item>
+      <item>checkbox</item>
+      <item>switch</item>
+      <item>radio_button</item>
+      <item>edit_box</item>
+      <item>drop_down_list</item>
+      <item>slider</item>
+      <item>progress_bar</item>
+      <item>link</item>
+      <item>heading</item>
+      <item>image</item>
+      <item>tab</item>
+      <item>tab_bar</item>
+      <item>list</item>
+      <item>grid</item>
+      <item>page</item>
+      <item>web_view</item>
+      <item>other</item>
+    </string-array>
+
     <string-array name="pref_emoji_speech_values" translatable="false">
       <item>engine</item>
       <item>names</item>
@@ -3308,6 +3350,7 @@
     <bool name="pref_touch_stops_speech_default">true</bool>
     <bool name="pref_focus_new_windows_default">true</bool>
     <bool name="pref_leave_system_bars_default">false</bool>
+    <bool name="pref_slider_skip_unchanged_default">false</bool>
     <bool name="pref_volume_keys_adjust_sliders_default">false</bool>
     <bool name="pref_volume_keys_move_cursor_default">false</bool>
     <bool name="pref_volume_change_tone_during_media_default">false</bool>

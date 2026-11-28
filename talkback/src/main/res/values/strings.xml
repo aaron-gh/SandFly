@@ -941,6 +941,34 @@
     <string name="pref_speak_roles_title">Speak item type</string>
     <!-- Switch: the item's name and type, such as Back button, are spoken without a comma between them. [CHAR_LIMIT=NONE] -->
     <string name="pref_speak_role_without_pause_title">Speak item type without a pause</string>
+    <!-- List of item types, each with a check box: the types that Speak item type says, such as Button. An unchecked type isn't spoken. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_item_types_spoken">Item types to speak</string>
+    <!-- Item type in the Item types to speak list: a link, such as on a web page. [CHAR_LIMIT=40] -->
+    <string name="item_type_link">Link</string>
+    <!-- Item type in the Item types to speak list: a tab of a tab bar. [CHAR_LIMIT=40] -->
+    <string name="item_type_tab">Tab</string>
+    <!-- Item type in the Item types to speak list: the types apps give items that are none of the other types in the list, such as Chip. [CHAR_LIMIT=40] -->
+    <string name="item_type_other">Other types</string>
+    <string-array name="pref_item_types_spoken_entries">
+      <item>@string/value_button</item>
+      <item>@string/value_checkbox</item>
+      <item>@string/value_switch</item>
+      <item>@string/value_radio_button</item>
+      <item>@string/value_edit_box</item>
+      <item>@string/value_spinner</item>
+      <item>@string/value_seek_bar</item>
+      <item>@string/value_progress_bar</item>
+      <item>@string/item_type_link</item>
+      <item>@string/heading_template</item>
+      <item>@string/value_image</item>
+      <item>@string/item_type_tab</item>
+      <item>@string/value_tabwidget</item>
+      <item>@string/value_listview</item>
+      <item>@string/value_gridview</item>
+      <item>@string/value_pager_page</item>
+      <item>@string/value_webview</item>
+      <item>@string/item_type_other</item>
+    </string-array>
     <!-- Switch: "Actions available" is spoken after an item with actions of its app, such as Reply on a chat message. Keep "Actions available" as in value_actions_available. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_speak_actions_available">Speak Actions available</string>
     <!--
@@ -1371,6 +1399,8 @@
     <string name="corner_gestures_title">Corners</string>
     <!-- Title of the group of gestures that tap with several fingers and then swipe with as many fingers or with one finger. [CHAR_LIMIT=40] -->
     <string name="tap_swipe_gestures_title">Tap, then swipe</string>
+    <!-- Title of the group, in Tap, then swipe, of gestures that tap once, twice or three times with two fingers and then swipe with one finger. [CHAR_LIMIT=40] -->
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">2-finger tap, 1-finger swipe</string>
     <!-- Label for the group of two finger gestures. [CHAR_LIMIT=60] -->
     <string name="two_finger_gestures_title">2 fingers</string>
     <!-- Label for the group of two finger angle gestures, which swipe two fingers one way and then at a right angle. [CHAR_LIMIT=75] -->
@@ -3117,6 +3147,13 @@
     <string name="clipboard_history_clear">Clear history</string>
     <!-- Button in the clipboard history that shows the texts as check boxes, with Remove and Export to file for the checked texts. [CHAR_LIMIT=40] -->
     <string name="clipboard_history_select">Select</string>
+    <!-- Hint of the search field at the top of the clipboard history, which lists only the texts that contain what is typed in it. [CHAR_LIMIT=NONE] -->
+    <string name="clipboard_history_search_hint">Search clipboard history</string>
+    <!-- Spoken after the search field of the clipboard history lists the texts found. [CHAR_LIMIT=NONE] -->
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> text</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> texts</item>
+    </plurals>
     <!-- Title of the screen and command listing the texts SandFly spoke lately, newest first. [CHAR_LIMIT=40] -->
     <string name="title_speech_history">Speech history</string>
     <!-- Shown in the speech history when it has no texts. [CHAR_LIMIT=NONE] -->
@@ -3693,29 +3730,29 @@
     <!-- Label for the preference that assigns an action to four fingers tapping three times and then swiping right. [CHAR_LIMIT=75] -->
     <string name="title_pref_shortcut_4finger_3tap_swipe_right">Triple-tap, then swipe right with 4 fingers</string>
     <!-- Label for the preference that assigns an action to two fingers tapping once and then one finger swiping up. [CHAR_LIMIT=75] -->
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Tap with 2 fingers, then swipe up</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Tap with 2 fingers, then swipe up with 1 finger</string>
     <!-- Label for the preference that assigns an action to two fingers tapping once and then one finger swiping down. [CHAR_LIMIT=75] -->
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Tap with 2 fingers, then swipe down</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Tap with 2 fingers, then swipe down with 1 finger</string>
     <!-- Label for the preference that assigns an action to two fingers tapping once and then one finger swiping left. [CHAR_LIMIT=75] -->
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Tap with 2 fingers, then swipe left</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Tap with 2 fingers, then swipe left with 1 finger</string>
     <!-- Label for the preference that assigns an action to two fingers tapping once and then one finger swiping right. [CHAR_LIMIT=75] -->
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Tap with 2 fingers, then swipe right</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Tap with 2 fingers, then swipe right with 1 finger</string>
     <!-- Label for the preference that assigns an action to two fingers tapping twice and then one finger swiping up. [CHAR_LIMIT=75] -->
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Double-tap with 2 fingers, then swipe up</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Double-tap with 2 fingers, then swipe up with 1 finger</string>
     <!-- Label for the preference that assigns an action to two fingers tapping twice and then one finger swiping down. [CHAR_LIMIT=75] -->
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Double-tap with 2 fingers, then swipe down</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Double-tap with 2 fingers, then swipe down with 1 finger</string>
     <!-- Label for the preference that assigns an action to two fingers tapping twice and then one finger swiping left. [CHAR_LIMIT=75] -->
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Double-tap with 2 fingers, then swipe left</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Double-tap with 2 fingers, then swipe left with 1 finger</string>
     <!-- Label for the preference that assigns an action to two fingers tapping twice and then one finger swiping right. [CHAR_LIMIT=75] -->
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Double-tap with 2 fingers, then swipe right</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Double-tap with 2 fingers, then swipe right with 1 finger</string>
     <!-- Label for the preference that assigns an action to two fingers tapping three times and then one finger swiping up. [CHAR_LIMIT=75] -->
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Triple-tap with 2 fingers, then swipe up</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Triple-tap with 2 fingers, then swipe up with 1 finger</string>
     <!-- Label for the preference that assigns an action to two fingers tapping three times and then one finger swiping down. [CHAR_LIMIT=75] -->
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Triple-tap with 2 fingers, then swipe down</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Triple-tap with 2 fingers, then swipe down with 1 finger</string>
     <!-- Label for the preference that assigns an action to two fingers tapping three times and then one finger swiping left. [CHAR_LIMIT=75] -->
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Triple-tap with 2 fingers, then swipe left</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Triple-tap with 2 fingers, then swipe left with 1 finger</string>
     <!-- Label for the preference that assigns an action to two fingers tapping three times and then one finger swiping right. [CHAR_LIMIT=75] -->
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Triple-tap with 2 fingers, then swipe right</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Triple-tap with 2 fingers, then swipe right with 1 finger</string>
     <!-- Label for the preference that assigns an action to one finger swiping up, then down, then up in one stroke. [CHAR_LIMIT=75] -->
     <string name="title_pref_shortcut_up_and_down_and_up">Swipe up, down, then up</string>
     <!-- Label for the preference that assigns an action to one finger swiping up, then down, then left in one stroke. [CHAR_LIMIT=75] -->
@@ -4561,6 +4598,22 @@
     <string name="title_pref_focus_new_windows">Move focus to new windows</string>
     <!-- Navigation setting: swipes past the first or last item of the status bar or the navigation bar move to the next or previous window instead of wrapping inside the bar. -->
     <string name="title_pref_leave_system_bars">Move from the status bar and navigation bar to other windows</string>
+    <!-- Heading of the Navigation settings for sliders: Slider step and Skip steps that don't change the value. [CHAR LIMIT=40] -->
+    <string name="title_pref_category_sliders">Sliders</string>
+    <!-- Title of the Navigation setting for how far a swipe, a volume key or another command moves a slider at a time. [CHAR LIMIT=40] -->
+    <string name="title_pref_slider_step">Slider step</string>
+    <!-- Slider step choice, the default: the app decides how far the slider moves at a time. [CHAR LIMIT=60] -->
+    <string name="value_slider_step_app">As the app sets it</string>
+    <!-- Slider step choice: the slider moves by one percent of its range at a time. [CHAR LIMIT=20] -->
+    <string name="value_slider_step_percent">1%</string>
+    <!-- Slider step choice: the slider moves by the smallest step of its range at a time, such as 1 for a range of whole numbers. [CHAR LIMIT=60] -->
+    <string name="value_slider_step_smallest">Smallest step of the range</string>
+    <!-- Title of the Navigation switch that makes SandFly keep moving a slider, after a step that leaves the spoken value the same, until the value changes or the slider reaches the end of its range. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_slider_skip_unchanged">Skip steps that don\'t change the value</string>
+    <!-- Name of the action of a slider that opens a window to type the slider's value, and title of that window. [CHAR LIMIT=40] -->
+    <string name="title_slider_enter_value">Enter value</string>
+    <!-- Text of the Enter value window of a slider: the lowest and highest values that can be typed, such as "From 0 to 100". [CHAR LIMIT=NONE] -->
+    <string name="slider_value_range">From <xliff:g id="min" example="0">%1$s</xliff:g> to <xliff:g id="max" example="100">%2$s</xliff:g></string>
     <!-- Title of the switch that makes the volume keys adjust the focused slider instead of the volume. [CHAR LIMIT=NONE] -->
     <string name="title_pref_volume_keys_adjust_sliders">Volume keys adjust sliders</string>
     <!-- Summary of the switch that makes the volume keys adjust the focused slider instead of the volume. [CHAR LIMIT=NONE] -->

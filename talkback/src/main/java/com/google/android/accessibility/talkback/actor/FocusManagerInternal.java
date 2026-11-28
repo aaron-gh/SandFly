@@ -39,6 +39,7 @@ import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.TouchInteractionMonitor;
 import com.google.android.accessibility.talkback.actor.helper.FocusActorHelper;
+import com.google.android.accessibility.talkback.gesture.HoverlessWindows;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.FocusFeedbackMapper;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
@@ -1231,8 +1232,11 @@ public class FocusManagerInternal {
 
         if (nodeToFocus == null || !nodeFilter.accept(nodeToFocus)) {
           nodeToFocus =
-              TraversalStrategyUtils.findFirstFocusInNodeTree(
-                  strategy, windowRoot, TraversalStrategy.SEARCH_FOCUS_FORWARD, nodeFilter);
+              HoverlessWindows.firstSpokenItemAfterSilentCover(
+                  TraversalStrategyUtils.findFirstFocusInNodeTree(
+                      strategy, windowRoot, TraversalStrategy.SEARCH_FOCUS_FORWARD, nodeFilter),
+                  strategy,
+                  nodeFilter);
           initialFocusType.set(FocusActionInfo.FIRST_FOCUSABLE_NODE);
         }
       }

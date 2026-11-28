@@ -143,7 +143,7 @@ Not on watches.
 
 ### Tap, then swipe {#gestures-tap-then-swipe}
 
-The **Tap, then swipe** category has gestures that tap once, twice or three times with two, three or four fingers and then swipe with as many fingers, such as **Double-tap, then swipe up with 2 fingers**. It also has gestures that tap with two fingers and then swipe with one finger, such as **Tap with 2 fingers, then swipe up**. They do nothing by default.
+The **Tap, then swipe** category has gestures that tap once, twice or three times with two, three or four fingers and then swipe with as many fingers, such as **Double-tap, then swipe up with 2 fingers**, in the **2 fingers**, **3 fingers** and **4 fingers** categories inside it. Its **2-finger tap, 1-finger swipe** category has gestures that tap with two fingers and then swipe with one finger, such as **Tap with 2 fingers, then swipe up with 1 finger**. They do nothing by default.
 
 The swipe is the next touch after the last tap and must start within 0.25 seconds of it. While one of these gestures has a command, the taps it starts with wait for the swipe. Not on watches.
 
@@ -178,7 +178,7 @@ On phones whose fingerprint sensor reports swipes, the **Fingerprint gestures** 
 - The timing settings: see [](#gestures-timing).
 - **Recognize swipes before lifting**: see [](#gestures-swipes-before-lift).
 - **Gestures in apps**, **Gesture profiles** and **App shortcuts**: see [](#gestures-in-apps), [](#gestures-profiles) and [](#gestures-app-shortcuts).
-- The gesture categories: **1 finger**, **1 finger back-and-forth**, **1 finger angle**, **Edges**, **Corners**, **2 fingers**, **2 finger angle**, **3 fingers**, **4 fingers**, **Tap, then swipe**, **Fingerprint gestures**, **Back tap**, **Shake**, **Three-part swipes**, **Two-stroke swipes**, **Two-stroke swipes ending with back-and-forth or angle** and a **Two-stroke swipes starting with** category for each back-and-forth and angle swipe.
+- The gesture categories: **1 finger**, **1 finger back-and-forth**, **1 finger angle**, **Edges**, **Corners**, **2 fingers**, **2 finger angle**, **3 fingers**, **4 fingers**, **Tap, then swipe** (with **2 fingers**, **3 fingers**, **4 fingers** and **2-finger tap, 1-finger swipe** inside it), **Fingerprint gestures**, **Back tap**, **Shake**, **Three-part swipes**, **Two-stroke swipes**, **Two-stroke swipes ending with back-and-forth or angle** and a **Two-stroke swipes starting with** category for each back-and-forth and angle swipe.
 
 The categories are collapsed. Activate a category to expand it. Each gesture in a category shows the command it runs.
 
@@ -214,7 +214,7 @@ With **Handle two-finger swipes in SandFly** off, two-finger swipes go to the ap
 
 #### Timing settings {#gestures-timing}
 
-- **Time between one-finger taps**: how long SandFly waits for a further tap before it decides that a one-finger tap gesture is finished, from 0.1 to 2 seconds. The default is 0.25 seconds. A shorter time makes one-finger double-taps respond faster, but a slow double-tap can then count as two taps. With a longer time, two taps on an item within that time activate it, and corner taps and multi-finger single taps wait longer. With a time longer than 0.3 seconds, a single tap focuses the item under the finger 0.25 seconds after the finger lifts, and a second tap within the time still activates that item. Taps with two or more fingers always allow at least 0.25 seconds between taps.
+- **Time between one-finger taps**: how long SandFly waits for a further tap before it decides that a one-finger tap gesture is finished, from 0.1 to 2 seconds on phones and from 0.1 to 0.5 seconds on watches. The default is 0.25 seconds. A shorter time makes one-finger double-taps respond faster, but a slow double-tap can then count as two taps. With a longer time, two taps on an item within that time activate it, and corner taps and multi-finger single taps wait longer. With a time longer than 0.3 seconds, a single tap focuses the item under the finger 0.25 seconds after the finger lifts, and a second tap within the time still activates that item. Taps with two or more fingers always allow at least 0.25 seconds between taps.
 - **Hold time after a swipe**: how long the finger rests after a swipe for a swipe and hold gesture, from 0.1 to 0.5 seconds. The default is 0.25 seconds. See [](#gestures-swipe-and-hold).
 - **Gesture start time**: how long a one-finger swipe can take to move its first centimeter before the touch becomes touch exploration, from 0.15 to 2 seconds. The default is 0.15 seconds. Choose a longer time if slow swipes start touch exploration.
 - **Time between two-stroke swipes**: how long after a swipe the second swipe of a two-stroke swipe can start: **Off**, 0.25, 0.5, 1, 1.5 or 2 seconds. The default is **Off**, which turns two-stroke swipes off and hides their categories. See [](#gestures-two-stroke).
@@ -308,5 +308,7 @@ The shortcut is added to the list, where you can rename or delete it. See [](#co
 3. Make the gesture 3 times. The result of each try is spoken.
 
 While the tries are taken, each touch is a try, and gestures run no commands. After the last try, the screen lists the measurements of each try, what to change, and the settings that change the limits, with a button for each. **Repeat** takes the tries again, **Next exercise** goes to the next gesture, and **Contents** lists the exercises of the group.
+
+**Statistics**, on the results and the list of groups, lists the tries made since the trainer opened, by kind of gesture and number of fingers: the number of tries and recognized tries, and the shortest, median and longest time from the first finger landing to the last lifting. For gestures of several touches, such as a double tap, it also gives the time of each touch. The statistics are cleared when the trainer closes.
 
 A group leaves out gestures that your settings turn off, and says which setting. An edge without an edge menu is practised with sample items, which run no commands. An edge menu with **Slide in from the edge** on is practised by sliding in from the edge, and **Swipes from the edges** leaves out the swipes in from that edge.

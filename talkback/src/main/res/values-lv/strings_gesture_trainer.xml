@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">otrais vilkums <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">viss žests <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">pacelts <xliff:g id="ms">%1$d</xliff:g> ms starp tiem</string>
+    <string name="gesture_trainer_how_menu_horizontal">Novietojiet vienu pirkstu <xliff:g id="edge">%1$s</xliff:g> un velciet to uz ekrāna vidu vismaz <xliff:g id="distance">%2$d</xliff:g> mm, lai atvērtu izvēlni. Izvēlnes elementi ir izkārtoti pāri ekrānam no malas, to skaits: <xliff:g id="count">%3$d</xliff:g>, katrs apmēram <xliff:g id="size">%6$s</xliff:g> cm plats. <xliff:g id="number">%4$d</xliff:g>. elements, <xliff:g id="item">%5$s</xliff:g>, atrodas <xliff:g id="from">%7$s</xliff:g> līdz <xliff:g id="to">%8$s</xliff:g> cm no malas. Turiet pirkstu tajā pašā augstumā un paceliet to, kad elements tiek izrunāts.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Pirksts tika pacelts <xliff:g id="mm">%1$.0f</xliff:g> mm virs vai zem vietas, kur atvērās izvēlne, un izvēlne aizveras, ja attālums pārsniedz <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Velkot uz iekšu, turiet pirkstu tajā pašā augstumā un paceliet to tur.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Katram elementam ir noteikta vieta pāri ekrānam no malas, un tiek izvēlēts elements, kur pirksts tiek pacelts. Paceliet, kad elements tiek izrunāts.</string>
+    <string name="gesture_trainer_left_out_in_menu">Vilkšana uz iekšu no <xliff:g id="edge">%1$s</xliff:g> ir izlaista: šīs malas izvēlne ir izkārtota pāri ekrānam, tāpēc vilkšana uz iekšu no tās atver izvēlni, nevis izpilda žestu.</string>
+    <string name="gesture_trainer_statistics">Statistika</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Mēģinājumi: <xliff:g id="tries">%2$d</xliff:g>, atpazīti: <xliff:g id="recognized">%3$d</xliff:g>. Īsākais: <xliff:g id="shortest">%4$d</xliff:g> ms, mediāna: <xliff:g id="median">%5$d</xliff:g> ms, garākais: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Katrs pieskāriens: īsākais <xliff:g id="shortest">%1$d</xliff:g> ms, mediāna <xliff:g id="median">%2$d</xliff:g> ms, garākais <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Pieskārieni</string>
+    <string name="gesture_trainer_kind_double_tap">Dubultskārieni</string>
+    <string name="gesture_trainer_kind_triple_tap">Trīskārši pieskārieni</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Četrkārši pieskārieni</string>
+    <string name="gesture_trainer_kind_tap_hold">Pieskaršanās un turēšana</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Dubultskāriens un turēšana</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Trīskāršs pieskāriens un turēšana</string>
+    <string name="gesture_trainer_kind_swipe">Vilkšana</string>
+    <string name="gesture_trainer_kind_swipe_hold">Vilkšana un turēšana</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Divvirzienu un leņķveida vilkšana</string>
+    <string name="gesture_trainer_kind_pinch">Savilkšana</string>
+    <string name="gesture_trainer_kind_spread">Izplešana</string>
+    <string name="gesture_trainer_kind_rotate">Pagriešana</string>
+    <string name="gesture_trainer_kind_scrub">Ātra vilkšana šurpu turpu</string>
 </resources>

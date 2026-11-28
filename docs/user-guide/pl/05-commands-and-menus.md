@@ -12,19 +12,19 @@ Na liście są tylko polecenia obsługiwane na danym urządzeniu. Jeśli urządz
 
 #### Grupy poleceń {#commands-categories}
 
-- **Nawigacja** obejmuje przejście do następnego lub poprzedniego elementu, elementu wyżej, niżej, po lewej lub po prawej oraz pierwszego i ostatniego elementu ekranu. Znajdziesz tu też polecenia do przechodzenia po kontenerach i oknach oraz **Zaznaczaj osobno tekst wewnątrz elementów**.
+- **Nawigacja** obejmuje przejście do następnego lub poprzedniego elementu, elementu wyżej, niżej, po lewej lub po prawej oraz pierwszego i ostatniego elementu ekranu. Znajdziesz tu też polecenia do przechodzenia po kontenerach i oknach oraz **Przenoś fokus osobno na teksty wewnątrz elementów**.
 - **Ustawienie nawigacji** obejmuje menu **Nawigacja**, polecenie **Nawigacja po stronach** oraz przechodzenie do następnego i poprzedniego ustawienia nawigacji.
 - **Nawigacja obiektowa** i **Przegląd ekranu** służą do nawigacji po obiektach i obsługi kursora przeglądu, podobnie jak na komputerze, głównie przy użyciu klawiatury. Zobacz [](#keyboards).
-- **Aktywacja** zawiera **Aktywuj**, **Naciśnij i przytrzymaj**, **Aktywuj dotknięciem**, **Aktywuj przycisk potwierdzenia**, **Aktywuj przycisk anulowania**, **Pokaż czynności niestandardowe**, **Adresy i numery**, **Dodawanie i edytowanie etykiet**, **Otwórz menu SandFly**, **Gest systemowy przepuszczenia**, **Włącz lub wyłącz dotyk bezpośredni dla tej aplikacji** i **Dwukrotne kliknięcie stuka w ekran w tej aplikacji**.
+- **Aktywacja** zawiera **Aktywuj**, **Naciśnij i przytrzymaj**, **Aktywuj dotknięciem**, **Aktywuj przycisk potwierdzenia**, **Aktywuj przycisk anulowania**, **Pokaż czynności niestandardowe**, **Adresy i numery**, **Dodawanie i edytowanie etykiet**, **Otwórz menu SandFly**, **Gest systemowy przepuszczenia**, **Włącz lub wyłącz dotyk bezpośredni dla tej aplikacji** i **Przełącz symulowanie dotknięcia przy dwukrotnym kliknięciu w tej aplikacji**.
 - **Przewijanie** obejmuje przewijanie do przodu, wstecz, w górę, w dół, w lewo i w prawo, do początku i do końca oraz polecenie **Odśwież**.
 - **Nawigacja według tekstu** i **Nawigacja według elementu** służą do przechodzenia do następnego lub poprzedniego znaku, słowa, wiersza, akapitu, nagłówka, linku, kontrolki, przycisku, listy, tabeli, punktu orientacyjnego i innych rodzajów elementów.
 - **Tabele** pozwalają przechodzić do następnego lub poprzedniego wiersza lub kolumny, do początku lub końca wiersza, kolumny lub tabeli oraz odczytywać nagłówki wierszy i kolumn.
 - **Strony internetowe** zawierają polecenie **Włącz lub wyłącz tryb przeglądania**, listy nagłówków, punktów orientacyjnych, linków, elementów sterujących i tabel oraz polecenia odczytania adresu linku lub strony. Zobacz [](#web).
-- **Czytanie** obejmuje **Czytaj od góry**, **Czytaj od zaznaczonego elementu**, **Czytaj od zaznaczonego elementu według sterowania czytaniem** oraz powtarzanie, literowanie i tłumaczenie ostatniej wypowiedzi. Są tu również **Historia mowy**, **Odczytaj stan urządzenia**, **Odczytaj pozycję**, **Odczytaj współrzędne** i polecenia odczytywania daty, godziny, poziomu baterii i tytułu okna.
-- **Mowa** zawiera **Wstrzymaj lub wznów komunikaty głosowe** oraz **Włącz lub wyłącz komunikaty głosowe**. Tu znajdziesz też polecenia dotyczące szybkości, wysokości i głośności mowy, języka, profili głosowych, znaków przestankowych i odczytywania podczas pisania oraz **Używaj efektów głosu**, **Wyciszanie tła** i **Sygnał wibracyjny**.
+- **Czytanie** obejmuje **Czytaj od góry**, **Czytaj od zaznaczonego elementu**, **Czytaj od bieżącego elementu według opcji czytania** oraz powtarzanie, literowanie i tłumaczenie ostatniej wypowiedzi. Są tu również **Historia mowy**, **Odczytaj stan urządzenia**, **Odczytaj pozycję**, **Odczytaj współrzędne** i polecenia odczytywania daty, godziny, poziomu baterii i tytułu okna.
+- **Mowa** zawiera **Wstrzymaj lub wznów komunikaty głosowe** oraz **Włącz lub wyłącz mowę**. Tu znajdziesz też polecenia dotyczące szybkości, wysokości i głośności mowy, języka, profili głosowych, znaków przestankowych i odczytywania podczas pisania oraz **Używaj efektów głosu**, **Wyciszanie tła** i **Sygnał wibracyjny**.
 - **Sterowanie czytaniem** obejmuje następny i poprzedni element sterowania, **Pierwszy element sterowania czytaniem**, **Przenieś element sterowania czytaniem w dół lub do przodu**, **Przenieś element sterowania czytaniem w górę lub do tyłu** i **Napisz literę opcji sterowania czytaniem**. Są też polecenia do zmiany listy na następną lub poprzednią oraz osobne polecenie ustawiające każdą pozycję z listy. Zobacz [](#commands-reading-controls).
-- **Edytowanie tekstu** obejmuje tryb zaznaczania, przesuwanie kursora, zaznaczanie całości, kopiowanie, wycinanie i wklejanie. Zawiera też **Historia schowka**, **Menu edycji**, **Prześlij tekst**, **Wyczyść tekst**, **Skopiuj ostatnią wypowiedź**, **Kopiuj tekst z ekranu**, **Kopiowanie ciągłe**, **Szczegółowa edycja**, **Podpowiedzi ortograficzne/gramatyczne**, **Wyszukaj emotikony**, **Wybierz symbol**, **Włącz lub wyłącz tryb edycji**, **Dyktuj** i **Przełącz klawiaturę**. Zobacz [](#typing).
-- **Czynności systemowe** obejmują **Ekran główny**, **Wstecz**, **Przegląd**, przejście do poprzedniej, starszej lub nowszej aplikacji, **Zrób zrzut ekranu**, **Odbierz połączenie**, **Podziel ekran**, otwieranie powiadomień i szybkich ustawień, **Zablokuj ekran urządzenia**, **Menu zasilania** oraz **Wszystkie aplikacje**. Do tej grupy należą również skrót ułatwień dostępu, powiększenie, odwrócenie kolorów, **Napisz nazwę aplikacji, aby ją otworzyć**, **Wpisz nazwę aplikacji w brajlu, aby ją otworzyć** i **Użyj polecenia głosowego**.
+- **Edytowanie tekstu** obejmuje tryb zaznaczania, przesuwanie kursora, zaznaczanie całości, kopiowanie, wycinanie i wklejanie. Zawiera też **Historia schowka**, **Menu edycji**, **Prześlij tekst**, **Wyczyść tekst**, **Skopiuj ostatnią wypowiedź**, **Kopiuj tekst z ekranu**, **Kopiowanie ciągłe**, **Szczegółowa edycja**, **Podpowiedzi ortograficzne/gramatyczne**, **Wyszukaj emoji**, **Wybierz symbol**, **Włącz lub wyłącz tryb edycji**, **Dyktuj** i **Przełącz klawiaturę**. Zobacz [](#typing).
+- **Czynności systemowe** obejmują **Ekran główny**, **Wstecz**, **Przegląd SandFly**, przejście do poprzedniej, starszej lub nowszej aplikacji, **Zrób zrzut ekranu**, **Odbierz połączenie**, **Podziel ekran**, otwieranie powiadomień i szybkich ustawień, **Zablokuj ekran urządzenia**, **Menu zasilania** oraz **Wszystkie aplikacje**. Do tej grupy należą również skrót ułatwień dostępu, powiększenie, odwrócenie kolorów, **Napisz nazwę aplikacji, aby ją otworzyć**, **Wpisz nazwę aplikacji w brajlu, aby ją otworzyć** i **Użyj polecenia głosowego**.
 - **Multimedia i głośność** obejmują odtwarzanie, pauzę, przechodzenie do następnego i poprzedniego utworu, przewijanie wstecz i w przód oraz regulację głośności.
 - **Powiadomienia** obejmują odczytywanie powiadomień, powtarzanie ostatniego powiadomienia, zatrzymywanie odczytu oraz przełączanie mowy dla powiadomień i podawania czasu. Zobacz [](#notifications).
 - **Opisy obrazów i ekranu** zawierają **Zrób zdjęcie i opisz**, **Opisz obraz**, **Opisz ekran**, ich warianty odczytu i zadawania pytań oraz **Udostępnij obraz zaznaczonego elementu**, **Udostępnij zrzut ekranu** i **Zgłoś odpowiedź AI**. SandFly Pro udostępnia tu również polecenia rozpoznawania ekranu. Zobacz [](#descriptions).
@@ -147,7 +147,7 @@ Opcja **Przywróć domyślne** po potwierdzeniu odtwarza domyślną zawartość 
 
 #### Domyślna zawartość menu {#commands-menu-defaults}
 
-W menu SandFly domyślnie znajdziesz **Podpowiedzi ortograficzne/gramatyczne**, pozycje skryptów, **Opisz obraz**, **Opisz ekran**, **Czytaj od zaznaczonego elementu**, **Profil gestów**, **Gesty dla tej aplikacji**, **Ukryj lub pokaż ekran**, **Wstrzymaj SandFly**, **Wyłącz SandFly**, **Ustawienia SandFly**, **Prześlij opinię**, **Zamiana tekstu na mowę** i **Podziel ekran**. SandFly Pro dodaje do menu pozycje rozpoznawania ekranu. Aby dodać pozostałe pozycje, użyj **Dodaj polecenie**. Dotyczy to np. **Czynności**, **Wyszukiwanie zawartości ekranu**, **Nawigacja**, **Czytaj od góry**, **Skopiuj ostatnią wypowiedź**, **Polecenia głosowe**, **Szczegółowość**, **Język wypowiedzi**, **Sprawdź element z fokusem** i **Kopiuj szczegóły elementu**.
+W menu SandFly domyślnie znajdziesz **Podpowiedzi ortograficzne/gramatyczne**, pozycje skryptów, **Opisz obraz**, **Opisz ekran**, **Czytaj od zaznaczonego elementu**, **Profil gestów**, **Gesty dla tej aplikacji**, **Ukryj lub pokaż ekran**, **Wstrzymaj SandFly**, **Wyłącz SandFly**, **Ustawienia SandFly**, **Prześlij opinię**, **Mowa** i **Podziel ekran**. SandFly Pro dodaje do menu pozycje rozpoznawania ekranu. Aby dodać pozostałe pozycje, użyj **Dodaj polecenie**. Dotyczy to np. **Czynności**, **Wyszukiwanie zawartości ekranu**, **Nawigacja**, **Czytaj od góry**, **Skopiuj ostatnią wypowiedź**, **Polecenia głosowe**, **Szczegółowość**, **Język wypowiedzi**, **Sprawdź element z fokusem** i **Kopiuj szczegóły elementu**.
 
 Na zegarku ustawienia menu SandFly mają postać listy przełączników w stałej kolejności. Zobacz [](#devices).
 
@@ -184,14 +184,14 @@ Gdy zmieniasz gestem pozycję sterowania czytaniem albo jej wartość, SandFly n
 - **Nawigacja po elementach** zawiera **Nagłówki**, **Linki**, **Kontrolki**, **Punkty orientacyjne**, **Przyciski**, **Pola wyboru**, **Opcje**, **Pola edycji**, **Pola wyboru** odpowiadające polom kombi, **Elementy możliwe do zaznaczenia**, **Obrazy i filmy**, **Listy**, **Pozycje na liście**, **Tabele**, **Kliknięte linki** i **Nieotwarte linki**.
 - **Poziomy nagłówków** zawierają pozycje od **Nagłówek 1** do **Nagłówek 6**.
 - **Tabele** zawierają **Wiersze i kolumny**, **Wiersz** i **Kolumna**.
-- **Mowa** zawiera **Szybkość mowy**, **Odczytuj znaki interpunkcyjne i symbole**, **Emoji**, **Informuj o formatowaniu tekstu**, **Język wypowiedzi**, **Syntezator mowy**, **Głośność mowy**, **Urządzenie odtwarzające**, **Profil głosowy**, **Automatyczne tłumaczenie** i **Odczytuj tylko fokus przeniesiony przez użytkownika**.
+- **Mowa** zawiera **Szybkość mowy**, **Odczytuj znaki interpunkcyjne i symbole**, **Emoji**, **Informuj o formatowaniu tekstu**, **Język wypowiedzi**, **Syntezator mowy**, **Głośność mowy**, **Urządzenie odtwarzające**, **Profil głosowy**, **Automatyczne tłumaczenie** i **Odczytuj elementy tylko po przeniesieniu fokusu przez użytkownika**.
 - **Echo klawiatury** obejmuje echo klawiatury ekranowej, fizycznej i brajlowskiej, monitora brajlowskiego oraz klawiatury do pisania odręcznego.
 - **Efekty głosu** zawierają pozycję **Efekty głosu** i po jednej pozycji na każde pasmo korektora od 64 Hz do 16 kHz. Zobacz [](#voice-effects).
 - **Opisy obrazów i ekranu** zawierają **Rozpoznawanie na żywo** i **Czynności AI**. Zobacz [](#commands-ai-actions).
 - **Dźwięk i wibracje** obejmują **Wyciszanie tła**, **Głośność dostępności**, **Głośność multimediów**, **Głośność połączenia**, **Głośność dzwonka**, **Głośność powiadomień**, **Głośność alarmu** i **Tryb dźwięku**.
 - **Wyświetlanie** zawiera **Ukrywanie ekranu**, **Jasność** i **Uniesiony tablet ekranem od siebie** dla klawiatury brajlowskiej na tablecie lub rozłożonym telefonie.
 - **Dotyk** zawiera **Opóźnienie zaznaczenia**, **Opóźnienie zaznaczenia podczas pisania**, **Aktywowanie po puszczeniu** i **Profil gestów**.
-- **Własne sterowanie czytaniem** zawiera pozycje utworzone samodzielnie. Zobacz [](#commands-custom-reading-controls).
+- **Własne opcje sterowania czytaniem** zawiera pozycje utworzone samodzielnie. Zobacz [](#commands-custom-reading-controls).
 
 Domyślna lista obejmuje **Czynności**, **Korekta**, **Wyszukiwanie zawartości ekranu**, **Znaki**, **Słowa**, **Wiersze**, **Akapity**, **Nagłówki**, **Linki**, **Kontrolki**, **Wiersze i kolumny**, **Szybkość mowy**, **Rozpoznawanie na żywo**, **Czynności AI**, **Jasność** i **Profil gestów**. Skrypty mogą dodać własne pozycje, które znajdziesz na końcu listy.
 
@@ -200,28 +200,28 @@ Pozycje **Czynności**, **Adresy i numery**, **Historia schowka**, **Rozpoznawan
 Jeśli pozycja ma dodatkowe opcje, znajdziesz je tuż za nią w sekcji **Bieżące**. Gdy usuniesz pozycję z listy, jej opcje się ukryją.
 
 - **Uwzględniane adresy i numery** pod pozycją **Adresy i numery** pozwala wybrać rodzaje wyświetlanych adresów i numerów.
-- **Łącza i elementy sterujące tylko w treści internetowej** pod pozycjami **Linki** i **Kontrolki** udostępnia te dwie pozycje tylko na stronach internetowych. Opcja jest domyślnie wyłączona.
+- **Linki i kontrolki tylko w treściach internetowych** pod pozycjami **Linki** i **Kontrolki** udostępnia te dwie pozycje tylko na stronach internetowych. Opcja jest domyślnie wyłączona.
 - **Uwzględniane czynności AI** pod pozycją **Czynności AI** pozwala wybrać polecenia dostępne przy sterowaniu czytaniem.
 
 #### Opcje {#commands-reading-control-options}
 
 - **Automatycznie zmieniaj opcję sterowania czytaniem** wybiera pozycję odpowiednią do elementu, na który przechodzi fokus, np. **Czynności** na elemencie z dostępnymi czynnościami. Po przejściu dalej SandFly przywraca poprzednią pozycję. Opcja jest domyślnie włączona. Po jej wyłączeniu SandFly zmienia pozycję tylko na Twoje polecenie.
-- **Odręczne litery alfabetu** określają litery przypisane do poszczególnych pozycji. Zobacz [](#commands-handwriting-letters).
-- **Własne sterowanie czytaniem** otwiera ustawienia własnych pozycji. Zobacz [](#commands-custom-reading-controls).
+- **Litery pisane odręcznie** określają litery przypisane do poszczególnych pozycji. Zobacz [](#commands-handwriting-letters).
+- **Własne opcje sterowania czytaniem** otwiera ustawienia własnych pozycji. Zobacz [](#commands-custom-reading-controls).
 - **Listy sterowania czytaniem** otwierają ustawienia list. Zobacz [](#commands-reading-control-lists).
 
 #### Odręczne litery alfabetu {#commands-handwriting-letters}
 
 Polecenie **Napisz literę opcji sterowania czytaniem** otwiera obszar do pisania na całym ekranie. Napisz literę jednym palcem. SandFly wybierze następną pozycję przypisaną do tej litery. Jeśli litera nie jest przypisana, wybierze następną pozycję, której nazwa od niej się zaczyna. Stuknięcie zamyka obszar pisania. Do rozpoznawania pisma SandFly potrzebuje modelu. Przy pierwszym użyciu możesz potwierdzić jego pobranie.
 
-Ścieżka **Sterowanie czytaniem** > **Odręczne litery alfabetu** pokazuje listę pozycji z przypisanymi literami. Wybierz pozycję, aby ustawić literę od A do Z lub **Brak**. Kilka pozycji może mieć tę samą literę. Jeśli napiszesz ją ponownie, przejdziesz do następnej. Domyślne przypisania to m.in. H dla **Nagłówki**, K dla **Linki**, L dla **Wiersze**, A dla **Punkty orientacyjne**, W dla **Słowa**, C dla **Znaki**, P dla **Akapity**, O dla **Kontrolki**, B dla **Przyciski**, E dla **Pola edycji**, T dla **Tabele** i S dla **Szybkość mowy**.
+Ścieżka **Sterowanie czytaniem** > **Litery pisane odręcznie** pokazuje listę pozycji z przypisanymi literami. Wybierz pozycję, aby ustawić literę od A do Z lub **Brak**. Kilka pozycji może mieć tę samą literę. Jeśli napiszesz ją ponownie, przejdziesz do następnej. Domyślne przypisania to m.in. H dla **Nagłówki**, K dla **Linki**, L dla **Wiersze**, A dla **Punkty orientacyjne**, W dla **Słowa**, C dla **Znaki**, P dla **Akapity**, O dla **Kontrolki**, B dla **Przyciski**, E dla **Pola edycji**, T dla **Tabele** i S dla **Szybkość mowy**.
 
 #### Własne sterowanie czytaniem {#commands-custom-reading-controls}
 
 Własna pozycja sterowania czytaniem składa się z wybranych poleceń. Po przejściu do tej pozycji przesuń palec w górę lub w dół, aby wybrać polecenie, i stuknij dwukrotnie, żeby je uruchomić. Wymaga Androida 11 lub nowszego.
 
-1. Otwórz **Sterowanie czytaniem** > **Własne sterowanie czytaniem**.
-2. Wybierz **Dodaj sterowanie czytaniem** i wpisz nazwę.
+1. Otwórz **Sterowanie czytaniem** > **Własne opcje sterowania czytaniem**.
+2. Wybierz **Dodaj opcję sterowania czytaniem** i wpisz nazwę.
 3. Otwórz nową pozycję i wybierz **Dodaj polecenie**. Stukaj dwukrotnie polecenia, które chcesz dodać.
 
 Na ekranie własnej pozycji sekcja **Bieżące** pokazuje polecenia z tymi samymi czynnościami co w menu SandFly. Na tym ekranie znajdziesz również **Gesty i skrót klawiszowy**, **Zmień nazwę** i **Usuń**. Własna pozycja zawiera polecenia bez podmenu. Po utworzeniu trafia na koniec listy, gdzie możesz ją przenieść albo usunąć tak samo jak inne pozycje. Pusta pozycja nie pojawia się na liście.

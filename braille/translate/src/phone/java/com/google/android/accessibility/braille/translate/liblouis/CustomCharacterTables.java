@@ -124,6 +124,13 @@ public final class CustomCharacterTables {
     return ok ? list : table;
   }
 
+  /** Changes whenever the custom tables are written again. */
+  static int generation() {
+    synchronized (compiled) {
+      return generation;
+    }
+  }
+
   /** Whether [word] holds the cells of one of the custom characters of [code]. */
   static boolean containsCustomCells(@Nullable String code, BrailleWord word) {
     List<BrailleWord> list = code == null ? null : cells.get(code);

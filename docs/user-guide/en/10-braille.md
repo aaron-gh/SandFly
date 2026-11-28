@@ -270,6 +270,7 @@ In **Braille** > **Braille display**, the **Languages and commands** group has:
 
 - **Languages**: the braille tables in use, shared with the braille keyboard. See [](#braille-keyboard-languages).
 - **Preferred reading language** and **Preferred typing language**: the tables for text shown on the display and for typing on it. While you type in Unicode braille, the display shows the text of the field in the reading language.
+- **Secondary braille table**: a second table, from **Languages**, for characters that the table of the reading language doesn't define, such as Chinese characters in English text. The other letters of the same script in a word with such a character, such as an accented Greek word, are shown in it too. Text fields, typing and the braille keyboard use the reading and typing languages alone. **None** by default.
 - **Preferred braille grade**: **Contracted braille** or **Uncontracted braille**.
 - **Braille display commands**: the keys of each command. See [](#braille-displays-keys).
 - **Braille elements**: the abbreviations that the display shows for elements on the screen, such as "btn" for a button or "lnk" for a link.

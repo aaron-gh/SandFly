@@ -2398,18 +2398,18 @@
     <string name="title_pref_shortcut_4finger_3tap_swipe_down">Sakatu hirutan eta, gero, pasatu lau hatz behera</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_left">Sakatu hirutan eta, gero, pasatu lau hatz ezkerrera</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_right">Sakatu hirutan eta, gero, pasatu lau hatz eskuinera</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Sakatu 2 hatzekin eta, gero, pasatu hatza gora</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Sakatu 2 hatzekin eta, gero, pasatu hatza behera</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Sakatu 2 hatzekin eta, gero, pasatu hatza ezkerrera</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Sakatu 2 hatzekin eta, gero, pasatu hatza eskuinera</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Sakatu birritan 2 hatzekin eta, gero, pasatu hatza gora</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Sakatu birritan 2 hatzekin eta, gero, pasatu hatza behera</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Sakatu birritan 2 hatzekin eta, gero, pasatu hatza ezkerrera</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Sakatu birritan 2 hatzekin eta, gero, pasatu hatza eskuinera</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Sakatu hirutan 2 hatzekin eta, gero, pasatu hatza gora</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Sakatu hirutan 2 hatzekin eta, gero, pasatu hatza behera</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Sakatu hirutan 2 hatzekin eta, gero, pasatu hatza ezkerrera</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Sakatu hirutan 2 hatzekin eta, gero, pasatu hatza eskuinera</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Sakatu 2 hatzekin eta, gero, pasatu hatz bat gora</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Sakatu 2 hatzekin eta, gero, pasatu hatz bat behera</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Sakatu 2 hatzekin eta, gero, pasatu hatz bat ezkerrera</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Sakatu 2 hatzekin eta, gero, pasatu hatz bat eskuinera</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Sakatu birritan 2 hatzekin eta, gero, pasatu hatz bat gora</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Sakatu birritan 2 hatzekin eta, gero, pasatu hatz bat behera</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Sakatu birritan 2 hatzekin eta, gero, pasatu hatz bat ezkerrera</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Sakatu birritan 2 hatzekin eta, gero, pasatu hatz bat eskuinera</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Sakatu hirutan 2 hatzekin eta, gero, pasatu hatz bat gora</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Sakatu hirutan 2 hatzekin eta, gero, pasatu hatz bat behera</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Sakatu hirutan 2 hatzekin eta, gero, pasatu hatz bat ezkerrera</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Sakatu hirutan 2 hatzekin eta, gero, pasatu hatz bat eskuinera</string>
     <string name="title_pref_shortcut_up_and_down_and_up">Pasatu hatza gora, behera eta, gero, gora</string>
     <string name="title_pref_shortcut_up_and_down_and_left">Pasatu hatza gora, behera eta, gero, ezkerrera</string>
     <string name="title_pref_shortcut_up_and_down_and_right">Pasatu hatza gora, behera eta, gero, eskuinera</string>
@@ -2860,4 +2860,109 @@
     <string name="title_pref_cyrillic_text_recognition">Testu zirilikoaren ezagutza</string>
     <string name="cyrillic_text_model_missing">Ez dago <xliff:g id="language" example="Russian">%1$s</xliff:g> hizkuntzarako testua ezagutzeko modelorik. Deskargatu Irudien eta pantailaren azalpenak, Testu zirilikoaren ezagutza atalean.</string>
     <string name="cyrillic_text_model_error_http">Deskargen zerbitzariak ez du eskaera onartu. Saiatu berriro geroago.</string>
+    <string name="title_pref_announce_caller">Iragarri deitzailea</string>
+    <string name="announce_caller_once">Behin</string>
+    <string name="announce_caller_repeat">Errepikatu jotzen duen bitartean</string>
+    <string name="title_pref_command_feedback_voice">Aginduen erantzunaren eta testua editatzearen ahotsa</string>
+    <string name="title_pref_command_feedback_over_speech">Irakurri aginduen erantzuna SandFly-ren hizketaren gainetik</string>
+    <string name="title_pref_item_types_spoken">Ozen irakurri beharreko elementu motak</string>
+    <string name="item_type_link">Esteka</string>
+    <string name="item_type_tab">Fitxa</string>
+    <string name="item_type_other">Beste mota batzuk</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">Sakatu 2 hatzekin, pasatu hatz bat</string>
+    <string name="keycombo_key_enter">Sartu</string>
+    <string name="keycombo_key_space">Zuriunea</string>
+    <string name="keycombo_key_escape">Ihes</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Orrialdea gora</string>
+    <string name="keycombo_key_page_down">Orrialdea behera</string>
+    <string name="keycombo_key_home">Hasiera</string>
+    <string name="keycombo_key_end">Amaiera</string>
+    <string name="keycombo_key_delete">Ezabatu</string>
+    <string name="keycombo_key_menu">Menua</string>
+    <string name="keycombo_key_search">Bilatu</string>
+    <string name="keycombo_key_grave">Azentu kamutsa</string>
+    <string name="keycombo_key_minus">Minus</string>
+    <string name="keycombo_key_equals">Berdin</string>
+    <string name="keycombo_key_left_bracket">Ezkerreko kortxetea</string>
+    <string name="keycombo_key_right_bracket">Eskuineko kortxetea</string>
+    <string name="keycombo_key_backslash">Alderantzizko barra</string>
+    <string name="keycombo_key_semicolon">Puntu eta koma</string>
+    <string name="keycombo_key_apostrophe">Apostrofoa</string>
+    <string name="keycombo_key_comma">Koma</string>
+    <string name="keycombo_key_period">Puntua</string>
+    <string name="keycombo_key_slash">Barra</string>
+    <string name="keycombo_key_plus">Gehi</string>
+    <string name="keycombo_key_at">A bildua</string>
+    <string name="keycombo_key_star">Izartxoa</string>
+    <string name="keycombo_key_pound">Traola</string>
+    <string name="keycombo_key_caps_lock">Blok Maius</string>
+    <string name="keycombo_key_scroll_lock">Blok Korr</string>
+    <string name="keycombo_key_num_lock">Blok Zenb</string>
+    <string name="keycombo_key_pause">Pausa</string>
+    <string name="keycombo_key_print_screen">Inpr Pant</string>
+    <string name="keycombo_key_numpad_add">Zenbaki-teklatuko gehi</string>
+    <string name="keycombo_key_numpad_subtract">Zenbaki-teklatuko minus</string>
+    <string name="keycombo_key_numpad_multiply">Zenbaki-teklatuko biderketa</string>
+    <string name="keycombo_key_numpad_divide">Zenbaki-teklatuko zatiketa</string>
+    <string name="keycombo_key_numpad_dot">Zenbaki-teklatuko puntua</string>
+    <string name="keycombo_key_numpad_comma">Zenbaki-teklatuko koma</string>
+    <string name="keycombo_key_numpad_equals">Zenbaki-teklatuko berdin</string>
+    <string name="keycombo_key_numpad_enter">Zenbaki-teklatuko Sartu</string>
+    <string name="keycombo_key_volume_up">Igo bolumena</string>
+    <string name="keycombo_key_volume_down">Jaitsi bolumena</string>
+    <string name="keycombo_key_volume_mute">Isilarazi</string>
+    <string name="keycombo_key_media_play_pause">Erreproduzitu edo pausatu</string>
+    <string name="keycombo_key_media_next">Hurrengo pista</string>
+    <string name="keycombo_key_media_previous">Aurreko pista</string>
+    <string name="keycombo_key_media_stop">Gelditu</string>
+    <string name="keycombo_key_back">Atzera</string>
+    <string name="keycombo_key_numpad">Zenbaki-teklatuko <xliff:g id="digit" example="5">%1$s</xliff:g></string>
+    <string name="title_pref_typing_swipes_through_keys">Pasatu hatza teklaz tekla idazteko edozein aukerarekin</string>
+    <string name="shortcut_say_caller">Esan deitzailea</string>
+    <string name="say_caller_unknown">Sarrerako deia</string>
+    <string name="shortcut_restart_phone">Berrabiarazi telefonoa</string>
+    <string name="shortcut_power_off_phone">Itzali telefonoa</string>
+    <string name="restart_phone_confirm_title">Telefonoa berrabiarazi nahi duzu?</string>
+    <string name="restart_phone_confirm_button">Berrabiarazi</string>
+    <string name="power_off_phone_confirm_title">Telefonoa itzali nahi duzu?</string>
+    <string name="power_off_phone_confirm_button">Itzali</string>
+    <string name="power_command_failed">Huts egin du; pizteko menua ireki da</string>
+    <string name="clipboard_history_search_hint">Bilatu arbelaren historian</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> testu</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> testu</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Irristatu ertzetik barrurantz</string>
+    <string name="title_pref_category_sliders">Graduatzaileak</string>
+    <string name="title_pref_slider_step">Graduatzailearen urratsa</string>
+    <string name="value_slider_step_app">Aplikazioak ezartzen duen bezala</string>
+    <string name="value_slider_step_percent">% 1</string>
+    <string name="value_slider_step_smallest">Barrutiko urratsik txikiena</string>
+    <string name="title_pref_slider_skip_unchanged">Saltatu balioa aldatzen ez duten urratsak</string>
+    <string name="title_slider_enter_value">Idatzi balioa</string>
+    <string name="slider_value_range"><xliff:g id="min" example="0">%1$s</xliff:g> eta <xliff:g id="max" example="100">%2$s</xliff:g> artean</string>
+    <string name="voice_phrases_not_understood">Ulertu gabeko esaldiak</string>
+    <string name="title_pref_voice_phrases_not_understood">Gorde ulertu gabeko esaldiak</string>
+    <string name="voice_phrases_not_understood_listed">Ulertu gabeko esaldiak zerrendara gehitu da.</string>
 </resources>

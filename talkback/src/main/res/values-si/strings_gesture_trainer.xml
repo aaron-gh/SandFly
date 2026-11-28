@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">දෙවන ස්වයිප් එක <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර</string>
     <string name="gesture_trainer_measure_whole_gesture">සම්පූර්ණ ඉංගිතය <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර</string>
     <string name="gesture_trainer_measure_stroke_gap">ඒවා අතර <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර ඔසවා තිබුණි</string>
+    <string name="gesture_trainer_how_menu_horizontal">එක් ඇඟිල්ලක් <xliff:g id="edge">%1$s</xliff:g> තබා, මෙනුව විවෘත කිරීමට එය තිරයේ මැද දෙසට අවම වශයෙන් <xliff:g id="distance">%2$d</xliff:g> මි.මී ඇතුළට ලිස්සා යවන්න. එහි දාරයේ සිට තිරය හරහා අයිතම <xliff:g id="count">%3$d</xliff:g> ක් ඇත, එක් එක් අයිතමය <xliff:g id="item">%5$s</xliff:g> සෙ.මී පමණ පළලයි. අයිතමය <xliff:g id="size">%6$s</xliff:g>, <xliff:g id="number">%4$d</xliff:g>, දාරයේ සිට <xliff:g id="from">%7$s</xliff:g> සිට <xliff:g id="to">%8$s</xliff:g> සෙ.මී දක්වා ඇත. ඇඟිල්ල එකම උසක තබා, අයිතමය කථනය කරන විට ඔසවන්න.</string>
+    <string name="gesture_trainer_finding_menu_left_line">මෙනුව විවෘත වූ උසට <xliff:g id="mm">%1$.0f</xliff:g> මි.මී ඉහළින් හෝ පහළින් ඇඟිල්ල ඔසවන ලදී, මෙනුව <xliff:g id="limit">%2$.0f</xliff:g> මි.මී ට ඔබ්බෙන් වැසේ.</string>
+    <string name="gesture_trainer_tip_menu_left_line">ඇතුළට ලිස්සා යවන අතරතුර ඇඟිල්ල එකම උසක තබා, එහිදීම ඔසවන්න.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">සෑම අයිතමයකටම දාරයේ සිට තිරය හරහා ස්ථාවර ස්ථානයක් ඇත, ඇඟිල්ල ඔසවන ස්ථානයේ ඇති අයිතමය තෝරා ගැනේ. අයිතමය කථනය කරන විට ඔසවන්න.</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g> සිට ඇතුළට ලිස්සා යාම් ඉවත් කර ඇත: එහි දාර මෙනුව තිරය හරහා යයි, එබැවින් එයින් ඇතුළට ලිස්සා යාමක් ඉංගිතයක් ක්‍රියාත්මක කිරීම වෙනුවට මෙනුව විවෘත කරයි.</string>
+    <string name="gesture_trainer_statistics">සංඛ්‍යාලේඛන</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. උත්සාහයන්: <xliff:g id="tries">%2$d</xliff:g>, හඳුනාගත්: <xliff:g id="recognized">%3$d</xliff:g>. කෙටිම: <xliff:g id="shortest">%4$d</xliff:g> මි.තත්, මධ්‍යස්ථ: <xliff:g id="median">%5$d</xliff:g> මි.තත්, දිගම: <xliff:g id="longest">%6$d</xliff:g> මි.තත්.</string>
+    <string name="gesture_trainer_statistics_touches">සෑම ස්පර්ශයක්ම: කෙටිම <xliff:g id="shortest">%1$d</xliff:g> මි.තත්, මධ්‍යස්ථ <xliff:g id="median">%2$d</xliff:g> මි.තත්, දිගම <xliff:g id="longest">%3$d</xliff:g> මි.තත්.</string>
+    <string name="gesture_trainer_kind_tap">තට්ටු කිරීම්</string>
+    <string name="gesture_trainer_kind_double_tap">දෙවරක් තට්ටු කිරීම්</string>
+    <string name="gesture_trainer_kind_triple_tap">තෙවරක් තට්ටු කිරීම්</string>
+    <string name="gesture_trainer_kind_quadruple_tap">හතර වතාවක් තට්ටු කිරීම්</string>
+    <string name="gesture_trainer_kind_tap_hold">තට්ටු කර අල්ලා ගෙන සිටීම</string>
+    <string name="gesture_trainer_kind_double_tap_hold">දෙවරක් තට්ටු කර අල්ලා ගෙන සිටීම</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">තෙවරක් තට්ටු කර අල්ලා ගෙන සිටීම</string>
+    <string name="gesture_trainer_kind_swipe">ස්වයිප්</string>
+    <string name="gesture_trainer_kind_swipe_hold">ස්වයිප් කර අල්ලාගෙන සිටීම</string>
+    <string name="gesture_trainer_kind_two_part_swipe">ඉදිරියට සහ පසුපසට සහ ඇද ස්වයිප්</string>
+    <string name="gesture_trainer_kind_pinch">පින්ච්</string>
+    <string name="gesture_trainer_kind_spread">විහිදීම්</string>
+    <string name="gesture_trainer_kind_rotate">කරකැවීම්</string>
+    <string name="gesture_trainer_kind_scrub">ස්ක්‍රබ්</string>
 </resources>

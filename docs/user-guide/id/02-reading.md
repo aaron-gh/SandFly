@@ -95,7 +95,7 @@ Kontrol pembacaan berikut berpindah menyusuri teks pada item yang difokuskan, la
 
 Di kolom teks yang sedang diedit, kontrol pembacaan ini menggerakkan kursor, dan geseran tetap berada di dalam kolom. Untuk mengedit teks, lihat [](#typing).
 
-SandFly juga dapat berpindah menyusuri teks yang digambar sendiri oleh aplikasi dan tidak dapat dijelajahi pembaca layar lain, seperti pesan di Telegram.
+SandFly juga dapat berpindah menyusuri teks yang digambar sendiri oleh aplikasi dan tidak dapat dijelajahi pembaca layar lain, seperti pesan di Telegram. Dalam teks tersebut, baris berakhir di jeda baris.
 
 #### Berpindah berdasarkan jenis item {#reading-kinds}
 

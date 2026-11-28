@@ -176,6 +176,7 @@ import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.EarlyFocusSpeech;
 import com.google.android.accessibility.talkback.compositor.EventFilter;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.compositor.ItemTypes;
 import com.google.android.accessibility.talkback.compositor.PreparedFocusSpeech;
 import com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DescriptionOrder;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
@@ -213,6 +214,7 @@ import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages
 import com.google.android.accessibility.talkback.focusmanagement.LiftCancelStrip;
 import com.google.android.accessibility.talkback.focusmanagement.LiftToActivateMode;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
+import com.google.android.accessibility.talkback.focusmanagement.WindowNodePrefetcher;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.TouchExplorationInterpreter;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
@@ -424,6 +426,7 @@ import java.io.PrintWriter;
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -986,6 +989,8 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   /** Volume keys > double, triple and long presses of each volume key. */
   @Nullable private VolumeKeyCommands volumeKeyCommands;
+  /** Adjusts sliders and number pickers; skips slider steps that don't change the value. */
+  @Nullable private NumberAdjustor numberAdjustor;
 
   /** Alt+Tab through SandFly's overview. */
   @Nullable private AppSwitcherKeys appSwitcherKeys;
@@ -1560,6 +1565,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       clearCache();
     }
     TraversalTreeCache.onAccessibilityEvent(event);
+    WindowNodePrefetcher.onAccessibilityEvent(event);
     PreparedFocusSpeech.onAccessibilityEvent(event);
     if (directTouchController != null) {
       directTouchController.onAccessibilityEvent(event);
@@ -3278,6 +3284,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     KeyboardActor keyboardActor = new KeyboardActor(this);
 
+    numberAdjustor = new NumberAdjustor(this, accessibilityFocusMonitor);
     // Construct pipeline.
     pipeline =
         new Pipeline(
@@ -3336,7 +3343,7 @@ public class TalkBackService extends AccessibilityServiceCompat
                 passThroughModeActor,
                 new TalkBackUIActor(this),
                 speechRateAndPitchActor,
-                new NumberAdjustor(this, accessibilityFocusMonitor),
+                numberAdjustor,
                 new TypoNavigator(this, editor, accessibilityFocusMonitor, textCursorTracker),
                 new VolumeAdjustor(this),
                 voiceCommandActor,
@@ -3441,6 +3448,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       addEventListener(processorMagnification);
     }
     addEventListener(pipeline);
+    addEventListener(numberAdjustor);
 
     touchExplorationInterpreter.addTouchExplorationActionListener(accessibilityFocusInterpreter);
     screenStateMonitor.addScreenStateChangeListener(accessibilityFocusInterpreter);
@@ -4416,6 +4424,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (volumeKeyCommands != null) {
       volumeKeyCommands.cancel();
     }
+    if (numberAdjustor != null) {
+      numberAdjustor.stopSkipping();
+    }
     if (accelerometerGestures != null) {
       accelerometerGestures.setAllowed(false);
     }
@@ -4556,6 +4567,9 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     if (fullScreenReadActor != null) {
       fullScreenReadActor.shutdown();
+    }
+    if (numberAdjustor != null) {
+      numberAdjustor.stopSkipping();
     }
     cancelContinuousCopy();
 
@@ -5340,6 +5354,8 @@ public class TalkBackService extends AccessibilityServiceCompat
               res.getString(R.string.pref_speak_roles_key),
               res.getBoolean(R.bool.pref_speak_roles_default));
       globalVariables.setSpeakRoles(speakRoles);
+      globalVariables.setUnspokenItemTypes(
+          speakRoles ? ItemTypes.unspoken(prefs) : Collections.emptySet());
       CompositorUtils.setRoleWithoutPause(
           SharedPreferencesUtils.getBooleanPref(
               prefs,

@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">երկրորդ սահեցում՝ <xliff:g id="ms">%1$d</xliff:g> մվ</string>
     <string name="gesture_trainer_measure_whole_gesture">ամբողջ ժեստը՝ <xliff:g id="ms">%1$d</xliff:g> մվ</string>
     <string name="gesture_trainer_measure_stroke_gap">դրանց միջև բարձրացված՝ <xliff:g id="ms">%1$d</xliff:g> մվ</string>
+    <string name="gesture_trainer_how_menu_horizontal">Ընտրացանկը բացելու համար դրեք մեկ մատը <xliff:g id="edge">%1$s</xliff:g> և սահեցրեք այն դեպի էկրանի մեջտեղը առնվազն <xliff:g id="distance">%2$d</xliff:g> մմ։ Այն ունի <xliff:g id="count">%3$d</xliff:g> տարր էկրանի լայնությամբ՝ եզրից սկսած, յուրաքանչյուրը մոտ <xliff:g id="size">%6$s</xliff:g> սմ լայնությամբ։ <xliff:g id="number">%4$d</xliff:g>-րդ տարրը՝ <xliff:g id="item">%5$s</xliff:g>, գտնվում է եզրից <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> սմ հեռավորության վրա։ Մատը պահեք նույն բարձրության վրա և բարձրացրեք այն, երբ տարրը հնչեցվի։</string>
+    <string name="gesture_trainer_finding_menu_left_line">Մատը բարձրացավ ընտրացանկի բացման տեղից <xliff:g id="mm">%1$.0f</xliff:g> մմ վերև կամ ներքև, իսկ ընտրացանկը փակվում է <xliff:g id="limit">%2$.0f</xliff:g> մմ-ից այն կողմ։</string>
+    <string name="gesture_trainer_tip_menu_left_line">Ներս սահեցնելիս մատը պահեք նույն բարձրության վրա և այնտեղ էլ բարձրացրեք։</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Յուրաքանչյուր տարր էկրանի լայնությամբ՝ եզրից սկսած, ունի ֆիքսված տեղ, և ընտրվում է այն տարրը, որտեղ մատը բարձրանում է։ Բարձրացրեք, երբ տարրը հնչեցվի։</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g> վրայից ներս սահեցումները բաց են թողնված․ դրա եզրի ընտրացանկը տարածվում է էկրանի լայնությամբ, ուստի դրանից ներս սահեցումը ժեստ կատարելու փոխարեն բացում է ընտրացանկը։</string>
+    <string name="gesture_trainer_statistics">Վիճակագրություն</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>։ Փորձեր՝ <xliff:g id="tries">%2$d</xliff:g>, ճանաչված՝ <xliff:g id="recognized">%3$d</xliff:g>։ Ամենակարճը՝ <xliff:g id="shortest">%4$d</xliff:g> մվ, մեդիանը՝ <xliff:g id="median">%5$d</xliff:g> մվ, ամենաերկարը՝ <xliff:g id="longest">%6$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_statistics_touches">Յուրաքանչյուր հպում՝ ամենակարճը <xliff:g id="shortest">%1$d</xliff:g> մվ, մեդիանը <xliff:g id="median">%2$d</xliff:g> մվ, ամենաերկարը <xliff:g id="longest">%3$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_kind_tap">Հպումներ</string>
+    <string name="gesture_trainer_kind_double_tap">Կրկնակի հպումներ</string>
+    <string name="gesture_trainer_kind_triple_tap">Եռակի հպումներ</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Քառակի հպումներ</string>
+    <string name="gesture_trainer_kind_tap_hold">Հպում և պահում</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Կրկնակի հպում և պահում</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Եռակի հպում և պահում</string>
+    <string name="gesture_trainer_kind_swipe">Սահեցումներ</string>
+    <string name="gesture_trainer_kind_swipe_hold">Սահեցում և պահում</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Հետ ու առաջ և անկյունային սահեցումներ</string>
+    <string name="gesture_trainer_kind_pinch">Ճմլումներ</string>
+    <string name="gesture_trainer_kind_spread">Բացումներ</string>
+    <string name="gesture_trainer_kind_rotate">Պտտումներ</string>
+    <string name="gesture_trainer_kind_scrub">Արագ սահեցումներ այս ու այն կողմ</string>
 </resources>

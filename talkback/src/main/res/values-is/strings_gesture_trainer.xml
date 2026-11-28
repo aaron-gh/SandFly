@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">seinna strok <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">öll bendingin <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">lyft í <xliff:g id="ms">%1$d</xliff:g> ms á milli</string>
+    <string name="gesture_trainer_how_menu_horizontal">Settu einn fingur <xliff:g id="edge">%1$s</xliff:g> og renndu honum inn að miðju skjásins að minnsta kosti <xliff:g id="distance">%2$d</xliff:g> mm til að opna valmyndina. Hún hefur <xliff:g id="count">%3$d</xliff:g> atriði þvert yfir skjáinn, frá brúninni, hvert um <xliff:g id="size">%6$s</xliff:g> cm á breidd. Atriði <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, er <xliff:g id="from">%7$s</xliff:g> til <xliff:g id="to">%8$s</xliff:g> cm frá brúninni. Haltu fingrinum í sömu hæð og lyftu honum þegar atriðið er lesið upp.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Fingrinum var lyft <xliff:g id="mm">%1$.0f</xliff:g> mm fyrir ofan eða neðan staðinn þar sem valmyndin opnaðist, og valmyndin lokast utan <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Haltu fingrinum í sömu hæð meðan þú rennir inn, og lyftu honum þar.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Hvert atriði hefur fastan stað þvert yfir skjáinn, frá brúninni, og atriðið þar sem fingrinum er lyft er valið. Lyftu þegar atriðið er lesið upp.</string>
+    <string name="gesture_trainer_left_out_in_menu">Strokum inn frá <xliff:g id="edge">%1$s</xliff:g> er sleppt: valmynd brúnarinnar liggur þvert yfir skjáinn, svo strok inn frá henni opnar valmyndina í stað þess að keyra bendingu.</string>
+    <string name="gesture_trainer_statistics">Tölfræði</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Tilraunir: <xliff:g id="tries">%2$d</xliff:g>, greindar: <xliff:g id="recognized">%3$d</xliff:g>. Stysta: <xliff:g id="shortest">%4$d</xliff:g> ms, miðgildi: <xliff:g id="median">%5$d</xliff:g> ms, lengsta: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Hver snerting: stysta <xliff:g id="shortest">%1$d</xliff:g> ms, miðgildi <xliff:g id="median">%2$d</xliff:g> ms, lengsta <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Ýtingar</string>
+    <string name="gesture_trainer_kind_double_tap">Ýtt tvisvar</string>
+    <string name="gesture_trainer_kind_triple_tap">Ýtt þrisvar</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Ýtt fjórum sinnum</string>
+    <string name="gesture_trainer_kind_tap_hold">Halda inni</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Ýta tvisvar og halda inni</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Ýta þrisvar og halda inni</string>
+    <string name="gesture_trainer_kind_swipe">Strok</string>
+    <string name="gesture_trainer_kind_swipe_hold">Strjúka og halda inni</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Strok fram og til baka og í horn</string>
+    <string name="gesture_trainer_kind_pinch">Klíp</string>
+    <string name="gesture_trainer_kind_spread">Glennur</string>
+    <string name="gesture_trainer_kind_rotate">Snúningar</string>
+    <string name="gesture_trainer_kind_scrub">Hraðstrok</string>
 </resources>

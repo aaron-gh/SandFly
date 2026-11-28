@@ -255,7 +255,7 @@ Untuk menambahkan gerakan bagi suatu aplikasi:
 
 Setiap gerakan pada layar aplikasi menampilkan perintahnya di aplikasi itu. Aktifkan untuk memilih **Pilih perintah** dan **Hapus**. Di bawah **Pintasan keyboard**, **Tambahkan pintasan keyboard** merekam tombol untuk aplikasi tersebut dengan cara yang sama. Lihat [](#keyboards). **Hapus aplikasi** menghapus semua gerakan dan pintasan keyboard untuk aplikasi tersebut.
 
-Perintah **Gerakan untuk aplikasi ini** membuka layar untuk aplikasi yang sedang berada di depan, sehingga Anda dapat menambahkan gerakan sambil menggunakan aplikasi.
+Perintah **Atur gerakan aplikasi saat ini** membuka layar untuk aplikasi yang sedang berada di depan, sehingga Anda dapat menambahkan gerakan sambil menggunakan aplikasi.
 
 **Ekspor ke file** dan **Impor dari file** menyimpan gerakan aplikasi ke file dan membacanya kembali. Lihat [](#api-item-files). Profil gerakan diprioritaskan sebelum gerakan di aplikasi. Lihat [](#gestures-profiles).
 
@@ -271,7 +271,7 @@ Untuk menambahkan profil gerakan:
 
 Setiap gerakan dalam profil awalnya bernilai **Default** dan menjalankan perintah yang sama seperti tanpa profil: perintahnya di layar **Gerakan**, di **Gerakan di aplikasi**, atau di skrip. Gerakan yang ditetapkan ke suatu perintah akan menjalankan perintah itu, mendahului gerakan di aplikasi dan skrip. Daftar perintah menampilkan **Default** di urutan pertama.
 
-Layar profil juga memiliki **Ganti nama**, **Pindahkan ke atas**, **Pindahkan ke bawah**, **Ekspor ke file**, dan **Hapus profil gerakan**, serta pengalih **Kenali geseran sebelum jari diangkat** tersendiri yang mengikuti layar **Gerakan** hingga Anda mengubahnya.
+Layar profil juga memiliki **Ganti nama**, **Pindahkan ke atas**, **Pindahkan ke bawah**, **Ekspor ke file**, dan **Hapus profil gerakan**, serta tombol beralih **Kenali geseran sebelum jari diangkat** tersendiri yang mengikuti layar **Gerakan** hingga Anda mengubahnya.
 
 Untuk mengubah profil yang sedang digunakan:
 

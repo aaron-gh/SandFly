@@ -17,6 +17,7 @@
 package com.google.android.accessibility.braille.translate;
 
 import android.content.Context;
+import androidx.annotation.Nullable;
 import com.google.common.base.Ascii;
 
 /**
@@ -32,6 +33,16 @@ public interface TranslatorFactory {
 
   /** Creates the translator. */
   BrailleTranslator create(Context context, String codeName, boolean contractedMode);
+
+  /**
+   * Creates the translator for braille display output, which translates the characters that the
+   * table of [codeName] doesn't define with the table of [secondaryCodeName], if not null. Braille
+   * is back-translated with the table of [codeName] alone.
+   */
+  default BrailleTranslator create(
+      Context context, String codeName, boolean contractedMode, @Nullable String secondaryCodeName) {
+    return create(context, codeName, contractedMode);
+  }
 
   /** Returns the library name of the translator. */
   String getLibraryName();

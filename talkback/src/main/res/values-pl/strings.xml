@@ -354,7 +354,7 @@
   <string name="shortcut_title_special_features">Inne</string>
     <string name="shortcut_unassigned">Nieprzypisany</string>
   <string name="shortcut_not_customizable">%1$s, nie można dostosować</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Niedostępne, gdy zegar wibracyjny jest włączony</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Niedostępne, gdy funkcja Vibration Watch jest włączona</string>
   <string name="shortcut_next">Następny element</string>
   <string name="shortcut_previous">Poprzedni element</string>
   <string name="shortcut_scroll_forward">Przewiń do przodu</string>
@@ -369,7 +369,7 @@
   <string name="shortcut_previous_window">Poprzednie okno</string>
   <string name="shortcut_back">Wstecz</string>
   <string name="shortcut_home">Ekran główny</string>
-  <string name="shortcut_overview">Ostatnie aplikacje</string>
+  <string name="shortcut_overview">Przegląd SandFly</string>
   <string name="shortcut_notifications">Powiadomienia</string>
   <string name="shortcut_quick_settings">Szybkie ustawienia</string>
   <string name="shortcut_show_custom_actions">Pokaż czynności niestandardowe</string>
@@ -499,7 +499,7 @@
   <string name="summary_talkback_preferences">Otwórz ustawienia SandFly</string>
   <string name="summary_braile_display_preferences">Otwórz ustawienia monitora brajlowskiego</string>
   <string name="summary_system_actions">Przejdź do wszystkich aplikacji i otwórz Szybkie ustawienia</string>
-  <string name="summary_tts_settings">Otwórz ustawienia mowy SandFly</string>
+  <string name="summary_tts_settings">Otwórz ustawienia zamiany tekstu na mowę</string>
   <string name="not_editable">Nie można edytować</string>
   <string name="not_selectable">Niedostępne</string>
   <string name="summary_actions">Wykonywanie czynności</string>
@@ -1463,7 +1463,7 @@
     <string name="shortcut_open_app">Otwórz <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">Przewiń na początek</string>
     <string name="shortcut_write_reading_control">Napisz literę opcji sterowania czytaniem</string>
-    <string name="title_pref_reading_control_letters">Litery do sterowania czytaniem</string>
+    <string name="title_pref_reading_control_letters">Litery pisane odręcznie</string>
     <string name="reading_control_letter_none">Brak</string>
     <string name="handwriting_prompt">Napisz literę alfabetu</string>
     <string name="handwriting_closed">Zamknięto obszar pisma odręcznego</string>
@@ -1640,7 +1640,7 @@
     <string name="dictation_ai_same">Jak w sekcji „Usługi AI”</string>
     <string name="navigation_settings_link">Ustawienia SandFly > Nawigacja</string>
     <string name="navigation_settings_link_tts">Ustawienia SandFly, a następnie Nawigacja</string>
-    <string name="shortcut_reserved_for_vibration_watch">Zarezerwowane dla zegara wibracyjnego w sekcji „Gesty”</string>
+    <string name="shortcut_reserved_for_vibration_watch">Zarezerwowane dla funkcji Vibration Watch w sekcji „Gesty”</string>
     <string name="speech_control_ask_text">Może odczytywać tekst głosem używanym w SandFly. Możesz to zmienić w sekcji Ustawienia, Mowa, Zezwalaj innym aplikacjom na odczytywanie tekstu przez SandFly.</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">Funkcja SandFly jest włączona. Aby ją wyłączyć, przytrzymaj 2 palce na ekranie przez 5 sekund. Aby przestać wyświetlać ten komunikat, wyłącz opcję Ustawienia SandFly &gt; Wstrzymywanie i wyłączanie &gt; Pokazuj instrukcje wyłączania funkcji SandFly.</string>
     <string name="tutorial_link">Ustawienia SandFly &gt; Pomoc i opinie &gt; Samouczek SandFly</string>
@@ -1848,10 +1848,10 @@
     <string name="pref_speak_grid_positions_title">Odczytywanie informacji o siatkach i tabelach</string>
     <string name="pref_speak_role_without_pause_title">Odczytywanie typu elementu bez pauzy</string>
     <string name="title_pref_speak_actions_available">Odczytuj „Dostępne czynności”</string>
-    <string name="title_pref_overview">Używaj ekranu ostatnich aplikacji SandFly</string>
+    <string name="title_pref_overview">Używaj przeglądu SandFly</string>
     <string name="title_pref_overview_newest_last">Ostatnio używana aplikacja na dole</string>
     <string name="title_pref_overview_columns">Kolumny</string>
-    <string name="overview_title">Ostatnie aplikacje</string>
+    <string name="overview_title">Przegląd SandFly</string>
     <string name="overview_task_with_title">%1$s, %2$s</string>
     <string name="overview_close_all">Zamknij wszystkie</string>
     <string name="overview_system">Systemowy ekran ostatnich aplikacji</string>
@@ -2567,7 +2567,7 @@
     <string name="title_pref_volume_keys_hide_panel">Ukrywaj panel głośności</string>
     <string name="title_pref_volume_up_press">Pojedyncze naciśnięcie przycisku zwiększania głośności</string>
     <string name="title_pref_volume_down_press">Pojedyncze naciśnięcie przycisku zmniejszania głośności</string>
-    <string name="title_pref_sandfly_keyboard_double_press">Znaki wpisywane dwukrotnym naciśnięciem</string>
+    <string name="title_pref_sandfly_keyboard_double_press">Znaki podwójnego naciśnięcia</string>
     <string name="title_pref_sandfly_keyboard_double_space_period">Podwójna spacja wstawia kropkę</string>
     <string name="double_press_add">Dodaj klawisz</string>
     <string name="double_press_item"><xliff:g id="key" example="g">%1$s</xliff:g>: <xliff:g id="characters" example="ğ">%2$s</xliff:g></string>
@@ -2710,55 +2710,111 @@
     <string name="title_pref_cyrillic_text_recognition">Rozpoznawanie tekstu cyrylicą</string>
     <string name="cyrillic_text_model_missing">Brak modelu rozpoznawania tekstu dla języka: <xliff:g id="language" example="Russian">%1$s</xliff:g>. Pobierz go w ustawieniach Opisy obrazów i ekranu, Rozpoznawanie tekstu cyrylicą.</string>
     <string name="cyrillic_text_model_error_http">Serwer pobierania nie przyjął żądania. Spróbuj ponownie później.</string>
-  <string name="title_pref_announce_caller">Ogłaszaj, kto dzwoni</string>
-  <string name="announce_caller_once">Jeden raz</string>
-  <string name="announce_caller_repeat">Powtarzaj podczas dzwonienia</string>
-  <string name="title_pref_typing_swipes_through_keys">Przechodź przesunięciami między klawiszami przy każdej metodzie pisania</string>
-  <string name="shortcut_say_caller">Odczytaj, kto dzwoni</string>
-  <string name="say_caller_unknown">Połączenie przychodzące</string>
-  <string name="shortcut_restart_phone">Uruchom telefon ponownie</string>
-  <string name="shortcut_power_off_phone">Wyłącz telefon</string>
-  <string name="restart_phone_confirm_title">Uruchomić telefon ponownie?</string>
-  <string name="restart_phone_confirm_button">Uruchom ponownie</string>
-  <string name="power_off_phone_confirm_title">Wyłączyć telefon?</string>
-  <string name="power_off_phone_confirm_button">Wyłącz</string>
-  <string name="power_command_failed">Nie udało się wykonać polecenia. Otwarto menu zasilania.</string>
-  <string name="title_pref_edge_menu_horizontal">Przesuwaj od krawędzi w głąb ekranu</string>
-  <string name="voice_phrases_not_understood">Niezrozumiane wypowiedzi</string>
-  <string name="title_pref_voice_phrases_not_understood">Zapisuj niezrozumiane wypowiedzi</string>
-  <string name="voice_phrases_not_understood_listed">Dodano do listy „Niezrozumiane wypowiedzi”.</string>
-  <string name="title_pref_command_feedback_voice">Głos komunikatów poleceń i edycji tekstu</string>
-  <string name="title_pref_command_feedback_over_speech">Odczytuj komunikaty poleceń równocześnie z mową SandFly</string>
-  <string name="keycombo_key_numpad_add">Plus na klawiaturze numerycznej</string>
-  <string name="keycombo_key_numpad_subtract">Minus na klawiaturze numerycznej</string>
-  <string name="keycombo_key_numpad_multiply">Mnożenie na klawiaturze numerycznej</string>
-  <string name="keycombo_key_numpad_divide">Dzielenie na klawiaturze numerycznej</string>
-  <string name="keycombo_key_numpad_dot">Kropka na klawiaturze numerycznej</string>
-  <string name="keycombo_key_numpad_comma">Przecinek na klawiaturze numerycznej</string>
-  <string name="keycombo_key_numpad_equals">Znak równości na klawiaturze numerycznej</string>
-  <string name="keycombo_key_numpad_enter">Enter na klawiaturze numerycznej</string>
-  <string name="keycombo_key_volume_up">Zwiększanie głośności</string>
-  <string name="keycombo_key_volume_down">Zmniejszanie głośności</string>
-  <string name="keycombo_key_volume_mute">Wyciszenie</string>
-  <string name="keycombo_key_numpad"><xliff:g id="digit" example="5">%1$s</xliff:g> na klawiaturze numerycznej</string>
-  <string name="keycombo_key_space">Spacja</string>
-  <string name="keycombo_key_search">Szukaj</string>
-  <string name="keycombo_key_grave">Akcent słaby</string>
-  <string name="keycombo_key_equals">Znak równości</string>
-  <string name="keycombo_key_left_bracket">Lewy nawias kwadratowy</string>
-  <string name="keycombo_key_right_bracket">Prawy nawias kwadratowy</string>
-  <string name="keycombo_key_backslash">Odwrócony ukośnik</string>
-  <string name="keycombo_key_semicolon">Średnik</string>
-  <string name="keycombo_key_apostrophe">Apostrof</string>
-  <string name="keycombo_key_comma">Przecinek</string>
-  <string name="keycombo_key_period">Kropka</string>
-  <string name="keycombo_key_slash">Ukośnik</string>
-  <string name="keycombo_key_at">Małpa</string>
-  <string name="keycombo_key_star">Gwiazdka</string>
-  <string name="keycombo_key_pound">Krzyżyk</string>
-  <string name="keycombo_key_media_play_pause">Odtwórz lub wstrzymaj</string>
-  <string name="keycombo_key_media_next">Następny utwór</string>
-  <string name="keycombo_key_media_previous">Poprzedni utwór</string>
-  <string name="keycombo_key_media_stop">Zatrzymaj</string>
-  <string name="keycombo_key_back">Wstecz</string>
+    <string name="title_pref_announce_caller">Ogłaszaj, kto dzwoni</string>
+    <string name="announce_caller_once">Jeden raz</string>
+    <string name="announce_caller_repeat">Powtarzaj podczas dzwonienia</string>
+    <string name="title_pref_command_feedback_voice">Głos komunikatów poleceń i edycji tekstu</string>
+    <string name="title_pref_command_feedback_over_speech">Odczytuj komunikaty poleceń równocześnie z mową SandFly</string>
+    <string name="title_pref_item_types_spoken">Odczytywane typy elementów</string>
+    <string name="item_type_link">Link</string>
+    <string name="item_type_tab">Karta</string>
+    <string name="item_type_other">Inne typy</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">Kliknięcie 2 palcami, przesunięcie 1 palcem</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">Spacja</string>
+    <string name="keycombo_key_escape">Escape</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">Menu</string>
+    <string name="keycombo_key_search">Szukaj</string>
+    <string name="keycombo_key_grave">Akcent słaby</string>
+    <string name="keycombo_key_minus">Minus</string>
+    <string name="keycombo_key_equals">Znak równości</string>
+    <string name="keycombo_key_left_bracket">Lewy nawias kwadratowy</string>
+    <string name="keycombo_key_right_bracket">Prawy nawias kwadratowy</string>
+    <string name="keycombo_key_backslash">Odwrócony ukośnik</string>
+    <string name="keycombo_key_semicolon">Średnik</string>
+    <string name="keycombo_key_apostrophe">Apostrof</string>
+    <string name="keycombo_key_comma">Przecinek</string>
+    <string name="keycombo_key_period">Kropka</string>
+    <string name="keycombo_key_slash">Ukośnik</string>
+    <string name="keycombo_key_plus">Plus</string>
+    <string name="keycombo_key_at">Małpa</string>
+    <string name="keycombo_key_star">Gwiazdka</string>
+    <string name="keycombo_key_pound">Krzyżyk</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">Plus na klawiaturze numerycznej</string>
+    <string name="keycombo_key_numpad_subtract">Minus na klawiaturze numerycznej</string>
+    <string name="keycombo_key_numpad_multiply">Mnożenie na klawiaturze numerycznej</string>
+    <string name="keycombo_key_numpad_divide">Dzielenie na klawiaturze numerycznej</string>
+    <string name="keycombo_key_numpad_dot">Kropka na klawiaturze numerycznej</string>
+    <string name="keycombo_key_numpad_comma">Przecinek na klawiaturze numerycznej</string>
+    <string name="keycombo_key_numpad_equals">Znak równości na klawiaturze numerycznej</string>
+    <string name="keycombo_key_numpad_enter">Enter na klawiaturze numerycznej</string>
+    <string name="keycombo_key_volume_up">Zwiększanie głośności</string>
+    <string name="keycombo_key_volume_down">Zmniejszanie głośności</string>
+    <string name="keycombo_key_volume_mute">Wyciszenie</string>
+    <string name="keycombo_key_media_play_pause">Odtwórz lub wstrzymaj</string>
+    <string name="keycombo_key_media_next">Następny utwór</string>
+    <string name="keycombo_key_media_previous">Poprzedni utwór</string>
+    <string name="keycombo_key_media_stop">Zatrzymaj</string>
+    <string name="keycombo_key_back">Wstecz</string>
+    <string name="keycombo_key_numpad"><xliff:g id="digit" example="5">%1$s</xliff:g> na klawiaturze numerycznej</string>
+    <string name="title_pref_typing_swipes_through_keys">Przechodź przesunięciami między klawiszami przy każdej metodzie pisania</string>
+    <string name="shortcut_say_caller">Odczytaj, kto dzwoni</string>
+    <string name="say_caller_unknown">Połączenie przychodzące</string>
+    <string name="shortcut_restart_phone">Uruchom telefon ponownie</string>
+    <string name="shortcut_power_off_phone">Wyłącz telefon</string>
+    <string name="restart_phone_confirm_title">Uruchomić telefon ponownie?</string>
+    <string name="restart_phone_confirm_button">Uruchom ponownie</string>
+    <string name="power_off_phone_confirm_title">Wyłączyć telefon?</string>
+    <string name="power_off_phone_confirm_button">Wyłącz</string>
+    <string name="power_command_failed">Nie udało się wykonać polecenia. Otwarto menu zasilania.</string>
+    <string name="clipboard_history_search_hint">Szukaj w historii schowka</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tekst</item>
+        <item quantity="few"><xliff:g id="count" example="12">%d</xliff:g> teksty</item>
+        <item quantity="many"><xliff:g id="count" example="12">%d</xliff:g> tekstów</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> tekstu</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Przesuwaj od krawędzi w głąb ekranu</string>
+    <string name="title_pref_category_sliders">Suwaki</string>
+    <string name="title_pref_slider_step">Krok suwaka</string>
+    <string name="value_slider_step_app">Tak, jak ustawia aplikacja</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">Najmniejszy krok zakresu</string>
+    <string name="title_pref_slider_skip_unchanged">Pomijaj kroki, które nie zmieniają wartości</string>
+    <string name="title_slider_enter_value">Wpisz wartość</string>
+    <string name="slider_value_range">Od <xliff:g id="min" example="0">%1$s</xliff:g> do <xliff:g id="max" example="100">%2$s</xliff:g></string>
+    <string name="voice_phrases_not_understood">Niezrozumiane wypowiedzi</string>
+    <string name="title_pref_voice_phrases_not_understood">Zapisuj niezrozumiane wypowiedzi</string>
+    <string name="voice_phrases_not_understood_listed">Dodano do listy „Niezrozumiane wypowiedzi”.</string>
 </resources>

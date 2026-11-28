@@ -2406,18 +2406,18 @@
     <string name="title_pref_shortcut_4finger_3tap_swipe_down">Triple toque y luego deslizar hacia abajo con 4 dedos</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_left">Triple toque y luego deslizar hacia la izquierda con 4 dedos</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_right">Triple toque y luego deslizar hacia la derecha con 4 dedos</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Tocar con 2 dedos y luego deslizar hacia arriba</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Tocar con 2 dedos y luego deslizar hacia abajo</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Tocar con 2 dedos y luego deslizar hacia la izquierda</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Tocar con 2 dedos y luego deslizar hacia la derecha</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Doble toque con 2 dedos y luego deslizar hacia arriba</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Doble toque con 2 dedos y luego deslizar hacia abajo</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Doble toque con 2 dedos y luego deslizar hacia la izquierda</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Doble toque con 2 dedos y luego deslizar hacia la derecha</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Triple toque con 2 dedos y luego deslizar hacia arriba</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Triple toque con 2 dedos y luego deslizar hacia abajo</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Triple toque con 2 dedos y luego deslizar hacia la izquierda</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Triple toque con 2 dedos y luego deslizar hacia la derecha</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Tocar con 2 dedos y luego deslizar hacia arriba con 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Tocar con 2 dedos y luego deslizar hacia abajo con 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Tocar con 2 dedos y luego deslizar hacia la izquierda con 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Tocar con 2 dedos y luego deslizar hacia la derecha con 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Doble toque con 2 dedos y luego deslizar hacia arriba con 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Doble toque con 2 dedos y luego deslizar hacia abajo con 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Doble toque con 2 dedos y luego deslizar hacia la izquierda con 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Doble toque con 2 dedos y luego deslizar hacia la derecha con 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Triple toque con 2 dedos y luego deslizar hacia arriba con 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Triple toque con 2 dedos y luego deslizar hacia abajo con 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Triple toque con 2 dedos y luego deslizar hacia la izquierda con 1 dedo</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Triple toque con 2 dedos y luego deslizar hacia la derecha con 1 dedo</string>
     <string name="title_pref_shortcut_up_and_down_and_up">Deslizar hacia arriba, hacia abajo y luego hacia arriba</string>
     <string name="title_pref_shortcut_up_and_down_and_left">Deslizar hacia arriba, hacia abajo y luego hacia la izquierda</string>
     <string name="title_pref_shortcut_up_and_down_and_right">Deslizar hacia arriba, hacia abajo y luego hacia la derecha</string>
@@ -2870,4 +2870,110 @@
     <string name="title_pref_cyrillic_text_recognition">Reconocimiento de texto cirílico</string>
     <string name="cyrillic_text_model_missing">No hay modelo de reconocimiento de texto para <xliff:g id="language" example="Russian">%1$s</xliff:g>. Descárgalo en Descripciones de imagen y pantalla, Reconocimiento de texto cirílico.</string>
     <string name="cyrillic_text_model_error_http">El servidor de descarga no aceptó la solicitud. Inténtalo de nuevo más tarde.</string>
+    <string name="title_pref_announce_caller">Anunciar quién llama</string>
+    <string name="announce_caller_once">Una vez</string>
+    <string name="announce_caller_repeat">Repetir mientras suena</string>
+    <string name="title_pref_command_feedback_voice">Voz para respuestas de comandos y edición de texto</string>
+    <string name="title_pref_command_feedback_over_speech">Leer respuestas de comandos sobre la voz de SandFly</string>
+    <string name="title_pref_item_types_spoken">Tipos de elemento que se enuncian</string>
+    <string name="item_type_link">Enlace</string>
+    <string name="item_type_tab">Pestaña</string>
+    <string name="item_type_other">Otros tipos</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">Toque con 2 dedos, deslizamiento con 1</string>
+    <string name="keycombo_key_enter">Intro</string>
+    <string name="keycombo_key_space">Espacio</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Re Pág</string>
+    <string name="keycombo_key_page_down">Av Pág</string>
+    <string name="keycombo_key_home">Inicio</string>
+    <string name="keycombo_key_end">Fin</string>
+    <string name="keycombo_key_delete">Supr</string>
+    <string name="keycombo_key_menu">Menú</string>
+    <string name="keycombo_key_search">Buscar</string>
+    <string name="keycombo_key_grave">Acento grave</string>
+    <string name="keycombo_key_minus">Menos</string>
+    <string name="keycombo_key_equals">Igual</string>
+    <string name="keycombo_key_left_bracket">Corchete de apertura</string>
+    <string name="keycombo_key_right_bracket">Corchete de cierre</string>
+    <string name="keycombo_key_backslash">Barra invertida</string>
+    <string name="keycombo_key_semicolon">Punto y coma</string>
+    <string name="keycombo_key_apostrophe">Apóstrofe</string>
+    <string name="keycombo_key_comma">Coma</string>
+    <string name="keycombo_key_period">Punto</string>
+    <string name="keycombo_key_slash">Barra</string>
+    <string name="keycombo_key_plus">Más</string>
+    <string name="keycombo_key_at">Arroba</string>
+    <string name="keycombo_key_star">Asterisco</string>
+    <string name="keycombo_key_pound">Almohadilla</string>
+    <string name="keycombo_key_caps_lock">Bloq Mayús</string>
+    <string name="keycombo_key_scroll_lock">Bloq Despl</string>
+    <string name="keycombo_key_num_lock">Bloq Num</string>
+    <string name="keycombo_key_pause">Pausa</string>
+    <string name="keycombo_key_print_screen">Impr Pant</string>
+    <string name="keycombo_key_numpad_add">Más del teclado numérico</string>
+    <string name="keycombo_key_numpad_subtract">Menos del teclado numérico</string>
+    <string name="keycombo_key_numpad_multiply">Multiplicar del teclado numérico</string>
+    <string name="keycombo_key_numpad_divide">Dividir del teclado numérico</string>
+    <string name="keycombo_key_numpad_dot">Punto del teclado numérico</string>
+    <string name="keycombo_key_numpad_comma">Coma del teclado numérico</string>
+    <string name="keycombo_key_numpad_equals">Igual del teclado numérico</string>
+    <string name="keycombo_key_numpad_enter">Intro del teclado numérico</string>
+    <string name="keycombo_key_volume_up">Subir volumen</string>
+    <string name="keycombo_key_volume_down">Bajar volumen</string>
+    <string name="keycombo_key_volume_mute">Silenciar</string>
+    <string name="keycombo_key_media_play_pause">Reproducir o pausar</string>
+    <string name="keycombo_key_media_next">Pista siguiente</string>
+    <string name="keycombo_key_media_previous">Pista anterior</string>
+    <string name="keycombo_key_media_stop">Detener</string>
+    <string name="keycombo_key_back">Atrás</string>
+    <string name="keycombo_key_numpad"><xliff:g id="digit" example="5">%1$s</xliff:g> del teclado numérico</string>
+    <string name="title_pref_typing_swipes_through_keys">Deslizar de tecla en tecla con cualquier método de escritura</string>
+    <string name="shortcut_say_caller">Decir quién llama</string>
+    <string name="say_caller_unknown">Llamada entrante</string>
+    <string name="shortcut_restart_phone">Reiniciar el teléfono</string>
+    <string name="shortcut_power_off_phone">Apagar el teléfono</string>
+    <string name="restart_phone_confirm_title">¿Reiniciar el teléfono?</string>
+    <string name="restart_phone_confirm_button">Reiniciar</string>
+    <string name="power_off_phone_confirm_title">¿Apagar el teléfono?</string>
+    <string name="power_off_phone_confirm_button">Apagar</string>
+    <string name="power_command_failed">Error; se abrió el menú de encendido</string>
+    <string name="clipboard_history_search_hint">Buscar en el historial del portapapeles</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> texto</item>
+        <item quantity="many"><xliff:g id="count" example="12">%d</xliff:g> textos</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> textos</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Deslizar hacia dentro desde el borde</string>
+    <string name="title_pref_category_sliders">Controles deslizantes</string>
+    <string name="title_pref_slider_step">Paso del control deslizante</string>
+    <string name="value_slider_step_app">Como lo define la aplicación</string>
+    <string name="value_slider_step_percent">1 %</string>
+    <string name="value_slider_step_smallest">Paso más pequeño del rango</string>
+    <string name="title_pref_slider_skip_unchanged">Omitir pasos que no cambian el valor</string>
+    <string name="title_slider_enter_value">Introducir valor</string>
+    <string name="slider_value_range">De <xliff:g id="min" example="0">%1$s</xliff:g> a <xliff:g id="max" example="100">%2$s</xliff:g></string>
+    <string name="voice_phrases_not_understood">Frases no entendidas</string>
+    <string name="title_pref_voice_phrases_not_understood">Guardar frases no entendidas</string>
+    <string name="voice_phrases_not_understood_listed">Añadida a Frases no entendidas.</string>
 </resources>

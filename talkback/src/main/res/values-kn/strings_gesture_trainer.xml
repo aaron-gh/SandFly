@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">ಎರಡನೇ ಸ್ವೈಪ್ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">ಸಂಪೂರ್ಣ ಜೆಸ್ಚರ್ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">ಅವುಗಳ ನಡುವೆ <xliff:g id="ms">%1$d</xliff:g> ms ಬೆರಳು ಎತ್ತಲಾಗಿತ್ತು</string>
+    <string name="gesture_trainer_how_menu_horizontal">ಮೆನು ತೆರೆಯಲು ಒಂದು ಬೆರಳನ್ನು <xliff:g id="edge">%1$s</xliff:g> ಇರಿಸಿ ಮತ್ತು ಸ್ಕ್ರೀನ್‌ನ ಮಧ್ಯದ ಕಡೆಗೆ ಕನಿಷ್ಠ <xliff:g id="distance">%2$d</xliff:g> ಮಿ.ಮೀ ಒಳಕ್ಕೆ ಸ್ಲೈಡ್ ಮಾಡಿ. ಅದರಲ್ಲಿ ಅಂಚಿನಿಂದ ಸ್ಕ್ರೀನ್‌ನ ಅಡ್ಡಲಾಗಿ <xliff:g id="count">%3$d</xliff:g> ಐಟಂಗಳಿವೆ, ಪ್ರತಿಯೊಂದೂ ಸುಮಾರು <xliff:g id="size">%6$s</xliff:g> ಸೆಂ.ಮೀ ಅಗಲ. ಐಟಂ <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, ಅಂಚಿನಿಂದ <xliff:g id="from">%7$s</xliff:g> ರಿಂದ <xliff:g id="to">%8$s</xliff:g> ಸೆಂ.ಮೀ ದೂರದಲ್ಲಿದೆ. ಬೆರಳನ್ನು ಅದೇ ಎತ್ತರದಲ್ಲಿ ಇರಿಸಿ, ಮತ್ತು ಐಟಂ ಅನ್ನು ಹೇಳಿದಾಗ ಎತ್ತಿ.</string>
+    <string name="gesture_trainer_finding_menu_left_line">ಮೆನು ತೆರೆದ ಸ್ಥಳದಿಂದ <xliff:g id="mm">%1$.0f</xliff:g> ಮಿ.ಮೀ ಮೇಲೆ ಅಥವಾ ಕೆಳಗೆ ಬೆರಳು ಎತ್ತಲ್ಪಟ್ಟಿತು, ಮತ್ತು <xliff:g id="limit">%2$.0f</xliff:g> ಮಿ.ಮೀ ಮೀರಿದರೆ ಮೆನು ಮುಚ್ಚುತ್ತದೆ.</string>
+    <string name="gesture_trainer_tip_menu_left_line">ಒಳಕ್ಕೆ ಸ್ಲೈಡ್ ಮಾಡುವಾಗ ಬೆರಳನ್ನು ಅದೇ ಎತ್ತರದಲ್ಲಿ ಇರಿಸಿ, ಮತ್ತು ಅಲ್ಲಿಯೇ ಎತ್ತಿ.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">ಪ್ರತಿ ಐಟಂಗೂ ಅಂಚಿನಿಂದ ಸ್ಕ್ರೀನ್‌ನ ಅಡ್ಡಲಾಗಿ ನಿಗದಿತ ಸ್ಥಳವಿದೆ, ಮತ್ತು ಬೆರಳು ಎತ್ತಿದ ಐಟಂ ಆಯ್ಕೆಯಾಗುತ್ತದೆ. ಐಟಂ ಅನ್ನು ಹೇಳಿದಾಗ ಎತ್ತಿ.</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g> ಕಡೆಯಿಂದ ಒಳಕ್ಕೆ ಸ್ಲೈಡ್‌ಗಳನ್ನು ಬಿಡಲಾಗಿದೆ: ಅದರ ಅಂಚಿನ ಮೆನು ಸ್ಕ್ರೀನ್‌ನ ಅಡ್ಡಲಾಗಿ ಇದೆ, ಆದ್ದರಿಂದ ಅಲ್ಲಿಂದ ಒಳಕ್ಕೆ ಸ್ಲೈಡ್ ಮಾಡಿದರೆ ಜೆಸ್ಚರ್ ರನ್ ಆಗುವ ಬದಲು ಮೆನು ತೆರೆಯುತ್ತದೆ.</string>
+    <string name="gesture_trainer_statistics">ಅಂಕಿಅಂಶಗಳು</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. ಪ್ರಯತ್ನಗಳು: <xliff:g id="tries">%2$d</xliff:g>, ಗುರುತಿಸಲಾದವು: <xliff:g id="recognized">%3$d</xliff:g>. ಕನಿಷ್ಠ: <xliff:g id="shortest">%4$d</xliff:g> ms, ಮಧ್ಯಾಂಕ: <xliff:g id="median">%5$d</xliff:g> ms, ಗರಿಷ್ಠ: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">ಪ್ರತಿ ಸ್ಪರ್ಶ: ಕನಿಷ್ಠ <xliff:g id="shortest">%1$d</xliff:g> ms, ಮಧ್ಯಾಂಕ <xliff:g id="median">%2$d</xliff:g> ms, ಗರಿಷ್ಠ <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">ಟ್ಯಾಪ್‌ಗಳು</string>
+    <string name="gesture_trainer_kind_double_tap">ಡಬಲ್-ಟ್ಯಾಪ್‌ಗಳು</string>
+    <string name="gesture_trainer_kind_triple_tap">ಟ್ರಿಪಲ್-ಟ್ಯಾಪ್‌ಗಳು</string>
+    <string name="gesture_trainer_kind_quadruple_tap">ನಾಲ್ಕು ಬಾರಿ ಟ್ಯಾಪ್‌ಗಳು</string>
+    <string name="gesture_trainer_kind_tap_hold">ಟ್ಯಾಪ್ ಮಾಡಿ ಹಿಡಿದುಕೊಳ್ಳುವುದು</string>
+    <string name="gesture_trainer_kind_double_tap_hold">ಡಬಲ್-ಟ್ಯಾಪ್ ಮಾಡಿ ಹಿಡಿದುಕೊಳ್ಳುವುದು</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">ಟ್ರಿಪಲ್-ಟ್ಯಾಪ್ ಮಾಡಿ ಹಿಡಿದುಕೊಳ್ಳುವುದು</string>
+    <string name="gesture_trainer_kind_swipe">ಸ್ವೈಪ್‌ಗಳು</string>
+    <string name="gesture_trainer_kind_swipe_hold">ಸ್ವೈಪ್ ಮಾಡಿ ಹಿಡಿದುಕೊಳ್ಳುವುದು</string>
+    <string name="gesture_trainer_kind_two_part_swipe">ಹಿಂದೆಮುಂದೆ ಮತ್ತು ಕೋನದ ಸ್ವೈಪ್‌ಗಳು</string>
+    <string name="gesture_trainer_kind_pinch">ಪಿಂಚ್‌ಗಳು</string>
+    <string name="gesture_trainer_kind_spread">ಹರಡುವಿಕೆಗಳು</string>
+    <string name="gesture_trainer_kind_rotate">ತಿರುಗಿಸುವಿಕೆಗಳು</string>
+    <string name="gesture_trainer_kind_scrub">ಸ್ಕ್ರಬ್‌ಗಳು</string>
 </resources>

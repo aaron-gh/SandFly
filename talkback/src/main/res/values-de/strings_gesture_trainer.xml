@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">zweite Wischgeste <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">ganze Geste <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">dazwischen <xliff:g id="ms">%1$d</xliff:g> ms angehoben</string>
+    <string name="gesture_trainer_how_menu_horizontal">Setze einen Finger <xliff:g id="edge">%1$s</xliff:g> auf und wische mindestens <xliff:g id="distance">%2$d</xliff:g> mm nach innen zur Bildschirmmitte, um das Menü zu öffnen. Es hat <xliff:g id="count">%3$d</xliff:g> Elemente quer über den Bildschirm, vom Rand aus, jedes etwa <xliff:g id="size">%6$s</xliff:g> cm breit. Element <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, liegt <xliff:g id="from">%7$s</xliff:g> bis <xliff:g id="to">%8$s</xliff:g> cm vom Rand entfernt. Halte den Finger auf derselben Höhe und hebe ihn an, wenn das Element angesagt wird.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Der Finger wurde <xliff:g id="mm">%1$.0f</xliff:g> mm über oder unter der Stelle angehoben, an der sich das Menü geöffnet hat, und das Menü schließt sich ab <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Halte den Finger beim Wischen nach innen auf derselben Höhe und hebe ihn dort an.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Jedes Element hat einen festen Platz quer über den Bildschirm, vom Rand aus, und das Element, an dem der Finger angehoben wird, wird gewählt. Hebe den Finger an, wenn das Element angesagt wird.</string>
+    <string name="gesture_trainer_left_out_in_menu">Wischgesten nach innen ab <xliff:g id="edge">%1$s</xliff:g> sind nicht enthalten: Das Randmenü dort verläuft quer über den Bildschirm, daher öffnet eine Wischgeste von dort nach innen das Menü, statt eine Geste auszuführen.</string>
+    <string name="gesture_trainer_statistics">Statistik</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Versuche: <xliff:g id="tries">%2$d</xliff:g>, erkannt: <xliff:g id="recognized">%3$d</xliff:g>. Kürzeste: <xliff:g id="shortest">%4$d</xliff:g> ms, Median: <xliff:g id="median">%5$d</xliff:g> ms, längste: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Jede Berührung: kürzeste <xliff:g id="shortest">%1$d</xliff:g> ms, Median <xliff:g id="median">%2$d</xliff:g> ms, längste <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Tippen</string>
+    <string name="gesture_trainer_kind_double_tap">Doppeltippen</string>
+    <string name="gesture_trainer_kind_triple_tap">Dreimal tippen</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Viermal tippen</string>
+    <string name="gesture_trainer_kind_tap_hold">Tippen und halten</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Doppeltippen und halten</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Dreimal tippen und halten</string>
+    <string name="gesture_trainer_kind_swipe">Wischgesten</string>
+    <string name="gesture_trainer_kind_swipe_hold">Wischen und halten</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Hin-und-her- und Winkelgesten</string>
+    <string name="gesture_trainer_kind_pinch">Zusammenziehen</string>
+    <string name="gesture_trainer_kind_spread">Auseinanderziehen</string>
+    <string name="gesture_trainer_kind_rotate">Drehen</string>
+    <string name="gesture_trainer_kind_scrub">Hin und her wischen</string>
 </resources>

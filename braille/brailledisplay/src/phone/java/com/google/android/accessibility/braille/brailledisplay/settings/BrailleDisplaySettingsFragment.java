@@ -66,6 +66,7 @@ import com.google.android.accessibility.braille.common.BrailleCommonTalkBackSpea
 import com.google.android.accessibility.braille.common.BraillePreferenceUtils;
 import com.google.android.accessibility.braille.common.BrailleUserPreferences;
 import com.google.android.accessibility.braille.common.settings.BrailleLanguagesActivity;
+import com.google.android.accessibility.braille.common.translate.BrailleLanguages.Code;
 import com.google.android.accessibility.braille.common.translate.BrailleTranslateUtils;
 import com.google.android.accessibility.braille.interfaces.BrailleCharacter;
 import com.google.android.accessibility.utils.BuildVersionUtils;
@@ -89,6 +90,8 @@ import androidx.preference.PreferenceFragmentCompat;
   private static final BrailleCharacter SHORTCUT_SWITCH_INPUT_CODE = new BrailleCharacter("2478");
   private static final BrailleCharacter SHORTCUT_SWITCH_OUTPUT_CODE = new BrailleCharacter("13578");
   private static final String HELP_CONTEXT = "android_default";
+  /** The value of None in the secondary braille table list. */
+  private static final String SECONDARY_OUTPUT_CODE_NONE = "";
   // TODO: update the help link.
   private static final String GOOGLE_HELP_URI =
       "https://support.google.com/accessibility/android/answer/3535226";
@@ -104,6 +107,7 @@ import androidx.preference.PreferenceFragmentCompat;
   private SwitchPreference autoConnectPreference;
   private Preference preferredCodesPreference;
   private ListPreference currentActiveOutputCodePreference;
+  private ListPreference secondaryOutputCodePreference;
   private ListPreference currentActiveInputCodePreference;
   private Preference brailleGradePreference;
   private Preference keyBindingsPreference;
@@ -149,6 +153,8 @@ import androidx.preference.PreferenceFragmentCompat;
     preferredCodesPreference.setIntent(new Intent(getContext(), BrailleLanguagesActivity.class));
 
     currentActiveOutputCodePreference = findPreference(getString(R.string.pref_bd_output_code));
+    secondaryOutputCodePreference =
+        findPreference(getString(R.string.pref_bd_secondary_output_code));
     currentActiveInputCodePreference =
         findPreference(getString(R.string.pref_brailleime_translator_code));
 
@@ -422,6 +428,11 @@ import androidx.preference.PreferenceFragmentCompat;
           });
     }
 
+    // Secondary braille output code.
+    if (secondaryOutputCodePreference != null) {
+      setupSecondaryOutputCodePreference(secondaryOutputCodePreference);
+    }
+
     // Current active braille input code.
     if (currentActiveInputCodePreference != null) {
       BraillePreferenceUtils.setupLanguageListPreference(
@@ -443,6 +454,42 @@ import androidx.preference.PreferenceFragmentCompat;
 
     // Learning mode visibility and enabled state.
     updateLearningModePreference();
+  }
+
+  /** Lists None and the reading languages other than the current one. */
+  private void setupSecondaryOutputCodePreference(ListPreference preference) {
+    Context context = getContext();
+    Code outputCode = BrailleUserPreferences.readCurrentActiveOutputCodeAndCorrect(context);
+    List<CharSequence> values = new ArrayList<>();
+    List<CharSequence> names = new ArrayList<>();
+    values.add(SECONDARY_OUTPUT_CODE_NONE);
+    names.add(getString(R.string.pref_secondary_output_code_none));
+    for (Code code : BrailleUserPreferences.readAvailablePreferredOutputCodes(context)) {
+      if (code != outputCode) {
+        values.add(code.name());
+        names.add(code.getUserFacingName(context));
+      }
+    }
+    preference.setEntryValues(values.toArray(new CharSequence[0]));
+    preference.setEntries(names.toArray(new CharSequence[0]));
+    Code secondaryCode = BrailleUserPreferences.readSecondaryOutputCode(context);
+    preference.setValue(secondaryCode == null ? SECONDARY_OUTPUT_CODE_NONE : secondaryCode.name());
+    preference.setSummaryProvider(
+        unused -> {
+          Code code = BrailleUserPreferences.readSecondaryOutputCode(context);
+          return code == null
+              ? getString(R.string.pref_secondary_output_code_none)
+              : code.getUserFacingName(context);
+        });
+    // Not persisted by the preference, so that None shown while the table is the reading language
+    // doesn't replace it.
+    preference.setOnPreferenceChangeListener(
+        (unused, newValue) -> {
+          String name = newValue.toString();
+          BrailleUserPreferences.writeSecondaryOutputCode(
+              context, SECONDARY_OUTPUT_CODE_NONE.equals(name) ? null : Code.valueOf(name));
+          return true;
+        });
   }
 
   private void showSwitchInputCodeGestureTipDialog() {

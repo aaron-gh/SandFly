@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">రెండవ స్వైప్ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">మొత్తం సంజ్ఞ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">వాటి మధ్య <xliff:g id="ms">%1$d</xliff:g> ms ఎత్తి ఉంచబడింది</string>
+    <string name="gesture_trainer_how_menu_horizontal">ఒక వేలిని <xliff:g id="edge">%1$s</xliff:g> ఉంచి, మెనూను తెరవడానికి దాన్ని స్క్రీన్ మధ్య వైపు కనీసం <xliff:g id="distance">%2$d</xliff:g> మి.మీ లోపలికి జరపండి. దీనిలో అంచు నుండి స్క్రీన్ అడ్డంగా <xliff:g id="count">%3$d</xliff:g> ఐటెమ్‌లు ఉన్నాయి, ఒక్కొక్కటి సుమారు <xliff:g id="item">%5$s</xliff:g> సెం.మీ వెడల్పు. ఐటెమ్ <xliff:g id="size">%6$s</xliff:g>, <xliff:g id="number">%4$d</xliff:g>, అంచు నుండి <xliff:g id="from">%7$s</xliff:g> నుండి <xliff:g id="to">%8$s</xliff:g> సెం.మీ దూరంలో ఉంది. వేలిని అదే ఎత్తులో ఉంచి, ఐటెమ్ చదివి వినిపించినప్పుడు ఎత్తండి.</string>
+    <string name="gesture_trainer_finding_menu_left_line">మెనూ తెరుచుకున్న ఎత్తు కంటే <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ పైన లేదా కింద వేలు ఎత్తబడింది, <xliff:g id="limit">%2$.0f</xliff:g> మి.మీ దాటితే మెనూ మూసివేయబడుతుంది.</string>
+    <string name="gesture_trainer_tip_menu_left_line">లోపలికి జరుపుతున్నప్పుడు వేలిని అదే ఎత్తులో ఉంచి, అక్కడే ఎత్తండి.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">ప్రతి ఐటెమ్‌కు అంచు నుండి స్క్రీన్ అడ్డంగా స్థిరమైన స్థానం ఉంది, వేలు ఎత్తిన చోట ఉన్న ఐటెమ్ ఎంచుకోబడుతుంది. ఐటెమ్ చదివి వినిపించినప్పుడు ఎత్తండి.</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g> నుండి లోపలికి స్వైప్‌లు వదిలివేయబడ్డాయి: దాని అంచు మెనూ స్క్రీన్ అడ్డంగా ఉంటుంది, కాబట్టి దాని నుండి లోపలికి స్వైప్ సంజ్ఞను రన్ చేయడానికి బదులుగా మెనూను తెరుస్తుంది.</string>
+    <string name="gesture_trainer_statistics">గణాంకాలు</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. ప్రయత్నాలు: <xliff:g id="tries">%2$d</xliff:g>, గుర్తించినవి: <xliff:g id="recognized">%3$d</xliff:g>. అతి తక్కువ: <xliff:g id="shortest">%4$d</xliff:g> మి.సె, మధ్యస్థం: <xliff:g id="median">%5$d</xliff:g> మి.సె, అతి ఎక్కువ: <xliff:g id="longest">%6$d</xliff:g> మి.సె.</string>
+    <string name="gesture_trainer_statistics_touches">ప్రతి టచ్: అతి తక్కువ <xliff:g id="shortest">%1$d</xliff:g> మి.సె, మధ్యస్థం <xliff:g id="median">%2$d</xliff:g> మి.సె, అతి ఎక్కువ <xliff:g id="longest">%3$d</xliff:g> మి.సె.</string>
+    <string name="gesture_trainer_kind_tap">ట్యాప్‌లు</string>
+    <string name="gesture_trainer_kind_double_tap">రెండుసార్లు ట్యాప్‌లు</string>
+    <string name="gesture_trainer_kind_triple_tap">మూడుసార్లు ట్యాప్‌లు</string>
+    <string name="gesture_trainer_kind_quadruple_tap">నాలుగుసార్లు ట్యాప్‌లు</string>
+    <string name="gesture_trainer_kind_tap_hold">నొక్కి, ఉంచడం</string>
+    <string name="gesture_trainer_kind_double_tap_hold">రెండుసార్లు నొక్కి, ఉంచడం</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">మూడుసార్లు నొక్కి, ఉంచడం</string>
+    <string name="gesture_trainer_kind_swipe">స్వైప్‌లు</string>
+    <string name="gesture_trainer_kind_swipe_hold">స్వైప్ చేసి పట్టుకోవడం</string>
+    <string name="gesture_trainer_kind_two_part_swipe">వెనక్కి ముందుకు, కోణీయ స్వైప్‌లు</string>
+    <string name="gesture_trainer_kind_pinch">పించ్‌లు</string>
+    <string name="gesture_trainer_kind_spread">విస్తరణలు</string>
+    <string name="gesture_trainer_kind_rotate">భ్రమణాలు</string>
+    <string name="gesture_trainer_kind_scrub">స్క్రబ్‌లు</string>
 </resources>

@@ -2414,18 +2414,18 @@
     <string name="title_pref_shortcut_4finger_3tap_swipe_down">Тройчы націснуць, затым правесці чатырма пальцамі ўніз</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_left">Тройчы націснуць, затым правесці чатырма пальцамі ўлева</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_right">Тройчы націснуць, затым правесці чатырма пальцамі ўправа</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Націснуць двума пальцамі, затым правесці ўверх</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Націснуць двума пальцамі, затым правесці ўніз</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Націснуць двума пальцамі, затым правесці ўлева</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Націснуць двума пальцамі, затым правесці ўправа</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Двойчы націснуць двума пальцамі, затым правесці ўверх</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Двойчы націснуць двума пальцамі, затым правесці ўніз</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Двойчы націснуць двума пальцамі, затым правесці ўлева</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Двойчы націснуць двума пальцамі, затым правесці ўправа</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Тройчы націснуць двума пальцамі, затым правесці ўверх</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Тройчы націснуць двума пальцамі, затым правесці ўніз</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Тройчы націснуць двума пальцамі, затым правесці ўлева</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Тройчы націснуць двума пальцамі, затым правесці ўправа</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Націснуць двума пальцамі, затым правесці адным пальцам уверх</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Націснуць двума пальцамі, затым правесці адным пальцам уніз</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Націснуць двума пальцамі, затым правесці адным пальцам улева</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Націснуць двума пальцамі, затым правесці адным пальцам управа</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Двойчы націснуць двума пальцамі, затым правесці адным пальцам уверх</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Двойчы націснуць двума пальцамі, затым правесці адным пальцам уніз</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Двойчы націснуць двума пальцамі, затым правесці адным пальцам улева</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Двойчы націснуць двума пальцамі, затым правесці адным пальцам управа</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Тройчы націснуць двума пальцамі, затым правесці адным пальцам уверх</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Тройчы націснуць двума пальцамі, затым правесці адным пальцам уніз</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Тройчы націснуць двума пальцамі, затым правесці адным пальцам улева</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Тройчы націснуць двума пальцамі, затым правесці адным пальцам управа</string>
     <string name="title_pref_shortcut_up_and_down_and_up">Правядзенне пальцам уверх, уніз, затым уверх</string>
     <string name="title_pref_shortcut_up_and_down_and_left">Правядзенне пальцам уверх, уніз, затым улева</string>
     <string name="title_pref_shortcut_up_and_down_and_right">Правядзенне пальцам уверх, уніз, затым управа</string>
@@ -2880,4 +2880,111 @@
     <string name="title_pref_cyrillic_text_recognition">Распазнаванне кірылічнага тэксту</string>
     <string name="cyrillic_text_model_missing">Няма мадэлі распазнавання тэксту для мовы: <xliff:g id="language" example="Russian">%1$s</xliff:g>. Спампуйце яе ў раздзеле «Апісанні відарысаў і экрана», «Распазнаванне кірылічнага тэксту».</string>
     <string name="cyrillic_text_model_error_http">Сервер для спампоўвання не прыняў запыт. Паспрабуйце пазней.</string>
+    <string name="title_pref_announce_caller">Агучваць абанента</string>
+    <string name="announce_caller_once">Адзін раз</string>
+    <string name="announce_caller_repeat">Паўтараць падчас званка</string>
+    <string name="title_pref_command_feedback_voice">Голас для водгукаў каманд і рэдагавання тэксту</string>
+    <string name="title_pref_command_feedback_over_speech">Чытаць водгукі каманд паверх маўлення SandFly</string>
+    <string name="title_pref_item_types_spoken">Тыпы элементаў для агучвання</string>
+    <string name="item_type_link">Спасылка</string>
+    <string name="item_type_tab">Укладка</string>
+    <string name="item_type_other">Іншыя тыпы</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">Націск 2 пальцамі, правядзенне 1 пальцам</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">Прабел</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">Меню</string>
+    <string name="keycombo_key_search">Пошук</string>
+    <string name="keycombo_key_grave">Гравіс</string>
+    <string name="keycombo_key_minus">Мінус</string>
+    <string name="keycombo_key_equals">Роўна</string>
+    <string name="keycombo_key_left_bracket">Левая квадратная дужка</string>
+    <string name="keycombo_key_right_bracket">Правая квадратная дужка</string>
+    <string name="keycombo_key_backslash">Адваротная касая рыска</string>
+    <string name="keycombo_key_semicolon">Кропка з коскай</string>
+    <string name="keycombo_key_apostrophe">Апостраф</string>
+    <string name="keycombo_key_comma">Коска</string>
+    <string name="keycombo_key_period">Кропка</string>
+    <string name="keycombo_key_slash">Касая рыска</string>
+    <string name="keycombo_key_plus">Плюс</string>
+    <string name="keycombo_key_at">Сабачка</string>
+    <string name="keycombo_key_star">Зорачка</string>
+    <string name="keycombo_key_pound">Рашотка</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">Плюс на лічбавай клавіятуры</string>
+    <string name="keycombo_key_numpad_subtract">Мінус на лічбавай клавіятуры</string>
+    <string name="keycombo_key_numpad_multiply">Множанне на лічбавай клавіятуры</string>
+    <string name="keycombo_key_numpad_divide">Дзяленне на лічбавай клавіятуры</string>
+    <string name="keycombo_key_numpad_dot">Кропка на лічбавай клавіятуры</string>
+    <string name="keycombo_key_numpad_comma">Коска на лічбавай клавіятуры</string>
+    <string name="keycombo_key_numpad_equals">Роўна на лічбавай клавіятуры</string>
+    <string name="keycombo_key_numpad_enter">Enter на лічбавай клавіятуры</string>
+    <string name="keycombo_key_volume_up">Павялічыць гучнасць</string>
+    <string name="keycombo_key_volume_down">Паменшыць гучнасць</string>
+    <string name="keycombo_key_volume_mute">Выключыць гук</string>
+    <string name="keycombo_key_media_play_pause">Прайграць або прыпыніць</string>
+    <string name="keycombo_key_media_next">Наступны трэк</string>
+    <string name="keycombo_key_media_previous">Папярэдні трэк</string>
+    <string name="keycombo_key_media_stop">Спыніць</string>
+    <string name="keycombo_key_back">Назад</string>
+    <string name="keycombo_key_numpad"><xliff:g id="digit" example="5">%1$s</xliff:g> на лічбавай клавіятуры</string>
+    <string name="title_pref_typing_swipes_through_keys">Праводзіць ад клавішы да клавішы пры любым спосабе ўводу</string>
+    <string name="shortcut_say_caller">Назваць абанента</string>
+    <string name="say_caller_unknown">Уваходны выклік</string>
+    <string name="shortcut_restart_phone">Перазапусціць тэлефон</string>
+    <string name="shortcut_power_off_phone">Выключыць тэлефон</string>
+    <string name="restart_phone_confirm_title">Перазапусціць тэлефон?</string>
+    <string name="restart_phone_confirm_button">Перазапусціць</string>
+    <string name="power_off_phone_confirm_title">Выключыць тэлефон?</string>
+    <string name="power_off_phone_confirm_button">Выключыць</string>
+    <string name="power_command_failed">Не ўдалося, адкрыта меню харчавання</string>
+    <string name="clipboard_history_search_hint">Пошук у гісторыі буфера абмену</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> тэкст</item>
+        <item quantity="few"><xliff:g id="count" example="12">%d</xliff:g> тэксты</item>
+        <item quantity="many"><xliff:g id="count" example="12">%d</xliff:g> тэкстаў</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> тэксту</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Правядзенне ад краю ўнутр</string>
+    <string name="title_pref_category_sliders">Паўзункі</string>
+    <string name="title_pref_slider_step">Крок паўзунка</string>
+    <string name="value_slider_step_app">Як задае праграма</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">Найменшы крок дыяпазону</string>
+    <string name="title_pref_slider_skip_unchanged">Прапускаць крокі, якія не змяняюць значэнне</string>
+    <string name="title_slider_enter_value">Увесці значэнне</string>
+    <string name="slider_value_range">Ад <xliff:g id="min" example="0">%1$s</xliff:g> да <xliff:g id="max" example="100">%2$s</xliff:g></string>
+    <string name="voice_phrases_not_understood">Незразумелыя фразы</string>
+    <string name="title_pref_voice_phrases_not_understood">Захоўваць незразумелыя фразы</string>
+    <string name="voice_phrases_not_understood_listed">Дададзена ў «Незразумелыя фразы».</string>
 </resources>

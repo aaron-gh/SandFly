@@ -6,9 +6,9 @@ Domyślne przypisania znajdziesz w [wykazie gestów](#appendix-gestures). O tym,
 
 ### Jak SandFly rozpoznaje gesty {#gestures-recognition}
 
-Połóż palec na ekranie. Trzymaj go w miejscu albo przesuwaj powoli, a SandFly będzie odczytywał element pod palcem. To eksploracja dotykiem. Szybkie przesunięcie lub stuknięcie SandFly rozpoznaje jako gest. Więcej o eksploracji dotykiem znajdziesz w [rozdziale o poruszaniu się po ekranie](#reading).
+Połóż palec na ekranie. Trzymaj go w miejscu albo przesuwaj powoli, a SandFly będzie odczytywał element pod palcem. To czytanie dotykiem. Szybkie przesunięcie lub stuknięcie SandFly rozpoznaje jako gest. Więcej o czytaniu dotykiem znajdziesz w [rozdziale o poruszaniu się po ekranie](#reading).
 
-Na urządzeniach z Androidem 13 lub nowszym gesty domyślnie rozpoznaje SandFly. Jeśli wyłączysz opcję **Używaj gestów w SandFly** w menu **Ustawienia programisty**, rozpoznawanie przejmie Android. Po zmianie wyłącz i ponownie włącz SandFly.
+Na urządzeniach z Androidem 13 lub nowszym gesty domyślnie rozpoznaje SandFly. Jeśli wyłączysz opcję **Rozpoznawaj gesty w SandFly** w menu **Ustawienia programisty**, rozpoznawanie przejmie Android. Po zmianie wyłącz i ponownie włącz SandFly.
 
 Gdy gesty rozpoznaje Android, ustawienia czasu na ekranie **Gesty** są niedostępne. Przestają też działać niektóre gesty SandFly.
 
@@ -50,7 +50,7 @@ W obu rodzajach gestów zmieniasz kierunek, cały czas dotykając ekranu jednym 
 - W geście tam i z powrotem po pierwszym ruchu zawracasz. Na przykład przesuń palec w górę, po czym cofnij go w dół. Gest **Przesuń w górę, a potem w dół** znajdziesz na ekranie **Gesty** w kategorii **1 palec, tam i z powrotem**.
 - W geście po linii łamanej skręcasz pod kątem prostym. Na przykład przesuń palec w dół i skręć w prawo. Gest **Przesuń w dół, a potem w prawo** należy do kategorii **1 palec, linia łamana**.
 
-Włącz **Obsługuj przesunięcia dwoma palcami w SandFly**, żeby korzystać z kategorii **2 palce, linia łamana**. Wśród ośmiu gestów jest na przykład **Przesuń w górę, a potem w prawo 2 palcami**. Polecenia do tych gestów wybierasz samodzielnie. Szybki [ruch dwoma palcami tam i z powrotem](#gestures-scrub-pinch-spread) ma osobne przypisanie.
+Włącz **Obsługuj przesunięcia dwoma palcami w SandFly**, żeby korzystać z kategorii **Gesty kątowe 2 palcami**. Wśród ośmiu gestów jest na przykład **Przesuń 2 palcami w górę, a potem w prawo**. Polecenia do tych gestów wybierasz samodzielnie. Szybki [ruch dwoma palcami tam i z powrotem](#gestures-scrub-pinch-spread) ma osobne przypisanie.
 
 Opcja **Rozpoznawaj przesunięcia przed uniesieniem palca** wyłącza i ukrywa gesty tam i z powrotem wykonywane jednym palcem oraz gesty łamane wykonywane jednym lub dwoma palcami. Zobacz [](#gestures-swipes-before-lift).
 
@@ -66,7 +66,7 @@ Na ekranie **Gesty** rozwiń kategorię **Przesunięcia trzyczęściowe**. Jest 
 
 Przesuń palec i zatrzymaj go na ekranie. Gdy przytrzymasz go wystarczająco długo, SandFly uruchomi polecenie, zanim uniesiesz palec. Jeżeli uniesiesz go za wcześnie, SandFly rozpozna zwykłe przesunięcie.
 
-Przytrzymaniem możesz zakończyć prosty ruch, gest tam i z powrotem albo gest po linii łamanej. Na liście znajdziesz na przykład **Przesuń w prawo i przytrzymaj** oraz **Przesuń w lewo, a potem w górę i przytrzymaj**. Dłuższa pauza przed zmianą kierunku może już uruchomić polecenie przypisane do pierwszego ruchu z przytrzymaniem. Krótką pauzę SandFly potraktuje jako część całego gestu.
+Przytrzymaniem możesz zakończyć prosty ruch, gest tam i z powrotem albo gest po linii łamanej. Na liście znajdziesz na przykład **Przesuń w prawo i przytrzymaj** oraz **Przesuń w lewo, potem w górę i przytrzymaj**. Dłuższa pauza przed zmianą kierunku może już uruchomić polecenie przypisane do pierwszego ruchu z przytrzymaniem. Krótką pauzę SandFly potraktuje jako część całego gestu.
 
 Tych 16 gestów znajdziesz na końcu kategorii **1 palec**, **1 palec, tam i z powrotem** oraz **1 palec, linia łamana**. Każdy z nich zacznie działać po przypisaniu polecenia. W opcji **Czas przytrzymania po przesunięciu** ustawisz, jak długo trzeba trzymać palec w miejscu. Zobacz [](#gestures-timing). Na zegarku przesunięcia z przytrzymaniem są niedostępne.
 
@@ -80,7 +80,7 @@ Polecenia do tych gestów przypisujesz samodzielnie. Na ekranie **Gesty** katego
 - Jeśli zmieniasz kierunek dopiero w drugim ruchu, otwórz kategorię **Przesunięcia dwuetapowe zakończone gestem tam i z powrotem lub pod kątem**. Znajdziesz tam np. **Przesuń w górę, unieś palec, następnie przesuń w prawo, a potem w dół**.
 - Jeśli zmieniasz kierunek już w pierwszym ruchu, szukaj kategorii z jego nazwą, na przykład **Przesunięcia dwuetapowe zaczynające się od „Przesuń w górę, a potem w lewo”**. Przykład z tej kategorii to **Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w prawo**.
 
-Najpierw wybierz czas w opcji **Odstęp między przesunięciami dwuetapowymi**. Gdy ustawisz **Wyłączone**, kategorie znikną. SandFly liczy czas od chwili uniesienia palca po pierwszym ruchu. Zanim upłynie, zacznij drugi ruch. Dostępne wartości znajdziesz w [ustawieniach czasu](#gestures-timing).
+Najpierw wybierz czas w opcji **Odstęp między częściami gestu dwuetapowego**. Gdy ustawisz **Wyłączone**, kategorie znikną. SandFly liczy czas od chwili uniesienia palca po pierwszym ruchu. Zanim upłynie, zacznij drugi ruch. Dostępne wartości znajdziesz w [ustawieniach czasu](#gestures-timing).
 
 SandFly czeka na drugi ruch tylko wtedy, gdy pierwszy rozpoczyna gest dwuetapowy z przypisanym poleceniem. Liczą się przypisania z aktualnego układu, profilu lub aplikacji. Pozostałe przesunięcia działają od razu. SandFly wykona polecenie pierwszego przesunięcia, gdy minie czas na drugi ruch albo gdy w tym czasie stukniesz, zaczniesz eksplorować ekran lub wykonasz gest kilkoma palcami.
 
@@ -122,7 +122,7 @@ Jeśli miniesz drugie kliknięcie, możesz wrócić palcem do miejsca pierwszego
 
 SandFly odtwarza coraz wyższe dźwięki przy dotknięciu krawędzi, przy pierwszym kliknięciu i przy drugim. Dźwięki i towarzyszące im wibracje możesz wyłączyć w **Dźwięk i wibracje** > **Poszczególne dźwięki i wibracje**. Więcej informacji znajdziesz w [rozdziale o dźwiękach i wibracjach](#sound).
 
-Zacznij przy krawędzi i przesuń palec do miejsca pierwszego kliknięcia w ciągu około pół sekundy. Jeśli zaczniesz za daleko od brzegu albo wykonasz ruch zbyt wolno, SandFly rozpozna zwykłe przesunięcie lub rozpocznie eksplorację dotykiem. Eksploracja zaczyna się też wtedy, gdy przytrzymasz palec nieruchomo przy krawędzi przez 0,2 sekundy.
+Zacznij przy krawędzi i przesuń palec do miejsca pierwszego kliknięcia w ciągu około pół sekundy. Jeśli zaczniesz za daleko od brzegu albo wykonasz ruch zbyt wolno, SandFly rozpozna zwykłe przesunięcie lub rozpocznie czytanie dotykiem. Czytanie dotykiem zaczyna się też wtedy, gdy przytrzymasz palec nieruchomo przy krawędzi przez 0,2 sekundy.
 
 Jeśli zaczniesz w rogu, kierunek ruchu zdecyduje, który gest rozpozna SandFly. Gdy ruch pasuje do dwóch gestów, pierwszeństwo mają górna i dolna krawędź oraz ruch od krawędzi w głąb ekranu.
 
@@ -166,27 +166,27 @@ Gdy używasz krawędzi jako menu, ruch wzdłuż niej służy do wyboru polecenia
 
 W kategorii **Krawędzie** na ekranie **Gesty** możesz dostosować odległości i zdecydować, co usłyszysz przy kliknięciach.
 
-- Zmień **Szerokość krawędzi**, jeśli chcesz rozpoczynać gest dalej od brzegu. Możesz ustawić od 0,5 do 2 cm. Domyślnie jest to 0,5 cm.
-- **Odległość do pierwszego kliknięcia** to droga, którą musi pokonać palec od krawędzi albo wzdłuż niej. Możesz ustawić od 0,5 do 2 cm. Domyślnie jest to 1 cm.
-- **Odległość od pierwszego do drugiego kliknięcia** to droga, o którą przesuwasz palec dalej, żeby wykonać długi gest. Możesz ustawić od 1 do 5 cm. Domyślnie są to 4 cm.
+- Zmień **Szerokość strefy przy krawędzi**, jeśli chcesz rozpoczynać gest dalej od brzegu. Możesz ustawić od 0,5 do 2 cm. Domyślnie jest to 0,5 cm.
+- **Odległość do pierwszego sygnału kliknięcia** to droga, którą musi pokonać palec od krawędzi albo wzdłuż niej. Możesz ustawić od 0,5 do 2 cm. Domyślnie jest to 1 cm.
+- **Odległość między pierwszym a drugim sygnałem kliknięcia** to droga, o którą przesuwasz palec dalej, żeby wykonać długi gest. Możesz ustawić od 1 do 5 cm. Domyślnie są to 4 cm.
 - Włącz **Odczytuj polecenie przy każdym kliknięciu**, jeśli chcesz usłyszeć, jakie polecenie uruchomi się po uniesieniu palca. Opcja jest domyślnie wyłączona.
 
 ### Gesty w rogach ekranu {#gestures-corners}
 
-Wybierz **Gesty** > **Rogi**, aby przypisać polecenia do stuknięć w rogach ekranu. W każdym rogu możesz stuknąć jednym palcem raz, dwa lub trzy razy. Po drugim albo trzecim stuknięciu możesz też przytrzymać palec. To pięć gestów na róg, w tym na przykład **Dwukrotne kliknięcie lewego górnego rogu**. SandFly domyślnie nie przypisuje im poleceń.
+Wybierz **Gesty** > **Rogi**, aby przypisać polecenia do stuknięć w rogach ekranu. W każdym rogu możesz stuknąć jednym palcem raz, dwa lub trzy razy. Po drugim albo trzecim stuknięciu możesz też przytrzymać palec. To pięć gestów na róg, w tym na przykład **Kliknij dwukrotnie lewy górny róg**. SandFly domyślnie nie przypisuje im poleceń.
 
 Jeśli nie przypiszesz polecenia do dwukrotnego stuknięcia w danym rogu, gest aktywuje element, na którym jest fokus. Po drugim stuknięciu SandFly czeka na następne tylko wtedy, gdy w tym rogu jest przypisane polecenie do trzech stuknięć.
 
 Jeśli przesuniesz palec lub dołożysz drugi, SandFly obsłuży dotyk jak zwykle. Tak samo zareaguje, jeśli zatrzymasz palec na ekranie, a w tym rogu nie ma przypisania do gestu z przytrzymaniem. Z rogu możesz więc rozpocząć przesunięcie lub gest od krawędzi. SandFly rozpoznaje stuknięcia w rogach tylko poza obszarem klawiatury ekranowej.
 
-- **Rozmiar rogu** określa długość boku kwadratu, w którym działają gesty. Do wyboru masz od 0,5 do 2 cm. Domyślna wartość to **Taki sam jak szerokość krawędzi**.
+- **Rozmiar strefy w rogu** określa długość boku kwadratu, w którym działają gesty. Do wyboru masz od 0,5 do 2 cm. Domyślna wartość to **Jak szerokość strefy przy krawędzi**.
 - **Limit czasu kliknięcia rogu** określa, po jakim czasie SandFly uzna dotknięcie za przytrzymanie. Możesz ustawić od 0,15 do 0,5 sekundy. Wartość domyślna to **Domyślne ustawienie systemu**.
 
 Na zegarku te gesty są niedostępne.
 
 ### Stuknięcie, a potem przesunięcie {#gestures-tap-then-swipe}
 
-Stuknij raz, dwa albo trzy razy dwoma, trzema lub czterema palcami. Następnie przyłóż tyle samo palców do ekranu i przesuń je. Przykładem jest gest **Kliknij dwukrotnie, a potem przesuń w górę 2 palcami**. Są też warianty, w których stukasz dwoma palcami, a przesuwasz tylko jeden. Do tej grupy należy **Kliknij 2 palcami, a potem przesuń w górę**. Aby zacząć ich używać, otwórz **Gesty** > **Kliknij, a potem przesuń** i przypisz polecenia.
+Stuknij raz, dwa albo trzy razy dwoma, trzema lub czterema palcami. Następnie przyłóż tyle samo palców do ekranu i przesuń je. Przykładem jest gest **Kliknij dwukrotnie 2 palcami, a potem przesuń nimi w górę**. Są też warianty, w których stukasz dwoma palcami, a przesuwasz tylko jeden. Do tej grupy należy **Kliknij 2 palcami, a potem przesuń 1 palcem w górę**. Aby zacząć ich używać, otwórz **Gesty** > **Kliknięcie, a potem przesunięcie** i przypisz polecenia.
 
 Zacznij przesunięcie przy następnym dotknięciu ekranu. Masz na to 0,25 sekundy od ostatniego stuknięcia. Gdy kombinacja ma przypisane polecenie, SandFly czeka po stuknięciach, żeby sprawdzić, czy wykonasz też przesunięcie. Na zegarku te gesty są niedostępne.
 
@@ -239,7 +239,7 @@ W głównych ustawieniach SandFly wybierz **Gesty**. Opcje u góry ekranu są w 
 Poniżej znajdziesz zwinięte kategorie. Rozwiń wybraną kategorię, aby zobaczyć gesty wraz z przypisanymi poleceniami.
 
 - **1 palec**, **1 palec, tam i z powrotem**, **1 palec, linia łamana**, **Krawędzie** i **Rogi**.
-- **2 palce**, **2 palce, linia łamana**, **3 palce**, **4 palce** i **Kliknij, a potem przesuń**.
+- **2 palce**, **Gesty kątowe 2 palcami**, **3 palce**, **4 palce** i **Kliknięcie, a potem przesunięcie**.
 - **Gesty związane z odciskiem palca**, **Stuknięcie w tył urządzenia**, **Potrząśnięcie** i **Przesunięcia trzyczęściowe**.
 - **Przesunięcia dwuetapowe** i **Przesunięcia dwuetapowe zakończone gestem tam i z powrotem lub pod kątem**. Osobne kategorie grupują kombinacje według pierwszego ruchu. Zobacz [](#gestures-two-stroke).
 
@@ -275,22 +275,22 @@ Każdy z tych gestów wydłuża czas o kolejne 3 sekundy. Inny gest kończy szyb
 
 Gdy wyłączysz **Obsługuj przesunięcia dwoma palcami w SandFly**, przesunięcia trafiają do aplikacji i służą do przewijania. Przy każdym z czterech kierunków na ekranie **Gesty** usłyszysz wtedy „nie można dostosować”.
 
-Po włączeniu opcji przesunięcia uruchamiają przypisane polecenia SandFly. Na ekranie **Gesty** pojawia się wtedy także kategoria **2 palce, linia łamana**. Ta opcja wymaga Androida 11 lub nowszego.
+Po włączeniu opcji przesunięcia uruchamiają przypisane polecenia SandFly. Na ekranie **Gesty** pojawia się wtedy także kategoria **Gesty kątowe 2 palcami**. Ta opcja wymaga Androida 11 lub nowszego.
 
 #### Ustawienia czasu rozpoznawania gestów {#gestures-timing}
 
 - **Maksymalny odstęp między kliknięciami jednym palcem** daje od 0,1 do 2 sekund na kolejne stuknięcie. Domyślna wartość to 0,25 sekundy. Skróć odstęp, jeśli chcesz, żeby SandFly szybciej reagował na dwukrotne stuknięcie. Jeśli stukniesz za wolno, SandFly rozpozna dwa osobne dotknięcia. Wydłuż odstęp, jeśli potrzebujesz więcej czasu na drugie stuknięcie. SandFly poczeka wtedy dłużej także po stuknięciu w róg lub pojedynczym stuknięciu kilkoma palcami. Przy odstępie dłuższym niż 0,3 sekundy pojedyncze stuknięcie przenosi fokus na element pod palcem 0,25 sekundy po uniesieniu palca, a drugie stuknięcie w tym czasie nadal aktywuje ten element. W gestach wykonywanych kilkoma palcami masz zawsze co najmniej 0,25 sekundy na kolejne stuknięcie.
 - W opcji **Czas przytrzymania po przesunięciu** ustawiasz, jak długo trzeba trzymać palec w miejscu, by wykonać [gest z przytrzymaniem](#gestures-swipe-and-hold). Do wyboru masz od 0,1 do 0,5 sekundy. Domyślnie jest to 0,25 sekundy.
 - **Czas rozpoczęcia gestu** wyznacza, ile czasu masz na przebycie pierwszego centymetra jednym palcem. Możesz ustawić od 0,15 do 2 sekund. Domyślna wartość to 0,15 sekundy. Jeśli palec w tym czasie nie przebył centymetra, SandFly zacznie odczytywać elementy pod nim. Wydłuż czas, jeśli zdarza się to przy celowo wolniejszych przesunięciach.
-- **Odstęp między przesunięciami dwuetapowymi** daje 0,25, 0,5, 1, 1,5 lub 2 sekundy na rozpoczęcie drugiego ruchu. Czas biegnie od uniesienia palca po pierwszym ruchu. Przy domyślnej wartości **Wyłączone** SandFly nie rozpoznaje [gestów dwuetapowych](#gestures-two-stroke) i ukrywa ich kategorie.
+- **Odstęp między częściami gestu dwuetapowego** daje 0,25, 0,5, 1, 1,5 lub 2 sekundy na rozpoczęcie drugiego ruchu. Czas biegnie od uniesienia palca po pierwszym ruchu. Przy domyślnej wartości **Wyłączone** SandFly nie rozpoznaje [gestów dwuetapowych](#gestures-two-stroke) i ukrywa ich kategorie.
 
-Ustawienia czasu działają przy włączonej opcji **Używaj gestów w SandFly**. Zobacz [](#gestures-recognition). Na zegarku możesz zmienić tylko odstęp między stuknięciami.
+Ustawienia czasu działają przy włączonej opcji **Rozpoznawaj gesty w SandFly**. Zobacz [](#gestures-recognition). Na zegarku możesz zmienić tylko odstęp między stuknięciami.
 
 #### Rozpoznawanie przesunięć przed uniesieniem palca {#gestures-swipes-before-lift}
 
 W ustawieniach **Gesty** możesz włączyć **Rozpoznawaj przesunięcia przed uniesieniem palca**. Przy zwykłym przesunięciu jednym palcem SandFly uruchomi polecenie, gdy przesuniesz palec o centymetr. SandFly poczeka na uniesienie palca, jeśli w tym kierunku masz przypisany gest z przytrzymaniem albo jeśli ruch może się okazać gestem od krawędzi.
 
-Po włączeniu opcji znikają kategorie **1 palec, tam i z powrotem**, **1 palec, linia łamana**, **Przesunięcia trzyczęściowe**, **2 palce, linia łamana** oraz kategorie przesunięć dwuetapowych ze zmianą kierunku. Przestają działać gesty z tych kategorii. Zaczynają się tak samo jak zwykłe przesunięcie, które SandFly od tej pory rozpoznaje wcześniej.
+Po włączeniu opcji znikają kategorie **1 palec, tam i z powrotem**, **1 palec, linia łamana**, **Przesunięcia trzyczęściowe**, **Gesty kątowe 2 palcami** oraz kategorie przesunięć dwuetapowych ze zmianą kierunku. Przestają działać gesty z tych kategorii. Zaczynają się tak samo jak zwykłe przesunięcie, które SandFly od tej pory rozpoznaje wcześniej.
 
 Opcja jest domyślnie wyłączona. W tym ustawieniu SandFly sprawdza, czy ruch może być początkiem przypisanego gestu z przytrzymaniem, tam i z powrotem, po linii łamanej lub trzyczęściowego. Jeśli pasuje tylko do prostego przesunięcia, SandFly może wykonać polecenie jeszcze przed uniesieniem palca. Układ **Gesty SandFly** ma domyślne polecenia dla gestów tam i z powrotem. W układzie **Gesty VoiceOver** powyższe kombinacje wymagają własnych przypisań.
 

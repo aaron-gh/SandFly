@@ -2398,18 +2398,18 @@
     <string name="title_pref_shortcut_4finger_3tap_swipe_down">Trippeltryck och svep sedan nedåt med fyra fingrar</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_left">Trippeltryck och svep sedan åt vänster med fyra fingrar</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_right">Trippeltryck och svep sedan åt höger med fyra fingrar</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Tryck med två fingrar och svep sedan uppåt</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Tryck med två fingrar och svep sedan nedåt</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Tryck med två fingrar och svep sedan åt vänster</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Tryck med två fingrar och svep sedan åt höger</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Dubbeltryck med två fingrar och svep sedan uppåt</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Dubbeltryck med två fingrar och svep sedan nedåt</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Dubbeltryck med två fingrar och svep sedan åt vänster</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Dubbeltryck med två fingrar och svep sedan åt höger</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Trippeltryck med två fingrar och svep sedan uppåt</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Trippeltryck med två fingrar och svep sedan nedåt</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Trippeltryck med två fingrar och svep sedan åt vänster</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Trippeltryck med två fingrar och svep sedan åt höger</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Tryck med två fingrar och svep sedan uppåt med ett finger</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Tryck med två fingrar och svep sedan nedåt med ett finger</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Tryck med två fingrar och svep sedan åt vänster med ett finger</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Tryck med två fingrar och svep sedan åt höger med ett finger</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Dubbeltryck med två fingrar och svep sedan uppåt med ett finger</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Dubbeltryck med två fingrar och svep sedan nedåt med ett finger</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Dubbeltryck med två fingrar och svep sedan åt vänster med ett finger</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Dubbeltryck med två fingrar och svep sedan åt höger med ett finger</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Trippeltryck med två fingrar och svep sedan uppåt med ett finger</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Trippeltryck med två fingrar och svep sedan nedåt med ett finger</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Trippeltryck med två fingrar och svep sedan åt vänster med ett finger</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Trippeltryck med två fingrar och svep sedan åt höger med ett finger</string>
     <string name="title_pref_shortcut_up_and_down_and_up">Svep uppåt, nedåt och sedan uppåt</string>
     <string name="title_pref_shortcut_up_and_down_and_left">Svep uppåt, nedåt och sedan åt vänster</string>
     <string name="title_pref_shortcut_up_and_down_and_right">Svep uppåt, nedåt och sedan åt höger</string>
@@ -2860,4 +2860,109 @@
     <string name="title_pref_cyrillic_text_recognition">Textigenkänning för kyrilliska</string>
     <string name="cyrillic_text_model_missing">Ingen modell för textigenkänning för <xliff:g id="language" example="Russian">%1$s</xliff:g>. Hämta den i Bild- och skärmbeskrivningar, Textigenkänning för kyrilliska.</string>
     <string name="cyrillic_text_model_error_http">Nedladdningsservern godtog inte begäran. Försök igen senare.</string>
+    <string name="title_pref_announce_caller">Meddela uppringare</string>
+    <string name="announce_caller_once">En gång</string>
+    <string name="announce_caller_repeat">Upprepa medan det ringer</string>
+    <string name="title_pref_command_feedback_voice">Röst för kommandosvar och textredigering</string>
+    <string name="title_pref_command_feedback_over_speech">Läs upp kommandosvar över SandFlys tal</string>
+    <string name="title_pref_item_types_spoken">Objekttyper att läsa upp</string>
+    <string name="item_type_link">Länk</string>
+    <string name="item_type_tab">Flik</string>
+    <string name="item_type_other">Andra typer</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">Tryck med 2 fingrar, svep med 1 finger</string>
+    <string name="keycombo_key_enter">Retur</string>
+    <string name="keycombo_key_space">Mellanslag</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tabb</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">Meny</string>
+    <string name="keycombo_key_search">Sök</string>
+    <string name="keycombo_key_grave">Grav accent</string>
+    <string name="keycombo_key_minus">Minus</string>
+    <string name="keycombo_key_equals">Likhetstecken</string>
+    <string name="keycombo_key_left_bracket">Vänster hakparentes</string>
+    <string name="keycombo_key_right_bracket">Höger hakparentes</string>
+    <string name="keycombo_key_backslash">Omvänt snedstreck</string>
+    <string name="keycombo_key_semicolon">Semikolon</string>
+    <string name="keycombo_key_apostrophe">Apostrof</string>
+    <string name="keycombo_key_comma">Komma</string>
+    <string name="keycombo_key_period">Punkt</string>
+    <string name="keycombo_key_slash">Snedstreck</string>
+    <string name="keycombo_key_plus">Plus</string>
+    <string name="keycombo_key_at">Snabel-a</string>
+    <string name="keycombo_key_star">Stjärna</string>
+    <string name="keycombo_key_pound">Fyrkant</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">Plus på det numeriska tangentbordet</string>
+    <string name="keycombo_key_numpad_subtract">Minus på det numeriska tangentbordet</string>
+    <string name="keycombo_key_numpad_multiply">Gånger på det numeriska tangentbordet</string>
+    <string name="keycombo_key_numpad_divide">Delat med på det numeriska tangentbordet</string>
+    <string name="keycombo_key_numpad_dot">Punkt på det numeriska tangentbordet</string>
+    <string name="keycombo_key_numpad_comma">Komma på det numeriska tangentbordet</string>
+    <string name="keycombo_key_numpad_equals">Likhetstecken på det numeriska tangentbordet</string>
+    <string name="keycombo_key_numpad_enter">Retur på det numeriska tangentbordet</string>
+    <string name="keycombo_key_volume_up">Volym upp</string>
+    <string name="keycombo_key_volume_down">Volym ned</string>
+    <string name="keycombo_key_volume_mute">Ljud av</string>
+    <string name="keycombo_key_media_play_pause">Spela upp eller pausa</string>
+    <string name="keycombo_key_media_next">Nästa spår</string>
+    <string name="keycombo_key_media_previous">Föregående spår</string>
+    <string name="keycombo_key_media_stop">Stopp</string>
+    <string name="keycombo_key_back">Bakåt</string>
+    <string name="keycombo_key_numpad"><xliff:g id="digit" example="5">%1$s</xliff:g> på det numeriska tangentbordet</string>
+    <string name="title_pref_typing_swipes_through_keys">Svep från tangent till tangent med alla skrivningsmetoder</string>
+    <string name="shortcut_say_caller">Läs upp uppringare</string>
+    <string name="say_caller_unknown">Inkommande samtal</string>
+    <string name="shortcut_restart_phone">Starta om telefonen</string>
+    <string name="shortcut_power_off_phone">Stäng av telefonen</string>
+    <string name="restart_phone_confirm_title">Starta om telefonen?</string>
+    <string name="restart_phone_confirm_button">Starta om</string>
+    <string name="power_off_phone_confirm_title">Stäng av telefonen?</string>
+    <string name="power_off_phone_confirm_button">Stäng av</string>
+    <string name="power_command_failed">Misslyckades, strömmenyn öppnades</string>
+    <string name="clipboard_history_search_hint">Sök i urklippshistoriken</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> text</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> texter</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Dra in från kanten</string>
+    <string name="title_pref_category_sliders">Reglage</string>
+    <string name="title_pref_slider_step">Reglagesteg</string>
+    <string name="value_slider_step_app">Som appen anger</string>
+    <string name="value_slider_step_percent">1 %</string>
+    <string name="value_slider_step_smallest">Intervallets minsta steg</string>
+    <string name="title_pref_slider_skip_unchanged">Hoppa över steg som inte ändrar värdet</string>
+    <string name="title_slider_enter_value">Ange värde</string>
+    <string name="slider_value_range">Från <xliff:g id="min" example="0">%1$s</xliff:g> till <xliff:g id="max" example="100">%2$s</xliff:g></string>
+    <string name="voice_phrases_not_understood">Fraser som inte förstods</string>
+    <string name="title_pref_voice_phrases_not_understood">Spara fraser som inte förstods</string>
+    <string name="voice_phrases_not_understood_listed">Tillagd i Fraser som inte förstods.</string>
 </resources>

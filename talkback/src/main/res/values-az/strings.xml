@@ -2861,4 +2861,109 @@
     <string name="title_pref_cyrillic_text_recognition">Kiril mətninin tanınması</string>
     <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> üçün mətn tanıma modeli yoxdur. Onu Şəkil və ekran təsvirləri, Kiril mətninin tanınması bölməsində endirin.</string>
     <string name="cyrillic_text_model_error_http">Endirmə serveri sorğunu qəbul etmədi. Sonra yenidən cəhd edin.</string>
+    <string name="title_pref_announce_caller">Zəng edəni elan edin</string>
+    <string name="announce_caller_once">Bir dəfə</string>
+    <string name="announce_caller_repeat">Zəng çalarkən təkrarlayın</string>
+    <string name="title_pref_command_feedback_voice">Əmr rəyi və mətn redaktəsi üçün səs</string>
+    <string name="title_pref_command_feedback_over_speech">Əmr rəyini SandFly nitqinin üzərindən oxuyun</string>
+    <string name="title_pref_item_types_spoken">Səsləndiriləcək element növləri</string>
+    <string name="item_type_link">Keçid</string>
+    <string name="item_type_tab">Tab</string>
+    <string name="item_type_other">Digər növlər</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">2 barmaq toxunma, 1 barmaq sürüşdürmə</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">Boşluq</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">Menyu</string>
+    <string name="keycombo_key_search">Axtarış</string>
+    <string name="keycombo_key_grave">Qrav vurğusu</string>
+    <string name="keycombo_key_minus">Minus</string>
+    <string name="keycombo_key_equals">Bərabər</string>
+    <string name="keycombo_key_left_bracket">Sol kvadrat mötərizə</string>
+    <string name="keycombo_key_right_bracket">Sağ kvadrat mötərizə</string>
+    <string name="keycombo_key_backslash">Tərs çəp xətt</string>
+    <string name="keycombo_key_semicolon">Nöqtəli vergül</string>
+    <string name="keycombo_key_apostrophe">Apostrof</string>
+    <string name="keycombo_key_comma">Vergül</string>
+    <string name="keycombo_key_period">Nöqtə</string>
+    <string name="keycombo_key_slash">Çəp xətt</string>
+    <string name="keycombo_key_plus">Plyus</string>
+    <string name="keycombo_key_at">Et işarəsi</string>
+    <string name="keycombo_key_star">Ulduz</string>
+    <string name="keycombo_key_pound">Diyez</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">Rəqəm paneli plyus</string>
+    <string name="keycombo_key_numpad_subtract">Rəqəm paneli minus</string>
+    <string name="keycombo_key_numpad_multiply">Rəqəm paneli vurma</string>
+    <string name="keycombo_key_numpad_divide">Rəqəm paneli bölmə</string>
+    <string name="keycombo_key_numpad_dot">Rəqəm paneli nöqtə</string>
+    <string name="keycombo_key_numpad_comma">Rəqəm paneli vergül</string>
+    <string name="keycombo_key_numpad_equals">Rəqəm paneli bərabər</string>
+    <string name="keycombo_key_numpad_enter">Rəqəm paneli Enter</string>
+    <string name="keycombo_key_volume_up">Səsi artır</string>
+    <string name="keycombo_key_volume_down">Səsi azalt</string>
+    <string name="keycombo_key_volume_mute">Səssiz</string>
+    <string name="keycombo_key_media_play_pause">Oxut və ya fasilə</string>
+    <string name="keycombo_key_media_next">Növbəti trek</string>
+    <string name="keycombo_key_media_previous">Əvvəlki trek</string>
+    <string name="keycombo_key_media_stop">Dayandır</string>
+    <string name="keycombo_key_back">Geri</string>
+    <string name="keycombo_key_numpad">Rəqəm paneli <xliff:g id="digit" example="5">%1$s</xliff:g></string>
+    <string name="title_pref_typing_swipes_through_keys">Hər yazma metodunda düymədən düyməyə sürüşdürün</string>
+    <string name="shortcut_say_caller">Zəng edəni deyin</string>
+    <string name="say_caller_unknown">Gələn zəng</string>
+    <string name="shortcut_restart_phone">Telefonu yenidən başladın</string>
+    <string name="shortcut_power_off_phone">Telefonu söndürün</string>
+    <string name="restart_phone_confirm_title">Telefon yenidən başladılsın?</string>
+    <string name="restart_phone_confirm_button">Yenidən başladın</string>
+    <string name="power_off_phone_confirm_title">Telefon söndürülsün?</string>
+    <string name="power_off_phone_confirm_button">Söndürün</string>
+    <string name="power_command_failed">Alınmadı, güc menyusu açıldı</string>
+    <string name="clipboard_history_search_hint">Mübadilə buferi tarixçəsində axtarın</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> mətn</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> mətn</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Kənardan içəri sürüşdürün</string>
+    <string name="title_pref_category_sliders">Slayderlər</string>
+    <string name="title_pref_slider_step">Slayder addımı</string>
+    <string name="value_slider_step_app">Tətbiqin təyin etdiyi kimi</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">Diapazonun ən kiçik addımı</string>
+    <string name="title_pref_slider_skip_unchanged">Dəyəri dəyişməyən addımları ötürün</string>
+    <string name="title_slider_enter_value">Dəyəri daxil edin</string>
+    <string name="slider_value_range">Aralıq: <xliff:g id="min" example="0">%1$s</xliff:g> – <xliff:g id="max" example="100">%2$s</xliff:g></string>
+    <string name="voice_phrases_not_understood">Anlaşılmayan ifadələr</string>
+    <string name="title_pref_voice_phrases_not_understood">Anlaşılmayan ifadələri yadda saxlayın</string>
+    <string name="voice_phrases_not_understood_listed">Anlaşılmayan ifadələrə əlavə edildi.</string>
 </resources>

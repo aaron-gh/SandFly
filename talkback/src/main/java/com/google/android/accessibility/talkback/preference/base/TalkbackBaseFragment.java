@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.annotation.StringRes;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory;
 import com.google.android.accessibility.talkback.R;
@@ -81,8 +82,8 @@ public abstract class TalkbackBaseFragment extends BasePreferencesFragment {
   }
 
   /**
-   * Collapses every category of the screen. Call after the preferences have their final
-   * visibility.
+   * Collapses every category of the screen, and the categories inside them. Call after the
+   * preferences have their final visibility.
    */
   protected void collapseCategories() {
     PreferenceScreen screen = getPreferenceScreen();
@@ -90,13 +91,19 @@ public abstract class TalkbackBaseFragment extends BasePreferencesFragment {
     if (screen == null || context == null) {
       return;
     }
-    for (int i = 0; i < screen.getPreferenceCount(); i++) {
-      Preference preference = screen.getPreference(i);
-      if (preference instanceof AccessibilitySuitePreferenceCategory) {
-        ((AccessibilitySuitePreferenceCategory) preference)
-            .setCollapsible(
-                context.getString(R.string.category_collapsed),
-                context.getString(R.string.category_expanded));
+    collapseCategories(
+        screen,
+        context.getString(R.string.category_collapsed),
+        context.getString(R.string.category_expanded));
+  }
+
+  private static void collapseCategories(
+      PreferenceGroup group, CharSequence collapsed, CharSequence expanded) {
+    for (int i = 0; i < group.getPreferenceCount(); i++) {
+      Preference preference = group.getPreference(i);
+      if (preference instanceof AccessibilitySuitePreferenceCategory category) {
+        collapseCategories(category, collapsed, expanded);
+        category.setCollapsible(collapsed, expanded);
       }
     }
   }

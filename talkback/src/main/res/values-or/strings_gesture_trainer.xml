@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">ଦ୍ୱିତୀୟ ସ୍ୱାଇପ୍ <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">ପୂରା ଜେଶ୍ଚର <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">ଦୁଇଟି ମଧ୍ୟରେ <xliff:g id="ms">%1$d</xliff:g> ms ଉଠାଇ ରଖାଗଲା</string>
+    <string name="gesture_trainer_how_menu_horizontal">ମେନୁ ଖୋଲିବାକୁ ଗୋଟିଏ ଆଙ୍ଗୁଠି <xliff:g id="edge">%1$s</xliff:g> ରଖନ୍ତୁ ଏବଂ ଏହାକୁ ସ୍କ୍ରିନର ମଝିଆଡ଼କୁ ଅତି କମରେ <xliff:g id="distance">%2$d</xliff:g> ମି.ମି. ଭିତରକୁ ସ୍ଲାଇଡ୍ କରନ୍ତୁ। ଏଥିରେ ଧାରରୁ ସ୍କ୍ରିନର ପ୍ରସ୍ଥ ଦେଇ <xliff:g id="count">%3$d</xliff:g>ଟି ଆଇଟମ୍ ଅଛି, ପ୍ରତ୍ୟେକ ପ୍ରାୟ <xliff:g id="size">%6$s</xliff:g> ସେ.ମି. ଚଉଡ଼ା। ଆଇଟମ୍ <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, ଧାରରୁ <xliff:g id="from">%7$s</xliff:g> ରୁ <xliff:g id="to">%8$s</xliff:g> ସେ.ମି. ଦୂରରେ ଅଛି। ଆଙ୍ଗୁଠିକୁ ସମାନ ଉଚ୍ଚତାରେ ରଖନ୍ତୁ, ଏବଂ ଆଇଟମ୍ କୁହାଗଲେ ଉଠାନ୍ତୁ।</string>
+    <string name="gesture_trainer_finding_menu_left_line">ମେନୁ ଖୋଲିଥିବା ସ୍ଥାନଠାରୁ <xliff:g id="mm">%1$.0f</xliff:g> ମି.ମି. ଉପରେ କିମ୍ବା ତଳେ ଆଙ୍ଗୁଠି ଉଠିଲା, ଏବଂ <xliff:g id="limit">%2$.0f</xliff:g> ମି.ମି.ରୁ ଅଧିକ ଦୂରରେ ମେନୁ ବନ୍ଦ ହୁଏ।</string>
+    <string name="gesture_trainer_tip_menu_left_line">ଭିତରକୁ ସ୍ଲାଇଡ୍ କରିବା ସମୟରେ ଆଙ୍ଗୁଠିକୁ ସମାନ ଉଚ୍ଚତାରେ ରଖନ୍ତୁ, ଏବଂ ସେଠାରେ ଉଠାନ୍ତୁ।</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">ପ୍ରତ୍ୟେକ ଆଇଟମ୍‌ର ଧାରରୁ ସ୍କ୍ରିନର ପ୍ରସ୍ଥ ଦେଇ ଏକ ନିର୍ଦ୍ଦିଷ୍ଟ ସ୍ଥାନ ଅଛି, ଏବଂ ଯେଉଁ ଆଇଟମ୍‌ରେ ଆଙ୍ଗୁଠି ଉଠେ ତାହା ବଛାଯାଏ। ଆଇଟମ୍ କୁହାଗଲେ ଉଠାନ୍ତୁ।</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g>ରୁ ଭିତରକୁ ସ୍ଲାଇଡ୍ ବାଦ ଦିଆଯାଇଛି: ଏହାର ଧାର ମେନୁ ସ୍କ୍ରିନର ପ୍ରସ୍ଥ ଦେଇ ଯାଏ, ତେଣୁ ଏହାରୁ ଭିତରକୁ ସ୍ଲାଇଡ୍ ଏକ ଜେଶ୍ଚର ଚଲାଇବା ବଦଳରେ ମେନୁ ଖୋଲେ।</string>
+    <string name="gesture_trainer_statistics">ପରିସଂଖ୍ୟାନ</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>। ଚେଷ୍ଟା: <xliff:g id="tries">%2$d</xliff:g>, ଚିହ୍ନଟ ହୋଇଛି: <xliff:g id="recognized">%3$d</xliff:g>। ସବୁଠାରୁ କମ୍: <xliff:g id="shortest">%4$d</xliff:g> ms, ମଧ୍ୟମା: <xliff:g id="median">%5$d</xliff:g> ms, ସବୁଠାରୁ ଅଧିକ: <xliff:g id="longest">%6$d</xliff:g> ms।</string>
+    <string name="gesture_trainer_statistics_touches">ପ୍ରତ୍ୟେକ ସ୍ପର୍ଶ: ସବୁଠାରୁ କମ୍ <xliff:g id="shortest">%1$d</xliff:g> ms, ମଧ୍ୟମା <xliff:g id="median">%2$d</xliff:g> ms, ସବୁଠାରୁ ଅଧିକ <xliff:g id="longest">%3$d</xliff:g> ms।</string>
+    <string name="gesture_trainer_kind_tap">ଟାପ୍</string>
+    <string name="gesture_trainer_kind_double_tap">ଦୁଇଥର-ଟାପ୍</string>
+    <string name="gesture_trainer_kind_triple_tap">ତିନିଥର-ଟାପ୍</string>
+    <string name="gesture_trainer_kind_quadruple_tap">ଚାରିଥର-ଟାପ୍</string>
+    <string name="gesture_trainer_kind_tap_hold">ଟାପ୍ କରି ଦବାଇ ଧରିବା</string>
+    <string name="gesture_trainer_kind_double_tap_hold">ଦୁଇଥର-ଟାପ୍ କରି ଦବାଇ ଧରିବା</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">ତିନିଥର-ଟାପ୍ କରି ଦବାଇ ଧରିବା</string>
+    <string name="gesture_trainer_kind_swipe">ସ୍ୱାଇପ୍</string>
+    <string name="gesture_trainer_kind_swipe_hold">ସ୍ୱାଇପ୍ କରି ଦବାଇ ଧରିବା</string>
+    <string name="gesture_trainer_kind_two_part_swipe">ଆଗପଛ ଏବଂ କୋଣ ସ୍ୱାଇପ୍</string>
+    <string name="gesture_trainer_kind_pinch">ପିଞ୍ଚ</string>
+    <string name="gesture_trainer_kind_spread">ବିସ୍ତାର</string>
+    <string name="gesture_trainer_kind_rotate">ଘୁରାଇବା</string>
+    <string name="gesture_trainer_kind_scrub">ସ୍କ୍ରବ୍</string>
 </resources>

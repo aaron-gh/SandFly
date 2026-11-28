@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">दूसरा स्वाइप <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">पूरा जेस्चर <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">उनके बीच <xliff:g id="ms">%1$d</xliff:g> ms तक उठाया</string>
+    <string name="gesture_trainer_how_menu_horizontal">मेन्यू खोलने के लिए एक उंगली <xliff:g id="edge">%1$s</xliff:g> रखें और उसे स्क्रीन के बीच की ओर कम से कम <xliff:g id="distance">%2$d</xliff:g> mm अंदर स्लाइड करें. इसमें किनारे से शुरू होकर स्क्रीन के आर-पार <xliff:g id="count">%3$d</xliff:g> आइटम हैं, हर एक लगभग <xliff:g id="size">%6$s</xliff:g> cm चौड़ा. आइटम <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, किनारे से <xliff:g id="from">%7$s</xliff:g> से <xliff:g id="to">%8$s</xliff:g> cm पर है. उंगली को एक ही ऊंचाई पर रखें, और आइटम बोले जाने पर उसे उठाएं.</string>
+    <string name="gesture_trainer_finding_menu_left_line">उंगली उस जगह से <xliff:g id="mm">%1$.0f</xliff:g> mm ऊपर या नीचे उठी जहां मेन्यू खुला था, और <xliff:g id="limit">%2$.0f</xliff:g> mm से ज़्यादा होने पर मेन्यू बंद हो जाता है.</string>
+    <string name="gesture_trainer_tip_menu_left_line">अंदर की ओर स्लाइड करते समय उंगली को एक ही ऊंचाई पर रखें, और वहीं उठाएं.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">हर आइटम की किनारे से स्क्रीन के आर-पार एक तय जगह है, और जिस आइटम पर उंगली उठती है वह चुना जाता है. आइटम बोले जाने पर उंगली उठाएं.</string>
+    <string name="gesture_trainer_left_out_in_menu"><xliff:g id="edge">%1$s</xliff:g> से अंदर की ओर स्लाइड शामिल नहीं हैं: उसका किनारे का मेन्यू स्क्रीन के आर-पार जाता है, इसलिए उससे अंदर स्लाइड करने पर जेस्चर चलने के बजाय मेन्यू खुलता है.</string>
+    <string name="gesture_trainer_statistics">आंकड़े</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. कोशिशें: <xliff:g id="tries">%2$d</xliff:g>, पहचाने गए: <xliff:g id="recognized">%3$d</xliff:g>. सबसे कम: <xliff:g id="shortest">%4$d</xliff:g> ms, माध्यिका: <xliff:g id="median">%5$d</xliff:g> ms, सबसे ज़्यादा: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">हर टच: सबसे कम <xliff:g id="shortest">%1$d</xliff:g> ms, माध्यिका <xliff:g id="median">%2$d</xliff:g> ms, सबसे ज़्यादा <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">टैप</string>
+    <string name="gesture_trainer_kind_double_tap">दो बार टैप</string>
+    <string name="gesture_trainer_kind_triple_tap">तीन बार टैप</string>
+    <string name="gesture_trainer_kind_quadruple_tap">चार बार टैप</string>
+    <string name="gesture_trainer_kind_tap_hold">टैप करके रखें</string>
+    <string name="gesture_trainer_kind_double_tap_hold">दो बार टैप करके रखें</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">तीन बार टैप करके रखें</string>
+    <string name="gesture_trainer_kind_swipe">स्वाइप</string>
+    <string name="gesture_trainer_kind_swipe_hold">स्वाइप करके रखें</string>
+    <string name="gesture_trainer_kind_two_part_swipe">आगे-पीछे और कोण वाले स्वाइप</string>
+    <string name="gesture_trainer_kind_pinch">पिंच</string>
+    <string name="gesture_trainer_kind_spread">उंगलियां दूर ले जाना</string>
+    <string name="gesture_trainer_kind_rotate">घुमाना</string>
+    <string name="gesture_trainer_kind_scrub">रगड़ना</string>
 </resources>

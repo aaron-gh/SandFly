@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">tweede swiep <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">hele gebaar <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap"><xliff:g id="ms">%1$d</xliff:g> ms tussenin opgelig</string>
+    <string name="gesture_trainer_how_menu_horizontal">Sit een vinger <xliff:g id="edge">%1$s</xliff:g> en skuif dit in na die middel van die skerm vir minstens <xliff:g id="distance">%2$d</xliff:g> mm om die kieslys oop te maak. Dit het <xliff:g id="count">%3$d</xliff:g> items oor die skerm, vanaf die rand, elk sowat <xliff:g id="size">%6$s</xliff:g> cm breed. Item <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, is <xliff:g id="from">%7$s</xliff:g> tot <xliff:g id="to">%8$s</xliff:g> cm vanaf die rand. Hou die vinger op dieselfde hoogte, en lig dit op wanneer die item uitgespreek word.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Die vinger is <xliff:g id="mm">%1$.0f</xliff:g> mm bo of onder die plek waar die kieslys oopgegaan het, opgelig, en die kieslys maak toe verder as <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Hou die vinger op dieselfde hoogte terwyl jy inskuif, en lig dit daar op.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Elke item het ’n vaste plek oor die skerm, vanaf die rand, en die item waar die vinger opgelig word, word gekies. Lig op wanneer die item uitgespreek word.</string>
+    <string name="gesture_trainer_left_out_in_menu">Inskuiwe vanaf <xliff:g id="edge">%1$s</xliff:g> word weggelaat: sy randkieslys gaan oor die skerm, so ’n inskuif daarvandaan maak die kieslys oop in plaas daarvan om ’n gebaar uit te voer.</string>
+    <string name="gesture_trainer_statistics">Statistiek</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Pogings: <xliff:g id="tries">%2$d</xliff:g>, herken: <xliff:g id="recognized">%3$d</xliff:g>. Kortste: <xliff:g id="shortest">%4$d</xliff:g> ms, mediaan: <xliff:g id="median">%5$d</xliff:g> ms, langste: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Elke aanraking: kortste <xliff:g id="shortest">%1$d</xliff:g> ms, mediaan <xliff:g id="median">%2$d</xliff:g> ms, langste <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Tikke</string>
+    <string name="gesture_trainer_kind_double_tap">Dubbeltikke</string>
+    <string name="gesture_trainer_kind_triple_tap">Tripeltikke</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Tik 4 keer</string>
+    <string name="gesture_trainer_kind_tap_hold">Tik en hou</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Dubbeltik en hou</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Tripeltik en hou</string>
+    <string name="gesture_trainer_kind_swipe">Swiepe</string>
+    <string name="gesture_trainer_kind_swipe_hold">Swiep en hou</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Heen-en-weer- en hoekswiepe</string>
+    <string name="gesture_trainer_kind_pinch">Knypgebare</string>
+    <string name="gesture_trainer_kind_spread">Spreigebare</string>
+    <string name="gesture_trainer_kind_rotate">Draaigebare</string>
+    <string name="gesture_trainer_kind_scrub">Skropgebare</string>
 </resources>

@@ -2398,18 +2398,18 @@
     <string name="title_pref_shortcut_4finger_3tap_swipe_down">Kolmikpuudutamine, seejärel alla pühkimine 4 sõrmega</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_left">Kolmikpuudutamine, seejärel vasakule pühkimine 4 sõrmega</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_right">Kolmikpuudutamine, seejärel paremale pühkimine 4 sõrmega</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">2 sõrmega puudutamine, seejärel üles pühkimine</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">2 sõrmega puudutamine, seejärel alla pühkimine</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">2 sõrmega puudutamine, seejärel vasakule pühkimine</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">2 sõrmega puudutamine, seejärel paremale pühkimine</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">2 sõrmega topeltpuudutamine, seejärel üles pühkimine</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">2 sõrmega topeltpuudutamine, seejärel alla pühkimine</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">2 sõrmega topeltpuudutamine, seejärel vasakule pühkimine</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">2 sõrmega topeltpuudutamine, seejärel paremale pühkimine</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">2 sõrmega kolmikpuudutamine, seejärel üles pühkimine</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">2 sõrmega kolmikpuudutamine, seejärel alla pühkimine</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">2 sõrmega kolmikpuudutamine, seejärel vasakule pühkimine</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">2 sõrmega kolmikpuudutamine, seejärel paremale pühkimine</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">2 sõrmega puudutamine, seejärel üles pühkimine 1 sõrmega</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">2 sõrmega puudutamine, seejärel alla pühkimine 1 sõrmega</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">2 sõrmega puudutamine, seejärel vasakule pühkimine 1 sõrmega</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">2 sõrmega puudutamine, seejärel paremale pühkimine 1 sõrmega</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">2 sõrmega topeltpuudutamine, seejärel üles pühkimine 1 sõrmega</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">2 sõrmega topeltpuudutamine, seejärel alla pühkimine 1 sõrmega</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">2 sõrmega topeltpuudutamine, seejärel vasakule pühkimine 1 sõrmega</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">2 sõrmega topeltpuudutamine, seejärel paremale pühkimine 1 sõrmega</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">2 sõrmega kolmikpuudutamine, seejärel üles pühkimine 1 sõrmega</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">2 sõrmega kolmikpuudutamine, seejärel alla pühkimine 1 sõrmega</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">2 sõrmega kolmikpuudutamine, seejärel vasakule pühkimine 1 sõrmega</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">2 sõrmega kolmikpuudutamine, seejärel paremale pühkimine 1 sõrmega</string>
     <string name="title_pref_shortcut_up_and_down_and_up">Üles, alla, seejärel üles pühkimine</string>
     <string name="title_pref_shortcut_up_and_down_and_left">Üles, alla, seejärel vasakule pühkimine</string>
     <string name="title_pref_shortcut_up_and_down_and_right">Üles, alla, seejärel paremale pühkimine</string>
@@ -2860,4 +2860,109 @@
     <string name="title_pref_cyrillic_text_recognition">Kirillitsa tekstituvastus</string>
     <string name="cyrillic_text_model_missing">Keele <xliff:g id="language" example="Russian">%1$s</xliff:g> tekstituvastusmudelit pole. Laadige see alla jaotises Pildi- ja ekraanikirjeldused, Kirillitsa tekstituvastus.</string>
     <string name="cyrillic_text_model_error_http">Allalaadimisserver ei aktsepteerinud taotlust. Proovige hiljem uuesti.</string>
+    <string name="title_pref_announce_caller">Helistaja teatamine</string>
+    <string name="announce_caller_once">Üks kord</string>
+    <string name="announce_caller_repeat">Korda helisemise ajal</string>
+    <string name="title_pref_command_feedback_voice">Hääl käskude tagasiside ja teksti redigeerimise jaoks</string>
+    <string name="title_pref_command_feedback_over_speech">Loe käskude tagasiside ette SandFly kõne peale</string>
+    <string name="title_pref_item_types_spoken">Ette loetavad üksuste tüübid</string>
+    <string name="item_type_link">Link</string>
+    <string name="item_type_tab">Vahekaart</string>
+    <string name="item_type_other">Muud tüübid</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">2 sõrmega puudutus, 1 sõrmega pühkimine</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">Tühik</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">Menüü</string>
+    <string name="keycombo_key_search">Otsing</string>
+    <string name="keycombo_key_grave">Graavis</string>
+    <string name="keycombo_key_minus">Miinus</string>
+    <string name="keycombo_key_equals">Võrdusmärk</string>
+    <string name="keycombo_key_left_bracket">Vasak nurksulg</string>
+    <string name="keycombo_key_right_bracket">Parem nurksulg</string>
+    <string name="keycombo_key_backslash">Kurakaldkriips</string>
+    <string name="keycombo_key_semicolon">Semikoolon</string>
+    <string name="keycombo_key_apostrophe">Ülakoma</string>
+    <string name="keycombo_key_comma">Koma</string>
+    <string name="keycombo_key_period">Punkt</string>
+    <string name="keycombo_key_slash">Kaldkriips</string>
+    <string name="keycombo_key_plus">Pluss</string>
+    <string name="keycombo_key_at">Ätt</string>
+    <string name="keycombo_key_star">Tärn</string>
+    <string name="keycombo_key_pound">Trellid</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">Numbriklahvistiku pluss</string>
+    <string name="keycombo_key_numpad_subtract">Numbriklahvistiku miinus</string>
+    <string name="keycombo_key_numpad_multiply">Numbriklahvistiku korrutusmärk</string>
+    <string name="keycombo_key_numpad_divide">Numbriklahvistiku jagamismärk</string>
+    <string name="keycombo_key_numpad_dot">Numbriklahvistiku punkt</string>
+    <string name="keycombo_key_numpad_comma">Numbriklahvistiku koma</string>
+    <string name="keycombo_key_numpad_equals">Numbriklahvistiku võrdusmärk</string>
+    <string name="keycombo_key_numpad_enter">Numbriklahvistiku Enter</string>
+    <string name="keycombo_key_volume_up">Helitugevuse suurendamine</string>
+    <string name="keycombo_key_volume_down">Helitugevuse vähendamine</string>
+    <string name="keycombo_key_volume_mute">Vaigistus</string>
+    <string name="keycombo_key_media_play_pause">Esitus või paus</string>
+    <string name="keycombo_key_media_next">Järgmine lugu</string>
+    <string name="keycombo_key_media_previous">Eelmine lugu</string>
+    <string name="keycombo_key_media_stop">Stopp</string>
+    <string name="keycombo_key_back">Tagasi</string>
+    <string name="keycombo_key_numpad">Numbriklahvistiku <xliff:g id="digit" example="5">%1$s</xliff:g></string>
+    <string name="title_pref_typing_swipes_through_keys">Pühi klahvilt klahvile iga sisestusviisiga</string>
+    <string name="shortcut_say_caller">Ütle helistaja</string>
+    <string name="say_caller_unknown">Sissetulev kõne</string>
+    <string name="shortcut_restart_phone">Taaskäivita telefon</string>
+    <string name="shortcut_power_off_phone">Lülita telefon välja</string>
+    <string name="restart_phone_confirm_title">Kas taaskäivitada telefon?</string>
+    <string name="restart_phone_confirm_button">Taaskäivita</string>
+    <string name="power_off_phone_confirm_title">Kas lülitada telefon välja?</string>
+    <string name="power_off_phone_confirm_button">Lülita välja</string>
+    <string name="power_command_failed">Ebaõnnestus, avati toitemenüü</string>
+    <string name="clipboard_history_search_hint">Otsi lõikelaua ajaloost</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tekst</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> teksti</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Libista servast sissepoole</string>
+    <string name="title_pref_category_sliders">Liugurid</string>
+    <string name="title_pref_slider_step">Liuguri samm</string>
+    <string name="value_slider_step_app">Nagu rakendus määrab</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">Vahemiku väikseim samm</string>
+    <string name="title_pref_slider_skip_unchanged">Jäta vahele sammud, mis väärtust ei muuda</string>
+    <string name="title_slider_enter_value">Sisesta väärtus</string>
+    <string name="slider_value_range"><xliff:g id="min" example="0">%1$s</xliff:g> kuni <xliff:g id="max" example="100">%2$s</xliff:g></string>
+    <string name="voice_phrases_not_understood">Mõistmata fraasid</string>
+    <string name="title_pref_voice_phrases_not_understood">Salvesta mõistmata fraasid</string>
+    <string name="voice_phrases_not_understood_listed">Lisatud loendisse Mõistmata fraasid.</string>
 </resources>

@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">التمرير الثاني <xliff:g id="ms">%1$d</xliff:g> ملي ثانية</string>
     <string name="gesture_trainer_measure_whole_gesture">الإيماءة كاملة <xliff:g id="ms">%1$d</xliff:g> ملي ثانية</string>
     <string name="gesture_trainer_measure_stroke_gap">رفع الإصبع لمدة <xliff:g id="ms">%1$d</xliff:g> ملي ثانية بينهما</string>
+    <string name="gesture_trainer_how_menu_horizontal">ضع إصبعًا واحدًا <xliff:g id="edge">%1$s</xliff:g> ومرِّره إلى الداخل باتجاه منتصف الشاشة لمسافة <xliff:g id="distance">%2$d</xliff:g> مم على الأقل لفتح القائمة. تحتوي القائمة على <xliff:g id="count">%3$d</xliff:g> عناصر عبر الشاشة بدءًا من الحافة، عرض كل منها <xliff:g id="size">%6$s</xliff:g> سم تقريبًا. العنصر <xliff:g id="number">%4$d</xliff:g>، <xliff:g id="item">%5$s</xliff:g>، يقع على بعد <xliff:g id="from">%7$s</xliff:g> إلى <xliff:g id="to">%8$s</xliff:g> سم من الحافة. أبقِ الإصبع على الارتفاع نفسه، وارفعه عند نطق العنصر.</string>
+    <string name="gesture_trainer_finding_menu_left_line">رُفع الإصبع على بعد <xliff:g id="mm">%1$.0f</xliff:g> مم فوق أو تحت الموضع الذي فُتحت فيه القائمة، وتُغلق القائمة بعد <xliff:g id="limit">%2$.0f</xliff:g> مم.</string>
+    <string name="gesture_trainer_tip_menu_left_line">أبقِ الإصبع على الارتفاع نفسه أثناء التمرير إلى الداخل، وارفعه هناك.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">لكل عنصر مكان ثابت عبر الشاشة بدءًا من الحافة، ويتم اختيار العنصر الذي يُرفع الإصبع عنده. ارفع الإصبع عند نطق العنصر.</string>
+    <string name="gesture_trainer_left_out_in_menu">تم استبعاد التمرير إلى الداخل من <xliff:g id="edge">%1$s</xliff:g>: قائمة هذه الحافة تمتد عبر الشاشة، لذا يفتح التمرير إلى الداخل منها القائمة بدلًا من تنفيذ إيماءة.</string>
+    <string name="gesture_trainer_statistics">الإحصاءات</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. المحاولات: <xliff:g id="tries">%2$d</xliff:g>، تم التعرّف عليها: <xliff:g id="recognized">%3$d</xliff:g>. الأقصر: <xliff:g id="shortest">%4$d</xliff:g> ملي ثانية، الوسيط: <xliff:g id="median">%5$d</xliff:g> ملي ثانية، الأطول: <xliff:g id="longest">%6$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_statistics_touches">كل لمسة: الأقصر <xliff:g id="shortest">%1$d</xliff:g> ملي ثانية، الوسيط <xliff:g id="median">%2$d</xliff:g> ملي ثانية، الأطول <xliff:g id="longest">%3$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_kind_tap">النقرات</string>
+    <string name="gesture_trainer_kind_double_tap">النقر مرّتين</string>
+    <string name="gesture_trainer_kind_triple_tap">النقر ثلاث مرات</string>
+    <string name="gesture_trainer_kind_quadruple_tap">النقر 4 مرّات</string>
+    <string name="gesture_trainer_kind_tap_hold">النقر مع الاستمرار</string>
+    <string name="gesture_trainer_kind_double_tap_hold">النقر مرّتين مع الاستمرار</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">النقر ثلاث مرات مع الاستمرار</string>
+    <string name="gesture_trainer_kind_swipe">التمرير</string>
+    <string name="gesture_trainer_kind_swipe_hold">التمرير مع الاستمرار</string>
+    <string name="gesture_trainer_kind_two_part_swipe">التمرير ذهابًا وإيابًا والتمرير بزاوية</string>
+    <string name="gesture_trainer_kind_pinch">الضمّ</string>
+    <string name="gesture_trainer_kind_spread">المباعدة</string>
+    <string name="gesture_trainer_kind_rotate">التدوير</string>
+    <string name="gesture_trainer_kind_scrub">الفرك</string>
 </resources>

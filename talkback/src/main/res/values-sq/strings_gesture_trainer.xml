@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">rrëshqitja e dytë <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">i gjithë gjesti <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">i ngritur <xliff:g id="ms">%1$d</xliff:g> ms midis tyre</string>
+    <string name="gesture_trainer_how_menu_horizontal">Vendos një gisht <xliff:g id="edge">%1$s</xliff:g> dhe rrëshqite brenda drejt mesit të ekranit të paktën <xliff:g id="distance">%2$d</xliff:g> mm për të hapur menynë. Ajo ka <xliff:g id="count">%3$d</xliff:g> artikuj përgjatë ekranit, nga buza, secili rreth <xliff:g id="item">%5$s</xliff:g> cm i gjerë. Artikulli <xliff:g id="size">%6$s</xliff:g>, <xliff:g id="number">%4$d</xliff:g>, është <xliff:g id="from">%7$s</xliff:g> deri në <xliff:g id="to">%8$s</xliff:g> cm nga buza. Mbaje gishtin në të njëjtën lartësi dhe ngrije kur artikulli thuhet me zë.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Gishti u ngrit <xliff:g id="mm">%1$.0f</xliff:g> mm mbi ose poshtë lartësisë ku u hap menyja, dhe menyja mbyllet përtej <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Mbaje gishtin në të njëjtën lartësi ndërsa rrëshqet brenda, dhe ngrije atje.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Çdo artikull ka një vend të caktuar përgjatë ekranit, nga buza, dhe zgjidhet artikulli ku ngrihet gishti. Ngri kur artikulli thuhet me zë.</string>
+    <string name="gesture_trainer_left_out_in_menu">Rrëshqitjet brenda prej <xliff:g id="edge">%1$s</xliff:g> janë lënë jashtë: menyja e saj e buzës shtrihet përgjatë ekranit, prandaj një rrëshqitje brenda prej saj hap menynë në vend që të ekzekutojë një gjest.</string>
+    <string name="gesture_trainer_statistics">Statistikat</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Përpjekje: <xliff:g id="tries">%2$d</xliff:g>, të njohura: <xliff:g id="recognized">%3$d</xliff:g>. Më e shkurtra: <xliff:g id="shortest">%4$d</xliff:g> ms, mesorja: <xliff:g id="median">%5$d</xliff:g> ms, më e gjata: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Çdo prekje: më e shkurtra <xliff:g id="shortest">%1$d</xliff:g> ms, mesorja <xliff:g id="median">%2$d</xliff:g> ms, më e gjata <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Trokitje</string>
+    <string name="gesture_trainer_kind_double_tap">Trokitje dy herë</string>
+    <string name="gesture_trainer_kind_triple_tap">Trokitje tri herë</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Trokitje katër herë</string>
+    <string name="gesture_trainer_kind_tap_hold">Trokit dhe mbaj shtypur</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Trokit dy herë dhe mbaj shtypur</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Trokit tri herë dhe mbaj shtypur</string>
+    <string name="gesture_trainer_kind_swipe">Rrëshqitje</string>
+    <string name="gesture_trainer_kind_swipe_hold">Rrëshqit dhe mbaj shtypur</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Rrëshqitje para e prapa dhe në kënd</string>
+    <string name="gesture_trainer_kind_pinch">Afrime</string>
+    <string name="gesture_trainer_kind_spread">Largime</string>
+    <string name="gesture_trainer_kind_rotate">Rrotullime</string>
+    <string name="gesture_trainer_kind_scrub">Lëvizje para-mbrapa</string>
 </resources>

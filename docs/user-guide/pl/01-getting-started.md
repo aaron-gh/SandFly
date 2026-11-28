@@ -83,7 +83,7 @@ Wybierz **Spis treści**, żeby otworzyć dowolną lekcję lub sprawdzić swoje 
 
 W trybie **Ćwiczenie gestów** SandFly podaje nazwę gestu i przypisanego polecenia. Polecenie się wtedy nie wykonuje. Żeby dojść do **Zakończ ćwiczenie**, możesz nadal przechodzić między elementami i je aktywować. Aby od razu wejść do tej lekcji, wybierz **Pomoc i opinie** > **Ćwiczenie gestów** lub otwórz **Ćwiczenie gestów** na ekranie **Gesty**.
 
-Uwaga: Samouczek przechwytuje gesty rozpoznawane przez SandFly. Jeśli wyłączysz **Ustawienia programisty** > **Używaj gestów w SandFly**, za nawigację odpowiada Android i jego gesty mogą wyprowadzić Cię z lekcji. Do lekcji o suwakach i czynnościach potrzebujesz włączonej opcji **Sterowanie czytaniem** > **Automatycznie zmieniaj opcję sterowania czytaniem**. Domyślnie ta opcja jest włączona.
+Uwaga: Samouczek przechwytuje gesty rozpoznawane przez SandFly. Jeśli wyłączysz **Ustawienia programisty** > **Rozpoznawaj gesty w SandFly**, za nawigację odpowiada Android i jego gesty mogą wyprowadzić Cię z lekcji. Do lekcji o suwakach i czynnościach potrzebujesz włączonej opcji **Sterowanie czytaniem** > **Automatycznie zmieniaj opcję sterowania czytaniem**. Domyślnie ta opcja jest włączona.
 
 #### Samouczek klawiatury {#getting-started-keyboard-tutorial}
 
@@ -147,7 +147,7 @@ SandFly zastępuje Backtalk Aaron, który nie otrzymuje już aktualizacji. Ostat
 1. Otwórz powiadomienie o aktualizacji lub wybierz **Sprawdź aktualizacje**, a następnie **Zainstaluj**.
 2. Poczekaj na zakończenie instalacji SandFly obok Backtalk Aaron. Otworzą się ustawienia dostępności Androida.
 3. Włącz SandFly. Aplikacja skopiuje ustawienia i własne etykiety. Backtalk Aaron wyłączy się sam.
-4. Aby odinstalować poprzednią aplikację, otwórz powiadomienie **Ustawienia skopiowane z Backtalk Aaron**.
+4. Aby odinstalować poprzednią aplikację, otwórz powiadomienie **Skopiowano ustawienia z aplikacji Backtalk Aaron**.
 
 SandFly otrzymuje wydania stabilne. Jeśli chcesz także nowe kompilacje testowe, włącz **Aktualizacje i instalacja** > **Wersje deweloperskie**. Zobacz [opis kanałów aktualizacji](#updates-channels).
 

@@ -2407,18 +2407,18 @@
     <string name="title_pref_shortcut_4finger_3tap_swipe_down">Trostruki dodir, zatim prelazak s četiri prsta prema dolje</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_left">Trostruki dodir, zatim prelazak s četiri prsta ulijevo</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_right">Trostruki dodir, zatim prelazak s četiri prsta udesno</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Dodir s dva prsta, zatim prelazak prstom prema gore</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Dodir s dva prsta, zatim prelazak prstom prema dolje</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Dodir s dva prsta, zatim prelazak prstom ulijevo</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Dodir s dva prsta, zatim prelazak prstom udesno</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Dvostruki dodir s dva prsta, zatim prelazak prstom prema gore</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Dvostruki dodir s dva prsta, zatim prelazak prstom prema dolje</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Dvostruki dodir s dva prsta, zatim prelazak prstom ulijevo</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Dvostruki dodir s dva prsta, zatim prelazak prstom udesno</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Trostruki dodir s dva prsta, zatim prelazak prstom prema gore</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Trostruki dodir s dva prsta, zatim prelazak prstom prema dolje</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Trostruki dodir s dva prsta, zatim prelazak prstom ulijevo</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Trostruki dodir s dva prsta, zatim prelazak prstom udesno</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Dodir s dva prsta, zatim prelazak jednim prstom prema gore</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Dodir s dva prsta, zatim prelazak jednim prstom prema dolje</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Dodir s dva prsta, zatim prelazak jednim prstom ulijevo</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Dodir s dva prsta, zatim prelazak jednim prstom udesno</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Dvostruki dodir s dva prsta, zatim prelazak jednim prstom prema gore</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Dvostruki dodir s dva prsta, zatim prelazak jednim prstom prema dolje</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Dvostruki dodir s dva prsta, zatim prelazak jednim prstom ulijevo</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Dvostruki dodir s dva prsta, zatim prelazak jednim prstom udesno</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Trostruki dodir s dva prsta, zatim prelazak jednim prstom prema gore</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Trostruki dodir s dva prsta, zatim prelazak jednim prstom prema dolje</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Trostruki dodir s dva prsta, zatim prelazak jednim prstom ulijevo</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Trostruki dodir s dva prsta, zatim prelazak jednim prstom udesno</string>
     <string name="title_pref_shortcut_up_and_down_and_up">Prelazak prstom gore, dolje pa gore</string>
     <string name="title_pref_shortcut_up_and_down_and_left">Prelazak prstom gore, dolje pa lijevo</string>
     <string name="title_pref_shortcut_up_and_down_and_right">Prelazak prstom gore, dolje pa desno</string>
@@ -2871,4 +2871,110 @@
     <string name="title_pref_cyrillic_text_recognition">Prepoznavanje ćiriličnog teksta</string>
     <string name="cyrillic_text_model_missing">Nema modela za prepoznavanje teksta za jezik <xliff:g id="language" example="Russian">%1$s</xliff:g>. Preuzmite ga u Opisi slika i zaslona, Prepoznavanje ćiriličnog teksta.</string>
     <string name="cyrillic_text_model_error_http">Poslužitelj za preuzimanje nije prihvatio zahtjev. Pokušajte ponovno kasnije.</string>
+    <string name="title_pref_announce_caller">Najava pozivatelja</string>
+    <string name="announce_caller_once">Jednom</string>
+    <string name="announce_caller_repeat">Ponavljaj dok zvoni</string>
+    <string name="title_pref_command_feedback_voice">Glas za povratne informacije naredbi i uređivanje teksta</string>
+    <string name="title_pref_command_feedback_over_speech">Čitaj povratne informacije naredbi preko govora SandFlya</string>
+    <string name="title_pref_item_types_spoken">Vrste elemenata koje se izgovaraju</string>
+    <string name="item_type_link">Veza</string>
+    <string name="item_type_tab">Kartica</string>
+    <string name="item_type_other">Ostale vrste</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">Dodir s dva prsta, prelazak jednim prstom</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">Razmaknica</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Page Up</string>
+    <string name="keycombo_key_page_down">Page Down</string>
+    <string name="keycombo_key_home">Home</string>
+    <string name="keycombo_key_end">End</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">Izbornik</string>
+    <string name="keycombo_key_search">Pretraživanje</string>
+    <string name="keycombo_key_grave">Gravis</string>
+    <string name="keycombo_key_minus">Minus</string>
+    <string name="keycombo_key_equals">Jednako</string>
+    <string name="keycombo_key_left_bracket">Lijeva uglata zagrada</string>
+    <string name="keycombo_key_right_bracket">Desna uglata zagrada</string>
+    <string name="keycombo_key_backslash">Obrnuta kosa crta</string>
+    <string name="keycombo_key_semicolon">Točka-zarez</string>
+    <string name="keycombo_key_apostrophe">Apostrof</string>
+    <string name="keycombo_key_comma">Zarez</string>
+    <string name="keycombo_key_period">Točka</string>
+    <string name="keycombo_key_slash">Kosa crta</string>
+    <string name="keycombo_key_plus">Plus</string>
+    <string name="keycombo_key_at">Majmunče</string>
+    <string name="keycombo_key_star">Zvjezdica</string>
+    <string name="keycombo_key_pound">Ljestve</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">Plus na brojčanoj tipkovnici</string>
+    <string name="keycombo_key_numpad_subtract">Minus na brojčanoj tipkovnici</string>
+    <string name="keycombo_key_numpad_multiply">Množenje na brojčanoj tipkovnici</string>
+    <string name="keycombo_key_numpad_divide">Dijeljenje na brojčanoj tipkovnici</string>
+    <string name="keycombo_key_numpad_dot">Točka na brojčanoj tipkovnici</string>
+    <string name="keycombo_key_numpad_comma">Zarez na brojčanoj tipkovnici</string>
+    <string name="keycombo_key_numpad_equals">Jednako na brojčanoj tipkovnici</string>
+    <string name="keycombo_key_numpad_enter">Enter na brojčanoj tipkovnici</string>
+    <string name="keycombo_key_volume_up">Pojačavanje glasnoće</string>
+    <string name="keycombo_key_volume_down">Smanjivanje glasnoće</string>
+    <string name="keycombo_key_volume_mute">Isključivanje zvuka</string>
+    <string name="keycombo_key_media_play_pause">Reprodukcija ili pauza</string>
+    <string name="keycombo_key_media_next">Sljedeća pjesma</string>
+    <string name="keycombo_key_media_previous">Prethodna pjesma</string>
+    <string name="keycombo_key_media_stop">Zaustavljanje</string>
+    <string name="keycombo_key_back">Natrag</string>
+    <string name="keycombo_key_numpad"><xliff:g id="digit" example="5">%1$s</xliff:g> na brojčanoj tipkovnici</string>
+    <string name="title_pref_typing_swipes_through_keys">Prelazak prstom od tipke do tipke sa svakom metodom tipkanja</string>
+    <string name="shortcut_say_caller">Izgovori pozivatelja</string>
+    <string name="say_caller_unknown">Dolazni poziv</string>
+    <string name="shortcut_restart_phone">Ponovno pokreni telefon</string>
+    <string name="shortcut_power_off_phone">Isključi telefon</string>
+    <string name="restart_phone_confirm_title">Ponovno pokrenuti telefon?</string>
+    <string name="restart_phone_confirm_button">Ponovno pokreni</string>
+    <string name="power_off_phone_confirm_title">Isključiti telefon?</string>
+    <string name="power_off_phone_confirm_button">Isključi</string>
+    <string name="power_command_failed">Nije uspjelo, otvoren je izbornik napajanja</string>
+    <string name="clipboard_history_search_hint">Pretraži povijest međuspremnika</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tekst</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> teksta</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> tekstova</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Prelazak od ruba prema unutra</string>
+    <string name="title_pref_category_sliders">Klizači</string>
+    <string name="title_pref_slider_step">Korak klizača</string>
+    <string name="value_slider_step_app">Kako postavlja aplikacija</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">Najmanji korak raspona</string>
+    <string name="title_pref_slider_skip_unchanged">Preskoči korake koji ne mijenjaju vrijednost</string>
+    <string name="title_slider_enter_value">Unesi vrijednost</string>
+    <string name="slider_value_range">Od <xliff:g id="min" example="0">%1$s</xliff:g> do <xliff:g id="max" example="100">%2$s</xliff:g></string>
+    <string name="voice_phrases_not_understood">Nerazumljene fraze</string>
+    <string name="title_pref_voice_phrases_not_understood">Spremaj nerazumljene fraze</string>
+    <string name="voice_phrases_not_understood_listed">Dodano u Nerazumljene fraze.</string>
 </resources>

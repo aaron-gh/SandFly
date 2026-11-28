@@ -153,6 +153,7 @@ SandFly keeps a history of up to 50 texts copied, newest first. Each text is kep
 
 To open the history, run **Clipboard history**, from the **Text editing** commands or the **Editing menu**. The history opens over the current screen.
 
+- The search field at the top lists only the texts that contain what is typed in it, ignoring case, and SandFly reads how many are found. Clear the field to list every text again. During a search, **Select** and **Export to file** use the texts found, and **Clear history** isn't shown.
 - Double-tap a text to paste it into the text field that the history was opened from. When the history was opened without a text field, double-tap opens the actions of the text.
 - Double-tap and hold a text to open its actions: **Paste**, **Copy** it again, **Add to clipboard**, **Edit** its text, **Export to file**, or **Remove** it. The actions are also in the **Actions** of each text.
 - **Select** shows the texts as check boxes. Double-tap texts to check them, then choose **Remove** or **Export to file** for the checked texts.
@@ -179,7 +180,7 @@ Granular editing opens the text of the focused text field, or of any focused ite
 - **Split by** chooses the pieces: **Characters**, **Words**, **Sentences**, **Lines** or **Paragraphs**. The default is **Words**, and SandFly keeps your last choice.
 - Double-tap a piece to edit it. Leaving it empty deletes it.
 - The actions of a piece are **Select**, **Insert before**, **Insert after** and **Delete**. Double-tap and hold a piece to open them in a dialog. **Start selection** and **End selection** select every piece between two pieces.
-- Spaces, tabs and line breaks between pieces are pieces of their own, such as "2 spaces" or "New line", and a blank line is read as "Blank line".
+- Spaces, tabs and line breaks between pieces are pieces of their own, such as "2 spaces" or "New line", and a blank line is read as "Blank line". One space between two words or sentences, and one blank line between two paragraphs, aren't pieces of their own; they are deleted with the piece before them.
 - **Copy** copies the selected pieces, or all the text when no piece is selected.
 - **More** has **Undo**, **Redo**, **Find**, **Find next**, **Find previous**, **Replace**, **Add text at end**, **Select all**, **Clear selection**, **Cut selected** and **Delete selected**. **Replace** replaces all matches, ignoring case.
 - **Save** writes the text back to the text field and closes the screen. If the text field is gone, the text is copied instead.

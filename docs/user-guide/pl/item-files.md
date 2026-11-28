@@ -26,7 +26,7 @@ Przycisk **Importuj z pliku** na każdym z tych ekranów wczytuje wszystkie pozy
 
 Po imporcie SandFly wyświetla listę pominiętych pozycji. Mogą to być nieznane polecenia, gesty, klawisze lub ustawienia, wpisy bez nazwy i odrzucone wyrażenia regularne.
 
-**Kopia zapasowa i przywracanie** > **Opis formatu pliku eksportu** zapisuje opis wraz z gestami, poleceniami i ustawieniami dostępnymi na urządzeniu oraz ich aktualnymi wartościami. Jeśli chcesz przygotować plik za pomocą czatu AI, dołącz ten opis i podaj, jakie pozycje mają powstać.
+**Kopia zapasowa i przywracanie** > **Eksportuj opis formatu plików elementów** zapisuje opis wraz z gestami, poleceniami i ustawieniami dostępnymi na urządzeniu oraz ich aktualnymi wartościami. Jeśli chcesz przygotować plik za pomocą czatu AI, dołącz ten opis i podaj, jakie pozycje mają powstać.
 
 ## Struktura pliku {#the-file}
 

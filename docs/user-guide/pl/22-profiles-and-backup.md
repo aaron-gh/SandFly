@@ -6,14 +6,14 @@ O profilach, które zmieniają tylko przypisania gestów, przeczytasz w [](#gest
 
 ### Co zawiera profil ustawień {#profiles-settings-profiles}
 
-Profil przechowuje tylko te ustawienia, które w nim zmienisz. Wszystkie pozostałe zachowują wartości obowiązujące bez profili. Listę znajdziesz na ekranie **Profile ustawień** w ustawieniach SandFly. Aktywny profil ma oznaczenie **Używany**.
+Profil przechowuje tylko te ustawienia, które w nim zmienisz. Wszystkie pozostałe zachowują wartości obowiązujące bez profili. Listę znajdziesz na ekranie **Profile ustawień** w ustawieniach SandFly. Aktywny profil ma oznaczenie **W użyciu**.
 
 Profilu możesz używać na dwa sposoby.
 
-- **Użyj teraz** włącza profil we wszystkich aplikacjach aż do jego wyłączenia. W ten sposób można używać tylko jednego profilu naraz. Zobacz [](#profiles-use).
+- **Włącz profil ręcznie** włącza profil we wszystkich aplikacjach aż do jego wyłączenia. W ten sposób można używać tylko jednego profilu naraz. Zobacz [](#profiles-use).
 - Opcje **Używaj automatycznie** i **Aplikacje** pozwalają włączyć profil podczas przeglądania treści internetowych, czytania ciągłego lub edycji tekstu, a także po otwarciu wybranej aplikacji lub klawiatury. Zobacz [](#profiles-automatic).
 
-Profil może zawierać ustawienia główne SandFly oraz ustawienia klawiatury brajlowskiej i monitora brajlowskiego. Możesz w nim zapisać także gesty, skróty klawiszowe, profile gestów i wybór aktywnego profilu gestów. Poza profilem pozostają klucze API, licencja SandFly Pro, czas ostatniego sprawdzenia dostępności aktualizacji, zainstalowane skrypty i ich ustawienia oraz szkice motywów dźwiękowych. Profil nie przechowuje też informacji związanych z konkretnym telefonem, na przykład o wyświetlonych samouczkach i oknach dialogowych.
+Profil może zawierać ustawienia główne SandFly oraz ustawienia klawiatury brajlowskiej i monitora brajlowskiego. Możesz w nim zapisać także gesty, skróty klawiszowe, profile gestów i wybór aktywnego profilu gestów. Poza profilem pozostają klucze API, licencja SandFly Pro, czas ostatniego sprawdzenia dostępności aktualizacji, zainstalowane skrypty i ich ustawienia oraz szkice tematów dźwiękowych. Profil nie przechowuje też informacji związanych z konkretnym telefonem, na przykład o wyświetlonych samouczkach i oknach dialogowych.
 
 ### Tryb BlackBerry {#profiles-blackberry-mode}
 
@@ -21,12 +21,12 @@ Profil może zawierać ustawienia główne SandFly oraz ustawienia klawiatury br
 
 - **Gesty** > **Układ gestów** na **Gesty BlackBerry** z włączoną opcją **Obsługuj przesunięcia dwoma palcami w SandFly**. Zobacz [](#gestures-layout).
 - Na telefonach z klawiaturą **Mapa klawiszy BlackBerry**. Zobacz [](#keyboards-phones).
-- Motyw dźwiękowy **BlackBerry**, który instaluje SandFly. Motyw zawiera dźwięki SandFly, a nie dźwięki BlackBerry 10: brak dźwięku przy przeniesieniu fokusu oraz dźwięki zmiany ekranu, kliknięcia, przewijania, końca listy, błędów oraz pokazania i ukrycia klawiatury. **Dźwięki i wibracje kontrolek** są wyłączone. Zobacz [](#sound).
+- Temat dźwiękowy **BlackBerry**, który instaluje SandFly. Temat zawiera dźwięki SandFly, a nie dźwięki BlackBerry 10: brak dźwięku przy przeniesieniu fokusu oraz dźwięki zmiany ekranu, kliknięcia, przewijania, końca listy, błędów oraz pokazania i ukrycia klawiatury. **Dźwięki i wibracje kontrolek** są wyłączone. Zobacz [](#sound).
 - Brak wskazówek, pozycji na listach i w siatkach, informacji o dostępnych czynnościach oraz komunikatów o pokazaniu i ukryciu klawiatury. Typy kontrolek są nadal odczytywane, a zmiany wysokości głosu są włączone.
 
 Wszystkie pozostałe ustawienia zostają bez zmian. Aby zmienić to, co ustawia tryb BlackBerry, zmień ustawienia profilu **Tryb BlackBerry**. Zobacz [](#profiles-change-settings). Wyłączenie trybu BlackBerry kończy używanie profilu, a ponowne włączenie używa profilu z Twoimi zmianami. Aby zacząć od ustawień domyślnych, usuń profil. Polecenie **Włącz lub wyłącz tryb BlackBerry** z grupy **SandFly** na ekranie **Polecenia** robi to samo z gestu lub klawisza i przed włączeniem także otwiera okno potwierdzenia.
 
-Tryb BlackBerry działa wszędzie, tak jak profil uruchomiony przez **Użyj teraz**, więc zastępuje inny profil używany w ten sposób.
+Tryb BlackBerry działa wszędzie, tak jak profil uruchomiony przez **Włącz profil ręcznie**, więc zastępuje inny profil używany w ten sposób.
 
 ### Dodaj profil ustawień {#profiles-add}
 
@@ -39,7 +39,7 @@ Nowy profil jest pusty. Ustawienia dodasz według instrukcji w [](#profiles-chan
 ### Zmień ustawienia profilu {#profiles-change-settings}
 
 1. Otwórz ekran **Profile ustawień** i wybierz profil.
-2. Wybierz **Zmień ustawienia**.
+2. Wybierz **Zmień ustawienia tego profilu**.
 
 SandFly odczyta komunikat „Zmiany trafiają do profilu” z jego nazwą i otworzy ustawienia SandFly z zastosowanym profilem. Każde ustawienie, które teraz zmienisz, zostanie zapisane w tym profilu. Gdy wrócisz na ekran profilu, przejdziesz do ekranu **Profile ustawień** lub otworzysz inną aplikację, usłyszysz komunikat „Zmiany zapisano w profilu” z jego nazwą.
 
@@ -50,14 +50,14 @@ Na ekranie profilu znajdziesz listę **Ustawienia w tym profilu**. Przy każdej 
 ### Włącz profil od razu {#profiles-use}
 
 1. Otwórz ekran **Profile ustawień** i wybierz profil.
-2. Wybierz **Użyj teraz**.
+2. Wybierz **Włącz profil ręcznie**.
 
-Profil obowiązuje wszędzie, również w ustawieniach SandFly. Aby go wyłączyć, wybierz **Przestań używać** na tym samym ekranie.
+Profil obowiązuje wszędzie, również w ustawieniach SandFly. Aby go wyłączyć, wybierz **Zakończ ręczne używanie profilu** na tym samym ekranie.
 
 Poniższe polecenia z grupy **SandFly** służą do wyboru profilu, który ma obowiązywać wszędzie. Domyślnie nie mają przypisań. Zobacz [](#commands).
 
-- **Wybierz profil ustawień** otwiera menu z pozycją **Brak profilu ustawień** i dostępnymi profilami.
-- **Następny profil ustawień** i **Poprzedni profil ustawień** przełączają między profilami oraz pozycją **Brak profilu ustawień**.
+- **Wybierz profil ustawień** otwiera menu z pozycją **Brak profilu wybranego ręcznie** i dostępnymi profilami.
+- **Następny profil ustawień** i **Poprzedni profil ustawień** przełączają między profilami oraz pozycją **Brak profilu wybranego ręcznie**.
 
 SandFly odczytuje nazwę wybranego profilu, np. „Profil Czytanie”, albo komunikat „Brak profilu ustawień”.
 
@@ -75,7 +75,7 @@ Automatyczne profile są pomijane w ustawieniach SandFly, dzięki czemu widzisz 
 
 #### Gdy kilka profili zmienia to samo ustawienie {#profiles-order}
 
-Kilka profili może działać jednocześnie. Jeśli zmieniają tę samą opcję, pierwszeństwo ma profil włączony przez **Użyj teraz**, a następnie profil znajdujący się wyżej na liście **Profile ustawień**. Kolejność zmienisz przyciskami **Przenieś w górę** i **Przenieś w dół** na ekranie profilu.
+Kilka profili może działać jednocześnie. Jeśli zmieniają tę samą opcję, pierwszeństwo ma profil włączony przez **Włącz profil ręcznie**, a następnie profil znajdujący się wyżej na liście **Profile ustawień**. Kolejność zmienisz przyciskami **Przenieś w górę** i **Przenieś w dół** na ekranie profilu.
 
 ### Zmień nazwę, kolejność lub usuń profil {#profiles-manage}
 
@@ -102,7 +102,7 @@ Archiwum ZIP zawiera wszystkie ustawienia SandFly oraz dodatkowe dane.
 - Własne etykiety.
 - Profile ustawień. Ustawienia główne zapisują się w takiej postaci, w jakiej obowiązują bez profili, a profile są zapisane osobno.
 - Zainstalowane skrypty.
-- Motywy dźwiękowe i dźwięki zmienione w motywie Backtalk.
+- Tematy dźwiękowe i dźwięki zmienione w temacie Backtalk.
 - Obraz tapety.
 
 Poniższe dane pozostają na urządzeniu.
@@ -111,7 +111,7 @@ Poniższe dane pozostają na urządzeniu.
 - Licencja SandFly Pro. Aby korzystać z niej na drugim telefonie, aktywuj SandFly Pro na nim jako na osobnym urządzeniu. Zobacz [](#pro).
 - Czas ostatniego sprawdzenia dostępności aktualizacji.
 - Pobrane modele AI i rozpoznawania mowy, dzienniki oraz zgłoszenia problemów.
-- Szkice motywów dźwiękowych.
+- Szkice tematów dźwiękowych.
 
 #### Importuj ustawienia {#profiles-import}
 
@@ -120,7 +120,7 @@ Poniższe dane pozostają na urządzeniu.
 
 Ustawienia z pliku zastępują bieżące, a SandFly odczytuje potwierdzenie importu. Klucze API na telefonie i ustawienia, których nie ma w pliku, zachowują swoje wartości. Aktywne profile zostają ponownie zastosowane do zaimportowanych ustawień.
 
-Własne etykiety, profile ustawień, skrypty i motywy dźwiękowe z pliku zostają dodane do telefonu. Każdy z nich zastępuje odpowiadający mu element, na przykład o tej samej nazwie lub identyfikatorze. Pozostałe elementy zostają. Obraz tapety z pliku zastępuje obraz na telefonie.
+Własne etykiety, profile ustawień, skrypty i tematy dźwiękowe z pliku zostają dodane do telefonu. Każdy z nich zastępuje odpowiadający mu element, na przykład o tej samej nazwie lub identyfikatorze. Pozostałe elementy zostają. Obraz tapety z pliku zastępuje obraz na telefonie.
 
 Opcja **Importuj ustawienia** obsługuje również pliki z rozszerzeniem `.json` wyeksportowane przez starszą wersję SandFly oraz pliki ustawień z Backtalka. Ustawienia z pliku Backtalka zastępują odpowiadające im ustawienia SandFly. Opcje dostępne tylko w SandFly zachowują swoje wartości.
 
@@ -168,6 +168,6 @@ Po imporcie SandFly wymienia pominięte pozycje, na przykład nierozpoznane pole
 
 #### Przygotuj własny plik z elementami {#profiles-item-reference}
 
-Opcja **Kopia zapasowa i przywracanie** > **Opis formatu pliku eksportu** zapisuje dokument `sandfly-file-format.md`. Zawiera opis plików poszczególnych elementów, a dalej listy gestów, poleceń i ustawień dostępnych na tym telefonie, z bieżącą wartością każdego ustawienia. Aby utworzyć elementy za pomocą czatu AI, udostępnij mu ten dokument i opisz, czego potrzebujesz. Zapisz odpowiedź jako plik i wczytaj ją przez **Importuj z pliku**.
+Opcja **Kopia zapasowa i przywracanie** > **Eksportuj opis formatu plików elementów** zapisuje dokument `sandfly-file-format.md`. Zawiera opis plików poszczególnych elementów, a dalej listy gestów, poleceń i ustawień dostępnych na tym telefonie, z bieżącą wartością każdego ustawienia. Aby utworzyć elementy za pomocą czatu AI, udostępnij mu ten dokument i opisz, czego potrzebujesz. Zapisz odpowiedź jako plik i wczytaj ją przez **Importuj z pliku**.
 
 Dokładny opis formatu znajdziesz w [](#api-item-files).

@@ -201,12 +201,12 @@ Każdy tryb możesz włączyć lub wyłączyć osobnym polem wyboru.
 
 - **Sceny** opisują to, co widzi aparat.
 - **Tekst** odczytuje napisy widoczne w kadrze. SandFly rozpoznaje tekst na telefonie.
-- **Wskaż i czytaj** odczytuje tekst wskazany palcem w kadrze. Wybierz domyślne **Czytaj nad opuszkiem palca** lub **Czytaj pod opuszkiem palca**.
+- **Wskaż i czytaj** odczytuje tekst wskazany palcem w kadrze. Wybierz domyślne **Odczytuj tekst nad czubkiem palca** lub **Odczytuj tekst pod czubkiem palca**.
 - **Wykrywanie osób** opisuje osoby widoczne w kadrze.
 - **Wykrywanie drzwi** opisuje drzwi widoczne w kadrze.
 - **Wykrywanie kolorów** podaje kolory w środku kadru, np. „Ciemnoniebieski”, „Jasnoszary” lub „Czerwony i biały”, albo odczytuje „Mieszane kolory”, gdy żaden kolor nie zajmuje wystarczającej części kadru. Kolor jest odczytywany, gdy się zmieni i utrzyma przez około pół sekundy. Jasność i ciemność zależą od oświetlenia i automatycznej ekspozycji aparatu. SandFly rozpoznaje kolory na telefonie.
 - **Poziom światła** odczytuje poziom z czujnika, od **Ciemno** przez **Słabe światło**, **Normalne światło** i **Jasne światło** po **Bardzo jasne światło**. Ten tryb nie używa aparatu.
-- **Ton poziomu światła** odtwarza ciągły dźwięk, którego wysokość rośnie z jasnością obrazu z tylnego aparatu, od 200 Hz w ciemności do 1600 Hz w pełnym słońcu. Dźwięk ma głośność dźwięków SandFly i cichnie po wyłączeniu trybu lub opuszczeniu ekranu.
+- **Sygnalizuj poziom światła dźwiękiem** odtwarza ciągły dźwięk, którego wysokość rośnie z jasnością obrazu z tylnego aparatu, od 200 Hz w ciemności do 1600 Hz w pełnym słońcu. Dźwięk ma głośność dźwięków SandFly i cichnie po wyłączeniu trybu lub opuszczeniu ekranu.
 
 W wierszu stanu zobaczysz **Aparat włączony** lub **Aparat wyłączony**. Gdy po raz pierwszy uruchomisz tryb korzystający z aparatu, pojawi się systemowa prośba o uprawnienie.
 
@@ -233,7 +233,7 @@ SandFly odczytuje wyniki własnym głosem, również podczas odtwarzania innego 
 - W pozostałych przypadkach bieżąca usługa AI, na przykład SandFly Pro lub Claude, otrzymuje obraz z aparatu co kilka sekund.
 - Jeśli wybraną usługą jest Gemini, obrazy trafiają co kilka sekund do Gemini Live API. SandFly odczytuje otrzymany tekst.
 
-Przed wysłaniem pierwszego obrazu pojawi się okno **Wysyłać obrazy z aparatu do Gemini?**. Przy innej usłudze okno pokaże jej adres, na przykład api.anthropic.com. Żeby wyrazić zgodę, wybierz **Wyślij obrazy**. Jeśli usługa odrzuci klucz API, skończy się limit lub błędy się powtarzają, tryby korzystające z AI zostaną wyłączone. SandFly poinformuje o tym głosem.
+Przed wysłaniem pierwszego obrazu pojawi się okno **Wysyłać obrazy z aparatu do Gemini?**. Przy innej usłudze okno pokaże jej adres, na przykład api.anthropic.com. Żeby wyrazić zgodę, wybierz **Wysyłaj obrazy**. Jeśli usługa odrzuci klucz API, skończy się limit lub błędy się powtarzają, tryby korzystające z AI zostaną wyłączone. SandFly poinformuje o tym głosem.
 
 ### Komunikaty o błędach {#descriptions-errors}
 

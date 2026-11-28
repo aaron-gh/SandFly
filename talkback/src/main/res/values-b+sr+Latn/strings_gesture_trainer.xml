@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">drugo prevlačenje <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">ceo pokret <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">podignuto <xliff:g id="ms">%1$d</xliff:g> ms između njih</string>
+    <string name="gesture_trainer_how_menu_horizontal">Stavite jedan prst <xliff:g id="edge">%1$s</xliff:g> i prevucite ga unutra prema sredini ekrana najmanje <xliff:g id="distance">%2$d</xliff:g> mm da biste otvorili meni. Ima stavki: <xliff:g id="count">%3$d</xliff:g>, preko ekrana, od ivice, svaka široka oko <xliff:g id="item">%5$s</xliff:g> cm. Stavka <xliff:g id="size">%6$s</xliff:g>, <xliff:g id="number">%4$d</xliff:g>, nalazi se od <xliff:g id="from">%7$s</xliff:g> do <xliff:g id="to">%8$s</xliff:g> cm od ivice. Držite prst na istoj visini i podignite ga kada se stavka izgovori.</string>
+    <string name="gesture_trainer_finding_menu_left_line">Prst je podignut <xliff:g id="mm">%1$.0f</xliff:g> mm iznad ili ispod visine na kojoj se meni otvorio, a meni se zatvara posle <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Držite prst na istoj visini dok prevlačite unutra i podignite ga tu.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Svaka stavka ima stalno mesto preko ekrana, od ivice, i bira se stavka na kojoj je prst podignut. Podignite prst kada se stavka izgovori.</string>
+    <string name="gesture_trainer_left_out_in_menu">Prevlačenja unutra od <xliff:g id="edge">%1$s</xliff:g> su izostavljena: meni te ivice ide preko ekrana, pa prevlačenje unutra od nje otvara meni umesto da pokrene pokret.</string>
+    <string name="gesture_trainer_statistics">Statistika</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Pokušaji: <xliff:g id="tries">%2$d</xliff:g>, prepoznato: <xliff:g id="recognized">%3$d</xliff:g>. Najkraće: <xliff:g id="shortest">%4$d</xliff:g> ms, medijana: <xliff:g id="median">%5$d</xliff:g> ms, najduže: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Svaki dodir: najkraće <xliff:g id="shortest">%1$d</xliff:g> ms, medijana <xliff:g id="median">%2$d</xliff:g> ms, najduže <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Dodiri</string>
+    <string name="gesture_trainer_kind_double_tap">Dvostruki dodiri</string>
+    <string name="gesture_trainer_kind_triple_tap">Trostruki dodiri</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Četvorostruki dodiri</string>
+    <string name="gesture_trainer_kind_tap_hold">Dodir i zadržavanje</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Dvostruki dodir i zadržavanje</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Trostruki dodir i zadržavanje</string>
+    <string name="gesture_trainer_kind_swipe">Prevlačenja</string>
+    <string name="gesture_trainer_kind_swipe_hold">Prevlačenje i zadržavanje</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Prevlačenja napred-nazad i pod uglom</string>
+    <string name="gesture_trainer_kind_pinch">Skupljanja</string>
+    <string name="gesture_trainer_kind_spread">Širenja</string>
+    <string name="gesture_trainer_kind_rotate">Rotacije</string>
+    <string name="gesture_trainer_kind_scrub">Brza prevlačenja napred-nazad</string>
 </resources>

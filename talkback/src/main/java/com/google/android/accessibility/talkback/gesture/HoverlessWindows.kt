@@ -24,6 +24,10 @@ import androidx.annotation.MainThread
 import androidx.annotation.VisibleForTesting
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
+import com.google.android.accessibility.utils.Filter
+import com.google.android.accessibility.utils.Role
+import com.google.android.accessibility.utils.traversal.TraversalStrategy
+import com.google.android.accessibility.utils.traversal.TraversalStrategyUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
@@ -143,11 +147,16 @@ object HoverlessWindows {
     if (!hasStart || now - startTimeMs > START_POINT_MS) {
       return null
     }
-    val root = isSilentCover(focusable) ?: return null
+    val root = isSilentCover(focusable)
+    if (root == null) {
+      LogUtils.v(TAG, "First hover of the touch is not on a silent cover: %s", focusable)
+      return null
+    }
     val x = startX.toInt()
     val y = startY.toInt()
     val item = smallestSpeakingItemAt(root, x, y, focusable)
     if (item == null || item == focusable) {
+      LogUtils.d(TAG, "Hover entered a silent cover; no item drawn over it at %d, %d", x, y)
       return null
     }
     LogUtils.d(TAG, "Hover entered a silent cover; the item at %d, %d is focused", x, y)
@@ -190,13 +199,73 @@ object HoverlessWindows {
     return window.root
   }
 
+  /**
+   * Whether [node] is a silent cover of its window: a view with nothing to speak, or a pager or
+   * list read only as its role, covering most of an app window. TikTok's first item in its window
+   * is such a frame, read as "Unlabelled" whenever the app opens.
+   */
+  @JvmStatic
+  fun coversWindowSilently(node: AccessibilityNodeInfoCompat): Boolean {
+    // A pager or list is read as its role even with nothing else to say; one with a label isn't
+    // silent.
+    val readOnlyAsRole =
+      node.isScrollable && TextUtils.isEmpty(node.text) && TextUtils.isEmpty(node.contentDescription)
+    if (!readOnlyAsRole && AccessibilityNodeInfoUtils.isSpeakingNode(node, null)) {
+      return false
+    }
+    val window = AccessibilityNodeInfoUtils.getWindow(node) ?: return false
+    if (window.type != AccessibilityWindowInfo.TYPE_APPLICATION) {
+      return false
+    }
+    val windowBounds = Rect().also(window::getBoundsInScreen)
+    val nodeBounds = Rect().also(node::getBoundsInScreen)
+    return coversMostOf(nodeBounds, windowBounds)
+  }
+
+  /**
+   * Returns the first item after [first], the first item of a window in [strategy]'s order, that
+   * [filter] accepts and that has something to speak, if [first] is a silent cover of its window;
+   * otherwise [first]. Focus that a window gets first then goes to an item that is read.
+   */
+  @JvmStatic
+  fun firstSpokenItemAfterSilentCover(
+    first: AccessibilityNodeInfoCompat?,
+    strategy: TraversalStrategy,
+    filter: Filter<AccessibilityNodeInfoCompat>,
+  ): AccessibilityNodeInfoCompat? {
+    if (first == null || !coversWindowSilently(first)) {
+      return first
+    }
+    val spoken =
+      TraversalStrategyUtils.searchFocus(
+        strategy,
+        first,
+        TraversalStrategy.SEARCH_FOCUS_FORWARD,
+        filter.and(
+          Filter.node { node ->
+            AccessibilityNodeInfoUtils.isSpeakingNode(node, strategy.speakingNodesCache) &&
+              !(node.isScrollable && !node.isEditable)
+          }
+        ),
+      )
+    if (spoken != null) {
+      LogUtils.d(TAG, "The window's first item is a silent cover; the first item read is focused")
+    }
+    return spoken ?: first
+  }
+
   /** Most nodes read to find the item under the finger. */
   private const val MAX_NODES = 1500
 
   /**
    * Returns the smallest node under [root] at [x], [y] that would be focused, has something to
    * speak, does not scroll and is not drawn under [cover], or null. A text field that scrolls
-   * counts. A scrim or overlay drawn over the page keeps its own hover.
+   * counts. A scrim or overlay drawn over the page keeps its own hover. An item drawn under the
+   * cover counts when the cover is a silent layer over it in the same page of a pager.
+   *
+   * Only bounds are read to collect the nodes under the finger. The nodes are then checked from
+   * the smallest, which asks the app about their children, until one is found: checking every
+   * container under the finger blocked the main thread for up to half a second on TikTok.
    */
   @VisibleForTesting
   @JvmStatic
@@ -206,11 +275,8 @@ object HoverlessWindows {
     y: Int,
     cover: AccessibilityNodeInfoCompat? = null,
   ): AccessibilityNodeInfoCompat? {
-    val coverPath = cover?.let(::pathToRoot)
-    val cache = HashMap<AccessibilityNodeInfoCompat, Boolean>()
+    val underFinger = ArrayList<Pair<AccessibilityNodeInfoCompat, Long>>()
     val bounds = Rect()
-    var best: AccessibilityNodeInfoCompat? = null
-    var bestArea = Long.MAX_VALUE
     val queue = ArrayDeque<AccessibilityNodeInfoCompat>()
     queue.add(root)
     var read = 0
@@ -224,24 +290,64 @@ object HoverlessWindows {
       if (!bounds.contains(x, y)) {
         continue
       }
-      val area = bounds.width().toLong() * bounds.height()
       // A pager or list is no item of its own: TikTok's feed pager is as large as the "Video" view
       // on its page, and is read only as "Page".
-      if (
-        area < bestArea &&
-          !(node.isScrollable && !node.isEditable) &&
-          AccessibilityNodeInfoUtils.shouldFocusNode(node, cache) &&
-          AccessibilityNodeInfoUtils.isSpeakingNode(node, cache) &&
-          (coverPath == null || !isDrawnUnder(node, coverPath))
-      ) {
-        best = node
-        bestArea = area
+      if (node != cover && !(node.isScrollable && !node.isEditable)) {
+        underFinger.add(node to bounds.width().toLong() * bounds.height())
       }
       for (i in 0 until node.childCount) {
         node.getChild(i)?.let(queue::add)
       }
     }
-    return best
+    underFinger.sortBy { it.second }
+    val coverPath = cover?.let(::pathToRoot)
+    val cache = HashMap<AccessibilityNodeInfoCompat, Boolean>()
+    for ((node, _) in underFinger) {
+      if (
+        AccessibilityNodeInfoUtils.shouldFocusNode(node, cache) &&
+          AccessibilityNodeInfoUtils.isSpeakingNode(node, cache) &&
+          (coverPath == null ||
+            !isDrawnUnder(node, coverPath) ||
+            isSilentLayerOf(node, coverPath))
+      ) {
+        return node
+      }
+    }
+    return null
+  }
+
+  /**
+   * Whether the cover whose path to the root is [coverPath] is a silent layer over [node] in the
+   * page of a pager: the nearest scrolling view that holds them both is a pager. On many of
+   * TikTok's videos, the frame with no label is drawn over the whole page, its buttons and its
+   * "Video" view included, and takes every touch. A scrim or overlay over the content of the
+   * window, such as a dialog's, is outside the pages and no such layer.
+   */
+  @VisibleForTesting
+  @JvmStatic
+  fun isSilentLayerOf(
+    node: AccessibilityNodeInfoCompat,
+    coverPath: List<AccessibilityNodeInfoCompat>,
+  ): Boolean {
+    // A node that holds the cover, such as the page itself, isn't under it.
+    if (coverPath.indexOf(node) > 0) return false
+    var parent: AccessibilityNodeInfoCompat? = node.parent
+    var depth = 0
+    while (parent != null && depth <= MAX_DEPTH) {
+      val index = coverPath.indexOf(parent)
+      if (index > 0) {
+        for (i in index until coverPath.size) {
+          val ancestor = coverPath[i]
+          if (ancestor.isScrollable && !ancestor.isEditable) {
+            return Role.getRole(ancestor) == Role.ROLE_PAGER
+          }
+        }
+        return false
+      }
+      parent = parent.parent
+      depth++
+    }
+    return false
   }
 
   /** [node] and its ancestors, from [node] up to the root. */
@@ -286,10 +392,19 @@ object HoverlessWindows {
         val coverBranch = coverPath[index - 1]
         val nodeOrder = child.drawingOrder
         val coverOrder = coverBranch.drawingOrder
-        if (nodeOrder != coverOrder) {
-          return nodeOrder < coverOrder
-        }
-        return childIndex(parent, child) < childIndex(parent, coverBranch)
+        val under =
+          if (nodeOrder != coverOrder) nodeOrder < coverOrder
+          else childIndex(parent, child) < childIndex(parent, coverBranch)
+        LogUtils.v(
+          TAG,
+          "Drawn %s the cover: %s (order %d) against %s (order %d)",
+          if (under) "under" else "over",
+          child.viewIdResourceName,
+          nodeOrder,
+          coverBranch.viewIdResourceName,
+          coverOrder,
+        )
+        return under
       }
       child = parent
       parent = parent.parent

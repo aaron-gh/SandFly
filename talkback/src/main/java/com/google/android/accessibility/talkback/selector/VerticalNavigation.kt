@@ -27,6 +27,7 @@ import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget
+import com.google.android.accessibility.talkback.focusmanagement.WindowNodePrefetcher
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Filter
@@ -49,6 +50,8 @@ import kotlin.math.abs
 class VerticalNavigator(
   private val pipeline: Pipeline.FeedbackReturner,
   private val focusMonitor: AccessibilityFocusMonitor,
+  /** SandFly's package, whose windows are not read ahead; see [WindowNodePrefetcher.prefetch]. */
+  private val ownPackage: String,
 ) {
   private val handler = Handler(Looper.getMainLooper())
 
@@ -62,7 +65,7 @@ class VerticalNavigator(
     }
     val list = VerticalNavigation.listOf(focus)
     if (list != null) {
-      VerticalNavigation.target(focus, forward, list)?.let {
+      VerticalNavigation.target(focus, forward, list, ownPackage)?.let {
         focus(eventId, it)
         return
       }
@@ -73,7 +76,7 @@ class VerticalNavigator(
       }
     }
     // At the end of the list, or outside one: the next item below or above on screen.
-    val target = VerticalNavigation.target(focus, forward)
+    val target = VerticalNavigation.target(focus, forward, ownPackage = ownPackage)
     if (target != null) {
       focus(eventId, target)
     } else {
@@ -121,8 +124,8 @@ class VerticalNavigator(
     // otherwise, the list's first or last row, which follows the focused item.
     val stillShown = focus.refresh() && focus.isVisibleToUser && contentOf(focus) == content
     val target =
-      if (stillShown) VerticalNavigation.target(focus, forward, list)
-      else VerticalNavigation.edgeRow(list, first = forward)
+      if (stillShown) VerticalNavigation.target(focus, forward, list, ownPackage)
+      else VerticalNavigation.edgeRow(list, first = forward, ownPackage)
     if (target != null) {
       focus(eventId, target)
     } else {
@@ -198,7 +201,8 @@ object VerticalNavigation {
   /**
    * Returns the item of the row below or above [focus] that is in its column, or null when there is
    * none on screen. The row below starts with the first item after [focus], in reading order, whose
-   * middle is below [focus]. With [within], only items in it are found.
+   * middle is below [focus]. With [within], only items in it are found. With [ownPackage], the
+   * nodes are first read from the app on several threads; see [WindowNodePrefetcher.prefetch].
    */
   @JvmStatic
   @JvmOverloads
@@ -206,9 +210,10 @@ object VerticalNavigation {
     focus: AccessibilityNodeInfoCompat,
     forward: Boolean,
     within: AccessibilityNodeInfoCompat? = null,
+    ownPackage: String? = null,
   ): AccessibilityNodeInfoCompat? {
     val root = within ?: AccessibilityNodeInfoUtils.getRoot(focus) ?: return null
-    val strategy = strategy(root)
+    val strategy = strategy(root, ownPackage)
     val focusable = focusable(strategy)
     val from = bounds(focus)
     val direction =
@@ -297,8 +302,13 @@ object VerticalNavigation {
 
   /** Returns the start of the first or last row of [list] on screen. */
   @JvmStatic
-  fun edgeRow(list: AccessibilityNodeInfoCompat, first: Boolean): AccessibilityNodeInfoCompat? {
-    val strategy = strategy(list)
+  @JvmOverloads
+  fun edgeRow(
+    list: AccessibilityNodeInfoCompat,
+    first: Boolean,
+    ownPackage: String? = null,
+  ): AccessibilityNodeInfoCompat? {
+    val strategy = strategy(list, ownPackage)
     val focusable = focusable(strategy)
     val direction =
       if (first) TraversalStrategy.SEARCH_FOCUS_FORWARD
@@ -372,12 +382,21 @@ object VerticalNavigation {
   /** The most items of a row looked at, for a row that doesn't end, such as a broken layout. */
   private const val MAX_ROW_ITEMS = 50
 
-  private fun strategy(root: AccessibilityNodeInfoCompat) =
-    OrderedTraversalStrategy(
+  /**
+   * The reading order below [root]. Building it asks the app for one node at a time, and a list
+   * that has just scrolled has none of its nodes in Android's node cache, so with [ownPackage] they
+   * are read first on several threads, as for a swipe.
+   */
+  private fun strategy(root: AccessibilityNodeInfoCompat, ownPackage: String?): OrderedTraversalStrategy {
+    if (ownPackage != null) {
+      WindowNodePrefetcher.prefetch(root, ownPackage)
+    }
+    return OrderedTraversalStrategy(
       root,
       /* includeChildrenOfNodesWithWebActions= */ true,
       /* makeFabFirst= */ false,
     )
+  }
 
   private fun focusable(strategy: OrderedTraversalStrategy): Filter<AccessibilityNodeInfoCompat>? =
     NavigationTarget.createNodeFilter(NavigationTarget.TARGET_DEFAULT, strategy.speakingNodesCache)

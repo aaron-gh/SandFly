@@ -32,13 +32,13 @@ Mapa klawiszy to zestaw skrótów. W SandFly są poniższe mapy.
 - **Mapa klawiszy NVDA** odpowiada układowi laptopa NVDA, który nie wymaga klawiatury numerycznej. Klawisz SandFly pełni rolę klawisza NVDA. Możesz wybrać Insert (domyślnie), Insert na klawiaturze numerycznej lub Meta.
 - **Mapa klawiszy JAWS** korzysta ze skrótów układu stacjonarnego JAWS oraz klawiszy układu laptopa do kliknięć i kursorów. Klawisz SandFly pełni rolę klawisza JAWS. Możesz wybrać Insert (domyślnie), Insert na klawiaturze numerycznej lub Meta.
 - **Mapa klawiszy Orca** odpowiada układowi laptopa Orca. Klawisz SandFly jest modyfikatorem Orca. Do wyboru są Insert (domyślnie), Insert na klawiaturze numerycznej, Meta i Alt.
-- **Mapa klawiszy telefonu z klawiaturą** oraz **Mapa pojedynczych klawiszy telefonu** są przeznaczone dla urządzeń z wbudowaną klawiaturą bez Ctrl, Meta i strzałek. Zobacz [](#keyboards-phones).
+- **Klawiatura telefonu** oraz **Klawiatura telefonu: pojedyncze klawisze** są przeznaczone dla urządzeń z wbudowaną klawiaturą bez Ctrl, Meta i strzałek. Zobacz [](#keyboards-phones).
 - **Mapa klawiszy BlackBerry** zawiera klawisze podobne do klawiszy BlackBerry 10 Screen Reader i jest przeznaczona dla telefonów z klawiaturą. Tryb BlackBerry wybiera ją na telefonach z klawiaturą. Zobacz [](#keyboards-phones) i [](#profiles-blackberry-mode).
 - Możesz też tworzyć własne mapy. Zobacz [](#keyboards-custom-keymaps).
 
 W mapach NVDA, JAWS i Orca strzałki i Tab nawigują bez klawisza SandFly, tak jak na komputerze. Zobacz [](#keyboards-desktop).
 
-Na telefonie z klawiaturą domyślna jest **Mapa klawiszy telefonu z klawiaturą**. Przy pierwszym uruchomieniu na takim telefonie SandFly jednorazowo przełącza mapę SandFly na mapę telefonu z klawiaturą.
+Na telefonie z klawiaturą domyślna jest **Klawiatura telefonu**. Przy pierwszym uruchomieniu na takim telefonie SandFly jednorazowo przełącza mapę SandFly na mapę telefonu z klawiaturą.
 
 #### Wybierz mapę klawiszy {#keyboards-choose-keymap}
 
@@ -188,11 +188,11 @@ Domyślne skróty polecenia **Włącz lub wyłącz tryb przeglądania** zależą
 | **Mapa klawiszy NVDA** | Klawisz SandFly + spacja |
 | **Mapa klawiszy JAWS** | Klawisz SandFly + Z |
 | **Mapa klawiszy Orca** | Klawisz SandFly + A |
-| **Mapa pojedynczych klawiszy telefonu** | Dwa naciśnięcia klawisza SandFly; klawisz SandFly + Q, gdy klawiszem SandFly jest Alt |
+| **Klawiatura telefonu: pojedyncze klawisze** | Dwa naciśnięcia klawisza SandFly; klawisz SandFly + Q, gdy klawiszem SandFly jest Alt |
 
 SandFly odtworzy dźwięk lub odczyta „Tryb przeglądania włączony” albo „Tryb przeglądania wyłączony”.
 
-W mapach telefonu z klawiaturą polecenia wymagające trybu przeglądania w pozostałych mapach działają także bez niego. W mapie pojedynczych klawiszy telefonu tryb przeglądania zmienia działanie liter: B, C, D, I, K, L, R, T, U, V, X i cyfry od 1 do 6 przenoszą tak jak w trybie przeglądania mapy SandFly, a H, F, E i G przechodzą do nagłówka, kontrolki, pola edycji i grafiki w trybie przeglądania i poza nim. Klawisz SandFly z jedną z tych liter uruchamia skrót spoza trybu przeglądania, np. klawisz SandFly + B przenosi na dół ekranu, a klawisz SandFly + K przechodzi według opcji sterowania czytaniem. K i Shift + K w trybie przeglądania to na ekranie **Skróty klawiszowe** polecenia **Przejdź do następnego linku, drugi klawisz** i **Przejdź do poprzedniego linku, drugi klawisz**. Zobacz [](#keyboards-phones).
+W mapach telefonu z klawiaturą polecenia wymagające trybu przeglądania w pozostałych mapach działają także bez niego. W mapie pojedynczych klawiszy telefonu tryb przeglądania zmienia działanie liter: B, C, D, I, K, L, R, T, U, V, X i cyfry od 1 do 6 przenoszą tak jak w trybie przeglądania mapy SandFly, a H, F, E i G przechodzą do nagłówka, kontrolki, pola edycji i grafiki w trybie przeglądania i poza nim. Klawisz SandFly z jedną z tych liter uruchamia skrót spoza trybu przeglądania, np. klawisz SandFly + B przenosi na dół ekranu, a klawisz SandFly + K przechodzi według opcji sterowania czytaniem. K i Shift + K w trybie przeglądania to na ekranie **Skróty klawiszowe** polecenia **Przejdź do następnego linku — drugi skrót** i **Przejdź do poprzedniego linku — drugi skrót**. Zobacz [](#keyboards-phones).
 
 Na ekranie **Nawigacja** są dwie opcje dotyczące tego trybu.
 
@@ -304,8 +304,8 @@ Poniższa tabela podaje domyślne skróty tych poleceń.
 | **Mapa klawiszy NVDA** | Klawisz SandFly + F2 | Klawisz SandFly + Shift + spacja | Klawisz SandFly + Shift + K |
 | **Mapa klawiszy JAWS** | Klawisz SandFly + 3 | Klawisz SandFly + Shift + Z | Klawisz SandFly + Shift + K |
 | **Mapa klawiszy Orca** | Klawisz SandFly + Backspace | Klawisz SandFly + Shift + A | Klawisz SandFly + Shift + średnik |
-| **Mapa klawiszy telefonu z klawiaturą** | Klawisz SandFly + P | Klawisz SandFly + Shift + Q | Klawisz SandFly + Shift + P |
-| **Mapa pojedynczych klawiszy telefonu** | Klawisz SandFly + P | Shift + Q | Klawisz SandFly + Shift + P |
+| **Klawiatura telefonu** | Klawisz SandFly + P | Klawisz SandFly + Shift + Q | Klawisz SandFly + Shift + P |
+| **Klawiatura telefonu: pojedyncze klawisze** | Klawisz SandFly + P | Shift + Q | Klawisz SandFly + Shift + P |
 
 Polecenia są w grupie **Aktywacja**. Skrypt może też przekazywać wszystkie klawisze swojej aplikacji. Ponowne włączenie obsługi klawiatury przez SandFly zatrzymuje takie przekazywanie. Zobacz [](#scripts).
 
@@ -322,11 +322,11 @@ Polecenie jest w grupie **Aktywacja**, więc możesz je też przypisać do gestu
 
 ### Telefony z klawiaturą {#keyboards-phones}
 
-Niektóre telefony mają wbudowaną klawiaturę z literami, Shift, Alt i często Sym, a bez Ctrl, Meta i strzałek. Należą do nich telefony Unihertz Titan, BlackBerry KEYone, KEY2 i KEY2 LE oraz telefony Zinwa, np. Q25. Na tych urządzeniach SandFly wykrywa klawiaturę i uruchamia **Mapa klawiszy telefonu z klawiaturą**. Każdą z map dla telefonów z klawiaturą możesz wybrać na dowolnym telefonie.
+Niektóre telefony mają wbudowaną klawiaturę z literami, Shift, Alt i często Sym, a bez Ctrl, Meta i strzałek. Należą do nich telefony Unihertz Titan, BlackBerry KEYone, KEY2 i KEY2 LE oraz telefony Zinwa, np. Q25. Na tych urządzeniach SandFly wykrywa klawiaturę i uruchamia **Klawiatura telefonu**. Każdą z map dla telefonów z klawiaturą możesz wybrać na dowolnym telefonie.
 
-- **Mapa klawiszy telefonu z klawiaturą** przypisuje najczęściej używane skróty do klawiszy, których nie potrzebujesz do pisania. Działają wszędzie, także w polach tekstowych. Sam klawisz SandFly przenosi do następnego elementu, a Shift z klawiszem SandFly do poprzedniego. Enter aktywuje element, na który przeniesiono fokus SandFly. Dwukrotny Alt odtwarza lub wstrzymuje multimedia i odbiera połączenia. Przytrzymanie Alt + Shift wybiera następny element sterowania czytaniem. Inne skróty łączą klawisz SandFly z literą, np. J, I i K do sterowania czytaniem, a T i B do początku lub końca ekranu.
+- **Klawiatura telefonu** przypisuje najczęściej używane skróty do klawiszy, których nie potrzebujesz do pisania. Działają wszędzie, także w polach tekstowych. Sam klawisz SandFly przenosi do następnego elementu, a Shift z klawiszem SandFly do poprzedniego. Enter aktywuje element, na który przeniesiono fokus SandFly. Dwukrotny Alt odtwarza lub wstrzymuje multimedia i odbiera połączenia. Przytrzymanie Alt + Shift wybiera następny element sterowania czytaniem. Inne skróty łączą klawisz SandFly z literą, np. J, I i K do sterowania czytaniem, a T i B do początku lub końca ekranu.
 - **Mapa klawiszy BlackBerry** to mapa telefonu z klawiaturą z klawiszami podobnymi do klawiszy BlackBerry 10 Screen Reader dla klawiatury zewnętrznej, z klawiszem SandFly w miejscu Ctrl. Klawisz SandFly + A czyta od góry, a klawisz SandFly + Shift + A od elementu z fokusem. Klawisz SandFly + Enter odczytuje element z fokusem. Klawisz SandFly + S wstrzymuje mowę, a klawisz SandFly + Shift + S ukrywa lub pokazuje ekran. Klawisz SandFly + . odczytuje tytuł ekranu. Klawisz SandFly + Shift + T uruchamia szybkie zadania. Zobacz [](#gestures-quick-tasks). Strzałki, np. z gładzika Zinwa Q25, w prawo i w lewo przechodzą według ustawienia nawigacji, a w górę i w dół wybierają następne i poprzednie ustawienie nawigacji. Skróty mapy telefonu z klawiaturą przypisane do tych klawiszy zmieniają miejsce: długie naciśnięcie na klawisz SandFly + Shift + Enter, **Szukaj na ekranie** na klawisz SandFly + Shift + spacja, **Otwórz ustawienia SandFly** na klawisz SandFly + Shift + O, a **Opisz obraz** na klawisz SandFly + Z.
-- **Mapa pojedynczych klawiszy telefonu** pozwala uruchamiać polecenia pojedynczymi klawiszami. Spacja przechodzi do następnego elementu, Shift + spacja do poprzedniego, H do następnego nagłówka, a J, L, I i K służą do sterowania czytaniem. Pojedyncze klawisze działają poza polami tekstowymi w trakcie edycji. Z klawiszem SandFly działają także w tych polach, więc klawisz SandFly + spacja pozwala wyjść z pola. Shift + Z blokuje lub odblokowuje dotyk. Dwa naciśnięcia klawisza SandFly włączają lub wyłączają tryb przeglądania. W trybie przeglądania litery przechodzą po elementach jak w mapie SandFly, np. B do następnego przycisku, a K do następnego linku. Klawisz SandFly z literą uruchamia skrót spoza trybu przeglądania, np. klawisz SandFly + T przenosi na górę ekranu. Zobacz [](#keyboards-browse-mode).
+- **Klawiatura telefonu: pojedyncze klawisze** pozwala uruchamiać polecenia pojedynczymi klawiszami. Spacja przechodzi do następnego elementu, Shift + spacja do poprzedniego, H do następnego nagłówka, a J, L, I i K służą do sterowania czytaniem. Pojedyncze klawisze działają poza polami tekstowymi w trakcie edycji. Z klawiszem SandFly działają także w tych polach, więc klawisz SandFly + spacja pozwala wyjść z pola. Shift + Z blokuje lub odblokowuje dotyk. Dwa naciśnięcia klawisza SandFly włączają lub wyłączają tryb przeglądania. W trybie przeglądania litery przechodzą po elementach jak w mapie SandFly, np. B do następnego przycisku, a K do następnego linku. Klawisz SandFly z literą uruchamia skrót spoza trybu przeglądania, np. klawisz SandFly + T przenosi na górę ekranu. Zobacz [](#keyboards-browse-mode).
 
 Poniższe zasady dotyczą wszystkich trzech map.
 
@@ -392,15 +392,15 @@ Gdy używasz klawiatury SandFly, klawiatura ekranowa się nie pojawia.
 
 W menu **Pisanie** > **Klawiatura fizyczna** > **Wpisywanie po przytrzymaniu klawisza** wybierz, co ma wpisać przytrzymany klawisz drukowalny.
 
-- **Znak Alt** wpisuje znak przypisany do klawisza z Alt, jak na klawiaturach BlackBerry. Jeśli klawisz go nie ma, wpisuje wielką literę. To ustawienie domyślne.
+- **Znak uzyskiwany z Altem** wpisuje znak przypisany do klawisza z Alt, jak na klawiaturach BlackBerry. Jeśli klawisz go nie ma, wpisuje wielką literę. To ustawienie domyślne.
 - **Wielka litera** wpisuje wielką literę.
-- **Powtórzony znak** powtarza zwykły znak, tak jak bez klawiatury SandFly.
+- **Powtarzanie znaku** powtarza zwykły znak, tak jak bez klawiatury SandFly.
 
 Z początku klawisz wpisuje zwykły znak. Gdy Android zaczyna go powtarzać, klawiatura SandFly zastępuje go znakiem przypisanym do przytrzymania.
 
 #### Dwa naciśnięcia klawisza {#keyboards-double-press}
 
-Ekran **Pisanie** > **Klawiatura fizyczna** > **Znaki podwójnego naciśnięcia** pokazuje klawisze i wynik podwójnego naciśnięcia, np. ğ dla G, ö dla O lub ä dla E. Wybierz **Dodaj klawisz**. W polu **Klawisz** wpisz znak klawisza, a w polu **Podwójne naciśnięcie wpisuje** wpisz od jednego do 16 znaków. Wybierz zapisany klawisz, aby użyć **Edytuj** lub **Usuń**. Domyślnie lista jest pusta.
+Ekran **Pisanie** > **Klawiatura fizyczna** > **Znaki podwójnego naciśnięcia** pokazuje klawisze i wynik podwójnego naciśnięcia, np. ğ dla G, ö dla O lub ä dla E. Wybierz **Dodaj klawisz**. W polu **Klawisz** wpisz znak klawisza, a w polu **Dwukrotne naciśnięcie wpisuje** wpisz od jednego do 16 znaków. Wybierz zapisany klawisz, aby użyć **Edytuj** lub **Usuń**. Domyślnie lista jest pusta.
 
 Pierwsze naciśnięcie wpisuje zwykły znak klawisza. Jeśli naciśniesz ten sam klawisz ponownie w ciągu 350 milisekund, pozostanie przypisany tekst zamiast pierwszego znaku, o ile w międzyczasie nie naciśniesz innego klawisza ani nie przesuniesz kursora. Gdy pierwszy znak jest wielką literą, np. po użyciu Shift, wynik też jest wielką literą, np. Ğ. Klawisze spoza listy działają jak zwykle.
 
@@ -410,16 +410,16 @@ Ta funkcja jest pomijana w polach haseł.
 
 #### Wyszukuj emotikony i wybieraj symbole {#keyboards-emoji}
 
-Polecenia **Wyszukaj emotikony** i **Wybierz symbol** otwierają listę w edytowanym polu tekstowym.
+Polecenia **Wyszukaj emoji** i **Wybierz symbol** otwierają listę w edytowanym polu tekstowym.
 
-1. Użyj **Wyszukaj emotikony** lub **Wybierz symbol**. Usłyszysz „Wyszukiwanie emotikonów” lub „Symbole”. Na początku są ostatnio wybrane znaki.
+1. Użyj **Wyszukaj emoji** lub **Wybierz symbol**. Usłyszysz „Wyszukiwanie emotikonów” lub „Symbole”. Na początku są ostatnio wybrane znaki.
 2. Wpisz słowa z nazwy znaku, np. „kciuk w górę”. Każde wpisane słowo musi pasować do początku jednego ze słów nazwy. Nazwy emoji są w języku telefonu.
 3. Przechodź po wynikach strzałkami albo klawiszami Tab i Shift + Tab. SandFly podaje wynik i pozycję, np. „1 z 5”.
 4. Naciśnij Enter, aby wpisać znak.
 
 Backspace usuwa ostatnią literę zapytania. Przy pustym zapytaniu zamyka listę. Wstecz lub Escape również zamyka listę. Jeśli w polu tekstowym nie działa klawiatura SandFly, usłyszysz „Wymaga klawiatury SandFly w polu tekstowym”.
 
-W mapach telefonu z klawiaturą skrót **Wyszukaj emotikony** to klawisz SandFly + O, a skrót **Wybierz symbol** to Alt + spacja podczas edycji. W Zinwa Q25 Alt + spacja też otwiera listę symboli. W innych mapach przypiszesz je na ekranie **Skróty klawiszowe** w grupie **Edytowanie tekstu**.
+W mapach telefonu z klawiaturą skrót **Wyszukaj emoji** to klawisz SandFly + O, a skrót **Wybierz symbol** to Alt + spacja podczas edycji. W Zinwa Q25 Alt + spacja też otwiera listę symboli. W innych mapach przypiszesz je na ekranie **Skróty klawiszowe** w grupie **Edytowanie tekstu**.
 
 #### Tryb edycji {#keyboards-editing-mode}
 
@@ -467,7 +467,7 @@ Słowa, które wpisujesz i wybierasz, zajmują wyższe miejsca w podpowiedziach.
 
 Autokorekta i podpowiedzi słów nie działają w polach haseł, adresów e-mail, adresów stron i liczb ani w polach oznaczonych jako bez podpowiedzi.
 
-Bez strzałek użyj poleceń **Następna podpowiedź słowa**, **Poprzednia podpowiedź słowa** i **Wpisz podpowiedź słowa** z grupy **Edytowanie tekstu**. Nie mają domyślnych skrótów. Przypisz je na ekranie **Skróty klawiszowe**, gdzie **Tylko podczas edycji** zostawia klawisze do pisania poza polem, albo przypisz je do gestów. **Wpisz podpowiedź słowa** wpisuje ostatnio odczytaną podpowiedź lub pierwszą podpowiedź dla wpisanego słowa. Przy obsłudze dotykiem dodaj opcję **Podpowiedzi słów** z grupy **Czynności dla bieżącego elementu** na ekranie **Sterowanie czytaniem**. Podczas wpisywania słowa przesuń palcem w górę lub w dół, aby przejść przez podpowiedzi, i stuknij dwukrotnie, aby wpisać odczytaną podpowiedź. Opcja jest domyślnie wyłączona i wymaga Androida 11 lub nowszego.
+Bez strzałek użyj poleceń **Następna podpowiedź słowa**, **Poprzednia podpowiedź słowa** i **Wpisz proponowane słowo** z grupy **Edytowanie tekstu**. Nie mają domyślnych skrótów. Przypisz je na ekranie **Skróty klawiszowe**, gdzie **Tylko podczas edycji** zostawia klawisze do pisania poza polem, albo przypisz je do gestów. **Wpisz proponowane słowo** wpisuje ostatnio odczytaną podpowiedź lub pierwszą podpowiedź dla wpisanego słowa. Przy obsłudze dotykiem dodaj opcję **Podpowiedzi słów** z grupy **Czynności dla bieżącego elementu** na ekranie **Sterowanie czytaniem**. Podczas wpisywania słowa przesuń palcem w górę lub w dół, aby przejść przez podpowiedzi, i stuknij dwukrotnie, aby wpisać odczytaną podpowiedź. Opcja jest domyślnie wyłączona i wymaga Androida 11 lub nowszego.
 
 #### Pola haseł {#keyboards-passwords}
 
@@ -482,11 +482,11 @@ Android przekazuje czytnikom ekranu zamiast tekstu pola hasła tylko punktory, w
 
 Wklejony lub wypełniony tekst, wyczyszczone pole, zaznaczenie i przejścia o więcej niż jeden znak są odczytywane jak wcześniej, jako punktory.
 
-Polecenie **Przeliteruj pole hasła** z grupy **Edytowanie tekstu** literuje cały tekst edytowanego pola hasła, każdy znak z jego pozycją, np. „1 wielka litera P, 2 a, 3 małpa, 4 1”. Wielkie litery są zawsze odczytywane jako „wielka litera”. Polecenie działa niezależnie od ustawienia **Odczytuj znaki hasła**. W polu tekstowym, które nie jest polem hasła, SandFly odczytuje „To nie jest pole hasła”, a bez klawiatury SandFly w polu tekstowym „Wymaga klawiatury SandFly w polu tekstowym”. W mapach telefonu z klawiaturą skrót polecenia to klawisz SandFly + Y. W innych mapach przypisz go na ekranie **Skróty klawiszowe**. Możesz też przypisać polecenie do gestu lub dodać je do menu SandFly.
+Polecenie **Przeliteruj zawartość pola hasła** z grupy **Edytowanie tekstu** literuje cały tekst edytowanego pola hasła, każdy znak z jego pozycją, np. „1 wielka litera P, 2 a, 3 małpa, 4 1”. Wielkie litery są zawsze odczytywane jako „wielka litera”. Polecenie działa niezależnie od ustawienia **Odczytuj znaki hasła**. W polu tekstowym, które nie jest polem hasła, SandFly odczytuje „To nie jest pole hasła”, a bez klawiatury SandFly w polu tekstowym „Wymaga klawiatury SandFly w polu tekstowym”. W mapach telefonu z klawiaturą skrót polecenia to klawisz SandFly + Y. W innych mapach przypisz go na ekranie **Skróty klawiszowe**. Możesz też przypisać polecenie do gestu lub dodać je do menu SandFly.
 
 Znaki hasła są odczytywane tylko na te dwa sposoby. Nie są zachowywane dla poleceń **Powtórz ostatnią wypowiedź**, **Przeliteruj ostatnią wypowiedź**, **Skopiuj ostatnią wypowiedź** ani **Historia mowy**, a SandFly zapisuje w dzienniku tylko liczbę znaków w polu.
 
-Standardowe pola tekstowe Androida przekazują klawiaturze SandFly swój tekst, podobnie jak większość aplikacji. Gdy aplikacja go nie przekazuje, SandFly odczytuje „punktor” jak wcześniej, a **Przeliteruj pole hasła** odczytuje „Tekst pola hasła niedostępny”.
+Standardowe pola tekstowe Androida przekazują klawiaturze SandFly swój tekst, podobnie jak większość aplikacji. Gdy aplikacja go nie przekazuje, SandFly odczytuje „punktor” jak wcześniej, a **Przeliteruj zawartość pola hasła** odczytuje „Tekst pola hasła niedostępny”.
 
 ### Pozostałe ustawienia klawiatury {#keyboards-other-settings}
 

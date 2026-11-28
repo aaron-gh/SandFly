@@ -10,7 +10,7 @@ Fokus wskazuje, który element SandFly odczyta lub aktywuje. Na ekranie widać w
 
 Android osobno wskazuje element, do którego trafia tekst z klawiatury. Pole tekstowe lub element na stronie internetowej może przyjmować tekst także wtedy, gdy fokus SandFly jest gdzie indziej.
 
-Elementem może być przycisk, wiersz tekstu, pozycja listy, obraz lub dowolna inna część ekranu. Podział zależy od aplikacji. Zazwyczaj SandFly czyta całą treść zagnieżdżoną w danym elemencie jako jedną pozycję. Żeby przechodzić osobno po fragmentach tekstu, włącz **Nawigacja** > **Zaznaczaj osobno tekst wewnątrz elementów**. Zobacz [](#reading-navigation-settings).
+Elementem może być przycisk, wiersz tekstu, pozycja listy, obraz lub dowolna inna część ekranu. Podział zależy od aplikacji. Zazwyczaj SandFly czyta całą treść zagnieżdżoną w danym elemencie jako jedną pozycję. Żeby przechodzić osobno po fragmentach tekstu, włącz **Nawigacja** > **Przenoś fokus osobno na teksty wewnątrz elementów**. Zobacz [](#reading-navigation-settings).
 
 ### Czytaj dotykiem {#reading-explore}
 
@@ -43,12 +43,12 @@ Domyślnie nie mają gestów. Możesz [przypisać gest lub skrót klawiszowy](#c
 
 Przełącznik **Nawigacja** > **Zawijanie** jest domyślnie włączony. Pozwala przejść od ostatniego elementu do pierwszego i od pierwszego do ostatniego.
 
-- Przy domyślnie włączonej opcji **Zatrzymuj na ostatnim elemencie przed zawinięciem** pierwsza próba przejścia za koniec lub przed początek zatrzyma fokus i odtworzy dźwięk. Dopiero następny gest przejdzie na drugi koniec. To ustawienie działa, gdy włączone jest **Zawijanie**.
+- Przy domyślnie włączonej opcji **Zatrzymuj na skrajnym elemencie przed zawinięciem** pierwsza próba przejścia za koniec lub przed początek zatrzyma fokus i odtworzy dźwięk. Dopiero następny gest przejdzie na drugi koniec. To ustawienie działa, gdy włączone jest **Zawijanie**.
 - Gdy wyłączysz **Zawijanie**, przy każdej próbie przekroczenia końca lub początku usłyszysz ponownie dany element i dźwięk końca. Dotyczy to również przechodzenia po nagłówkach, linkach i elementach sterujących w aplikacji. Sama strona internetowa może nadal zawijać nawigację.
 
 Możesz dodać **Zawijanie** na ekranie **Sterowanie czytaniem**, żeby przełączać je gestem w górę lub w dół. Zobacz [sterowanie czytaniem](#reading-controls).
 
-Osobna opcja **Nawigacja** > **Zawijanie w sterowaniu czytaniem** dotyczy list wartości, na przykład w **Syntezator mowy**, **Urządzenie odtwarzające**, **Czynności**, **Adresy i numery** i **Tryb dźwięku**. Po wyłączeniu SandFly ponownie odczyta skrajną wartość i odegra dźwięk przy próbie przejścia dalej. Dopóki nie zmienisz tego ustawienia osobno, obowiązuje wartość z opcji **Zawijanie**.
+Osobna opcja **Nawigacja** > **Zawijanie wartości opcji sterowania czytaniem** dotyczy list wartości, na przykład w **Syntezator mowy**, **Urządzenie odtwarzające**, **Czynności**, **Adresy i numery** i **Tryb dźwięku**. Po wyłączeniu SandFly ponownie odczyta skrajną wartość i odegra dźwięk przy próbie przejścia dalej. Dopóki nie zmienisz tego ustawienia osobno, obowiązuje wartość z opcji **Zawijanie**.
 
 ### Aktywuj element {#reading-activate}
 
@@ -89,7 +89,7 @@ Wybierz, jak duży fragment SandFly ma czytać po przesunięciu w górę lub w d
 - **Zdania** kończą się na znaku kończącym zdanie, w tym na znakach 。！？, albo na końcu wiersza. SandFly może przeczytać zdanie ze strony internetowej w kilku częściach, na przykład gdy w środku jest osobny link. Pozycję **Zdania** trzeba dodać do listy. Jest niedostępna w trybie zaznaczania.
 - **Akapity** pozwalają czytać po akapicie.
 
-Jeśli edytujesz pole tekstowe, gesty przenoszą kursor w obrębie pola. Zobacz [edycję tekstu](#typing). W ten sposób możesz też czytać niektóre teksty, po których sama aplikacja nie pozwala przechodzić fragmentami, na przykład wiadomości w Telegramie.
+Jeśli edytujesz pole tekstowe, gesty przenoszą kursor w obrębie pola. Zobacz [edycję tekstu](#typing). W ten sposób możesz też czytać niektóre teksty, po których sama aplikacja nie pozwala przechodzić fragmentami, na przykład wiadomości w Telegramie. W takim tekście wiersz kończy się na podziale wiersza.
 
 #### Przechodź po wybranym rodzaju elementów {#reading-kinds}
 
@@ -105,7 +105,7 @@ Przesuń palec w dół, żeby przejść do następnego elementu danego rodzaju, 
 
 Na ekranie **Sterowanie czytaniem** w kategoriach **Nawigacja po elementach** i **Poziomy nagłówków** znajdziesz między innymi **Punkty orientacyjne**, **Przyciski**, **Pola edycji**, **Listy** i **Tabele**. Te opcje działają na [stronach internetowych](#web) i w aplikacjach.
 
-Gdy włączysz **Sterowanie czytaniem** > **Łącza i elementy sterujące tylko w treści internetowej**, poza treścią WWW z listy znikną **Linki** i **Kontrolki**. Gesty i skróty prowadzące do następnego lub poprzedniego linku albo elementu sterującego nadal działają w aplikacjach. Opcja jest domyślnie wyłączona.
+Gdy włączysz **Sterowanie czytaniem** > **Linki i kontrolki tylko w treściach internetowych**, poza treścią WWW z listy znikną **Linki** i **Kontrolki**. Gesty i skróty prowadzące do następnego lub poprzedniego linku albo elementu sterującego nadal działają w aplikacjach. Opcja jest domyślnie wyłączona.
 
 #### Przejdź po tekście lub elementach bez zmiany sterowania czytaniem {#reading-navigation-commands}
 
@@ -119,7 +119,7 @@ SandFly może odczytywać kolejne elementy i w razie potrzeby przewijać listę.
 
 - **Czytaj od góry** zaczyna od pierwszego elementu na ekranie.
 - **Czytaj od zaznaczonego elementu** zaczyna od elementu, na którym jest fokus. Domyślnie znajdziesz to polecenie w menu SandFly.
-- **Czytaj od zaznaczonego elementu według sterowania czytaniem** zaczyna od elementu, na którym jest fokus. Potem czyta elementy wybranego rodzaju, na przykład wszystkie nagłówki albo wszystkie linki. Jeśli wybrana opcja sterowania czytaniem nie ogranicza nawigacji do jednego rodzaju elementów, SandFly odczyta je wszystkie.
+- **Czytaj od bieżącego elementu według opcji czytania** zaczyna od elementu, na którym jest fokus. Potem czyta elementy wybranego rodzaju, na przykład wszystkie nagłówki albo wszystkie linki. Jeśli wybrana opcja sterowania czytaniem nie ogranicza nawigacji do jednego rodzaju elementów, SandFly odczyta je wszystkie.
 
 Menu SandFly otworzysz stuknięciem trzema palcami. Polecenia czytania ciągłego domyślnie nie mają własnych gestów. Możesz [przypisać je do gestu lub skrótu](#commands).
 
@@ -186,7 +186,7 @@ W ustawieniach **Szczegółowość** możesz włączyć **Odczytuj numery wiersz
 - Przesuń cztery palce w dół lub w górę, żeby przejść do następnego lub poprzedniego okna. Polecenia to **Następne okno** i **Poprzednie okno**.
 - Przesuń cztery palce w prawo lub w lewo, żeby przejść do następnego lub poprzedniego kontenera. Polecenia **Następny kontener** i **Poprzedni kontener** zatrzymują się przy tych samych grupach co **Kontenery** w sterowaniu czytaniem.
 
-Opcja **Nawigacja** > **Przechodź z paska stanu i paska nawigacji do innych okien** pozwala gestem wyjść z paska do aplikacji. Najpierw dotknij paska. Przesunięcie za jego pierwszy lub ostatni element przejdzie dalej. Przy domyślnie wyłączonej opcji gesty zawijają się w obrębie paska.
+Opcja **Nawigacja** > **Przechodź z paska stanu i paska nawigacyjnego do innych okien** pozwala gestem wyjść z paska do aplikacji. Najpierw dotknij paska. Przesunięcie za jego pierwszy lub ostatni element przejdzie dalej. Przy domyślnie wyłączonej opcji gesty zawijają się w obrębie paska.
 
 #### Nawigacja pionowa {#reading-vertical}
 
@@ -202,7 +202,7 @@ Po otwarciu nowego okna lub powrocie do poprzedniego SandFly ustawia fokus w tym
 
 Jeśli otworzysz pozycję listy, na przykład folder, i wrócisz, SandFly ma dwie sekundy na odnalezienie tej pozycji. Gdy lista ją pokaże w tym czasie, fokus do niej wróci. Tak samo działa to w aplikacjach, które zmieniają listę bez otwierania osobnego okna.
 
-Wyłącz **Nawigacja** > **Przenieś fokus na nowe okna**, jeśli chcesz usłyszeć przy otwarciu tylko nazwę okna. Pierwsze przesunięcie przejdzie wtedy na pierwszy element. SandFly pójdzie za fokusem klawiatury tylko wtedy, gdy przeniesiesz go klawiszem, na przykład przy użyciu Tab albo strzałki. Na telewizorze SandFly zawsze przenosi fokus do nowego okna.
+Wyłącz **Nawigacja** > **Przenoś fokus do nowych okien**, jeśli chcesz usłyszeć przy otwarciu tylko nazwę okna. Pierwsze przesunięcie przejdzie wtedy na pierwszy element. SandFly pójdzie za fokusem klawiatury tylko wtedy, gdy przeniesiesz go klawiszem, na przykład przy użyciu Tab albo strzałki. Na telewizorze SandFly zawsze przenosi fokus do nowego okna.
 
 Gdy element pod fokusem zniknie, na przykład po usunięciu wiersza listy, SandFly przejdzie do elementu, który zajął jego miejsce.
 
@@ -239,7 +239,7 @@ Okno zawiera tekst z ekranu. Gdy na ekranie jest przewijana lista lub strona, pr
 
 1. Uruchom **Kopiuj tekst z ekranu**.
 2. W sekcji **Szczegółowość** wybierz **Adresy i numery**, **Znaki**, **Słowa** lub **Akapity**. Początkowo wybrane są **Słowa**.
-3. Zaznacz fragmenty. Jeśli chcesz zaznaczyć zakres, stuknij dwa razy i przytrzymaj przy pierwszym, a potem przy ostatnim fragmencie. Możesz też użyć czynności **Rozpocznij zaznaczanie** i **Zakończ zaznaczanie**. **Zaznacz wszystko** wybiera wszystkie fragmenty.
+3. Zaznacz fragmenty. Jeśli chcesz zaznaczyć zakres, stuknij dwa razy i przytrzymaj przy pierwszym, a potem przy ostatnim fragmencie. Możesz też użyć czynności **Początek zaznaczenia** i **Zakończ zaznaczanie**. **Zaznacz wszystko** wybiera wszystkie fragmenty.
 4. Wybierz **Kopiuj**. SandFly wstawia spacje między słowami, skleja znaki, rozdziela akapity pustym wierszem, a adresy i numery wpisuje w osobnych wierszach.
 
 Gdy spod okna da się przewinąć listę lub stronę, użyj **Przewiń w górę** nad listą lub **Przewiń w dół** pod nią. SandFly przewinie o stronę i dołączy jej tekst. Usłyszysz komunikat o liczbie dodanych fragmentów. Zaznaczenia zostaną zachowane. Po dojściu do pierwszej lub ostatniej strony usłyszysz „Nie ma więcej tekstu”. Po zamknięciu okna przewinie listę z powrotem na miejsce, od którego zacząłeś.
@@ -253,21 +253,21 @@ Okno mieści do tysiąca fragmentów. Jeśli tekst jest dłuższy, SandFly odczy
 Na ekranie **Nawigacja** znajdziesz następujące ustawienia.
 
 - **Zawijanie** pozwala przejść za ostatni element do pierwszego, a przed pierwszym do ostatniego. Opcja jest domyślnie włączona. Zobacz [](#reading-wrap).
-- **Zatrzymuj na ostatnim elemencie przed zawinięciem** zatrzymuje fokus przy pierwszej próbie przejścia za koniec. Dopiero następny gest przenosi fokus na drugi koniec. Opcja jest domyślnie włączona.
-- **Zawijanie w sterowaniu czytaniem** pozwala przejść z ostatniej wartości do pierwszej. Dopóki nie zmienisz tej opcji osobno, działa tak jak **Zawijanie**.
-- **Przechodź z paska stanu i paska nawigacji do innych okien** pozwala przejść z paska do aplikacji przez przesunięcie palcem za skrajny element. Opcja jest domyślnie wyłączona. Zobacz [](#reading-windows).
-- **Przenieś fokus na nowe okna** ustawia fokus w otwieranych oknach. Opcja jest domyślnie włączona. Zobacz [](#reading-screen-changes).
+- **Zatrzymuj na skrajnym elemencie przed zawinięciem** zatrzymuje fokus przy pierwszej próbie przejścia za koniec. Dopiero następny gest przenosi fokus na drugi koniec. Opcja jest domyślnie włączona.
+- **Zawijanie wartości opcji sterowania czytaniem** pozwala przejść z ostatniej wartości do pierwszej. Dopóki nie zmienisz tej opcji osobno, działa tak jak **Zawijanie**.
+- **Przechodź z paska stanu i paska nawigacyjnego do innych okien** pozwala przejść z paska do aplikacji przez przesunięcie palcem za skrajny element. Opcja jest domyślnie wyłączona. Zobacz [](#reading-windows).
+- **Przenoś fokus do nowych okien** ustawia fokus w otwieranych oknach. Opcja jest domyślnie włączona. Zobacz [](#reading-screen-changes).
 - **Odczytuj elementy, zanim przewinięcie pokaże je na ekranie** odczytuje częściowo widoczny element przed przewinięciem listy. Opcja jest domyślnie wyłączona. Zobacz [](#reading-scroll-swipes).
 - **Przewijaj do następnego elementu z wyprzedzeniem** zaczyna przewijać listę podczas czytania ostatniego widocznego elementu. Opcja jest domyślnie włączona.
 - **Odczytuj następny element podczas przewijania** zaczyna odczyt, gdy kolejny element pojawi się na ekranie. Opcja jest domyślnie włączona.
-- **Zaznaczaj osobno tekst wewnątrz elementów** daje własny fokus poszczególnym fragmentom tekstu i ich stanom. Możesz do nich dojść dotykiem lub przesunięciem palca. Cały element zachowuje osobny fokus wtedy, gdy ma własny tekst, stan lub czynności. Gdy aktywujesz fragment tekstu, SandFly aktywuje zawierający go element. Opcja jest domyślnie wyłączona. Polecenie **Zaznaczaj osobno tekst wewnątrz elementów** w kategorii **Nawigacja** przełącza to ustawienie i odczytuje jego nowy stan.
+- **Przenoś fokus osobno na teksty wewnątrz elementów** daje własny fokus poszczególnym fragmentom tekstu i ich stanom. Możesz do nich dojść dotykiem lub przesunięciem palca. Cały element zachowuje osobny fokus wtedy, gdy ma własny tekst, stan lub czynności. Gdy aktywujesz fragment tekstu, SandFly aktywuje zawierający go element. Opcja jest domyślnie wyłączona. Polecenie **Przenoś fokus osobno na teksty wewnątrz elementów** w kategorii **Nawigacja** przełącza to ustawienie i odczytuje jego nowy stan.
 - **W tabelach przełączaj na nawigację po tabeli** wybiera **Wiersze i kolumny**, gdy fokus trafia do tabeli. Opcja jest domyślnie wyłączona. Zobacz [](#reading-tables).
 - **Inteligentny tryb przeglądania** i **Zapamiętaj tryb przeglądania w każdej aplikacji** opisano w [](#web).
-- **Czytaj cytaty odpowiedzi w Telegramie razem z wiadomością** znajduje się w części **Aplikacje**. Zobacz [](#reading-telegram).
+- **Odczytuj cytowaną wiadomość razem z odpowiedzią w Telegramie** znajduje się w części **Aplikacje**. Zobacz [](#reading-telegram).
 
 #### Telegram {#reading-telegram}
 
 Te ustawienia dotyczą Telegrama oraz aplikacji opartych na nim, na przykład Nekograma.
 
-- Opcja **Nawigacja** > **Czytaj cytaty odpowiedzi w Telegramie razem z wiadomością** jest domyślnie włączona. Po odczytaniu czasu wiadomości SandFly informuje, komu odpowiada nadawca, i czyta cytowany tekst. Cytat nie ma własnego fokusu. Żeby otworzyć cytowaną wiadomość, wybierz **Przejdź do cytowanej wiadomości** w czynnościach wiadomości. Jeśli wyłączysz tę opcję, cytat stanie się osobnym elementem, a czynność **Przejdź do cytowanej wiadomości** zniknie.
-- Gdy czytasz wiadomości w kanale, SandFly pomija przycisk udostępniania przy przesunięciach i podczas eksploracji dotykiem. Znajdziesz go w czynnościach wiadomości pod nazwą nadaną przez Telegram, na przykład „Udostępnij”.
+- Opcja **Nawigacja** > **Odczytuj cytowaną wiadomość razem z odpowiedzią w Telegramie** jest domyślnie włączona. Po odczytaniu czasu wiadomości SandFly informuje, komu odpowiada nadawca, i czyta cytowany tekst. Cytat nie ma własnego fokusu. Żeby otworzyć cytowaną wiadomość, wybierz **Przejdź do cytowanej wiadomości** w czynnościach wiadomości. Jeśli wyłączysz tę opcję, cytat stanie się osobnym elementem, a czynność **Przejdź do cytowanej wiadomości** zniknie.
+- Gdy czytasz wiadomości w kanale, SandFly pomija przycisk udostępniania przy przesunięciach i podczas czytania dotykiem. Znajdziesz go w czynnościach wiadomości pod nazwą nadaną przez Telegram, na przykład „Udostępnij”.

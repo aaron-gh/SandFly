@@ -2416,18 +2416,18 @@
     <string name="title_pref_shortcut_4finger_3tap_swipe_down">Palietimas tris kartus, tada perbraukimas žemyn keturiais pirštais</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_left">Palietimas tris kartus, tada perbraukimas kairėn keturiais pirštais</string>
     <string name="title_pref_shortcut_4finger_3tap_swipe_right">Palietimas tris kartus, tada perbraukimas dešinėn keturiais pirštais</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Palietimas dviem pirštais, tada perbraukimas aukštyn</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Palietimas dviem pirštais, tada perbraukimas žemyn</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Palietimas dviem pirštais, tada perbraukimas kairėn</string>
-    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Palietimas dviem pirštais, tada perbraukimas dešinėn</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Palietimas du kartus dviem pirštais, tada perbraukimas aukštyn</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Palietimas du kartus dviem pirštais, tada perbraukimas žemyn</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Palietimas du kartus dviem pirštais, tada perbraukimas kairėn</string>
-    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Palietimas du kartus dviem pirštais, tada perbraukimas dešinėn</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Palietimas tris kartus dviem pirštais, tada perbraukimas aukštyn</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Palietimas tris kartus dviem pirštais, tada perbraukimas žemyn</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Palietimas tris kartus dviem pirštais, tada perbraukimas kairėn</string>
-    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Palietimas tris kartus dviem pirštais, tada perbraukimas dešinėn</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Palietimas dviem pirštais, tada perbraukimas aukštyn vienu pirštu</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Palietimas dviem pirštais, tada perbraukimas žemyn vienu pirštu</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Palietimas dviem pirštais, tada perbraukimas kairėn vienu pirštu</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Palietimas dviem pirštais, tada perbraukimas dešinėn vienu pirštu</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Palietimas du kartus dviem pirštais, tada perbraukimas aukštyn vienu pirštu</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Palietimas du kartus dviem pirštais, tada perbraukimas žemyn vienu pirštu</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Palietimas du kartus dviem pirštais, tada perbraukimas kairėn vienu pirštu</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Palietimas du kartus dviem pirštais, tada perbraukimas dešinėn vienu pirštu</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Palietimas tris kartus dviem pirštais, tada perbraukimas aukštyn vienu pirštu</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Palietimas tris kartus dviem pirštais, tada perbraukimas žemyn vienu pirštu</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Palietimas tris kartus dviem pirštais, tada perbraukimas kairėn vienu pirštu</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Palietimas tris kartus dviem pirštais, tada perbraukimas dešinėn vienu pirštu</string>
     <string name="title_pref_shortcut_up_and_down_and_up">Perbraukti aukštyn, žemyn, tada aukštyn</string>
     <string name="title_pref_shortcut_up_and_down_and_left">Perbraukti aukštyn, žemyn, tada kairėn</string>
     <string name="title_pref_shortcut_up_and_down_and_right">Perbraukti aukštyn, žemyn, tada dešinėn</string>
@@ -2882,4 +2882,111 @@
     <string name="title_pref_cyrillic_text_recognition">Kirilicos teksto atpažinimas</string>
     <string name="cyrillic_text_model_missing">Nėra teksto atpažinimo modelio kalbai <xliff:g id="language" example="Russian">%1$s</xliff:g>. Atsisiųskite jį skiltyje Vaizdų ir ekrano aprašai, Kirilicos teksto atpažinimas.</string>
     <string name="cyrillic_text_model_error_http">Atsisiuntimo serveris nepriėmė užklausos. Bandykite vėliau.</string>
+    <string name="title_pref_announce_caller">Skelbti skambintoją</string>
+    <string name="announce_caller_once">Vieną kartą</string>
+    <string name="announce_caller_repeat">Kartoti, kol skamba</string>
+    <string name="title_pref_command_feedback_voice">Komandų atsako ir teksto redagavimo balsas</string>
+    <string name="title_pref_command_feedback_over_speech">Skaityti komandų atsaką kartu su SandFly kalba</string>
+    <string name="title_pref_item_types_spoken">Ištariami elementų tipai</string>
+    <string name="item_type_link">Nuoroda</string>
+    <string name="item_type_tab">Skirtukas</string>
+    <string name="item_type_other">Kiti tipai</string>
+    <string-array name="pref_item_types_spoken_entries">
+        <item>@string/value_button</item>
+        <item>@string/value_checkbox</item>
+        <item>@string/value_switch</item>
+        <item>@string/value_radio_button</item>
+        <item>@string/value_edit_box</item>
+        <item>@string/value_spinner</item>
+        <item>@string/value_seek_bar</item>
+        <item>@string/value_progress_bar</item>
+        <item>@string/item_type_link</item>
+        <item>@string/heading_template</item>
+        <item>@string/value_image</item>
+        <item>@string/item_type_tab</item>
+        <item>@string/value_tabwidget</item>
+        <item>@string/value_listview</item>
+        <item>@string/value_gridview</item>
+        <item>@string/value_pager_page</item>
+        <item>@string/value_webview</item>
+        <item>@string/item_type_other</item>
+    </string-array>
+    <string name="tap_swipe_2finger_tap_1finger_swipe_gestures_title">Palietimas 2 pirštais, perbraukimas 1 pirštu</string>
+    <string name="keycombo_key_enter">Enter</string>
+    <string name="keycombo_key_space">Tarpas</string>
+    <string name="keycombo_key_escape">Esc</string>
+    <string name="keycombo_key_tab">Tab</string>
+    <string name="keycombo_key_page_up">Puslapis aukštyn</string>
+    <string name="keycombo_key_page_down">Puslapis žemyn</string>
+    <string name="keycombo_key_home">Pradžia</string>
+    <string name="keycombo_key_end">Pabaiga</string>
+    <string name="keycombo_key_delete">Delete</string>
+    <string name="keycombo_key_menu">Meniu</string>
+    <string name="keycombo_key_search">Paieška</string>
+    <string name="keycombo_key_grave">Kairysis kirtis</string>
+    <string name="keycombo_key_minus">Minusas</string>
+    <string name="keycombo_key_equals">Lygybės ženklas</string>
+    <string name="keycombo_key_left_bracket">Kairysis laužtinis skliaustas</string>
+    <string name="keycombo_key_right_bracket">Dešinysis laužtinis skliaustas</string>
+    <string name="keycombo_key_backslash">Kairinis brūkšnys</string>
+    <string name="keycombo_key_semicolon">Kabliataškis</string>
+    <string name="keycombo_key_apostrophe">Apostrofas</string>
+    <string name="keycombo_key_comma">Kablelis</string>
+    <string name="keycombo_key_period">Taškas</string>
+    <string name="keycombo_key_slash">Pasvirasis brūkšnys</string>
+    <string name="keycombo_key_plus">Pliusas</string>
+    <string name="keycombo_key_at">Eta ženklas</string>
+    <string name="keycombo_key_star">Žvaigždutė</string>
+    <string name="keycombo_key_pound">Grotelės</string>
+    <string name="keycombo_key_caps_lock">Caps Lock</string>
+    <string name="keycombo_key_scroll_lock">Scroll Lock</string>
+    <string name="keycombo_key_num_lock">Num Lock</string>
+    <string name="keycombo_key_pause">Pause</string>
+    <string name="keycombo_key_print_screen">Print Screen</string>
+    <string name="keycombo_key_numpad_add">Skaitmenų klaviatūros pliusas</string>
+    <string name="keycombo_key_numpad_subtract">Skaitmenų klaviatūros minusas</string>
+    <string name="keycombo_key_numpad_multiply">Skaitmenų klaviatūros daugyba</string>
+    <string name="keycombo_key_numpad_divide">Skaitmenų klaviatūros dalyba</string>
+    <string name="keycombo_key_numpad_dot">Skaitmenų klaviatūros taškas</string>
+    <string name="keycombo_key_numpad_comma">Skaitmenų klaviatūros kablelis</string>
+    <string name="keycombo_key_numpad_equals">Skaitmenų klaviatūros lygybės ženklas</string>
+    <string name="keycombo_key_numpad_enter">Skaitmenų klaviatūros Enter</string>
+    <string name="keycombo_key_volume_up">Garsinti</string>
+    <string name="keycombo_key_volume_down">Tylinti</string>
+    <string name="keycombo_key_volume_mute">Nutildyti</string>
+    <string name="keycombo_key_media_play_pause">Leisti arba pristabdyti</string>
+    <string name="keycombo_key_media_next">Kitas takelis</string>
+    <string name="keycombo_key_media_previous">Ankstesnis takelis</string>
+    <string name="keycombo_key_media_stop">Stabdyti</string>
+    <string name="keycombo_key_back">Atgal</string>
+    <string name="keycombo_key_numpad">Skaitmenų klaviatūros <xliff:g id="digit" example="5">%1$s</xliff:g></string>
+    <string name="title_pref_typing_swipes_through_keys">Braukti nuo klavišo prie klavišo naudojant bet kurį rašymo būdą</string>
+    <string name="shortcut_say_caller">Ištarti skambintoją</string>
+    <string name="say_caller_unknown">Gaunamasis skambutis</string>
+    <string name="shortcut_restart_phone">Paleisti telefoną iš naujo</string>
+    <string name="shortcut_power_off_phone">Išjungti telefoną</string>
+    <string name="restart_phone_confirm_title">Paleisti telefoną iš naujo?</string>
+    <string name="restart_phone_confirm_button">Paleisti iš naujo</string>
+    <string name="power_off_phone_confirm_title">Išjungti telefoną?</string>
+    <string name="power_off_phone_confirm_button">Išjungti</string>
+    <string name="power_command_failed">Nepavyko, atidarytas maitinimo meniu</string>
+    <string name="clipboard_history_search_hint">Ieškoti iškarpinės istorijoje</string>
+    <plurals name="clipboard_history_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tekstas</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> tekstai</item>
+        <item quantity="many"><xliff:g id="count" example="1.5">%d</xliff:g> teksto</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> tekstų</item>
+    </plurals>
+    <string name="title_pref_edge_menu_horizontal">Braukti nuo krašto į vidų</string>
+    <string name="title_pref_category_sliders">Slankikliai</string>
+    <string name="title_pref_slider_step">Slankiklio žingsnis</string>
+    <string name="value_slider_step_app">Kaip nustato programa</string>
+    <string name="value_slider_step_percent">1%</string>
+    <string name="value_slider_step_smallest">Mažiausias diapazono žingsnis</string>
+    <string name="title_pref_slider_skip_unchanged">Praleisti žingsnius, kurie nekeičia reikšmės</string>
+    <string name="title_slider_enter_value">Įvesti reikšmę</string>
+    <string name="slider_value_range">Nuo <xliff:g id="min" example="0">%1$s</xliff:g> iki <xliff:g id="max" example="100">%2$s</xliff:g></string>
+    <string name="voice_phrases_not_understood">Nesuprastos frazės</string>
+    <string name="title_pref_voice_phrases_not_understood">Išsaugoti nesuprastas frazes</string>
+    <string name="voice_phrases_not_understood_listed">Pridėta prie „Nesuprastos frazės“.</string>
 </resources>

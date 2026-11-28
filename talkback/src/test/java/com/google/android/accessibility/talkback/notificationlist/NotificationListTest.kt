@@ -59,6 +59,19 @@ class NotificationListTest {
   }
 
   @Test
+  fun notificationsTheShadeHidesAreLeftOut() {
+    val default = android.app.NotificationManager.IMPORTANCE_DEFAULT
+    val hiddenInList = android.app.NotificationManager.Policy.SUPPRESSED_EFFECT_NOTIFICATION_LIST
+    val noPeeking = android.app.NotificationManager.Policy.SUPPRESSED_EFFECT_PEEK
+    assertEquals(false, NotificationList.isHiddenInShade(default, false, 0))
+    assertEquals(false, NotificationList.isHiddenInShade(android.app.NotificationManager.IMPORTANCE_MIN, false, 0))
+    assertEquals(false, NotificationList.isHiddenInShade(default, false, noPeeking))
+    assertEquals(true, NotificationList.isHiddenInShade(default, true, 0))
+    assertEquals(true, NotificationList.isHiddenInShade(default, false, hiddenInList or noPeeking))
+    assertEquals(true, NotificationList.isHiddenInShade(android.app.NotificationManager.IMPORTANCE_NONE, false, 0))
+  }
+
+  @Test
   fun oneUiMediaActivityIsLeftOut() {
     val player = posted("com.example.player", 2, Notification.Builder(context, "playing").setContentTitle("Episode").build())
     NotificationList.onConnected(arrayOf(posted("com.android.systemui", 1, mediaActivity()), player), null)
@@ -262,5 +275,84 @@ class NotificationListTest {
       ),
       texts,
     )
+  }
+
+  @Test
+  fun notificationsWithoutTitleOrText_areLeftOut() {
+    // HyperOS posts such notifications, which its shade doesn't show (#681).
+    val empty = posted("com.example.security", 1, Notification.Builder(context, "service").setOngoing(true).build())
+    val blank =
+      posted(
+        "com.example.earbuds",
+        2,
+        Notification.Builder(context, "status").setContentTitle(" ").setContentText(" ").build(),
+      )
+    val emptyLayout = RemoteViews(context.packageName, android.R.layout.simple_list_item_1)
+    val withEmptyLayout = Notification.Builder(context, "status").build()
+    @Suppress("DEPRECATION")
+    withEmptyLayout.contentView = emptyLayout
+    val layout = RemoteViews(context.packageName, android.R.layout.simple_list_item_1)
+    layout.setTextViewText(android.R.id.text1, "Connected")
+    val withLayout = Notification.Builder(context, "status").build()
+    @Suppress("DEPRECATION")
+    withLayout.contentView = layout
+    val running =
+      posted(
+        "com.example.connect",
+        5,
+        Notification.Builder(context, "service")
+          .setContentText("Running, tap for more information or to stop the app.")
+          .setOngoing(true)
+          .build(),
+      )
+    val player =
+      posted(
+        "com.example.player",
+        6,
+        Notification.Builder(context, "playing").setCategory(Notification.CATEGORY_TRANSPORT).build(),
+      )
+    val customLayout = posted("com.example.layout", 4, withLayout)
+    NotificationList.onConnected(
+      arrayOf(empty, blank, posted("com.example.empty", 3, withEmptyLayout), customLayout, running, player),
+      null,
+    )
+
+    val keys = NotificationList.items(context).flatMap { it.entries }.map { it.key }
+
+    assertEquals(listOf(customLayout.key, running.key, player.key), keys)
+    assertEquals(keys.toSet(), NotificationList.itemsByTime(context).flatMap { it.entries }.map { it.key }.toSet())
+  }
+
+  @Test
+  fun groupWithoutTitlesOrTexts_showsItsSummary() {
+    val first = posted("com.example.chat", 1, Notification.Builder(context, "chat").setGroup("g").build())
+    val second = posted("com.example.chat", 2, Notification.Builder(context, "chat").setGroup("g").build())
+    val summary =
+      posted(
+        "com.example.chat",
+        3,
+        Notification.Builder(context, "chat").setGroup("g").setGroupSummary(true).setContentTitle("2 chats").build(),
+      )
+    val emptyGroup = posted("com.example.other", 4, Notification.Builder(context, "x").setGroup("h").build())
+    val emptySummary =
+      posted("com.example.other", 5, Notification.Builder(context, "x").setGroup("h").setGroupSummary(true).build())
+    NotificationList.onConnected(arrayOf(first, second, summary, emptyGroup, emptySummary), null)
+
+    val items = NotificationList.items(context)
+
+    assertEquals(listOf(summary.key), items.flatMap { it.entries }.map { it.key })
+  }
+
+  @Test
+  fun groupKeepsItsMembersWithText() {
+    val adam = posted("com.example.chat", 1, message("Adam", 1_000L, group = "chats"))
+    val empty = posted("com.example.chat", 2, Notification.Builder(context, "chat").setGroup("chats").build())
+    val ben = posted("com.example.chat", 3, message("Ben", 3_000L, group = "chats"))
+    val summary = posted("com.example.chat", 4, Notification.Builder(context, "chat").setGroup("chats").setGroupSummary(true).build())
+    NotificationList.onConnected(arrayOf(adam, empty, ben, summary), null)
+
+    val group = NotificationList.items(context).single() as NotificationItem.Group
+
+    assertEquals(listOf(adam.key, ben.key), group.entries.map { it.key })
   }
 }

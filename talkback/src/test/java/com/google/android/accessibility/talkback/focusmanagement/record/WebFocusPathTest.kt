@@ -44,7 +44,7 @@ class WebFocusPathTest {
       AccessibilityNodeInfoCompat.FLAG_PREFETCH_UNINTERRUPTIBLE
 
   /** A node in a tree that counts what is read from it. */
-  private class Node(label: String, web: Boolean = false) :
+  private class Node(label: String, web: Boolean = false, private val window: Int = -1) :
     AccessibilityNodeInfoCompat(
       AccessibilityNodeInfo.obtain(View(RuntimeEnvironment.getApplication()))
     ) {
@@ -90,6 +90,8 @@ class WebFocusPathTest {
     }
 
     override fun getChild(index: Int, prefetchingStrategy: Int) = getChild(index)
+
+    override fun getWindowId() = window
   }
 
   /** root > group > (first, leaf, last), all in web content. */
@@ -280,6 +282,29 @@ class WebFocusPathTest {
     assertEquals(1, description.rawIndexInParent)
     assertEquals("first", description.previousSiblingText.toString())
     assertSame(record.ancestorIdentityPath, record.nodePathDescription)
+  }
+
+  @Test
+  fun nativeFocusInAnAppsWindowReadsTheAncestorsInOneRequest() {
+    val root = Node("root", window = 3)
+    val group = Node("group", window = 3)
+    val first = Node("first", window = 3)
+    val leaf = Node("leaf", window = 3)
+    val last = Node("last", window = 3)
+    root.add(group)
+    group.add(first, leaf, last)
+
+    val path = descriptions(record(leaf).nodePathDescription)
+
+    assertEquals(listOf<Int?>(ancestorsAndUninterruptible), leaf.parentReads)
+    assertEquals(listOf<Int?>(null), group.parentReads)
+    assertEquals(listOf<Int?>(null), root.parentReads)
+    assertEquals(3, path.size)
+    assertEquals(1, path[0].rawIndexInParent)
+    assertEquals("first", path[0].previousSiblingText.toString())
+    assertEquals("last", path[0].nextSiblingText.toString())
+    assertEquals(0, path[1].rawIndexInParent)
+    assertEquals(NodeDescription.UNDEFINED_INDEX, path[2].rawIndexInParent)
   }
 
   @Test

@@ -149,7 +149,7 @@ Tidak satu pun perintah ini memiliki gerakan secara default. Untuk menetapkan ge
 
 ### Histori papan klip {#typing-clipboard-history}
 
-SandFly menyimpan histori hingga 50 teks yang disalin, dari yang terbaru. Setiap teks disimpan hingga 200.000 karakter, dan histori secara keseluruhan hingga 1.000.000 karakter: teks lama yang melebihi batas itu dihapus. **Tambahkan ke papan klip** juga berhenti pada 200.000 karakter. Histori ini menyimpan teks yang disalin SandFly, dan teks yang disalin aplikasi lain saat jendela SandFly memiliki fokus. Android tidak mengizinkan aplikasi membaca papan klip di latar belakang, jadi dengan Shizuku atau root, tombol alih **Tambahkan salinan dari aplikasi lain** di bagian atas histori akan menambahkan setiap teks yang disalin oleh aplikasi lain. Histori disimpan terpisah dari setelan dan tidak disertakan dalam cadangan setelan.
+SandFly menyimpan histori hingga 50 teks yang disalin, dari yang terbaru. Setiap teks disimpan hingga 200.000 karakter, dan histori secara keseluruhan hingga 1.000.000 karakter: teks lama yang melebihi batas itu dihapus. **Tambahkan ke papan klip** juga berhenti pada 200.000 karakter. Histori ini menyimpan teks yang disalin SandFly, dan teks yang disalin aplikasi lain saat jendela SandFly memiliki fokus. Android tidak mengizinkan aplikasi membaca papan klip di latar belakang, jadi dengan Shizuku atau root, tombol beralih **Tambahkan salinan dari aplikasi lain** di bagian atas histori akan menambahkan setiap teks yang disalin oleh aplikasi lain. Histori disimpan terpisah dari setelan dan tidak disertakan dalam cadangan setelan.
 
 Untuk membuka histori, jalankan **Histori papan klip**, dari perintah **Pengeditan teks** atau **Menu pengeditan**. Histori terbuka di atas layar saat ini.
 
@@ -179,7 +179,7 @@ Pengeditan terperinci membuka teks dari kolom teks yang difokuskan, atau dari it
 - **Bagi berdasarkan** memilih bagiannya: **Karakter**, **Kata**, **Kalimat**, **Baris**, atau **Paragraf**. Defaultnya adalah **Kata**, dan SandFly menyimpan pilihan terakhir Anda.
 - Ketuk dua kali sebuah bagian untuk mengeditnya. Mengosongkannya akan menghapusnya.
 - Tindakan untuk sebuah bagian adalah **Pilih**, **Sisipkan sebelum**, **Sisipkan setelah**, dan **Hapus**. Ketuk dua kali lalu tahan sebuah bagian untuk membukanya dalam dialog. **Mulai pemilihan** dan **Akhiri pemilihan** memilih setiap bagian di antara dua bagian.
-- Spasi, tab, dan jeda baris di antara bagian menjadi bagian tersendiri, seperti "2 spasi" atau "Baris baru", dan baris kosong dibacakan sebagai "Baris kosong".
+- Spasi, tab, dan jeda baris di antara bagian menjadi bagian tersendiri, seperti "2 spasi" atau "Baris baru", dan baris kosong dibacakan sebagai "Baris kosong". Satu spasi di antara dua kata atau kalimat, dan satu baris kosong di antara dua paragraf, bukan bagian tersendiri; keduanya dihapus bersama bagian sebelumnya.
 - **Salin** menyalin bagian yang dipilih, atau seluruh teks saat tidak ada bagian yang dipilih.
 - **Lainnya** berisi **Urungkan**, **Ulangi**, **Cari**, **Temukan selanjutnya**, **Temukan sebelumnya**, **Ganti**, **Tambahkan teks di akhir**, **Pilih semua**, **Hapus pilihan**, **Potong teks yang dipilih**, dan **Hapus yang dipilih**. **Ganti** mengganti semua kecocokan, tanpa membedakan huruf besar/kecil.
 - **Simpan** menuliskan teks kembali ke kolom teks dan menutup layar. Jika kolom teks sudah tidak ada, teks akan disalin sebagai gantinya.

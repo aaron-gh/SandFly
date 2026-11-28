@@ -95,7 +95,7 @@ Tanpa Shizuku atau root, fitur-fitur berikut tidak tersedia atau bekerja secara 
 - **Output audio** > **Setel ulang audio aksesibilitas setelah panggilan** hanya bekerja melalui Shizuku atau root. Memerlukan Android 13 atau lebih baru. Lihat [](#sound).
 - **Tombol volume** > **Pintasan tombol volume saat layar mati** hanya bekerja melalui Shizuku, bukan root. Lihat [](#buttons).
 - **Ringkasan** > **Gunakan ringkasan SandFly** membaca dan membuka aplikasi terbaru melalui Shizuku atau root. Tanpa keduanya, ringkasan sistem yang akan terbuka. Alt+Tab, membuka aplikasi di layar terpisah, serta perintah **Aplikasi lebih lama** dan **Aplikasi lebih baru** juga memerlukan Shizuku atau root. Lihat [](#display).
-- Sakelar pada panel setelan cepat SandFly, seperti Wi-Fi, Bluetooth, data seluler, dan mode pesawat, serta kontrol kecerahan, putar otomatis, cahaya malam, redup ekstra, warna, dan ukuran tampilan. Tanpa Shizuku atau root, beberapa sakelar akan membuka setelan sistem. Lihat [](#display).
+- Tombol beralih pada panel setelan cepat SandFly, seperti Wi-Fi, Bluetooth, data seluler, dan mode pesawat, serta kontrol kecerahan, putar otomatis, cahaya malam, redup ekstra, warna, dan ukuran tampilan. Tanpa Shizuku atau root, beberapa tombol beralih akan membuka setelan sistem. Lihat [](#display).
 - Riwayat papan klip hanya dapat menambahkan teks yang disalin di aplikasi lain melalui Shizuku atau root, dengan **Tambahkan salinan dari aplikasi lain** di riwayat. Lihat [](#typing).
 - Gboard memutar umpan balik tombolnya sendiri, seperti **Bergetar saat tombol ditekan**, saat Anda menjelajahi tombolnya. Fitur ini hanya bekerja melalui Shizuku atau root. Lihat [](#typing).
 - Perintah yang menjalankan pintasan aksesibilitas milik layanan aksesibilitas lain. Lihat [](#commands).
@@ -138,4 +138,4 @@ Pada perangkat yang di-root, SandFly dapat menjalankan perintahnya dengan root a
 
 SandFly kemudian menjalankan perintah melalui `su` sebagai pengguna shell, yaitu pengguna yang dipakai adb dan Shizuku. Pengelola root di perangkat, seperti Magisk atau KernelSU, menampilkan dialog untuk memberikan akses root ke SandFly. Fitur yang memerlukan Shizuku akan menggunakan root saat setelan ini aktif, kecuali **Pintasan tombol volume saat layar mati**, yang tidak ditampilkan dalam mode root. Jika `su` tidak memberikan akses root, ringkasan dan layar terpisah akan mengucapkan "Tidak ada akses root".
 
-Catatan: Jika `su` pada perangkat tidak dapat menjalankan perintah sebagai pengguna shell, SandFly menjalankannya sebagai root. Menambahkan salinan dari aplikasi lain ke riwayat papan klip dan sakelar hotspot tidak akan berfungsi dalam kondisi tersebut.
+Catatan: Jika `su` pada perangkat tidak dapat menjalankan perintah sebagai pengguna shell, SandFly menjalankannya sebagai root. Menambahkan salinan dari aplikasi lain ke riwayat papan klip dan tombol beralih hotspot tidak akan berfungsi dalam kondisi tersebut.

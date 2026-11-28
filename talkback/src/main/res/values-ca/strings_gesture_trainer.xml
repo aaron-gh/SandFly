@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">segon lliscament <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_whole_gesture">gest complet <xliff:g id="ms">%1$d</xliff:g> ms</string>
     <string name="gesture_trainer_measure_stroke_gap">dit aixecat <xliff:g id="ms">%1$d</xliff:g> ms entre ells</string>
+    <string name="gesture_trainer_how_menu_horizontal">Posa un dit <xliff:g id="edge">%1$s</xliff:g> i llisca\'l cap al centre de la pantalla almenys <xliff:g id="distance">%2$d</xliff:g> mm per obrir el menú. Té <xliff:g id="count">%3$d</xliff:g> elements en horitzontal, des de la vora, cadascun d\'uns <xliff:g id="size">%6$s</xliff:g> cm d\'amplada. L\'element <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, és entre <xliff:g id="from">%7$s</xliff:g> i <xliff:g id="to">%8$s</xliff:g> cm de la vora. Mantén el dit a la mateixa altura i aixeca\'l quan s\'enunciï l\'element.</string>
+    <string name="gesture_trainer_finding_menu_left_line">El dit s\'ha aixecat a <xliff:g id="mm">%1$.0f</xliff:g> mm per sobre o per sota d\'on s\'ha obert el menú, i el menú es tanca a més de <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_tip_menu_left_line">Mantén el dit a la mateixa altura mentre llisques cap a dins i aixeca\'l allà.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">Cada element té una posició fixa en horitzontal, des de la vora, i es tria l\'element on s\'aixeca el dit. Aixeca\'l quan s\'enunciï l\'element.</string>
+    <string name="gesture_trainer_left_out_in_menu">S\'ometen els lliscaments cap a dins des de <xliff:g id="edge">%1$s</xliff:g>: el seu menú de vora va en horitzontal, de manera que un lliscament cap a dins des d\'aquesta vora obre el menú en lloc d\'executar un gest.</string>
+    <string name="gesture_trainer_statistics">Estadístiques</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>. Intents: <xliff:g id="tries">%2$d</xliff:g>, reconeguts: <xliff:g id="recognized">%3$d</xliff:g>. Més curt: <xliff:g id="shortest">%4$d</xliff:g> ms, mediana: <xliff:g id="median">%5$d</xliff:g> ms, més llarg: <xliff:g id="longest">%6$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_statistics_touches">Cada toc: més curt <xliff:g id="shortest">%1$d</xliff:g> ms, mediana <xliff:g id="median">%2$d</xliff:g> ms, més llarg <xliff:g id="longest">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_kind_tap">Tocs</string>
+    <string name="gesture_trainer_kind_double_tap">Dobles tocs</string>
+    <string name="gesture_trainer_kind_triple_tap">Triples tocs</string>
+    <string name="gesture_trainer_kind_quadruple_tap">Quàdruples tocs</string>
+    <string name="gesture_trainer_kind_tap_hold">Toc i mantén premut</string>
+    <string name="gesture_trainer_kind_double_tap_hold">Doble toc i mantén premut</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">Triple toc i mantén premut</string>
+    <string name="gesture_trainer_kind_swipe">Lliscaments</string>
+    <string name="gesture_trainer_kind_swipe_hold">Lliscament i mantén premut</string>
+    <string name="gesture_trainer_kind_two_part_swipe">Lliscaments d\'anada i tornada i en angle</string>
+    <string name="gesture_trainer_kind_pinch">Pinçaments</string>
+    <string name="gesture_trainer_kind_spread">Separacions</string>
+    <string name="gesture_trainer_kind_rotate">Girs</string>
+    <string name="gesture_trainer_kind_scrub">Fregaments</string>
 </resources>

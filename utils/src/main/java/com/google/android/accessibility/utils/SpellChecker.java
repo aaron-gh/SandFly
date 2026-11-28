@@ -32,6 +32,8 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.SuggestionSpan;
 import android.util.Log;
+import android.view.inputmethod.InputMethodManager;
+import android.view.inputmethod.InputMethodSubtype;
 import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SpellCheckerSession;
 import android.view.textservice.SpellCheckerSession.SpellCheckerSessionListener;
@@ -91,6 +93,8 @@ public class SpellChecker {
   private final CharSequence text;
   private final TextServicesManager textServicesManager;
   private final SpellCheckingListener listener;
+  /** The language of the keyboard in use, which the check is in, or null for the settings'. */
+  private final @Nullable Locale locale;
   private @Nullable SpellCheckerSession session;
 
   private static final Cache resultCache = new Cache();
@@ -109,10 +113,53 @@ public class SpellChecker {
    * SpellCheckerSessionListener}.
    */
   public SpellChecker(Context context, CharSequence text, SpellCheckingListener listener) {
+    this(context, text, listener, keyboardLocale(context));
+  }
+
+  private SpellChecker(
+      Context context,
+      CharSequence text,
+      SpellCheckingListener listener,
+      @Nullable Locale locale) {
     this.text = text instanceof Spannable ? text : new SpannableString(text);
     this.listener = listener;
+    this.locale = locale;
     this.textServicesManager =
         (TextServicesManager) context.getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE);
+  }
+
+  /**
+   * Returns the language of the keyboard in use, such as the braille keyboard's table language, or
+   * null if it has none. Android's spell checker settings set to the system languages use the
+   * system language, not the keyboard's.
+   */
+  private static @Nullable Locale keyboardLocale(Context context) {
+    try {
+      InputMethodManager imm =
+          (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+      return imm == null ? null : localeOf(imm.getCurrentInputMethodSubtype());
+    } catch (RuntimeException e) {
+      LogUtils.w(TAG, "No keyboard language: %s", e.toString());
+      return null;
+    }
+  }
+
+  /** Returns the language of keyboard subtype {@code subtype}, or null if it has none. */
+  @VisibleForTesting
+  static @Nullable Locale localeOf(@Nullable InputMethodSubtype subtype) {
+    if (subtype == null) {
+      return null;
+    }
+    String tag = subtype.getLanguageTag();
+    if (TextUtils.isEmpty(tag)) {
+      String subtypeLocale = subtype.getLocale();
+      tag = subtypeLocale == null ? "" : subtypeLocale.replace('_', '-');
+    }
+    if (TextUtils.isEmpty(tag)) {
+      return null;
+    }
+    Locale locale = Locale.forLanguageTag(tag);
+    return locale.getLanguage().isEmpty() ? null : locale;
   }
 
   public static void setEnabled(boolean enabled) {
@@ -173,7 +220,8 @@ public class SpellChecker {
       return new SpannableString("");
     }
 
-    if (hasCachedResult(text)) {
+    @Nullable Locale locale = keyboardLocale(context);
+    if (hasCachedResult(text, locale)) {
       LogUtils.v(TAG, "Get result from the cache.");
       return getResultFromCache();
     }
@@ -182,7 +230,7 @@ public class SpellChecker {
       return text;
     }
 
-    final SpellChecker spellChecker = new SpellChecker(context, text, listener);
+    final SpellChecker spellChecker = new SpellChecker(context, text, listener, locale);
     final AtomicReference<Looper> threadLooper = new AtomicReference<>();
     final Thread thread =
         new Thread(
@@ -220,7 +268,7 @@ public class SpellChecker {
 
     CharSequence result =
         wrapSuggestionSpansForAllMisspelledWords(context, text, spellChecker.listener.getResult());
-    updateCachedResult(result);
+    updateCachedResult(result, locale);
     return result;
   }
 
@@ -231,13 +279,18 @@ public class SpellChecker {
    * Call on the main thread.
    */
   public static void checkInBackground(Context context, CharSequence text, Runnable onChecked) {
-    if (!enabled || TextUtils.isEmpty(text) || hasCachedResult(text)) {
+    if (!enabled || TextUtils.isEmpty(text)) {
+      onChecked.run();
+      return;
+    }
+    @Nullable Locale locale = keyboardLocale(context);
+    if (hasCachedResult(text, locale)) {
       onChecked.run();
       return;
     }
     cancelBackgroundCheck();
     SpellCheckingListener listener = new SpellCheckingListener();
-    SpellChecker check = new SpellChecker(context, text, listener);
+    SpellChecker check = new SpellChecker(context, text, listener, locale);
     listener.onFinishedCallback =
         () -> {
           if (backgroundCheck != check) {
@@ -245,7 +298,8 @@ public class SpellChecker {
           }
           cancelBackgroundCheck();
           updateCachedResult(
-              wrapSuggestionSpansForAllMisspelledWords(context, text, listener.getResult()));
+              wrapSuggestionSpansForAllMisspelledWords(context, text, listener.getResult()),
+              locale);
           onChecked.run();
         };
     // The session answers on the looper of the thread that creates it, here the main thread.
@@ -304,12 +358,23 @@ public class SpellChecker {
       return false;
     }
 
-    session =
-        textServicesManager.newSpellCheckerSession(
-            /* bundle= */ null,
-            /* locale= */ null, // Refers to the spell checker language settings page.
-            listener,
-            /* referToSpellCheckerLanguageSettings= */ true);
+    if (locale != null) {
+      // Null if the spell checker has no subtype in the keyboard's language.
+      session =
+          textServicesManager.newSpellCheckerSession(
+              /* bundle= */ null,
+              locale,
+              listener,
+              /* referToSpellCheckerLanguageSettings= */ false);
+    }
+    if (session == null) {
+      session =
+          textServicesManager.newSpellCheckerSession(
+              /* bundle= */ null,
+              /* locale= */ null, // Refers to the spell checker language settings page.
+              listener,
+              /* referToSpellCheckerLanguageSettings= */ true);
+    }
     if (session == null) {
       LogUtils.e(TAG, "Fail to create a SpellingCheckerSession.");
       noSessionUntilMs = SystemClock.uptimeMillis() + NO_SESSION_RETRY_DELAY_MS;
@@ -500,12 +565,14 @@ public class SpellChecker {
   }
 
   @VisibleForTesting
-  static void updateCachedResult(CharSequence textWithSuggestionSpans) {
+  static void updateCachedResult(
+      CharSequence textWithSuggestionSpans, @Nullable Locale locale) {
     resultCache.textWithSuggestionSpans = textWithSuggestionSpans;
+    resultCache.locale = locale;
   }
 
-  private static boolean hasCachedResult(CharSequence text) {
-    return resultCache.isSameText(text);
+  private static boolean hasCachedResult(CharSequence text, @Nullable Locale locale) {
+    return resultCache.isSameText(text) && Objects.equals(resultCache.locale, locale);
   }
 
   private static CharSequence getResultFromCache() {
@@ -696,6 +763,9 @@ public class SpellChecker {
      * SuggestionSpan}s.
      */
     @Nullable private CharSequence textWithSuggestionSpans;
+
+    /** The keyboard language the result is in, or null for the spell checker settings'. */
+    @Nullable private Locale locale;
 
     private Cache() {}
 

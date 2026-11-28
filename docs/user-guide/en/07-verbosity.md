@@ -13,6 +13,7 @@ The **Items** group sets what SandFly says about each item:
 - **Speak usage hints**: after an item is described, says how to use it, such as "Double-tap to activate". On by default.
 - **Speak item type**: says the type of an item, such as "Button" or "Checkbox". On by default.
 - **Speak item type without a pause**: joins the name and the type of an item with a space instead of a pause. Off by default.
+- **Item types to speak**: the types that **Speak item type** says, such as **Button**, **Link**, **Heading** and **Tab**. The type of an item whose type is unchecked isn't spoken; its name, state and usage hint still are. **Other types** is for types that apps give items and that aren't in the list. All types are checked by default. Available while **Speak item type** is on.
 - **Speak Actions available**: says "Actions available" after an item with actions of its app, such as Reply on a chat message. Works with **Speak usage hints** on or off; with usage hints on, the hint then gives only the gesture that shows the actions, such as "Use tap with 2 fingers to view actions". Off by default. For the items it applies to and the **Actions available** sound, see [](#sound-actions-available).
 - **Speak list information**: says list positions and list details. On by default.
 - **Speak grid and table information**: says rows and columns in grids, tables, and pagers laid out in rows and columns, such as a folder on a home screen. On by default. The **Tables** settings apply only while it's on. See [](#verbosity-tables).

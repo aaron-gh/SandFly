@@ -22,11 +22,13 @@ import static com.google.android.accessibility.utils.traversal.TraversalStrategy
 import static java.util.Comparator.comparingInt;
 
 import android.graphics.Rect;
+import android.os.Build;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionItemInfoCompat;
+import com.google.android.accessibility.talkback.focusmanagement.WindowNodePrefetcher;
 import com.google.android.accessibility.utils.AccessibilityNode;
 import com.google.android.accessibility.utils.ConcurrentNodeQueries;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
@@ -35,6 +37,7 @@ import com.google.android.accessibility.utils.DiagnosticOverlayUtils;
 import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.FocusFinder;
 import com.google.android.accessibility.utils.LogDepth;
+import com.google.android.accessibility.utils.PackageManagerUtils;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.accessibility.utils.compat.CompatUtils;
@@ -218,16 +221,57 @@ public final class NodePathDescription {
     final NodePathDescription nodePath = new NodePathDescription();
     // Each node's position is found among the children of the parent read for the path, rather
     // than reading the parent again.
+    boolean readAhead = canReadAhead(node);
+    List<AccessibilityNodeInfoCompat> nodes = new ArrayList<>();
+    List<AccessibilityNodeInfoCompat> parents = new ArrayList<>();
     HashSet<AccessibilityNodeInfoCompat> visited = new HashSet<>();
     AccessibilityNodeInfoCompat current = node;
     while (current != null && visited.add(current)) {
-      AccessibilityNodeInfoCompat parent = current.getParent();
-      boolean isPathEnd = nodePath.nodeDescriptions.isEmpty();
-      nodePath.nodeDescriptions.add(
-          new NodeDescription(current, isPathEnd, AccessibilityNode.takeOwnership(parent)));
+      // On Android 13 and later, one request reads all the ancestors.
+      AccessibilityNodeInfoCompat parent =
+          readAhead && nodes.isEmpty() ? parentWithAncestors(current) : current.getParent();
+      nodes.add(current);
+      parents.add(parent);
       current = parent;
     }
+    if (readAhead) {
+      // Finding a node's position asks the app for its parent's children one at a time, unless they
+      // are in Android's node cache, which a list that reports subtree changes keeps clearing. The
+      // children of all the parents are read at once instead, one request per parent.
+      WindowNodePrefetcher.prefetchChildren(parents);
+    }
+    for (int i = 0; i < nodes.size(); i++) {
+      nodePath.nodeDescriptions.add(
+          new NodeDescription(
+              nodes.get(i), /* isPathEnd= */ i == 0, AccessibilityNode.takeOwnership(parents.get(i))));
+    }
     return nodePath;
+  }
+
+  /**
+   * The parent of {@code node}, read with all its ancestors in one request. A node that Android
+   * didn't seal, such as one SandFly made itself, can't be asked with prefetch flags, so its parent
+   * is read alone.
+   */
+  private static @Nullable AccessibilityNodeInfoCompat parentWithAncestors(
+      AccessibilityNodeInfoCompat node) {
+    try {
+      return node.getParent(
+          AccessibilityNodeInfoCompat.FLAG_PREFETCH_ANCESTORS
+              | AccessibilityNodeInfoCompat.FLAG_PREFETCH_UNINTERRUPTIBLE);
+    } catch (IllegalStateException e) {
+      return node.getParent();
+    }
+  }
+
+  /**
+   * Whether the nodes around {@code node} can be read on other threads: on Android 13 and later,
+   * and not in SandFly's own windows, whose requests are answered on the main thread.
+   */
+  private static boolean canReadAhead(AccessibilityNodeInfoCompat node) {
+    return Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+        && node.getWindowId() >= 0
+        && !PackageManagerUtils.isTalkBackPackage(node.getPackageName());
   }
 
   /**

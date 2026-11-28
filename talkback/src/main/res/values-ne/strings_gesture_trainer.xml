@@ -283,4 +283,26 @@
     <string name="gesture_trainer_measure_second_stroke">दोस्रो स्वाइप <xliff:g id="ms">%1$d</xliff:g> मिलिसेकेन्ड</string>
     <string name="gesture_trainer_measure_whole_gesture">पूरै जेस्चर <xliff:g id="ms">%1$d</xliff:g> मिलिसेकेन्ड</string>
     <string name="gesture_trainer_measure_stroke_gap">तिनको बीचमा <xliff:g id="ms">%1$d</xliff:g> मिलिसेकेन्ड उठाइएको</string>
+    <string name="gesture_trainer_how_menu_horizontal">मेनु खोल्न एउटा औँला <xliff:g id="edge">%1$s</xliff:g> राख्नुहोस् र त्यसलाई स्क्रिनको बीचतिर कम्तीमा <xliff:g id="distance">%2$d</xliff:g> मिमि भित्र सार्नुहोस्। यसमा किनाराबाट सुरु भएर स्क्रिनभरि तेर्सो रूपमा <xliff:g id="count">%3$d</xliff:g> वस्तु छन्, प्रत्येक करिब <xliff:g id="size">%6$s</xliff:g> सेमी चौडा। वस्तु <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, किनाराबाट <xliff:g id="from">%7$s</xliff:g> देखि <xliff:g id="to">%8$s</xliff:g> सेमी पर छ। औँला उही उचाइमा राख्नुहोस्, र वस्तु बोलिएपछि उठाउनुहोस्।</string>
+    <string name="gesture_trainer_finding_menu_left_line">मेनु खुलेको ठाउँभन्दा <xliff:g id="mm">%1$.0f</xliff:g> मिमि माथि वा तल औँला उठ्यो, र <xliff:g id="limit">%2$.0f</xliff:g> मिमिभन्दा पर मेनु बन्द हुन्छ।</string>
+    <string name="gesture_trainer_tip_menu_left_line">भित्रतिर सार्दा औँला उही उचाइमा राख्नुहोस्, र त्यहीँ उठाउनुहोस्।</string>
+    <string name="gesture_trainer_tip_menu_wrong_item_across">प्रत्येक वस्तुको किनाराबाट स्क्रिनभरि तेर्सो रूपमा निश्चित ठाउँ हुन्छ, र औँला उठेको ठाउँको वस्तु छानिन्छ। वस्तु बोलिएपछि उठाउनुहोस्।</string>
+    <string name="gesture_trainer_left_out_in_menu">किनाराबाट भित्रतिर सार्ने चालहरू छोडिएका छन्: <xliff:g id="edge">%1$s</xliff:g> रहेको किनारा मेनु स्क्रिनभरि तेर्सो रूपमा जान्छ, त्यसैले त्यो किनाराबाट भित्रतिर सार्दा जेस्चर चलाउनुको सट्टा मेनु खुल्छ।</string>
+    <string name="gesture_trainer_statistics">तथ्याङ्क</string>
+    <string name="gesture_trainer_statistics_item"><xliff:g id="fingers">%1$s</xliff:g>। प्रयास: <xliff:g id="tries">%2$d</xliff:g>, पहिचान भएका: <xliff:g id="recognized">%3$d</xliff:g>। सबैभन्दा छोटो: <xliff:g id="shortest">%4$d</xliff:g> मिलिसेकेन्ड, मध्यिका: <xliff:g id="median">%5$d</xliff:g> मिलिसेकेन्ड, सबैभन्दा लामो: <xliff:g id="longest">%6$d</xliff:g> मिलिसेकेन्ड।</string>
+    <string name="gesture_trainer_statistics_touches">प्रत्येक स्पर्श: सबैभन्दा छोटो <xliff:g id="shortest">%1$d</xliff:g> मिलिसेकेन्ड, मध्यिका <xliff:g id="median">%2$d</xliff:g> मिलिसेकेन्ड, सबैभन्दा लामो <xliff:g id="longest">%3$d</xliff:g> मिलिसेकेन्ड।</string>
+    <string name="gesture_trainer_kind_tap">ट्यापहरू</string>
+    <string name="gesture_trainer_kind_double_tap">डबल ट्यापहरू</string>
+    <string name="gesture_trainer_kind_triple_tap">ट्रिपल ट्यापहरू</string>
+    <string name="gesture_trainer_kind_quadruple_tap">चार पटक ट्यापहरू</string>
+    <string name="gesture_trainer_kind_tap_hold">ट्याप गरी होल्ड</string>
+    <string name="gesture_trainer_kind_double_tap_hold">डबल ट्याप गरी होल्ड</string>
+    <string name="gesture_trainer_kind_triple_tap_hold">ट्रिपल ट्याप गरी होल्ड</string>
+    <string name="gesture_trainer_kind_swipe">स्वाइपहरू</string>
+    <string name="gesture_trainer_kind_swipe_hold">स्वाइप गरी होल्ड</string>
+    <string name="gesture_trainer_kind_two_part_swipe">अगाडि-पछाडि र कोणीय स्वाइपहरू</string>
+    <string name="gesture_trainer_kind_pinch">पिन्चहरू</string>
+    <string name="gesture_trainer_kind_spread">फैलाउने जेस्चरहरू</string>
+    <string name="gesture_trainer_kind_rotate">घुमाउने जेस्चरहरू</string>
+    <string name="gesture_trainer_kind_scrub">स्क्रबहरू</string>
 </resources>

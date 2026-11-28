@@ -62,8 +62,16 @@ object CommandBindings {
     }
   }
 
-  /** A category of the Gestures screen, such as One finger gestures, with its gestures. */
-  class GestureCategory(val key: String?, val title: CharSequence?, val gestures: List<GestureSlot>)
+  /**
+   * A category of the Gestures screen, such as One finger gestures, with its gestures and the
+   * categories inside it, such as 2 fingers in Tap, then swipe.
+   */
+  class GestureCategory(
+    val key: String?,
+    val title: CharSequence?,
+    val gestures: List<GestureSlot>,
+    val subcategories: List<GestureCategory> = emptyList(),
+  )
 
   /**
    * Returns the gestures that can be assigned on this device, in the order of the Gestures screen,
@@ -93,12 +101,28 @@ object CommandBindings {
       screen.findPreference<Preference>(key)?.isVisible =
         !SwipesBeforeLift.hidesCategory(context, key, swipesBeforeLift)
     }
-    return (0 until screen.preferenceCount)
-      .mapNotNull { screen.getPreference(it) as? PreferenceGroup }
-      .filter { it.isVisible }
-      .map { GestureCategory(it.key, it.title, slots(context, listPreferences(it))) }
-      .filter { it.gestures.isNotEmpty() }
+    return subcategories(context, screen)
   }
+
+  // The visible categories of [group] that have gestures, themselves or in categories inside them.
+  private fun subcategories(context: Context, group: PreferenceGroup): List<GestureCategory> =
+    (0 until group.preferenceCount)
+      .mapNotNull { group.getPreference(it) as? PreferenceGroup }
+      .filter { it.isVisible }
+      .map { category ->
+        val gestures =
+          (0 until category.preferenceCount)
+            .map { category.getPreference(it) }
+            .filter { it.isVisible }
+            .filterIsInstance<GestureListPreference>()
+        GestureCategory(
+          category.key,
+          category.title,
+          slots(context, gestures),
+          subcategories(context, category),
+        )
+      }
+      .filter { it.gestures.isNotEmpty() || it.subcategories.isNotEmpty() }
 
   private fun slots(context: Context, preferences: List<GestureListPreference>): List<GestureSlot> {
     val prefs = SharedPreferencesUtils.getSharedPreferences(context)

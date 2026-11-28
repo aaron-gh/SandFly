@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.clipboard
 
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -47,5 +48,23 @@ class ClipboardHistoryOverlayTest {
     assertFalse(
       ClipboardHistoryOverlay.closesFor("com.android.systemui", "com.example.notes", own)
     )
+  }
+
+  @Test
+  fun searchListsTheTextsContainingItIgnoringCase() {
+    val entries = listOf("Meeting at Noon", "phone number", "noon train", "lunch")
+    assertEquals(
+      listOf("Meeting at Noon", "noon train"),
+      ClipboardHistoryOverlay.matching(entries, "NOON"),
+    )
+    assertEquals(listOf("phone number"), ClipboardHistoryOverlay.matching(entries, " ne nu "))
+    assertEquals(emptyList<String>(), ClipboardHistoryOverlay.matching(entries, "dinner"))
+  }
+
+  @Test
+  fun anEmptySearchListsEveryText() {
+    val entries = listOf("b", "a")
+    assertEquals(entries, ClipboardHistoryOverlay.matching(entries, ""))
+    assertEquals(entries, ClipboardHistoryOverlay.matching(entries, "   "))
   }
 }
